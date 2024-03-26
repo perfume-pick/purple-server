@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  spring:
+    image: public.ecr.aws/${ECR_REGISTRY_ALIAS}/weave_server_dev_cr:${VERSION:-latest}
+    volumes:
+      - mysql-volume:/var/lib/mysql
+    environment:
+      - VERSION=${VERSION:-latest}
+    pull_policy: always
+    env_file:
+      - .env
+    depends_on:
+      - mysql
+    ports:
+      - "8080:8080"
+  mysql:
+    image: mysql:8.0.33
+    environment:
+      MYSQL_DATABASE: purple
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      TZ: Asia/Seoul
+    ports:
+      - "3306:3306"
+
+volumes:
+  mysql-volume:
