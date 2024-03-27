@@ -4,6 +4,7 @@ plugins {
     id("io.spring.dependency-management") version '1.1.4'
     id("jacoco")
     id("org.sonarqube") version '4.4.1.3373'
+    id("com.palantir.docker") version '0.36.0'
 }
 
 group = 'com.pikachu'
@@ -36,9 +37,14 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    developmentOnly 'org.springframework.boot:spring-boot-docker-compose'
+
     compileOnly 'org.projectlombok:lombok'
-    runtimeOnly 'com.mysql:mysql-connector-j'
     annotationProcessor 'org.projectlombok:lombok'
+
+    runtimeOnly 'com.mysql:mysql-connector-j'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'

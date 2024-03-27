@@ -3,7 +3,7 @@ services:
   spring:
     image: public.ecr.aws/${ECR_REGISTRY_ALIAS}/purple-ecr:${VERSION:-latest}
     volumes:
-      - mysql-data:/var/lib/mysql
+      - mysql-volume:/var/lib/mysql
     environment:
       - VERSION=${VERSION:-latest}
     pull_policy: always
@@ -21,5 +21,6 @@ services:
       TZ: Asia/Seoul
     ports:
       - "3306:3306"
+
 volumes:
-  mysql-data:
+  mysql-volume:
