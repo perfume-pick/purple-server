@@ -14,7 +14,7 @@ jobs:
           host: ${{ secrets.DEV_INSTANCE_HOST }}
           username: ${{ secrets.DEV_INSTANCE_USERNAME }}
           key: ${{ secrets.DEV_INSTANCE_PEM_KEY }}
-          source: "./docker/compose-dev.yaml"
+          source: "./compose-dev.yaml"
           target: "~/app"
           overwrite: true
 
