@@ -9,7 +9,7 @@ swagger:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: ${DB_URL:jdbc:mysql://localhost:3306/weave?serverTimezone=Asia/Seoul&characterEncoding=UTF-8}
+    url: ${DB_URL:jdbc:mysql://localhost:3307/purple?serverTimezone=Asia/Seoul&characterEncoding=UTF-8}
     username: ${DB_USERNAME:root}
     password: ${DB_PASSWORD:secret}
   jpa:
@@ -28,6 +28,10 @@ spring:
       ddl-auto: validate
     show-sql: true
 
+  docker:
+    compose:
+      file: ./compose-local.yaml
+
 ---
 spring:
   config:
@@ -37,3 +41,7 @@ spring:
     hibernate:
       ddl-auto: validate
     show-sql: false
+
+  docker:
+    compose:
+      enabled: false
