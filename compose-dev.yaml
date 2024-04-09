@@ -22,5 +22,11 @@ services:
     ports:
       - "3306:3306"
 
+  redis:
+    image: redis:7.2.4
+    container_name: redis_dev
+    ports:
+      - "6379:6379"
+
 volumes:
   mysql-volume:
