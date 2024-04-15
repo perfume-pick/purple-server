@@ -28,6 +28,11 @@ spring:
     compose:
       file: ./compose-local.yaml
 
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
 ---
 spring:
   config:
