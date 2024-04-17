@@ -22,9 +22,9 @@ public class SendEmailVerificationService implements SendEmailVerification {
     private final UserEmailVerificationRepository userEmailVerificationRepository;
     private final MailSender mailSender;
 
-    private static final int leftLimit = 48;
-    private static final int rightLimit = 122;
-    private static final int targetStringLength = 6;
+    private static final int LEFT_LIMIT = 48;
+    private static final int RIGHT_LIMIT = 122;
+    private static final int TARGET_STRING_LENGTH = 6;
     private static final String EMAIL_REGEX = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
 
     @Override
@@ -39,9 +39,9 @@ public class SendEmailVerificationService implements SendEmailVerification {
     private String createVerificationNumber(){
         Random random = new SecureRandom();
 
-        return random.ints(leftLimit, rightLimit + 1)
+        return random.ints(LEFT_LIMIT, RIGHT_LIMIT + 1)
             .filter(i -> (i <=57 || i >=65) && (i <= 90 || i>= 97))
-            .limit(targetStringLength)
+            .limit(TARGET_STRING_LENGTH)
             .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
             .toString();
     }
