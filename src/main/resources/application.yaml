@@ -19,6 +19,13 @@ spring:
       host: ${REDIS_HOST:localhost}
       port: ${REDIS_PORT:6379}
 
+auth:
+  kakao:
+    client-id: ${KAKAO_CLIENT_ID}
+    response-type: code
+    authorize-uri: https://kauth.kakao.com/oauth/authorize
+    token-request-uri: https://kauth.kakao.com/oauth/token
+    redirect-uri: http://localhost:3000/redirect_url
 ---
 spring:
   config:
@@ -32,6 +39,11 @@ spring:
   docker:
     compose:
       file: ./compose-local.yaml
+
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
 ---
 spring:
   config:
@@ -45,3 +57,7 @@ spring:
   docker:
     compose:
       enabled: false
+
+springdoc:
+  swagger-ui:
+    enabled: true
