@@ -6,7 +6,6 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: ${DB_URL:jdbc:mysql://localhost:3306/purple?serverTimezone=Asia/Seoul&characterEncoding=UTF-8}
-
     username: ${DB_USERNAME:root}
     password: ${DB_PASSWORD:secret}
   jpa:
@@ -22,6 +21,11 @@ auth:
     authorize-uri: https://kauth.kakao.com/oauth/authorize
     token-request-uri: https://kauth.kakao.com/oauth/token
     redirect-uri: http://localhost:3000/redirect_url
+
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
 ---
 spring:
   config:
@@ -35,6 +39,7 @@ spring:
   docker:
     compose:
       file: ./compose-local.yaml
+
 
 springdoc:
   swagger-ui:
