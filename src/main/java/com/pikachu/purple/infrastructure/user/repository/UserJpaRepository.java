@@ -1,6 +1,5 @@
 package com.pikachu.purple.infrastructure.user.repository;
 
-import com.pikachu.purple.infrastructure.user.adaptor.UserJpaAdaptor;
 import com.pikachu.purple.infrastructure.user.entity.UserJpaEntity;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
