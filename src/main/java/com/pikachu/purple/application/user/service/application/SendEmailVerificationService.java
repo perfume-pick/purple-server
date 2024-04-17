@@ -6,6 +6,7 @@ import com.pikachu.purple.application.user.port.out.MailSender;
 import com.pikachu.purple.application.user.port.out.UserEmailVerificationRepository;
 import com.pikachu.purple.application.user.port.out.UserRepository;
 import com.pikachu.purple.bootstrap.common.exception.BusinessException;
+import java.security.SecureRandom;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -36,7 +37,7 @@ public class SendEmailVerificationService implements SendEmailVerification {
     }
 
     private String createVerificationNumber(){
-        Random random = new Random();
+        Random random = new SecureRandom();
 
         return random.ints(leftLimit, rightLimit + 1)
             .filter(i -> (i <=57 || i >=65) && (i <= 90 || i>= 97))
