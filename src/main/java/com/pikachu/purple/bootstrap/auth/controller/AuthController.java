@@ -5,7 +5,6 @@ import com.pikachu.purple.bootstrap.auth.dto.request.EmailVerificationRequest;
 import com.pikachu.purple.bootstrap.auth.api.AuthApi;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
