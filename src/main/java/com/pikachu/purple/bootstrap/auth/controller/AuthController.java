@@ -16,8 +16,7 @@ public class AuthController implements AuthApi {
     private final SendEmailVerificationUseCase sendEmailVerificationUseCase;
 
     @Override
-    public ResponseEntity<Void> send(@RequestBody @Valid EmailVerificationRequest request){
+    public void send(@RequestBody @Valid EmailVerificationRequest request){
         sendEmailVerificationUseCase.invoke(request.getEmail());
-        return ResponseEntity.noContent().build();
     }
 }
