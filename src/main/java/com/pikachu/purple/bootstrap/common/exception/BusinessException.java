@@ -17,6 +17,7 @@ public class BusinessException extends RuntimeException {
     );
 
     public static final BusinessException InvalidEmailException = new BusinessException(
-        ErrorCode.INVALID_EMAIL
+        ErrorCode.INVALID_EMAIL_FORMAT
     );
+
 }

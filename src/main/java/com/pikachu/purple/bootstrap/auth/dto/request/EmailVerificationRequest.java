@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @NoArgsConstructor(force = true)
 public class EmailVerificationRequest {
+
     @NotBlank
     private final String email;
+
 }

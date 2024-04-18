@@ -10,10 +10,15 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class MailSenderAdaptor implements MailSender {
+
     private final JavaMailSender javaMailSender;
+
     @Override
     @Async
-    public void send(String email, String content) {
+    public void send(
+        String email,
+        String content
+    ) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(email);
 
@@ -21,4 +26,5 @@ public class MailSenderAdaptor implements MailSender {
         message.setText("인증번호는 " + content + " 입니다.");
         javaMailSender.send(message);
     }
+
 }

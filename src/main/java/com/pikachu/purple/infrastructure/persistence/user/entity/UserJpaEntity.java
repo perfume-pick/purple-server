@@ -1,4 +1,4 @@
-package com.pikachu.purple.infrastructure.user.entity;
+package com.pikachu.purple.infrastructure.persistence.user.entity;
 
 import com.pikachu.purple.domain.user.User;
 import jakarta.persistence.Column;
@@ -15,14 +15,21 @@ import lombok.NoArgsConstructor;
 @Table(name = "user")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class UserJpaEntity {
+
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nickName;
+
     @Column(nullable = false)
     private String email;
 
     @Builder
-    public UserJpaEntity(Long id, String nickName, String email){
+    public UserJpaEntity(
+        Long id,
+        String nickName,
+        String email
+    ){
         this.id = id;
         this.nickName = nickName;
         this.email = email;
