@@ -30,4 +30,5 @@ public class SwaggerConfig {
                 .version("v1"))
             .addServersItem(new Server().url(serverUrl).description("dev-server"));
     }
+
 }
