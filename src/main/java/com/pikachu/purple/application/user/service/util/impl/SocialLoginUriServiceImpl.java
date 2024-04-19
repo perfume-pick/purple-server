@@ -26,8 +26,6 @@ public class SocialLoginUriServiceImpl implements SocialLoginUriService {
 
         UUID stateCode = generateState();
 
-        // TODO('UUID값 Redis 저장')
-
         try {
             return addState(uri, stateCode);
         } catch (URISyntaxException e) {

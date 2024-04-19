@@ -26,7 +26,10 @@ auth:
     response-type: code
     authorize-uri: https://kauth.kakao.com/oauth/authorize
     token-request-uri: https://kauth.kakao.com/oauth/token
-    redirect-uri: http://localhost:3000/redirect_url
+    redirect-uri: ${KAKAO_REDIRECT_URI:http://localhost:3000/perpicks/auth/kakao}
+
+api:
+  server-uri: ${SERVER_URI:http://localhost:8080}
 ---
 spring:
   config:
@@ -44,7 +47,6 @@ spring:
 springdoc:
   swagger-ui:
     enabled: true
-    path: /swagger-ui.html
 ---
 spring:
   config:
