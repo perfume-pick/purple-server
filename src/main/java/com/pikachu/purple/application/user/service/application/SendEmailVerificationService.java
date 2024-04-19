@@ -21,7 +21,7 @@ public class SendEmailVerificationService implements SendEmailVerificationUseCas
     private final MailSender mailSender;
 
     private static final String EMAIL_REGEX = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
-    private static final Long MAX_EXPIRATION_TIME = 600L;
+    private static final Long MAX_EXPIRATION_SECONDS = 600L;
 
     @Override
     public void invoke(String email){
@@ -31,7 +31,7 @@ public class SendEmailVerificationService implements SendEmailVerificationUseCas
         userEmailVerificationRepository.save(
             email,
             code.getCode(),
-            MAX_EXPIRATION_TIME
+            MAX_EXPIRATION_SECONDS
         );
         mailSender.send(email, code.getCode());
     }
