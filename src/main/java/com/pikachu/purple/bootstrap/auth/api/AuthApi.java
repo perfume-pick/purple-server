@@ -1,16 +1,16 @@
 package com.pikachu.purple.bootstrap.auth.api;
 
+import com.pikachu.purple.bootstrap.auth.dto.request.EmailVerificationRequest;
 import com.pikachu.purple.bootstrap.auth.dto.response.SocialLoginTryResponse;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PathVariable;
-import com.pikachu.purple.bootstrap.auth.dto.request.EmailVerificationRequest;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
@@ -25,7 +25,7 @@ public interface AuthApi {
         @PathVariable("provider") SocialLoginProvider provider
 
     );
-  
+
     @Operation(summary = "회원가입시 이메일 인증코드 전송")
     @ApiResponses(
         value = {
@@ -40,7 +40,7 @@ public interface AuthApi {
             )
         }
     )
-  
+
     @PostMapping("/verify-code/send")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void send(
