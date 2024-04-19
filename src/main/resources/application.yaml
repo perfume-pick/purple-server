@@ -6,6 +6,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: ${DB_URL:jdbc:mysql://localhost:3306/purple?serverTimezone=Asia/Seoul&characterEncoding=UTF-8}
+
     username: ${DB_USERNAME:root}
     password: ${DB_PASSWORD:secret}
   jpa:
@@ -57,7 +58,3 @@ spring:
   docker:
     compose:
       enabled: false
-
-springdoc:
-  swagger-ui:
-    enabled: true
