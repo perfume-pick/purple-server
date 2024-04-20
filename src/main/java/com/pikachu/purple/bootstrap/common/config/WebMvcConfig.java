@@ -10,15 +10,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @RequiredArgsConstructor
 public class WebMvcConfig implements WebMvcConfigurer {
 
-    @Value("${uri.client}")
-    private String clientUri;
-
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry
             .addMapping("/**")
             .allowedHeaders("*")
-            .allowedOrigins(clientUri, "http://localhost:3000")
+            .allowedOrigins("*")
             .allowedMethods("*");
     }
 
