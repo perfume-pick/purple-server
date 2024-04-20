@@ -23,7 +23,6 @@ public interface AuthApi {
     @ResponseStatus(HttpStatus.OK)
     SocialLoginTryResponse loginTry(
         @PathVariable("provider") SocialLoginProvider provider
-
     );
 
     @Operation(summary = "회원가입시 이메일 인증코드 전송")

@@ -25,8 +25,8 @@ public class SwaggerConfig {
     @Bean
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
-            .info(new Info().title("PURPLE")
-                .description("Purple의 API 문서입니다.")
+            .info(new Info().title("PERPICKS")
+                .description("Perpicks의 API 문서입니다.")
                 .version("v1"))
             .addServersItem(new Server().url(serverUrl).description("dev-server"));
     }
