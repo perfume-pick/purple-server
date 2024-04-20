@@ -18,7 +18,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
         registry
             .addMapping("/perpicks")
             .allowedHeaders("*")
-            .allowedOrigins(clientUri, "http://localhost:3000")
+            .allowedOrigins("*")
             .allowedMethods("*");
     }
 
