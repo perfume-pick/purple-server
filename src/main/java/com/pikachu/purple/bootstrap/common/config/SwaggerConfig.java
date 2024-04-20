@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SwaggerConfig {
 
-    @Value("${api.server-uri}")
+    @Value("${uri.server}")
     private String serverUrl;
 
     @Bean
