@@ -15,7 +15,7 @@ jobs:
           username: ${{ secrets.DEV_INSTANCE_USERNAME }}
           key: ${{ secrets.DEV_INSTANCE_PEM_KEY }}
           source: "./compose-dev.yaml"
-          target: "~/app"
+          target: "~/app/docker"
           overwrite: true
 
       - name: Install Docker if not present
