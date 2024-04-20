@@ -13,12 +13,15 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Value("${uri.client}")
     private String clientUri;
 
+    @Value("${uri.server}")
+    private String serverUri;
+
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry
             .addMapping("/perpicks")
             .allowedHeaders("*")
-            .allowedOrigins("*")
+            .allowedOrigins(clientUri, serverUri, "http://localhost:3000")
             .allowedMethods("*");
     }
 
