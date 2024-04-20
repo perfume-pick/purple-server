@@ -26,7 +26,7 @@ public class AuthController implements AuthApi {
             new Command(socialLoginProvider)
         );
 
-        return new SocialLoginTryResponse(result.socialLoginUri());
+        return new SocialLoginTryResponse(result.socialLoginUri().toString());
     }
 
     @Override
