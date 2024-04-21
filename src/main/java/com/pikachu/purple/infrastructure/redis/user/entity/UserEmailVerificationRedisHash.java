@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 import org.springframework.data.redis.core.TimeToLive;
+import org.springframework.data.redis.core.index.Indexed;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -17,21 +18,22 @@ public class UserEmailVerificationRedisHash implements Serializable {
     @Id
     private Long id;
 
-    private String verifiedEmail;
+    private String verifyEmail;
 
-    private String verifiedNumber;
+    @Indexed
+    private String verifyCode;
 
     @TimeToLive
     private Long expirationTime;
 
     @Builder
     public UserEmailVerificationRedisHash(
-        String verifiedEmail,
-        String verifiedNumber,
+        String verifyEmail,
+        String verifyCode,
         Long expirationTime
     ){
-        this.verifiedEmail = verifiedEmail;
-        this.verifiedNumber = verifiedNumber;
+        this.verifyEmail = verifyEmail;
+        this.verifyCode = verifyCode;
         this.expirationTime = expirationTime;
     }
 

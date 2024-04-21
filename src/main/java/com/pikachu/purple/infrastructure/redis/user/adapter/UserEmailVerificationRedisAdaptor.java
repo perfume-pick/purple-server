@@ -1,5 +1,7 @@
 package com.pikachu.purple.infrastructure.redis.user.adapter;
 
+import static com.pikachu.purple.bootstrap.common.exception.BusinessException.InvalidVerifyCodeException;
+
 import com.pikachu.purple.application.user.port.out.UserEmailVerificationRepository;
 import com.pikachu.purple.infrastructure.redis.user.entity.UserEmailVerificationRedisHash;
 import com.pikachu.purple.infrastructure.redis.user.repository.UserEmailVerificationRedisRepository;
@@ -15,16 +17,26 @@ public class UserEmailVerificationRedisAdaptor implements UserEmailVerificationR
     @Override
     public void save(
         String email,
-        String verifiedNumber,
+        String verifyCode,
         Long expirationTime
     ){
         UserEmailVerificationRedisHash hash = UserEmailVerificationRedisHash.builder()
-            .verifiedEmail(email)
-            .verifiedNumber(verifiedNumber)
+            .verifyEmail(email)
+            .verifyCode(verifyCode)
             .expirationTime(expirationTime)
             .build();
 
         userEmailVerificationRedisHash.save(hash);
+    }
+
+    @Override
+    public void confirm(
+        String email,
+        String verifyCode
+    ){
+        userEmailVerificationRedisHash.findByVerifyCode(verifyCode)
+            .filter(userEmailVerification -> email.equals(userEmailVerification.getVerifyEmail()))
+            .orElseThrow(() -> InvalidVerifyCodeException);
     }
 
 }
