@@ -17,12 +17,12 @@ public class UserEmailVerificationRedisAdaptor implements UserEmailVerificationR
     @Override
     public void save(
         String email,
-        String verifyCode,
+        String verificationCode,
         Long expirationTime
-    ){
+    ) {
         UserEmailVerificationRedisHash hash = UserEmailVerificationRedisHash.builder()
-            .verifyEmail(email)
-            .verifyCode(verifyCode)
+            .email(email)
+            .verificationCode(verificationCode)
             .expirationTime(expirationTime)
             .build();
 
@@ -32,10 +32,10 @@ public class UserEmailVerificationRedisAdaptor implements UserEmailVerificationR
     @Override
     public void confirm(
         String email,
-        String verifyCode
-    ){
-        userEmailVerificationRedisHash.findByVerifyCode(verifyCode)
-            .filter(userEmailVerification -> email.equals(userEmailVerification.getVerifyEmail()))
+        String verificationCode
+    ) {
+        userEmailVerificationRedisHash.findById(email)
+            .filter(userEmailVerificationInfo -> verificationCode.equals(userEmailVerificationInfo.getVerificationCode()))
             .orElseThrow(() -> InvalidVerifyCodeException);
     }
 

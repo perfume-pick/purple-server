@@ -10,9 +10,7 @@ import com.pikachu.purple.bootstrap.auth.dto.request.EmailVerificationCodeReques
 import com.pikachu.purple.bootstrap.auth.dto.request.EmailVerificationRequest;
 import com.pikachu.purple.bootstrap.auth.dto.response.SocialLoginTryResponse;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -33,13 +31,13 @@ public class AuthController implements AuthApi {
     }
 
     @Override
-    public void send(@RequestBody @Valid EmailVerificationRequest request){
+    public void send(EmailVerificationRequest request){
         sendEmailVerificationUseCase.invoke(request.getEmail());
     }
 
     @Override
-    public void confirm(@RequestBody @Valid EmailVerificationCodeRequest request){
-        confirmEmailVerificationCodeUseCase.invoke(request.getEmail(), request.getVerifyCode());
+    public void confirm(EmailVerificationCodeRequest request){
+        confirmEmailVerificationCodeUseCase.invoke(request.getEmail(), request.getVerificationCode());
     }
 
 }

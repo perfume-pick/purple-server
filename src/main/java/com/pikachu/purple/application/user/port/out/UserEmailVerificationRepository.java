@@ -4,13 +4,13 @@ public interface UserEmailVerificationRepository {
 
     void save(
         String email,
-        String verifyCode,
+        String verificationCode,
         Long expirationTime
     );
 
     void confirm(
         String email,
-        String verifyCode
+        String verificationCode
     );
 
 }

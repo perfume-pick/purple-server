@@ -4,7 +4,7 @@ public interface ConfirmEmailVerificationCodeUseCase {
 
     void invoke(
         String email,
-        String verifyCode
+        String verificationCode
     );
 
 }

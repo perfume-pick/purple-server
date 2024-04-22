@@ -14,11 +14,11 @@ public class ConfirmEmailVerificationCodeService implements ConfirmEmailVerifica
     @Override
     public void invoke(
         String email,
-        String verifyCode
+        String verificationCode
     ) {
         userEmailVerificationRepository.confirm(
             email,
-            verifyCode
+            verificationCode
         );
     }
 
