@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 @ConfigurationPropertiesScan("auth.kakao")
-public class KakaoSocialLoginUriStrategy implements SocialLoginUriStrategy {
+public class KakaoSocialLoginStrategy implements SocialLoginStrategy {
 
     private static final String QUERY_PARAMETER_PREFIX = "?";
     private static final String ENCODED_QUERY_PARAMETER_DELIMETER = "&";

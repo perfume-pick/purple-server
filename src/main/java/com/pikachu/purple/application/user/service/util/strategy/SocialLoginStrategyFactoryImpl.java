@@ -7,14 +7,14 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class SocialLoginUriStrategyFactoryImpl implements SocialLoginUriStrategyFactory {
+public class SocialLoginStrategyFactoryImpl implements SocialLoginStrategyFactory {
 
     private final ApplicationContext applicationContext;
 
     @Override
-    public SocialLoginUriStrategy getStrategy(SocialLoginProvider socialLoginProvider) {
+    public SocialLoginStrategy getStrategy(SocialLoginProvider socialLoginProvider) {
         return switch (socialLoginProvider) {
-            case KAKAO -> applicationContext.getBean(KakaoSocialLoginUriStrategy.class);
+            case KAKAO -> applicationContext.getBean(KakaoSocialLoginStrategy.class);
         };
     }
 
