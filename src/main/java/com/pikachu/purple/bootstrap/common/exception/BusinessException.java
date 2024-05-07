@@ -20,4 +20,12 @@ public class BusinessException extends RuntimeException {
         ErrorCode.INVALID_EMAIL_FORMAT
     );
 
+    public static final BusinessException UserNotFoundException = new BusinessException(
+        ErrorCode.USER_NOT_FOUND
+    );
+
+    public static final BusinessException NicknameAlreadyException = new BusinessException(
+        ErrorCode.NICKNAME_ALREADY_EXISTED
+    );
+
 }

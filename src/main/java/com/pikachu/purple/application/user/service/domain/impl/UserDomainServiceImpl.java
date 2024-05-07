@@ -3,6 +3,7 @@ package com.pikachu.purple.application.user.service.domain.impl;
 import com.pikachu.purple.application.user.port.out.UserRepository;
 import com.pikachu.purple.application.user.service.domain.UserDomainService;
 import com.pikachu.purple.domain.user.User;
+import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -17,8 +18,8 @@ public class UserDomainServiceImpl implements UserDomainService {
         User user = User.builder()
             .id(createUser.getId())
             .email(createUser.getEmail())
-            .nickName(createUser.getNickName())
-            .registerDate(createUser.getRegisterDate())
+            .nickname(createUser.getNickname())
+            .registerAt(createUser.getRegisterAt())
             .socialLoginProvider(createUser.getSocialLoginProvider())
             .build();
 
@@ -26,12 +27,27 @@ public class UserDomainServiceImpl implements UserDomainService {
     }
 
     @Override
-    public void updateNickNameById(Long userId, String nickName) {
+    public void updateNicknameById(
+        Long userId,
+        String nickname
+    ) {
         User user = userRepository.getById(userId);
 
-        userRepository.validateNotExistedNickName(nickName);
-        user.updateNickName(nickName);
+        userRepository.validateNotExistedNickname(nickname);
+        user.updateNickname(nickname);
 
         userRepository.save(user);
     }
+
+    @Override
+    public User findByEmailAndSocialLoginProvider(
+        String email,
+        SocialLoginProvider socialLoginProvider
+    ) {
+        return userRepository.findByEmailAndSocialLoginProvider(
+            email,
+            socialLoginProvider
+        );
+    }
+
 }
