@@ -32,11 +32,11 @@ public class User {
         this.socialLoginProvider = socialLoginProvider;
     }
 
-    public static User create(String email, SocialLoginProvider socialLoginProvider) {
+    public static User create(String email, String nickname, SocialLoginProvider socialLoginProvider) {
         return new User(
             null,
             email,
-            "",
+            nickname,
             LocalDateTime.now(),
             socialLoginProvider
         );

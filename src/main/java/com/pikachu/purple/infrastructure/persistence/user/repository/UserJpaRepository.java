@@ -23,4 +23,7 @@ public interface UserJpaRepository extends JpaRepository<UserJpaEntity, Long> {
     @Query("SELECT u From UserJpaEntity u WHERE u.nickname = :nickname")
     Optional<UserJpaEntity> findByNickname(@Param("nickname") String nickname);
 
+    @Query("SELECT count(*) FROM UserJpaEntity")
+    int countTotalUsers();
+
 }

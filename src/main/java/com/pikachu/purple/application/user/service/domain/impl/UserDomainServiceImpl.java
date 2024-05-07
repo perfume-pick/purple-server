@@ -50,4 +50,9 @@ public class UserDomainServiceImpl implements UserDomainService {
         );
     }
 
+    @Override
+    public int countTotalUsers() {
+        return userRepository.countTotalUsers();
+    }
+
 }

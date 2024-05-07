@@ -2,6 +2,7 @@ package com.pikachu.purple.application.user.service.application;
 
 import com.pikachu.purple.application.user.port.in.SignUpUseCase;
 import com.pikachu.purple.application.user.service.domain.UserDomainService;
+import com.pikachu.purple.application.user.vo.NicknameCreator;
 import com.pikachu.purple.domain.user.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,7 @@ public class SignUpService implements SignUpUseCase {
         if(user == null) {
             User createUser = User.create(
                 command.email(),
+                NicknameCreator.create(userDomainService.countTotalUsers()).getNickName(),
                 command.socialLoginProvider());
             userDomainService.create(createUser);
         }

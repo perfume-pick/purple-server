@@ -59,4 +59,9 @@ public class UserJpaAdaptor implements UserRepository {
                 throw NicknameAlreadyException;});
     }
 
+    @Override
+    public int countTotalUsers() {
+        return userJpaRepository.countTotalUsers();
+    }
+
 }

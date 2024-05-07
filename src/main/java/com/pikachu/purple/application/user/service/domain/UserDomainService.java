@@ -19,4 +19,6 @@ public interface UserDomainService {
         SocialLoginProvider socialLoginProvider
     );
 
+    int countTotalUsers();
+
 }
