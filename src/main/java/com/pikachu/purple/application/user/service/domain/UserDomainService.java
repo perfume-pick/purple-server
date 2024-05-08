@@ -1,11 +1,10 @@
-package com.pikachu.purple.application.user.port.out;
+package com.pikachu.purple.application.user.service.domain;
+
 
 import com.pikachu.purple.domain.user.entity.User;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 
-public interface UserRepository {
-
-    void validateNotExistedEmail(String email);
+public interface UserDomainService {
 
     User findByEmailAndSocialLoginProvider(
         String email,

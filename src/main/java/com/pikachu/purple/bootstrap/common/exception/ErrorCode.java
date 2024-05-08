@@ -24,6 +24,23 @@ public enum ErrorCode {
         400,
         "U002",
         "이메일 형식이 유효하지 않습니다."
+    ),
+    USER_NOT_FOUND(
+        400,
+        "U003",
+        "유저를 찾을 수 없습니다."
+    ),
+
+    // Jwt
+    JWT_EXPIRED_EXCEPTION(
+        400,
+        "J001",
+        "토큰이 만료되었습니다."
+    ),
+    JWT_VERIFICATION_EXCEPTION(
+        400,
+        "J002",
+        "토큰 유효성 검사에 실패했습니다."
     );
 
     private final int status;
