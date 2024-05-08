@@ -20,4 +20,8 @@ public class BusinessException extends RuntimeException {
         ErrorCode.INVALID_EMAIL_FORMAT
     );
 
+    public static final BusinessException InvalidVerifyCodeException = new BusinessException(
+        ErrorCode.INVALID_VERIFY_CODE
+    );
+
 }
