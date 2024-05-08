@@ -15,23 +15,21 @@ import org.springframework.data.redis.core.TimeToLive;
 public class UserEmailVerificationRedisHash implements Serializable {
 
     @Id
-    private Long id;
+    private String email;
 
-    private String verifiedEmail;
-
-    private String verifiedNumber;
+    private String verificationCode;
 
     @TimeToLive
     private Long expirationTime;
 
     @Builder
     public UserEmailVerificationRedisHash(
-        String verifiedEmail,
-        String verifiedNumber,
+        String email,
+        String verificationCode,
         Long expirationTime
     ){
-        this.verifiedEmail = verifiedEmail;
-        this.verifiedNumber = verifiedNumber;
+        this.email = email;
+        this.verificationCode = verificationCode;
         this.expirationTime = expirationTime;
     }
 

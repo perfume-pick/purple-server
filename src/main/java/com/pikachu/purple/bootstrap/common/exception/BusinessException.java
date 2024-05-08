@@ -28,4 +28,8 @@ public class BusinessException extends RuntimeException {
         ErrorCode.NICKNAME_ALREADY_EXISTED
     );
 
+    public static final BusinessException InvalidVerifyCodeException = new BusinessException(
+        ErrorCode.INVALID_VERIFY_CODE
+    );
+
 }

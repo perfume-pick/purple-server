@@ -41,8 +41,9 @@ auth:
     token-request-uri: https://kauth.kakao.com/oauth/token
     redirect-uri: ${KAKAO_REDIRECT_URI:http://localhost:3000/perpicks/auth/kakao}
 
-api:
-  server-uri: ${SERVER_URI:http://localhost:8080}
+uri:
+  server: ${SERVER_URI:http://localhost:8080}
+  client: ${CLIENT_URI:http://localhost:3000}
 ---
 spring:
   config:
