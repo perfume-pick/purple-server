@@ -6,7 +6,7 @@ import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 public interface UserDomainService {
 
     void create(
-        User createUser
+        User createdUser
     );
 
     void updateNicknameById(
@@ -19,6 +19,6 @@ public interface UserDomainService {
         SocialLoginProvider socialLoginProvider
     );
 
-    int countTotalUsers();
+    int countAll();
 
 }

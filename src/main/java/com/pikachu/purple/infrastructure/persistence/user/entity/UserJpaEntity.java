@@ -6,7 +6,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
@@ -16,7 +15,6 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.GenericGenerator;
 
 @Getter
 @Entity
@@ -25,11 +23,6 @@ import org.hibernate.annotations.GenericGenerator;
 public class UserJpaEntity {
 
     @Id
-    @GenericGenerator(
-        name = "IdGenerator",
-        strategy = "com.pikachu.purple.common.IdGenerator"
-    )
-    @GeneratedValue(generator = "IdGenerator")
     private Long id;
 
     @Column(nullable = false)

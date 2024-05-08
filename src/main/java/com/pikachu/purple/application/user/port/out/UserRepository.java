@@ -18,6 +18,6 @@ public interface UserRepository {
 
     void validateNotExistedNickname(String nickname);
 
-    int countTotalUsers();
+    int countAll();
 
 }

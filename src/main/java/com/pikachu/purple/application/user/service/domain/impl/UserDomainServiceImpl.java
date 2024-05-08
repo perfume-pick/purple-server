@@ -14,13 +14,13 @@ public class UserDomainServiceImpl implements UserDomainService {
     private final UserRepository userRepository;
 
     @Override
-    public void create(User createUser) {
+    public void create(User createdUser) {
         User user = User.builder()
-            .id(createUser.getId())
-            .email(createUser.getEmail())
-            .nickname(createUser.getNickname())
-            .registerAt(createUser.getRegisterAt())
-            .socialLoginProvider(createUser.getSocialLoginProvider())
+            .id(createdUser.getId())
+            .email(createdUser.getEmail())
+            .nickname(createdUser.getNickname())
+            .registerAt(createdUser.getRegisterAt())
+            .socialLoginProvider(createdUser.getSocialLoginProvider())
             .build();
 
         userRepository.save(user);
@@ -51,8 +51,8 @@ public class UserDomainServiceImpl implements UserDomainService {
     }
 
     @Override
-    public int countTotalUsers() {
-        return userRepository.countTotalUsers();
+    public int countAll() {
+        return userRepository.countAll();
     }
 
 }

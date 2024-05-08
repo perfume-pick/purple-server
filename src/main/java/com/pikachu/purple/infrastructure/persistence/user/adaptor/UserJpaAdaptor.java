@@ -32,7 +32,7 @@ public class UserJpaAdaptor implements UserRepository {
     ) {
         return userJpaRepository.findByEmailAndSocialLoginProvider(
             email,
-                socialLoginProvider
+            socialLoginProvider
             )
             .map(UserJpaEntity::toDomain)
             .orElse(null);
@@ -60,8 +60,8 @@ public class UserJpaAdaptor implements UserRepository {
     }
 
     @Override
-    public int countTotalUsers() {
-        return userJpaRepository.countTotalUsers();
+    public int countAll() {
+        return userJpaRepository.countAll();
     }
 
 }
