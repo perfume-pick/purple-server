@@ -156,7 +156,7 @@ public class UserTokenServiceImpl implements UserTokenService {
         );
 
 
-        userTokenRepository.saveRefreshToken(
+        userTokenRepository.saveJwtToken(
             user.getId(),
             jwtToken,
             jwtTokenProperties.getJwt().expireSeconds()
