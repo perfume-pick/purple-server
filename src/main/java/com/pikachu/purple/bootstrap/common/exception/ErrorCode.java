@@ -41,6 +41,7 @@ public enum ErrorCode {
         400,
         "J002",
         "토큰 유효성 검사에 실패했습니다."
+    ),
     INVALID_VERIFY_CODE(
         400,
         "A003",
