@@ -1,12 +1,9 @@
 package com.pikachu.purple.application.user.service.application;
 
 import com.pikachu.purple.application.user.port.in.SocialLoginTryUseCase;
-
 import com.pikachu.purple.application.user.service.util.SocialLoginService;
 import com.pikachu.purple.common.vo.Url;
-import java.net.URI;
 import lombok.RequiredArgsConstructor;
-
 import org.springframework.stereotype.Service;
 
 @Service

@@ -2,7 +2,6 @@ package com.pikachu.purple;
 
 import com.pikachu.purple.application.common.properties.JwtTokenProperties;
 import com.pikachu.purple.application.common.properties.KakaoSocialLoginProperties;
-import com.pikachu.purple.infrastructure.client.auth.kakao.util.KakaoSocialLoginClient;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.servers.Server;
 import org.springframework.boot.SpringApplication;

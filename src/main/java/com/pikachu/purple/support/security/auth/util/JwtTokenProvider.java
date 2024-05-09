@@ -53,7 +53,7 @@ public class JwtTokenProvider {
         URL jwksUri
     ) throws BusinessException, JwkException {
         JwkProvider provider = new JwkProviderBuilder(jwksUri)
-            .cached(10, 60 * 24, TimeUnit.HOURS)
+            .cached(10, 1440L, TimeUnit.HOURS)
             .rateLimited(10, 1, TimeUnit.MINUTES)
             .build();
         DecodedJWT jwt = decodeToken(token);

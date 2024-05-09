@@ -1,7 +1,6 @@
 package com.pikachu.purple.domain.user.entity;
 
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
-import java.util.Objects;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;

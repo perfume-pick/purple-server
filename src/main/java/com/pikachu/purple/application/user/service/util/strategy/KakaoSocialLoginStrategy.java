@@ -6,7 +6,6 @@ import com.pikachu.purple.application.user.port.out.SocialLoginPort;
 import com.pikachu.purple.application.user.vo.SocialLoginTokenRequest;
 import com.pikachu.purple.application.user.vo.tokens.IdToken;
 import com.pikachu.purple.common.vo.Url;
-import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import com.pikachu.purple.domain.user.vo.SocialLoginToken;
 import com.pikachu.purple.support.security.auth.util.JwtTokenProvider;
 import com.pikachu.purple.support.security.auth.vo.JwtClaims;
