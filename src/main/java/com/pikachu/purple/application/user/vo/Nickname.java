@@ -7,11 +7,12 @@ public class Nickname {
 
     private final String value;
 
-    public Nickname(int userTotalCount) {
-        this.value = create(userTotalCount);
+    public Nickname(int countTotalUsers){
+        this.value = createRandom(countTotalUsers);
     }
 
-    private String create(int userTotalCount) {
-        return String.format("퍼픽%03d", userTotalCount + 1);
+    private String createRandom(int countTotalUsers){
+        return String.format("퍼픽%03d", countTotalUsers+1);
     }
+
 }
