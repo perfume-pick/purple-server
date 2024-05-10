@@ -14,7 +14,7 @@ public class User {
     private Long id;
     private String email;
     private String nickname;
-    private LocalDateTime registerAt;
+    private LocalDateTime registeredAt;
     private SocialLoginProvider socialLoginProvider;
 
     @Builder
@@ -22,13 +22,13 @@ public class User {
         Long id,
         String email,
         String nickname,
-        LocalDateTime registerAt,
+        LocalDateTime registeredAt,
         SocialLoginProvider socialLoginProvider
     ){
         this.id = id;
         this.email = email;
         this.nickname = nickname;
-        this.registerAt = registerAt;
+        this.registeredAt = registeredAt;
         this.socialLoginProvider = socialLoginProvider;
     }
 

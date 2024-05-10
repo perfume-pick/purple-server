@@ -19,7 +19,7 @@ public class UserDomainServiceImpl implements UserDomainService {
             .id(createdUser.getId())
             .email(createdUser.getEmail())
             .nickname(createdUser.getNickname())
-            .registerAt(createdUser.getRegisterAt())
+            .registeredAt(createdUser.getRegisteredAt())
             .socialLoginProvider(createdUser.getSocialLoginProvider())
             .build();
 

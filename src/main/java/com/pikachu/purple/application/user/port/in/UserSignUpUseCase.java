@@ -10,7 +10,6 @@ public interface UserSignUpUseCase {
         String email,
         SocialLoginProvider socialLoginProvider
     ) {
-
     }
 
 }

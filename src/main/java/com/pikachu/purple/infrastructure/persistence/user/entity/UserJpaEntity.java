@@ -32,8 +32,8 @@ public class UserJpaEntity {
     private String nickname;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "Register_at", nullable = false)
-    private LocalDateTime registerAt;
+    @Column(name = "Registered_at", nullable = false)
+    private LocalDateTime registeredAt;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "Social_login_provider", nullable = false)
@@ -44,13 +44,13 @@ public class UserJpaEntity {
         Long id,
         String email,
         String nickname,
-        LocalDateTime registerAt,
+        LocalDateTime registeredAt,
         SocialLoginProvider socialLoginProvider
     ){
         this.id = id;
         this.email = email;
         this.nickname = nickname;
-        this.registerAt = registerAt;
+        this.registeredAt = registeredAt;
         this.socialLoginProvider = socialLoginProvider;
     }
 
@@ -59,7 +59,7 @@ public class UserJpaEntity {
             .id(user.getId())
             .email(user.getEmail())
             .nickname(user.getNickname())
-            .registerAt(user.getRegisterAt())
+            .registeredAt(user.getRegisteredAt())
             .socialLoginProvider(user.getSocialLoginProvider())
             .build();
     }
@@ -69,7 +69,7 @@ public class UserJpaEntity {
             .id(entity.getId())
             .email(entity.getEmail())
             .nickname(entity.getNickname())
-            .registerAt(entity.getRegisterAt())
+            .registeredAt(entity.getRegisteredAt())
             .socialLoginProvider(entity.getSocialLoginProvider())
             .build();
     }

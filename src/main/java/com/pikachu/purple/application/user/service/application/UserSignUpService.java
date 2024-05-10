@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class UserUserSignUpService implements UserSignUpUseCase {
+public class UserSignUpService implements UserSignUpUseCase {
 
     private final UserDomainService userDomainService;
 

@@ -24,7 +24,7 @@ public class BusinessException extends RuntimeException {
         ErrorCode.USER_NOT_FOUND
     );
 
-    public static final BusinessException NicknameAlreadyException = new BusinessException(
+    public static final BusinessException NicknameAlreadyExistedException = new BusinessException(
         ErrorCode.NICKNAME_ALREADY_EXISTED
     );
 
