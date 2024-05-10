@@ -2,8 +2,8 @@ package com.pikachu.purple.application.user.service.util.strategy;
 
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 
-public interface SocialLoginUriStrategyFactory {
+public interface SocialLoginStrategyFactory {
 
-    SocialLoginUriStrategy getStrategy(SocialLoginProvider socialLoginProvider);
+    SocialLoginStrategy getStrategy(SocialLoginProvider socialLoginProvider);
 
 }
