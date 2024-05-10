@@ -22,6 +22,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class JwtTokenProvider {
 
+    public static final int CACHE_SIZE = 10;
+    public static final int BUCKET_SIZE = 10;
+    public static final Long EXPIRES_IN = 1440L;
+
     public String createToken(
         JwtClaims jwtClaims,
         String secret
@@ -53,8 +57,8 @@ public class JwtTokenProvider {
         URL jwksUri
     ) throws BusinessException, JwkException {
         JwkProvider provider = new JwkProviderBuilder(jwksUri)
-            .cached(10, 1440L, TimeUnit.HOURS)
-            .rateLimited(10, 1, TimeUnit.MINUTES)
+            .cached(CACHE_SIZE, EXPIRES_IN, TimeUnit.HOURS)
+            .rateLimited(BUCKET_SIZE, 1, TimeUnit.MINUTES)
             .build();
         DecodedJWT jwt = decodeToken(token);
         Jwk jwk = provider.get(jwt.getKeyId());

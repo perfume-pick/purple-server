@@ -31,14 +31,12 @@ public class UserJpaAdaptor implements UserRepository {
         String email,
         SocialLoginProvider socialLoginProvider
     ) {
-        log.debug(email, socialLoginProvider);
-        Optional<UserJpaEntity> result = userJpaRepository.findByEmailAndSocialLoginProvider(email, socialLoginProvider);
+        Optional<UserJpaEntity> result = userJpaRepository.findByEmailAndSocialLoginProvider(
+            email,
+            socialLoginProvider
+        );
 
-        if (result.isEmpty()) {
-            return null;
-        }
-
-        return result.get().toDomain();
+        return result.map(UserJpaEntity::toDomain).orElse(null);
     }
 
 }

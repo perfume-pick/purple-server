@@ -20,6 +20,9 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class SocialLoginApplicationService implements SocialLoginUseCase {
 
+    public static final String QUERY_PARAMETER_PREFIX = "?";
+    public static final String QUERY_PARAMETER_TOKEN_KEY = "token";
+
     private final KakaoSocialLoginProperties kakaoSocialLoginProperties;
     private final SocialLoginService socialLoginService;
     private final UserDomainService userDomainService;
@@ -65,7 +68,7 @@ public class SocialLoginApplicationService implements SocialLoginUseCase {
     private Url generateLoginSuccessUrl(String jwtToken) {
         String redirectUri = kakaoSocialLoginProperties.getLoginSuccessUri();
 
-        String loginSuccessUri = redirectUri + "?" + "token=" + jwtToken;
+        String loginSuccessUri = redirectUri + QUERY_PARAMETER_PREFIX + QUERY_PARAMETER_TOKEN_KEY + jwtToken;
 
         return new Url(loginSuccessUri);
     }

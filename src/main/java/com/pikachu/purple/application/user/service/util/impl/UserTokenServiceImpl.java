@@ -34,7 +34,10 @@ public class UserTokenServiceImpl implements UserTokenService {
     private final UserTokenRepository userTokenRepository;
 
     @Override
-    public IdToken resolveIdToken(String idToken, SocialLoginProvider provider)
+    public IdToken resolveIdToken(
+        String idToken,
+        SocialLoginProvider provider
+    )
         throws MalformedURLException, JwkException {
         SocialLoginStrategy socialLoginStrategy = socialLoginStrategyFactory.getStrategy(provider);
 
@@ -129,7 +132,11 @@ public class UserTokenServiceImpl implements UserTokenService {
     }
 
     @Override
-    public String generateJwtToken(User user, String accessToken, String refreshToken) {
+    public String generateJwtToken(
+        User user,
+        String accessToken,
+        String refreshToken
+    ) {
         Map<String, Object> customClaims = new HashMap<>();
         customClaims.put("type", UserTokenType.JWT_TOKEN.name());
         customClaims.put("userId", String.valueOf(user.getId()));
