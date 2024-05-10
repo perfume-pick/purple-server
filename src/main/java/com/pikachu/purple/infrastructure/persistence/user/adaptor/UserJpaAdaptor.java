@@ -1,18 +1,18 @@
 package com.pikachu.purple.infrastructure.persistence.user.adaptor;
 
+import static com.pikachu.purple.bootstrap.common.exception.BusinessException.NicknameAlreadyExistedException;
+import static com.pikachu.purple.bootstrap.common.exception.BusinessException.UserNotFoundException;
+
 import com.pikachu.purple.application.user.port.out.UserRepository;
 import com.pikachu.purple.domain.user.entity.User;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import com.pikachu.purple.infrastructure.persistence.user.entity.UserJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.user.repository.UserJpaRepository;
-import java.util.Optional;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-@Slf4j
 public class UserJpaAdaptor implements UserRepository {
 
     private final UserJpaRepository userJpaRepository;
@@ -21,9 +21,7 @@ public class UserJpaAdaptor implements UserRepository {
     public void validateNotExistedEmail(String email) {
 //        userJpaRepository.findByEmail(email)
 //            .ifPresent(userEntity -> {
-//                throw BusinessException.EmailExistedException;
-//            }
-//        );
+//                throw EmailExistedException;});
     }
 
     @Override
@@ -31,12 +29,37 @@ public class UserJpaAdaptor implements UserRepository {
         String email,
         SocialLoginProvider socialLoginProvider
     ) {
-        Optional<UserJpaEntity> result = userJpaRepository.findByEmailAndSocialLoginProvider(
+        return userJpaRepository.findByEmailAndSocialLoginProvider(
             email,
             socialLoginProvider
-        );
+            )
+            .map(UserJpaEntity::toDomain)
+            .orElse(null);
+    }
 
-        return result.map(UserJpaEntity::toDomain).orElse(null);
+    @Override
+    public void save(User user) {
+        UserJpaEntity userJpaEntity = UserJpaEntity.toJpaEntity(user);
+        userJpaRepository.save(userJpaEntity);
+    }
+
+    @Override
+    public User getById(Long userId) {
+        UserJpaEntity userJpaEntity = userJpaRepository.findById(userId)
+            .orElseThrow(() -> UserNotFoundException);
+
+        return UserJpaEntity.toDomain(userJpaEntity);
+    }
+
+    @Override
+    public void validateNotExistedNickname(String nickname) {
+        userJpaRepository.findByNickname(nickname)
+            .ifPresent(userJpaEntity -> {throw NicknameAlreadyExistedException;});
+    }
+
+    @Override
+    public int countAll() {
+        return userJpaRepository.countAll();
     }
 
 }

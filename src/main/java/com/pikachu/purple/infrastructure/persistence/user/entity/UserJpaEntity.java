@@ -6,55 +6,71 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import java.time.LocalDateTime;
 import lombok.AccessLevel;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+@Getter
 @Entity
 @Table(name = "user")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class UserJpaEntity {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private Long id;
-
-    private String nickname;
 
     @Column(nullable = false)
     private String email;
+
+    @Column(nullable = false)
+    private String nickname;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "Registered_at", nullable = false)
+    private LocalDateTime registeredAt;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "Social_login_provider", nullable = false)
     private SocialLoginProvider socialLoginProvider;
 
     @Builder
-    public UserJpaEntity(Long id, String nickname, String email,
-        SocialLoginProvider socialLoginProvider) {
+    public UserJpaEntity(
+        Long id,
+        String email,
+        String nickname,
+        LocalDateTime registeredAt,
+        SocialLoginProvider socialLoginProvider
+    ){
         this.id = id;
-        this.nickname = nickname;
         this.email = email;
+        this.nickname = nickname;
+        this.registeredAt = registeredAt;
         this.socialLoginProvider = socialLoginProvider;
     }
 
     public static UserJpaEntity toJpaEntity(User user){
         return UserJpaEntity.builder()
             .id(user.getId())
-            .nickname(user.getNickname())
             .email(user.getEmail())
+            .nickname(user.getNickname())
+            .registeredAt(user.getRegisteredAt())
             .socialLoginProvider(user.getSocialLoginProvider())
             .build();
     }
 
-    public User toDomain(){
+    public static User toDomain(UserJpaEntity entity){
         return User.builder()
-            .id(this.id)
-            .nickname(this.nickname)
-            .email(this.email)
-            .socialLoginProvider(this.socialLoginProvider)
+            .id(entity.getId())
+            .email(entity.getEmail())
+            .nickname(entity.getNickname())
+            .registeredAt(entity.getRegisteredAt())
+            .socialLoginProvider(entity.getSocialLoginProvider())
             .build();
     }
 

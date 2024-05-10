@@ -14,11 +14,45 @@ public class UserDomainServiceImpl implements UserDomainService {
     private final UserRepository userRepository;
 
     @Override
+    public void create(User createdUser) {
+        User user = User.builder()
+            .id(createdUser.getId())
+            .email(createdUser.getEmail())
+            .nickname(createdUser.getNickname())
+            .registeredAt(createdUser.getRegisteredAt())
+            .socialLoginProvider(createdUser.getSocialLoginProvider())
+            .build();
+
+        userRepository.save(user);
+    }
+
+    @Override
+    public void updateNicknameById(
+        Long userId,
+        String nickname
+    ) {
+        User user = userRepository.getById(userId);
+
+        userRepository.validateNotExistedNickname(nickname);
+        user.updateNickname(nickname);
+
+        userRepository.save(user);
+    }
+
+    @Override
     public User findByEmailAndSocialLoginProvider(
         String email,
         SocialLoginProvider socialLoginProvider
     ) {
-        return userRepository.findByEmailAndSocialLoginProvider(email, socialLoginProvider);
+        return userRepository.findByEmailAndSocialLoginProvider(
+            email,
+            socialLoginProvider
+        );
+    }
+
+    @Override
+    public int countAll() {
+        return userRepository.countAll();
     }
 
 }
