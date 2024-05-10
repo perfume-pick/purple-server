@@ -1,13 +1,9 @@
 package com.pikachu.purple.bootstrap.auth.controller;
 
 import com.auth0.jwk.JwkException;
-import com.pikachu.purple.application.user.port.in.ConfirmEmailVerificationCodeUseCase;
-import com.pikachu.purple.application.user.port.in.SendEmailVerificationUseCase;
 import com.pikachu.purple.application.user.port.in.SocialLoginTryUseCase;
 import com.pikachu.purple.application.user.port.in.SocialLoginUseCase;
 import com.pikachu.purple.bootstrap.auth.api.AuthApi;
-import com.pikachu.purple.bootstrap.auth.dto.request.EmailVerificationCodeRequest;
-import com.pikachu.purple.bootstrap.auth.dto.request.EmailVerificationRequest;
 import com.pikachu.purple.bootstrap.auth.dto.response.SocialLoginTryResponse;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import jakarta.servlet.http.HttpServletResponse;
@@ -21,8 +17,6 @@ public class AuthController implements AuthApi {
 
     private final SocialLoginTryUseCase socialLoginTryUseCase;
     private final SocialLoginUseCase socialLoginUseCase;
-    private final SendEmailVerificationUseCase sendEmailVerificationUseCase;
-    private final ConfirmEmailVerificationCodeUseCase confirmEmailVerificationCodeUseCase;
 
     @Override
     public SocialLoginTryResponse socialLoginTry(SocialLoginProvider socialLoginProvider) {
@@ -47,16 +41,6 @@ public class AuthController implements AuthApi {
         );
 
         response.sendRedirect(result.socialLoginSuccessUrl().getValue());
-    }
-
-    @Override
-    public void send(EmailVerificationRequest request){
-        sendEmailVerificationUseCase.invoke(request.getEmail());
-    }
-
-    @Override
-    public void confirm(EmailVerificationCodeRequest request){
-        confirmEmailVerificationCodeUseCase.invoke(request.getEmail(), request.getVerificationCode());
     }
 
 }

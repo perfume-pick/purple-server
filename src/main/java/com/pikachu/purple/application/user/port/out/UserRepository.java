@@ -10,8 +10,6 @@ public interface UserRepository {
         SocialLoginProvider socialLoginProvider
     );
 
-    void validateNotExistedEmail(String email);
-
     void save(User user);
 
     User getById(Long userId);
