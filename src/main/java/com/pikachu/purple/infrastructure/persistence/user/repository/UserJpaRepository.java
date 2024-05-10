@@ -17,12 +17,6 @@ public interface UserJpaRepository extends JpaRepository<UserJpaEntity, Long> {
         @Param("socialLoginProvider") SocialLoginProvider socialLoginProvider
     );
 
-    @Query("SELECT u FROM UserJpaEntity u WHERE u.email = :email AND u.socialLoginProvider = :socialLoginProvider")
-    Optional<UserJpaEntity> findByEmailAndSocialLoginProvider(
-        @Param("email") String email,
-        @Param("socialLoginProvider") SocialLoginProvider socialLoginProvider
-    );
-
     @Query("SELECT u From UserJpaEntity u WHERE u.nickname = :nickname")
     Optional<UserJpaEntity> findByNickname(@Param("nickname") String nickname);
 

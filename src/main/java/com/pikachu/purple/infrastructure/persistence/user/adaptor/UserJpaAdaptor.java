@@ -1,6 +1,5 @@
 package com.pikachu.purple.infrastructure.persistence.user.adaptor;
 
-import static com.pikachu.purple.bootstrap.common.exception.BusinessException.EmailExistedException;
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.NicknameAlreadyExistedException;
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.UserNotFoundException;
 
@@ -20,9 +19,9 @@ public class UserJpaAdaptor implements UserRepository {
 
     @Override
     public void validateNotExistedEmail(String email) {
-        userJpaRepository.findByEmail(email)
-            .ifPresent(userEntity -> {
-                throw EmailExistedException;});
+//        userJpaRepository.findByEmail(email)
+//            .ifPresent(userEntity -> {
+//                throw EmailExistedException;});
     }
 
     @Override

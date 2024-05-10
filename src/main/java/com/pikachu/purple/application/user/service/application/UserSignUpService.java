@@ -4,7 +4,7 @@ import com.pikachu.purple.application.user.port.in.UserSignUpUseCase;
 import com.pikachu.purple.application.user.service.domain.UserDomainService;
 import com.pikachu.purple.application.user.vo.Nickname;
 import com.pikachu.purple.application.util.IdGenerator;
-import com.pikachu.purple.domain.user.User;
+import com.pikachu.purple.domain.user.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
