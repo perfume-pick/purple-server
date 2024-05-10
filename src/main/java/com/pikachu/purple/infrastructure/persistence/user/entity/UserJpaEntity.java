@@ -1,6 +1,6 @@
 package com.pikachu.purple.infrastructure.persistence.user.entity;
 
-import com.pikachu.purple.domain.user.User;
+import com.pikachu.purple.domain.user.entity.User;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @Entity
-@Table(name = "User")
+@Table(name = "user")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class UserJpaEntity {
 

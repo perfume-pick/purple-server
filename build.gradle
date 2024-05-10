@@ -53,6 +53,10 @@ dependencies {
 
     implementation 'org.springframework.boot:spring-boot-starter-mail'
     implementation 'javax.mail:javax.mail-api:1.6.2'
+
+    // jwt
+    implementation 'com.auth0:java-jwt:4.4.0'
+    implementation 'com.auth0:jwks-rsa:0.22.1'
 }
 
 tasks.named('test') {

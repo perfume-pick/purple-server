@@ -5,7 +5,7 @@ import static com.pikachu.purple.bootstrap.common.exception.BusinessException.Ni
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.UserNotFoundException;
 
 import com.pikachu.purple.application.user.port.out.UserRepository;
-import com.pikachu.purple.domain.user.User;
+import com.pikachu.purple.domain.user.entity.User;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import com.pikachu.purple.infrastructure.persistence.user.entity.UserJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.user.repository.UserJpaRepository;

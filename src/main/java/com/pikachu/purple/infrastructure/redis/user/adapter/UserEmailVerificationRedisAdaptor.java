@@ -35,7 +35,9 @@ public class UserEmailVerificationRedisAdaptor implements UserEmailVerificationR
         String verificationCode
     ) {
         userEmailVerificationRedisHash.findById(email)
-            .filter(userEmailVerificationInfo -> verificationCode.equals(userEmailVerificationInfo.getVerificationCode()))
+            .filter(userEmailVerificationInfo ->
+                verificationCode.equals(userEmailVerificationInfo.getVerificationCode())
+            )
             .orElseThrow(() -> InvalidVerifyCodeException);
     }
 
