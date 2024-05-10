@@ -14,7 +14,7 @@ public class PerfumeBrandController implements PerfumeBrandApi {
     private final PerfumeBrandGetUseCase perfumeBrandGetUseCase;
 
     @Override
-    public GetPerfumeBrandResponse getSelectBrand(){
+    public GetPerfumeBrandResponse get(){
         Result result = perfumeBrandGetUseCase.invoke();
 
         return new GetPerfumeBrandResponse(result.perfumeBrandList());

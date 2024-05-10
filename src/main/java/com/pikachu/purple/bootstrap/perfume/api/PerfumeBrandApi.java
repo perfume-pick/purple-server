@@ -17,6 +17,6 @@ public interface PerfumeBrandApi {
     @ApiResponse(responseCode = "200", description = "TOP 30 브랜드 조회")
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    GetPerfumeBrandResponse getSelectBrand();
+    GetPerfumeBrandResponse get();
 
 }
