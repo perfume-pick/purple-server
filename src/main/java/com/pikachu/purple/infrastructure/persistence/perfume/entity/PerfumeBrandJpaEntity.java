@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @Entity
-@Table(name = "Perfume_brand")
+@Table(name = "perfume_brand")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class PerfumeBrandJpaEntity {
 

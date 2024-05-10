@@ -17,17 +17,17 @@ public class RatingDomainServiceImpl implements RatingDomainService {
 
     @Override
     public void create(
-        Long ratingId,
+        List<Long> ratingIdList,
         Long userId,
         List<RatingValue> ratingValueList
     ) {
         List<Rating> ratingList = new ArrayList<>();
-        for(RatingValue value : ratingValueList){
+        for(int i=0; i<ratingIdList.size(); i++){
             Rating rating = Rating.builder()
-                .ratingId(ratingId)
+                .ratingId(ratingIdList.get(i))
                 .userId(userId)
-                .perfumeId(value.getPerfumeId())
-                .score(value.getScore())
+                .perfumeId(ratingValueList.get(i).getPerfumeId())
+                .score(ratingValueList.get(i).getScore())
                 .build();
 
             ratingList.add(rating);

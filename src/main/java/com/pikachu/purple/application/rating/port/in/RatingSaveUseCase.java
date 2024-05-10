@@ -10,6 +10,7 @@ public interface RatingSaveUseCase {
     record Command(
         Long userId,
         List<RatingValue> ratingValueList
-    ) {}
+    ) {
+    }
 
 }

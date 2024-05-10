@@ -6,7 +6,7 @@ import java.util.List;
 public interface RatingDomainService {
 
     void create(
-        Long ratingId,
+        List<Long> ratingIdList,
         Long userId,
         List<RatingValue> ratingValueList
     );
