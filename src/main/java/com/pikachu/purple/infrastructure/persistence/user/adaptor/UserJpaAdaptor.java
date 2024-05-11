@@ -18,13 +18,6 @@ public class UserJpaAdaptor implements UserRepository {
     private final UserJpaRepository userJpaRepository;
 
     @Override
-    public void validateNotExistedEmail(String email) {
-//        userJpaRepository.findByEmail(email)
-//            .ifPresent(userEntity -> {
-//                throw EmailExistedException;});
-    }
-
-    @Override
     public User findByEmailAndSocialLoginProvider(
         String email,
         SocialLoginProvider socialLoginProvider
