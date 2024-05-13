@@ -27,7 +27,7 @@ public class UserDomainServiceImpl implements UserDomainService {
     }
 
     @Override
-    public void updateNicknameById(
+    public void updateNickname(
         Long userId,
         String nickname
     ) {
