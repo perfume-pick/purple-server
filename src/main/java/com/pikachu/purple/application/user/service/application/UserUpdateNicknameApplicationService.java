@@ -7,13 +7,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class UserUpdateNicknameService implements UserUpdateNicknameUseCase {
+public class UserUpdateNicknameApplicationService implements UserUpdateNicknameUseCase {
 
     private final UserDomainService userDomainService;
 
     @Override
     public void invoke(Command command) {
-        userDomainService.updateNicknameById(
+        userDomainService.updateNickname(
             command.userId(),
             command.nickname()
         );

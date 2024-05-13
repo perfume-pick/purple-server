@@ -6,9 +6,9 @@ import com.pikachu.purple.infrastructure.persistence.rating.entity.RatingJpaEnti
 import com.pikachu.purple.infrastructure.persistence.rating.repository.RatingJpaRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
+@Component
 @RequiredArgsConstructor
 public class RatingJpaAdaptor implements RatingRepository {
 

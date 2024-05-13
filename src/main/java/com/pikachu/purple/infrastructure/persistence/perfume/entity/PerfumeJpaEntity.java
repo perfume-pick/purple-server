@@ -16,13 +16,13 @@ import lombok.NoArgsConstructor;
 public class PerfumeJpaEntity {
 
     @Id
-    @Column(name = "Perfume_id")
+    @Column(name = "perfume_id")
     private Long perfumeId;
 
-    @Column(name = "Perfume_name", nullable = false)
+    @Column(name = "perfume_name", nullable = false)
     private String perfumeName;
 
-    @Column(name = "P_brand_name", nullable = false)
+    @Column(name = "p_brand_name", nullable = false)
     private String brandName;
 
     public static Perfume toDomain(PerfumeJpaEntity perfumeJpaEntity) {

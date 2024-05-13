@@ -1,9 +1,9 @@
 package com.pikachu.purple.bootstrap.perfume.controller;
 
-import com.pikachu.purple.application.perfume.port.in.PerfumeBrandGetUseCase;
-import com.pikachu.purple.application.perfume.port.in.PerfumeBrandGetUseCase.Result;
+import com.pikachu.purple.application.perfume.port.in.PerfumeBrandGetTopThirtyUseCase;
+import com.pikachu.purple.application.perfume.port.in.PerfumeBrandGetTopThirtyUseCase.Result;
 import com.pikachu.purple.bootstrap.perfume.api.PerfumeBrandApi;
-import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeBrandResponse;
+import com.pikachu.purple.bootstrap.perfume.dto.response.GetTopThirtyPerfumeBrandResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class PerfumeBrandController implements PerfumeBrandApi {
 
-    private final PerfumeBrandGetUseCase perfumeBrandGetUseCase;
+    private final PerfumeBrandGetTopThirtyUseCase perfumeBrandGetTopThirtyUseCase;
 
     @Override
-    public GetPerfumeBrandResponse get(){
-        Result result = perfumeBrandGetUseCase.invoke();
+    public GetTopThirtyPerfumeBrandResponse getTopThirtyBrands(){
+        Result result = perfumeBrandGetTopThirtyUseCase.invoke();
 
-        return new GetPerfumeBrandResponse(result.perfumeBrandList());
+        return new GetTopThirtyPerfumeBrandResponse(result.perfumeBrandList());
     }
 
 }

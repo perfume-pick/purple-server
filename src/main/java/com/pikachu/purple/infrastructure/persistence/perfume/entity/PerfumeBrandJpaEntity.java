@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 public class PerfumeBrandJpaEntity {
 
     @Id
-    @Column(name = "Brand_name")
+    @Column(name = "brand_name")
     private String brandName;
 
     @Builder

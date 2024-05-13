@@ -7,17 +7,23 @@ import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeB
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Component;
 
-@Service
+@Component
 @RequiredArgsConstructor
 public class PerfumeBrandJpaAdaptor implements PerfumeBrandRepository {
 
+    private final static int ZERO = 0;
+    private final static int THIRTY = 30;
     private final PerfumeBrandJpaRepository perfumeBrandJpaRepository;
 
     @Override
-    public List<PerfumeBrand> findAll() {
-        List<PerfumeBrandJpaEntity> perfumeBrandEntityList = perfumeBrandJpaRepository.findAll();
+    public List<PerfumeBrand> findTopThirtyBrands() {
+        Pageable pageable = PageRequest.of(ZERO , THIRTY);
+        Page<PerfumeBrandJpaEntity> perfumeBrandEntityList = perfumeBrandJpaRepository.findAll(pageable);
         return perfumeBrandEntityList.stream()
             .map(PerfumeBrandJpaEntity::toDomain)
             .collect(Collectors.toList());

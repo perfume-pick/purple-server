@@ -5,6 +5,6 @@ import java.util.List;
 
 public interface PerfumeBrandDomainService {
 
-    List<PerfumeBrand> findAll();
+    List<PerfumeBrand> findTopThirtyBrands();
 
 }

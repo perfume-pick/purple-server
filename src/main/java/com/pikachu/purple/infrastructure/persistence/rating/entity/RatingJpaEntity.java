@@ -17,13 +17,13 @@ import lombok.NoArgsConstructor;
 public class RatingJpaEntity {
 
     @Id
-    @Column(name = "Rating_id")
+    @Column(name = "rating_id")
     private Long ratingId;
 
-    @Column(name = "User_id", nullable = false)
+    @Column(name = "user_id", nullable = false)
     private Long userId;
 
-    @Column(name = "Perfume_id", nullable = false)
+    @Column(name = "perfume_id", nullable = false)
     private Long perfumeId;
 
     @Column(nullable = false)

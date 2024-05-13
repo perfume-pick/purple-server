@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public interface UserApi {
 
     @Operation(summary = "온보딩에서 향수에 대한 별점 저장")
-    @ApiResponse(responseCode = "204", description = "향수에 대한 별점 저장 성공")
     @PostMapping
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void saveRating(@RequestBody RatingRequest request);

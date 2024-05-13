@@ -4,11 +4,13 @@ import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.perfume.PerfumeBrand;
 import java.util.List;
 
-public interface PerfumeGetUseCase {
+public interface PerfumeGetByBrandsUseCase {
 
     Result invoke(Command command);
 
-    record Command(List<PerfumeBrand> brandList) {}
-    record Result(List<Perfume> perfumeList) {}
+    record Command(List<PerfumeBrand> brandList) {
+    }
+    record Result(List<Perfume> perfumeList) {
+    }
 
 }

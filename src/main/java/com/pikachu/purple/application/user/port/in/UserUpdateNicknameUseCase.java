@@ -8,7 +8,6 @@ public interface UserUpdateNicknameUseCase {
         Long userId,
         String nickname
     ){
-
     }
 
 }

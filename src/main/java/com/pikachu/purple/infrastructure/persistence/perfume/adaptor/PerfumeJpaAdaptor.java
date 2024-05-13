@@ -8,15 +8,15 @@ import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeJ
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
+@Component
 @RequiredArgsConstructor
 public class PerfumeJpaAdaptor implements PerfumeRepository {
 
     private final PerfumeJpaRepository perfumeJpaRepository;
 
-    public List<Perfume> findByPerfumeBrand(List<PerfumeBrand> brandList) {
+    public List<Perfume> findByPerfumeBrands(List<PerfumeBrand> brandList) {
         List<String> brandNames = brandList.stream()
             .map(PerfumeBrand::getBrandName)
             .toList();

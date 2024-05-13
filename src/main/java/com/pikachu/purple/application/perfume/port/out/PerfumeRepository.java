@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface PerfumeRepository {
 
-    List<Perfume> findByPerfumeBrand(List<PerfumeBrand> brandList);
+    List<Perfume> findByPerfumeBrands(List<PerfumeBrand> brandList);
 
 }

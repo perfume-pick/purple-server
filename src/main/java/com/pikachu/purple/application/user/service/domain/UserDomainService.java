@@ -8,7 +8,7 @@ public interface UserDomainService {
 
     void create(User createdUser);
 
-    void updateNicknameById(
+    void updateNickname(
         Long userId,
         String nickname
     );

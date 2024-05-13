@@ -32,11 +32,11 @@ public class UserJpaEntity {
     private String nickname;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "Registered_at", nullable = false)
+    @Column(name = "registered_at", nullable = false)
     private LocalDateTime registeredAt;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "Social_login_provider", nullable = false)
+    @Column(name = "social_login_provider", nullable = false)
     private SocialLoginProvider socialLoginProvider;
 
     @Builder

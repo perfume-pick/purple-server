@@ -1,6 +1,6 @@
 package com.pikachu.purple.application.perfume.service.application;
 
-import com.pikachu.purple.application.perfume.port.in.PerfumeGetUseCase;
+import com.pikachu.purple.application.perfume.port.in.PerfumeGetByBrandsUseCase;
 import com.pikachu.purple.application.perfume.service.domain.PerfumeDomainService;
 import com.pikachu.purple.domain.perfume.Perfume;
 import java.util.List;
@@ -9,13 +9,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class PerfumeGetService implements PerfumeGetUseCase {
+public class PerfumeGetByBrandsApplicationService implements PerfumeGetByBrandsUseCase {
 
     private final PerfumeDomainService perfumeDomainService;
 
     @Override
     public Result invoke(Command command) {
-        List<Perfume> perfumeList =  perfumeDomainService.findByPerfumeBrand(command.brandList());
+        List<Perfume> perfumeList = perfumeDomainService.findByPerfumeBrands(command.brandList());
 
         return new Result(perfumeList);
     }
