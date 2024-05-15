@@ -7,10 +7,11 @@ import com.pikachu.purple.application.user.service.domain.UserDomainService;
 import com.pikachu.purple.application.user.service.util.SocialLoginService;
 import com.pikachu.purple.application.user.service.util.UserTokenService;
 import com.pikachu.purple.application.user.vo.tokens.IdToken;
-import com.pikachu.purple.common.vo.Url;
 import com.pikachu.purple.domain.user.entity.User;
 import com.pikachu.purple.domain.user.vo.SocialLoginToken;
 import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -29,7 +30,8 @@ public class SocialLoginApplicationService implements SocialLoginUseCase {
     private final UserTokenService userTokenService;
 
     @Override
-    public Result invoke(Command command) throws MalformedURLException, JwkException {
+    public Result invoke(Command command)
+        throws MalformedURLException, JwkException, URISyntaxException {
         SocialLoginToken socialLoginToken = socialLoginService.getToken(
             command.socialLoginProvider(),
             command.authorizationCode()
@@ -65,12 +67,12 @@ public class SocialLoginApplicationService implements SocialLoginUseCase {
         );
     }
 
-    private Url generateLoginSuccessUrl(String jwtToken) {
+    private URI generateLoginSuccessUrl(String jwtToken) throws URISyntaxException {
         String redirectUri = kakaoSocialLoginProperties.getLoginSuccessUri();
 
         String loginSuccessUri = redirectUri + QUERY_PARAMETER_PREFIX + QUERY_PARAMETER_TOKEN_KEY + jwtToken;
 
-        return new Url(loginSuccessUri);
+        return new URI(loginSuccessUri);
     }
 
 }

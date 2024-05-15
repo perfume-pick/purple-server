@@ -8,6 +8,7 @@ import com.pikachu.purple.bootstrap.auth.dto.response.SocialLoginTryResponse;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,7 +33,7 @@ public class AuthController implements AuthApi {
         SocialLoginProvider provider,
         String code,
         HttpServletResponse response
-    ) throws IOException, JwkException {
+    ) throws IOException, JwkException, URISyntaxException {
         SocialLoginUseCase.Result result = socialLoginUseCase.invoke(
             new SocialLoginUseCase.Command(
                 provider,
@@ -40,7 +41,7 @@ public class AuthController implements AuthApi {
             )
         );
 
-        response.sendRedirect(result.socialLoginSuccessUrl().getValue());
+        response.sendRedirect(result.socialLoginSuccessUrl().toString());
     }
 
 }
