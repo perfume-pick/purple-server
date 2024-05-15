@@ -13,6 +13,11 @@ public enum ErrorCode {
         "C001",
         "서버에 오류가 발생하였습니다."
     ),
+    UNAUTHORIZED_REQUEST(
+        403,
+        "C002",
+        "인가되지 않은 요청입니다."
+    ),
 
     // User
     EMAIL_ALREADY_EXISTED(
