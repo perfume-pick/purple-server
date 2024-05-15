@@ -37,7 +37,7 @@ auth:
   jwt:
     issuer: ${JWT_ISSUER:purple}
     access:
-      expire-seconds: ${JWT_ACCESS_EXPIRE_SECONDS:86400}
+      expire-seconds: ${JWT_ACCESS_EXPIRE_SECONDS:172800}
       secret: ${JWT_ACCESS_SECRET:secret}
 
     refresh:
