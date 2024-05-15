@@ -13,12 +13,10 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-@Slf4j
 public class SocialLoginApplicationService implements SocialLoginUseCase {
 
     public static final String QUERY_PARAMETER_PREFIX = "?";
