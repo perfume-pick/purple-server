@@ -32,4 +32,5 @@ public class WebMvcConfig implements WebMvcConfigurer {
             .excludePathPatterns("/swagger-ui/**");
         WebMvcConfigurer.super.addInterceptors(registry);
     }
+
 }

@@ -2,9 +2,7 @@ package com.pikachu.purple.bootstrap.common.security;
 
 import com.pikachu.purple.bootstrap.common.vo.UserAuthentication;
 import com.pikachu.purple.support.security.auth.SecurityContext;
-import lombok.Getter;
 
-@Getter
 public class UserSecurityContext implements SecurityContext<UserAuthentication> {
 
     private UserAuthentication authentication;
@@ -22,5 +20,6 @@ public class UserSecurityContext implements SecurityContext<UserAuthentication> 
     public void setAuthentication(UserAuthentication authentication) {
         this.authentication = authentication;
     }
+
 }
 

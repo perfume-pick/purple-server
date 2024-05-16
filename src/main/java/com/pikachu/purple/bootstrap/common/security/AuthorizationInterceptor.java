@@ -21,14 +21,22 @@ public class AuthorizationInterceptor implements HandlerInterceptor {
         Object handler
     ) throws Exception {
         if (!(handler instanceof HandlerMethod)) {
-            return HandlerInterceptor.super.preHandle(request, response, handler);
+            return HandlerInterceptor.super.preHandle(
+                request,
+                response,
+                handler
+            );
         }
 
         if (hasSecuredAnnotation(handler) && isNotAuthenticated()) {
             throw new BusinessException(ErrorCode.UNAUTHORIZED_REQUEST);
         }
 
-        return HandlerInterceptor.super.preHandle(request, response, handler);
+        return HandlerInterceptor.super.preHandle(
+            request,
+            response,
+            handler
+        );
     }
 
     private boolean hasSecuredAnnotation(Object handler) {

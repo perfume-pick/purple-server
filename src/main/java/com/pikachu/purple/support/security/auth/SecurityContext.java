@@ -5,4 +5,5 @@ public interface SecurityContext<T extends Authentication> {
     T getAuthentication();
 
     void setAuthentication(T authentication);
+
 }
