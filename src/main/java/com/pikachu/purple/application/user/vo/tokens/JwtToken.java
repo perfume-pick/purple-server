@@ -1,5 +1,8 @@
 package com.pikachu.purple.application.user.vo.tokens;
 
+import lombok.Getter;
+
+@Getter
 public class JwtToken {
     private String accessToken;
     private String refreshToken;

@@ -18,7 +18,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableConfigurationProperties({KakaoSocialLoginProperties.class, JwtTokenProperties.class})
 @EnableFeignClients
-    public class PurpleApplication {
+public class PurpleApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(PurpleApplication.class, args);

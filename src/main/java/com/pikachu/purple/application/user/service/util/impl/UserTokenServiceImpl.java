@@ -47,10 +47,12 @@ public class UserTokenServiceImpl implements UserTokenService {
     @Override
     public AccessToken resolveAccessToken(String accessToken) {
         JwtClaims jwtClaims = jwtTokenProvider.verifyToken(accessToken, jwtTokenProperties.getAccess().secret());
+        Long userId = Long.valueOf(jwtClaims.getCustomClaims().get("userId").toString().replace("\"", ""));
+        String email = jwtClaims.getCustomClaims().get("email").toString().replace("\"", "");
 
         return new AccessToken(
-            Long.valueOf(jwtClaims.getCustomClaims().get("userId").toString()),
-            jwtClaims.getCustomClaims().get("email").toString()
+            userId,
+            email
         );
     }
 
@@ -171,4 +173,5 @@ public class UserTokenServiceImpl implements UserTokenService {
 
         return jwtToken;
     }
+
 }
