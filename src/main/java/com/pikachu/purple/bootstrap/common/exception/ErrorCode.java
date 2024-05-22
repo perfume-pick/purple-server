@@ -49,6 +49,12 @@ public enum ErrorCode {
         "인증코드가 유효하지 않습니다."
     ),
 
+    USER_NOT_AUTHENTICATED(
+        404,
+        "U006",
+        "인증되지 않은 사용자입니다."
+    ),
+
     // Jwt
     JWT_EXPIRED_EXCEPTION(
         400,
