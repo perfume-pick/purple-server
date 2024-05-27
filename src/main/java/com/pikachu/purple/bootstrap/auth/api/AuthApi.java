@@ -1,6 +1,8 @@
 package com.pikachu.purple.bootstrap.auth.api;
 
 import com.auth0.jwk.JwkException;
+import com.pikachu.purple.bootstrap.auth.dto.request.RefreshJwtTokenRequest;
+import com.pikachu.purple.bootstrap.auth.dto.response.RefreshJwtTokenResponse;
 import com.pikachu.purple.bootstrap.auth.dto.response.SocialLoginTryResponse;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import io.swagger.v3.oas.annotations.Operation;
@@ -11,6 +13,7 @@ import java.net.URISyntaxException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -34,5 +37,12 @@ public interface AuthApi {
         @RequestParam String code,
         HttpServletResponse response
     ) throws IOException, JwkException, URISyntaxException;
+
+    @Operation(summary = "Jwt Token Refresh API")
+    @PostMapping("/refresh")
+    @ResponseStatus(HttpStatus.OK)
+    RefreshJwtTokenResponse refreshJwtToken(
+        @RequestBody RefreshJwtTokenRequest request
+    );
 
 }

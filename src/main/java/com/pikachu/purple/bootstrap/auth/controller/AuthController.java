@@ -1,9 +1,12 @@
 package com.pikachu.purple.bootstrap.auth.controller;
 
 import com.auth0.jwk.JwkException;
+import com.pikachu.purple.application.user.port.in.RefreshJwtTokenUseCase;
 import com.pikachu.purple.application.user.port.in.SocialLoginTryUseCase;
 import com.pikachu.purple.application.user.port.in.SocialLoginUseCase;
 import com.pikachu.purple.bootstrap.auth.api.AuthApi;
+import com.pikachu.purple.bootstrap.auth.dto.request.RefreshJwtTokenRequest;
+import com.pikachu.purple.bootstrap.auth.dto.response.RefreshJwtTokenResponse;
 import com.pikachu.purple.bootstrap.auth.dto.response.SocialLoginTryResponse;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import jakarta.servlet.http.HttpServletResponse;
@@ -18,6 +21,7 @@ public class AuthController implements AuthApi {
 
     private final SocialLoginTryUseCase socialLoginTryUseCase;
     private final SocialLoginUseCase socialLoginUseCase;
+    private final RefreshJwtTokenUseCase refreshJwtTokenUseCase;
 
     @Override
     public SocialLoginTryResponse socialLoginTry(SocialLoginProvider socialLoginProvider) {
@@ -44,4 +48,14 @@ public class AuthController implements AuthApi {
         response.sendRedirect(result.socialLoginSuccessUrl().toString());
     }
 
+    @Override
+    public RefreshJwtTokenResponse refreshJwtToken(RefreshJwtTokenRequest request) {
+        RefreshJwtTokenUseCase.Result result = refreshJwtTokenUseCase.invoke(
+            new RefreshJwtTokenUseCase.Command(
+                request.jwtToken()
+            )
+        );
+
+        return new RefreshJwtTokenResponse(result.jwtToken());
+    }
 }

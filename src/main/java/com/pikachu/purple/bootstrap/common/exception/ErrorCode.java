@@ -56,15 +56,30 @@ public enum ErrorCode {
     ),
 
     // Jwt
-    JWT_EXPIRED_EXCEPTION(
+    ACCESS_TOKEN_EXPIRED_EXCEPTION(
         400,
         "J001",
-        "토큰이 만료되었습니다."
+        "액세스 토큰이 만료되었습니다."
+    ),
+    REFRESH_TOKEN_EXPIRED_EXCEPTION(
+        400,
+        "J002",
+        "리프레시 토큰이 만료되었습니다."
     ),
     JWT_VERIFICATION_EXCEPTION(
         400,
-        "J002",
+        "J003",
         "토큰 유효성 검사에 실패했습니다."
+    ),
+    JWT_EXPIRED_EXCEPTION(
+        400,
+        "J004",
+        "토큰이 만료되었습니다."
+    ),
+    REFRESH_TOKEN_NOT_FOUND(
+        404,
+        "J005",
+        "리프레시 토큰을 찾을 수 없습니다."
     );
 
     private final int status;

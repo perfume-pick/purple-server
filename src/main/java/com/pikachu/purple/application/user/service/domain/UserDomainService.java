@@ -13,6 +13,8 @@ public interface UserDomainService {
         String nickname
     );
 
+    User getById(Long userId);
+
     User findByEmailAndSocialLoginProvider(
         String email,
         SocialLoginProvider socialLoginProvider

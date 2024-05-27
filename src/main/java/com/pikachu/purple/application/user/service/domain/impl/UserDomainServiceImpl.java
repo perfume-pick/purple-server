@@ -27,6 +27,11 @@ public class UserDomainServiceImpl implements UserDomainService {
     }
 
     @Override
+    public User getById(Long userId) {
+        return userRepository.getById(userId);
+    }
+
+    @Override
     public void updateNickname(
         Long userId,
         String nickname

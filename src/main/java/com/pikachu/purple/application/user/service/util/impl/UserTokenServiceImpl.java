@@ -1,5 +1,7 @@
 package com.pikachu.purple.application.user.service.util.impl;
 
+import static com.pikachu.purple.bootstrap.common.exception.BusinessException.AccessTokenExpiredException;
+
 import com.auth0.jwk.JwkException;
 import com.pikachu.purple.application.common.properties.JwtTokenProperties;
 import com.pikachu.purple.application.user.port.out.UserTokenRepository;
@@ -11,6 +13,8 @@ import com.pikachu.purple.application.user.vo.tokens.AccessToken;
 import com.pikachu.purple.application.user.vo.tokens.IdToken;
 import com.pikachu.purple.application.user.vo.tokens.JwtToken;
 import com.pikachu.purple.application.user.vo.tokens.RefreshToken;
+import com.pikachu.purple.bootstrap.common.exception.BusinessException;
+import com.pikachu.purple.bootstrap.common.exception.ErrorCode;
 import com.pikachu.purple.domain.user.entity.User;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import com.pikachu.purple.support.security.auth.util.JwtTokenProvider;
@@ -46,9 +50,18 @@ public class UserTokenServiceImpl implements UserTokenService {
 
     @Override
     public AccessToken resolveAccessToken(String accessToken) {
-        JwtClaims jwtClaims = jwtTokenProvider.verifyToken(accessToken, jwtTokenProperties.getAccess().secret());
-        Long userId = Long.valueOf(jwtClaims.getCustomClaims().get("userId").toString().replace("\"", ""));
+        JwtClaims jwtClaims = jwtTokenProvider.verifyToken(
+            accessToken,
+            jwtTokenProperties.getAccess().secret()
+        );
+        Long userId = Long.valueOf(
+            jwtClaims.getCustomClaims().get("userId").toString().replace("\"", "")
+        );
         String email = jwtClaims.getCustomClaims().get("email").toString().replace("\"", "");
+
+        userTokenRepository.findAccessTokenByUserId(
+            Long.valueOf(jwtClaims.getCustomClaims().get("userId").toString())
+        ).orElseThrow(() -> AccessTokenExpiredException);
 
         return new AccessToken(
             userId,
@@ -58,7 +71,14 @@ public class UserTokenServiceImpl implements UserTokenService {
 
     @Override
     public RefreshToken resolveRefreshToken(String refreshToken) {
-        JwtClaims jwtClaims = jwtTokenProvider.verifyToken(refreshToken, jwtTokenProperties.getRefresh().secret());
+        JwtClaims jwtClaims = jwtTokenProvider.verifyToken(
+            refreshToken,
+            jwtTokenProperties.getRefresh().secret()
+        );
+
+        userTokenRepository.findRefreshTokenByUserId(
+            Long.valueOf(jwtClaims.getCustomClaims().get("userId").toString())
+        ).orElseThrow(() -> new BusinessException(ErrorCode.REFRESH_TOKEN_NOT_FOUND));
 
         return new RefreshToken(
             Long.valueOf(jwtClaims.getCustomClaims().get("userId").toString())
@@ -67,7 +87,10 @@ public class UserTokenServiceImpl implements UserTokenService {
 
     @Override
     public JwtToken resolveJwtToken(String jwtToken) {
-        JwtClaims jwtClaims = jwtTokenProvider.verifyToken(jwtToken, jwtTokenProperties.getJwt().secret());
+        JwtClaims jwtClaims = jwtTokenProvider.verifyToken(
+            jwtToken,
+            jwtTokenProperties.getJwt().secret()
+        );
 
         return new JwtToken(
             jwtClaims.getCustomClaims().get("accessToken").toString(),
@@ -85,7 +108,9 @@ public class UserTokenServiceImpl implements UserTokenService {
         JwtClaims jwtClaims = new JwtClaims(
             new RegisteredClaims(
                 null,
-                Date.from(Instant.now().plusSeconds(jwtTokenProperties.getAccess().expireSeconds())),
+                Date.from(
+                    Instant.now().plusSeconds(jwtTokenProperties.getAccess().expireSeconds())
+                ),
                 Date.from(Instant.now()),
                 Date.from(Instant.now()),
                 jwtTokenProperties.getIssuer(),
@@ -93,6 +118,17 @@ public class UserTokenServiceImpl implements UserTokenService {
                 null
             ),
             customClaims
+        );
+
+        String accessToken = jwtTokenProvider.createToken(
+            jwtClaims,
+            jwtTokenProperties.getAccess().secret()
+        );
+
+        userTokenRepository.saveAccessToken(
+            user.getId(),
+            accessToken,
+            jwtTokenProperties.getAccess().expireSeconds()
         );
 
         return jwtTokenProvider.createToken(jwtClaims, jwtTokenProperties.getAccess().secret());
@@ -108,7 +144,8 @@ public class UserTokenServiceImpl implements UserTokenService {
             new RegisteredClaims(
                 null,
                 Date.from(
-                    Instant.now().plusSeconds(jwtTokenProperties.getRefresh().expireSeconds())),
+                    Instant.now().plusSeconds(jwtTokenProperties.getRefresh().expireSeconds())
+                ),
                 Date.from(Instant.now()),
                 Date.from(Instant.now()),
                 jwtTokenProperties.getIssuer(),
@@ -122,7 +159,6 @@ public class UserTokenServiceImpl implements UserTokenService {
             jwtClaims,
             jwtTokenProperties.getRefresh().secret()
         );
-
 
         userTokenRepository.saveRefreshToken(
             user.getId(),
@@ -159,19 +195,10 @@ public class UserTokenServiceImpl implements UserTokenService {
             customClaims
         );
 
-        String jwtToken = jwtTokenProvider.createToken(
+        return jwtTokenProvider.createToken(
             jwtClaims,
             jwtTokenProperties.getJwt().secret()
         );
-
-
-        userTokenRepository.saveJwtToken(
-            user.getId(),
-            jwtToken,
-            jwtTokenProperties.getJwt().expireSeconds()
-        );
-
-        return jwtToken;
     }
 
 }

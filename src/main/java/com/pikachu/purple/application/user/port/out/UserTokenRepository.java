@@ -1,5 +1,7 @@
 package com.pikachu.purple.application.user.port.out;
 
+import java.util.Optional;
+
 public interface UserTokenRepository {
 
     void saveRefreshToken(
@@ -8,10 +10,18 @@ public interface UserTokenRepository {
         Long expirationSeconds
     );
 
-    void saveJwtToken(
+    void saveAccessToken(
         Long userId,
-        String jwtToken,
+        String accessToken,
         Long expirationSeconds
+    );
+
+    Optional<String> findAccessTokenByUserId(
+        Long userId
+    );
+
+    Optional<String> findRefreshTokenByUserId(
+        Long userId
     );
 
 }
