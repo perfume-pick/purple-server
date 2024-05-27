@@ -3,6 +3,7 @@ package com.pikachu.purple.application.user.service.application;
 import com.auth0.jwk.JwkException;
 import com.pikachu.purple.application.common.properties.KakaoSocialLoginProperties;
 import com.pikachu.purple.application.user.port.in.SocialLoginUseCase;
+import com.pikachu.purple.application.user.port.in.UserSignUpUseCase;
 import com.pikachu.purple.application.user.service.domain.UserDomainService;
 import com.pikachu.purple.application.user.service.util.SocialLoginService;
 import com.pikachu.purple.application.user.service.util.UserTokenService;
@@ -26,6 +27,7 @@ public class SocialLoginApplicationService implements SocialLoginUseCase {
     private final SocialLoginService socialLoginService;
     private final UserDomainService userDomainService;
     private final UserTokenService userTokenService;
+    private final UserSignUpUseCase userSignUpUseCase;
 
     @Override
     public Result invoke(Command command)
@@ -48,7 +50,17 @@ public class SocialLoginApplicationService implements SocialLoginUseCase {
         );
 
         if (user == null) {
-            // 회원가입 로직
+            userSignUpUseCase.invoke(
+                new UserSignUpUseCase.Command(
+                    email,
+                    command.socialLoginProvider()
+                )
+            );
+
+            user = userDomainService.findByEmailAndSocialLoginProvider(
+                email,
+                command.socialLoginProvider()
+            );
         }
 
         String accessToken = userTokenService.generateAccessToken(user);
