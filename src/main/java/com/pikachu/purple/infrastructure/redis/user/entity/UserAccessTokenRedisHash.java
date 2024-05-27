@@ -20,7 +20,11 @@ public class UserAccessTokenRedisHash {
     @TimeToLive
     private Long expirationSeconds;
 
-    public UserAccessTokenRedisHash(Long id, String accessToken, Long expirationSeconds) {
+    public UserAccessTokenRedisHash(
+        Long id,
+        String accessToken,
+        Long expirationSeconds
+    ) {
         this.id = id;
         this.accessToken = accessToken;
         this.expirationSeconds = expirationSeconds;

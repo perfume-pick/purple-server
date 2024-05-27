@@ -1,7 +1,6 @@
 package com.pikachu.purple.application.user.service.util.impl;
 
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.AccessTokenExpiredException;
-import static com.pikachu.purple.bootstrap.common.exception.BusinessException.RefreshTokenNotFoundException;
 
 import com.auth0.jwk.JwkException;
 import com.pikachu.purple.application.common.properties.JwtTokenProperties;
@@ -14,6 +13,8 @@ import com.pikachu.purple.application.user.vo.tokens.AccessToken;
 import com.pikachu.purple.application.user.vo.tokens.IdToken;
 import com.pikachu.purple.application.user.vo.tokens.JwtToken;
 import com.pikachu.purple.application.user.vo.tokens.RefreshToken;
+import com.pikachu.purple.bootstrap.common.exception.BusinessException;
+import com.pikachu.purple.bootstrap.common.exception.ErrorCode;
 import com.pikachu.purple.domain.user.entity.User;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import com.pikachu.purple.support.security.auth.util.JwtTokenProvider;
@@ -77,7 +78,7 @@ public class UserTokenServiceImpl implements UserTokenService {
 
         userTokenRepository.findRefreshTokenByUserId(
             Long.valueOf(jwtClaims.getCustomClaims().get("userId").toString())
-        ).orElseThrow(() -> RefreshTokenNotFoundException);
+        ).orElseThrow(() -> new BusinessException(ErrorCode.REFRESH_TOKEN_NOT_FOUND));
 
         return new RefreshToken(
             Long.valueOf(jwtClaims.getCustomClaims().get("userId").toString())

@@ -40,4 +40,5 @@ public class RefreshJwtTokenApplicationService implements RefreshJwtTokenUseCase
             )
         );
     }
+
 }
