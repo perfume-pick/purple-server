@@ -3,9 +3,10 @@ package com.pikachu.purple.application.user.service.util.impl;
 import com.pikachu.purple.application.user.service.util.SocialLoginService;
 import com.pikachu.purple.application.user.service.util.strategy.SocialLoginStrategy;
 import com.pikachu.purple.application.user.service.util.strategy.SocialLoginStrategyFactory;
-import com.pikachu.purple.common.vo.Url;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import com.pikachu.purple.domain.user.vo.SocialLoginToken;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -18,15 +19,15 @@ public class SocialLoginServiceImpl implements SocialLoginService {
     private final SocialLoginStrategyFactory socialLoginStrategyFactory;
 
     @Override
-    public Url createUri(SocialLoginProvider socialLoginProvider) {
+    public URI createUri(SocialLoginProvider socialLoginProvider) throws URISyntaxException {
         SocialLoginStrategy socialLoginUriStrategy = socialLoginStrategyFactory.getStrategy(
             socialLoginProvider);
 
-        Url url = socialLoginUriStrategy.getUrl();
+        URI uri = socialLoginUriStrategy.getUrl();
 
         UUID stateCode = generateState();
 
-        return addState(url, stateCode);
+        return addState(uri, stateCode);
     }
 
     @Override
@@ -44,11 +45,11 @@ public class SocialLoginServiceImpl implements SocialLoginService {
         return UUID.randomUUID();
     }
 
-    private Url addState(
-        Url url,
+    private URI addState(
+        URI uri,
         UUID stateCode
-    ) {
-        return new Url(url.toString() + QUERY_PARAMETER_DELIMITER + "state=" + stateCode);
+    ) throws URISyntaxException {
+        return new URI(uri.toString() + QUERY_PARAMETER_DELIMITER + "state=" + stateCode);
     }
 
 }

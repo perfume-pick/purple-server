@@ -27,7 +27,7 @@ public interface AuthApi {
     @ResponseStatus(HttpStatus.OK)
     SocialLoginTryResponse socialLoginTry(
         @PathVariable("provider") SocialLoginProvider provider
-    );
+    ) throws URISyntaxException;
 
     @Operation(summary = "소셜 로그인")
     @PostMapping("/login/{provider}")
