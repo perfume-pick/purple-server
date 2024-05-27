@@ -32,4 +32,16 @@ public class BusinessException extends RuntimeException {
         ErrorCode.INVALID_VERIFY_CODE
     );
 
+    public static final BusinessException AccessTokenExpiredException = new BusinessException(
+        ErrorCode.ACCESS_TOKEN_EXPIRED_EXCEPTION
+    );
+
+    public static final BusinessException RefreshTokenExpiredException = new BusinessException(
+        ErrorCode.ACCESS_TOKEN_EXPIRED_EXCEPTION
+    );
+
+    public static final BusinessException RefreshTokenNotFoundException = new BusinessException(
+        ErrorCode.REFRESH_TOKEN_NOT_FOUND
+    );
+
 }

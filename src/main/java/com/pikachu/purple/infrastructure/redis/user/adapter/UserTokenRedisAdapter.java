@@ -1,10 +1,11 @@
 package com.pikachu.purple.infrastructure.redis.user.adapter;
 
 import com.pikachu.purple.application.user.port.out.UserTokenRepository;
-import com.pikachu.purple.infrastructure.redis.user.entity.UserJwtTokenRedisHash;
+import com.pikachu.purple.infrastructure.redis.user.entity.UserAccessTokenRedisHash;
 import com.pikachu.purple.infrastructure.redis.user.entity.UserRefreshTokenRedisHash;
-import com.pikachu.purple.infrastructure.redis.user.repository.UserJwtTokenRedisRepository;
+import com.pikachu.purple.infrastructure.redis.user.repository.UserAccessTokenRedisRepository;
 import com.pikachu.purple.infrastructure.redis.user.repository.UserRefreshTokenRedisRepository;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Component;
 public class UserTokenRedisAdapter implements UserTokenRepository {
 
     private final UserRefreshTokenRedisRepository userRefreshTokenRedisRepository;
-    private final UserJwtTokenRedisRepository userJwtTokenRedisRepository;
+    private final UserAccessTokenRedisRepository userAccessTokenRedisRepository;
 
     @Override
     public void saveRefreshToken(
@@ -31,18 +32,37 @@ public class UserTokenRedisAdapter implements UserTokenRepository {
     }
 
     @Override
-    public void saveJwtToken(
+    public void saveAccessToken(
         Long userId,
-        String jwtToken,
+        String accessToken,
         Long expirationSeconds
     ) {
-        UserJwtTokenRedisHash userJwtTokenRedisHash = new UserJwtTokenRedisHash(
+        UserAccessTokenRedisHash userAccessTokenRedisHash = new UserAccessTokenRedisHash(
             userId,
-            jwtToken,
+            accessToken,
             expirationSeconds
         );
 
-        userJwtTokenRedisRepository.save(userJwtTokenRedisHash);
+        userAccessTokenRedisRepository.save(userAccessTokenRedisHash);
     }
 
+    @Override
+    public Optional<String> findAccessTokenByUserId(Long userId) {
+        Optional<UserAccessTokenRedisHash> userAccessTokenRedisHash = userAccessTokenRedisRepository.findById(
+            userId);
+
+        String accessToken = userAccessTokenRedisHash.get().getAccessToken();
+
+        return Optional.of(accessToken);
+    }
+
+    @Override
+    public Optional<String> findRefreshTokenByUserId(Long userId) {
+        Optional<UserRefreshTokenRedisHash> userRefreshTokenRedisHash = userRefreshTokenRedisRepository.findById(
+            userId);
+
+        String refreshToken = userRefreshTokenRedisHash.get().getRefreshToken();
+
+        return Optional.of(refreshToken);
+    }
 }
