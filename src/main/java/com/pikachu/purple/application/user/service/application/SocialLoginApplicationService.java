@@ -61,14 +61,15 @@ public class SocialLoginApplicationService implements SocialLoginUseCase {
         );
 
         return new SocialLoginUseCase.Result(
-            generateLoginSuccessUrl(jwtToken)
+            generateLoginSuccessUri(jwtToken).toString()
         );
     }
 
-    private URI generateLoginSuccessUrl(String jwtToken) throws URISyntaxException {
+    private URI generateLoginSuccessUri(String jwtToken) throws URISyntaxException {
         String redirectUri = kakaoSocialLoginProperties.getLoginSuccessUri();
 
-        String loginSuccessUri = redirectUri + QUERY_PARAMETER_PREFIX + QUERY_PARAMETER_TOKEN_KEY + jwtToken;
+        String loginSuccessUri =
+            redirectUri + QUERY_PARAMETER_PREFIX + QUERY_PARAMETER_TOKEN_KEY + jwtToken;
 
         return new URI(loginSuccessUri);
     }

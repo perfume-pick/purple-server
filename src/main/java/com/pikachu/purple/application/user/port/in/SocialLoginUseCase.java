@@ -3,7 +3,6 @@ package com.pikachu.purple.application.user.port.in;
 import com.auth0.jwk.JwkException;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URISyntaxException;
 
 public interface SocialLoginUseCase {
@@ -15,10 +14,12 @@ public interface SocialLoginUseCase {
         SocialLoginProvider socialLoginProvider,
         String authorizationCode
     ) {
+
     }
 
     record Result(
-        URI socialLoginSuccessUrl
+        String socialLoginSuccessUrl
     ) {
+
     }
 }

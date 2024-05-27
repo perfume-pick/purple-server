@@ -1,12 +1,13 @@
 package com.pikachu.purple.application.user.service.util;
 
-import com.pikachu.purple.common.vo.Url;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import com.pikachu.purple.domain.user.vo.SocialLoginToken;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 public interface SocialLoginService {
 
-    Url createUri(SocialLoginProvider socialLoginProvider);
+    URI createUri(SocialLoginProvider socialLoginProvider) throws URISyntaxException;
 
     SocialLoginToken getToken(
         SocialLoginProvider socialLoginProvider,

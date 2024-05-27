@@ -5,11 +5,12 @@ import com.pikachu.purple.application.common.properties.KakaoSocialLoginProperti
 import com.pikachu.purple.application.user.port.out.SocialLoginPort;
 import com.pikachu.purple.application.user.vo.SocialLoginTokenRequest;
 import com.pikachu.purple.application.user.vo.tokens.IdToken;
-import com.pikachu.purple.common.vo.Url;
 import com.pikachu.purple.domain.user.vo.SocialLoginToken;
 import com.pikachu.purple.support.security.auth.util.JwtTokenProvider;
 import com.pikachu.purple.support.security.auth.vo.JwtClaims;
 import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
@@ -31,7 +32,7 @@ public class KakaoSocialLoginStrategy implements SocialLoginStrategy {
     private final SocialLoginPort socialLoginPort;
 
     @Override
-    public Url getUrl() {
+    public URI getUrl() throws URISyntaxException {
         return generateUrl(kakaoSocialLoginProperties.getAuthorizeUri());
     }
 
@@ -47,8 +48,8 @@ public class KakaoSocialLoginStrategy implements SocialLoginStrategy {
         );
     }
 
-    private Url generateUrl(String socialLoginPath) {
-        return new Url(
+    private URI generateUrl(String socialLoginPath) throws URISyntaxException {
+        return new URI(
             socialLoginPath +
                 QUERY_PARAMETER_PREFIX + "client_id=" + kakaoSocialLoginProperties.getClientId()
                 +

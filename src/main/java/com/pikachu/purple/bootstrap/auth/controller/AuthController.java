@@ -24,12 +24,13 @@ public class AuthController implements AuthApi {
     private final RefreshJwtTokenUseCase refreshJwtTokenUseCase;
 
     @Override
-    public SocialLoginTryResponse socialLoginTry(SocialLoginProvider socialLoginProvider) {
+    public SocialLoginTryResponse socialLoginTry(SocialLoginProvider socialLoginProvider)
+        throws URISyntaxException {
         SocialLoginTryUseCase.Result result = socialLoginTryUseCase.invoke(
             new SocialLoginTryUseCase.Command(socialLoginProvider)
         );
 
-        return new SocialLoginTryResponse(result.socialLoginUrl().getValue());
+        return new SocialLoginTryResponse(result.socialLoginUrl());
     }
 
     @Override
@@ -45,7 +46,7 @@ public class AuthController implements AuthApi {
             )
         );
 
-        response.sendRedirect(result.socialLoginSuccessUrl().toString());
+        response.sendRedirect(result.socialLoginSuccessUrl());
     }
 
     @Override
