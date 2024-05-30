@@ -8,4 +8,6 @@ public interface PerfumeDomainService {
 
     List<Perfume> findByPerfumeBrands(List<PerfumeBrand> brandList);
 
+    List<Perfume> findByUserPreferenceNotes(Long userId);
+
 }
