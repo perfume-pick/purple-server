@@ -1,5 +1,7 @@
 package com.pikachu.purple.application.userPreferenceNote.service.application;
 
+import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
+
 import com.pikachu.purple.application.userPreferenceNote.port.in.UserPreferenceNoteGetUseCase;
 import com.pikachu.purple.application.userPreferenceNote.service.domain.UserPreferenceNoteDomainService;
 import com.pikachu.purple.domain.user.entity.UserPreferenceNote;
@@ -15,7 +17,8 @@ public class UserPreferenceNoteGetApplicationService implements UserPreferenceNo
 
     @Override
     public Result invoke() {
-        List<UserPreferenceNote> userPreferenceNoteList = userPreferenceNoteDomainService.getByUserId(1L);
+        List<UserPreferenceNote> userPreferenceNoteList = userPreferenceNoteDomainService.getByUserId(
+            getCurrentUserAuthentication().userId());
 
         return new Result(userPreferenceNoteList);
     }

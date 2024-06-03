@@ -3,7 +3,6 @@ package com.pikachu.purple.bootstrap.perfume.controller;
 import com.pikachu.purple.application.perfume.port.in.PerfumeGetByBrandsUseCase;
 import com.pikachu.purple.application.perfume.port.in.PerfumeGetByBrandsUseCase.Command;
 import com.pikachu.purple.application.perfume.port.in.PerfumeGetByUserPreferenceNoteUseCase;
-import com.pikachu.purple.application.userPreferenceNote.port.in.UserPreferenceNoteSaveUseCase;
 import com.pikachu.purple.bootstrap.perfume.api.PerfumeApi;
 import com.pikachu.purple.bootstrap.perfume.dto.request.GetPerfumeByBrandsRequest;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeByBrandsResponse;
@@ -29,7 +28,10 @@ public class PerfumeController implements PerfumeApi {
     public GetPreferenceBasedRecommendResponse getPreferenceBasedRecommend() {
         PerfumeGetByUserPreferenceNoteUseCase.Result result = perfumeGetByUserPreferenceNoteUseCase.invoke();
 
-        return new GetPreferenceBasedRecommendResponse(result.perfumeList());
+        return new GetPreferenceBasedRecommendResponse(
+            result.userPreferenceNoteList(),
+            result.perfumeList()
+        );
     }
 
 }

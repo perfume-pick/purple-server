@@ -1,7 +1,9 @@
 package com.pikachu.purple.application.userPreferenceNote.service.application;
 
+import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
+
 import com.pikachu.purple.application.userPreferenceNote.port.in.UserPreferenceNoteSaveUseCase;
-import com.pikachu.purple.application.perfume.port.in.PerfumeNoteGetByRatingsUseCase;
+import com.pikachu.purple.application.perfume.port.in.PerfumeNoteGetByPerfumeIdListUseCase;
 import com.pikachu.purple.application.perfume.util.RecommendNotesProvider;
 import com.pikachu.purple.application.rating.port.in.RatingGetByUserIdUseCase;
 import com.pikachu.purple.application.userPreferenceNote.service.domain.UserPreferenceNoteDomainService;
@@ -19,19 +21,20 @@ public class UserPreferenceNoteSaveApplicationService implements
     UserPreferenceNoteSaveUseCase {
 
     private final RatingGetByUserIdUseCase ratingGetByUserIdUseCase;
-    private final PerfumeNoteGetByRatingsUseCase perfumeNoteGetByRatingsUseCase;
+    private final PerfumeNoteGetByPerfumeIdListUseCase perfumeNoteGetByRatingsUseCase;
     private final RecommendNotesProvider recommendNotesProvider;
     private final UserPreferenceNoteDomainService userPreferenceNoteDomainService;
 
     @Override
     public void invoke() {
-        RatingGetByUserIdUseCase.Result ratingResult = ratingGetByUserIdUseCase.invoke(1L);
+        Long userId = getCurrentUserAuthentication().userId();
+        RatingGetByUserIdUseCase.Result ratingResult = ratingGetByUserIdUseCase.invoke(userId);
 
         List<Long> perfumeIdList = ratingResult.ratingList().stream()
             .map(Rating::getPerfumeId)
             .toList();
 
-        PerfumeNoteGetByRatingsUseCase.Result perfumeNoteResult = perfumeNoteGetByRatingsUseCase.invoke(perfumeIdList);
+        PerfumeNoteGetByPerfumeIdListUseCase.Result perfumeNoteResult = perfumeNoteGetByRatingsUseCase.invoke(perfumeIdList);
 
         List<Note> topThreeNoteList = recommendNotesProvider.getTopThreeNotes(
             ratingResult.ratingList(),
@@ -44,7 +47,7 @@ public class UserPreferenceNoteSaveApplicationService implements
 
         userPreferenceNoteDomainService.save(
             userPreferenceNoteIdList,
-            1L,
+            userId,
             topThreeNoteList
         );
     }
