@@ -1,5 +1,7 @@
 package com.pikachu.purple.application.rating.service.application;
 
+import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
+
 import com.pikachu.purple.application.rating.port.in.RatingSaveUseCase;
 import com.pikachu.purple.application.rating.service.domain.RatingDomainService;
 import com.pikachu.purple.application.util.IdGenerator;
@@ -26,7 +28,7 @@ public class RatingSaveApplicationService implements RatingSaveUseCase {
 
         ratingDomainService.create(
             ratingIdList,
-            command.userId(),
+            getCurrentUserAuthentication().userId(),
             command.ratingValueList()
         );
     }

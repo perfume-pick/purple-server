@@ -7,10 +7,8 @@ public interface RatingSaveUseCase {
 
     void invoke(Command command);
 
-    record Command(
-        Long userId,
-        List<RatingValue> ratingValueList
-    ) {
+    record Command(List<RatingValue> ratingValueList) {
+
     }
 
 }
