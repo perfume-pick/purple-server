@@ -21,6 +21,7 @@ public interface PerfumeApi {
     @ResponseStatus(HttpStatus.OK)
     GetPerfumeByBrandsResponse getPerfumeByBrands(@RequestBody GetPerfumeByBrandsRequest request);
 
+    @Secured
     @Operation(summary = "선호노트 기반 추천 향수 리스트 조회")
     @GetMapping("/preference-based/recommend")
     @ResponseStatus(HttpStatus.OK)
