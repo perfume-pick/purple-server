@@ -20,8 +20,8 @@ public class PerfumeServiceImpl implements PerfumeDomainService {
     }
 
     @Override
-    public List<Perfume> findByUserPreferenceNotes(Long userId) {
-        return perfumeRepository.findByUserPreferenceNotes(userId);
+    public List<Perfume> findUserPreferenceNotesByUserId(Long userId) {
+        return perfumeRepository.findUserPreferenceNotesByUserId(userId);
     }
 
 }

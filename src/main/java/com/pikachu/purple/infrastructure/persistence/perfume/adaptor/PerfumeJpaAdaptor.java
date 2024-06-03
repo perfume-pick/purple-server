@@ -3,7 +3,6 @@ package com.pikachu.purple.infrastructure.persistence.perfume.adaptor;
 import com.pikachu.purple.application.perfume.port.out.PerfumeRepository;
 import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.perfume.PerfumeBrand;
-import com.pikachu.purple.domain.user.entity.UserPreferenceNote;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeJpaRepository;
 import java.util.List;
@@ -33,9 +32,9 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
     }
 
     @Override
-    public List<Perfume> findByUserPreferenceNotes(Long userId) {
+    public List<Perfume> findUserPreferenceNotesByUserId(Long userId) {
         PageRequest pageRequest = PageRequest.of(ZERO, THIRTY);
-        List<PerfumeJpaEntity> perfumeJpaEntityList = perfumeJpaRepository.findByUserPreferenceNotes(
+        List<PerfumeJpaEntity> perfumeJpaEntityList = perfumeJpaRepository.findUserPreferenceNotesByUserId(
             userId,
             pageRequest
         ).getContent();
