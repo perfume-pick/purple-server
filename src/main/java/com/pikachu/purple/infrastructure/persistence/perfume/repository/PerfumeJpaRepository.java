@@ -25,6 +25,6 @@ public interface PerfumeJpaRepository extends JpaRepository<PerfumeJpaEntity, Lo
         "GROUP BY p.perfume_id " +
         "ORDER BY COUNT(pn.perfume_note_id) DESC ",
         nativeQuery = true)
-    Page<PerfumeJpaEntity> findUserPreferenceNotesByUserId(@Param("userId") Long userId, Pageable pageable);
+    Page<PerfumeJpaEntity> findByUserPreferenceNotes(@Param("userId") Long userId, Pageable pageable);
 
 }

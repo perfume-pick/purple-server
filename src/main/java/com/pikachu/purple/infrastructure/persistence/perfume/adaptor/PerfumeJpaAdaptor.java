@@ -32,9 +32,9 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
     }
 
     @Override
-    public List<Perfume> findUserPreferenceNotesByUserId(Long userId) {
+    public List<Perfume> findByUserPreferenceNotes(Long userId) {
         PageRequest pageRequest = PageRequest.of(ZERO, THIRTY);
-        List<PerfumeJpaEntity> perfumeJpaEntityList = perfumeJpaRepository.findUserPreferenceNotesByUserId(
+        List<PerfumeJpaEntity> perfumeJpaEntityList = perfumeJpaRepository.findByUserPreferenceNotes(
             userId,
             pageRequest
         ).getContent();
