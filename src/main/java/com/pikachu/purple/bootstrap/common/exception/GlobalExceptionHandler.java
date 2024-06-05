@@ -1,5 +1,6 @@
 package com.pikachu.purple.bootstrap.common.exception;
 
+import com.pikachu.purple.bootstrap.common.dto.ErrorResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -32,7 +33,10 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     private ResponseEntity<?> makeErrorResponse(ErrorCode errorCode) {
         return ResponseEntity.status(errorCode.getStatus())
-            .body(errorCode.getCode());
+            .body(ErrorResponse.of(
+                errorCode.getCode(),
+                errorCode.getMessage())
+            );
     }
 
 }
