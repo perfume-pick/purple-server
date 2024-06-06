@@ -12,6 +12,6 @@ public interface RatingDomainService {
         List<RatingValue> ratingValueList
     );
 
-    List<Rating> getByUserId(Long userId);
+    List<Rating> getAllByUserId(Long userId);
 
 }

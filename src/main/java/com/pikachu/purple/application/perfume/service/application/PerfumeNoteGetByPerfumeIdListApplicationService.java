@@ -16,7 +16,7 @@ public class PerfumeNoteGetByPerfumeIdListApplicationService implements
 
     @Override
     public Result invoke(List<Long> perfumeIdList) {
-        List<PerfumeNote> perfumeNoteList = perfumeNoteDomainService.getByPerfumeIdList(perfumeIdList);
+        List<PerfumeNote> perfumeNoteList = perfumeNoteDomainService.getAllByPerfumeIds(perfumeIdList);
 
         return new Result(perfumeNoteList);
     }

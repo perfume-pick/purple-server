@@ -25,7 +25,7 @@ public class RatingJpaAdaptor implements RatingRepository {
     }
 
     @Override
-    public List<Rating> getByUserId(Long userId) {
+    public List<Rating> getAllByUserId(Long userId) {
         List<RatingJpaEntity> ratingJpaEntities = ratingJpaRepository.findByUserId(userId);
 
         return ratingJpaEntities.stream()

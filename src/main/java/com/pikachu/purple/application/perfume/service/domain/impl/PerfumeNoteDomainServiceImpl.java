@@ -14,8 +14,8 @@ public class PerfumeNoteDomainServiceImpl implements PerfumeNoteDomainService {
     private final PerfumeNoteRepository perfumeNoteRepository;
 
     @Override
-    public List<PerfumeNote> getByPerfumeIdList(List<Long> perfumeList) {
-        return perfumeNoteRepository.getByPerfumeIdList(perfumeList);
+    public List<PerfumeNote> getAllByPerfumeIds(List<Long> perfumeList) {
+        return perfumeNoteRepository.getAllByPerfumeIds(perfumeList);
     }
 
 }

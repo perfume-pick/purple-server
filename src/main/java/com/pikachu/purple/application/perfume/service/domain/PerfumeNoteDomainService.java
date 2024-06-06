@@ -5,6 +5,6 @@ import java.util.List;
 
 public interface PerfumeNoteDomainService {
 
-    List<PerfumeNote> getByPerfumeIdList(List<Long> perfumeId);
+    List<PerfumeNote> getAllByPerfumeIds(List<Long> perfumeId);
 
 }

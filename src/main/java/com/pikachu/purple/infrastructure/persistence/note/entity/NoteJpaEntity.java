@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class NoteJpaEntity {
 
     @Id
-    @Column(name = "note_name")
+    @Column(name = "name")
     private String noteName;
 
 }

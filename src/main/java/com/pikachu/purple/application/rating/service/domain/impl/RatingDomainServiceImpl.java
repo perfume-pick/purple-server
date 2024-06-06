@@ -36,10 +36,8 @@ public class RatingDomainServiceImpl implements RatingDomainService {
     }
 
     @Override
-    public List<Rating> getByUserId(Long userId) {
-        List<Rating> ratingList = ratingRepository.getByUserId(userId);
-
-        return ratingList;
+    public List<Rating> getAllByUserId(Long userId) {
+        return ratingRepository.getAllByUserId(userId);
     }
 
 }

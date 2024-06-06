@@ -7,7 +7,7 @@ public interface PerfumeNoteGetByPerfumeIdListUseCase {
 
     Result invoke(List<Long> perfumeIdList);
 
-    record Result(List<PerfumeNote> perfumeNoteList){
+    record Result(List<PerfumeNote> perfumeNoteList) {
 
     }
 

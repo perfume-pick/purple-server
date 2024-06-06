@@ -7,6 +7,6 @@ public interface RatingRepository {
 
     void create(List<Rating> ratingList);
 
-    List<Rating> getByUserId(Long userId);
+    List<Rating> getAllByUserId(Long userId);
 
 }

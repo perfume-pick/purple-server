@@ -24,12 +24,4 @@ public class PerfumeNote {
         this.noteName = noteName;
     }
 
-    @Override
-    public String toString() {
-        return "PerfumeNote{" +
-            "perfumeId=" + perfumeId +
-            ", noteName='" + noteName + '\'' +
-            '}';
-    }
-
 }

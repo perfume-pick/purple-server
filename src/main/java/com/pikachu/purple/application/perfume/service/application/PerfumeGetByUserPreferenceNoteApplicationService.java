@@ -19,12 +19,12 @@ public class PerfumeGetByUserPreferenceNoteApplicationService implements Perfume
 
     @Override
     public Result invoke() {
-        List<Perfume> perfumeList = perfumeDomainService.findByUserPreferenceNotes(
-            getCurrentUserAuthentication().userId());
-        UserPreferenceNoteGetUseCase.Result result = userPreferenceNoteGetUseCase.invoke();
+        Long userId = getCurrentUserAuthentication().userId();
+        List<Perfume> perfumeList = perfumeDomainService.findByUserPreferenceNotes(userId);
+        UserPreferenceNoteGetUseCase.Result userPreferenceNoteList = userPreferenceNoteGetUseCase.invoke();
 
         return new Result(
-            result.userPreferenceNoteList(),
+            userPreferenceNoteList.userPreferenceNoteList(),
             perfumeList
         );
     }

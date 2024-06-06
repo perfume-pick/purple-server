@@ -17,8 +17,8 @@ public class UserPreferenceNoteGetApplicationService implements UserPreferenceNo
 
     @Override
     public Result invoke() {
-        List<UserPreferenceNote> userPreferenceNoteList = userPreferenceNoteDomainService.getByUserId(
-            getCurrentUserAuthentication().userId());
+        Long userId = getCurrentUserAuthentication().userId();
+        List<UserPreferenceNote> userPreferenceNoteList = userPreferenceNoteDomainService.getByUserId(userId);
 
         return new Result(userPreferenceNoteList);
     }

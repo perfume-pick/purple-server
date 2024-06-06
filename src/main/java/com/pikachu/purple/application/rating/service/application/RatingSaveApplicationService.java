@@ -15,14 +15,13 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class RatingSaveApplicationService implements RatingSaveUseCase {
 
-    private static final int ZERO = 0;
     private final RatingDomainService ratingDomainService;
     private final UserPreferenceNoteSaveUseCase userPreferenceNoteSaveUseCase;
 
     @Transactional
     @Override
     public void invoke(Command command) {
-        List<Long> ratingIdList = IntStream.range(ZERO, command.ratingValueList().size())
+        List<Long> ratingIdList = IntStream.range(0, command.ratingValueList().size())
             .mapToObj(i -> IdGenerator.generate())
             .collect(Collectors.toList());
 

@@ -15,8 +15,7 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class PerfumeJpaAdaptor implements PerfumeRepository {
 
-    private final static int ZERO = 0;
-    private final static int THIRTY = 30;
+    private final static int MAX_SIZE = 30;
     private final PerfumeJpaRepository perfumeJpaRepository;
 
     public List<Perfume> findByPerfumeBrands(List<PerfumeBrand> brandList) {
@@ -33,7 +32,7 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
 
     @Override
     public List<Perfume> findByUserPreferenceNotes(Long userId) {
-        PageRequest pageRequest = PageRequest.of(ZERO, THIRTY);
+        PageRequest pageRequest = PageRequest.of(0, MAX_SIZE);
         List<PerfumeJpaEntity> perfumeJpaEntityList = perfumeJpaRepository.findByUserPreferenceNotes(
             userId,
             pageRequest

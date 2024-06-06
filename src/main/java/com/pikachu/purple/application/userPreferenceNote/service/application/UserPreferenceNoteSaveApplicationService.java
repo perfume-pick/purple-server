@@ -36,19 +36,19 @@ public class UserPreferenceNoteSaveApplicationService implements
 
         PerfumeNoteGetByPerfumeIdListUseCase.Result perfumeNoteResult = perfumeNoteGetByRatingsUseCase.invoke(perfumeIdList);
 
-        List<Note> topThreeNoteList = recommendNotesProvider.getTopThreeNotes(
+        List<Note> topThreeNotes = recommendNotesProvider.getTopThreeNotes(
             ratingResult.ratingList(),
             perfumeNoteResult.perfumeNoteList()
         );
 
-        List<Long> userPreferenceNoteIdList = IntStream.range(0, topThreeNoteList.size())
+        List<Long> userPreferenceNoteIdList = IntStream.range(0, topThreeNotes.size())
                 .mapToObj(i -> IdGenerator.generate())
                 .toList();
 
         userPreferenceNoteDomainService.save(
             userPreferenceNoteIdList,
             userId,
-            topThreeNoteList
+            topThreeNotes
         );
     }
 

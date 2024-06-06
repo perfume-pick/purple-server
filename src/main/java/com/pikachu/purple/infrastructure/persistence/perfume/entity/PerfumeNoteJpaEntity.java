@@ -22,7 +22,7 @@ public class PerfumeNoteJpaEntity {
     @Column(name = "perfume_id")
     private Long perfumeId;
 
-    @Column(name = "noteName")
+    @Column(name = "note_name")
     private String noteName;
 
     public static PerfumeNote toDomain(PerfumeNoteJpaEntity perfumeNoteJpaEntity) {

@@ -16,7 +16,7 @@ public class PerfumeNoteJpaEntityAdaptor implements PerfumeNoteRepository {
     private final PerfumeNoteJpaRepository perfumeNoteJpaRepository;
 
     @Override
-    public List<PerfumeNote> getByPerfumeIdList(List<Long> perfumeIdList) {
+    public List<PerfumeNote> getAllByPerfumeIds(List<Long> perfumeIdList) {
         List<PerfumeNoteJpaEntity> perfumeNoteJpaEntityList = perfumeNoteJpaRepository.findByPerfumeIdIn(perfumeIdList);
 
         return perfumeNoteJpaEntityList.stream()
