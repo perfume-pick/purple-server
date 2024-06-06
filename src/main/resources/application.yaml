@@ -52,8 +52,8 @@ auth:
     client-id: ${KAKAO_CLIENT_ID}
     response-type: code
     authorize-uri: https://kauth.kakao.com/oauth/authorize
-#    token-request-uri: https://kauth.kakao.com/oauth/token
-    redirect-uri: ${KAKAO_REDIRECT_URI:http://localhost:8080/perpicks/auth/login/kakao/callback}
+    #    token-request-uri: https://kauth.kakao.com/oauth/token
+    redirect-uri: ${KAKAO_REDIRECT_URI:http://localhost:8080/perpicks/auth/login/kakao}
     jwks-uri: ${KAKAO_JWKS_URI:https://kauth.kakao.com/.well-known/jwks.json}
     login-success-uri: ${KAKAO_LOGIN_SUCCESS_URI:http://localhost:3000/perpicks/auth/login/kakao/success}
 

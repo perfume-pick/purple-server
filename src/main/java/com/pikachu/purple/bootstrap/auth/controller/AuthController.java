@@ -35,13 +35,13 @@ public class AuthController implements AuthApi {
 
     @Override
     public void socialLogin(
-        SocialLoginProvider provider,
+        String provider,
         String code,
         HttpServletResponse response
     ) throws IOException, JwkException, URISyntaxException {
         SocialLoginUseCase.Result result = socialLoginUseCase.invoke(
             new SocialLoginUseCase.Command(
-                provider,
+                SocialLoginProvider.of(provider),
                 code
             )
         );
