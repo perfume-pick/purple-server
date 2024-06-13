@@ -1,5 +1,6 @@
 package com.pikachu.purple.bootstrap.perfume.api;
 
+import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetTopThirtyPerfumeBrandResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -15,6 +16,6 @@ public interface PerfumeBrandApi {
     @Operation(summary = "온보딩에 필요한 TOP 30 브랜드 조회")
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    GetTopThirtyPerfumeBrandResponse getTopThirtyBrands();
+    SuccessResponse<GetTopThirtyPerfumeBrandResponse> getTopThirtyBrands();
 
 }
