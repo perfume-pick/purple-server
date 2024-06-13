@@ -2,6 +2,7 @@ package com.pikachu.purple.application.rating.service.application;
 
 import com.pikachu.purple.application.rating.port.in.RatingSaveUseCase;
 import com.pikachu.purple.application.rating.service.domain.RatingDomainService;
+import com.pikachu.purple.application.userPreferenceNote.port.in.UserPreferenceNoteSaveUseCase;
 import com.pikachu.purple.application.util.IdGenerator;
 import jakarta.transaction.Transactional;
 import java.util.List;
@@ -14,13 +15,13 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class RatingSaveApplicationService implements RatingSaveUseCase {
 
-    private static final int ZERO = 0;
     private final RatingDomainService ratingDomainService;
+    private final UserPreferenceNoteSaveUseCase userPreferenceNoteSaveUseCase;
 
     @Transactional
     @Override
     public void invoke(Command command) {
-        List<Long> ratingIdList = IntStream.range(ZERO, command.ratingValueList().size())
+        List<Long> ratingIdList = IntStream.range(0, command.ratingValueList().size())
             .mapToObj(i -> IdGenerator.generate())
             .collect(Collectors.toList());
 
@@ -29,6 +30,8 @@ public class RatingSaveApplicationService implements RatingSaveUseCase {
             command.userId(),
             command.ratingValueList()
         );
+
+        userPreferenceNoteSaveUseCase.invoke();
     }
 
 }
