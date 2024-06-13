@@ -12,18 +12,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class RecommendNotesProvider {
 
-    private static final HashMap<Double, Double> weightMap = new HashMap<>() {{
-        put(5.0, 1.0);
-        put(4.5, 0.9);
-        put(4.0, 0.8);
-        put(3.5, 0.7);
-        put(3.0, 0.0);
-        put(2.5, 0.0);
-        put(2.0, -0.7);
-        put(1.5, -0.8);
-        put(1.0, -0.9);
-        put(0.5, -1.0);
-    }};
+    private static final Map<Double, Double> weightMap = Map.of(
+        5.0, 1.0,
+        4.5, 0.9,
+        4.0, 0.8,
+        3.5, 0.7,
+        3.0, 0.0,
+        2.5, 0.0,
+        2.0, -0.7,
+        1.5, -0.8,
+        1.0, -0.9,
+        0.5, -1.0
+    );
 
     public List<Note> getTopThreeNotes(
         List<Rating> ratingList,
