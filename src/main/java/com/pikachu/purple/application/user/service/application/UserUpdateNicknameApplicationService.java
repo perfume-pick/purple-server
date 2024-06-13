@@ -1,5 +1,7 @@
 package com.pikachu.purple.application.user.service.application;
 
+import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
+
 import com.pikachu.purple.application.user.port.in.UserUpdateNicknameUseCase;
 import com.pikachu.purple.application.user.service.domain.UserDomainService;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +16,7 @@ public class UserUpdateNicknameApplicationService implements UserUpdateNicknameU
     @Override
     public void invoke(Command command) {
         userDomainService.updateNickname(
-            command.userId(),
+            getCurrentUserAuthentication().userId(),
             command.nickname()
         );
     }

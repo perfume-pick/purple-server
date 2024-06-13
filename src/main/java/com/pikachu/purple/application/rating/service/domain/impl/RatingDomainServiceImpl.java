@@ -27,8 +27,8 @@ public class RatingDomainServiceImpl implements RatingDomainService {
             .mapToObj(i -> Rating.builder()
                 .ratingId(ratingIdList.get(i))
                 .userId(userId)
-                .perfumeId(ratingValueList.get(i).getPerfumeId())
-                .score(ratingValueList.get(i).getScore())
+                .perfumeId(ratingValueList.get(i).perfumeId())
+                .score(ratingValueList.get(i).score())
                 .build())
             .collect(Collectors.toList());
 

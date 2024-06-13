@@ -1,5 +1,6 @@
 package com.pikachu.purple.bootstrap.user.api;
 
+import com.pikachu.purple.bootstrap.common.security.Secured;
 import com.pikachu.purple.bootstrap.user.dto.request.RatingRequest;
 import com.pikachu.purple.bootstrap.user.dto.request.UpdateNicknameRequest;
 import io.swagger.v3.oas.annotations.Operation;
@@ -17,11 +18,13 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @RequestMapping(value = "/perpicks/users", produces = "application/json")
 public interface UserApi {
 
+    @Secured
     @Operation(summary = "온보딩에서 향수에 대한 별점 저장")
     @PostMapping
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void saveRating(@RequestBody RatingRequest request);
 
+    @Secured
     @Operation(summary = "닉네임 변경")
     @ApiResponses(
         value = {
