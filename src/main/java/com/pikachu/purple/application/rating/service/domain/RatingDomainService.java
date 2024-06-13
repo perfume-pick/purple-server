@@ -1,6 +1,7 @@
 package com.pikachu.purple.application.rating.service.domain;
 
 import com.pikachu.purple.bootstrap.user.vo.RatingValue;
+import com.pikachu.purple.domain.rating.Rating;
 import java.util.List;
 
 public interface RatingDomainService {
@@ -10,5 +11,7 @@ public interface RatingDomainService {
         Long userId,
         List<RatingValue> ratingValueList
     );
+
+    List<Rating> getAllByUserId(Long userId);
 
 }
