@@ -4,10 +4,8 @@ public interface UserUpdateNicknameUseCase {
 
     void invoke(Command command);
 
-    record Command(
-        Long userId,
-        String nickname
-    ){
+    record Command(String nickname) {
+
     }
 
 }

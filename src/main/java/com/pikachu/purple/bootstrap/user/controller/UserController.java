@@ -18,20 +18,14 @@ public class UserController implements UserApi {
     @Override
     public void saveRating(RatingRequest request) {
         ratingSaveUseCase.invoke(
-            new RatingSaveUseCase.Command(
-                request.ratingInfo().getUserId(),
-                request.ratingInfo().getRatingValueList()
-            )
+            new RatingSaveUseCase.Command(request.ratingValueList())
         );
     }
 
     @Override
     public void updateNickname(UpdateNicknameRequest request) {
         userUpdateNicknameUseCase.invoke(
-            new UserUpdateNicknameUseCase.Command(
-                request.userId(),
-                request.nickname()
-            )
+            new UserUpdateNicknameUseCase.Command(request.nickname())
         );
     }
 

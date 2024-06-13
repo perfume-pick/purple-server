@@ -1,8 +1,5 @@
 package com.pikachu.purple.bootstrap.user.dto.request;
 
-public record UpdateNicknameRequest(
-    Long userId,
-    String nickname
-) {
+public record UpdateNicknameRequest(String nickname) {
 
 }
