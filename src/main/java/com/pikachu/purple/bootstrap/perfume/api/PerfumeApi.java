@@ -23,7 +23,7 @@ public interface PerfumeApi {
 
     @Secured
     @Operation(summary = "선호노트 기반 추천 향수 리스트 조회")
-    @GetMapping("/preference-note")
+    @GetMapping("/preference")
     @ResponseStatus(HttpStatus.OK)
     GetPreferenceBasedRecommendResponse getPreferenceBasedRecommend();
 
