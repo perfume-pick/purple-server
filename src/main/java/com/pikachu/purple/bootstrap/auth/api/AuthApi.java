@@ -11,7 +11,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,10 +30,10 @@ public interface AuthApi {
     ) throws URISyntaxException;
 
     @Operation(summary = "소셜 로그인")
-    @GetMapping("/login/{provider}")
+    @PostMapping("/login/{provider}")
     @ResponseStatus(HttpStatus.OK)
     void socialLogin(
-        @PathVariable("provider") String provider,
+        @PathVariable("provider") SocialLoginProvider provider,
         @RequestParam String code,
         HttpServletResponse response
     ) throws IOException, JwkException, URISyntaxException;
