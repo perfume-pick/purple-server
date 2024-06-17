@@ -26,7 +26,7 @@ public class PerfumeController implements PerfumeApi {
     }
 
     @Override
-    public SuccessResponse<GetPreferenceBasedRecommendResponse> getPreferenceBasedRecommend() {
+    public SuccessResponse<GetPreferenceBasedRecommendResponse> getAllPerfumeByPreference() {
         PerfumeGetByUserPreferenceNoteUseCase.Result result = perfumeGetByUserPreferenceNoteUseCase.invoke();
 
         return SuccessResponse.of(new GetPreferenceBasedRecommendResponse(

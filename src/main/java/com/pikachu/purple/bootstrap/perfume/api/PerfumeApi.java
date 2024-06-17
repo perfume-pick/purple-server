@@ -26,6 +26,6 @@ public interface PerfumeApi {
     @Operation(summary = "선호노트 기반 추천 향수 리스트 조회")
     @GetMapping("/preference")
     @ResponseStatus(HttpStatus.OK)
-    SuccessResponse<GetPreferenceBasedRecommendResponse> getPreferenceBasedRecommend();
+    SuccessResponse<GetPreferenceBasedRecommendResponse> getAllPerfumeByPreference();
 
 }
