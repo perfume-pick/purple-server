@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface PerfumeDomainService {
 
-    List<Perfume> findByPerfumeBrands(List<PerfumeBrand> brandList);
+    List<Perfume> findByPerfumeBrands(List<String> brandList);
 
     List<Perfume> findByUserPreferenceNotes(Long userId);
 

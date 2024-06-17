@@ -15,7 +15,7 @@ public interface PerfumeJpaRepository extends JpaRepository<PerfumeJpaEntity, Lo
     @Query(value =
         "SELECT * FROM perfume p INNER JOIN perfume_brand pb ON p.p_brand_name = pb.brand_name WHERE p.p_brand_name IN :brandList",
         nativeQuery = true)
-    List<PerfumeJpaEntity> findByBrandNameIn(List<String> brandList);
+    List<PerfumeJpaEntity> findByBrandNames(List<String> brandList);
 
 
     @Query(value = "SELECT p.* FROM perfume p " +

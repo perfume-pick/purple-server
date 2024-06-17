@@ -8,9 +8,12 @@ public interface PerfumeGetByBrandsUseCase {
 
     Result invoke(Command command);
 
-    record Command(List<PerfumeBrand> brandList) {
+    record Command(List<String> brandList) {
+
     }
+
     record Result(List<Perfume> perfumeList) {
+
     }
 
 }
