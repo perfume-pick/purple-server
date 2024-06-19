@@ -57,6 +57,9 @@ dependencies {
     // jwt
     implementation 'com.auth0:java-jwt:4.4.0'
     implementation 'com.auth0:jwks-rsa:0.22.1'
+
+    // S3
+    implementation 'io.awspring.cloud:spring-cloud-aws-s3:3.0.2'
 }
 
 tasks.named('test') {
