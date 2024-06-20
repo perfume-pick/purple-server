@@ -44,4 +44,20 @@ public class BusinessException extends RuntimeException {
         ErrorCode.REFRESH_TOKEN_NOT_FOUND
     );
 
+    public static final BusinessException FileEmptyException = new BusinessException(
+        ErrorCode.FILE_EMPTY_EXCEPTION
+    );
+
+    public static final BusinessException FileUploadFailException = new BusinessException(
+        ErrorCode.FILE_UPLOAD_FAIL_EXCEPTION
+    );
+
+    public static final BusinessException InvalidFileExtensionException = new BusinessException(
+        ErrorCode.INVALID_FILE_EXTENSION_EXCEPTION
+    );
+
+    public static final BusinessException FileDeleteFailException = new BusinessException(
+        ErrorCode.FILE_DELETE_FAIL_EXCEPTION
+    );
+
 }

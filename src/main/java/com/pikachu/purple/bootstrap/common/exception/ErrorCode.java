@@ -80,6 +80,28 @@ public enum ErrorCode {
         404,
         "J005",
         "리프레시 토큰을 찾을 수 없습니다."
+    ),
+
+    // S3
+    FILE_EMPTY_EXCEPTION(
+        400,
+        "S001",
+        "업로드 파일이 비어있습니다."
+    ),
+    FILE_UPLOAD_FAIL_EXCEPTION(
+        400,
+        "S002",
+        "파일을 업로드하는데 실패하였습니다."
+    ),
+    INVALID_FILE_EXTENSION_EXCEPTION(
+        400,
+        "S003",
+        "파일 확장자명이 올바르지 않습니다."
+    ),
+    FILE_DELETE_FAIL_EXCEPTION(
+        400,
+        "S004",
+        "파일을 삭제하는데 실패했습니다."
     );
 
     private final int status;
