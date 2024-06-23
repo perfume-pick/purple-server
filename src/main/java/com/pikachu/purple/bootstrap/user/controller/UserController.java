@@ -18,7 +18,7 @@ public class UserController implements UserApi {
     @Override
     public void saveRating(RatingRequest request) {
         ratingSaveUseCase.invoke(
-            new RatingSaveUseCase.Command(request.ratingValueList())
+            new RatingSaveUseCase.Command(request.ratingValues())
         );
     }
 

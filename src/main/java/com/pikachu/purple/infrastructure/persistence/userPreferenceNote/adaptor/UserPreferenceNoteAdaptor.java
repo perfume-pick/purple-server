@@ -16,18 +16,18 @@ public class UserPreferenceNoteAdaptor implements UserPreferenceNoteRepository {
     private final UserPreferenceNoteJpaRepository userPreferenceNoteJpaRepository;
 
     @Override
-    public void save(List<UserPreferenceNote> userPreferenceNoteList) {
-        List<UserPreferenceNoteJpaEntity> userPreferenceNoteJpaEntityList = userPreferenceNoteList.stream()
+    public void save(List<UserPreferenceNote> userPreferenceNotes) {
+        List<UserPreferenceNoteJpaEntity> userPreferenceNoteJpaEntities = userPreferenceNotes.stream()
             .map(UserPreferenceNoteJpaEntity::toJpaEntity)
             .toList();
 
-        userPreferenceNoteJpaRepository.saveAll(userPreferenceNoteJpaEntityList);
+        userPreferenceNoteJpaRepository.saveAll(userPreferenceNoteJpaEntities);
     }
 
     @Override
-    public List<UserPreferenceNote> getByUserId(Long userId) {
-        List<UserPreferenceNoteJpaEntity> userPreferenceNoteJpaEntityList = userPreferenceNoteJpaRepository.findByUserId(userId);
-        return userPreferenceNoteJpaEntityList.stream()
+    public List<UserPreferenceNote> getAllByUserId(Long userId) {
+        List<UserPreferenceNoteJpaEntity> userPreferenceNoteJpaEntities = userPreferenceNoteJpaRepository.findByUserId(userId);
+        return userPreferenceNoteJpaEntities.stream()
             .map(UserPreferenceNoteJpaEntity::toDomain)
             .collect(Collectors.toList());
     }

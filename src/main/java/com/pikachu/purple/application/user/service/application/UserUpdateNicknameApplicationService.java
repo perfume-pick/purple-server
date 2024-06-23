@@ -15,8 +15,10 @@ public class UserUpdateNicknameApplicationService implements UserUpdateNicknameU
 
     @Override
     public void invoke(Command command) {
+        Long userId = getCurrentUserAuthentication().userId();
+
         userDomainService.updateNickname(
-            getCurrentUserAuthentication().userId(),
+            userId,
             command.nickname()
         );
     }

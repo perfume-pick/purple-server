@@ -5,8 +5,8 @@ import com.pikachu.purple.domain.user.entity.UserPreferenceNote;
 import java.util.List;
 
 public record GetPreferenceBasedRecommendResponse(
-    List<UserPreferenceNote> userPreferenceNoteList,
-    List<Perfume> perfumeList
+    List<UserPreferenceNote> userPreferenceNotes,
+    List<Perfume> perfumes
 ) {
 
 }

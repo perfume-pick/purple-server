@@ -7,7 +7,7 @@ public interface UserPreferenceNoteGetUseCase {
 
     Result invoke();
 
-    record Result(List<UserPreferenceNote> userPreferenceNoteList){
+    record Result(List<UserPreferenceNote> userPreferenceNotes){
 
     }
 

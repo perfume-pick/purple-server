@@ -7,7 +7,8 @@ public interface PerfumeBrandGetTopThirtyUseCase {
 
     Result invoke();
 
-    record Result(List<PerfumeBrand> perfumeBrandList) {
+    record Result(List<PerfumeBrand> perfumeBrands) {
+
     }
 
 }

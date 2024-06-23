@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface RatingRepository {
 
-    void create(List<Rating> ratingList);
+    void create(List<Rating> ratings);
 
     List<Rating> getAllByUserId(Long userId);
 

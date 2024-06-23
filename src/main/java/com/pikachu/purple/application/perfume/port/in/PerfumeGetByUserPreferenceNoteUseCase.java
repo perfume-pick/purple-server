@@ -9,8 +9,8 @@ public interface PerfumeGetByUserPreferenceNoteUseCase {
     Result invoke();
 
     record Result(
-        List<UserPreferenceNote> userPreferenceNoteList,
-        List<Perfume> perfumeList
+        List<UserPreferenceNote> userPreferenceNotes,
+        List<Perfume> perfumes
     ) {
 
     }

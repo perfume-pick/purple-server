@@ -9,17 +9,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class UserPreferenceNote {
 
-    private Long id;
+    private Long userPreferenceNoteId;
     private Long userId;
     private String noteName;
 
     @Builder
     public UserPreferenceNote(
-        Long id,
+        Long userPreferenceNoteId,
         Long userId,
         String noteName
     ) {
-        this.id = id;
+        this.userPreferenceNoteId = userPreferenceNoteId;
         this.userId = userId;
         this.noteName = noteName;
     }

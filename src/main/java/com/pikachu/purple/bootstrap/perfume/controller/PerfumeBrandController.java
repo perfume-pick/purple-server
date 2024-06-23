@@ -18,7 +18,7 @@ public class PerfumeBrandController implements PerfumeBrandApi {
     public SuccessResponse<GetTopThirtyPerfumeBrandResponse> getTopThirtyBrands(){
         Result result = perfumeBrandGetTopThirtyUseCase.invoke();
 
-        return SuccessResponse.of(new GetTopThirtyPerfumeBrandResponse(result.perfumeBrandList()));
+        return SuccessResponse.of(new GetTopThirtyPerfumeBrandResponse(result.perfumeBrands()));
     }
 
 }
