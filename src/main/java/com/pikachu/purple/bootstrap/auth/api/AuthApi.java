@@ -4,6 +4,7 @@ import com.auth0.jwk.JwkException;
 import com.pikachu.purple.bootstrap.auth.dto.request.RefreshJwtTokenRequest;
 import com.pikachu.purple.bootstrap.auth.dto.response.RefreshJwtTokenResponse;
 import com.pikachu.purple.bootstrap.auth.dto.response.SocialLoginTryResponse;
+import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -25,7 +26,7 @@ public interface AuthApi {
     @Operation(summary = "소셜 로그인 URI 발급")
     @PostMapping("/login-try/{provider}")
     @ResponseStatus(HttpStatus.OK)
-    SocialLoginTryResponse socialLoginTry(
+    SuccessResponse<SocialLoginTryResponse> socialLoginTry(
         @PathVariable("provider") SocialLoginProvider provider
     ) throws URISyntaxException;
 
@@ -41,7 +42,7 @@ public interface AuthApi {
     @Operation(summary = "Jwt Token Refresh API")
     @PostMapping("/refresh")
     @ResponseStatus(HttpStatus.OK)
-    RefreshJwtTokenResponse refreshJwtToken(
+    SuccessResponse<RefreshJwtTokenResponse> refreshJwtToken(
         @RequestBody RefreshJwtTokenRequest request
     );
 

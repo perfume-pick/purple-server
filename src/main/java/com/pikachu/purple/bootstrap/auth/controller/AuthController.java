@@ -8,6 +8,7 @@ import com.pikachu.purple.bootstrap.auth.api.AuthApi;
 import com.pikachu.purple.bootstrap.auth.dto.request.RefreshJwtTokenRequest;
 import com.pikachu.purple.bootstrap.auth.dto.response.RefreshJwtTokenResponse;
 import com.pikachu.purple.bootstrap.auth.dto.response.SocialLoginTryResponse;
+import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -24,13 +25,16 @@ public class AuthController implements AuthApi {
     private final RefreshJwtTokenUseCase refreshJwtTokenUseCase;
 
     @Override
-    public SocialLoginTryResponse socialLoginTry(SocialLoginProvider socialLoginProvider)
+    public SuccessResponse<SocialLoginTryResponse> socialLoginTry(
+        SocialLoginProvider socialLoginProvider)
         throws URISyntaxException {
         SocialLoginTryUseCase.Result result = socialLoginTryUseCase.invoke(
             new SocialLoginTryUseCase.Command(socialLoginProvider)
         );
 
-        return new SocialLoginTryResponse(result.socialLoginUrl());
+        return SuccessResponse.of(
+            new SocialLoginTryResponse(result.socialLoginUrl())
+        );
     }
 
     @Override
@@ -50,13 +54,16 @@ public class AuthController implements AuthApi {
     }
 
     @Override
-    public RefreshJwtTokenResponse refreshJwtToken(RefreshJwtTokenRequest request) {
+    public SuccessResponse<RefreshJwtTokenResponse> refreshJwtToken(
+        RefreshJwtTokenRequest request) {
         RefreshJwtTokenUseCase.Result result = refreshJwtTokenUseCase.invoke(
             new RefreshJwtTokenUseCase.Command(
                 request.jwtToken()
             )
         );
 
-        return new RefreshJwtTokenResponse(result.jwtToken());
+        return SuccessResponse.of(
+            new RefreshJwtTokenResponse(result.jwtToken())
+        );
     }
 }
