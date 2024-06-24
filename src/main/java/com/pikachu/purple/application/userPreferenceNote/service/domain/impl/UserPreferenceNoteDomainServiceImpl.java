@@ -3,7 +3,6 @@ package com.pikachu.purple.application.userPreferenceNote.service.domain.impl;
 import com.pikachu.purple.application.userPreferenceNote.port.out.UserPreferenceNoteRepository;
 import com.pikachu.purple.application.userPreferenceNote.service.domain.UserPreferenceNoteDomainService;
 import com.pikachu.purple.domain.note.Note;
-import com.pikachu.purple.domain.perfume.PerfumeNote;
 import com.pikachu.purple.domain.user.entity.UserPreferenceNote;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,23 +18,23 @@ public class UserPreferenceNoteDomainServiceImpl implements UserPreferenceNoteDo
 
     @Override
     public void save(
-        List<Long> userPreferenceNoteIdList,
+        List<Long> userPreferenceNoteIds,
         Long userId,
-        List<Note> noteList
+        List<Note> perfumeNotes
     ) {
-       List<UserPreferenceNote> userPreferenceNoteList = IntStream.range(0, userPreferenceNoteIdList.size())
+       List<UserPreferenceNote> userPreferenceNotes = IntStream.range(0, userPreferenceNoteIds.size())
                .mapToObj(i -> UserPreferenceNote.builder()
-                   .id(userPreferenceNoteIdList.get(i))
+                   .userPreferenceNoteId(userPreferenceNoteIds.get(i))
                    .userId(userId)
-                   .noteName(noteList.get(i).getNoteName())
+                   .noteName(perfumeNotes.get(i).getNoteName())
                    .build())
            .collect(Collectors.toList());
 
-        userPreferenceNoteRepository.save(userPreferenceNoteList);
+        userPreferenceNoteRepository.save(userPreferenceNotes);
     }
 
     @Override
-    public List<UserPreferenceNote> getByUserId(Long userId) {
-        return userPreferenceNoteRepository.getByUserId(userId);
+    public List<UserPreferenceNote> getAllByUserId(Long userId) {
+        return userPreferenceNoteRepository.getAllByUserId(userId);
     }
 }

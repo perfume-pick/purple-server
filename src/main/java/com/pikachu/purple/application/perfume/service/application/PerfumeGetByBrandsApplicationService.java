@@ -15,9 +15,9 @@ public class PerfumeGetByBrandsApplicationService implements PerfumeGetByBrandsU
 
     @Override
     public Result invoke(Command command) {
-        List<Perfume> perfumeList = perfumeDomainService.findByPerfumeBrands(command.brandList());
+        List<Perfume> perfumes = perfumeDomainService.findByPerfumeBrands(command.brands());
 
-        return new Result(perfumeList);
+        return new Result(perfumes);
     }
 
 }

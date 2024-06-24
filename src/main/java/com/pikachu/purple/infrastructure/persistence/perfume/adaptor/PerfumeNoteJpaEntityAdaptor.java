@@ -16,10 +16,10 @@ public class PerfumeNoteJpaEntityAdaptor implements PerfumeNoteRepository {
     private final PerfumeNoteJpaRepository perfumeNoteJpaRepository;
 
     @Override
-    public List<PerfumeNote> getAllByPerfumeIds(List<Long> perfumeIdList) {
-        List<PerfumeNoteJpaEntity> perfumeNoteJpaEntityList = perfumeNoteJpaRepository.findByPerfumeIdIn(perfumeIdList);
+    public List<PerfumeNote> getAllByPerfumeIds(List<Long> perfumeIds) {
+        List<PerfumeNoteJpaEntity> perfumeNoteJpaEntities = perfumeNoteJpaRepository.findByPerfumeIdIn(perfumeIds);
 
-        return perfumeNoteJpaEntityList.stream()
+        return perfumeNoteJpaEntities.stream()
             .map(PerfumeNoteJpaEntity::toDomain)
             .collect(Collectors.toList());
     }

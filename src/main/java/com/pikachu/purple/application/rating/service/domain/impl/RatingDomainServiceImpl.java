@@ -14,25 +14,24 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class RatingDomainServiceImpl implements RatingDomainService {
 
-    private static final int ZERO = 0;
     private final RatingRepository ratingRepository;
 
     @Override
     public void create(
-        List<Long> ratingIdList,
+        List<Long> ratingIds,
         Long userId,
-        List<RatingValue> ratingValueList
+        List<RatingValue> ratingValues
     ) {
-        List<Rating> ratingList = IntStream.range(ZERO, ratingIdList.size())
+        List<Rating> ratings = IntStream.range(0, ratingIds.size())
             .mapToObj(i -> Rating.builder()
-                .ratingId(ratingIdList.get(i))
+                .ratingId(ratingIds.get(i))
                 .userId(userId)
-                .perfumeId(ratingValueList.get(i).perfumeId())
-                .score(ratingValueList.get(i).score())
+                .perfumeId(ratingValues.get(i).perfumeId())
+                .score(ratingValues.get(i).score())
                 .build())
             .collect(Collectors.toList());
 
-        ratingRepository.create(ratingList);
+        ratingRepository.create(ratings);
     }
 
     @Override

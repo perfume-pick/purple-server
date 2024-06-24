@@ -7,7 +7,7 @@ public interface RatingGetByUserIdUseCase {
 
     Result invoke(Long userId);
 
-    record Result(List<Rating> ratingList) {
+    record Result(List<Rating> ratings) {
 
     }
 

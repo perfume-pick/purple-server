@@ -18,7 +18,7 @@ public class UserPreferenceNoteJpaEntity {
 
     @Id
     @Column(name = "user_preference_note_id")
-    private Long id;
+    private Long userPreferenceNoteId;
 
     @Column(name = "user_id", nullable = false)
     private Long userId;
@@ -28,18 +28,18 @@ public class UserPreferenceNoteJpaEntity {
 
     @Builder
     public UserPreferenceNoteJpaEntity(
-        Long id,
+        Long userPreferenceNoteId,
         Long userId,
         String noteName
     ) {
-        this.id = id;
+        this.userPreferenceNoteId = userPreferenceNoteId;
         this.userId = userId;
         this.noteName = noteName;
     }
 
     public static UserPreferenceNoteJpaEntity toJpaEntity(UserPreferenceNote userPreferenceNote){
         return UserPreferenceNoteJpaEntity.builder()
-            .id(userPreferenceNote.getId())
+            .userPreferenceNoteId(userPreferenceNote.getUserPreferenceNoteId())
             .userId(userPreferenceNote.getUserId())
             .noteName(userPreferenceNote.getNoteName())
             .build();
@@ -47,7 +47,7 @@ public class UserPreferenceNoteJpaEntity {
 
     public static UserPreferenceNote toDomain(UserPreferenceNoteJpaEntity userPreferenceNoteJpaEntity){
         return UserPreferenceNote.builder()
-            .id(userPreferenceNoteJpaEntity.getId())
+            .userPreferenceNoteId(userPreferenceNoteJpaEntity.getUserPreferenceNoteId())
             .userId(userPreferenceNoteJpaEntity.getUserId())
             .noteName(userPreferenceNoteJpaEntity.getNoteName())
             .build();

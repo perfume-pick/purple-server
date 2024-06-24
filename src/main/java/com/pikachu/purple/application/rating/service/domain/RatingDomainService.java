@@ -7,9 +7,9 @@ import java.util.List;
 public interface RatingDomainService {
 
     void create(
-        List<Long> ratingIdList,
+        List<Long> ratingIds,
         Long userId,
-        List<RatingValue> ratingValueList
+        List<RatingValue> ratingValues
     );
 
     List<Rating> getAllByUserId(Long userId);

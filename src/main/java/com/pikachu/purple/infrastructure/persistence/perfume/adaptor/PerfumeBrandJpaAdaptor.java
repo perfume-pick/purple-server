@@ -16,13 +16,12 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class PerfumeBrandJpaAdaptor implements PerfumeBrandRepository {
 
-    private final static int ZERO = 0;
-    private final static int THIRTY = 30;
+    private final static int MAX_SIZE = 30;
     private final PerfumeBrandJpaRepository perfumeBrandJpaRepository;
 
     @Override
     public List<PerfumeBrand> findTopThirtyBrands() {
-        Pageable pageable = PageRequest.of(ZERO , THIRTY);
+        Pageable pageable = PageRequest.of(0, MAX_SIZE);
         Page<PerfumeBrandJpaEntity> perfumeBrandEntityList = perfumeBrandJpaRepository.findAll(pageable);
         return perfumeBrandEntityList.stream()
             .map(PerfumeBrandJpaEntity::toDomain)

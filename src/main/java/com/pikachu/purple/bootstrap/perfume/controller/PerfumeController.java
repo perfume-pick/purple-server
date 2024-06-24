@@ -22,7 +22,7 @@ public class PerfumeController implements PerfumeApi {
     public SuccessResponse<GetPerfumeByBrandsResponse> getPerfumeByBrands(List<String> request) {
         PerfumeGetByBrandsUseCase.Result result = perfumeGetByBrandsUseCase.invoke(new Command(request));
 
-        return SuccessResponse.of(new GetPerfumeByBrandsResponse(result.perfumeList())) ;
+        return SuccessResponse.of(new GetPerfumeByBrandsResponse(result.perfumes())) ;
     }
 
     @Override
@@ -30,8 +30,8 @@ public class PerfumeController implements PerfumeApi {
         PerfumeGetByUserPreferenceNoteUseCase.Result result = perfumeGetByUserPreferenceNoteUseCase.invoke();
 
         return SuccessResponse.of(new GetPreferenceBasedRecommendResponse(
-            result.userPreferenceNoteList(),
-            result.perfumeList()
+            result.userPreferenceNotes(),
+            result.perfumes()
         ));
     }
 

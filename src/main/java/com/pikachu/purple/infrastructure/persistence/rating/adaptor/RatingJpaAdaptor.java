@@ -16,8 +16,8 @@ public class RatingJpaAdaptor implements RatingRepository {
     private final RatingJpaRepository ratingJpaRepository;
 
     @Override
-    public void create(List<Rating> ratingList) {
-        List<RatingJpaEntity> ratingJpaEntities = ratingList.stream()
+    public void create(List<Rating> ratings) {
+        List<RatingJpaEntity> ratingJpaEntities = ratings.stream()
             .map(RatingJpaEntity::toJpaEntity)
             .toList();
 

@@ -17,10 +17,10 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
     private final static int MAX_SIZE = 30;
     private final PerfumeJpaRepository perfumeJpaRepository;
 
-    public List<Perfume> findByPerfumeBrands(List<String> brandList) {
-        List<PerfumeJpaEntity> perfumeJpaEntityList = perfumeJpaRepository.findByBrandNames(brandList);
+    public List<Perfume> findByPerfumeBrands(List<String> brands) {
+        List<PerfumeJpaEntity> perfumeJpaEntities = perfumeJpaRepository.findByBrandNames(brands);
 
-        return perfumeJpaEntityList.stream()
+        return perfumeJpaEntities.stream()
             .map(PerfumeJpaEntity::toDomain)
             .collect(Collectors.toList());
     }
@@ -28,12 +28,12 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
     @Override
     public List<Perfume> findByUserPreferenceNotes(Long userId) {
         PageRequest pageRequest = PageRequest.of(0, MAX_SIZE);
-        List<PerfumeJpaEntity> perfumeJpaEntityList = perfumeJpaRepository.findByUserPreferenceNotes(
+        List<PerfumeJpaEntity> perfumeJpaEntities = perfumeJpaRepository.findByUserPreferenceNotes(
             userId,
             pageRequest
         ).getContent();
 
-        return perfumeJpaEntityList.stream()
+        return perfumeJpaEntities.stream()
             .map(PerfumeJpaEntity::toDomain)
             .collect(Collectors.toList());
     }

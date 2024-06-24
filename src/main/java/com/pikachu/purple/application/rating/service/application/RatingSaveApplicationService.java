@@ -23,14 +23,16 @@ public class RatingSaveApplicationService implements RatingSaveUseCase {
     @Transactional
     @Override
     public void invoke(Command command) {
-        List<Long> ratingIdList = IntStream.range(0, command.ratingValueList().size())
+        List<Long> ratingIds = IntStream.range(0, command.ratingValues().size())
             .mapToObj(i -> IdGenerator.generate())
             .collect(Collectors.toList());
 
+        Long userId = getCurrentUserAuthentication().userId();
+
         ratingDomainService.create(
-            ratingIdList,
-            getCurrentUserAuthentication().userId(),
-            command.ratingValueList()
+            ratingIds,
+            userId,
+            command.ratingValues()
         );
 
         userPreferenceNoteSaveUseCase.invoke();

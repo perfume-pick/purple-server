@@ -5,8 +5,8 @@ import java.util.List;
 
 public interface UserPreferenceNoteRepository {
 
-    void save(List<UserPreferenceNote> userPreferenceNoteList);
+    void save(List<UserPreferenceNote> userPreferenceNotes);
 
-    List<UserPreferenceNote> getByUserId(Long userId);
+    List<UserPreferenceNote> getAllByUserId(Long userId);
 
 }

@@ -14,7 +14,11 @@ public class Perfume {
     private String brandName;
 
     @Builder
-    public Perfume(Long perfumeId, String perfumeName, String brandName){
+    public Perfume(
+        Long perfumeId,
+        String perfumeName,
+        String brandName
+    ) {
         this.perfumeId = perfumeId;
         this.perfumeName = perfumeName;
         this.brandName = brandName;

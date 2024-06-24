@@ -15,9 +15,9 @@ public class RatingGetByUserIdApplicationService implements RatingGetByUserIdUse
 
     @Override
     public Result invoke(Long userId) {
-        List<Rating> ratingList = ratingDomainService.getAllByUserId(userId);
+        List<Rating> ratings = ratingDomainService.getAllByUserId(userId);
 
-        return new RatingGetByUserIdUseCase.Result(ratingList);
+        return new RatingGetByUserIdUseCase.Result(ratings);
     }
 
 }
