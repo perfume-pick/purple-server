@@ -1,19 +1,19 @@
 package com.pikachu.purple.bootstrap.user.controller;
 
 import com.pikachu.purple.application.rating.port.in.RatingSaveUseCase;
-import com.pikachu.purple.application.user.port.in.UserUpdateNicknameUseCase;
+import com.pikachu.purple.application.user.port.in.UserUpdateProfileUseCase;
 import com.pikachu.purple.bootstrap.user.api.UserApi;
 import com.pikachu.purple.bootstrap.user.dto.request.RatingRequest;
-import com.pikachu.purple.bootstrap.user.dto.request.UpdateNicknameRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequiredArgsConstructor
 public class UserController implements UserApi {
 
     private final RatingSaveUseCase ratingSaveUseCase;
-    private final UserUpdateNicknameUseCase userUpdateNicknameUseCase;
+    private final UserUpdateProfileUseCase userUpdateProfileUseCase;
 
     @Override
     public void saveRating(RatingRequest request) {
@@ -23,9 +23,15 @@ public class UserController implements UserApi {
     }
 
     @Override
-    public void updateNickname(UpdateNicknameRequest request) {
-        userUpdateNicknameUseCase.invoke(
-            new UserUpdateNicknameUseCase.Command(request.nickname())
+    public void updateProfile(
+        String nickname,
+        MultipartFile picture
+    ) {
+        userUpdateProfileUseCase.invoke(
+            new UserUpdateProfileUseCase.Command(
+                nickname,
+                picture
+            )
         );
     }
 

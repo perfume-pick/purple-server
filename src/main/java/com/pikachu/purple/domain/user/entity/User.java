@@ -14,6 +14,7 @@ public class User {
     private Long id;
     private String email;
     private String nickname;
+    private String imageUrl;
     private LocalDateTime registeredAt;
     private SocialLoginProvider socialLoginProvider;
 
@@ -22,12 +23,14 @@ public class User {
         Long id,
         String email,
         String nickname,
+        String imageUrl,
         LocalDateTime registeredAt,
         SocialLoginProvider socialLoginProvider
     ){
         this.id = id;
         this.email = email;
         this.nickname = nickname;
+        this.imageUrl = imageUrl;
         this.registeredAt = registeredAt;
         this.socialLoginProvider = socialLoginProvider;
     }
@@ -37,6 +40,7 @@ public class User {
             id,
             email,
             nickname,
+            "",
             LocalDateTime.now(),
             socialLoginProvider
         );
@@ -44,6 +48,10 @@ public class User {
 
     public void updateNickname(String nickname) {
         this.nickname = nickname;
+    }
+
+    public void updateImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
 }
