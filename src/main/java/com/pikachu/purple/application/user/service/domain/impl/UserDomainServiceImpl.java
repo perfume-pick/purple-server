@@ -43,8 +43,10 @@ public class UserDomainServiceImpl implements UserDomainService {
     ) {
         User user = userRepository.getById(userId);
 
-        userRepository.validateNotExistedNickname(nickname);
-        user.updateNickname(nickname);
+        if(!user.getNickname().equals(nickname)){
+            userRepository.validateNotExistedNickname(nickname);
+            user.updateNickname(nickname);
+        }
 
         if(!user.getImageUrl().isEmpty()) imageUrlS3Uploader.delete(user.getImageUrl());
 
