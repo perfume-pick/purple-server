@@ -8,6 +8,7 @@ public interface UserUpdateProfileUseCase {
 
     record Command(
         String nickname,
+        boolean isChanged,
         MultipartFile picture
     ) {
 

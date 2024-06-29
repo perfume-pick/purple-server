@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RequiredArgsConstructor
 public class UserDomainServiceImpl implements UserDomainService {
 
+    private static final String IMAGE_DEFAULT = "";
     private final UserRepository userRepository;
     private final ImageUrlS3Uploader imageUrlS3Uploader;
 
@@ -39,24 +40,62 @@ public class UserDomainServiceImpl implements UserDomainService {
     public void updateProfile(
         Long userId,
         String nickname,
+        boolean isChanged,
         MultipartFile picture
     ) {
         User user = userRepository.getById(userId);
 
-        if(!user.getNickname().equals(nickname)){
+        isValidToUpdateNickname(
+            user,
+            nickname
+        );
+        isValidToUpdateImage(
+            user,
+            isChanged,
+            picture
+        );
+
+        userRepository.save(user);
+    }
+
+    private void isValidToUpdateNickname(
+        User user,
+        String nickname
+    ) {
+        if (!user.getNickname().equals(nickname)) {
             userRepository.validateNotExistedNickname(nickname);
             user.updateNickname(nickname);
         }
-
-        if(!user.getImageUrl().isEmpty()) imageUrlS3Uploader.delete(user.getImageUrl());
-
-        if(picture == null || picture.isEmpty()) user.updateImageUrl("");
-        else{
-            String imageUrl = imageUrlS3Uploader.upload(userId, picture);
-            user.updateImageUrl(imageUrl);
-        }
-        userRepository.save(user);
     }
+
+    private void isValidToUpdateImage(
+        User user,
+        Boolean isChanged,
+        MultipartFile picture
+    ) {
+        if (!isChanged) return;
+
+        deleteExistingImage(user);
+
+        String newImageUrl = changeImage(
+            user.getId(),
+            picture
+        );
+        user.updateImageUrl(newImageUrl);
+    }
+
+    private void deleteExistingImage(User user) {
+        if (!user.getImageUrl().isEmpty()) imageUrlS3Uploader.delete(user.getImageUrl());
+    }
+
+    private String changeImage(Long userId, MultipartFile picture) {
+        if (picture == null || picture.isEmpty()) return IMAGE_DEFAULT;
+        return imageUrlS3Uploader.upload(
+            userId,
+            picture
+        );
+    }
+
 
     @Override
     public User findByEmailAndSocialLoginProvider(

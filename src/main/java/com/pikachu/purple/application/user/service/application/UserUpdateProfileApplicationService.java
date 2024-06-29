@@ -22,6 +22,7 @@ public class UserUpdateProfileApplicationService implements UserUpdateProfileUse
         userDomainService.updateProfile(
             userId,
             command.nickname(),
+            command.isChanged(),
             command.picture()
         );
     }

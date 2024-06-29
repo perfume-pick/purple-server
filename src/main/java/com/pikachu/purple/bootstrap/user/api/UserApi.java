@@ -58,6 +58,7 @@ public interface UserApi {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void updateProfile(
         @RequestParam String nickname,
+        @RequestParam boolean isChanged,
         @RequestPart(required = false) MultipartFile picture
     );
 

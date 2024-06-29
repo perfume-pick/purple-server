@@ -25,11 +25,13 @@ public class UserController implements UserApi {
     @Override
     public void updateProfile(
         String nickname,
+        boolean isChanged,
         MultipartFile picture
     ) {
         userUpdateProfileUseCase.invoke(
             new UserUpdateProfileUseCase.Command(
                 nickname,
+                isChanged,
                 picture
             )
         );

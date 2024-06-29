@@ -12,6 +12,7 @@ public interface UserDomainService {
     void updateProfile(
         Long userId,
         String nickname,
+        boolean isChanged,
         MultipartFile picture
     );
 
