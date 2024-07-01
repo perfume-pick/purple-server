@@ -31,6 +31,9 @@ public class UserJpaEntity {
     @Column(nullable = false)
     private String nickname;
 
+    @Column(name = "image_url")
+    private String imageUrl;
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "registered_at", nullable = false)
     private LocalDateTime registeredAt;
@@ -44,12 +47,14 @@ public class UserJpaEntity {
         Long id,
         String email,
         String nickname,
+        String imageUrl,
         LocalDateTime registeredAt,
         SocialLoginProvider socialLoginProvider
     ){
         this.id = id;
         this.email = email;
         this.nickname = nickname;
+        this.imageUrl = imageUrl;
         this.registeredAt = registeredAt;
         this.socialLoginProvider = socialLoginProvider;
     }
@@ -59,6 +64,7 @@ public class UserJpaEntity {
             .id(user.getId())
             .email(user.getEmail())
             .nickname(user.getNickname())
+            .imageUrl(user.getImageUrl())
             .registeredAt(user.getRegisteredAt())
             .socialLoginProvider(user.getSocialLoginProvider())
             .build();
@@ -69,6 +75,7 @@ public class UserJpaEntity {
             .id(entity.getId())
             .email(entity.getEmail())
             .nickname(entity.getNickname())
+            .imageUrl(entity.getImageUrl())
             .registeredAt(entity.getRegisteredAt())
             .socialLoginProvider(entity.getSocialLoginProvider())
             .build();
