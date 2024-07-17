@@ -1,5 +1,6 @@
 package com.pikachu.purple.application.perfume.service.domain.impl;
 
+import com.pikachu.purple.application.perfume.port.out.PerfumeESRepository;
 import com.pikachu.purple.application.perfume.port.out.PerfumeRepository;
 import com.pikachu.purple.application.perfume.service.domain.PerfumeDomainService;
 import com.pikachu.purple.domain.perfume.Perfume;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 public class PerfumeServiceImpl implements PerfumeDomainService {
 
     private final PerfumeRepository perfumeRepository;
+    private final PerfumeESRepository perfumeESRepository;
 
     @Override
     public List<Perfume> findByPerfumeBrands(List<String> brands) {
@@ -21,6 +23,11 @@ public class PerfumeServiceImpl implements PerfumeDomainService {
     @Override
     public List<Perfume> findByUserPreferenceNotes(Long userId) {
         return perfumeRepository.findByUserPreferenceNotes(userId);
+    }
+
+    @Override
+    public List<Perfume> findByKeyword(String keyword) {
+        return perfumeESRepository.findByKeyword(keyword);
     }
 
 }

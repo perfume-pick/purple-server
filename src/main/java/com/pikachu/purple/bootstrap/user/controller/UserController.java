@@ -1,9 +1,13 @@
 package com.pikachu.purple.bootstrap.user.controller;
 
 import com.pikachu.purple.application.rating.port.in.RatingSaveUseCase;
+import com.pikachu.purple.application.user.port.in.UserDeleteAllCurrentSearchLogUseCase;
+import com.pikachu.purple.application.user.port.in.UserGetCurrentSearchLogUseCase;
 import com.pikachu.purple.application.user.port.in.UserUpdateProfileUseCase;
+import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.user.api.UserApi;
 import com.pikachu.purple.bootstrap.user.dto.request.RatingRequest;
+import com.pikachu.purple.bootstrap.user.dto.response.SearchPageResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -14,6 +18,8 @@ public class UserController implements UserApi {
 
     private final RatingSaveUseCase ratingSaveUseCase;
     private final UserUpdateProfileUseCase userUpdateProfileUseCase;
+    private final UserGetCurrentSearchLogUseCase userGetCurrentSearchLogUseCase;
+    private final UserDeleteAllCurrentSearchLogUseCase userDeleteAllSearchLogUseCase;
 
     @Override
     public void saveRating(RatingRequest request) {
@@ -35,6 +41,18 @@ public class UserController implements UserApi {
                 picture
             )
         );
+    }
+
+    @Override
+    public SuccessResponse<SearchPageResponse> getSearchPage() {
+        UserGetCurrentSearchLogUseCase.Result getUserCurrentSearchLogs = userGetCurrentSearchLogUseCase.invoke();
+
+        return SuccessResponse.of(new SearchPageResponse(getUserCurrentSearchLogs.userCurrentSearchLogs()));
+    }
+
+    @Override
+    public void deleteSearchLog() {
+        userDeleteAllSearchLogUseCase.invoke();
     }
 
 }

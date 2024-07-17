@@ -3,6 +3,7 @@ package com.pikachu.purple.bootstrap.perfume.api;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.common.security.Secured;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeByBrandsResponse;
+import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeByKeywordResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPreferenceBasedRecommendResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -27,5 +28,10 @@ public interface PerfumeApi {
     @GetMapping("/preference")
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<GetPreferenceBasedRecommendResponse> getAllPerfumeByPreference();
+
+    @Operation(summary = "메인페이지에서 향수 또는 향수 브랜드 검색")
+    @GetMapping("/search")
+    @ResponseStatus(HttpStatus.OK)
+    SuccessResponse<GetPerfumeByKeywordResponse> findPerfumesByKeywords(@RequestParam String keyword);
 
 }
