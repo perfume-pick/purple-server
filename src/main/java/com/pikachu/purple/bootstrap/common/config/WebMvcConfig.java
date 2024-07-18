@@ -22,7 +22,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
         registry
             .addMapping("/**")
             .allowedHeaders("*")
-            .allowedOrigins(devClientUri, "http://localhost:3000/")
+            .allowedOrigins("*")
             .allowedMethods("*");
     }
 
