@@ -7,14 +7,14 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class UserCurrentSearchLog {
+public class UserSearchHistory {
 
     private Long id;
     private String searchName;
     private String searchAt;
 
     @Builder
-    public UserCurrentSearchLog(
+    public UserSearchHistory(
         Long id,
         String searchName,
         String searchAt

@@ -1,8 +1,8 @@
 package com.pikachu.purple.bootstrap.user.controller;
 
 import com.pikachu.purple.application.rating.port.in.RatingSaveUseCase;
-import com.pikachu.purple.application.user.port.in.UserDeleteAllCurrentSearchLogUseCase;
-import com.pikachu.purple.application.user.port.in.UserGetCurrentSearchLogUseCase;
+import com.pikachu.purple.application.user.port.in.UserDeleteAllSearchHistoryUseCase;
+import com.pikachu.purple.application.user.port.in.UserGetSearchHistoryUseCase;
 import com.pikachu.purple.application.user.port.in.UserUpdateProfileUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.user.api.UserApi;
@@ -18,8 +18,8 @@ public class UserController implements UserApi {
 
     private final RatingSaveUseCase ratingSaveUseCase;
     private final UserUpdateProfileUseCase userUpdateProfileUseCase;
-    private final UserGetCurrentSearchLogUseCase userGetCurrentSearchLogUseCase;
-    private final UserDeleteAllCurrentSearchLogUseCase userDeleteAllSearchLogUseCase;
+    private final UserGetSearchHistoryUseCase userGetSearchHistoryUseCase;
+    private final UserDeleteAllSearchHistoryUseCase userDeleteAllSearchLogUseCase;
 
     @Override
     public void saveRating(RatingRequest request) {
@@ -45,9 +45,9 @@ public class UserController implements UserApi {
 
     @Override
     public SuccessResponse<SearchPageResponse> getSearchPage() {
-        UserGetCurrentSearchLogUseCase.Result getUserCurrentSearchLogs = userGetCurrentSearchLogUseCase.invoke();
+        UserGetSearchHistoryUseCase.Result getUserSearchHistories = userGetSearchHistoryUseCase.invoke();
 
-        return SuccessResponse.of(new SearchPageResponse(getUserCurrentSearchLogs.userCurrentSearchLogs()));
+        return SuccessResponse.of(new SearchPageResponse(getUserSearchHistories.userSearchHistories()));
     }
 
     @Override

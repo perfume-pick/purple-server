@@ -1,6 +1,6 @@
 package com.pikachu.purple.application.user.port.in;
 
-public interface UserDeleteAllCurrentSearchLogUseCase {
+public interface UserDeleteAllSearchHistoryUseCase {
 
     void invoke();
 

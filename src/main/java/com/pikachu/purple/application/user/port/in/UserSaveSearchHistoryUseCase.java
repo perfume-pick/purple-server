@@ -1,6 +1,6 @@
 package com.pikachu.purple.application.user.port.in;
 
-public interface UserSaveCurrentSearchLogUseCase {
+public interface UserSaveSearchHistoryUseCase {
 
     void invoke(
         String keyword,

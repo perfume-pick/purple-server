@@ -3,7 +3,7 @@ package com.pikachu.purple.bootstrap.perfume.controller;
 import com.pikachu.purple.application.perfume.port.in.PerfumeGetByBrandsUseCase;
 import com.pikachu.purple.application.perfume.port.in.PerfumeGetByKeywordUseCase;
 import com.pikachu.purple.application.perfume.port.in.PerfumeGetByUserPreferenceNoteUseCase;
-import com.pikachu.purple.application.user.port.in.UserSaveCurrentSearchLogUseCase;
+import com.pikachu.purple.application.user.port.in.UserSaveSearchHistoryUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.perfume.api.PerfumeApi;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeByBrandsResponse;
@@ -21,7 +21,7 @@ public class PerfumeController implements PerfumeApi {
     private final PerfumeGetByBrandsUseCase perfumeGetByBrandsUseCase;
     private final PerfumeGetByUserPreferenceNoteUseCase perfumeGetByUserPreferenceNoteUseCase;
     private final PerfumeGetByKeywordUseCase perfumeGetByKeywordUseCase;
-    private final UserSaveCurrentSearchLogUseCase userSaveCurrentSearchLogUseCase;
+    private final UserSaveSearchHistoryUseCase userSaveSearchHistoryUseCase;
 
     @Override
     public SuccessResponse<GetPerfumeByBrandsResponse> getPerfumeByBrands(List<String> request) {
@@ -45,7 +45,7 @@ public class PerfumeController implements PerfumeApi {
         PerfumeGetByKeywordUseCase.Result result = perfumeGetByKeywordUseCase.invoke(new PerfumeGetByKeywordUseCase.Command(keyword));
 
         String searchAt = LocalDateTime.now().toString();
-        userSaveCurrentSearchLogUseCase.invoke(
+        userSaveSearchHistoryUseCase.invoke(
             keyword,
             searchAt
         );
