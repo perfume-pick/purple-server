@@ -10,7 +10,6 @@ services:
     pull_policy: always
     env_file:
       - .env
-      - SPRING_PROFILES_ACTIVE=dev
     depends_on:
       - mysql
     ports:
