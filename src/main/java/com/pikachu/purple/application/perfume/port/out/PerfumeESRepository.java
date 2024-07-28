@@ -7,4 +7,6 @@ public interface PerfumeESRepository {
 
     List<Perfume> findByKeyword(String keyword);
 
+    void create(Perfume perfume);
+
 }

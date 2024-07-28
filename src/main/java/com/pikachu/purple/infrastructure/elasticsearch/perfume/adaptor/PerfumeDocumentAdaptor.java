@@ -24,4 +24,11 @@ public class PerfumeDocumentAdaptor implements PerfumeESRepository {
             .collect(Collectors.toList());
     }
 
+    @Override
+    public void create(Perfume perfume) {
+        PerfumeDocument perfumeDocument = PerfumeDocument.toDocument(perfume);
+
+        perfumeDocumentRepository.save(perfumeDocument);
+    }
+
 }

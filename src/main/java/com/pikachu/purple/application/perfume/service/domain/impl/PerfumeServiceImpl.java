@@ -30,4 +30,19 @@ public class PerfumeServiceImpl implements PerfumeDomainService {
         return perfumeESRepository.findByKeyword(keyword);
     }
 
+    @Override
+    public void create(
+        Long perfumeId,
+        String perfumeName,
+        String brandName
+    ) {
+        Perfume perfume = Perfume.builder()
+            .perfumeId(perfumeId)
+            .perfumeName(perfumeName)
+            .brandName(brandName)
+            .build();
+
+        perfumeESRepository.create(perfume);
+    }
+
 }

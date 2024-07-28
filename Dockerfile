@@ -1,3 +1,7 @@
+# Install nori
+FROM docker.elastic.co/elasticsearch/elasticsearch:8.13.4
+RUN elasticsearch-plugin install analysis-nori
+
 # Build stage
 FROM gradle:jdk17 AS build
 COPY --chown=gradle:gradle . /home/gradle/src

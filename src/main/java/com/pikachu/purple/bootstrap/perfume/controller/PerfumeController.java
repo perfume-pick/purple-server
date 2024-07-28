@@ -1,5 +1,7 @@
 package com.pikachu.purple.bootstrap.perfume.controller;
 
+import com.pikachu.purple.application.perfume.port.in.PerfumeCreateUseCase;
+import com.pikachu.purple.application.perfume.port.in.PerfumeCreateUseCase.Command;
 import com.pikachu.purple.application.perfume.port.in.PerfumeGetByBrandsUseCase;
 import com.pikachu.purple.application.perfume.port.in.PerfumeGetByKeywordUseCase;
 import com.pikachu.purple.application.perfume.port.in.PerfumeGetByUserPreferenceNoteUseCase;
@@ -22,6 +24,7 @@ public class PerfumeController implements PerfumeApi {
     private final PerfumeGetByUserPreferenceNoteUseCase perfumeGetByUserPreferenceNoteUseCase;
     private final PerfumeGetByKeywordUseCase perfumeGetByKeywordUseCase;
     private final UserSaveSearchHistoryUseCase userSaveSearchHistoryUseCase;
+    private final PerfumeCreateUseCase perfumeCreateUseCase;
 
     @Override
     public SuccessResponse<GetPerfumeByBrandsResponse> getPerfumeByBrands(List<String> request) {
@@ -51,6 +54,21 @@ public class PerfumeController implements PerfumeApi {
         );
 
         return SuccessResponse.of(new GetPerfumeByKeywordResponse(result.perfumes()));
+    }
+
+    @Override
+    public void create(
+        Long perfumeId,
+        String perfumeName,
+        String brandName
+    ) {
+        perfumeCreateUseCase.invoke(
+            new Command(
+                perfumeId,
+                perfumeName,
+                brandName
+            )
+        );
     }
 
 }
