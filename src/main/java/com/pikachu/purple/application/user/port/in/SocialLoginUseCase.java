@@ -1,14 +1,10 @@
 package com.pikachu.purple.application.user.port.in;
 
-import com.auth0.jwk.JwkException;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
-import java.net.MalformedURLException;
-import java.net.URISyntaxException;
 
 public interface SocialLoginUseCase {
 
-    Result invoke(SocialLoginUseCase.Command command)
-        throws MalformedURLException, JwkException, URISyntaxException;
+    Result invoke(SocialLoginUseCase.Command command);
 
     record Command(
         SocialLoginProvider socialLoginProvider,
@@ -17,9 +13,6 @@ public interface SocialLoginUseCase {
 
     }
 
-    record Result(
-        String socialLoginSuccessUrl
-    ) {
-
+    record Result(String jwtToken) {
     }
 }

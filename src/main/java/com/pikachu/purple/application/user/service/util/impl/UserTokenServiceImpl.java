@@ -2,7 +2,6 @@ package com.pikachu.purple.application.user.service.util.impl;
 
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.AccessTokenExpiredException;
 
-import com.auth0.jwk.JwkException;
 import com.pikachu.purple.application.common.properties.JwtTokenProperties;
 import com.pikachu.purple.application.user.port.out.UserTokenRepository;
 import com.pikachu.purple.application.user.service.util.UserTokenService;
@@ -20,7 +19,6 @@ import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import com.pikachu.purple.support.security.auth.util.JwtTokenProvider;
 import com.pikachu.purple.support.security.auth.vo.JwtClaims;
 import com.pikachu.purple.support.security.auth.vo.JwtClaims.RegisteredClaims;
-import java.net.MalformedURLException;
 import java.time.Instant;
 import java.util.Date;
 import java.util.HashMap;
@@ -41,8 +39,7 @@ public class UserTokenServiceImpl implements UserTokenService {
     public IdToken resolveIdToken(
         String idToken,
         SocialLoginProvider provider
-    )
-        throws MalformedURLException, JwkException {
+    ) {
         SocialLoginStrategy socialLoginStrategy = socialLoginStrategyFactory.getStrategy(provider);
 
         return socialLoginStrategy.resolveIdToken(idToken);
@@ -59,9 +56,7 @@ public class UserTokenServiceImpl implements UserTokenService {
         );
         String email = jwtClaims.getCustomClaims().get("email").toString().replace("\"", "");
 
-        userTokenRepository.findAccessTokenByUserId(
-            Long.valueOf(jwtClaims.getCustomClaims().get("userId").toString())
-        ).orElseThrow(() -> AccessTokenExpiredException);
+        userTokenRepository.findAccessTokenByUserId(userId).orElseThrow(() -> AccessTokenExpiredException);
 
         return new AccessToken(
             userId,

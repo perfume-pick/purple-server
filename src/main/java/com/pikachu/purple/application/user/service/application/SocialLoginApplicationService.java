@@ -1,6 +1,5 @@
 package com.pikachu.purple.application.user.service.application;
 
-import com.auth0.jwk.JwkException;
 import com.pikachu.purple.application.common.properties.KakaoSocialLoginProperties;
 import com.pikachu.purple.application.user.port.in.SocialLoginUseCase;
 import com.pikachu.purple.application.user.port.in.UserSignUpUseCase;
@@ -10,9 +9,6 @@ import com.pikachu.purple.application.user.service.util.UserTokenService;
 import com.pikachu.purple.application.user.vo.tokens.IdToken;
 import com.pikachu.purple.domain.user.entity.User;
 import com.pikachu.purple.domain.user.vo.SocialLoginToken;
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -31,8 +27,7 @@ public class SocialLoginApplicationService implements SocialLoginUseCase {
     private final UserSignUpUseCase userSignUpUseCase;
 
     @Override
-    public Result invoke(Command command)
-        throws MalformedURLException, JwkException, URISyntaxException {
+    public Result invoke(Command command) {
         SocialLoginToken socialLoginToken = socialLoginService.getToken(
             command.socialLoginProvider(),
             command.authorizationCode()
@@ -73,19 +68,7 @@ public class SocialLoginApplicationService implements SocialLoginUseCase {
             refreshToken
         );
 
-        return new SocialLoginUseCase.Result(
-            generateLoginSuccessUri(jwtToken).toString()
-        );
-    }
-
-    private URI generateLoginSuccessUri(String jwtToken) throws URISyntaxException {
-        String redirectUri = kakaoSocialLoginProperties.getLoginSuccessUri();
-
-        String loginSuccessUri =
-            redirectUri + QUERY_PARAMETER_PREFIX + QUERY_PARAMETER_TOKEN_KEY
-                + QUERY_PARAMETER_DELIMITER + jwtToken;
-
-        return new URI(loginSuccessUri);
+        return new SocialLoginUseCase.Result(jwtToken);
     }
 
 }

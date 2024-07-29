@@ -1,17 +1,15 @@
 package com.pikachu.purple.bootstrap.auth.controller;
 
-import com.auth0.jwk.JwkException;
 import com.pikachu.purple.application.user.port.in.RefreshJwtTokenUseCase;
 import com.pikachu.purple.application.user.port.in.SocialLoginTryUseCase;
 import com.pikachu.purple.application.user.port.in.SocialLoginUseCase;
 import com.pikachu.purple.bootstrap.auth.api.AuthApi;
 import com.pikachu.purple.bootstrap.auth.dto.request.RefreshJwtTokenRequest;
 import com.pikachu.purple.bootstrap.auth.dto.response.RefreshJwtTokenResponse;
+import com.pikachu.purple.bootstrap.auth.dto.response.SocialLoginResponse;
 import com.pikachu.purple.bootstrap.auth.dto.response.SocialLoginTryResponse;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
-import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.net.URISyntaxException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,11 +36,10 @@ public class AuthController implements AuthApi {
     }
 
     @Override
-    public void socialLogin(
+    public SuccessResponse<SocialLoginResponse> socialLogin(
         SocialLoginProvider provider,
-        String code,
-        HttpServletResponse response
-    ) throws IOException, JwkException, URISyntaxException {
+        String code
+    ) {
         SocialLoginUseCase.Result result = socialLoginUseCase.invoke(
             new SocialLoginUseCase.Command(
                 provider,
@@ -50,7 +47,9 @@ public class AuthController implements AuthApi {
             )
         );
 
-        response.sendRedirect(result.socialLoginSuccessUrl());
+        return SuccessResponse.of(
+            new SocialLoginResponse(result.jwtToken())
+        );
     }
 
     @Override
