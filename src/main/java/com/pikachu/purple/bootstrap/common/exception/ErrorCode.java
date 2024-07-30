@@ -82,6 +82,12 @@ public enum ErrorCode {
         "리프레시 토큰을 찾을 수 없습니다."
     ),
 
+    NOT_VALID_LOGIN_ID_TOKEN(
+        400,
+        "J006",
+        "유효하지 않은 ID Token입니다. 토큰을 새롭게 발급받아 사용하세요."
+    ),
+
     // S3
     FILE_EMPTY_EXCEPTION(
         400,

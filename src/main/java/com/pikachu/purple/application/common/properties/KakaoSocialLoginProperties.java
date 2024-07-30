@@ -14,5 +14,4 @@ public class KakaoSocialLoginProperties {
     private final String tokenRequestUri;
     private final String redirectUri;
     private final String jwksUri;
-    private final String loginSuccessUri;
 }

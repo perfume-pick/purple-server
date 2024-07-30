@@ -1,6 +1,7 @@
 package com.pikachu.purple.support.security.auth.util;
 
-import com.auth0.jwk.InvalidPublicKeyException;
+import static com.pikachu.purple.bootstrap.common.exception.ErrorCode.JWT_VERIFICATION_EXCEPTION;
+
 import com.auth0.jwk.Jwk;
 import com.auth0.jwk.JwkException;
 import com.auth0.jwk.JwkProvider;
@@ -55,28 +56,38 @@ public class JwtTokenProvider {
     public JwtClaims verifyJwksBasedToken(
         String token,
         URL jwksUri
-    ) throws BusinessException, JwkException {
-        JwkProvider provider = new JwkProviderBuilder(jwksUri)
-            .cached(CACHE_SIZE, EXPIRES_IN, TimeUnit.HOURS)
-            .rateLimited(BUCKET_SIZE, 1, TimeUnit.MINUTES)
-            .build();
-        DecodedJWT jwt = decodeToken(token);
-        Jwk jwk = provider.get(jwt.getKeyId());
-        Algorithm algorithm = extractAlgorithm(jwk);
+    ) throws BusinessException {
+        try {
+            JwkProvider provider = new JwkProviderBuilder(jwksUri)
+                .cached(CACHE_SIZE, EXPIRES_IN, TimeUnit.HOURS)
+                .rateLimited(BUCKET_SIZE, 1, TimeUnit.MINUTES)
+                .build();
+            DecodedJWT jwt = decodeToken(token);
+            Jwk jwk = provider.get(jwt.getKeyId());
+            Algorithm algorithm = extractAlgorithm(jwk);
 
-        return verifyToken(token, algorithm);
+            return verifyToken(token, algorithm);
+        } catch (JwkException e) {
+            throw new BusinessException(JWT_VERIFICATION_EXCEPTION);
+        }
+
     }
 
-    private Algorithm extractAlgorithm(Jwk jwk) throws InvalidPublicKeyException {
-        return switch (jwk.getAlgorithm()) {
-            case "ES256" -> Algorithm.ECDSA256((ECPublicKey) jwk.getPublicKey(), null);
-            case "ES384" -> Algorithm.ECDSA384((ECPublicKey) jwk.getPublicKey(), null);
-            case "ES512" -> Algorithm.ECDSA512((ECPublicKey) jwk.getPublicKey(), null);
-            case "RS256" -> Algorithm.RSA256((RSAPublicKey) jwk.getPublicKey(), null);
-            case "RS384" -> Algorithm.RSA384((RSAPublicKey) jwk.getPublicKey(), null);
-            case "RS512" -> Algorithm.RSA512((RSAPublicKey) jwk.getPublicKey(), null);
-            default -> throw new IllegalArgumentException("지원되지 않는 알고리즘입니다.");
-        };
+    private Algorithm extractAlgorithm(Jwk jwk) {
+        try {
+            return switch (jwk.getAlgorithm()) {
+                case "ES256" -> Algorithm.ECDSA256((ECPublicKey) jwk.getPublicKey(), null);
+                case "ES384" -> Algorithm.ECDSA384((ECPublicKey) jwk.getPublicKey(), null);
+                case "ES512" -> Algorithm.ECDSA512((ECPublicKey) jwk.getPublicKey(), null);
+                case "RS256" -> Algorithm.RSA256((RSAPublicKey) jwk.getPublicKey(), null);
+                case "RS384" -> Algorithm.RSA384((RSAPublicKey) jwk.getPublicKey(), null);
+                case "RS512" -> Algorithm.RSA512((RSAPublicKey) jwk.getPublicKey(), null);
+                default -> throw new BusinessException(JWT_VERIFICATION_EXCEPTION);
+            };
+        } catch (Exception e) {
+            throw new BusinessException(JWT_VERIFICATION_EXCEPTION);
+        }
+
     }
 
     private JwtClaims verifyToken(
@@ -89,7 +100,7 @@ public class JwtTokenProvider {
         } catch (TokenExpiredException e) {
             throw new BusinessException(ErrorCode.JWT_EXPIRED_EXCEPTION);
         } catch (Exception e) {
-            throw new BusinessException(ErrorCode.JWT_VERIFICATION_EXCEPTION);
+            throw new BusinessException(JWT_VERIFICATION_EXCEPTION);
         }
     }
 
@@ -97,7 +108,7 @@ public class JwtTokenProvider {
         try {
             return JWT.decode(token);
         } catch (JWTDecodeException e) {
-            throw new BusinessException(ErrorCode.JWT_VERIFICATION_EXCEPTION);
+            throw new BusinessException(JWT_VERIFICATION_EXCEPTION);
         }
     }
 

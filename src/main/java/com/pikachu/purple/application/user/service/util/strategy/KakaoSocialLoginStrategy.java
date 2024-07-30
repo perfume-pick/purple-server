@@ -1,6 +1,5 @@
 package com.pikachu.purple.application.user.service.util.strategy;
 
-import com.auth0.jwk.JwkException;
 import com.pikachu.purple.application.common.properties.KakaoSocialLoginProperties;
 import com.pikachu.purple.application.user.port.out.SocialLoginPort;
 import com.pikachu.purple.application.user.vo.SocialLoginTokenRequest;
@@ -23,7 +22,6 @@ public class KakaoSocialLoginStrategy implements SocialLoginStrategy {
 
     private static final String QUERY_PARAMETER_PREFIX = "?";
     private static final String ENCODED_QUERY_PARAMETER_DELIMETER = "&";
-
     private static final String GRANT_TYPE = "authorization_code";
 
     private final KakaoSocialLoginProperties kakaoSocialLoginProperties;
@@ -61,13 +59,16 @@ public class KakaoSocialLoginStrategy implements SocialLoginStrategy {
     }
 
     @Override
-    public IdToken resolveIdToken(String idToken) throws MalformedURLException, JwkException {
-        URL jwksUri = new URL(this.kakaoSocialLoginProperties.getJwksUri());
+    public IdToken resolveIdToken(String idToken) {
+        try {
+            URL jwksUri = new URL(this.kakaoSocialLoginProperties.getJwksUri());
 
-        JwtClaims result = jwtTokenProvider.verifyJwksBasedToken(idToken, jwksUri);
+            JwtClaims result = jwtTokenProvider.verifyJwksBasedToken(idToken, jwksUri);
 
-        String email = result.getCustomClaims().get("email").toString();
-
-        return new IdToken(email);
+            String email = result.getCustomClaims().get("email").toString();
+            return new IdToken(email);
+        } catch (MalformedURLException e) {
+            throw new IllegalArgumentException("jwksUri 설정이 올바르지 않습니다.");
+        }
     }
 }
