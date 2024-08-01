@@ -51,7 +51,7 @@ services:
     container_name: kibana
     environment:
       SERVER_NAME: kibana
-      ELASTICSEARCH_HOSTS: http://es:9200
+      ELASTICSEARCH_HOSTS: ${ELASTICSEARCH_HOSTS}
     ports:
       - "5601:5601"
     depends_on:
