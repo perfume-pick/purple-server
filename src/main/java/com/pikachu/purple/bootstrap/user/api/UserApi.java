@@ -67,12 +67,12 @@ public interface UserApi {
     );
 
     @Operation(summary = "내 검색기록 전체 조회")
-    @GetMapping("/my/searchs")
+    @GetMapping("/my/search-histories")
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<SearchPageResponse> getSearchHistories();
 
     @Operation(summary = "내 최근 검색 기록 전체 삭제")
-    @DeleteMapping("/my/searchs")
+    @DeleteMapping("/my/search-histories")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void deleteSearchHistories();
 }

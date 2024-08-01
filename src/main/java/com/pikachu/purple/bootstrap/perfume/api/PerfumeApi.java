@@ -36,7 +36,7 @@ public interface PerfumeApi {
     SuccessResponse<GetPerfumeByKeywordResponse> findPerfumesByKeywords(@RequestParam String keyword);
 
     @Operation(summary = "서버에서만 사용할 API입니다. ElasticSearch 향수 수동 생성")
-    @PostMapping("/only-server/es")
+    @PostMapping("/elastic-search")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void create(
         @RequestParam Long perfumeId,
