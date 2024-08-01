@@ -1,13 +1,17 @@
 package com.pikachu.purple.bootstrap.user.api;
 
+import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.common.security.Secured;
 import com.pikachu.purple.bootstrap.user.dto.request.RatingRequest;
+import com.pikachu.purple.bootstrap.user.dto.response.SearchPageResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -62,4 +66,13 @@ public interface UserApi {
         @RequestPart(required = false) MultipartFile picture
     );
 
+    @Operation(summary = "내 검색기록 전체 조회")
+    @GetMapping("/my/search-histories")
+    @ResponseStatus(HttpStatus.OK)
+    SuccessResponse<SearchPageResponse> getSearchHistories();
+
+    @Operation(summary = "내 최근 검색 기록 전체 삭제")
+    @DeleteMapping("/my/search-histories")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    void deleteSearchHistories();
 }

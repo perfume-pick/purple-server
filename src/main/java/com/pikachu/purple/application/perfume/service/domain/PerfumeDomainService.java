@@ -9,4 +9,12 @@ public interface PerfumeDomainService {
 
     List<Perfume> findByUserPreferenceNotes(Long userId);
 
+    List<Perfume> findByKeyword(String keyword);
+
+    void create(
+        Long perfumeId,
+        String perfumeName,
+        String brandName
+    );
+
 }

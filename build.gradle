@@ -60,6 +60,9 @@ dependencies {
 
     // S3
     implementation 'io.awspring.cloud:spring-cloud-aws-s3:3.0.2'
+
+    // elasticSearch
+    implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
 }
 
 tasks.named('test') {
