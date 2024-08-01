@@ -36,12 +36,11 @@ public class UserSearchHistoryRedisRepositoryImpl implements
             KEY + userId,
             userSearchHistoryRedisHash
         );
-        if(getCount == 10) redisTemplate.opsForList().trim(
+        if(getCount != null && getCount >= 10) redisTemplate.opsForList().trim(
             KEY + userId,
             0,
             MAX_SIZE
         );
-
     }
 
     @Override

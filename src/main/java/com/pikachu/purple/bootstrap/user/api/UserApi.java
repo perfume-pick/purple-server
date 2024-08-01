@@ -66,12 +66,13 @@ public interface UserApi {
         @RequestPart(required = false) MultipartFile picture
     );
 
-    @Operation(summary = "검색페이지 정보 조회")
-    @GetMapping("/search-page")
-    SuccessResponse<SearchPageResponse> getSearchPage();
+    @Operation(summary = "내 검색기록 전체 조회")
+    @GetMapping("/my/searchs")
+    @ResponseStatus(HttpStatus.OK)
+    SuccessResponse<SearchPageResponse> getSearchHistories();
 
-    @Operation(summary = "최근 검색 기록 전체 삭제")
-    @DeleteMapping("/all-search")
+    @Operation(summary = "내 최근 검색 기록 전체 삭제")
+    @DeleteMapping("/my/searchs")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void deleteSearchLog();
+    void deleteSearchHistories();
 }

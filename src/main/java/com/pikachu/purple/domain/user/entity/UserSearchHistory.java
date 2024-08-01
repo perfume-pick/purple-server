@@ -1,5 +1,6 @@
 package com.pikachu.purple.domain.user.entity;
 
+import java.time.LocalDateTime;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -11,13 +12,13 @@ public class UserSearchHistory {
 
     private Long id;
     private String searchName;
-    private String searchAt;
+    private LocalDateTime searchAt;
 
     @Builder
     public UserSearchHistory(
         Long id,
         String searchName,
-        String searchAt
+        LocalDateTime searchAt
     ) {
         this.id = id;
         this.searchName = searchName;

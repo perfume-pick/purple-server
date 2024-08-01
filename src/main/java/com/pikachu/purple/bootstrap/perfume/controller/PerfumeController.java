@@ -47,7 +47,7 @@ public class PerfumeController implements PerfumeApi {
     public SuccessResponse<GetPerfumeByKeywordResponse> findPerfumesByKeywords(String keyword) {
         PerfumeGetByKeywordUseCase.Result result = perfumeGetByKeywordUseCase.invoke(new PerfumeGetByKeywordUseCase.Command(keyword));
 
-        String searchAt = LocalDateTime.now().toString();
+        LocalDateTime searchAt = LocalDateTime.now();
         userSaveSearchHistoryUseCase.invoke(
             keyword,
             searchAt

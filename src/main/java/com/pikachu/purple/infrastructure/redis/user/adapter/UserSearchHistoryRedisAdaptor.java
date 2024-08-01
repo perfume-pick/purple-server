@@ -4,8 +4,8 @@ import com.pikachu.purple.application.user.port.out.UserSearchHistoryRepository;
 import com.pikachu.purple.domain.user.entity.UserSearchHistory;
 import com.pikachu.purple.infrastructure.redis.user.entity.UserSearchHistoryRedisHash;
 import com.pikachu.purple.infrastructure.redis.user.repository.UserSearchHistoryRedisRepository;
+import java.time.LocalDateTime;
 import java.util.List;
-import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -21,14 +21,14 @@ public class UserSearchHistoryRedisAdaptor implements UserSearchHistoryRepositor
 
         return searchHistoryRedisHashes.stream()
             .map(UserSearchHistoryRedisHash::toDomain)
-            .collect(Collectors.toList());
+            .toList();
     }
 
     @Override
     public void saveSearchHistory(
         Long userId,
         String keyword,
-        String searchAt
+        LocalDateTime searchAt
     ) {
         UserSearchHistoryRedisHash userSearchHistoryRedisHash = UserSearchHistoryRedisHash.builder()
             .id(userId)

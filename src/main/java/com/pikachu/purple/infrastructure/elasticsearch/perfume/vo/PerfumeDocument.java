@@ -1,4 +1,4 @@
-package com.pikachu.purple.infrastructure.elasticsearch.perfume.document;
+package com.pikachu.purple.infrastructure.elasticsearch.perfume.vo;
 
 import com.pikachu.purple.domain.perfume.Perfume;
 import lombok.AccessLevel;
@@ -51,6 +51,5 @@ public class PerfumeDocument {
             .brandName(perfume.getBrandName())
             .build();
     }
-
 
 }

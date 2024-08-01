@@ -4,6 +4,7 @@ import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUse
 
 import com.pikachu.purple.application.user.port.in.UserSaveSearchHistoryUseCase;
 import com.pikachu.purple.application.user.service.domain.UserSearchHistoryService;
+import java.time.LocalDateTime;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,7 @@ public class UserSaveSearchHistoryApplicationService implements UserSaveSearchHi
     @Override
     public void invoke(
         String keyword,
-        String searchAt
+        LocalDateTime searchAt
     ) {
         Long userId = getCurrentUserAuthentication().userId();
         userSearchHistoryService.saveSearchHistory(

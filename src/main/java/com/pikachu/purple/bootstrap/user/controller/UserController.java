@@ -44,14 +44,14 @@ public class UserController implements UserApi {
     }
 
     @Override
-    public SuccessResponse<SearchPageResponse> getSearchPage() {
+    public SuccessResponse<SearchPageResponse> getSearchHistories() {
         UserGetSearchHistoryUseCase.Result getUserSearchHistories = userGetSearchHistoryUseCase.invoke();
 
         return SuccessResponse.of(new SearchPageResponse(getUserSearchHistories.userSearchHistories()));
     }
 
     @Override
-    public void deleteSearchLog() {
+    public void deleteSearchHistories() {
         userDeleteAllSearchLogUseCase.invoke();
     }
 

@@ -1,6 +1,11 @@
 package com.pikachu.purple.infrastructure.redis.user.entity;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import com.pikachu.purple.domain.user.entity.UserSearchHistory;
+import java.time.LocalDateTime;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -10,7 +15,7 @@ import org.springframework.data.redis.core.RedisHash;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@RedisHash(value = "user_search_History")
+@RedisHash(value = "user_search_history")
 public class UserSearchHistoryRedisHash {
 
     @Id
@@ -18,13 +23,15 @@ public class UserSearchHistoryRedisHash {
 
     private String searchName;
 
-    private String searchAt;
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
+    private LocalDateTime searchAt;
 
     @Builder
     public UserSearchHistoryRedisHash(
         Long id,
         String searchName,
-        String searchAt
+        LocalDateTime searchAt
     ) {
         this.id = id;
         this.searchName = searchName;
