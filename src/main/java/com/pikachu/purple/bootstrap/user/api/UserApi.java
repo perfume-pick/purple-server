@@ -67,7 +67,7 @@ public interface UserApi {
     );
 
     @Secured
-    @Operation(summary = "내 검색기록 전체 조회")
+    @Operation(summary = "내 최근 검색 기록 전체 조회")
     @GetMapping("/my/search-histories")
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<SearchPageResponse> getSearchHistories();
