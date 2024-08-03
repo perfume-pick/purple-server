@@ -5,6 +5,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Size;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,6 +29,7 @@ public class ReviewJpaEntity extends BaseEntity {
     @Column(name = "rating_id", nullable = false)
     private Long ratingId;
 
+    @Size(min = 10, max = 300)
     @Column(name = "content", nullable = false)
     private String content;
 
