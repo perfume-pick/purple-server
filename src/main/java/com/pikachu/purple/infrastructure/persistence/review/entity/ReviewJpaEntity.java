@@ -28,7 +28,7 @@ public class ReviewJpaEntity extends BaseEntity {
     @Column(name = "rating_id", nullable = false)
     private Long ratingId;
 
-    @Column(name = "comment", nullable = false)
-    private String comment;
+    @Column(name = "content", nullable = false)
+    private String content;
 
 }

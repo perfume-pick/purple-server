@@ -1,7 +1,7 @@
 package com.pikachu.purple.infrastructure.persistence.favorite.entity;
 
 import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
-import com.pikachu.purple.infrastructure.persistence.common.Status;
+import com.pikachu.purple.infrastructure.persistence.common.EntityStatus;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "favorite")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class favoriteJpaEntity extends BaseEntity {
+public class FavoriteJpaEntity extends BaseEntity {
 
     @Id
     @Column(name = "favorite_id")
@@ -29,7 +29,7 @@ public class favoriteJpaEntity extends BaseEntity {
     private Long perfumeId;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "favorite_status")
-    private Status favoriteStatus;
+    @Column(name = "entity_status")
+    private EntityStatus entityStatus;
 
 }

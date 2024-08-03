@@ -2,7 +2,7 @@ package com.pikachu.purple.infrastructure.persistence.rating.entity;
 
 import com.pikachu.purple.domain.rating.Rating;
 import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
-import com.pikachu.purple.infrastructure.persistence.common.Status;
+import com.pikachu.purple.infrastructure.persistence.common.EntityStatus;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -34,8 +34,8 @@ public class RatingJpaEntity extends BaseEntity {
     private Double score;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "rating_status")
-    private Status ratingStatus;
+    @Column(name = "entity_status")
+    private EntityStatus entityStatus;
 
     @Builder
     public RatingJpaEntity(
