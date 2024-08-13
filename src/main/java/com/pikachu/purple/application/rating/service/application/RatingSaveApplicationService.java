@@ -2,10 +2,12 @@ package com.pikachu.purple.application.rating.service.application;
 
 import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
 
+import com.pikachu.purple.application.favorite.port.in.FavoriteCreateUseCase;
 import com.pikachu.purple.application.rating.port.in.RatingSaveUseCase;
 import com.pikachu.purple.application.rating.service.domain.RatingDomainService;
 import com.pikachu.purple.application.userPreferenceNote.port.in.UserPreferenceNoteSaveUseCase;
 import com.pikachu.purple.application.util.IdGenerator;
+import com.pikachu.purple.bootstrap.user.vo.RatingValue;
 import jakarta.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,6 +21,7 @@ public class RatingSaveApplicationService implements RatingSaveUseCase {
 
     private final RatingDomainService ratingDomainService;
     private final UserPreferenceNoteSaveUseCase userPreferenceNoteSaveUseCase;
+    private final FavoriteCreateUseCase favoriteCreateUseCase;
 
     @Transactional
     @Override
@@ -36,6 +39,11 @@ public class RatingSaveApplicationService implements RatingSaveUseCase {
         );
 
         userPreferenceNoteSaveUseCase.invoke();
+
+        List<Long> perfumeIds = command.ratingValues().stream()
+            .map(RatingValue::perfumeId)
+            .toList();
+        favoriteCreateUseCase.invoke(perfumeIds);
     }
 
 }
