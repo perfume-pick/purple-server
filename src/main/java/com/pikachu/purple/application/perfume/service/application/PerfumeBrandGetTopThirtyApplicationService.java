@@ -16,7 +16,7 @@ public class PerfumeBrandGetTopThirtyApplicationService implements
 
     @Override
     public PerfumeBrandGetTopThirtyUseCase.Result invoke() {
-        List<PerfumeBrand> perfumeBrands = perfumeBrandDomainService.findTopThirtyBrands();
+        List<PerfumeBrand> perfumeBrands = perfumeBrandDomainService.getTopThirty();
 
         return new PerfumeBrandGetTopThirtyUseCase.Result(perfumeBrands);
     }

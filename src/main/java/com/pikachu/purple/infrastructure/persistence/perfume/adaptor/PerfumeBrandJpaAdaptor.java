@@ -7,9 +7,6 @@ import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeB
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -20,9 +17,8 @@ public class PerfumeBrandJpaAdaptor implements PerfumeBrandRepository {
     private final PerfumeBrandJpaRepository perfumeBrandJpaRepository;
 
     @Override
-    public List<PerfumeBrand> findTopThirtyBrands() {
-        Pageable pageable = PageRequest.of(0, MAX_SIZE);
-        Page<PerfumeBrandJpaEntity> perfumeBrandEntityList = perfumeBrandJpaRepository.findAll(pageable);
+    public List<PerfumeBrand> getTopThirty() {
+        List<PerfumeBrandJpaEntity> perfumeBrandEntityList = perfumeBrandJpaRepository.getTopThirtyBy(MAX_SIZE);
         return perfumeBrandEntityList.stream()
             .map(PerfumeBrandJpaEntity::toDomain)
             .collect(Collectors.toList());

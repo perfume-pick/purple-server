@@ -1,5 +1,6 @@
 package com.pikachu.purple.infrastructure.persistence.favorite.entity;
 
+import com.pikachu.purple.domain.favorite.Favorite;
 import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
 import com.pikachu.purple.infrastructure.persistence.common.EntityStatus;
 import jakarta.persistence.Column;
@@ -9,6 +10,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -31,5 +33,27 @@ public class FavoriteJpaEntity extends BaseEntity {
     @Enumerated(EnumType.STRING)
     @Column(name = "entity_status")
     private EntityStatus entityStatus;
+
+    @Builder
+    public FavoriteJpaEntity(
+        Long favoriteId,
+        Long userId,
+        Long perfumeId,
+        EntityStatus entityStatus
+    ) {
+        this.favoriteId = favoriteId;
+        this.userId = userId;
+        this.perfumeId = perfumeId;
+        this.entityStatus = entityStatus;
+    }
+
+    public static FavoriteJpaEntity toJpaEntity(Favorite favorite) {
+        return FavoriteJpaEntity.builder()
+            .favoriteId(favorite.getFavoriteId())
+            .userId(favorite.getUserId())
+            .perfumeId(favorite.getPerfumeId())
+            .entityStatus(favorite.getEntityStatus())
+            .build();
+    }
 
 }
