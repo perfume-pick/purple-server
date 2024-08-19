@@ -9,7 +9,6 @@ import com.pikachu.purple.domain.review.Review;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 import org.springframework.stereotype.Component;
 
 @Component
