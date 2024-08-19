@@ -1,5 +1,6 @@
 package com.pikachu.purple.domain.rating;
 
+import com.pikachu.purple.infrastructure.persistence.common.EntityStatus;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -11,19 +12,25 @@ public class Rating {
 
     private Long ratingId;
     private Long userId;
-    private Long perfumeId;
+    private Long reviewId;
     private Double score;
+    private EntityStatus entityStatus;
 
     @Builder
     public Rating(
         Long ratingId,
         Long userId,
-        Long perfumeId,
+        Long reviewId,
         Double score
     ){
         this.ratingId = ratingId;
         this.userId = userId;
-        this.perfumeId = perfumeId;
+        this.reviewId = reviewId;
+        this.score = score;
+        this.entityStatus = EntityStatus.ACTIVE;
+    }
+
+    public void updateScore(Double score) {
         this.score = score;
     }
 

@@ -108,6 +108,20 @@ public enum ErrorCode {
         400,
         "S004",
         "파일을 삭제하는데 실패했습니다."
+    ),
+
+    // Review
+    REVIEW_NOT_FOUND(
+        404,
+        "RV001",
+        "해당하는 리뷰가 존재하지 않습니다."
+    ),
+
+    // Rating
+    RATING_NOT_FOUND(
+        404,
+        "RT001",
+        "해당하는 리뷰가 존재하지 않습니다."
     );
 
     private final int status;

@@ -27,8 +27,8 @@ public class RatingJpaEntity extends BaseEntity {
     @Column(name = "user_id", nullable = false)
     private Long userId;
 
-    @Column(name = "perfume_id", nullable = false)
-    private Long perfumeId;
+    @Column(name = "review_id", nullable = false)
+    private Long reviewId;
 
     @Column(nullable = false)
     private Double score;
@@ -41,13 +41,15 @@ public class RatingJpaEntity extends BaseEntity {
     public RatingJpaEntity(
         Long ratingId,
         Long userId,
-        Long perfumeId,
-        Double score
+        Long reviewId,
+        Double score,
+        EntityStatus entityStatus
     ) {
         this.ratingId = ratingId;
         this.userId = userId;
-        this.perfumeId = perfumeId;
+        this.reviewId = reviewId;
         this.score = score;
+        this.entityStatus = entityStatus;
     }
 
 
@@ -55,7 +57,7 @@ public class RatingJpaEntity extends BaseEntity {
         return Rating.builder()
             .ratingId(ratingJpaEntity.getRatingId())
             .userId(ratingJpaEntity.getUserId())
-            .perfumeId(ratingJpaEntity.getPerfumeId())
+            .reviewId(ratingJpaEntity.getReviewId())
             .score(ratingJpaEntity.getScore())
             .build();
     }
@@ -64,8 +66,9 @@ public class RatingJpaEntity extends BaseEntity {
         return RatingJpaEntity.builder()
             .ratingId(rating.getRatingId())
             .userId(rating.getUserId())
-            .perfumeId(rating.getPerfumeId())
+            .reviewId(rating.getReviewId())
             .score(rating.getScore())
+            .entityStatus(rating.getEntityStatus())
             .build();
     }
 

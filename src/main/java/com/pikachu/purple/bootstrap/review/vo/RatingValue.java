@@ -1,4 +1,4 @@
-package com.pikachu.purple.bootstrap.user.vo;
+package com.pikachu.purple.bootstrap.review.vo;
 
 public record RatingValue(
     Long perfumeId,

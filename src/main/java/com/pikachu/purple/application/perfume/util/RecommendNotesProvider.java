@@ -1,8 +1,11 @@
 package com.pikachu.purple.application.perfume.util;
 
+import static com.pikachu.purple.bootstrap.common.exception.BusinessException.ReviewNotFoundException;
+
 import com.pikachu.purple.domain.note.Note;
 import com.pikachu.purple.domain.perfume.PerfumeNote;
 import com.pikachu.purple.domain.rating.Rating;
+import com.pikachu.purple.domain.review.Review;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,17 +29,18 @@ public class RecommendNotesProvider {
     );
 
     public List<Note> getTopThreeNotes(
-        List<Rating> ratingList,
-        List<PerfumeNote> perfumeNoteList
+        List<Review> reviews,
+        List<Rating> ratings,
+        List<PerfumeNote> perfumeNotes
     ) {
         Map<String, Double> noteScoreMap = new HashMap<>();
 
-        for (Rating rating : ratingList) {
-            Long perfumeId = rating.getPerfumeId();
+        for (Rating rating : ratings) {
+            Long perfumeId = findPerfumeId(reviews, rating);
             Double score = rating.getScore();
             Double weightedScore = convert(score);
 
-            for (PerfumeNote note : perfumeNoteList) {
+            for (PerfumeNote note : perfumeNotes) {
                 if (note.getPerfumeId().equals(perfumeId)) {
                     noteScoreMap.merge(
                         note.getNoteName(),
@@ -51,7 +55,15 @@ public class RecommendNotesProvider {
             .sorted(Map.Entry.<String, Double>comparingByValue().reversed())
             .limit(3)
             .map(entry -> new Note(entry.getKey()))
-            .collect(Collectors.toList());
+            .toList();
+    }
+
+    private Long findPerfumeId(List<Review> reviews, Rating rating) {
+        return reviews.stream()
+            .filter(review -> review.getReviewId().equals(rating.getReviewId()))
+            .map(Review::getPerfumeId)
+            .findFirst()
+            .orElseThrow(() -> ReviewNotFoundException);
     }
 
     private double convert(double score){

@@ -5,8 +5,17 @@ import java.util.List;
 
 public interface RatingRepository {
 
-    void create(List<Rating> ratings);
+    void createOnboarding(List<Rating> ratings);
+
+    void create(Rating rating);
 
     List<Rating> getAllByUserId(Long userId);
+
+    Rating getByUserIdAndReviewId(
+        Long userId,
+        Long reviewId
+    );
+
+    void save(Rating rating);
 
 }
