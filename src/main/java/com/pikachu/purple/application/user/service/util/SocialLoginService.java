@@ -14,5 +14,4 @@ public interface SocialLoginService {
         String authorizationCode
     );
 
-
 }

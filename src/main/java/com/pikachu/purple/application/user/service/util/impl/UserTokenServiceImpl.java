@@ -71,13 +71,13 @@ public class UserTokenServiceImpl implements UserTokenService {
             jwtTokenProperties.getRefresh().secret()
         );
 
-        userTokenRepository.findRefreshTokenByUserId(
-            Long.valueOf(jwtClaims.getCustomClaims().get("userId").toString())
-        ).orElseThrow(() -> new BusinessException(ErrorCode.REFRESH_TOKEN_NOT_FOUND));
+        Long userId = Long.valueOf(jwtClaims.getCustomClaims().get("userId").toString()
+            .substring(1, jwtClaims.getCustomClaims().get("userId").toString().length() - 1));
 
-        return new RefreshToken(
-            Long.valueOf(jwtClaims.getCustomClaims().get("userId").toString())
-        );
+        userTokenRepository.findRefreshTokenByUserId(userId)
+            .orElseThrow(() -> new BusinessException(ErrorCode.REFRESH_TOKEN_NOT_FOUND));
+
+        return new RefreshToken(userId);
     }
 
     @Override
@@ -87,9 +87,14 @@ public class UserTokenServiceImpl implements UserTokenService {
             jwtTokenProperties.getJwt().secret()
         );
 
+        String accessToken = jwtClaims.getCustomClaims().get("accessToken").toString();
+        accessToken = accessToken.substring(1, accessToken.length() - 1);
+        String refreshToken = jwtClaims.getCustomClaims().get("refreshToken").toString();
+        refreshToken = refreshToken.substring(1, refreshToken.length() - 1);
+
         return new JwtToken(
-            jwtClaims.getCustomClaims().get("accessToken").toString(),
-            jwtClaims.getCustomClaims().get("refreshToken").toString()
+            accessToken,
+            refreshToken
         );
     }
 

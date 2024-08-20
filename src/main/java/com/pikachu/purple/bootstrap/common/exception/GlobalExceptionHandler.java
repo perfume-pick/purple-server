@@ -25,17 +25,19 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return makeErrorResponse(errorCode);
     }
 
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<?> handleException(Exception e) {
+    @ExceptionHandler(Throwable.class)
+    public ResponseEntity<?> handleException(Throwable e) {
         log.error("handleException", e);
         return makeErrorResponse(ErrorCode.INTERNAL_SERVER_ERROR);
     }
 
     private ResponseEntity<?> makeErrorResponse(ErrorCode errorCode) {
         return ResponseEntity.status(errorCode.getStatus())
-            .body(ErrorResponse.of(
-                errorCode.getCode(),
-                errorCode.getMessage())
+            .body(
+                ErrorResponse.of(
+                    errorCode.getCode(),
+                    errorCode.getMessage()
+                )
             );
     }
 
