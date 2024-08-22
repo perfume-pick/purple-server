@@ -22,7 +22,7 @@ public class PerfumeJpaEntity {
     @Column(name = "perfume_name", nullable = false)
     private String perfumeName;
 
-    @Column(name = "p_brand_name", nullable = false)
+    @Column(name = "brand_name", nullable = false)
     private String brandName;
 
     public static Perfume toDomain(PerfumeJpaEntity perfumeJpaEntity) {
