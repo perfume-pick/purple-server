@@ -44,6 +44,13 @@ public class BusinessException extends RuntimeException {
     public static final BusinessException FileDeleteFailException = new BusinessException(
         ErrorCode.FILE_DELETE_FAIL_EXCEPTION
     );
+    public static final BusinessException ReviewNotFoundException = new BusinessException(
+        ErrorCode.REVIEW_NOT_FOUND
+    );
+    public static final BusinessException RatingNotFoundException = new BusinessException(
+        ErrorCode.RATING_NOT_FOUND
+    );
+
     private final ErrorCode errorCode;
 
     public BusinessException(ErrorCode errorCode) {

@@ -2,7 +2,6 @@ package com.pikachu.purple.bootstrap.user.api;
 
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.common.security.Secured;
-import com.pikachu.purple.bootstrap.user.dto.request.RatingRequest;
 import com.pikachu.purple.bootstrap.user.dto.response.SearchPageResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -13,8 +12,6 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
@@ -24,12 +21,6 @@ import org.springframework.web.multipart.MultipartFile;
 @Tag(name = "User", description = "User API")
 @RequestMapping(value = "/perpicks/users", produces = "application/json")
 public interface UserApi {
-
-    @Secured
-    @Operation(summary = "온보딩에서 향수에 대한 별점 저장")
-    @PostMapping
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    void saveRating(@RequestBody RatingRequest request);
 
     @Secured
     @Operation(summary = "프로필 수정")
