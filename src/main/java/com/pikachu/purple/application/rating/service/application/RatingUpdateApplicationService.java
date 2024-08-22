@@ -1,5 +1,7 @@
 package com.pikachu.purple.application.rating.service.application;
 
+import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
+
 import com.pikachu.purple.application.rating.port.in.RatingUpdateUseCase;
 import com.pikachu.purple.application.rating.service.domain.RatingDomainService;
 import lombok.RequiredArgsConstructor;
@@ -13,8 +15,10 @@ public class RatingUpdateApplicationService implements RatingUpdateUseCase {
 
     @Override
     public void invoke(Command command) {
+        Long userId = getCurrentUserAuthentication().userId();
+
         ratingDomainService.updateScore(
-            command.userId(),
+            userId,
             command.reviewId(),
             command.score()
         );

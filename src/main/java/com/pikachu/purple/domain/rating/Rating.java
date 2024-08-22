@@ -31,7 +31,7 @@ public class Rating {
     }
 
     public void updateScore(Double score) {
-        this.score = score;
+        this.score = (score != null) ? score : this.score;
     }
 
 }

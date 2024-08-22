@@ -27,12 +27,14 @@ public class RecommendNotesProvider {
         0.5, -1.0
     );
 
+    private static final Map<String, Double> noteScoreMap = new HashMap<>();
+
     public List<Note> getTopThreeNotes(
         List<Review> reviews,
         List<Rating> ratings,
         List<PerfumeNote> perfumeNotes
     ) {
-        Map<String, Double> noteScoreMap = new HashMap<>();
+        noteScoreMap.clear();
 
         for (Rating rating : ratings) {
             Long perfumeId = findPerfumeId(reviews, rating);

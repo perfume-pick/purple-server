@@ -29,7 +29,6 @@ public class ReviewUpdateApplicationService implements ReviewUpdateUseCase {
 
         ratingUpdateUseCase.invoke(
             new RatingUpdateUseCase.Command(
-                userId, // FIXME userId의 호출은 어떻게 해야하는가?
                 command.reviewId(),
                 command.score()
             )
