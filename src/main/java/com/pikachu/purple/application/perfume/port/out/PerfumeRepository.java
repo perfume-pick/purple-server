@@ -9,4 +9,5 @@ public interface PerfumeRepository {
 
     List<Perfume> findByUserPreferenceNotes(Long userId);
 
+    List<Perfume> findByKeyword(String keyword);
 }

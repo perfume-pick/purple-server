@@ -20,6 +20,9 @@ public class PerfumeBrandJpaEntity {
     @Column(name = "brand_name")
     private String brandName;
 
+    @Column(name = "display_order")
+    private Long displayOrder;
+
     @Builder
     public PerfumeBrandJpaEntity(String brandName) {
         this.brandName = brandName;

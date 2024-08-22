@@ -38,4 +38,13 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
             .collect(Collectors.toList());
     }
 
+    @Override
+    public List<Perfume> findByKeyword(String keyword) {
+        List<PerfumeJpaEntity> perfumes = perfumeJpaRepository.findByKeyword(keyword);
+
+        return perfumes.stream()
+            .map(PerfumeJpaEntity::toDomain)
+            .toList();
+    }
+
 }

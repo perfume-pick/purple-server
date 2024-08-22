@@ -27,4 +27,8 @@ public interface PerfumeJpaRepository extends JpaRepository<PerfumeJpaEntity, Lo
         nativeQuery = true)
     Page<PerfumeJpaEntity> findByUserPreferenceNotes(@Param("userId") Long userId, Pageable pageable);
 
+    @Query(value = "SELECT p.* FROM perfume p WHERE p.perfume_name LIKE :keyword OR p.p_brand_name LIKE :keyword",
+        nativeQuery = true)
+    List<PerfumeJpaEntity> findByKeyword(String keyword);
+
 }
