@@ -29,6 +29,7 @@ public interface PerfumeApi {
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<GetPreferenceBasedRecommendResponse> getAllPerfumeByPreference();
 
+    @Secured
     @Operation(summary = "메인페이지에서 향수 또는 향수 브랜드 검색")
     @GetMapping("/search")
     @ResponseStatus(HttpStatus.OK)

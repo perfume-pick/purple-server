@@ -10,10 +10,15 @@ import lombok.NoArgsConstructor;
 public class PerfumeBrand {
 
     private String brandName;
+    private String imageUrl;
 
     @Builder
-    public PerfumeBrand(String brandName){
+    public PerfumeBrand(
+        String brandName,
+        String imageUrl
+    ){
         this.brandName = brandName;
+        this.imageUrl = imageUrl;
     }
 
 }
