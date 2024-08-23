@@ -1,7 +1,6 @@
 package com.pikachu.purple.bootstrap.user.api;
 
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
-import com.pikachu.purple.bootstrap.common.security.Secured;
 import com.pikachu.purple.bootstrap.user.dto.response.SearchPageResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -22,7 +21,6 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping(value = "/perpicks/users", produces = "application/json")
 public interface UserApi {
 
-    @Secured
     @Operation(summary = "프로필 수정")
     @ApiResponses(
         value = {
@@ -49,6 +47,7 @@ public interface UserApi {
             ),
         }
     )
+
     @PatchMapping(value = "/profile", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void updateProfile(
@@ -57,13 +56,11 @@ public interface UserApi {
         @RequestPart(required = false) MultipartFile picture
     );
 
-    @Secured
     @Operation(summary = "내 최근 검색 기록 전체 조회")
     @GetMapping("/my/search-histories")
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<SearchPageResponse> getSearchHistories();
 
-    @Secured
     @Operation(summary = "내 최근 검색 기록 전체 삭제")
     @DeleteMapping("/my/search-histories")
     @ResponseStatus(HttpStatus.NO_CONTENT)
