@@ -1,5 +1,6 @@
 package com.pikachu.purple.infrastructure.persistence.mainAccord.entity;
 
+import com.pikachu.purple.domain.mainAccord.MainAccord;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -25,4 +26,13 @@ public class MainAccordJpaEntity {
 
     @Column(name = "accord_value", nullable = false)
     private Integer accordValue;
+
+    public static MainAccord toDomain(MainAccordJpaEntity mainAccordJpaEntity) {
+        return MainAccord.builder()
+                .mainAccordId(mainAccordJpaEntity.getMainAccordId())
+                .perfumeId(mainAccordJpaEntity.getPerfumeId())
+                .noteName(mainAccordJpaEntity.getNoteName())
+                .accordValue(mainAccordJpaEntity.getAccordValue())
+                .build();
+    }
 }
