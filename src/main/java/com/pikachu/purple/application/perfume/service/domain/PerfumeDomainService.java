@@ -11,10 +11,4 @@ public interface PerfumeDomainService {
 
     List<Perfume> findByKeyword(String keyword);
 
-    void create(
-        Long perfumeId,
-        String perfumeName,
-        String brandName
-    );
-
 }

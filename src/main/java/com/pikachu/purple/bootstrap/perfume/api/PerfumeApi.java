@@ -10,7 +10,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -33,15 +32,6 @@ public interface PerfumeApi {
     @Operation(summary = "메인페이지에서 향수 또는 향수 브랜드 검색")
     @GetMapping("/search")
     @ResponseStatus(HttpStatus.OK)
-    SuccessResponse<GetPerfumeByKeywordResponse> findPerfumesByKeywords(@RequestParam String keyword);
-
-    @Operation(summary = "서버에서만 사용할 API입니다. ElasticSearch 향수 수동 생성")
-    @PostMapping("/elastic-search")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    void create(
-        @RequestParam Long perfumeId,
-        @RequestParam String perfumeName,
-        @RequestParam String brandName
-    );
+    SuccessResponse<GetPerfumeByKeywordResponse> findByKeywords(@RequestParam String keyword);
 
 }

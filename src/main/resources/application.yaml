@@ -18,10 +18,6 @@ spring:
     redis:
       host: ${REDIS_HOST:localhost}
       port: ${REDIS_PORT:6379}
-    elasticsearch:
-      host: ${ELASTICSEARCH_HOST:localhost}
-      username: ${ELASTICSEARCH_USERNAME:root}
-      password: ${ELASTICSEARCH_PASSWORD:secret}
 
   cloud:
     aws:

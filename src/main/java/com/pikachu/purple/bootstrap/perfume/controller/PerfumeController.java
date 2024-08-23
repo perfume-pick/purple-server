@@ -24,7 +24,6 @@ public class PerfumeController implements PerfumeApi {
     private final PerfumeGetByUserPreferenceNoteUseCase perfumeGetByUserPreferenceNoteUseCase;
     private final PerfumeGetByKeywordUseCase perfumeGetByKeywordUseCase;
     private final UserSaveSearchHistoryUseCase userSaveSearchHistoryUseCase;
-    private final PerfumeCreateUseCase perfumeCreateUseCase;
 
     @Override
     public SuccessResponse<GetPerfumeByBrandsResponse> getPerfumeByBrands(List<String> request) {
@@ -44,7 +43,7 @@ public class PerfumeController implements PerfumeApi {
     }
 
     @Override
-    public SuccessResponse<GetPerfumeByKeywordResponse> findPerfumesByKeywords(String keyword) {
+    public SuccessResponse<GetPerfumeByKeywordResponse> findByKeywords(String keyword) {
         PerfumeGetByKeywordUseCase.Result result = perfumeGetByKeywordUseCase.invoke(new PerfumeGetByKeywordUseCase.Command(keyword));
 
         LocalDateTime searchAt = LocalDateTime.now();
@@ -54,21 +53,6 @@ public class PerfumeController implements PerfumeApi {
         );
 
         return SuccessResponse.of(new GetPerfumeByKeywordResponse(result.perfumes()));
-    }
-
-    @Override
-    public void create(
-        Long perfumeId,
-        String perfumeName,
-        String brandName
-    ) {
-        perfumeCreateUseCase.invoke(
-            new Command(
-                perfumeId,
-                perfumeName,
-                brandName
-            )
-        );
     }
 
 }

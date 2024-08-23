@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 public interface PerfumeJpaRepository extends JpaRepository<PerfumeJpaEntity, Long> {
 
     @Query(value =
-        "SELECT * FROM perfume p INNER JOIN perfume_brand pb ON p.p_brand_name = pb.brand_name WHERE p.p_brand_name IN :brandList",
+        "SELECT * FROM perfume p INNER JOIN perfume_brand pb ON p.brand_name = pb.brand_name WHERE p.brand_name IN :brandList",
         nativeQuery = true)
     List<PerfumeJpaEntity> findByBrandNames(List<String> brandList);
 
@@ -26,5 +26,9 @@ public interface PerfumeJpaRepository extends JpaRepository<PerfumeJpaEntity, Lo
         "ORDER BY COUNT(pn.perfume_note_id) DESC ",
         nativeQuery = true)
     Page<PerfumeJpaEntity> findByUserPreferenceNotes(@Param("userId") Long userId, Pageable pageable);
+
+    @Query(value = "SELECT p.* FROM perfume p WHERE p.perfume_name LIKE :keyword OR p.brand_name LIKE :keyword",
+        nativeQuery = true)
+    List<PerfumeJpaEntity> findByKeyword(String keyword);
 
 }
