@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "fragrantica_evaluation")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class FragranticaEvaluationJpaEntity {
+
     @Id
     @Column(name = "fragrantica_evaluation_id")
     private Long fragranticaEvaluationId;
@@ -28,4 +29,5 @@ public class FragranticaEvaluationJpaEntity {
 
     @Column(name = "votes", nullable = false)
     private int votes;
+
 }

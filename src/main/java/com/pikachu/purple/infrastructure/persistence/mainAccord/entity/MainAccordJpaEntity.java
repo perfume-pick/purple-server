@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "main_accord")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class MainAccordJpaEntity {
+
     @Id
     @Column(name = "main_accord_id")
     private Long mainAccordId;
@@ -35,4 +36,5 @@ public class MainAccordJpaEntity {
                 .accordValue(mainAccordJpaEntity.getAccordValue())
                 .build();
     }
+
 }

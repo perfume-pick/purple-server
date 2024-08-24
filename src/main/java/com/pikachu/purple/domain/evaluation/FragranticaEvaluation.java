@@ -35,4 +35,5 @@ public class FragranticaEvaluation {
         this.optionName = optionName;
         this.votes = votes;
     }
+
 }

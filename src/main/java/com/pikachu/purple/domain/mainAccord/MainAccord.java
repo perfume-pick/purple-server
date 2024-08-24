@@ -26,4 +26,5 @@ public class MainAccord {
         this.noteName = noteName;
         this.accordValue = accordValue;
     }
+
 }

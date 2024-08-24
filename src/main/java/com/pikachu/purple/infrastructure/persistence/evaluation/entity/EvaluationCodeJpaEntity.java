@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "evaluation_code")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class EvaluationCodeJpaEntity {
+
     @Id
     @Column(name = "code", columnDefinition = "char(5)", nullable = false)
     private String code;
@@ -21,4 +22,5 @@ public class EvaluationCodeJpaEntity {
     @Enumerated(EnumType.STRING)
     @Column(name = "type", columnDefinition = "varchar(255)", nullable = false)
     private EvaluationCodeType type;
+
 }
