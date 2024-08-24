@@ -1,13 +1,9 @@
 package com.pikachu.purple.infrastructure.persistence.perfume.entity;
 
 import com.pikachu.purple.domain.perfume.PerfumeNote;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import com.pikachu.purple.domain.perfume.enums.PerfumeNoteType;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Getter
 @Entity
@@ -25,12 +21,17 @@ public class PerfumeNoteJpaEntity {
     @Column(name = "note_name")
     private String noteName;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "perfume_note_type", columnDefinition = "varchar(255)")
+    private PerfumeNoteType perfumeNoteType;
+
     public static PerfumeNote toDomain(PerfumeNoteJpaEntity perfumeNoteJpaEntity) {
         return PerfumeNote.builder()
-            .perfumeNoteId(perfumeNoteJpaEntity.getPerfumeNoteId())
-            .perfumeId(perfumeNoteJpaEntity.getPerfumeId())
-            .noteName(perfumeNoteJpaEntity.getNoteName())
-            .build();
+                .perfumeNoteId(perfumeNoteJpaEntity.getPerfumeNoteId())
+                .perfumeId(perfumeNoteJpaEntity.getPerfumeId())
+                .noteName(perfumeNoteJpaEntity.getNoteName())
+                .perfumeNoteType(perfumeNoteJpaEntity.getPerfumeNoteType())
+                .build();
     }
 
 }
