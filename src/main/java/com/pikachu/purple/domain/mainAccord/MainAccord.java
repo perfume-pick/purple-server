@@ -12,7 +12,7 @@ public class MainAccord {
     private Long mainAccordId;
     private Long perfumeId;
     private String noteName;
-    private Integer accordValue;
+    private int accordValue;
 
     @Builder
     public MainAccord(

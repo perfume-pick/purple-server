@@ -27,5 +27,5 @@ public class FragranticaEvaluationJpaEntity {
     private String optionCode;
 
     @Column(name = "votes", nullable = false)
-    private Integer votes;
+    private int votes;
 }

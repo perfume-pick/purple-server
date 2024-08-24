@@ -25,7 +25,7 @@ public class MainAccordJpaEntity {
     private String noteName;
 
     @Column(name = "accord_value", nullable = false)
-    private Integer accordValue;
+    private int accordValue;
 
     public static MainAccord toDomain(MainAccordJpaEntity mainAccordJpaEntity) {
         return MainAccord.builder()

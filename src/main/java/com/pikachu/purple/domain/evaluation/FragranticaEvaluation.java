@@ -15,7 +15,7 @@ public class FragranticaEvaluation {
     private String fieldName;
     private String optionCode;
     private String optionName;
-    private Integer votes;
+    private int votes;
 
     @Builder
     public FragranticaEvaluation(
