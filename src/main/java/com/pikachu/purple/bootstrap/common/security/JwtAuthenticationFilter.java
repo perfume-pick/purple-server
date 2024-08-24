@@ -56,7 +56,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private void processToken(String token) {
         JwtToken jwtToken = userTokenService.resolveJwtToken(token);
-        AccessToken accessToken = userTokenService.resolveAccessToken(jwtToken.getAccessToken().substring(1, jwtToken.getAccessToken().length() - 1));
+        AccessToken accessToken = userTokenService.resolveAccessToken(jwtToken.getAccessToken());
         UserAuthentication userAuthentication = UserAuthentication.from(accessToken);
 
         SecurityContext<UserAuthentication> securityContext = new UserSecurityContext(userAuthentication);
