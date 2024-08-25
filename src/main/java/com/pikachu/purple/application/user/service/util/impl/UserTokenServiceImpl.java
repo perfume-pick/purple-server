@@ -71,8 +71,7 @@ public class UserTokenServiceImpl implements UserTokenService {
             jwtTokenProperties.getRefresh().secret()
         );
 
-        Long userId = Long.valueOf(jwtClaims.getCustomClaims().get("userId").toString()
-            .substring(1, jwtClaims.getCustomClaims().get("userId").toString().length() - 1));
+        Long userId = Long.valueOf(jwtClaims.getCustomClaims().get("userId").toString());
 
         userTokenRepository.findRefreshTokenByUserId(userId)
             .orElseThrow(() -> new BusinessException(ErrorCode.REFRESH_TOKEN_NOT_FOUND));
