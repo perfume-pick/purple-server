@@ -3,7 +3,6 @@ package com.pikachu.purple.application.review.service.domain.impl;
 import com.pikachu.purple.application.review.port.out.ReviewRepository;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
 import com.pikachu.purple.domain.review.Review;
-import com.pikachu.purple.infrastructure.persistence.common.ReviewType;
 import java.util.List;
 import java.util.stream.IntStream;
 import lombok.RequiredArgsConstructor;
