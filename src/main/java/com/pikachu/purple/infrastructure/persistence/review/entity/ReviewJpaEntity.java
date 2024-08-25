@@ -2,22 +2,23 @@ package com.pikachu.purple.infrastructure.persistence.review.entity;
 
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
-import com.pikachu.purple.infrastructure.persistence.common.ReviewType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 
 @Getter
 @Entity
 @Table(name = "review")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@SQLDelete(sql = "UPDATE review SET active = false WHERE review_id = ?")
+@Where(clause = "active = true")
 public class ReviewJpaEntity extends BaseEntity {
 
     @Id
@@ -30,26 +31,29 @@ public class ReviewJpaEntity extends BaseEntity {
     @Column(name = "user_id", nullable = false)
     private Long userId;
 
+    @Column(name = "rating_id", nullable = false)
+    private Long ratingId;
+
     @Column(name = "content", nullable = false)
     private String content;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "review_type")
-    private ReviewType reviewType;
+    private boolean active;
 
     @Builder
     public ReviewJpaEntity(
         Long reviewId,
         Long perfumeId,
         Long userId,
+        Long ratingId,
         String content,
-        ReviewType reviewType
+        boolean active
     ) {
         this.reviewId = reviewId;
         this.perfumeId = perfumeId;
         this.userId = userId;
+        this.ratingId = ratingId;
         this.content = content;
-        this.reviewType = reviewType;
+        this.active = active;
     }
 
     public static ReviewJpaEntity toJpaEntity(Review review) {
@@ -57,8 +61,9 @@ public class ReviewJpaEntity extends BaseEntity {
             .reviewId(review.getReviewId())
             .perfumeId(review.getPerfumeId())
             .userId(review.getUserId())
+            .ratingId(review.getRatingId())
             .content(review.getContent())
-            .reviewType(review.getReviewType())
+            .active(review.isActive())
             .build();
     }
 
@@ -67,8 +72,8 @@ public class ReviewJpaEntity extends BaseEntity {
             .reviewId(reviewJpaEntity.getReviewId())
             .perfumeId(reviewJpaEntity.getPerfumeId())
             .userId(reviewJpaEntity.getUserId())
+            .ratingId(reviewJpaEntity.getRatingId())
             .content(reviewJpaEntity.getContent())
-            .reviewType(reviewJpaEntity.getReviewType())
             .build();
     }
 
