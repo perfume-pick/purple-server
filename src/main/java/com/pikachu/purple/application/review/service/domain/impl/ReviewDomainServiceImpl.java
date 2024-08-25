@@ -27,7 +27,6 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
                 .perfumeId(perfumeIds.get(i))
                 .userId(userId)
                 .content("")
-                .reviewType(ReviewType.ONBOARDING)
                 .build())
             .toList();
 
@@ -35,21 +34,22 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
     }
 
     @Override
-    public Long create(
+    public void create(
         Long reviewId,
         Long perfumeId,
         Long userId,
+        Long ratingId,
         String content
     ) {
         Review review = Review.builder()
             .reviewId(reviewId)
             .perfumeId(perfumeId)
             .userId(userId)
+            .ratingId(ratingId)
             .content(content)
-            .reviewType(ReviewType.REVIEW)
             .build();
 
-        return reviewRepository.create(review);
+        reviewRepository.create(review);
     }
 
     @Override

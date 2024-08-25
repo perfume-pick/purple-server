@@ -2,9 +2,12 @@ package com.pikachu.purple.application.rating.service.application;
 
 import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
 
+import com.pikachu.purple.application.favorite.port.in.FavoriteCreateUseCase;
 import com.pikachu.purple.application.rating.port.in.RatingCreateUseCase;
 import com.pikachu.purple.application.rating.service.domain.RatingDomainService;
+import com.pikachu.purple.application.userPreferenceNote.port.in.UserPreferenceNoteCreateUseCase;
 import com.pikachu.purple.application.util.IdGenerator;
+import com.pikachu.purple.bootstrap.rating.vo.RatingValue;
 import java.util.List;
 import java.util.stream.IntStream;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +19,8 @@ import org.springframework.transaction.annotation.Transactional;
 public class RatingCreateApplicationService implements RatingCreateUseCase {
 
     private final RatingDomainService ratingDomainService;
+    private final UserPreferenceNoteCreateUseCase userPreferenceNoteCreateUseCase;
+    private final FavoriteCreateUseCase favoriteCreateUseCase;
 
     @Override
     @Transactional
@@ -29,20 +34,26 @@ public class RatingCreateApplicationService implements RatingCreateUseCase {
         ratingDomainService.createOnboarding(
             ratingIds,
             userId,
-            command.reviewIds(),
             command.ratingValues()
         );
+
+        List<Long> perfumeIds = command.ratingValues().stream()
+            .map(RatingValue::perfumeId)
+            .toList();
+
+        userPreferenceNoteCreateUseCase.invoke();
+        favoriteCreateUseCase.invoke(perfumeIds);
     }
 
     @Override
     @Transactional
-    public void create(Command command) {
+    public Long create(Command command) {
         Long userId = getCurrentUserAuthentication().userId();
 
-        ratingDomainService.create(
+        return ratingDomainService.create(
             IdGenerator.generate(),
             userId,
-            command.reviewId(),
+            command.perfumeId(),
             command.score()
         );
     }

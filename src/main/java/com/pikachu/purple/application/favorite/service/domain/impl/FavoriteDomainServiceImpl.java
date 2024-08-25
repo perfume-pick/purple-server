@@ -3,7 +3,6 @@ package com.pikachu.purple.application.favorite.service.domain.impl;
 import com.pikachu.purple.application.favorite.port.out.FavoriteRepository;
 import com.pikachu.purple.application.favorite.service.domain.FavoriteDomainService;
 import com.pikachu.purple.domain.favorite.Favorite;
-import com.pikachu.purple.infrastructure.persistence.common.EntityStatus;
 import java.util.List;
 import java.util.stream.IntStream;
 import lombok.RequiredArgsConstructor;
@@ -26,7 +25,6 @@ public class FavoriteDomainServiceImpl implements FavoriteDomainService {
                 .favoriteId(favoriteIds.get(i))
                 .userId(userId)
                 .perfumeId(perfumeIds.get(i))
-                .entityStatus(EntityStatus.ACTIVE)
                 .build())
             .toList();
 

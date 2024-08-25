@@ -27,9 +27,9 @@ public class RatingJpaAdaptor implements RatingRepository {
     }
 
     @Override
-    public void create(Rating rating) {
+    public Long create(Rating rating) {
         RatingJpaEntity ratingJpaEntity = RatingJpaEntity.toJpaEntity(rating);
-        ratingJpaRepository.save(ratingJpaEntity);
+        return ratingJpaRepository.save(ratingJpaEntity).getRatingId();
     }
 
     @Override
@@ -42,11 +42,9 @@ public class RatingJpaAdaptor implements RatingRepository {
     }
 
     @Override
-    public Rating getByUserIdAndReviewId(Long userId, Long reviewId) {
-        RatingJpaEntity ratingJpaEntity = ratingJpaRepository.findByUserIdAndReviewId(
-            userId,
-            reviewId
-        ).orElseThrow(() -> RatingNotFoundException);
+    public Rating getById(Long ratingId) {
+        RatingJpaEntity ratingJpaEntity = ratingJpaRepository.findById(ratingId)
+            .orElseThrow(() -> RatingNotFoundException);
 
         return RatingJpaEntity.toDomain(ratingJpaEntity);
     }
@@ -55,6 +53,25 @@ public class RatingJpaAdaptor implements RatingRepository {
     public void save(Rating rating) {
         RatingJpaEntity ratingJpaEntity = RatingJpaEntity.toJpaEntity(rating);
         ratingJpaRepository.save(ratingJpaEntity);
+    }
+
+    @Override
+    public Rating getByIdAndUserId(
+        Long ratingId,
+        Long userId
+    ) {
+        RatingJpaEntity ratingJpaEntity = ratingJpaRepository.findByRatingIdAndUserId(
+            ratingId,
+            userId
+        ).orElseThrow(() -> RatingNotFoundException);
+
+        return RatingJpaEntity.toDomain(ratingJpaEntity);
+    }
+
+    @Override
+    public void delete(Rating rating) {
+        RatingJpaEntity ratingJpaEntity = RatingJpaEntity.toJpaEntity(rating);
+        ratingJpaRepository.delete(ratingJpaEntity);
     }
 
 }

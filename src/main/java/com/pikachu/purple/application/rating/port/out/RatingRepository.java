@@ -7,15 +7,19 @@ public interface RatingRepository {
 
     void createOnboarding(List<Rating> ratings);
 
-    void create(Rating rating);
+    Long create(Rating rating);
 
     List<Rating> getAllByUserId(Long userId);
 
-    Rating getByUserIdAndReviewId(
-        Long userId,
-        Long reviewId
-    );
+    Rating getById(Long ratingId);
 
     void save(Rating rating);
+
+    Rating getByIdAndUserId(
+        Long ratingId,
+        Long userId
+    );
+
+    void delete(Rating rating);
 
 }

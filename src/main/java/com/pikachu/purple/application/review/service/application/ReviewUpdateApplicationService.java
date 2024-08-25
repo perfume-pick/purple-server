@@ -29,7 +29,7 @@ public class ReviewUpdateApplicationService implements ReviewUpdateUseCase {
 
         ratingUpdateUseCase.invoke(
             new RatingUpdateUseCase.Command(
-                command.reviewId(),
+                command.ratingId(),
                 command.score()
             )
         );

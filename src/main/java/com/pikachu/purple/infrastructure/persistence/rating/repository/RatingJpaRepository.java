@@ -11,5 +11,9 @@ public interface RatingJpaRepository extends JpaRepository<RatingJpaEntity, Long
 
     List<RatingJpaEntity> findByUserId(Long userId);
 
-    Optional<RatingJpaEntity> findByUserIdAndReviewId(Long userId, Long reviewId);
+   Optional<RatingJpaEntity> findByRatingIdAndUserId(
+       Long ratingId,
+       Long userId
+   );
+
 }

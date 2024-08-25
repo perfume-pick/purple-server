@@ -7,7 +7,7 @@ public interface ReviewRepository {
 
     void createOnboarding(List<Review> reviews);
 
-    Long create(Review review);
+    void create(Review review);
 
     List<Review> findAllByUserId(Long userId);
 
