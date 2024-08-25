@@ -121,7 +121,7 @@ public enum ErrorCode {
     RATING_NOT_FOUND(
         404,
         "RT001",
-        "해당하는 리뷰가 존재하지 않습니다."
+        "해당하는 별점이 존재하지 않습니다."
     );
 
     private final int status;
