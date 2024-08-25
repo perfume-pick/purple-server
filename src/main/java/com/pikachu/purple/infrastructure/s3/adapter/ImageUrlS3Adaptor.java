@@ -36,6 +36,7 @@ public class ImageUrlS3Adaptor implements ImageUrlS3Uploader {
             PutObjectRequest putObjectRequest = PutObjectRequest.builder()
                 .bucket(bucket)
                 .key(key)
+                .contentType(file.getContentType())
                 .build();
 
             s3Client.putObject(putObjectRequest, RequestBody.fromBytes(file.getBytes()));
