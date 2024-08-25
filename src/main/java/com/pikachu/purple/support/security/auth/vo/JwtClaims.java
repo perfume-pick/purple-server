@@ -1,7 +1,6 @@
 package com.pikachu.purple.support.security.auth.vo;
 
 import com.auth0.jwt.interfaces.DecodedJWT;
-
 import java.lang.reflect.Field;
 import java.time.Instant;
 import java.util.Date;
@@ -23,6 +22,43 @@ public class JwtClaims {
         this.customClaims = customClaims;
     }
 
+    public static JwtClaims from(DecodedJWT claims) {
+        RegisteredClaims registeredClaims = new RegisteredClaims(
+            claims.getSubject(),
+            claims.getExpiresAt(),
+            claims.getIssuedAt(),
+            claims.getNotBefore(),
+            claims.getIssuer(),
+            claims.getAudience(),
+            claims.getId()
+        );
+
+        Map<String, Object> customClaims = new HashMap<>();
+        for (Map.Entry<String, ?> entry : claims.getClaims().entrySet()) {
+            String key = entry.getKey();
+            Object value = entry.getValue();
+
+            if (value.toString().startsWith("\"")) {
+                String valueText = value.toString();
+                value = (Object) valueText.substring(1, valueText.length() - 1);
+            }
+
+            boolean isRegisteredClaim = false;
+            for (Field field : RegisteredClaims.class.getDeclaredFields()) {
+                if (field.getName().equals(key)) {
+                    isRegisteredClaim = true;
+                    break;
+                }
+            }
+
+            if (!isRegisteredClaim) {
+                customClaims.put(key, (Object) value);
+            }
+        }
+
+        return new JwtClaims(registeredClaims, customClaims);
+    }
+
     @Getter
     public static class RegisteredClaims {
         String sub;
@@ -42,38 +78,6 @@ public class JwtClaims {
             this.aud = aud;
             this.jti = jti;
         }
-    }
-
-    public static JwtClaims from(DecodedJWT claims) {
-        RegisteredClaims registeredClaims = new RegisteredClaims(
-            claims.getSubject(),
-            claims.getExpiresAt(),
-            claims.getIssuedAt(),
-            claims.getNotBefore(),
-            claims.getIssuer(),
-            claims.getAudience(),
-            claims.getId()
-        );
-
-        Map<String, Object> customClaims = new HashMap<>();
-        for (Map.Entry<String, ?> entry : claims.getClaims().entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-
-            boolean isRegisteredClaim = false;
-            for (Field field : RegisteredClaims.class.getDeclaredFields()) {
-                if (field.getName().equals(key)) {
-                    isRegisteredClaim = true;
-                    break;
-                }
-            }
-
-            if (!isRegisteredClaim) {
-                customClaims.put(key, value);
-            }
-        }
-
-        return new JwtClaims(registeredClaims, customClaims);
     }
 
 }

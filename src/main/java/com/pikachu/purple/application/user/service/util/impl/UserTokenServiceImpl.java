@@ -88,9 +88,7 @@ public class UserTokenServiceImpl implements UserTokenService {
         );
 
         String accessToken = jwtClaims.getCustomClaims().get("accessToken").toString();
-        accessToken = accessToken.substring(1, accessToken.length() - 1);
         String refreshToken = jwtClaims.getCustomClaims().get("refreshToken").toString();
-        refreshToken = refreshToken.substring(1, refreshToken.length() - 1);
 
         return new JwtToken(
             accessToken,
