@@ -17,7 +17,7 @@ public class RatingController implements RatingApi {
     @Override
     public void createOnboarding(RatingCreateOnboardingRequest request) {
         ratingCreateUseCase.createOnboarding(
-            new OnboardingCommand(request.ratingValues())
+            new OnboardingCommand(request.ratingInfos())
         );
     }
 

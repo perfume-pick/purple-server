@@ -7,7 +7,7 @@ import com.pikachu.purple.application.rating.port.in.RatingCreateUseCase;
 import com.pikachu.purple.application.rating.service.domain.RatingDomainService;
 import com.pikachu.purple.application.userPreferenceNote.port.in.UserPreferenceNoteCreateUseCase;
 import com.pikachu.purple.application.util.IdGenerator;
-import com.pikachu.purple.bootstrap.rating.vo.RatingValue;
+import com.pikachu.purple.bootstrap.rating.vo.RatingInfo;
 import com.pikachu.purple.domain.rating.Rating;
 import java.util.List;
 import java.util.stream.IntStream;
@@ -26,7 +26,7 @@ public class RatingCreateApplicationService implements RatingCreateUseCase {
     @Override
     @Transactional
     public void createOnboarding(OnboardingCommand command) {
-        List<Long> ratingIds = IntStream.range(0, command.ratingValues().size())
+        List<Long> ratingIds = IntStream.range(0, command.ratingInfos().size())
             .mapToObj(i -> IdGenerator.generate())
             .toList();
 
@@ -35,11 +35,11 @@ public class RatingCreateApplicationService implements RatingCreateUseCase {
         ratingDomainService.createOnboarding(
             ratingIds,
             userId,
-            command.ratingValues()
+            command.ratingInfos()
         );
 
-        List<Long> perfumeIds = command.ratingValues().stream()
-            .map(RatingValue::perfumeId)
+        List<Long> perfumeIds = command.ratingInfos().stream()
+            .map(RatingInfo::perfumeId)
             .toList();
 
         userPreferenceNoteCreateUseCase.invoke();
