@@ -11,11 +11,12 @@ public interface ReviewDomainService {
         Long userId
     );
 
-    Long create(
+    void create(
         Long reviewId,
         Long perfumeId,
         Long userId,
-        String comment
+        Long ratingId,
+        String content
     );
 
     List<Review> findAllByUserId(Long userId);

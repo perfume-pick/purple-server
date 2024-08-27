@@ -6,7 +6,8 @@ public interface ReviewUpdateUseCase {
 
     record Command(
         Long reviewId,
-        Double score,
+        Long ratingId,
+        int score,
         String content
     ) {
 

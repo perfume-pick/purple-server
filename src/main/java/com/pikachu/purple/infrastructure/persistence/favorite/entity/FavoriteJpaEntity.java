@@ -2,22 +2,23 @@ package com.pikachu.purple.infrastructure.persistence.favorite.entity;
 
 import com.pikachu.purple.domain.favorite.Favorite;
 import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
-import com.pikachu.purple.infrastructure.persistence.common.EntityStatus;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.SQLRestriction;
 
 @Getter
 @Entity
 @Table(name = "favorite")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@SQLDelete(sql = "UPDATE favorite SET is_active = false WHERE favorite_id = ?")
+@SQLRestriction("is_active = true")
 public class FavoriteJpaEntity extends BaseEntity {
 
     @Id
@@ -30,21 +31,15 @@ public class FavoriteJpaEntity extends BaseEntity {
     @Column(name = "perfume_id")
     private Long perfumeId;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "entity_status")
-    private EntityStatus entityStatus;
-
     @Builder
     public FavoriteJpaEntity(
         Long favoriteId,
         Long userId,
-        Long perfumeId,
-        EntityStatus entityStatus
+        Long perfumeId
     ) {
         this.favoriteId = favoriteId;
         this.userId = userId;
         this.perfumeId = perfumeId;
-        this.entityStatus = entityStatus;
     }
 
     public static FavoriteJpaEntity toJpaEntity(Favorite favorite) {
@@ -52,7 +47,6 @@ public class FavoriteJpaEntity extends BaseEntity {
             .favoriteId(favorite.getFavoriteId())
             .userId(favorite.getUserId())
             .perfumeId(favorite.getPerfumeId())
-            .entityStatus(favorite.getEntityStatus())
             .build();
     }
 

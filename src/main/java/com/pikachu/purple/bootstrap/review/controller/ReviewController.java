@@ -1,11 +1,9 @@
 package com.pikachu.purple.bootstrap.review.controller;
 
 import com.pikachu.purple.application.review.port.in.ReviewCreateUseCase;
-import com.pikachu.purple.application.review.port.in.ReviewCreateUseCase.OnboardingCommand;
 import com.pikachu.purple.application.review.port.in.ReviewDeleteUseCase;
 import com.pikachu.purple.application.review.port.in.ReviewUpdateUseCase;
 import com.pikachu.purple.bootstrap.review.api.ReviewApi;
-import com.pikachu.purple.bootstrap.review.dto.request.ReviewCreateOnboardingRequest;
 import com.pikachu.purple.bootstrap.review.dto.request.ReviewCreateRequest;
 import com.pikachu.purple.bootstrap.review.dto.request.ReviewUpdateRequest;
 import lombok.RequiredArgsConstructor;
@@ -20,13 +18,6 @@ public class ReviewController implements ReviewApi {
     private final ReviewDeleteUseCase reviewDeleteUseCase;
 
     @Override
-    public void createOnboarding(ReviewCreateOnboardingRequest request) {
-        reviewCreateUseCase.createOnboarding(
-            new OnboardingCommand(request.ratingValues())
-        );
-    }
-
-    @Override
     public void create(ReviewCreateRequest request) {
         reviewCreateUseCase.create(
             new ReviewCreateUseCase.Command(
@@ -35,7 +26,6 @@ public class ReviewController implements ReviewApi {
                 request.content()
             )
         );
-
     }
 
     @Override
@@ -46,6 +36,7 @@ public class ReviewController implements ReviewApi {
         reviewUpdateUseCase.invoke(
             new ReviewUpdateUseCase.Command(
                 reviewId,
+                request.ratingId(),
                 request.score(),
                 request.content()
             )

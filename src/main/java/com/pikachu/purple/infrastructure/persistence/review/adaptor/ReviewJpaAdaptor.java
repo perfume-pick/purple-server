@@ -26,9 +26,9 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public Long create(Review review) {
+    public void create(Review review) {
         ReviewJpaEntity reviewJpaEntity = ReviewJpaEntity.toJpaEntity(review);
-        return reviewJpaRepository.save(reviewJpaEntity).getReviewId();
+        reviewJpaRepository.save(reviewJpaEntity);
     }
 
     @Override
