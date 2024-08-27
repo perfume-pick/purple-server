@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@Tag(name = "review", description = "review API")
+@Tag(name = "Review", description = "Review API")
 @RequestMapping(value = "/perpicks/reviews", produces = "application/json")
 public interface ReviewApi {
 

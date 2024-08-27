@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@Tag(name = "rating", description = "perfume API")
+@Tag(name = "Rating", description = "Rating API")
 @RequestMapping(value = "/perpicks/ratings", produces = "application/json")
 public interface RatingApi {
 
