@@ -14,7 +14,6 @@ public class Review {
     private Long userId;
     private Long ratingId;
     private String content;
-    private boolean active;
 
     @Builder
     public Review(
@@ -29,7 +28,6 @@ public class Review {
         this.userId = userId;
         this.ratingId = ratingId;
         this.content = content;
-        this.active = true;
     }
 
     public void updateContent(String content) {

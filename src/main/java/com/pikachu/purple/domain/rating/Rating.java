@@ -13,7 +13,6 @@ public class Rating {
     private Long userId;
     private Long perfumeId;
     private int score;
-    private boolean active;
 
     @Builder
     public Rating(
@@ -26,7 +25,6 @@ public class Rating {
         this.userId = userId;
         this.perfumeId = perfumeId;
         this.score = score;
-        this.active = true;
     }
 
     public void updateScore(int score) {

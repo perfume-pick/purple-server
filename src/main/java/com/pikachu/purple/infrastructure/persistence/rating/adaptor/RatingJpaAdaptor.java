@@ -27,9 +27,10 @@ public class RatingJpaAdaptor implements RatingRepository {
     }
 
     @Override
-    public Long create(Rating rating) {
+    public Rating create(Rating rating) {
         RatingJpaEntity ratingJpaEntity = RatingJpaEntity.toJpaEntity(rating);
-        return ratingJpaRepository.save(ratingJpaEntity).getRatingId();
+
+        return RatingJpaEntity.toDomain(ratingJpaRepository.save(ratingJpaEntity));
     }
 
     @Override

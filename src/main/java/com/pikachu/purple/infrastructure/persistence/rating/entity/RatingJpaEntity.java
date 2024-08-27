@@ -11,14 +11,14 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.SQLDelete;
-import org.hibernate.annotations.Where;
+import org.hibernate.annotations.SQLRestriction;
 
 @Getter
 @Entity
 @Table(name = "rating")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@SQLDelete(sql = "UPDATE rating SET active = false WHERE rating_id = ?")
-@Where(clause = "active = true")
+@SQLDelete(sql = "UPDATE rating SET is_active = false WHERE rating_id = ?")
+@SQLRestriction("is_active = true")
 public class RatingJpaEntity extends BaseEntity {
 
     @Id
@@ -34,22 +34,17 @@ public class RatingJpaEntity extends BaseEntity {
     @Column(nullable = false)
     private int score;
 
-    @Column(nullable = false)
-    private boolean active;
-
     @Builder
     public RatingJpaEntity(
         Long ratingId,
         Long userId,
         Long perfumeId,
-        int score,
-        boolean active
+        int score
     ) {
         this.ratingId = ratingId;
         this.userId = userId;
         this.perfumeId = perfumeId;
         this.score = score;
-        this.active = active;
     }
 
 
@@ -68,7 +63,6 @@ public class RatingJpaEntity extends BaseEntity {
             .userId(rating.getUserId())
             .perfumeId(rating.getPerfumeId())
             .score(rating.getScore())
-            .active(rating.isActive())
             .build();
     }
 

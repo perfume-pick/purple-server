@@ -12,7 +12,7 @@ public interface RatingDomainService {
         List<RatingValue> ratingValues
     );
 
-    Long create(
+    Rating create(
         Long ratingId,
         Long userId,
         Long perfumeId,

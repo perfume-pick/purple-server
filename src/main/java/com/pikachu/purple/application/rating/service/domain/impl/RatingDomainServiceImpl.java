@@ -34,7 +34,7 @@ public class RatingDomainServiceImpl implements RatingDomainService {
     }
 
     @Override
-    public Long create(
+    public Rating create(
         Long ratingId,
         Long userId,
         Long perfumeId,

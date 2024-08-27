@@ -6,6 +6,7 @@ import com.pikachu.purple.application.rating.port.in.RatingCreateUseCase;
 import com.pikachu.purple.application.review.port.in.ReviewCreateUseCase;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
 import com.pikachu.purple.application.util.IdGenerator;
+import com.pikachu.purple.domain.rating.Rating;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,7 +23,7 @@ public class ReviewCreateApplicationService implements ReviewCreateUseCase {
     public void create(Command command) {
         Long userId = getCurrentUserAuthentication().userId();
 
-        Long ratingId = ratingCreateUseCase.create(new RatingCreateUseCase.Command(
+        Rating rating = ratingCreateUseCase.create(new RatingCreateUseCase.Command(
             command.perfumeId(),
             command.score()
         ));
@@ -31,7 +32,7 @@ public class ReviewCreateApplicationService implements ReviewCreateUseCase {
             IdGenerator.generate(),
             command.perfumeId(),
             userId,
-            ratingId,
+            rating.getRatingId(),
             command.content()
         );
     }

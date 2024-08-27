@@ -12,7 +12,6 @@ public class Favorite {
     private Long favoriteId;
     private Long userId;
     private Long perfumeId;
-    private boolean active;
 
     @Builder
     public Favorite(
@@ -23,6 +22,6 @@ public class Favorite {
         this.favoriteId = favoriteId;
         this.userId = userId;
         this.perfumeId = perfumeId;
-        this.active = true;
     }
+
 }

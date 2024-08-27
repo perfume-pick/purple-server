@@ -8,6 +8,7 @@ import com.pikachu.purple.application.rating.service.domain.RatingDomainService;
 import com.pikachu.purple.application.userPreferenceNote.port.in.UserPreferenceNoteCreateUseCase;
 import com.pikachu.purple.application.util.IdGenerator;
 import com.pikachu.purple.bootstrap.rating.vo.RatingValue;
+import com.pikachu.purple.domain.rating.Rating;
 import java.util.List;
 import java.util.stream.IntStream;
 import lombok.RequiredArgsConstructor;
@@ -47,7 +48,7 @@ public class RatingCreateApplicationService implements RatingCreateUseCase {
 
     @Override
     @Transactional
-    public Long create(Command command) {
+    public Rating create(Command command) {
         Long userId = getCurrentUserAuthentication().userId();
 
         return ratingDomainService.create(

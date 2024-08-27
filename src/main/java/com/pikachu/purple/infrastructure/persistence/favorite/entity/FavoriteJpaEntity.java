@@ -11,14 +11,14 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.SQLDelete;
-import org.hibernate.annotations.Where;
+import org.hibernate.annotations.SQLRestriction;
 
 @Getter
 @Entity
 @Table(name = "favorite")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@SQLDelete(sql = "UPDATE favorite SET active = false WHERE favorite_id = ?")
-@Where(clause = "active = true")
+@SQLDelete(sql = "UPDATE favorite SET is_active = false WHERE favorite_id = ?")
+@SQLRestriction("is_active = true")
 public class FavoriteJpaEntity extends BaseEntity {
 
     @Id
@@ -31,19 +31,15 @@ public class FavoriteJpaEntity extends BaseEntity {
     @Column(name = "perfume_id")
     private Long perfumeId;
 
-    private boolean active;
-
     @Builder
     public FavoriteJpaEntity(
         Long favoriteId,
         Long userId,
-        Long perfumeId,
-        boolean active
+        Long perfumeId
     ) {
         this.favoriteId = favoriteId;
         this.userId = userId;
         this.perfumeId = perfumeId;
-        this.active = active;
     }
 
     public static FavoriteJpaEntity toJpaEntity(Favorite favorite) {
@@ -51,7 +47,6 @@ public class FavoriteJpaEntity extends BaseEntity {
             .favoriteId(favorite.getFavoriteId())
             .userId(favorite.getUserId())
             .perfumeId(favorite.getPerfumeId())
-            .active(favorite.isActive())
             .build();
     }
 
