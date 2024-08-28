@@ -11,4 +11,6 @@ public interface PerfumeDomainService {
 
     List<Perfume> findByKeyword(String keyword);
 
+    Perfume findByPerfumeId(Long perfumeId);
+
 }

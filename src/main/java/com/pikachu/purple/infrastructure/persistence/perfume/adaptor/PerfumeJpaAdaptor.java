@@ -10,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Component;
 
+import static com.pikachu.purple.bootstrap.common.exception.BusinessException.PerfumeNotFoundException;
+
 @Component
 @RequiredArgsConstructor
 public class PerfumeJpaAdaptor implements PerfumeRepository {
@@ -45,6 +47,14 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
         return perfumes.stream()
             .map(PerfumeJpaEntity::toDomain)
             .toList();
+    }
+
+    @Override
+    public Perfume findByPerfumeId(Long perfumeId) {
+        PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository.findByPerfumeId(perfumeId)
+                .orElseThrow(() -> PerfumeNotFoundException);
+
+        return PerfumeJpaEntity.toDomain(perfumeJpaEntity);
     }
 
 }

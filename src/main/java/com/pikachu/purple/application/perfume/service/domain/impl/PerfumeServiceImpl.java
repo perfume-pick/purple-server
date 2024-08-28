@@ -28,4 +28,9 @@ public class PerfumeServiceImpl implements PerfumeDomainService {
         return perfumeRepository.findByKeyword("%" + keyword + "%");
     }
 
+    @Override
+    public Perfume findByPerfumeId(Long perfumeId) {
+        return perfumeRepository.findByPerfumeId(perfumeId);
+    }
+
 }
