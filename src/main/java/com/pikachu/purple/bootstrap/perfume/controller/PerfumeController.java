@@ -1,15 +1,12 @@
 package com.pikachu.purple.bootstrap.perfume.controller;
 
-import com.pikachu.purple.application.perfume.port.in.PerfumeCreateUseCase;
-import com.pikachu.purple.application.perfume.port.in.PerfumeCreateUseCase.Command;
-import com.pikachu.purple.application.perfume.port.in.PerfumeGetByBrandsUseCase;
-import com.pikachu.purple.application.perfume.port.in.PerfumeGetByKeywordUseCase;
-import com.pikachu.purple.application.perfume.port.in.PerfumeGetByUserPreferenceNoteUseCase;
+import com.pikachu.purple.application.perfume.port.in.*;
 import com.pikachu.purple.application.user.port.in.UserSaveSearchHistoryUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.perfume.api.PerfumeApi;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeByBrandsResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeByKeywordResponse;
+import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeDetailResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPreferenceBasedRecommendResponse;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -23,6 +20,7 @@ public class PerfumeController implements PerfumeApi {
     private final PerfumeGetByBrandsUseCase perfumeGetByBrandsUseCase;
     private final PerfumeGetByUserPreferenceNoteUseCase perfumeGetByUserPreferenceNoteUseCase;
     private final PerfumeGetByKeywordUseCase perfumeGetByKeywordUseCase;
+    private final PerfumeDetailGetByPerfumeIdUseCase perfumeDetailGetByPerfumeIdUseCase;
     private final UserSaveSearchHistoryUseCase userSaveSearchHistoryUseCase;
 
     @Override
@@ -53,6 +51,15 @@ public class PerfumeController implements PerfumeApi {
         );
 
         return SuccessResponse.of(new GetPerfumeByKeywordResponse(result.perfumes()));
+    }
+
+    @Override
+    public SuccessResponse<GetPerfumeDetailResponse> findPerfumeDetailByPerfumeId(Long perfumeId) {
+        PerfumeDetailGetByPerfumeIdUseCase.Result result = perfumeDetailGetByPerfumeIdUseCase.invoke(new PerfumeDetailGetByPerfumeIdUseCase.Command(perfumeId));
+
+        // TODO: userSaveVisitedHistoryUseCase 구현
+
+        return SuccessResponse.of(new GetPerfumeDetailResponse(result.perfumeDetail()));
     }
 
 }
