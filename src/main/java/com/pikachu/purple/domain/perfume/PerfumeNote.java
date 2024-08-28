@@ -1,5 +1,6 @@
 package com.pikachu.purple.domain.perfume;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.pikachu.purple.domain.perfume.enums.PerfumeNoteType;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -10,7 +11,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class PerfumeNote {
 
+    @JsonIgnore
     private Long perfumeNoteId;
+    @JsonIgnore
     private Long perfumeId;
     private String noteName;
     private PerfumeNoteType perfumeNoteType;

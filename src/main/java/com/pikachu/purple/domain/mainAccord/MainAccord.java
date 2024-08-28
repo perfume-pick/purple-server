@@ -1,5 +1,6 @@
 package com.pikachu.purple.domain.mainAccord;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -9,7 +10,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class MainAccord {
 
+    @JsonIgnore
     private Long mainAccordId;
+    @JsonIgnore
     private Long perfumeId;
     private String noteName;
     private int accordValue;
