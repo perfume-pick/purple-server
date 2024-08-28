@@ -1,0 +1,704 @@
+[
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.792.jpg",
+    "notes": {
+      "fruity": 100,
+      "vanilla": 81.2551,
+      "sweet": 78.0671,
+      "warm spicy": 77.343,
+      "citrus": 67.1464,
+      "cinnamon": 65.8602,
+      "powdery": 62.2108,
+      "amber": 51.9145,
+      "woody": 50.8282,
+      "white floral": 50.6468
+    },
+    "seasonData": {
+      "winter": 63.8889,
+      "spring": 85.6481,
+      "summer": 55.5556,
+      "fall": 92.7469,
+      "day": 93.3642,
+      "night": 100
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 127,
+        "weak": 284,
+        "moderate": 400,
+        "long lasting": 70,
+        "eternal": 21
+      },
+      "SILLAGE": {
+        "intimate": 372,
+        "moderate": 424,
+        "strong": 85,
+        "enormous": 54
+      },
+      "GENDER": {
+        "female": 2,
+        "more female": 3,
+        "unisex": 52,
+        "more male": 180,
+        "male": 273
+      },
+      "PRICE VALUE": {
+        "way overpriced": 14,
+        "overpriced": 28,
+        "ok": 133,
+        "good value": 184,
+        "great value": 116
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Red Apple",
+        "Plum",
+        "Lime",
+        "Bergamot"
+      ],
+      "Middle Notes": [
+        "Cinnamon",
+        "Jasmine",
+        "Cardamom",
+        "Rose"
+      ],
+      "Base Notes": [
+        "Vanilla",
+        "Amber",
+        "Cedar",
+        "Musk"
+      ]
+    },
+    "companyName": "Ferrari",
+    "perfumeName": "Ferrari Black",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.792.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.24985.jpg",
+    "notes": {
+      "fruity": 100,
+      "sweet": 61.9021,
+      "marine": 60.5151,
+      "floral": 60.2839,
+      "aromatic": 58.3886,
+      "powdery": 53.7648,
+      "aquatic": 53.2102,
+      "fresh": 53.025,
+      "green": 52.9327,
+      "citrus": 49.4188
+    },
+    "seasonData": {
+      "winter": 4.44444,
+      "spring": 75.5556,
+      "summer": 100,
+      "fall": 20,
+      "day": 86.6667,
+      "night": 13.3333
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 4,
+        "weak": 9,
+        "moderate": 21,
+        "long lasting": 11,
+        "eternal": 3
+      },
+      "SILLAGE": {
+        "intimate": 10,
+        "moderate": 36,
+        "strong": 8,
+        "enormous": 10
+      },
+      "GENDER": {
+        "female": 4,
+        "more female": 2,
+        "unisex": 8,
+        "more male": 2,
+        "male": 0
+      },
+      "PRICE VALUE": {
+        "way overpriced": 0,
+        "overpriced": 0,
+        "ok": 4,
+        "good value": 6,
+        "great value": 4
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Pear",
+        "Lemon",
+        "Blackcurrant Syrup"
+      ],
+      "Middle Notes": [
+        "Peach",
+        "Sea Notes",
+        "Green Tea",
+        "Floral Notes"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Sandalwood"
+      ]
+    },
+    "companyName": "Ferrari",
+    "perfumeName": "Scuderia Ferrari Light Essence Bright",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.24985.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.30259.jpg",
+    "notes": {
+      "green": 100,
+      "fresh": 77.1439,
+      "soft spicy": 65.7534,
+      "aromatic": 62.273,
+      "woody": 60.1259,
+      "iris": 57.12,
+      "citrus": 56.5173,
+      "powdery": 54.7848,
+      "musky": 53.1272,
+      "sweet": 52.9092
+    },
+    "seasonData": {
+      "winter": 7.87879,
+      "spring": 100,
+      "summer": 94.7475,
+      "fall": 40.404,
+      "day": 99.3939,
+      "night": 19.596
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 38,
+        "weak": 88,
+        "moderate": 302,
+        "long lasting": 97,
+        "eternal": 24
+      },
+      "SILLAGE": {
+        "intimate": 153,
+        "moderate": 350,
+        "strong": 107,
+        "enormous": 79
+      },
+      "GENDER": {
+        "female": 11,
+        "more female": 5,
+        "unisex": 166,
+        "more male": 76,
+        "male": 36
+      },
+      "PRICE VALUE": {
+        "way overpriced": 2,
+        "overpriced": 7,
+        "ok": 48,
+        "good value": 122,
+        "great value": 89
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Fig Leaf",
+        "Mandarin Orange",
+        "Pink Pepper"
+      ],
+      "Middle Notes": [
+        "Clary Sage",
+        "Iris"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Patchouli"
+      ]
+    },
+    "companyName": "Ferrari",
+    "perfumeName": "Noble Fig",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.30259.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.24450.jpg",
+    "notes": {
+      "woody": 100,
+      "aromatic": 98.8609,
+      "aquatic": 93.4606,
+      "marine": 92.9161,
+      "citrus": 85.4851,
+      "ozonic": 79.5403,
+      "green": 67.8487,
+      "fresh spicy": 56.5284,
+      "salty": 55.1661,
+      "patchouli": 50.3115
+    },
+    "seasonData": {
+      "winter": 15.748,
+      "spring": 81.8898,
+      "summer": 87.4016,
+      "fall": 40.9449,
+      "day": 100,
+      "night": 22.0472
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 9,
+        "weak": 22,
+        "moderate": 73,
+        "long lasting": 31,
+        "eternal": 8
+      },
+      "SILLAGE": {
+        "intimate": 43,
+        "moderate": 89,
+        "strong": 44,
+        "enormous": 40
+      },
+      "GENDER": {
+        "female": 0,
+        "more female": 0,
+        "unisex": 2,
+        "more male": 17,
+        "male": 32
+      },
+      "PRICE VALUE": {
+        "way overpriced": 1,
+        "overpriced": 1,
+        "ok": 12,
+        "good value": 24,
+        "great value": 9
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Mint",
+        "Orange",
+        "Lime"
+      ],
+      "Middle Notes": [
+        "Sea Notes",
+        "Cedar Needles",
+        "Watermelon"
+      ],
+      "Base Notes": [
+        "Cedar",
+        "Patchouli",
+        "Crystal Amber",
+        "Coffee"
+      ]
+    },
+    "companyName": "Ferrari",
+    "perfumeName": "Cedar Essence",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.24450.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.30258.jpg",
+    "notes": {
+      "citrus": 100,
+      "white floral": 66.8927,
+      "aromatic": 50.9935,
+      "fresh": 49.1009,
+      "fresh spicy": 48.3694
+    },
+    "seasonData": {
+      "winter": 4.03646,
+      "spring": 84.2448,
+      "summer": 100,
+      "fall": 12.8906,
+      "day": 94.2708,
+      "night": 12.2396
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 54,
+        "weak": 123,
+        "moderate": 469,
+        "long lasting": 133,
+        "eternal": 42
+      },
+      "SILLAGE": {
+        "intimate": 183,
+        "moderate": 561,
+        "strong": 137,
+        "enormous": 121
+      },
+      "GENDER": {
+        "female": 7,
+        "more female": 10,
+        "unisex": 164,
+        "more male": 75,
+        "male": 37
+      },
+      "PRICE VALUE": {
+        "way overpriced": 5,
+        "overpriced": 7,
+        "ok": 35,
+        "good value": 124,
+        "great value": 104
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Bitter Orange",
+        "Citron",
+        "Lemon"
+      ],
+      "Middle Notes": [
+        "Neroli",
+        "Orange Blossom",
+        "Rosemary",
+        "Sichuan Pepper"
+      ],
+      "Base Notes": [
+        "Vetiver",
+        "Amber",
+        "Patchouli"
+      ]
+    },
+    "companyName": "Ferrari",
+    "perfumeName": "Bright Neroli",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.30258.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.3341.jpg",
+    "notes": {
+      "citrus": 100,
+      "fruity": 69.0873,
+      "white floral": 66.6442,
+      "fresh": 64.7649,
+      "floral": 55.3691,
+      "green": 50.812,
+      "woody": 47.2886,
+      "aromatic": 45.5034
+    },
+    "seasonData": {
+      "winter": 4.65116,
+      "spring": 56.2791,
+      "summer": 100,
+      "fall": 13.9535,
+      "day": 95.3488,
+      "night": 11.1628
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 32,
+        "weak": 64,
+        "moderate": 87,
+        "long lasting": 12,
+        "eternal": 8
+      },
+      "SILLAGE": {
+        "intimate": 73,
+        "moderate": 96,
+        "strong": 19,
+        "enormous": 16
+      },
+      "GENDER": {
+        "female": 0,
+        "more female": 4,
+        "unisex": 53,
+        "more male": 24,
+        "male": 21
+      },
+      "PRICE VALUE": {
+        "way overpriced": 4,
+        "overpriced": 4,
+        "ok": 28,
+        "good value": 29,
+        "great value": 31
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Ferrari",
+    "perfumeName": "Ferrari Light Essence",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.3341.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.28051.jpg",
+    "notes": {
+      "woody": 100,
+      "aromatic": 96.3221,
+      "warm spicy": 91.1547,
+      "earthy": 77.7202,
+      "citrus": 69.9693,
+      "fresh spicy": 65.5926,
+      "patchouli": 52.4924,
+      "nutty": 52.1886,
+      "coffee": 51.8843,
+      "soft spicy": 49.5746
+    },
+    "seasonData": {
+      "winter": 45.1389,
+      "spring": 100,
+      "summer": 47.2222,
+      "fall": 84.7222,
+      "day": 92.3611,
+      "night": 50.6944
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 17,
+        "weak": 15,
+        "moderate": 97,
+        "long lasting": 39,
+        "eternal": 21
+      },
+      "SILLAGE": {
+        "intimate": 37,
+        "moderate": 129,
+        "strong": 37,
+        "enormous": 42
+      },
+      "GENDER": {
+        "female": 2,
+        "more female": 0,
+        "unisex": 5,
+        "more male": 19,
+        "male": 45
+      },
+      "PRICE VALUE": {
+        "way overpriced": 1,
+        "overpriced": 4,
+        "ok": 22,
+        "good value": 33,
+        "great value": 6
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Cardamom",
+        "Calabrian bergamot",
+        "Pink Pepper",
+        "Sichuan Pepper"
+      ],
+      "Middle Notes": [
+        "Vetiver",
+        "Coffee",
+        "Orris Root"
+      ],
+      "Base Notes": [
+        "Patchouli",
+        "Hazelnut",
+        "Tonka Bean"
+      ]
+    },
+    "companyName": "Ferrari",
+    "perfumeName": "Vetiver Essence",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.28051.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.15158.jpg",
+    "notes": {
+      "aromatic": 100,
+      "fresh spicy": 95.658,
+      "citrus": 82.7669,
+      "woody": 60.9921,
+      "warm spicy": 60.6918,
+      "lavender": 55.3815,
+      "musky": 52.4425,
+      "soft spicy": 50.4723,
+      "sweet": 48.2349,
+      "herbal": 48.0676
+    },
+    "seasonData": {
+      "winter": 10.3448,
+      "spring": 79.3103,
+      "summer": 84.4828,
+      "fall": 48.2759,
+      "day": 100,
+      "night": 27.5862
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 6,
+        "weak": 17,
+        "moderate": 26,
+        "long lasting": 8,
+        "eternal": 2
+      },
+      "SILLAGE": {
+        "intimate": 18,
+        "moderate": 33,
+        "strong": 10,
+        "enormous": 16
+      },
+      "GENDER": {
+        "female": 0,
+        "more female": 0,
+        "unisex": 0,
+        "more male": 1,
+        "male": 15
+      },
+      "PRICE VALUE": {
+        "way overpriced": 0,
+        "overpriced": 1,
+        "ok": 3,
+        "good value": 5,
+        "great value": 4
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Blood Orange",
+        "Pink Pepper",
+        "Lavender",
+        "Bergamot"
+      ],
+      "Middle Notes": [
+        "Geranium",
+        "Rosemary",
+        "Violet Leaf",
+        "Cardamom"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Cedar",
+        "Tonka Bean",
+        "Patchouli"
+      ]
+    },
+    "companyName": "Ferrari",
+    "perfumeName": "Red Power",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.15158.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.5888.jpg",
+    "notes": {
+      "fresh spicy": 100,
+      "woody": 89.7176,
+      "leather": 85.8182,
+      "citrus": 75.1354,
+      "aromatic": 71.69,
+      "animalic": 57.9091,
+      "amber": 57.5087,
+      "smoky": 46.7454,
+      "patchouli": 44.6892
+    },
+    "seasonData": {
+      "winter": 62.8319,
+      "spring": 82.7434,
+      "summer": 42.9204,
+      "fall": 96.4602,
+      "day": 100,
+      "night": 75.2212
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 21,
+        "weak": 33,
+        "moderate": 140,
+        "long lasting": 81,
+        "eternal": 16
+      },
+      "SILLAGE": {
+        "intimate": 83,
+        "moderate": 197,
+        "strong": 51,
+        "enormous": 36
+      },
+      "GENDER": {
+        "female": 0,
+        "more female": 0,
+        "unisex": 0,
+        "more male": 7,
+        "male": 62
+      },
+      "PRICE VALUE": {
+        "way overpriced": 4,
+        "overpriced": 1,
+        "ok": 14,
+        "good value": 23,
+        "great value": 21
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Bergamot",
+        "Amalfi Lemon",
+        "Juniper"
+      ],
+      "Middle Notes": [
+        "Leather",
+        "Nutmeg",
+        "Virginia Cedar"
+      ],
+      "Base Notes": [
+        "Tonka Bean",
+        "French labdanum",
+        "Patchouli"
+      ]
+    },
+    "companyName": "Ferrari",
+    "perfumeName": "Ferrari Uomo",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.5888.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.30257.jpg",
+    "notes": {
+      "aromatic": 100,
+      "lavender": 89.9235,
+      "herbal": 66.5065,
+      "woody": 63.2425,
+      "warm spicy": 59.2924,
+      "citrus": 58.1206,
+      "fresh spicy": 56.5137,
+      "vanilla": 53.099,
+      "musky": 50.3203,
+      "soft spicy": 50.2703
+    },
+    "seasonData": {
+      "winter": 32.967,
+      "spring": 100,
+      "summer": 80.7692,
+      "fall": 81.3187,
+      "day": 98.9011,
+      "night": 36.2637
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 13,
+        "weak": 43,
+        "moderate": 113,
+        "long lasting": 20,
+        "eternal": 12
+      },
+      "SILLAGE": {
+        "intimate": 49,
+        "moderate": 139,
+        "strong": 40,
+        "enormous": 37
+      },
+      "GENDER": {
+        "female": 2,
+        "more female": 1,
+        "unisex": 37,
+        "more male": 38,
+        "male": 28
+      },
+      "PRICE VALUE": {
+        "way overpriced": 1,
+        "overpriced": 6,
+        "ok": 21,
+        "good value": 51,
+        "great value": 18
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Cardamom",
+        "Bergamot",
+        "Lemon"
+      ],
+      "Middle Notes": [
+        "Lavender",
+        "Sage"
+      ],
+      "Base Notes": [
+        "Cashmere Wood",
+        "Vanilla",
+        "Patchouli"
+      ]
+    },
+    "companyName": "Ferrari",
+    "perfumeName": "Pure Lavender",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.30257.jpg"
+  }
+]

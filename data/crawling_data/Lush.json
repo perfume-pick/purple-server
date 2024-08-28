@@ -1,0 +1,659 @@
+[
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.6188.jpg",
+    "notes": {
+      "musky": 100,
+      "white floral": 82.4418,
+      "powdery": 66.16,
+      "sweet": 66.1059,
+      "citrus": 64.1106,
+      "yellow floral": 56.6074,
+      "woody": 53.0003,
+      "animalic": 49.0702,
+      "patchouli": 48.0218,
+      "rose": 46.2431
+    },
+    "seasonData": {
+      "winter": 93.3977,
+      "spring": 69.8873,
+      "summer": 47.8261,
+      "fall": 100,
+      "day": 88.2448,
+      "night": 84.5411
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 36,
+        "weak": 111,
+        "moderate": 311,
+        "long lasting": 252,
+        "eternal": 99
+      },
+      "SILLAGE": {
+        "intimate": 173,
+        "moderate": 496,
+        "strong": 149,
+        "enormous": 91
+      },
+      "GENDER": {
+        "female": 16,
+        "more female": 50,
+        "unisex": 365,
+        "more male": 71,
+        "male": 40
+      },
+      "PRICE VALUE": {
+        "way overpriced": 9,
+        "overpriced": 39,
+        "ok": 133,
+        "good value": 204,
+        "great value": 97
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Orange Blossom",
+        "Bergamot"
+      ],
+      "Middle Notes": [
+        "Ylang-Ylang",
+        "Neroli",
+        "Lily",
+        "Rose"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Tonka Bean",
+        "Patchouli"
+      ]
+    },
+    "companyName": "Kiehl's",
+    "perfumeName": "Original Musk",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.6188.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.10806.jpg",
+    "notes": {
+      "white floral": 100,
+      "yellow floral": 61.7041,
+      "woody": 57.4351,
+      "floral": 49.9553,
+      "sweet": 48.9462,
+      "vanilla": 45.4708
+    },
+    "seasonData": {
+      "winter": 68.254,
+      "spring": 60.6349,
+      "summer": 55.0265,
+      "fall": 80.2116,
+      "day": 59.1534,
+      "night": 100
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 33,
+        "weak": 89,
+        "moderate": 354,
+        "long lasting": 553,
+        "eternal": 251
+      },
+      "SILLAGE": {
+        "intimate": 86,
+        "moderate": 373,
+        "strong": 583,
+        "enormous": 380
+      },
+      "GENDER": {
+        "female": 391,
+        "more female": 288,
+        "unisex": 144,
+        "more male": 2,
+        "male": 9
+      },
+      "PRICE VALUE": {
+        "way overpriced": 11,
+        "overpriced": 68,
+        "ok": 251,
+        "good value": 365,
+        "great value": 103
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Lush",
+    "perfumeName": "Lust",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.10806.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.11734.jpg",
+    "notes": {
+      "aromatic": 100,
+      "green": 73.6078,
+      "fresh spicy": 64.4238,
+      "lavender": 46.5907,
+      "herbal": 44.1888
+    },
+    "seasonData": {
+      "winter": 24.1584,
+      "spring": 72.6733,
+      "summer": 99.2079,
+      "fall": 31.2871,
+      "day": 100,
+      "night": 23.5644
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 30,
+        "weak": 71,
+        "moderate": 217,
+        "long lasting": 200,
+        "eternal": 81
+      },
+      "SILLAGE": {
+        "intimate": 100,
+        "moderate": 323,
+        "strong": 145,
+        "enormous": 85
+      },
+      "GENDER": {
+        "female": 6,
+        "more female": 12,
+        "unisex": 288,
+        "more male": 77,
+        "male": 25
+      },
+      "PRICE VALUE": {
+        "way overpriced": 9,
+        "overpriced": 17,
+        "ok": 130,
+        "good value": 153,
+        "great value": 49
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Lush",
+    "perfumeName": "Dirty",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.11734.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.63243.jpg",
+    "notes": {
+      "rose": 100,
+      "sweet": 76.5937,
+      "fruity": 61.0627,
+      "citrus": 58.1337,
+      "aromatic": 50.3437,
+      "floral": 48.5937,
+      "fresh spicy": 46.0418
+    },
+    "seasonData": {
+      "winter": 78.327,
+      "spring": 95.4373,
+      "summer": 66.1597,
+      "fall": 74.9049,
+      "day": 100,
+      "night": 57.7947
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 10,
+        "weak": 37,
+        "moderate": 172,
+        "long lasting": 140,
+        "eternal": 32
+      },
+      "SILLAGE": {
+        "intimate": 36,
+        "moderate": 171,
+        "strong": 140,
+        "enormous": 38
+      },
+      "GENDER": {
+        "female": 263,
+        "more female": 91,
+        "unisex": 43,
+        "more male": 1,
+        "male": 0
+      },
+      "PRICE VALUE": {
+        "way overpriced": 11,
+        "overpriced": 31,
+        "ok": 142,
+        "good value": 158,
+        "great value": 39
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Turkish Rose",
+        "Rose Oil",
+        "Marmalade"
+      ],
+      "Middle Notes": [
+        "Lemon",
+        "Spicy Notes"
+      ],
+      "Base Notes": [
+        "Geranium"
+      ]
+    },
+    "companyName": "Lush",
+    "perfumeName": "Rose Jam 2019",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.63243.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.8130.jpg",
+    "notes": {
+      "vanilla": 100,
+      "white floral": 53.5961,
+      "sweet": 51.4144,
+      "powdery": 45.0113,
+      "amber": 44.2585
+    },
+    "seasonData": {
+      "winter": 100,
+      "spring": 41.1024,
+      "summer": 31.0236,
+      "fall": 88.3465,
+      "day": 92.7559,
+      "night": 65.0394
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 25,
+        "weak": 76,
+        "moderate": 260,
+        "long lasting": 289,
+        "eternal": 95
+      },
+      "SILLAGE": {
+        "intimate": 116,
+        "moderate": 389,
+        "strong": 206,
+        "enormous": 77
+      },
+      "GENDER": {
+        "female": 168,
+        "more female": 164,
+        "unisex": 128,
+        "more male": 3,
+        "male": 0
+      },
+      "PRICE VALUE": {
+        "way overpriced": 10,
+        "overpriced": 42,
+        "ok": 159,
+        "good value": 187,
+        "great value": 47
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Lush",
+    "perfumeName": "Vanillary",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.8130.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.4367.jpg",
+    "notes": {
+      "citrus": 100,
+      "woody": 94.904,
+      "aromatic": 86.2979,
+      "patchouli": 66.3435,
+      "fresh spicy": 64.7106,
+      "conifer": 58.8008,
+      "warm spicy": 57.0312,
+      "balsamic": 56.4717,
+      "sweet": 49.2317,
+      "earthy": 45.6507
+    },
+    "seasonData": {
+      "winter": 61.5464,
+      "spring": 48.9691,
+      "summer": 69.6907,
+      "fall": 90.1031,
+      "day": 100,
+      "night": 54.8454
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 40,
+        "weak": 88,
+        "moderate": 453,
+        "long lasting": 392,
+        "eternal": 144
+      },
+      "SILLAGE": {
+        "intimate": 114,
+        "moderate": 528,
+        "strong": 396,
+        "enormous": 149
+      },
+      "GENDER": {
+        "female": 68,
+        "more female": 155,
+        "unisex": 499,
+        "more male": 25,
+        "male": 8
+      },
+      "PRICE VALUE": {
+        "way overpriced": 17,
+        "overpriced": 59,
+        "ok": 265,
+        "good value": 242,
+        "great value": 80
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Orange",
+        "Lemongrass",
+        "Lavender"
+      ],
+      "Middle Notes": [
+        "Pine Tree",
+        "Lemon",
+        "Cassis"
+      ],
+      "Base Notes": [
+        "Patchouli",
+        "Fir Resin",
+        "elemi",
+        "Cinnamon"
+      ]
+    },
+    "companyName": "Lush",
+    "perfumeName": "Karma",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.4367.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.13716.jpg",
+    "notes": {
+      "woody": 100,
+      "aromatic": 71.2136,
+      "amber": 59.8268,
+      "fresh spicy": 57.691,
+      "smoky": 56.5127,
+      "warm spicy": 54.3592,
+      "balsamic": 51.5474,
+      "citrus": 49.7438,
+      "fresh": 46.361,
+      "ozonic": 45.368
+    },
+    "seasonData": {
+      "winter": 83.2947,
+      "spring": 65.6613,
+      "summer": 42.4594,
+      "fall": 100,
+      "day": 99.3039,
+      "night": 65.6613
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 25,
+        "weak": 54,
+        "moderate": 239,
+        "long lasting": 207,
+        "eternal": 56
+      },
+      "SILLAGE": {
+        "intimate": 97,
+        "moderate": 336,
+        "strong": 186,
+        "enormous": 75
+      },
+      "GENDER": {
+        "female": 4,
+        "more female": 10,
+        "unisex": 265,
+        "more male": 81,
+        "male": 23
+      },
+      "PRICE VALUE": {
+        "way overpriced": 11,
+        "overpriced": 28,
+        "ok": 111,
+        "good value": 128,
+        "great value": 35
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Lush",
+    "perfumeName": "Breath Of God",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.13716.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.26635.jpg",
+    "notes": {
+      "woody": 100,
+      "aromatic": 92.1119,
+      "vanilla": 75.9198,
+      "sweet": 58.5407,
+      "fresh spicy": 57.9029,
+      "anis": 53.7916,
+      "amber": 53.214,
+      "soft spicy": 51.4124,
+      "balsamic": 47.4393,
+      "rose": 46.6308
+    },
+    "seasonData": {
+      "winter": 75.7895,
+      "spring": 34.7368,
+      "summer": 29.4737,
+      "fall": 100,
+      "day": 75.7895,
+      "night": 68.4211
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 3,
+        "weak": 18,
+        "moderate": 66,
+        "long lasting": 97,
+        "eternal": 24
+      },
+      "SILLAGE": {
+        "intimate": 25,
+        "moderate": 106,
+        "strong": 78,
+        "enormous": 44
+      },
+      "GENDER": {
+        "female": 10,
+        "more female": 28,
+        "unisex": 75,
+        "more male": 5,
+        "male": 0
+      },
+      "PRICE VALUE": {
+        "way overpriced": 0,
+        "overpriced": 6,
+        "ok": 36,
+        "good value": 46,
+        "great value": 7
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Lush",
+    "perfumeName": "All Good Things",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.26635.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.17620.jpg",
+    "notes": {
+      "citrus": 100,
+      "sweet": 54.7059,
+      "woody": 45.837,
+      "powdery": 45.3302
+    },
+    "seasonData": {
+      "winter": 8.17844,
+      "spring": 55.0186,
+      "summer": 100,
+      "fall": 12.2677,
+      "day": 91.8216,
+      "night": 5.20446
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 162,
+        "weak": 80,
+        "moderate": 40,
+        "long lasting": 8,
+        "eternal": 4
+      },
+      "SILLAGE": {
+        "intimate": 184,
+        "moderate": 64,
+        "strong": 19,
+        "enormous": 18
+      },
+      "GENDER": {
+        "female": 7,
+        "more female": 44,
+        "unisex": 136,
+        "more male": 2,
+        "male": 0
+      },
+      "PRICE VALUE": {
+        "way overpriced": 14,
+        "overpriced": 24,
+        "ok": 81,
+        "good value": 37,
+        "great value": 11
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Lush",
+    "perfumeName": "Sun",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.17620.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.10803.jpg",
+    "notes": {
+      "rose": 100,
+      "aromatic": 85.1435,
+      "floral": 73.5521,
+      "iris": 65.7493,
+      "earthy": 64.5932,
+      "woody": 62.3454,
+      "fresh spicy": 57.0796,
+      "powdery": 52.9694,
+      "musky": 52.2632,
+      "green": 49.9723
+    },
+    "seasonData": {
+      "winter": 54.1985,
+      "spring": 85.4962,
+      "summer": 51.9084,
+      "fall": 67.1756,
+      "day": 100,
+      "night": 60.3053
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 14,
+        "weak": 15,
+        "moderate": 60,
+        "long lasting": 27,
+        "eternal": 15
+      },
+      "SILLAGE": {
+        "intimate": 23,
+        "moderate": 73,
+        "strong": 48,
+        "enormous": 27
+      },
+      "GENDER": {
+        "female": 22,
+        "more female": 10,
+        "unisex": 9,
+        "more male": 1,
+        "male": 0
+      },
+      "PRICE VALUE": {
+        "way overpriced": 1,
+        "overpriced": 3,
+        "ok": 15,
+        "good value": 10,
+        "great value": 6
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Lush",
+    "perfumeName": "Imogen Rose",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.10803.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.17621.jpg",
+    "notes": {
+      "woody": 100,
+      "mossy": 86.0278,
+      "earthy": 77.8655,
+      "aromatic": 69.7729,
+      "yellow floral": 54.9012,
+      "soft spicy": 50.751,
+      "white floral": 48.6759,
+      "sweet": 48.0534
+    },
+    "seasonData": {
+      "winter": 65.0485,
+      "spring": 45.6311,
+      "summer": 37.8641,
+      "fall": 100,
+      "day": 67.9612,
+      "night": 77.6699
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 4,
+        "weak": 12,
+        "moderate": 45,
+        "long lasting": 44,
+        "eternal": 18
+      },
+      "SILLAGE": {
+        "intimate": 18,
+        "moderate": 69,
+        "strong": 48,
+        "enormous": 23
+      },
+      "GENDER": {
+        "female": 2,
+        "more female": 3,
+        "unisex": 52,
+        "more male": 25,
+        "male": 5
+      },
+      "PRICE VALUE": {
+        "way overpriced": 7,
+        "overpriced": 26,
+        "ok": 25,
+        "good value": 12,
+        "great value": 3
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Lush",
+    "perfumeName": "Devil's Night Cap",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.17621.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.50866.jpg",
+    "notes": {
+      "sweet": 100,
+      "fruity": 99.3794,
+      "rose": 87.6946,
+      "lavender": 78.9309,
+      "yellow floral": 67.9763,
+      "floral": 51.8362,
+      "aromatic": 49.5722,
+      "woody": 45.1904,
+      "fresh spicy": 44.6792
+    },
+    "seasonData": {},
+    "perfumeProperties": {},
+    "noteTopMiddleBase": {},
+    "companyName": "Lush",
+    "perfumeName": "Amelie Mae",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.50866.jpg"
+  }
+]

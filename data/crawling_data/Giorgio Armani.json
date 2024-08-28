@@ -1,0 +1,712 @@
+[
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.59532.jpg",
+    "notes": {
+      "marine": 100,
+      "aromatic": 99.5751,
+      "citrus": 79.86,
+      "fresh spicy": 67.6106,
+      "fresh": 65.0334,
+      "woody": 62.5083,
+      "mineral": 59.2862,
+      "salty": 46.7891,
+      "lavender": 45.1019
+    },
+    "seasonData": {
+      "winter": 9.45138,
+      "spring": 81.8151,
+      "summer": 100,
+      "fall": 25.7563,
+      "day": 87.0962,
+      "night": 29.9949
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 159,
+        "weak": 431,
+        "moderate": 3247,
+        "long lasting": 1992,
+        "eternal": 150
+      },
+      "SILLAGE": {
+        "intimate": 657,
+        "moderate": 4007,
+        "strong": 1088,
+        "enormous": 164
+      },
+      "GENDER": {
+        "female": 33,
+        "more female": 5,
+        "unisex": 172,
+        "more male": 1285,
+        "male": 4067
+      },
+      "PRICE VALUE": {
+        "way overpriced": 219,
+        "overpriced": 1297,
+        "ok": 2845,
+        "good value": 778,
+        "great value": 127
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Sea Notes",
+        "Aquozone",
+        "Bergamot",
+        "Green Mandarin"
+      ],
+      "Middle Notes": [
+        "Rosemary",
+        "Lavender",
+        "Cypress",
+        "Mastic or Lentisque"
+      ],
+      "Base Notes": [
+        "Mineral notes",
+        "Musk",
+        "Patchouli",
+        "Amber"
+      ]
+    },
+    "companyName": "Giorgio Armani",
+    "perfumeName": "Acqua di Giò Profondo",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.59532.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.71606.jpg",
+    "notes": {
+      "aromatic": 100,
+      "marine": 68.9355,
+      "mineral": 61.6194,
+      "citrus": 59.1806,
+      "fresh spicy": 49.1987,
+      "lavender": 46.062,
+      "salty": 45.5743,
+      "woody": 45.4902
+    },
+    "seasonData": {
+      "winter": 12.232,
+      "spring": 88.3354,
+      "summer": 100,
+      "fall": 36.8852,
+      "day": 89.7856,
+      "night": 31.5889
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 36,
+        "weak": 126,
+        "moderate": 922,
+        "long lasting": 580,
+        "eternal": 37
+      },
+      "SILLAGE": {
+        "intimate": 188,
+        "moderate": 1183,
+        "strong": 240,
+        "enormous": 21
+      },
+      "GENDER": {
+        "female": 13,
+        "more female": 8,
+        "unisex": 84,
+        "more male": 426,
+        "male": 1195
+      },
+      "PRICE VALUE": {
+        "way overpriced": 102,
+        "overpriced": 408,
+        "ok": 839,
+        "good value": 193,
+        "great value": 32
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Sea Notes",
+        "Green Mandarin"
+      ],
+      "Middle Notes": [
+        "Clary Sage",
+        "Lavender",
+        "Geranium"
+      ],
+      "Base Notes": [
+        "Mineral notes",
+        "Vetiver",
+        "Patchouli"
+      ]
+    },
+    "companyName": "Giorgio Armani",
+    "perfumeName": "Acqua di Giò Eau de Parfum",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.71606.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.48138.jpg",
+    "notes": {
+      "aromatic": 100,
+      "woody": 97.1506,
+      "citrus": 76.1355,
+      "fresh spicy": 71.5555,
+      "amber": 70.9889,
+      "marine": 68.9671,
+      "fruity": 54.5962,
+      "warm spicy": 51.4164,
+      "sweet": 50.8682,
+      "aquatic": 50.2247
+    },
+    "seasonData": {
+      "winter": 36.6828,
+      "spring": 100,
+      "summer": 94.6731,
+      "fall": 82.9298,
+      "day": 99.2736,
+      "night": 70.9443
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 104,
+        "weak": 104,
+        "moderate": 847,
+        "long lasting": 955,
+        "eternal": 128
+      },
+      "SILLAGE": {
+        "intimate": 190,
+        "moderate": 1341,
+        "strong": 566,
+        "enormous": 155
+      },
+      "GENDER": {
+        "female": 14,
+        "more female": 3,
+        "unisex": 105,
+        "more male": 509,
+        "male": 996
+      },
+      "PRICE VALUE": {
+        "way overpriced": 58,
+        "overpriced": 325,
+        "ok": 840,
+        "good value": 231,
+        "great value": 38
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Sea Notes",
+        "Bergamot",
+        "Pear",
+        "Apple",
+        "Grapefruit",
+        "Lemon"
+      ],
+      "Middle Notes": [
+        "Lavender",
+        "Rosemary",
+        "Geranium"
+      ],
+      "Base Notes": [
+        "Woody Notes",
+        "Tonka Bean",
+        "Amberwood",
+        "Patchouli",
+        "Labdanum"
+      ]
+    },
+    "companyName": "Giorgio Armani",
+    "perfumeName": "Acqua di Giò Absolu",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.48138.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.29727.jpg",
+    "notes": {
+      "aromatic": 100,
+      "marine": 71.9075,
+      "fresh spicy": 68.5768,
+      "amber": 62.7851,
+      "woody": 59.2677,
+      "smoky": 59.1426,
+      "warm spicy": 58.5176,
+      "citrus": 57.8711,
+      "balsamic": 55.0742,
+      "patchouli": 52.8663
+    },
+    "seasonData": {
+      "winter": 36.6729,
+      "spring": 95.9377,
+      "summer": 100,
+      "fall": 73.2586,
+      "day": 93.4953,
+      "night": 82.0436
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 174,
+        "weak": 379,
+        "moderate": 3106,
+        "long lasting": 5358,
+        "eternal": 605
+      },
+      "SILLAGE": {
+        "intimate": 652,
+        "moderate": 5832,
+        "strong": 2714,
+        "enormous": 517
+      },
+      "GENDER": {
+        "female": 34,
+        "more female": 9,
+        "unisex": 148,
+        "more male": 968,
+        "male": 5830
+      },
+      "PRICE VALUE": {
+        "way overpriced": 309,
+        "overpriced": 1387,
+        "ok": 3558,
+        "good value": 1074,
+        "great value": 194
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Sea Notes",
+        "Bergamot"
+      ],
+      "Middle Notes": [
+        "Rosemary",
+        "Sage",
+        "Geranium"
+      ],
+      "Base Notes": [
+        "Incense",
+        "Patchouli"
+      ]
+    },
+    "companyName": "Giorgio Armani",
+    "perfumeName": "Acqua di Giò Profumo",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.29727.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.8442.jpg",
+    "notes": {
+      "aromatic": 100,
+      "citrus": 99.6891,
+      "green": 96.5776,
+      "white floral": 68.1764,
+      "fresh spicy": 63.2888,
+      "woody": 58.8257,
+      "fresh": 47.7557
+    },
+    "seasonData": {
+      "winter": 11.759,
+      "spring": 66.0636,
+      "summer": 99.8385,
+      "fall": 15.1995,
+      "day": 100,
+      "night": 16.0717
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 247,
+        "weak": 710,
+        "moderate": 2315,
+        "long lasting": 1035,
+        "eternal": 315
+      },
+      "SILLAGE": {
+        "intimate": 888,
+        "moderate": 2663,
+        "strong": 859,
+        "enormous": 369
+      },
+      "GENDER": {
+        "female": 1315,
+        "more female": 751,
+        "unisex": 348,
+        "more male": 8,
+        "male": 11
+      },
+      "PRICE VALUE": {
+        "way overpriced": 77,
+        "overpriced": 419,
+        "ok": 1196,
+        "good value": 367,
+        "great value": 56
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Amalfi Lemon",
+        "Mint"
+      ],
+      "Middle Notes": [
+        "Water Jasmine"
+      ],
+      "Base Notes": [
+        "Virginia Cedar",
+        "Brown sugar",
+        "French labdanum"
+      ]
+    },
+    "companyName": "Giorgio Armani",
+    "perfumeName": "Acqua di Gioia",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.8442.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.62036.jpg",
+    "notes": {
+      "white floral": 100,
+      "tuberose": 61.5802,
+      "citrus": 58.1832,
+      "animalic": 47.1212,
+      "vanilla": 44.5421
+    },
+    "seasonData": {
+      "winter": 35.3994,
+      "spring": 100,
+      "summer": 70.8264,
+      "fall": 53.3609,
+      "day": 99.2562,
+      "night": 38.2369
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 138,
+        "weak": 458,
+        "moderate": 2222,
+        "long lasting": 1513,
+        "eternal": 370
+      },
+      "SILLAGE": {
+        "intimate": 498,
+        "moderate": 2474,
+        "strong": 1374,
+        "enormous": 433
+      },
+      "GENDER": {
+        "female": 4000,
+        "more female": 294,
+        "unisex": 88,
+        "more male": 4,
+        "male": 22
+      },
+      "PRICE VALUE": {
+        "way overpriced": 245,
+        "overpriced": 1079,
+        "ok": 2034,
+        "good value": 474,
+        "great value": 92
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Orange Blossom",
+        "Bergamot"
+      ],
+      "Middle Notes": [
+        "Tuberose",
+        "Indian Jasmine"
+      ],
+      "Base Notes": [
+        "Madagascar Vanilla",
+        "White Musk",
+        "Virginian Cedar"
+      ]
+    },
+    "companyName": "Giorgio Armani",
+    "perfumeName": "My Way",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.62036.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.412.jpg",
+    "notes": {
+      "citrus": 100,
+      "leather": 87.9491,
+      "anis": 83.3334,
+      "soft spicy": 77.9998,
+      "floral": 75.1134,
+      "tobacco": 71.1964,
+      "sweet": 69.983,
+      "aromatic": 65.5383,
+      "vanilla": 63.9232,
+      "animalic": 58.9745
+    },
+    "seasonData": {
+      "winter": 84.2984,
+      "spring": 44.3505,
+      "summer": 23.9211,
+      "fall": 82.6285,
+      "day": 43.4396,
+      "night": 100
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 180,
+        "weak": 477,
+        "moderate": 2597,
+        "long lasting": 1187,
+        "eternal": 257
+      },
+      "SILLAGE": {
+        "intimate": 732,
+        "moderate": 2954,
+        "strong": 913,
+        "enormous": 296
+      },
+      "GENDER": {
+        "female": 32,
+        "more female": 17,
+        "unisex": 173,
+        "more male": 658,
+        "male": 1769
+      },
+      "PRICE VALUE": {
+        "way overpriced": 59,
+        "overpriced": 506,
+        "ok": 1269,
+        "good value": 403,
+        "great value": 57
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Lemon",
+        "Bergamot"
+      ],
+      "Middle Notes": [
+        "Star Anise",
+        "Olive Blossom",
+        "Guaiac Wood"
+      ],
+      "Base Notes": [
+        "Leather",
+        "Tonka Bean",
+        "Tobacco"
+      ]
+    },
+    "companyName": "Giorgio Armani",
+    "perfumeName": "Armani Code",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.412.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.34761.jpg",
+    "notes": {
+      "amber": 100,
+      "vanilla": 68.4006,
+      "warm spicy": 66.825,
+      "aromatic": 65.7605,
+      "leather": 60.6491,
+      "sweet": 57.4178,
+      "fresh spicy": 56.9588,
+      "animalic": 56.0863,
+      "citrus": 48.6818,
+      "lavender": 45.9413
+    },
+    "seasonData": {
+      "winter": 100,
+      "spring": 26.8475,
+      "summer": 9.39465,
+      "fall": 89.544,
+      "day": 34.1588,
+      "night": 94.4182
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 90,
+        "weak": 117,
+        "moderate": 636,
+        "long lasting": 1544,
+        "eternal": 590
+      },
+      "SILLAGE": {
+        "intimate": 204,
+        "moderate": 1168,
+        "strong": 1522,
+        "enormous": 349
+      },
+      "GENDER": {
+        "female": 12,
+        "more female": 6,
+        "unisex": 157,
+        "more male": 528,
+        "male": 1000
+      },
+      "PRICE VALUE": {
+        "way overpriced": 46,
+        "overpriced": 271,
+        "ok": 933,
+        "good value": 232,
+        "great value": 40
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Cardamom",
+        "Green Apple",
+        "Green Mandarin"
+      ],
+      "Middle Notes": [
+        "Nutmeg",
+        "Lavender",
+        "Orange Blossom"
+      ],
+      "Base Notes": [
+        "Tonka Bean",
+        "Amber",
+        "Leather"
+      ]
+    },
+    "companyName": "Giorgio Armani",
+    "perfumeName": "Armani Code Profumo",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.34761.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.18453.jpg",
+    "notes": {
+      "woody": 100,
+      "vanilla": 94.2633,
+      "aromatic": 82.4299,
+      "soft spicy": 81.2396,
+      "fruity": 75.4394,
+      "green": 74.7767,
+      "floral": 70.1973,
+      "patchouli": 69.3738,
+      "rose": 68.3448,
+      "earthy": 63.2261
+    },
+    "seasonData": {
+      "winter": 84.8251,
+      "spring": 54.8508,
+      "summer": 29.7767,
+      "fall": 100,
+      "day": 91.0097,
+      "night": 76.2893
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 222,
+        "weak": 491,
+        "moderate": 2356,
+        "long lasting": 2622,
+        "eternal": 848
+      },
+      "SILLAGE": {
+        "intimate": 744,
+        "moderate": 3112,
+        "strong": 2167,
+        "enormous": 865
+      },
+      "GENDER": {
+        "female": 3015,
+        "more female": 410,
+        "unisex": 130,
+        "more male": 10,
+        "male": 13
+      },
+      "PRICE VALUE": {
+        "way overpriced": 157,
+        "overpriced": 670,
+        "ok": 1832,
+        "good value": 497,
+        "great value": 83
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Cassis"
+      ],
+      "Middle Notes": [
+        "May Rose",
+        "Freesia"
+      ],
+      "Base Notes": [
+        "Vanilla",
+        "Patchouli",
+        "Woody Notes",
+        "Ambroxan"
+      ]
+    },
+    "companyName": "Giorgio Armani",
+    "perfumeName": "Si",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.18453.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.25947.jpg",
+    "notes": {
+      "fruity": 100,
+      "woody": 81.8556,
+      "floral": 69.6463,
+      "aromatic": 69.1549,
+      "soft spicy": 69.0315,
+      "green": 59.3227,
+      "vanilla": 57.5124,
+      "citrus": 53.8255,
+      "patchouli": 51.4981,
+      "rose": 49.1644
+    },
+    "seasonData": {
+      "winter": 100,
+      "spring": 36.5912,
+      "summer": 17.8784,
+      "fall": 93.9213,
+      "day": 57.0918,
+      "night": 99.7616
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 52,
+        "weak": 68,
+        "moderate": 273,
+        "long lasting": 410,
+        "eternal": 220
+      },
+      "SILLAGE": {
+        "intimate": 107,
+        "moderate": 417,
+        "strong": 445,
+        "enormous": 283
+      },
+      "GENDER": {
+        "female": 291,
+        "more female": 61,
+        "unisex": 48,
+        "more male": 1,
+        "male": 3
+      },
+      "PRICE VALUE": {
+        "way overpriced": 26,
+        "overpriced": 56,
+        "ok": 202,
+        "good value": 47,
+        "great value": 19
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Black Currant",
+        "Cassis",
+        "Freesia",
+        "Mandarin Orange",
+        "Bergamot"
+      ],
+      "Middle Notes": [
+        "May Rose",
+        "Osmanthus",
+        "Neroli",
+        "Artemisia"
+      ],
+      "Base Notes": [
+        "Vanilla",
+        "Patchouli",
+        "Woody Notes",
+        "Ambroxan"
+      ]
+    },
+    "companyName": "Giorgio Armani",
+    "perfumeName": "Sì Intense",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.25947.jpg"
+  }
+]

@@ -1,0 +1,1033 @@
+[
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.40069.jpg",
+    "notes": {
+      "woody": 100,
+      "aldehydic": 83.9551,
+      "fresh": 78.3722,
+      "white floral": 75.5224,
+      "powdery": 69.4941,
+      "earthy": 66.8422,
+      "yellow floral": 66.0288,
+      "iris": 59.7354,
+      "citrus": 55.6731,
+      "floral": 54.9566
+    },
+    "seasonData": {
+      "winter": 100,
+      "spring": 64.9208,
+      "summer": 39.3829,
+      "fall": 99.2692,
+      "day": 84.1657,
+      "night": 94.1535
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 86,
+        "weak": 196,
+        "moderate": 1178,
+        "long lasting": 1428,
+        "eternal": 559
+      },
+      "SILLAGE": {
+        "intimate": 260,
+        "moderate": 1624,
+        "strong": 1125,
+        "enormous": 489
+      },
+      "GENDER": {
+        "female": 1676,
+        "more female": 607,
+        "unisex": 418,
+        "more male": 11,
+        "male": 23
+      },
+      "PRICE VALUE": {
+        "way overpriced": 395,
+        "overpriced": 706,
+        "ok": 1080,
+        "good value": 203,
+        "great value": 88
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Aldehydes",
+        "Ylang-Ylang",
+        "Neroli",
+        "Bergamot",
+        "Peach"
+      ],
+      "Middle Notes": [
+        "Iris",
+        "Jasmine",
+        "Rose",
+        "Lily-of-the-Valley"
+      ],
+      "Base Notes": [
+        "Sandalwood",
+        "Vanilla",
+        "Oakmoss",
+        "Vetiver",
+        "Patchouli"
+      ]
+    },
+    "companyName": "Chanel",
+    "perfumeName": "Chanel No 5 Eau de Parfum",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.40069.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.611.jpg",
+    "notes": {
+      "citrus": 100,
+      "woody": 63.15,
+      "patchouli": 62.4625,
+      "sweet": 61.7811,
+      "white floral": 59.0701,
+      "rose": 52.8829,
+      "earthy": 49.1,
+      "vanilla": 48.6256,
+      "warm spicy": 48.0823,
+      "yellow floral": 47.8958
+    },
+    "seasonData": {
+      "winter": 68.6075,
+      "spring": 83.7528,
+      "summer": 46.1813,
+      "fall": 79.4426,
+      "day": 100,
+      "night": 67.1276
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 254,
+        "weak": 490,
+        "moderate": 2588,
+        "long lasting": 4145,
+        "eternal": 3216
+      },
+      "SILLAGE": {
+        "intimate": 694,
+        "moderate": 3565,
+        "strong": 4422,
+        "enormous": 2149
+      },
+      "GENDER": {
+        "female": 4478,
+        "more female": 621,
+        "unisex": 231,
+        "more male": 14,
+        "male": 42
+      },
+      "PRICE VALUE": {
+        "way overpriced": 706,
+        "overpriced": 1565,
+        "ok": 2176,
+        "good value": 471,
+        "great value": 149
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Orange",
+        "Mandarin Orange",
+        "Bergamot",
+        "Orange Blossom"
+      ],
+      "Middle Notes": [
+        "Turkish Rose",
+        "Jasmine",
+        "Mimosa",
+        "Ylang-Ylang"
+      ],
+      "Base Notes": [
+        "Patchouli",
+        "White Musk",
+        "Vanilla",
+        "Vetiver",
+        "Tonka Bean",
+        "Opoponax"
+      ]
+    },
+    "companyName": "Chanel",
+    "perfumeName": "Coco Mademoiselle",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.611.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.25967.jpg",
+    "notes": {
+      "citrus": 100,
+      "amber": 93.4866,
+      "woody": 75.6005,
+      "warm spicy": 67.287,
+      "aromatic": 62.1484,
+      "fresh spicy": 58.1189,
+      "smoky": 51.9485,
+      "balsamic": 50.4541,
+      "fresh": 46.7577,
+      "green": 44.4647
+    },
+    "seasonData": {
+      "winter": 75.5508,
+      "spring": 100,
+      "summer": 92.8294,
+      "fall": 93.3045,
+      "day": 97.365,
+      "night": 91.7927
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 211,
+        "weak": 506,
+        "moderate": 3853,
+        "long lasting": 3915,
+        "eternal": 545
+      },
+      "SILLAGE": {
+        "intimate": 893,
+        "moderate": 5929,
+        "strong": 1758,
+        "enormous": 422
+      },
+      "GENDER": {
+        "female": 33,
+        "more female": 16,
+        "unisex": 337,
+        "more male": 1826,
+        "male": 4778
+      },
+      "PRICE VALUE": {
+        "way overpriced": 576,
+        "overpriced": 2184,
+        "ok": 2988,
+        "good value": 728,
+        "great value": 145
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Grapefruit",
+        "Lemon",
+        "Mint",
+        "Pink Pepper",
+        "Bergamot",
+        "Aldehydes",
+        "Coriander"
+      ],
+      "Middle Notes": [
+        "Ginger",
+        "Nutmeg",
+        "Jasmine",
+        "Melon"
+      ],
+      "Base Notes": [
+        "Incense",
+        "Amber",
+        "Cedar",
+        "Sandalwood",
+        "Patchouli",
+        "Amberwood",
+        "Labdanum"
+      ]
+    },
+    "companyName": "Chanel",
+    "perfumeName": "Bleu de Chanel Eau de Parfum",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.25967.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.8069.jpg",
+    "notes": {
+      "floral": 100,
+      "fruity": 83.6061,
+      "citrus": 79.9998,
+      "sweet": 73.4943,
+      "fresh spicy": 70.1763,
+      "powdery": 68.9533,
+      "white floral": 63.9682,
+      "musky": 62.8997,
+      "green": 59.3723,
+      "iris": 58.3459
+    },
+    "seasonData": {
+      "winter": 16.3445,
+      "spring": 93.9385,
+      "summer": 76.4033,
+      "fall": 23.906,
+      "day": 100,
+      "night": 17.4579
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 423,
+        "weak": 982,
+        "moderate": 2802,
+        "long lasting": 1365,
+        "eternal": 489
+      },
+      "SILLAGE": {
+        "intimate": 1255,
+        "moderate": 3187,
+        "strong": 1299,
+        "enormous": 632
+      },
+      "GENDER": {
+        "female": 2678,
+        "more female": 232,
+        "unisex": 77,
+        "more male": 5,
+        "male": 10
+      },
+      "PRICE VALUE": {
+        "way overpriced": 396,
+        "overpriced": 969,
+        "ok": 1106,
+        "good value": 222,
+        "great value": 61
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Quince",
+        "Grapefruit"
+      ],
+      "Middle Notes": [
+        "Hyacinth",
+        "Jasmine"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Iris",
+        "Virginia Cedar",
+        "Amber"
+      ]
+    },
+    "companyName": "Chanel",
+    "perfumeName": "Chance Eau Tendre",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.8069.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.48310.jpg",
+    "notes": {
+      "citrus": 100,
+      "vanilla": 88.1314,
+      "patchouli": 79.7758,
+      "sweet": 73.6861,
+      "woody": 66.0626,
+      "warm spicy": 61.3184,
+      "amber": 59.7626,
+      "balsamic": 55.9833,
+      "rose": 54.4672,
+      "fruity": 52.4031
+    },
+    "seasonData": {
+      "winter": 88.4236,
+      "spring": 80.2956,
+      "summer": 42.303,
+      "fall": 100,
+      "day": 92.1798,
+      "night": 84.9754
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 85,
+        "weak": 127,
+        "moderate": 541,
+        "long lasting": 1094,
+        "eternal": 538
+      },
+      "SILLAGE": {
+        "intimate": 193,
+        "moderate": 917,
+        "strong": 1079,
+        "enormous": 474
+      },
+      "GENDER": {
+        "female": 1242,
+        "more female": 194,
+        "unisex": 101,
+        "more male": 3,
+        "male": 7
+      },
+      "PRICE VALUE": {
+        "way overpriced": 157,
+        "overpriced": 450,
+        "ok": 685,
+        "good value": 115,
+        "great value": 56
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Sicilian Orange",
+        "Calabrian bergamot",
+        "Lemon"
+      ],
+      "Middle Notes": [
+        "Rose",
+        "Fruity Notes",
+        "Jasmine"
+      ],
+      "Base Notes": [
+        "Patchouli",
+        "Madagascar Vanilla",
+        "Tonka Bean",
+        "White Musk",
+        "Labdanum"
+      ]
+    },
+    "companyName": "Chanel",
+    "perfumeName": "Coco Mademoiselle Intense",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.48310.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.607.jpg",
+    "notes": {
+      "citrus": 100,
+      "aromatic": 68.4525,
+      "vanilla": 68.0387,
+      "aldehydic": 66.795,
+      "marine": 62.9031,
+      "sweet": 58.1578,
+      "fresh spicy": 53.618,
+      "fresh": 51.7521,
+      "amber": 49.3596,
+      "powdery": 45.9234
+    },
+    "seasonData": {
+      "winter": 18.5584,
+      "spring": 84.7993,
+      "summer": 97.5,
+      "fall": 39.6898,
+      "day": 100,
+      "night": 34.8175
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 220,
+        "weak": 503,
+        "moderate": 2554,
+        "long lasting": 2042,
+        "eternal": 351
+      },
+      "SILLAGE": {
+        "intimate": 656,
+        "moderate": 3429,
+        "strong": 1396,
+        "enormous": 415
+      },
+      "GENDER": {
+        "female": 21,
+        "more female": 9,
+        "unisex": 231,
+        "more male": 962,
+        "male": 1778
+      },
+      "PRICE VALUE": {
+        "way overpriced": 322,
+        "overpriced": 966,
+        "ok": 1184,
+        "good value": 249,
+        "great value": 54
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Orange",
+        "Sea Notes",
+        "Aldehydes",
+        "Blood Mandarin"
+      ],
+      "Middle Notes": [
+        "Pepper",
+        "Neroli",
+        "Cedar"
+      ],
+      "Base Notes": [
+        "Vanilla",
+        "Tonka Bean",
+        "White Musk",
+        "Amber",
+        "Vetiver",
+        "Elemi resin"
+      ]
+    },
+    "companyName": "Chanel",
+    "perfumeName": "Allure Homme Sport",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.607.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.52359.jpg",
+    "notes": {
+      "rose": 100,
+      "fruity": 93.97,
+      "citrus": 93.4064,
+      "musky": 91.7413,
+      "floral": 91.1122,
+      "sweet": 84.1515,
+      "white floral": 70.6365,
+      "powdery": 60.8706,
+      "fresh": 58.0523,
+      "fresh spicy": 47.9719
+    },
+    "seasonData": {
+      "winter": 22.2304,
+      "spring": 98.5968,
+      "summer": 81.61,
+      "fall": 36.7799,
+      "day": 100,
+      "night": 24.4461
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 130,
+        "weak": 215,
+        "moderate": 782,
+        "long lasting": 342,
+        "eternal": 135
+      },
+      "SILLAGE": {
+        "intimate": 313,
+        "moderate": 875,
+        "strong": 346,
+        "enormous": 210
+      },
+      "GENDER": {
+        "female": 1113,
+        "more female": 89,
+        "unisex": 27,
+        "more male": 3,
+        "male": 5
+      },
+      "PRICE VALUE": {
+        "way overpriced": 176,
+        "overpriced": 461,
+        "ok": 402,
+        "good value": 87,
+        "great value": 27
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Quince",
+        "Grapefruit"
+      ],
+      "Middle Notes": [
+        "Rose",
+        "Jasmine"
+      ],
+      "Base Notes": [
+        "White Musk"
+      ]
+    },
+    "companyName": "Chanel",
+    "perfumeName": "Chance Eau Tendre Eau de Parfum",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.52359.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.56076.jpg",
+    "notes": {
+      "white floral": 100,
+      "citrus": 58.7622,
+      "fruity": 55.6054,
+      "sweet": 55.5461,
+      "tuberose": 49.3717,
+      "woody": 49.2241,
+      "yellow floral": 48.612,
+      "animalic": 47.1708,
+      "powdery": 46.8016,
+      "fresh": 44.5688
+    },
+    "seasonData": {
+      "winter": 45.318,
+      "spring": 92.6678,
+      "summer": 63.3392,
+      "fall": 81.6254,
+      "day": 100,
+      "night": 47.2615
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 81,
+        "weak": 153,
+        "moderate": 666,
+        "long lasting": 427,
+        "eternal": 114
+      },
+      "SILLAGE": {
+        "intimate": 227,
+        "moderate": 848,
+        "strong": 386,
+        "enormous": 228
+      },
+      "GENDER": {
+        "female": 972,
+        "more female": 126,
+        "unisex": 38,
+        "more male": 4,
+        "male": 12
+      },
+      "PRICE VALUE": {
+        "way overpriced": 180,
+        "overpriced": 351,
+        "ok": 396,
+        "good value": 84,
+        "great value": 24
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Citruses",
+        "Peach",
+        "Red Fruits",
+        "Petitgrain",
+        "Black Currant"
+      ],
+      "Middle Notes": [
+        "White Flowers",
+        "Tuberose",
+        "Ylang-Ylang",
+        "Jasmine",
+        "Orange Blossom",
+        "Coconut"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Vanilla",
+        "Sandalwood"
+      ]
+    },
+    "companyName": "Chanel",
+    "perfumeName": "Gabrielle Essence Chanel",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.56076.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.73411.jpg",
+    "notes": {
+      "rose": 100,
+      "citrus": 90.2407,
+      "patchouli": 77.3661,
+      "woody": 58.4196,
+      "warm spicy": 53.6832,
+      "soft spicy": 52.6978,
+      "fresh": 51.1082,
+      "floral": 50.0274,
+      "earthy": 48.9465,
+      "balsamic": 44.2098
+    },
+    "seasonData": {
+      "winter": 24.8175,
+      "spring": 100,
+      "summer": 89.781,
+      "fall": 50,
+      "day": 95.9854,
+      "night": 35.4015
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 15,
+        "weak": 51,
+        "moderate": 166,
+        "long lasting": 57,
+        "eternal": 8
+      },
+      "SILLAGE": {
+        "intimate": 59,
+        "moderate": 186,
+        "strong": 44,
+        "enormous": 3
+      },
+      "GENDER": {
+        "female": 198,
+        "more female": 72,
+        "unisex": 70,
+        "more male": 4,
+        "male": 5
+      },
+      "PRICE VALUE": {
+        "way overpriced": 40,
+        "overpriced": 78,
+        "ok": 134,
+        "good value": 31,
+        "great value": 8
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Citruses",
+        "Pink Pepper",
+        "Lemon"
+      ],
+      "Middle Notes": [
+        "Damask Rose"
+      ],
+      "Base Notes": [
+        "Patchouli"
+      ]
+    },
+    "companyName": "Chanel",
+    "perfumeName": "Paris – Paris",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.73411.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.14669.jpg",
+    "notes": {
+      "aromatic": 100,
+      "woody": 76.1897,
+      "fresh spicy": 73.94,
+      "vanilla": 72.7284,
+      "citrus": 72.6878,
+      "green": 72.6252,
+      "sweet": 61.4329,
+      "amber": 60.5199,
+      "musky": 60.0827,
+      "warm spicy": 58.2778
+    },
+    "seasonData": {
+      "winter": 47.1046,
+      "spring": 99.9601,
+      "summer": 91.254,
+      "fall": 81.7891,
+      "day": 100,
+      "night": 70.3474
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 173,
+        "weak": 400,
+        "moderate": 2083,
+        "long lasting": 2894,
+        "eternal": 411
+      },
+      "SILLAGE": {
+        "intimate": 558,
+        "moderate": 3062,
+        "strong": 2107,
+        "enormous": 394
+      },
+      "GENDER": {
+        "female": 40,
+        "more female": 13,
+        "unisex": 163,
+        "more male": 1197,
+        "male": 2288
+      },
+      "PRICE VALUE": {
+        "way overpriced": 390,
+        "overpriced": 1516,
+        "ok": 1316,
+        "good value": 242,
+        "great value": 69
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Mandarin Orange",
+        "Mint",
+        "Cypress",
+        "Sage"
+      ],
+      "Middle Notes": [
+        "Pepper"
+      ],
+      "Base Notes": [
+        "Tonka Bean",
+        "Musk",
+        "Sandalwood",
+        "Cedar"
+      ]
+    },
+    "companyName": "Chanel",
+    "perfumeName": "Allure Homme Sport Eau Extreme Chanel",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.14669.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.607.jpg",
+    "notes": {
+      "citrus": 100,
+      "aromatic": 68.4525,
+      "vanilla": 68.0387,
+      "aldehydic": 66.795,
+      "marine": 62.9031,
+      "sweet": 58.1578,
+      "fresh spicy": 53.618,
+      "fresh": 51.7521,
+      "amber": 49.3596,
+      "powdery": 45.9234
+    },
+    "seasonData": {
+      "winter": 18.5584,
+      "spring": 84.7993,
+      "summer": 97.5,
+      "fall": 39.6898,
+      "day": 100,
+      "night": 34.8175
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 220,
+        "weak": 503,
+        "moderate": 2554,
+        "long lasting": 2042,
+        "eternal": 351
+      },
+      "SILLAGE": {
+        "intimate": 656,
+        "moderate": 3429,
+        "strong": 1396,
+        "enormous": 415
+      },
+      "GENDER": {
+        "female": 21,
+        "more female": 9,
+        "unisex": 231,
+        "more male": 962,
+        "male": 1778
+      },
+      "PRICE VALUE": {
+        "way overpriced": 322,
+        "overpriced": 966,
+        "ok": 1184,
+        "good value": 249,
+        "great value": 54
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Orange",
+        "Sea Notes",
+        "Aldehydes",
+        "Blood Mandarin"
+      ],
+      "Middle Notes": [
+        "Pepper",
+        "Neroli",
+        "Cedar"
+      ],
+      "Base Notes": [
+        "Vanilla",
+        "Tonka Bean",
+        "White Musk",
+        "Amber",
+        "Vetiver",
+        "Elemi resin"
+      ]
+    },
+    "companyName": "Chanel",
+    "perfumeName": "coco mademosielle",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.607.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.10856.jpg",
+    "notes": {
+      "woody": 100,
+      "powdery": 96.7988,
+      "aldehydic": 83.6597,
+      "fresh": 80.574,
+      "iris": 77.8157,
+      "earthy": 76.0465,
+      "white floral": 74.3828,
+      "citrus": 72.3167,
+      "musky": 72.192,
+      "yellow floral": 65.964
+    },
+    "seasonData": {
+      "winter": 94.4928,
+      "spring": 73.7681,
+      "summer": 47.8986,
+      "fall": 100,
+      "day": 98.5507,
+      "night": 90.6522
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 71,
+        "weak": 163,
+        "moderate": 659,
+        "long lasting": 397,
+        "eternal": 190
+      },
+      "SILLAGE": {
+        "intimate": 221,
+        "moderate": 846,
+        "strong": 380,
+        "enormous": 175
+      },
+      "GENDER": {
+        "female": 387,
+        "more female": 161,
+        "unisex": 178,
+        "more male": 6,
+        "male": 2
+      },
+      "PRICE VALUE": {
+        "way overpriced": 56,
+        "overpriced": 149,
+        "ok": 323,
+        "good value": 62,
+        "great value": 26
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Aldehydes",
+        "Ylang-Ylang",
+        "Neroli",
+        "Amalfi Lemon",
+        "Bergamot"
+      ],
+      "Middle Notes": [
+        "Iris",
+        "Jasmine",
+        "Rose",
+        "Orris Root",
+        "Lily-of-the-Valley"
+      ],
+      "Base Notes": [
+        "Civetta",
+        "Musk",
+        "Sandalwood",
+        "oak moss",
+        "Vetiver",
+        "Amber",
+        "Vanille",
+        "Patchouli"
+      ]
+    },
+    "companyName": "Chanel",
+    "perfumeName": "Chanel No 5 Eau de Toilette",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.10856.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.75185.jpg",
+    "notes": {
+      "white floral": 100,
+      "tuberose": 57.2937,
+      "sweet": 52.2096,
+      "yellow floral": 51.9419,
+      "woody": 50.5505,
+      "vanilla": 49.266,
+      "animalic": 44.2891
+    },
+    "seasonData": {
+      "winter": 73.3333,
+      "spring": 100,
+      "summer": 59.2593,
+      "fall": 94.0741,
+      "day": 88.1481,
+      "night": 80
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 5,
+        "weak": 17,
+        "moderate": 101,
+        "long lasting": 70,
+        "eternal": 20
+      },
+      "SILLAGE": {
+        "intimate": 17,
+        "moderate": 123,
+        "strong": 48,
+        "enormous": 9
+      },
+      "GENDER": {
+        "female": 200,
+        "more female": 29,
+        "unisex": 9,
+        "more male": 3,
+        "male": 1
+      },
+      "PRICE VALUE": {
+        "way overpriced": 32,
+        "overpriced": 60,
+        "ok": 90,
+        "good value": 22,
+        "great value": 5
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Chanel",
+    "perfumeName": "Gabrielle Parfum Chanel",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.75185.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.609.jpg",
+    "notes": {
+      "amber": 100,
+      "warm spicy": 77.1095,
+      "sweet": 69.2078,
+      "powdery": 67.0023,
+      "woody": 58.2804,
+      "vanilla": 57.4412,
+      "white floral": 56.2978,
+      "rose": 55.7329,
+      "floral": 54.4317,
+      "animalic": 52.595
+    },
+    "seasonData": {
+      "winter": 97.2149,
+      "spring": 28.7704,
+      "summer": 18.97,
+      "fall": 88.9911,
+      "day": 54.598,
+      "night": 100
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 88,
+        "weak": 160,
+        "moderate": 554,
+        "long lasting": 1572,
+        "eternal": 1288
+      },
+      "SILLAGE": {
+        "intimate": 226,
+        "moderate": 977,
+        "strong": 1895,
+        "enormous": 902
+      },
+      "GENDER": {
+        "female": 863,
+        "more female": 270,
+        "unisex": 207,
+        "more male": 13,
+        "male": 6
+      },
+      "PRICE VALUE": {
+        "way overpriced": 89,
+        "overpriced": 268,
+        "ok": 650,
+        "good value": 151,
+        "great value": 63
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Bulgarian Rose",
+        "Coriander",
+        "Peach",
+        "Jasmine",
+        "Mandarin Orange"
+      ],
+      "Middle Notes": [
+        "Cloves",
+        "Rose",
+        "Orange Blossom",
+        "Mimosa",
+        "Clover"
+      ],
+      "Base Notes": [
+        "Amber",
+        "Sandalwood",
+        "Tonka Bean",
+        "Opoponax",
+        "Civet",
+        "Vanilla",
+        "Labdanum"
+      ]
+    },
+    "companyName": "Chanel",
+    "perfumeName": "Coco Eau de Parfum",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.609.jpg"
+  }
+]
