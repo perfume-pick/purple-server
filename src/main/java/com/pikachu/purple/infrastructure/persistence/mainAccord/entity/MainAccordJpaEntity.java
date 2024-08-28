@@ -1,17 +1,22 @@
 package com.pikachu.purple.infrastructure.persistence.mainAccord.entity;
 
 import com.pikachu.purple.domain.mainAccord.MainAccord;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
 @Entity
-@Table(name = "main_accord")
+@Table(
+        name = "main_accord",
+        uniqueConstraints={
+                @UniqueConstraint(
+                        name="uq_main_accord",
+                        columnNames={"perfume_id", "note_name"}
+                )
+        }
+)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class MainAccordJpaEntity {
 

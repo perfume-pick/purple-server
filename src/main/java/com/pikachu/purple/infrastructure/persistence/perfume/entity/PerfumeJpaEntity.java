@@ -1,17 +1,22 @@
 package com.pikachu.purple.infrastructure.persistence.perfume.entity;
 
 import com.pikachu.purple.domain.perfume.Perfume;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
 @Entity
-@Table(name = "perfume")
+@Table(
+        name = "perfume",
+        uniqueConstraints = {
+                @UniqueConstraint(
+                        name = "uq_perfume_brand_name_perfume_name",
+                        columnNames = {"brand_name", "perfume_name"}
+                )
+        }
+)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class PerfumeJpaEntity {
 
