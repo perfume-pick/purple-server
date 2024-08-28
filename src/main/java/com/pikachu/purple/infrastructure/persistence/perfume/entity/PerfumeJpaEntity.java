@@ -25,12 +25,16 @@ public class PerfumeJpaEntity {
     @Column(name = "brand_name", nullable = false)
     private String brandName;
 
+    @Column(name = "image_url")
+    private String imageUrl;
+
     public static Perfume toDomain(PerfumeJpaEntity perfumeJpaEntity) {
         return Perfume.builder()
-            .perfumeId(perfumeJpaEntity.getPerfumeId())
-            .perfumeName(perfumeJpaEntity.getPerfumeName())
-            .brandName(perfumeJpaEntity.getBrandName())
-            .build();
+                .perfumeId(perfumeJpaEntity.getPerfumeId())
+                .perfumeName(perfumeJpaEntity.getPerfumeName())
+                .brandName(perfumeJpaEntity.getBrandName())
+                .imageUrl(perfumeJpaEntity.getImageUrl())
+                .build();
     }
 
 }

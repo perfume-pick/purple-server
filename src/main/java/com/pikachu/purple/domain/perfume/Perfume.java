@@ -12,16 +12,19 @@ public class Perfume {
     private Long perfumeId;
     private String perfumeName;
     private String brandName;
+    private String imageUrl;
 
     @Builder
     public Perfume(
         Long perfumeId,
         String perfumeName,
-        String brandName
+        String brandName,
+        String imageUrl
     ) {
         this.perfumeId = perfumeId;
         this.perfumeName = perfumeName;
         this.brandName = brandName;
+        this.imageUrl = imageUrl;
     }
 
 }
