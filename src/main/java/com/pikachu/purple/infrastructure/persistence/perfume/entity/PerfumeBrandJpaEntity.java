@@ -20,7 +20,7 @@ public class PerfumeBrandJpaEntity {
     @Column(name = "brand_name")
     private String brandName;
 
-    @Column(name = "imageUrl")
+    @Column(name = "image_url")
     private String imageUrl;
 
     @Column(name = "display_order")

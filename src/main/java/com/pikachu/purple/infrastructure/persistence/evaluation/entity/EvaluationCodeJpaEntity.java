@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class EvaluationCodeJpaEntity {
 
     @Id
-    @Column(name = "code", columnDefinition = "char(5)", nullable = false)
+    @Column(name = "code", columnDefinition = "char(5)")
     private String code;
 
     @Column(name = "name", nullable = false)
