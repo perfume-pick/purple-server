@@ -18,4 +18,9 @@ public class PerfumeNoteDomainServiceImpl implements PerfumeNoteDomainService {
         return perfumeNoteRepository.getAllByPerfumeIds(perfumeIds);
     }
 
+    @Override
+    public List<PerfumeNote> findAllByPerfumeId(Long perfumeId) {
+        return perfumeNoteRepository.findAllByPerfumeId(perfumeId);
+    }
+
 }

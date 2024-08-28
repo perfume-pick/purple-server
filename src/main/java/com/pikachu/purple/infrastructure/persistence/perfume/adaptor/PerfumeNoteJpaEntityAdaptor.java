@@ -24,4 +24,13 @@ public class PerfumeNoteJpaEntityAdaptor implements PerfumeNoteRepository {
             .collect(Collectors.toList());
     }
 
+    @Override
+    public List<PerfumeNote> findAllByPerfumeId(Long perfumeId) {
+        List<PerfumeNoteJpaEntity> perfumeNoteJpaEntities = perfumeNoteJpaRepository.findAllByPerfumeId(perfumeId);
+
+        return perfumeNoteJpaEntities.stream()
+                .map(PerfumeNoteJpaEntity::toDomain)
+                .collect(Collectors.toList());
+    }
+
 }
