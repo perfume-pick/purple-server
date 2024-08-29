@@ -45,7 +45,7 @@ public class BusinessException extends RuntimeException {
         ErrorCode.FILE_DELETE_FAIL_EXCEPTION
     );
     public static final BusinessException PerfumeNotFoundException = new BusinessException(
-            ErrorCode.PERFUME_NOT_FOUND
+        ErrorCode.PERFUME_NOT_FOUND
     );
     public static final BusinessException ReviewNotFoundException = new BusinessException(
         ErrorCode.REVIEW_NOT_FOUND

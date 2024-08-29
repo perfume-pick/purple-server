@@ -4,13 +4,11 @@ import com.pikachu.purple.application.mainAccord.port.out.MainAccordRepository;
 import com.pikachu.purple.domain.mainAccord.MainAccord;
 import com.pikachu.purple.infrastructure.persistence.mainAccord.entity.MainAccordJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.mainAccord.repository.MainAccordJpaRepository;
-import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
+import java.util.List;
+import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Limit;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor
@@ -21,11 +19,11 @@ public class MainAccordJpaAdaptor implements MainAccordRepository {
     @Override
     public List<MainAccord> findAllByPerfumeId(Long perfumeId, int maxSize) {
         List<MainAccordJpaEntity> mainAccordJpaEntities = mainAccordJpaRepository
-                .findAllByPerfumeId(perfumeId, Limit.of(maxSize));
+            .findAllByPerfumeId(perfumeId, Limit.of(maxSize));
 
         return mainAccordJpaEntities.stream()
-                .map(MainAccordJpaEntity::toDomain)
-                .collect(Collectors.toList());
+            .map(MainAccordJpaEntity::toDomain)
+            .collect(Collectors.toList());
     }
 
 }

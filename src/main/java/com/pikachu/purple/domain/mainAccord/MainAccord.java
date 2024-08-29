@@ -19,10 +19,10 @@ public class MainAccord {
 
     @Builder
     public MainAccord(
-            Long mainAccordId,
-            Long perfumeId,
-            String noteName,
-            Integer accordValue
+        Long mainAccordId,
+        Long perfumeId,
+        String noteName,
+        Integer accordValue
     ) {
         this.mainAccordId = mainAccordId;
         this.perfumeId = perfumeId;

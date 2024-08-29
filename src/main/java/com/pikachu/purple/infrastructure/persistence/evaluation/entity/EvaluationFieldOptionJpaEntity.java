@@ -1,6 +1,10 @@
 package com.pikachu.purple.infrastructure.persistence.evaluation.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,13 +12,13 @@ import lombok.NoArgsConstructor;
 @Getter
 @Entity
 @Table(
-        name = "evaluation_field_option",
-        uniqueConstraints={
-                @UniqueConstraint(
-                        name="uq_evaluation_field_option",
-                        columnNames={"field_code", "option_code"}
-                )
-        }
+    name = "evaluation_field_option",
+    uniqueConstraints = {
+        @UniqueConstraint(
+            name = "uq_evaluation_field_option",
+            columnNames = {"field_code", "option_code"}
+        )
+    }
 )
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class EvaluationFieldOptionJpaEntity {

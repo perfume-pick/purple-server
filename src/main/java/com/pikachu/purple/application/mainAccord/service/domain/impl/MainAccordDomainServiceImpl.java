@@ -15,8 +15,14 @@ public class MainAccordDomainServiceImpl implements MainAccordDomainService {
     private final MainAccordRepository mainAccordRepository;
 
     @Override
-    public List<MainAccord> findAllByPerfumeId(Long perfumeId, int maxSize) {
-        return mainAccordRepository.findAllByPerfumeId(perfumeId, maxSize);
+    public List<MainAccord> findAllByPerfumeId(
+        Long perfumeId,
+        int maxSize
+    ) {
+        return mainAccordRepository.findAllByPerfumeId(
+            perfumeId,
+            maxSize
+        );
     }
 
 }

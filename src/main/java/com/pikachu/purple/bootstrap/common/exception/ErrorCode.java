@@ -112,9 +112,9 @@ public enum ErrorCode {
 
     // Perfume
     PERFUME_NOT_FOUND(
-            404,
-            "PF001",
-            "해당하는 향수 정보가 존재하지 않습니다."
+        404,
+        "PF001",
+        "해당하는 향수 정보가 존재하지 않습니다."
     ),
 
     // Review

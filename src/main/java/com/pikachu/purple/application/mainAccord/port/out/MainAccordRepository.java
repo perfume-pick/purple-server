@@ -6,6 +6,9 @@ import java.util.List;
 
 public interface MainAccordRepository {
 
-    List<MainAccord> findAllByPerfumeId(Long perfumeId, int maxSize);
+    List<MainAccord> findAllByPerfumeId(
+        Long perfumeId,
+        int maxSize
+    );
 
 }

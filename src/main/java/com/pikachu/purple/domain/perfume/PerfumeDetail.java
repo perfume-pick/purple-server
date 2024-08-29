@@ -1,13 +1,11 @@
 package com.pikachu.purple.domain.perfume;
 
 import com.pikachu.purple.domain.mainAccord.MainAccord;
-import com.pikachu.purple.domain.rating.Rating;
+import java.util.List;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -28,12 +26,12 @@ public class PerfumeDetail {
 
     @Builder
     public PerfumeDetail(
-            Long perfumeId,
-            String perfumeName,
-            String brandName,
-            String imageUrl,
-            List<MainAccord> mainAccords,
-            List<PerfumeNote> perfumeNotes
+        Long perfumeId,
+        String perfumeName,
+        String brandName,
+        String imageUrl,
+        List<MainAccord> mainAccords,
+        List<PerfumeNote> perfumeNotes
     ) {
         this.perfumeId = perfumeId;
         this.perfumeName = perfumeName;
@@ -44,18 +42,18 @@ public class PerfumeDetail {
     }
 
     public static PerfumeDetail of(
-            Perfume perfume,
-            List<MainAccord> mainAccords,
-            List<PerfumeNote> perfumeNotes
+        Perfume perfume,
+        List<MainAccord> mainAccords,
+        List<PerfumeNote> perfumeNotes
     ) {
         return PerfumeDetail.builder()
-                .perfumeId(perfume.getPerfumeId())
-                .perfumeName(perfume.getBrandName())
-                .brandName(perfume.getBrandName())
-                .imageUrl(perfume.getImageUrl())
-                .mainAccords(mainAccords)
-                .perfumeNotes(perfumeNotes)
-                .build();
+            .perfumeId(perfume.getPerfumeId())
+            .perfumeName(perfume.getBrandName())
+            .brandName(perfume.getBrandName())
+            .imageUrl(perfume.getImageUrl())
+            .mainAccords(mainAccords)
+            .perfumeNotes(perfumeNotes)
+            .build();
     }
 
 }

@@ -15,21 +15,33 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class PerfumeDetailGetByPerfumeIdApplicationService implements PerfumeDetailGetByPerfumeIdUseCase {
+public class PerfumeDetailGetByPerfumeIdApplicationService implements
+    PerfumeDetailGetByPerfumeIdUseCase {
 
     private final PerfumeDomainService perfumeDomainService;
     private final PerfumeNoteDomainService perfumeNoteDomainService;
     private final MainAccordDomainService mainAccordDomainService;
 
-    private final int MAX_SIZE = 5;
+    private static final int MAX_SIZE = 5;
 
     @Override
     public Result invoke(Command command) {
-        Perfume perfume = perfumeDomainService.findByPerfumeId(command.perfumeId());
-        List<MainAccord> mainAccords = mainAccordDomainService.findAllByPerfumeId(perfume.getPerfumeId(), MAX_SIZE);
-        List<PerfumeNote> perfumeNotes = perfumeNoteDomainService.findAllByPerfumeId(perfume.getPerfumeId());
+        Perfume perfume = perfumeDomainService.findByPerfumeId(
+            command.perfumeId()
+        );
+        List<MainAccord> mainAccords = mainAccordDomainService.findAllByPerfumeId(
+            perfume.getPerfumeId(),
+            MAX_SIZE
+        );
+        List<PerfumeNote> perfumeNotes = perfumeNoteDomainService.findAllByPerfumeId(
+            perfume.getPerfumeId()
+        );
 
-        PerfumeDetail perfumeDetail = PerfumeDetail.of(perfume, mainAccords, perfumeNotes);
+        PerfumeDetail perfumeDetail = PerfumeDetail.of(
+            perfume,
+            mainAccords,
+            perfumeNotes
+        );
 
         return new Result(perfumeDetail);
     }

@@ -17,7 +17,8 @@ public class PerfumeNoteJpaEntityAdaptor implements PerfumeNoteRepository {
 
     @Override
     public List<PerfumeNote> getAllByPerfumeIds(List<Long> perfumeIds) {
-        List<PerfumeNoteJpaEntity> perfumeNoteJpaEntities = perfumeNoteJpaRepository.findByPerfumeIdIn(perfumeIds);
+        List<PerfumeNoteJpaEntity> perfumeNoteJpaEntities = perfumeNoteJpaRepository.findByPerfumeIdIn(
+            perfumeIds);
 
         return perfumeNoteJpaEntities.stream()
             .map(PerfumeNoteJpaEntity::toDomain)
@@ -26,11 +27,12 @@ public class PerfumeNoteJpaEntityAdaptor implements PerfumeNoteRepository {
 
     @Override
     public List<PerfumeNote> findAllByPerfumeId(Long perfumeId) {
-        List<PerfumeNoteJpaEntity> perfumeNoteJpaEntities = perfumeNoteJpaRepository.findAllByPerfumeId(perfumeId);
+        List<PerfumeNoteJpaEntity> perfumeNoteJpaEntities = perfumeNoteJpaRepository.findAllByPerfumeId(
+            perfumeId);
 
         return perfumeNoteJpaEntities.stream()
-                .map(PerfumeNoteJpaEntity::toDomain)
-                .collect(Collectors.toList());
+            .map(PerfumeNoteJpaEntity::toDomain)
+            .collect(Collectors.toList());
     }
 
 }
