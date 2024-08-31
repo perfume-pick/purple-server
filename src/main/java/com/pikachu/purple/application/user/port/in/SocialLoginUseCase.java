@@ -13,6 +13,11 @@ public interface SocialLoginUseCase {
 
     }
 
-    record Result(String jwtToken) {
+    record Result(
+        String jwtToken,
+        boolean isFirstLogin
+    ) {
+
     }
+
 }

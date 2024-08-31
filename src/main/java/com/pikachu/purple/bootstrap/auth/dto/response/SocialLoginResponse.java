@@ -8,6 +8,9 @@ import io.swagger.v3.oas.annotations.media.Schema;
 )
 public record SocialLoginResponse(
     @Schema(description = "jwt token")
-    String jwtToken
+    String jwtToken,
+
+    @Schema(description = "최초 로그인(회원가입) 여부")
+    boolean isFirstLogin
 ) {
 }
