@@ -45,7 +45,10 @@ public class SocialLoginApplicationService implements SocialLoginUseCase {
             command.socialLoginProvider()
         );
 
+        boolean isSignUp = false;
+
         if (user == null) {
+            isSignUp = true;
             userSignUpUseCase.invoke(
                 new UserSignUpUseCase.Command(
                     email,
@@ -68,7 +71,10 @@ public class SocialLoginApplicationService implements SocialLoginUseCase {
             refreshToken
         );
 
-        return new SocialLoginUseCase.Result(jwtToken);
+        return new SocialLoginUseCase.Result(
+            jwtToken,
+            isSignUp
+        );
     }
 
 }
