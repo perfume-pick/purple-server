@@ -11,6 +11,6 @@ public record SocialLoginResponse(
     String jwtToken,
 
     @Schema(description = "최초 로그인(회원가입) 여부")
-    boolean isFirstLogin
+    boolean isSignUp
 ) {
 }

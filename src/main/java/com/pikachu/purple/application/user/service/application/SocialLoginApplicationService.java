@@ -45,10 +45,10 @@ public class SocialLoginApplicationService implements SocialLoginUseCase {
             command.socialLoginProvider()
         );
 
-        boolean isFirstLogin = false;
+        boolean isSignUp = false;
 
         if (user == null) {
-            isFirstLogin = true;
+            isSignUp = true;
             userSignUpUseCase.invoke(
                 new UserSignUpUseCase.Command(
                     email,
@@ -73,7 +73,7 @@ public class SocialLoginApplicationService implements SocialLoginUseCase {
 
         return new SocialLoginUseCase.Result(
             jwtToken,
-            isFirstLogin
+            isSignUp
         );
     }
 

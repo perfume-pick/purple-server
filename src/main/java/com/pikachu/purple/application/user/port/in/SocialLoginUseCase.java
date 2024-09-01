@@ -15,7 +15,7 @@ public interface SocialLoginUseCase {
 
     record Result(
         String jwtToken,
-        boolean isFirstLogin
+        boolean isSignUp
     ) {
 
     }
