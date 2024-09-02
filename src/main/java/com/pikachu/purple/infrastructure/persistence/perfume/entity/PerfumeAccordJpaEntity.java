@@ -1,6 +1,6 @@
-package com.pikachu.purple.infrastructure.persistence.mainAccord.entity;
+package com.pikachu.purple.infrastructure.persistence.perfume.entity;
 
-import com.pikachu.purple.domain.mainAccord.MainAccord;
+import com.pikachu.purple.domain.perfume.PerfumeAccord;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
     }
 )
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class MainAccordJpaEntity {
+public class PerfumeAccordJpaEntity {
 
     @Id
     @Column(name = "main_accord_id")
@@ -37,12 +37,12 @@ public class MainAccordJpaEntity {
     @Column(name = "accord_value", nullable = false)
     private int accordValue;
 
-    public static MainAccord toDomain(MainAccordJpaEntity mainAccordJpaEntity) {
-        return MainAccord.builder()
-            .mainAccordId(mainAccordJpaEntity.getMainAccordId())
-            .perfumeId(mainAccordJpaEntity.getPerfumeId())
-            .noteName(mainAccordJpaEntity.getNoteName())
-            .accordValue(mainAccordJpaEntity.getAccordValue())
+    public static PerfumeAccord toDomain(PerfumeAccordJpaEntity perfumeAccordJpaEntity) {
+        return PerfumeAccord.builder()
+            .mainAccordId(perfumeAccordJpaEntity.getMainAccordId())
+            .perfumeId(perfumeAccordJpaEntity.getPerfumeId())
+            .noteName(perfumeAccordJpaEntity.getNoteName())
+            .accordValue(perfumeAccordJpaEntity.getAccordValue())
             .build();
     }
 
