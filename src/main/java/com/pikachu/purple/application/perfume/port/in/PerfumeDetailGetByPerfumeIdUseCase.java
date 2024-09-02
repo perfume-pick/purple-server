@@ -1,6 +1,6 @@
 package com.pikachu.purple.application.perfume.port.in;
 
-import com.pikachu.purple.domain.perfume.PerfumeDetail;
+import com.pikachu.purple.application.perfume.common.dto.PerfumeDetailDto;
 
 public interface PerfumeDetailGetByPerfumeIdUseCase {
 
@@ -11,7 +11,7 @@ public interface PerfumeDetailGetByPerfumeIdUseCase {
 
     }
 
-    record Result(PerfumeDetail perfumeDetail) {
+    record Result(PerfumeDetailDto perfumeDetail) {
 
     }
 
