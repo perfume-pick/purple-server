@@ -24,8 +24,8 @@ import lombok.NoArgsConstructor;
 public class EvaluationFieldOptionJpaEntity {
 
     @Id
-    @Column(name = "evaluation_field_code_id")
-    private Long evaluationFieldCodeId;
+    @Column(name = "evaluation_field_option_id")
+    private Long evaluationFieldOptionId;
 
     @Column(name = "field_code", columnDefinition = "char(5)", nullable = false)
     private String fieldCode;
