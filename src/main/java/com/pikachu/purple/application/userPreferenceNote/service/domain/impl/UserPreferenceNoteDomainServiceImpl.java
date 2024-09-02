@@ -28,7 +28,7 @@ public class UserPreferenceNoteDomainServiceImpl implements UserPreferenceNoteDo
                    .userId(userId)
                    .noteName(perfumeNotes.get(i).getNoteName())
                    .build())
-           .collect(Collectors.toList());
+           .toList();
 
         userPreferenceNoteRepository.save(userPreferenceNotes);
     }

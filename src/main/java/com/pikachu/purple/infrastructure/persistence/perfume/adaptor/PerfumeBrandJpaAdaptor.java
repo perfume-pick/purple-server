@@ -21,7 +21,7 @@ public class PerfumeBrandJpaAdaptor implements PerfumeBrandRepository {
         List<PerfumeBrandJpaEntity> perfumeBrandEntityList = perfumeBrandJpaRepository.getTopThirtyBy(MAX_SIZE);
         return perfumeBrandEntityList.stream()
             .map(PerfumeBrandJpaEntity::toDomain)
-            .collect(Collectors.toList());
+            .toList();
     }
 
 }

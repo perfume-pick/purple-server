@@ -24,7 +24,7 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
 
         return perfumeJpaEntities.stream()
             .map(PerfumeJpaEntity::toDomain)
-            .collect(Collectors.toList());
+            .toList();
     }
 
     @Override
@@ -37,7 +37,7 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
 
         return perfumeJpaEntities.stream()
             .map(PerfumeJpaEntity::toDomain)
-            .collect(Collectors.toList());
+            .toList();
     }
 
     @Override

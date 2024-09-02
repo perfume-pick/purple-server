@@ -22,7 +22,7 @@ public class PerfumeNoteJpaAdaptor implements PerfumeNoteRepository {
 
         return perfumeNoteJpaEntities.stream()
             .map(PerfumeNoteJpaEntity::toDomain)
-            .collect(Collectors.toList());
+            .toList();
     }
 
     @Override
@@ -32,7 +32,7 @@ public class PerfumeNoteJpaAdaptor implements PerfumeNoteRepository {
 
         return perfumeNoteJpaEntities.stream()
             .map(PerfumeNoteJpaEntity::toDomain)
-            .collect(Collectors.toList());
+            .toList();
     }
 
 }

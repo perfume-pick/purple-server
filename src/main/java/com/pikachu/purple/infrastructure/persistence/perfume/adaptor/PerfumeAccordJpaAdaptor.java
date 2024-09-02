@@ -23,7 +23,7 @@ public class PerfumeAccordJpaAdaptor implements PerfumeAccordRepository {
 
         return mainAccordJpaEntities.stream()
             .map(PerfumeAccordJpaEntity::toDomain)
-            .collect(Collectors.toList());
+            .toList();
     }
 
 }

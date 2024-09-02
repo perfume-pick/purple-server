@@ -39,7 +39,7 @@ public class RatingJpaAdaptor implements RatingRepository {
 
         return ratingJpaEntities.stream()
             .map(RatingJpaEntity::toDomain)
-            .collect(Collectors.toList());
+            .toList();
     }
 
     @Override

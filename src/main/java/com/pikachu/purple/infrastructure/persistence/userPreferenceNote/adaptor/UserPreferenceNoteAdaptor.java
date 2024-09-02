@@ -29,7 +29,7 @@ public class UserPreferenceNoteAdaptor implements UserPreferenceNoteRepository {
         List<UserPreferenceNoteJpaEntity> userPreferenceNoteJpaEntities = userPreferenceNoteJpaRepository.findByUserId(userId);
         return userPreferenceNoteJpaEntities.stream()
             .map(UserPreferenceNoteJpaEntity::toDomain)
-            .collect(Collectors.toList());
+            .toList();
     }
 
 }
