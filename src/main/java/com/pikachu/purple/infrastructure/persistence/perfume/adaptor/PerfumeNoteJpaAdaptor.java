@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class PerfumeNoteJpaEntityAdaptor implements PerfumeNoteRepository {
+public class PerfumeNoteJpaAdaptor implements PerfumeNoteRepository {
 
     private final PerfumeNoteJpaRepository perfumeNoteJpaRepository;
 
