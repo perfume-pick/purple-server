@@ -5,7 +5,6 @@ import com.pikachu.purple.domain.perfume.PerfumeNote;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeNoteJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeNoteJpaRepository;
 import java.util.List;
-import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

@@ -5,7 +5,6 @@ import com.pikachu.purple.domain.user.entity.UserPreferenceNote;
 import com.pikachu.purple.infrastructure.persistence.userPreferenceNote.entity.UserPreferenceNoteJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.userPreferenceNote.repository.UserPreferenceNoteJpaRepository;
 import java.util.List;
-import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

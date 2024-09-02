@@ -5,7 +5,6 @@ import com.pikachu.purple.domain.perfume.PerfumeAccord;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeAccordJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeAccordJpaRepository;
 import java.util.List;
-import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Limit;
 import org.springframework.stereotype.Component;

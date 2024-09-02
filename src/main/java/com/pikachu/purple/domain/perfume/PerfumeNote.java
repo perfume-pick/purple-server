@@ -1,6 +1,5 @@
 package com.pikachu.purple.domain.perfume;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.pikachu.purple.domain.perfume.enums.PerfumeNoteType;
 import lombok.AccessLevel;
 import lombok.Builder;
