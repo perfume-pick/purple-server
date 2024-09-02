@@ -39,7 +39,10 @@ public interface PerfumeApi {
     SuccessResponse<GetPerfumeByKeywordResponse> findByKeywords(@RequestParam String keyword);
 
     @Secured
-    @Operation(summary = "향수 상세 정보 조회")
+    @Operation(
+        summary = "향수 상세 정보 조회",
+        description = "향수 기본 정보, 메인 어코드, Top/Middle/Base 노트 정보를 제공합니다."
+    )
     @GetMapping("/{perfume-id}/detail")
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<GetPerfumeDetailResponse> findPerfumeDetailByPerfumeId(
