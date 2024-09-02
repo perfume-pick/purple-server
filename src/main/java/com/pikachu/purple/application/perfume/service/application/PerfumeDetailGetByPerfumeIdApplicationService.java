@@ -28,9 +28,7 @@ public class PerfumeDetailGetByPerfumeIdApplicationService implements
 
     @Override
     public Result invoke(Command command) {
-        Perfume perfume = perfumeDomainService.findByPerfumeId(
-            command.perfumeId()
-        );
+        Perfume perfume = perfumeDomainService.findByPerfumeId(command.perfumeId());
 
         List<PerfumeAccord> perfumeAccords = perfumeAccordDomainService.findAllByPerfumeId(
             perfume.getPerfumeId(),
@@ -40,8 +38,7 @@ public class PerfumeDetailGetByPerfumeIdApplicationService implements
             .map(PerfumeAccordDto::from).toList();
 
         List<PerfumeNote> perfumeNotes = perfumeNoteDomainService.findAllByPerfumeId(
-            perfume.getPerfumeId()
-        );
+            perfume.getPerfumeId());
         List<PerfumeNoteDto> perfumeNoteDtos = perfumeNotes.stream()
             .map(PerfumeNoteDto::from).toList();
 
