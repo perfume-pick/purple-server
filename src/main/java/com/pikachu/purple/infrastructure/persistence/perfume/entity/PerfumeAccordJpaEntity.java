@@ -13,10 +13,10 @@ import lombok.NoArgsConstructor;
 @Getter
 @Entity
 @Table(
-    name = "main_accord",
+    name = "perfume_accord",
     uniqueConstraints = {
         @UniqueConstraint(
-            name = "uq_main_accord",
+            name = "uq_perfume_accord",
             columnNames = {"perfume_id", "note_name"}
         )
     }
@@ -25,8 +25,8 @@ import lombok.NoArgsConstructor;
 public class PerfumeAccordJpaEntity {
 
     @Id
-    @Column(name = "main_accord_id")
-    private Long mainAccordId;
+    @Column(name = "perfume_accord_id")
+    private Long perfumeAccordId;
 
     @Column(name = "perfume_id", nullable = false)
     private Long perfumeId;
@@ -39,7 +39,7 @@ public class PerfumeAccordJpaEntity {
 
     public static PerfumeAccord toDomain(PerfumeAccordJpaEntity perfumeAccordJpaEntity) {
         return PerfumeAccord.builder()
-            .mainAccordId(perfumeAccordJpaEntity.getMainAccordId())
+            .perfumeAccordId(perfumeAccordJpaEntity.getPerfumeAccordId())
             .perfumeId(perfumeAccordJpaEntity.getPerfumeId())
             .noteName(perfumeAccordJpaEntity.getNoteName())
             .accordValue(perfumeAccordJpaEntity.getAccordValue())

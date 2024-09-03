@@ -9,19 +9,19 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class PerfumeAccord {
 
-    private Long mainAccordId;
+    private Long perfumeAccordId;
     private Long perfumeId;
     private String noteName;
     private int accordValue;
 
     @Builder
     public PerfumeAccord(
-        Long mainAccordId,
+        Long perfumeAccordId,
         Long perfumeId,
         String noteName,
         Integer accordValue
     ) {
-        this.mainAccordId = mainAccordId;
+        this.perfumeAccordId = perfumeAccordId;
         this.perfumeId = perfumeId;
         this.noteName = noteName;
         this.accordValue = accordValue;

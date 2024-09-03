@@ -17,10 +17,10 @@ public class PerfumeAccordJpaAdaptor implements PerfumeAccordRepository {
 
     @Override
     public List<PerfumeAccord> findAllByPerfumeId(Long perfumeId, int maxSize) {
-        List<PerfumeAccordJpaEntity> mainAccordJpaEntities = perfumeAccordJpaRepository
+        List<PerfumeAccordJpaEntity> perfumeAccordJpaEntities = perfumeAccordJpaRepository
             .findAllByPerfumeId(perfumeId, Limit.of(maxSize));
 
-        return mainAccordJpaEntities.stream()
+        return perfumeAccordJpaEntities.stream()
             .map(PerfumeAccordJpaEntity::toDomain)
             .toList();
     }
