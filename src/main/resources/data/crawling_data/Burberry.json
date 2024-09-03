@@ -1,0 +1,749 @@
+[
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.999.jpg",
+    "notes": {
+      "citrus": 100,
+      "fresh": 52.6861,
+      "sweet": 49.9166,
+      "fruity": 46.4287,
+      "aromatic": 46.392,
+      "green": 45.9723,
+      "ozonic": 45.4975,
+      "woody": 44.2922
+    },
+    "seasonData": {
+      "winter": 10.4067,
+      "spring": 74.1627,
+      "summer": 97.488,
+      "fall": 25.7177,
+      "day": 100,
+      "night": 13.2775
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 62,
+        "weak": 173,
+        "moderate": 492,
+        "long lasting": 90,
+        "eternal": 32
+      },
+      "SILLAGE": {
+        "intimate": 201,
+        "moderate": 528,
+        "strong": 119,
+        "enormous": 73
+      },
+      "GENDER": {
+        "female": 5,
+        "more female": 12,
+        "unisex": 171,
+        "more male": 190,
+        "male": 123
+      },
+      "PRICE VALUE": {
+        "way overpriced": 10,
+        "overpriced": 15,
+        "ok": 139,
+        "good value": 181,
+        "great value": 94
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Lemon",
+        "Grapefruit",
+        "Bergamot",
+        "Pineapple",
+        "Mandarin Orange",
+        "Melon"
+      ],
+      "Middle Notes": [
+        "Ivy",
+        "Oakmoss",
+        "Sandalwood"
+      ],
+      "Base Notes": [
+        "Honey",
+        "Musk",
+        "Amber"
+      ]
+    },
+    "companyName": "Burberry",
+    "perfumeName": "Weekend for Men",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.999.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.1000.jpg",
+    "notes": {
+      "floral": 100,
+      "powdery": 70.9399,
+      "fruity": 64.5263,
+      "sweet": 56.3111,
+      "woody": 51.2355,
+      "fresh": 51.0514,
+      "rose": 48.3953,
+      "green": 47.3382,
+      "musky": 44.7082,
+      "violet": 44.4484
+    },
+    "seasonData": {
+      "winter": 28.935,
+      "spring": 72.6725,
+      "summer": 45.6798,
+      "fall": 66.142,
+      "day": 100,
+      "night": 21.2659
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 57,
+        "weak": 197,
+        "moderate": 948,
+        "long lasting": 922,
+        "eternal": 279
+      },
+      "SILLAGE": {
+        "intimate": 235,
+        "moderate": 1241,
+        "strong": 828,
+        "enormous": 292
+      },
+      "GENDER": {
+        "female": 832,
+        "more female": 155,
+        "unisex": 66,
+        "more male": 2,
+        "male": 4
+      },
+      "PRICE VALUE": {
+        "way overpriced": 20,
+        "overpriced": 63,
+        "ok": 414,
+        "good value": 341,
+        "great value": 108
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Mignonette",
+        "Mandarin Orange",
+        "Sage"
+      ],
+      "Middle Notes": [
+        "Nectarine",
+        "Blue Hyacinth",
+        "Peach Blossom",
+        "Rose Hip",
+        "Iris",
+        "Red Cyclamen",
+        "Violet Root"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Sandalwood",
+        "Cedar"
+      ]
+    },
+    "companyName": "Burberry",
+    "perfumeName": "Weekend for Women",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.1000.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.1793.jpg",
+    "notes": {
+      "fruity": 100,
+      "citrus": 83.648,
+      "fresh": 79.96,
+      "floral": 77.3192,
+      "sweet": 71.7498,
+      "tropical": 64.9508,
+      "musky": 48.2875,
+      "green": 46.102
+    },
+    "seasonData": {
+      "winter": 9.43396,
+      "spring": 67.9245,
+      "summer": 77.6564,
+      "fall": 13.6048,
+      "day": 100,
+      "night": 8.44091
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 67,
+        "weak": 157,
+        "moderate": 276,
+        "long lasting": 56,
+        "eternal": 25
+      },
+      "SILLAGE": {
+        "intimate": 277,
+        "moderate": 257,
+        "strong": 95,
+        "enormous": 100
+      },
+      "GENDER": {
+        "female": 87,
+        "more female": 6,
+        "unisex": 3,
+        "more male": 0,
+        "male": 0
+      },
+      "PRICE VALUE": {
+        "way overpriced": 2,
+        "overpriced": 6,
+        "ok": 38,
+        "good value": 25,
+        "great value": 3
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Litchi",
+        "Yuzu",
+        "Pineapple Leaf",
+        "Mandarin Orange"
+      ],
+      "Middle Notes": [
+        "Peony",
+        "Peach Blossom",
+        "Pear"
+      ],
+      "Base Notes": [
+        "White Musk",
+        "White Woods"
+      ]
+    },
+    "companyName": "Burberry",
+    "perfumeName": "Burberry Brit Sheer",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.1793.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.814.jpg",
+    "notes": {
+      "fruity": 100,
+      "woody": 70.5022,
+      "white floral": 65.2396,
+      "fresh": 60.9456,
+      "sweet": 55.6831,
+      "aromatic": 53.029,
+      "floral": 52.253,
+      "warm spicy": 52.204,
+      "soft spicy": 51.9466,
+      "green": 50.6975
+    },
+    "seasonData": {
+      "winter": 47.2611,
+      "spring": 67.7707,
+      "summer": 40.8917,
+      "fall": 79.1083,
+      "day": 100,
+      "night": 31.8471
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 41,
+        "weak": 97,
+        "moderate": 387,
+        "long lasting": 170,
+        "eternal": 48
+      },
+      "SILLAGE": {
+        "intimate": 141,
+        "moderate": 477,
+        "strong": 142,
+        "enormous": 89
+      },
+      "GENDER": {
+        "female": 208,
+        "more female": 119,
+        "unisex": 82,
+        "more male": 6,
+        "male": 3
+      },
+      "PRICE VALUE": {
+        "way overpriced": 13,
+        "overpriced": 24,
+        "ok": 135,
+        "good value": 144,
+        "great value": 47
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Red Pepper",
+        "Cassia",
+        "Blackberry",
+        "Cranberry",
+        "Black Currant",
+        "Rose Oil",
+        "Orange"
+      ],
+      "Middle Notes": [
+        "Lily",
+        "Peony",
+        "Peach",
+        "Tuberose",
+        "Lily-of-the-Valley",
+        "Jasmine",
+        "Raspberry"
+      ],
+      "Base Notes": [
+        "Cedar",
+        "Oakmoss",
+        "Vanilla",
+        "Green Almond",
+        "Tonka Bean"
+      ]
+    },
+    "companyName": "Burberry",
+    "perfumeName": "Touch for Women",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.814.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.817.jpg",
+    "notes": {
+      "aromatic": 100,
+      "woody": 86.631,
+      "fresh spicy": 85.0925,
+      "green": 63.0672,
+      "powdery": 61.1053,
+      "lavender": 56.1176,
+      "citrus": 51.0104,
+      "herbal": 46.3462
+    },
+    "seasonData": {
+      "winter": 54.458,
+      "spring": 85.7517,
+      "summer": 44.4056,
+      "fall": 92.0455,
+      "day": 100,
+      "night": 45.7168
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 51,
+        "weak": 157,
+        "moderate": 740,
+        "long lasting": 313,
+        "eternal": 57
+      },
+      "SILLAGE": {
+        "intimate": 180,
+        "moderate": 901,
+        "strong": 246,
+        "enormous": 88
+      },
+      "GENDER": {
+        "female": 3,
+        "more female": 2,
+        "unisex": 39,
+        "more male": 219,
+        "male": 495
+      },
+      "PRICE VALUE": {
+        "way overpriced": 7,
+        "overpriced": 25,
+        "ok": 192,
+        "good value": 325,
+        "great value": 142
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Mint",
+        "Lavender",
+        "Bergamot",
+        "Thyme"
+      ],
+      "Middle Notes": [
+        "Cedar",
+        "Sandalwood",
+        "Geranium",
+        "Jasmine",
+        "Oakmoss"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Vanilla",
+        "Amber"
+      ]
+    },
+    "companyName": "Burberry",
+    "perfumeName": "Burberry Men",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.817.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.818.jpg",
+    "notes": {
+      "fruity": 100,
+      "powdery": 72.7308,
+      "woody": 67.4772,
+      "vanilla": 62.2713,
+      "sweet": 61.4787,
+      "musky": 44.3984
+    },
+    "seasonData": {
+      "winter": 63.9114,
+      "spring": 48.104,
+      "summer": 30.2514,
+      "fall": 100,
+      "day": 100,
+      "night": 42.3093
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 115,
+        "weak": 237,
+        "moderate": 958,
+        "long lasting": 734,
+        "eternal": 203
+      },
+      "SILLAGE": {
+        "intimate": 419,
+        "moderate": 1263,
+        "strong": 487,
+        "enormous": 235
+      },
+      "GENDER": {
+        "female": 681,
+        "more female": 154,
+        "unisex": 106,
+        "more male": 3,
+        "male": 1
+      },
+      "PRICE VALUE": {
+        "way overpriced": 12,
+        "overpriced": 66,
+        "ok": 328,
+        "good value": 317,
+        "great value": 105
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Peach",
+        "Apricot",
+        "Pear",
+        "Black Currant",
+        "Green Apple"
+      ],
+      "Middle Notes": [
+        "Sandalwood",
+        "Jasmine",
+        "Moss"
+      ],
+      "Base Notes": [
+        "Vanilla",
+        "Cedar",
+        "Musk"
+      ]
+    },
+    "companyName": "Burberry",
+    "perfumeName": "Burberry Women",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.818.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.815.jpg",
+    "notes": {
+      "fresh spicy": 100,
+      "ozonic": 86.7509,
+      "musky": 84.3673,
+      "aquatic": 71.8165,
+      "woody": 70.6845,
+      "aromatic": 70.2135,
+      "powdery": 64.7439,
+      "green": 53.4488,
+      "warm spicy": 52.4576,
+      "vanilla": 51.3423
+    },
+    "seasonData": {
+      "winter": 51.9251,
+      "spring": 98.7513,
+      "summer": 61.7586,
+      "fall": 85.9521,
+      "day": 100,
+      "night": 56.5557
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 85,
+        "weak": 221,
+        "moderate": 1166,
+        "long lasting": 682,
+        "eternal": 131
+      },
+      "SILLAGE": {
+        "intimate": 351,
+        "moderate": 1510,
+        "strong": 399,
+        "enormous": 143
+      },
+      "GENDER": {
+        "female": 13,
+        "more female": 18,
+        "unisex": 279,
+        "more male": 660,
+        "male": 547
+      },
+      "PRICE VALUE": {
+        "way overpriced": 24,
+        "overpriced": 38,
+        "ok": 306,
+        "good value": 707,
+        "great value": 367
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Violet Leaf",
+        "Artemisia",
+        "Mandarin Orange"
+      ],
+      "Middle Notes": [
+        "White Pepper",
+        "Cedar",
+        "Nutmeg"
+      ],
+      "Base Notes": [
+        "White Musk",
+        "Tonka Bean",
+        "Vetiver"
+      ]
+    },
+    "companyName": "Burberry",
+    "perfumeName": "Touch for Men",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.815.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.25836.jpg",
+    "notes": {
+      "floral": 100,
+      "sweet": 70.9961,
+      "citrus": 66.4166,
+      "rose": 63.6852,
+      "fruity": 63.1228,
+      "fresh spicy": 55.4762,
+      "aromatic": 50.5725,
+      "green": 45.3965
+    },
+    "seasonData": {
+      "winter": 43.506,
+      "spring": 77.5727,
+      "summer": 30.5891,
+      "fall": 93.8964,
+      "day": 100,
+      "night": 39.7445
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 56,
+        "weak": 109,
+        "moderate": 578,
+        "long lasting": 655,
+        "eternal": 197
+      },
+      "SILLAGE": {
+        "intimate": 205,
+        "moderate": 897,
+        "strong": 550,
+        "enormous": 280
+      },
+      "GENDER": {
+        "female": 589,
+        "more female": 94,
+        "unisex": 40,
+        "more male": 5,
+        "male": 2
+      },
+      "PRICE VALUE": {
+        "way overpriced": 26,
+        "overpriced": 114,
+        "ok": 369,
+        "good value": 122,
+        "great value": 36
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Sweet Pea",
+        "Bergamot",
+        "Mandarin Orange",
+        "Grapefruit",
+        "Lemon"
+      ],
+      "Middle Notes": [
+        "Quince",
+        "Freesia",
+        "Geranium",
+        "Peach",
+        "Green Notes",
+        "Gardenia",
+        "Passionfruit"
+      ],
+      "Base Notes": [
+        "Damask Rose",
+        "Rose",
+        "Patchouli",
+        "Musk",
+        "Leather",
+        "Violet"
+      ]
+    },
+    "companyName": "Burberry",
+    "perfumeName": "My Burberry",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.25836.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.49095.jpg",
+    "notes": {
+      "aromatic": 100,
+      "fresh spicy": 76.7811,
+      "green": 72.4218,
+      "citrus": 64.9142,
+      "woody": 62.9968,
+      "fresh": 53.8749,
+      "aquatic": 51.0999,
+      "violet": 46.7507,
+      "mossy": 44.8334,
+      "powdery": 44.7224
+    },
+    "seasonData": {
+      "winter": 18.1452,
+      "spring": 99.1935,
+      "summer": 98.7903,
+      "fall": 49.3952,
+      "day": 100,
+      "night": 35.2823
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 26,
+        "weak": 66,
+        "moderate": 343,
+        "long lasting": 137,
+        "eternal": 26
+      },
+      "SILLAGE": {
+        "intimate": 89,
+        "moderate": 407,
+        "strong": 110,
+        "enormous": 82
+      },
+      "GENDER": {
+        "female": 4,
+        "more female": 1,
+        "unisex": 37,
+        "more male": 148,
+        "male": 266
+      },
+      "PRICE VALUE": {
+        "way overpriced": 10,
+        "overpriced": 40,
+        "ok": 150,
+        "good value": 144,
+        "great value": 66
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Rosemary",
+        "Lemon",
+        "Bergamot",
+        "Grapefruit"
+      ],
+      "Middle Notes": [
+        "Mint",
+        "Water Notes",
+        "Violet",
+        "Sage",
+        "Tea",
+        "Hedione"
+      ],
+      "Base Notes": [
+        "Oakmoss",
+        "Iso E Super",
+        "Amber"
+      ]
+    },
+    "companyName": "Burberry",
+    "perfumeName": "Mr. Burberry Indigo",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.49095.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.32565.jpg",
+    "notes": {
+      "woody": 100,
+      "aromatic": 91.3602,
+      "warm spicy": 67.5188,
+      "fresh spicy": 67.4,
+      "citrus": 63.0551,
+      "green": 47.5967,
+      "leather": 47.4182,
+      "smoky": 46.2704,
+      "amber": 45.9337
+    },
+    "seasonData": {
+      "winter": 34.9762,
+      "spring": 97.2973,
+      "summer": 73.2909,
+      "fall": 78.2194,
+      "day": 100,
+      "night": 49.6025
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 61,
+        "weak": 114,
+        "moderate": 415,
+        "long lasting": 133,
+        "eternal": 33
+      },
+      "SILLAGE": {
+        "intimate": 165,
+        "moderate": 498,
+        "strong": 156,
+        "enormous": 92
+      },
+      "GENDER": {
+        "female": 9,
+        "more female": 2,
+        "unisex": 25,
+        "more male": 99,
+        "male": 262
+      },
+      "PRICE VALUE": {
+        "way overpriced": 6,
+        "overpriced": 39,
+        "ok": 161,
+        "good value": 118,
+        "great value": 25
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Grapefruit",
+        "Cardamom",
+        "Tarragon",
+        "Mint"
+      ],
+      "Middle Notes": [
+        "Cedar",
+        "Birch Leaf",
+        "Nutmeg",
+        "Lavender"
+      ],
+      "Base Notes": [
+        "Vetiver",
+        "Guaiac Wood",
+        "Sandalwood",
+        "Benzoin",
+        "Amberwood",
+        "Oakmoss"
+      ]
+    },
+    "companyName": "Burberry",
+    "perfumeName": "Mr. Burberry",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.32565.jpg"
+  }
+]

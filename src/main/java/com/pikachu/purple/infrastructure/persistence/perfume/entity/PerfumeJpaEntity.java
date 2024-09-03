@@ -5,13 +5,22 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
 @Entity
-@Table(name = "perfume")
+@Table(
+    name = "perfume",
+    uniqueConstraints = {
+        @UniqueConstraint(
+            name = "uq_perfume_brand_name_perfume_name",
+            columnNames = {"brand_name", "perfume_name"}
+        )
+    }
+)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class PerfumeJpaEntity {
 
@@ -25,11 +34,15 @@ public class PerfumeJpaEntity {
     @Column(name = "brand_name", nullable = false)
     private String brandName;
 
+    @Column(name = "image_url")
+    private String imageUrl;
+
     public static Perfume toDomain(PerfumeJpaEntity perfumeJpaEntity) {
         return Perfume.builder()
             .perfumeId(perfumeJpaEntity.getPerfumeId())
             .perfumeName(perfumeJpaEntity.getPerfumeName())
             .brandName(perfumeJpaEntity.getBrandName())
+            .imageUrl(perfumeJpaEntity.getImageUrl())
             .build();
     }
 

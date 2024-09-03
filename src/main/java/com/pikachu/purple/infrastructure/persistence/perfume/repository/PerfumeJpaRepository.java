@@ -2,6 +2,7 @@ package com.pikachu.purple.infrastructure.persistence.perfume.repository;
 
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -25,10 +26,13 @@ public interface PerfumeJpaRepository extends JpaRepository<PerfumeJpaEntity, Lo
         "GROUP BY p.perfume_id " +
         "ORDER BY COUNT(pn.perfume_note_id) DESC ",
         nativeQuery = true)
-    Page<PerfumeJpaEntity> findByUserPreferenceNotes(@Param("userId") Long userId, Pageable pageable);
+    Page<PerfumeJpaEntity> findByUserPreferenceNotes(@Param("userId") Long userId,
+        Pageable pageable);
 
     @Query(value = "SELECT p.* FROM perfume p WHERE p.perfume_name LIKE :keyword OR p.brand_name LIKE :keyword",
         nativeQuery = true)
     List<PerfumeJpaEntity> findByKeyword(String keyword);
+
+    Optional<PerfumeJpaEntity> findByPerfumeId(Long perfumeId);
 
 }

@@ -1,0 +1,715 @@
+[
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.33443.jpg",
+    "notes": {
+      "citrus": 100,
+      "aquatic": 74.3091,
+      "musky": 70.0341,
+      "fresh spicy": 67.174,
+      "aromatic": 66.7787,
+      "woody": 64.5059,
+      "lavender": 62.6598,
+      "fresh": 52.1547,
+      "powdery": 47.0994
+    },
+    "seasonData": {
+      "winter": 11.0172,
+      "spring": 90.448,
+      "summer": 100,
+      "fall": 30.4311,
+      "day": 94.9563,
+      "night": 20.7664
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 97,
+        "weak": 444,
+        "moderate": 2772,
+        "long lasting": 519,
+        "eternal": 55
+      },
+      "SILLAGE": {
+        "intimate": 559,
+        "moderate": 2701,
+        "strong": 489,
+        "enormous": 131
+      },
+      "GENDER": {
+        "female": 24,
+        "more female": 10,
+        "unisex": 195,
+        "more male": 1319,
+        "male": 1651
+      },
+      "PRICE VALUE": {
+        "way overpriced": 29,
+        "overpriced": 79,
+        "ok": 565,
+        "good value": 1576,
+        "great value": 858
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Grapefruit",
+        "Bergamot",
+        "Pink Pepper"
+      ],
+      "Middle Notes": [
+        "Water Notes",
+        "Lavender",
+        "Cardamom"
+      ],
+      "Base Notes": [
+        "White Musk",
+        "White Woods",
+        "Cashmere Wood",
+        "Oakmoss"
+      ]
+    },
+    "companyName": "Montblanc",
+    "perfumeName": "Legend Spirit",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.33443.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.71710.jpg",
+    "notes": {
+      "aromatic": 100,
+      "woody": 79.7519,
+      "fruity": 78.4793,
+      "warm spicy": 70.3802,
+      "sweet": 69.9171,
+      "lavender": 69.3385,
+      "fresh spicy": 67.3142,
+      "citrus": 62.3965,
+      "vanilla": 62.3965,
+      "marine": 56.6116
+    },
+    "seasonData": {
+      "winter": 67.6724,
+      "spring": 100,
+      "summer": 72.8448,
+      "fall": 94.3966,
+      "day": 89.2241,
+      "night": 89.2241
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 6,
+        "weak": 35,
+        "moderate": 222,
+        "long lasting": 38,
+        "eternal": 6
+      },
+      "SILLAGE": {
+        "intimate": 38,
+        "moderate": 226,
+        "strong": 30,
+        "enormous": 3
+      },
+      "GENDER": {
+        "female": 2,
+        "more female": 0,
+        "unisex": 19,
+        "more male": 121,
+        "male": 173
+      },
+      "PRICE VALUE": {
+        "way overpriced": 1,
+        "overpriced": 6,
+        "ok": 30,
+        "good value": 137,
+        "great value": 126
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Apple",
+        "Pineapple",
+        "Mandarin Orange",
+        "Lemon"
+      ],
+      "Middle Notes": [
+        "Lavender",
+        "Sea Notes",
+        "Geranium"
+      ],
+      "Base Notes": [
+        "Tonka Bean",
+        "Sandalwood",
+        "Patchouli"
+      ]
+    },
+    "companyName": "Montblanc",
+    "perfumeName": "Starwalker Extreme",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.71710.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.52002.jpg",
+    "notes": {
+      "woody": 100,
+      "citrus": 97.3766,
+      "aromatic": 87.1247,
+      "amber": 82.6445,
+      "musky": 70.8091,
+      "fresh spicy": 63.688,
+      "oud": 63.0351,
+      "soft spicy": 62.3609,
+      "warm spicy": 58.5767,
+      "earthy": 56.5317
+    },
+    "seasonData": {
+      "winter": 45.535,
+      "spring": 100,
+      "summer": 96.1866,
+      "fall": 86.2269,
+      "day": 99.6943,
+      "night": 63.4594
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 302,
+        "weak": 804,
+        "moderate": 4554,
+        "long lasting": 2361,
+        "eternal": 254
+      },
+      "SILLAGE": {
+        "intimate": 1115,
+        "moderate": 5506,
+        "strong": 1338,
+        "enormous": 335
+      },
+      "GENDER": {
+        "female": 35,
+        "more female": 12,
+        "unisex": 189,
+        "more male": 1374,
+        "male": 5667
+      },
+      "PRICE VALUE": {
+        "way overpriced": 99,
+        "overpriced": 306,
+        "ok": 1819,
+        "good value": 3511,
+        "great value": 1306
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Bergamot",
+        "Pink Pepper",
+        "Clary Sage"
+      ],
+      "Middle Notes": [
+        "Haitian Vetiver",
+        "Leather"
+      ],
+      "Base Notes": [
+        "Ambroxan",
+        "Akigalawood",
+        "Indonesian Patchouli Leaf",
+        "Cacao Pod"
+      ]
+    },
+    "companyName": "Montblanc",
+    "perfumeName": "Explorer",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.52002.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.62583.jpg",
+    "notes": {
+      "woody": 100,
+      "ozonic": 86.4594,
+      "citrus": 81.6022,
+      "mossy": 75.6462,
+      "aquatic": 72.195,
+      "leather": 66.4613,
+      "floral": 65.3897,
+      "white floral": 62.2863,
+      "earthy": 61.9525,
+      "green": 51.3756
+    },
+    "seasonData": {
+      "winter": 76.6871,
+      "spring": 97.3415,
+      "summer": 73.0061,
+      "fall": 100,
+      "day": 90.8998,
+      "night": 86.5031
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 26,
+        "weak": 79,
+        "moderate": 496,
+        "long lasting": 544,
+        "eternal": 42
+      },
+      "SILLAGE": {
+        "intimate": 120,
+        "moderate": 844,
+        "strong": 183,
+        "enormous": 18
+      },
+      "GENDER": {
+        "female": 14,
+        "more female": 0,
+        "unisex": 27,
+        "more male": 208,
+        "male": 912
+      },
+      "PRICE VALUE": {
+        "way overpriced": 16,
+        "overpriced": 72,
+        "ok": 318,
+        "good value": 526,
+        "great value": 166
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Violet Leaves",
+        "Bergamot"
+      ],
+      "Middle Notes": [
+        "Woodsy Notes",
+        "Jasmine",
+        "Magnolia"
+      ],
+      "Base Notes": [
+        "Oakmoss",
+        "Leather"
+      ]
+    },
+    "companyName": "Montblanc",
+    "perfumeName": "Legend Eau de Parfum",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.62583.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.66266.jpg",
+    "notes": {
+      "marine": 100,
+      "aromatic": 85.5985,
+      "citrus": 77.6047,
+      "woody": 67.8744,
+      "fruity": 64.7302,
+      "salty": 59.8203,
+      "sweet": 56.4219,
+      "soft spicy": 55.3595,
+      "fresh spicy": 53.8021,
+      "amber": 52.7544
+    },
+    "seasonData": {
+      "winter": 13.1081,
+      "spring": 77.973,
+      "summer": 100,
+      "fall": 28.1081,
+      "day": 91.2162,
+      "night": 23.6486
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 28,
+        "weak": 108,
+        "moderate": 542,
+        "long lasting": 132,
+        "eternal": 24
+      },
+      "SILLAGE": {
+        "intimate": 166,
+        "moderate": 539,
+        "strong": 73,
+        "enormous": 13
+      },
+      "GENDER": {
+        "female": 13,
+        "more female": 5,
+        "unisex": 48,
+        "more male": 260,
+        "male": 532
+      },
+      "PRICE VALUE": {
+        "way overpriced": 31,
+        "overpriced": 76,
+        "ok": 333,
+        "good value": 270,
+        "great value": 82
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Sicilian Bergamot",
+        "Pink Pepper",
+        "Exotic Fruits"
+      ],
+      "Middle Notes": [
+        "Sea Notes",
+        "Ambergris"
+      ],
+      "Base Notes": [
+        "Woodsy Notes",
+        "Indonesian Patchouli Leaf",
+        "Leather"
+      ]
+    },
+    "companyName": "Montblanc",
+    "perfumeName": "Explorer Ultra Blue",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.66266.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.23715.jpg",
+    "notes": {
+      "warm spicy": 100,
+      "aromatic": 85.5698,
+      "cinnamon": 67.3994,
+      "rose": 60.237,
+      "woody": 55.8972,
+      "fresh spicy": 53.1097,
+      "soft spicy": 50.9047,
+      "fruity": 50.8872,
+      "vanilla": 50.4989,
+      "leather": 49.229
+    },
+    "seasonData": {
+      "winter": 89.5197,
+      "spring": 92.5764,
+      "summer": 43.2314,
+      "fall": 100,
+      "day": 94.3231,
+      "night": 93.0131
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 22,
+        "weak": 45,
+        "moderate": 176,
+        "long lasting": 88,
+        "eternal": 15
+      },
+      "SILLAGE": {
+        "intimate": 56,
+        "moderate": 235,
+        "strong": 80,
+        "enormous": 50
+      },
+      "GENDER": {
+        "female": 1,
+        "more female": 0,
+        "unisex": 19,
+        "more male": 73,
+        "male": 106
+      },
+      "PRICE VALUE": {
+        "way overpriced": 4,
+        "overpriced": 7,
+        "ok": 63,
+        "good value": 84,
+        "great value": 20
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Cardamom",
+        "Clary Sage",
+        "Grapefruit",
+        "Coriander"
+      ],
+      "Middle Notes": [
+        "Cinnamon",
+        "Rose",
+        "Apple",
+        "Violet Leaf",
+        "Nutmeg"
+      ],
+      "Base Notes": [
+        "Tonka Bean",
+        "Suede",
+        "Woody Notes",
+        "Patchouli"
+      ]
+    },
+    "companyName": "Montblanc",
+    "perfumeName": "Emblem Intense",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.23715.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.60962.jpg",
+    "notes": {
+      "vanilla": 100,
+      "floral": 83.737,
+      "musky": 80.9897,
+      "citrus": 80.8827,
+      "sweet": 77.2163,
+      "powdery": 74.3515,
+      "yellow floral": 57.7931,
+      "amber": 49.2949
+    },
+    "seasonData": {
+      "winter": 67.5406,
+      "spring": 90.7184,
+      "summer": 68.6418,
+      "fall": 82.1185,
+      "day": 100,
+      "night": 41.7934
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 68,
+        "weak": 253,
+        "moderate": 1203,
+        "long lasting": 669,
+        "eternal": 127
+      },
+      "SILLAGE": {
+        "intimate": 419,
+        "moderate": 1391,
+        "strong": 403,
+        "enormous": 87
+      },
+      "GENDER": {
+        "female": 1852,
+        "more female": 256,
+        "unisex": 87,
+        "more male": 4,
+        "male": 7
+      },
+      "PRICE VALUE": {
+        "way overpriced": 39,
+        "overpriced": 164,
+        "ok": 783,
+        "good value": 897,
+        "great value": 243
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Clementine"
+      ],
+      "Middle Notes": [
+        "Magnolia",
+        "Ylang-Ylang",
+        "Peony"
+      ],
+      "Base Notes": [
+        "Vanilla",
+        "White Musk",
+        "Benzoin"
+      ]
+    },
+    "companyName": "Montblanc",
+    "perfumeName": "Signature",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.60962.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.78951.jpg",
+    "notes": {
+      "sweet": 100,
+      "floral": 92.9472,
+      "yellow floral": 89.7395,
+      "tropical": 75.5789,
+      "fruity": 74.8042,
+      "citrus": 72.5368,
+      "tuberose": 69.826,
+      "woody": 66.6177,
+      "white floral": 61.8612,
+      "lactonic": 52.7895
+    },
+    "seasonData": {
+      "winter": 53.3333,
+      "spring": 100,
+      "summer": 84.4444,
+      "fall": 83.7037,
+      "day": 96.2963,
+      "night": 54.0741
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 10,
+        "weak": 19,
+        "moderate": 90,
+        "long lasting": 33,
+        "eternal": 10
+      },
+      "SILLAGE": {
+        "intimate": 20,
+        "moderate": 110,
+        "strong": 27,
+        "enormous": 3
+      },
+      "GENDER": {
+        "female": 151,
+        "more female": 24,
+        "unisex": 8,
+        "more male": 3,
+        "male": 1
+      },
+      "PRICE VALUE": {
+        "way overpriced": 8,
+        "overpriced": 26,
+        "ok": 76,
+        "good value": 51,
+        "great value": 7
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Pear",
+        "Mandarin Orange",
+        "Pink Pepper"
+      ],
+      "Middle Notes": [
+        "Ylang-Ylang",
+        "Frangipani",
+        "Tuberose"
+      ],
+      "Base Notes": [
+        "Tonka Bean",
+        "Cedar"
+      ]
+    },
+    "companyName": "Montblanc",
+    "perfumeName": "Signature Absolue",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.78951.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.44535.jpg",
+    "notes": {
+      "fruity": 100,
+      "sweet": 91.1685,
+      "honey": 63.5091,
+      "warm spicy": 61.8053,
+      "aromatic": 58.5679,
+      "citrus": 52.7182,
+      "woody": 52.491,
+      "lavender": 52.1502,
+      "earthy": 51.9798,
+      "patchouli": 48.1747
+    },
+    "seasonData": {
+      "winter": 88.1188,
+      "spring": 73.2673,
+      "summer": 40.5941,
+      "fall": 100,
+      "day": 77.2277,
+      "night": 82.1782
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 12,
+        "weak": 19,
+        "moderate": 78,
+        "long lasting": 35,
+        "eternal": 17
+      },
+      "SILLAGE": {
+        "intimate": 33,
+        "moderate": 82,
+        "strong": 52,
+        "enormous": 28
+      },
+      "GENDER": {
+        "female": 3,
+        "more female": 0,
+        "unisex": 12,
+        "more male": 26,
+        "male": 42
+      },
+      "PRICE VALUE": {
+        "way overpriced": 0,
+        "overpriced": 3,
+        "ok": 30,
+        "good value": 30,
+        "great value": 13
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Pear",
+        "Mandarin Orange",
+        "Cardamom"
+      ],
+      "Middle Notes": [
+        "Fruits",
+        "Honey",
+        "Lavender",
+        "Pink Pepper"
+      ],
+      "Base Notes": [
+        "Patchouli",
+        "Vetiver",
+        "Moss"
+      ]
+    },
+    "companyName": "Montblanc",
+    "perfumeName": "Emblem Absolu",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.44535.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.71652.jpg",
+    "notes": {
+      "woody": 100,
+      "aromatic": 98.2638,
+      "citrus": 96.4908,
+      "fresh spicy": 60.0688,
+      "warm spicy": 50.6859
+    },
+    "seasonData": {
+      "winter": 30.5177,
+      "spring": 100,
+      "summer": 88.5559,
+      "fall": 82.0163,
+      "day": 98.0926,
+      "night": 39.782
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 19,
+        "weak": 60,
+        "moderate": 319,
+        "long lasting": 46,
+        "eternal": 9
+      },
+      "SILLAGE": {
+        "intimate": 80,
+        "moderate": 315,
+        "strong": 39,
+        "enormous": 7
+      },
+      "GENDER": {
+        "female": 7,
+        "more female": 4,
+        "unisex": 28,
+        "more male": 153,
+        "male": 286
+      },
+      "PRICE VALUE": {
+        "way overpriced": 14,
+        "overpriced": 42,
+        "ok": 181,
+        "good value": 143,
+        "great value": 54
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Blood Orange",
+        "Grapefruit",
+        "Cardamom"
+      ],
+      "Middle Notes": [
+        "Cedar",
+        "Clary Sage",
+        "Juniper Berries"
+      ],
+      "Base Notes": [
+        "Atlas Cedar",
+        "Mahogany",
+        "Tonka Bean"
+      ]
+    },
+    "companyName": "Montblanc",
+    "perfumeName": "Legend Red",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.71652.jpg"
+  }
+]

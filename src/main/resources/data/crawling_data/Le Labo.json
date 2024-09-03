@@ -1,0 +1,883 @@
+[
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.10131.jpg",
+    "notes": {
+      "musky": 100,
+      "amber": 80.4184,
+      "woody": 64.7489,
+      "animalic": 51.5792,
+      "fruity": 46.4558,
+      "floral": 45.8369,
+      "powdery": 45.0043
+    },
+    "seasonData": {
+      "winter": 68.4555,
+      "spring": 95.4843,
+      "summer": 82.3298,
+      "fall": 87.7618,
+      "day": 100,
+      "night": 60.4058
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 97,
+        "weak": 187,
+        "moderate": 857,
+        "long lasting": 895,
+        "eternal": 330
+      },
+      "SILLAGE": {
+        "intimate": 523,
+        "moderate": 1212,
+        "strong": 530,
+        "enormous": 205
+      },
+      "GENDER": {
+        "female": 143,
+        "more female": 318,
+        "unisex": 1611,
+        "more male": 159,
+        "male": 52
+      },
+      "PRICE VALUE": {
+        "way overpriced": 508,
+        "overpriced": 866,
+        "ok": 526,
+        "good value": 85,
+        "great value": 42
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Pear",
+        "Apple",
+        "Citruses"
+      ],
+      "Middle Notes": [
+        "Ambrette (Musk Mallow)",
+        "Amyl Salicylate",
+        "Moss",
+        "Jasmine"
+      ],
+      "Base Notes": [
+        "Iso E Super",
+        "Cetalox",
+        "Ambrettolide",
+        "Helvetolide"
+      ]
+    },
+    "companyName": "Le Labo",
+    "perfumeName": "Another 13",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.10131.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.6327.jpg",
+    "notes": {
+      "citrus": 100,
+      "aromatic": 65.469,
+      "woody": 59.5046,
+      "fresh spicy": 56.5845,
+      "white floral": 47.6824
+    },
+    "seasonData": {
+      "winter": 9.73067,
+      "spring": 79.4092,
+      "summer": 100,
+      "fall": 21.199,
+      "day": 94.0052,
+      "night": 13.9878
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 92,
+        "weak": 237,
+        "moderate": 639,
+        "long lasting": 195,
+        "eternal": 58
+      },
+      "SILLAGE": {
+        "intimate": 338,
+        "moderate": 746,
+        "strong": 187,
+        "enormous": 118
+      },
+      "GENDER": {
+        "female": 30,
+        "more female": 85,
+        "unisex": 683,
+        "more male": 109,
+        "male": 38
+      },
+      "PRICE VALUE": {
+        "way overpriced": 311,
+        "overpriced": 339,
+        "ok": 134,
+        "good value": 24,
+        "great value": 17
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Le Labo",
+    "perfumeName": "Bergamote 22",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.6327.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.12201.jpg",
+    "notes": {
+      "woody": 100,
+      "powdery": 65.0569,
+      "leather": 59.848,
+      "warm spicy": 54.705,
+      "violet": 47.969
+    },
+    "seasonData": {
+      "winter": 72.5307,
+      "spring": 78.2333,
+      "summer": 49.2359,
+      "fall": 100,
+      "day": 92.8438,
+      "night": 65.5982
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 104,
+        "weak": 242,
+        "moderate": 1120,
+        "long lasting": 1721,
+        "eternal": 875
+      },
+      "SILLAGE": {
+        "intimate": 357,
+        "moderate": 1627,
+        "strong": 1687,
+        "enormous": 636
+      },
+      "GENDER": {
+        "female": 129,
+        "more female": 207,
+        "unisex": 2491,
+        "more male": 723,
+        "male": 212
+      },
+      "PRICE VALUE": {
+        "way overpriced": 916,
+        "overpriced": 1304,
+        "ok": 842,
+        "good value": 127,
+        "great value": 61
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Le Labo",
+    "perfumeName": "Santal 33",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.12201.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.69731.jpg",
+    "notes": {
+      "woody": 100,
+      "fruity": 68.6584,
+      "citrus": 59.9795,
+      "green": 56.0642,
+      "sweet": 54.1615,
+      "powdery": 53.9152,
+      "aromatic": 53.0802,
+      "earthy": 46.8378
+    },
+    "seasonData": {
+      "winter": 39.6579,
+      "spring": 99.3779,
+      "summer": 76.8274,
+      "fall": 78.8491,
+      "day": 100,
+      "night": 34.0591
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 25,
+        "weak": 89,
+        "moderate": 430,
+        "long lasting": 250,
+        "eternal": 49
+      },
+      "SILLAGE": {
+        "intimate": 208,
+        "moderate": 475,
+        "strong": 103,
+        "enormous": 13
+      },
+      "GENDER": {
+        "female": 37,
+        "more female": 163,
+        "unisex": 665,
+        "more male": 39,
+        "male": 14
+      },
+      "PRICE VALUE": {
+        "way overpriced": 160,
+        "overpriced": 402,
+        "ok": 201,
+        "good value": 27,
+        "great value": 6
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Le Labo",
+    "perfumeName": "The Matcha 26",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.69731.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.3678.jpg",
+    "notes": {
+      "woody": 100,
+      "rose": 75.3928,
+      "fresh spicy": 57.7867,
+      "aromatic": 55.0949,
+      "musky": 54.122,
+      "amber": 54.0107,
+      "earthy": 47.591,
+      "powdery": 46.8985,
+      "oud": 45.3668
+    },
+    "seasonData": {
+      "winter": 51.0405,
+      "spring": 92.9901,
+      "summer": 58.7076,
+      "fall": 89.8138,
+      "day": 100,
+      "night": 67.4699
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 62,
+        "weak": 88,
+        "moderate": 484,
+        "long lasting": 459,
+        "eternal": 73
+      },
+      "SILLAGE": {
+        "intimate": 203,
+        "moderate": 720,
+        "strong": 268,
+        "enormous": 133
+      },
+      "GENDER": {
+        "female": 123,
+        "more female": 230,
+        "unisex": 485,
+        "more male": 48,
+        "male": 17
+      },
+      "PRICE VALUE": {
+        "way overpriced": 165,
+        "overpriced": 342,
+        "ok": 201,
+        "good value": 28,
+        "great value": 3
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Rose",
+        "Cumin"
+      ],
+      "Middle Notes": [
+        "Rose",
+        "Vetiver",
+        "Cedar"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Guaiac Wood",
+        "Agarwood (Oud)",
+        "Olibanum",
+        "Labdanum"
+      ]
+    },
+    "companyName": "Le Labo",
+    "perfumeName": "Rose 31",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.3678.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.31872.jpg",
+    "notes": {
+      "woody": 100,
+      "fresh spicy": 82.433,
+      "sweet": 73.4073,
+      "aromatic": 72.1244,
+      "fruity": 67.4904,
+      "tobacco": 65.6054,
+      "green": 62.0251,
+      "citrus": 50.8135,
+      "powdery": 47.6651,
+      "musky": 46.9518
+    },
+    "seasonData": {
+      "winter": 72.4019,
+      "spring": 72.0578,
+      "summer": 37.5086,
+      "fall": 100,
+      "day": 79.6972,
+      "night": 74.2602
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 28,
+        "weak": 108,
+        "moderate": 671,
+        "long lasting": 829,
+        "eternal": 192
+      },
+      "SILLAGE": {
+        "intimate": 162,
+        "moderate": 1034,
+        "strong": 593,
+        "enormous": 169
+      },
+      "GENDER": {
+        "female": 81,
+        "more female": 232,
+        "unisex": 1197,
+        "more male": 205,
+        "male": 58
+      },
+      "PRICE VALUE": {
+        "way overpriced": 275,
+        "overpriced": 708,
+        "ok": 433,
+        "good value": 53,
+        "great value": 17
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Fig",
+        "Bay Leaf",
+        "Bergamot"
+      ],
+      "Middle Notes": [
+        "Cedar",
+        "Vetiver",
+        "Musk"
+      ],
+      "Base Notes": [
+        "Tobacco",
+        "Hay"
+      ]
+    },
+    "companyName": "Le Labo",
+    "perfumeName": "The Noir 29",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.31872.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.57513.jpg",
+    "notes": {
+      "patchouli": 100,
+      "woody": 93.7107,
+      "ozonic": 92.3684,
+      "musky": 79.1051,
+      "green": 74.6051,
+      "aromatic": 73.4209,
+      "warm spicy": 65,
+      "fresh spicy": 60.3949,
+      "amber": 59.2107,
+      "earthy": 58
+    },
+    "seasonData": {
+      "winter": 43.4343,
+      "spring": 100,
+      "summer": 74.7475,
+      "fall": 86.6162,
+      "day": 100,
+      "night": 48.2323
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 25,
+        "weak": 55,
+        "moderate": 252,
+        "long lasting": 188,
+        "eternal": 32
+      },
+      "SILLAGE": {
+        "intimate": 129,
+        "moderate": 349,
+        "strong": 99,
+        "enormous": 36
+      },
+      "GENDER": {
+        "female": 10,
+        "more female": 21,
+        "unisex": 412,
+        "more male": 105,
+        "male": 25
+      },
+      "PRICE VALUE": {
+        "way overpriced": 117,
+        "overpriced": 221,
+        "ok": 119,
+        "good value": 24,
+        "great value": 4
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Le Labo",
+    "perfumeName": "Baie 19",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.57513.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.6331.jpg",
+    "notes": {
+      "citrus": 100,
+      "white floral": 80.9234,
+      "aromatic": 50.524,
+      "fresh spicy": 44.8328
+    },
+    "seasonData": {
+      "winter": 12.8319,
+      "spring": 90.2655,
+      "summer": 98.2301,
+      "fall": 23.8938,
+      "day": 100,
+      "night": 20.7965
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 29,
+        "weak": 55,
+        "moderate": 134,
+        "long lasting": 49,
+        "eternal": 10
+      },
+      "SILLAGE": {
+        "intimate": 77,
+        "moderate": 154,
+        "strong": 57,
+        "enormous": 26
+      },
+      "GENDER": {
+        "female": 58,
+        "more female": 61,
+        "unisex": 77,
+        "more male": 2,
+        "male": 0
+      },
+      "PRICE VALUE": {
+        "way overpriced": 57,
+        "overpriced": 54,
+        "ok": 49,
+        "good value": 11,
+        "great value": 1
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Le Labo",
+    "perfumeName": "Fleur d'Oranger 27",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.6331.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.18382.jpg",
+    "notes": {
+      "white floral": 100,
+      "tuberose": 58.6308,
+      "animalic": 46.32,
+      "vanilla": 44.2635
+    },
+    "seasonData": {
+      "winter": 28.9979,
+      "spring": 100,
+      "summer": 79.5309,
+      "fall": 50.1066,
+      "day": 97.8678,
+      "night": 46.6951
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 16,
+        "weak": 36,
+        "moderate": 180,
+        "long lasting": 225,
+        "eternal": 118
+      },
+      "SILLAGE": {
+        "intimate": 58,
+        "moderate": 287,
+        "strong": 221,
+        "enormous": 94
+      },
+      "GENDER": {
+        "female": 283,
+        "more female": 113,
+        "unisex": 55,
+        "more male": 1,
+        "male": 1
+      },
+      "PRICE VALUE": {
+        "way overpriced": 84,
+        "overpriced": 160,
+        "ok": 125,
+        "good value": 12,
+        "great value": 3
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Le Labo",
+    "perfumeName": "Lys 41",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.18382.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.6337.jpg",
+    "notes": {
+      "white floral": 100,
+      "citrus": 84.4184,
+      "fresh": 48.366,
+      "green": 45.0805,
+      "sweet": 44.0892
+    },
+    "seasonData": {
+      "winter": 16.2162,
+      "spring": 88.8031,
+      "summer": 86.8726,
+      "fall": 37.4517,
+      "day": 100,
+      "night": 25.4826
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 22,
+        "weak": 54,
+        "moderate": 155,
+        "long lasting": 45,
+        "eternal": 12
+      },
+      "SILLAGE": {
+        "intimate": 94,
+        "moderate": 152,
+        "strong": 48,
+        "enormous": 40
+      },
+      "GENDER": {
+        "female": 103,
+        "more female": 73,
+        "unisex": 49,
+        "more male": 1,
+        "male": 0
+      },
+      "PRICE VALUE": {
+        "way overpriced": 58,
+        "overpriced": 73,
+        "ok": 49,
+        "good value": 3,
+        "great value": 2
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Le Labo",
+    "perfumeName": "Jasmin 17",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.6337.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.84249.jpg",
+    "notes": {
+      "citrus": 100,
+      "musky": 88.1817,
+      "lavender": 86.3634,
+      "aromatic": 81.5454,
+      "fresh spicy": 78.8485,
+      "powdery": 65.3027,
+      "white floral": 60.6061,
+      "amber": 58.4849,
+      "floral": 53.7879,
+      "sweet": 49.303
+    },
+    "seasonData": {
+      "winter": 34.0136,
+      "spring": 100,
+      "summer": 83.6735,
+      "fall": 69.3878,
+      "day": 90.4762,
+      "night": 35.3741
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 0,
+        "weak": 10,
+        "moderate": 73,
+        "long lasting": 65,
+        "eternal": 8
+      },
+      "SILLAGE": {
+        "intimate": 16,
+        "moderate": 114,
+        "strong": 24,
+        "enormous": 3
+      },
+      "GENDER": {
+        "female": 9,
+        "more female": 31,
+        "unisex": 113,
+        "more male": 28,
+        "male": 4
+      },
+      "PRICE VALUE": {
+        "way overpriced": 59,
+        "overpriced": 64,
+        "ok": 42,
+        "good value": 3,
+        "great value": 2
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Neroli",
+        "Bergamot"
+      ],
+      "Middle Notes": [
+        "Lavender"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Tonka",
+        "Amber"
+      ]
+    },
+    "companyName": "Le Labo",
+    "perfumeName": "Lavande 31",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.84249.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.51697.jpg",
+    "notes": {
+      "woody": 100,
+      "musky": 98.0637,
+      "vanilla": 96.4608,
+      "amber": 91.2572,
+      "powdery": 85.6916,
+      "sweet": 76.4347,
+      "white floral": 72.9559,
+      "aromatic": 51.8108,
+      "citrus": 51.478,
+      "balsamic": 50.3283
+    },
+    "seasonData": {
+      "winter": 89.7351,
+      "spring": 58.2781,
+      "summer": 29.8013,
+      "fall": 100,
+      "day": 78.1457,
+      "night": 73.1788
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 20,
+        "weak": 36,
+        "moderate": 187,
+        "long lasting": 141,
+        "eternal": 27
+      },
+      "SILLAGE": {
+        "intimate": 69,
+        "moderate": 249,
+        "strong": 105,
+        "enormous": 48
+      },
+      "GENDER": {
+        "female": 19,
+        "more female": 38,
+        "unisex": 215,
+        "more male": 76,
+        "male": 13
+      },
+      "PRICE VALUE": {
+        "way overpriced": 62,
+        "overpriced": 137,
+        "ok": 78,
+        "good value": 9,
+        "great value": 2
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Le Labo",
+    "perfumeName": "Tonka 25",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.51697.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.18383.jpg",
+    "notes": {
+      "woody": 100,
+      "earthy": 79.0379,
+      "patchouli": 66.4069,
+      "yellow floral": 65.8488,
+      "mossy": 62.4985,
+      "white floral": 60.9349,
+      "warm spicy": 58.9468,
+      "sweet": 47.9244,
+      "balsamic": 45.6349,
+      "aromatic": 44.7192
+    },
+    "seasonData": {
+      "winter": 65.4321,
+      "spring": 90.1235,
+      "summer": 51.0288,
+      "fall": 100,
+      "day": 95.4733,
+      "night": 73.251
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 12,
+        "weak": 14,
+        "moderate": 90,
+        "long lasting": 179,
+        "eternal": 92
+      },
+      "SILLAGE": {
+        "intimate": 38,
+        "moderate": 133,
+        "strong": 191,
+        "enormous": 106
+      },
+      "GENDER": {
+        "female": 74,
+        "more female": 74,
+        "unisex": 119,
+        "more male": 11,
+        "male": 6
+      },
+      "PRICE VALUE": {
+        "way overpriced": 50,
+        "overpriced": 109,
+        "ok": 56,
+        "good value": 11,
+        "great value": 5
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Le Labo",
+    "perfumeName": "Ylang 49",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.18383.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.6330.jpg",
+    "notes": {
+      "white floral": 100,
+      "citrus": 66.1133,
+      "aldehydic": 64.519,
+      "musky": 58.3206,
+      "sweet": 53.6183,
+      "fresh": 52.5141,
+      "soapy": 50.8487,
+      "vanilla": 48.5599,
+      "powdery": 47.6337,
+      "animalic": 44.294
+    },
+    "seasonData": {
+      "winter": 9.57854,
+      "spring": 87.3563,
+      "summer": 95.0192,
+      "fall": 27.2031,
+      "day": 100,
+      "night": 21.0728
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 15,
+        "weak": 32,
+        "moderate": 130,
+        "long lasting": 63,
+        "eternal": 20
+      },
+      "SILLAGE": {
+        "intimate": 66,
+        "moderate": 142,
+        "strong": 62,
+        "enormous": 27
+      },
+      "GENDER": {
+        "female": 52,
+        "more female": 78,
+        "unisex": 87,
+        "more male": 4,
+        "male": 4
+      },
+      "PRICE VALUE": {
+        "way overpriced": 53,
+        "overpriced": 78,
+        "ok": 41,
+        "good value": 7,
+        "great value": 4
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Orange Blossom",
+        "Aldehydes",
+        "Mandarin Orange"
+      ],
+      "Middle Notes": [
+        "Jasmine",
+        "Rose"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Vanilla",
+        "Tonka Bean"
+      ]
+    },
+    "companyName": "Le Labo",
+    "perfumeName": "Neroli 36",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.6330.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.6328.jpg",
+    "notes": {
+      "woody": 100,
+      "amber": 88.428,
+      "fresh spicy": 71.8079,
+      "warm spicy": 63.5082,
+      "aromatic": 62.1352,
+      "earthy": 47.7761
+    },
+    "seasonData": {
+      "winter": 71,
+      "spring": 69.3333,
+      "summer": 31.3333,
+      "fall": 100,
+      "day": 78.3333,
+      "night": 68.6667
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 21,
+        "weak": 41,
+        "moderate": 144,
+        "long lasting": 175,
+        "eternal": 32
+      },
+      "SILLAGE": {
+        "intimate": 79,
+        "moderate": 259,
+        "strong": 98,
+        "enormous": 43
+      },
+      "GENDER": {
+        "female": 3,
+        "more female": 8,
+        "unisex": 124,
+        "more male": 142,
+        "male": 44
+      },
+      "PRICE VALUE": {
+        "way overpriced": 61,
+        "overpriced": 119,
+        "ok": 61,
+        "good value": 9,
+        "great value": 3
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Le Labo",
+    "perfumeName": "Vetiver 46",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.6328.jpg"
+  }
+]

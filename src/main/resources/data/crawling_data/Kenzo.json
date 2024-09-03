@@ -1,0 +1,566 @@
+[
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.66465.jpg",
+    "notes": {
+      "powdery": 100,
+      "musky": 97.7828,
+      "citrus": 88.8191,
+      "floral": 76.3076,
+      "rose": 73.7106,
+      "herbal": 68.3261,
+      "vanilla": 66.7421,
+      "yellow floral": 64.208,
+      "sweet": 56.8597,
+      "warm spicy": 55.2128
+    },
+    "seasonData": {
+      "winter": 23.1884,
+      "spring": 93.4783,
+      "summer": 72.4638,
+      "fall": 43.4783,
+      "day": 100,
+      "night": 20.2899
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 18,
+        "weak": 37,
+        "moderate": 85,
+        "long lasting": 15,
+        "eternal": 1
+      },
+      "SILLAGE": {
+        "intimate": 74,
+        "moderate": 69,
+        "strong": 6,
+        "enormous": 1
+      },
+      "GENDER": {
+        "female": 113,
+        "more female": 27,
+        "unisex": 8,
+        "more male": 2,
+        "male": 1
+      },
+      "PRICE VALUE": {
+        "way overpriced": 4,
+        "overpriced": 29,
+        "ok": 76,
+        "good value": 23,
+        "great value": 1
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Sicilian Lemon",
+        "Ginger",
+        "Litchi",
+        "Mandarin Orange"
+      ],
+      "Middle Notes": [
+        "Chamomile",
+        "Damask Rose",
+        "Rose Water",
+        "Mimosa"
+      ],
+      "Base Notes": [
+        "White Musk",
+        "Madagascar Vanilla",
+        "Amber",
+        "Patchouli"
+      ]
+    },
+    "companyName": "Kenzo",
+    "perfumeName": "Flower by Kenzo Eau de Toilette (2021)",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.66465.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.79.jpg",
+    "notes": {
+      "citrus": 100,
+      "green": 97.6917,
+      "aquatic": 78.0647,
+      "aromatic": 63.648,
+      "floral": 58.0108,
+      "fresh spicy": 55.6755,
+      "fresh": 53.5701,
+      "musky": 45.6566,
+      "sweet": 44.0213
+    },
+    "seasonData": {},
+    "perfumeProperties": {},
+    "noteTopMiddleBase": {},
+    "companyName": "Kenzo",
+    "perfumeName": "L'Eau par Kenzo pour Homme",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.79.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.58624.jpg",
+    "notes": {
+      "white floral": 100,
+      "fruity": 74.3518,
+      "rose": 70.672,
+      "woody": 69.8421,
+      "nutty": 59.8815,
+      "lactonic": 57.9999,
+      "aquatic": 55.3439,
+      "green": 51.9407
+    },
+    "seasonData": {
+      "winter": 24.6418,
+      "spring": 100,
+      "summer": 63.0372,
+      "fall": 46.1318,
+      "day": 91.404,
+      "night": 23.7822
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 30,
+        "weak": 79,
+        "moderate": 213,
+        "long lasting": 54,
+        "eternal": 14
+      },
+      "SILLAGE": {
+        "intimate": 103,
+        "moderate": 239,
+        "strong": 68,
+        "enormous": 36
+      },
+      "GENDER": {
+        "female": 334,
+        "more female": 19,
+        "unisex": 3,
+        "more male": 1,
+        "male": 0
+      },
+      "PRICE VALUE": {
+        "way overpriced": 12,
+        "overpriced": 74,
+        "ok": 161,
+        "good value": 44,
+        "great value": 8
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Nashi Pear"
+      ],
+      "Middle Notes": [
+        "Gardenia",
+        "Bulgarian Rose"
+      ],
+      "Base Notes": [
+        "Almond Tree"
+      ]
+    },
+    "companyName": "Kenzo",
+    "perfumeName": "Flower by Kenzo Poppy Bouquet Eau de Parfum",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.58624.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.72.jpg",
+    "notes": {
+      "powdery": 100,
+      "floral": 89.3223,
+      "violet": 86.347,
+      "rose": 73.3605,
+      "amber": 70.6133,
+      "vanilla": 68.9594,
+      "musky": 67.7389,
+      "sweet": 61.9625,
+      "balsamic": 60.5528,
+      "woody": 49.0265
+    },
+    "seasonData": {
+      "winter": 53.7247,
+      "spring": 80.7166,
+      "summer": 39.8868,
+      "fall": 57.3786,
+      "day": 100,
+      "night": 37.9066
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 104,
+        "weak": 317,
+        "moderate": 1515,
+        "long lasting": 1501,
+        "eternal": 443
+      },
+      "SILLAGE": {
+        "intimate": 472,
+        "moderate": 2007,
+        "strong": 1208,
+        "enormous": 436
+      },
+      "GENDER": {
+        "female": 1796,
+        "more female": 261,
+        "unisex": 111,
+        "more male": 5,
+        "male": 9
+      },
+      "PRICE VALUE": {
+        "way overpriced": 61,
+        "overpriced": 293,
+        "ok": 939,
+        "good value": 491,
+        "great value": 88
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Bulgarian Rose",
+        "Hawthorn",
+        "Black Currant",
+        "Mandarin Orange"
+      ],
+      "Middle Notes": [
+        "Parma Violet",
+        "Rose",
+        "Opoponax",
+        "Jasmine"
+      ],
+      "Base Notes": [
+        "Vanilla",
+        "White Musk",
+        "Incense"
+      ]
+    },
+    "companyName": "Kenzo",
+    "perfumeName": "Flower by Kenzo",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.72.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.35396.jpg",
+    "notes": {
+      "aromatic": 100,
+      "marine": 63.5792,
+      "woody": 62.6916,
+      "green": 58.7361,
+      "warm spicy": 57.6867,
+      "citrus": 55.5073,
+      "fresh spicy": 48.4203
+    },
+    "seasonData": {
+      "winter": 10.2894,
+      "spring": 90.9968,
+      "summer": 100,
+      "fall": 34.0836,
+      "day": 97.7492,
+      "night": 36.3344
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 22,
+        "weak": 41,
+        "moderate": 135,
+        "long lasting": 164,
+        "eternal": 63
+      },
+      "SILLAGE": {
+        "intimate": 45,
+        "moderate": 247,
+        "strong": 130,
+        "enormous": 47
+      },
+      "GENDER": {
+        "female": 2,
+        "more female": 0,
+        "unisex": 13,
+        "more male": 73,
+        "male": 154
+      },
+      "PRICE VALUE": {
+        "way overpriced": 4,
+        "overpriced": 17,
+        "ok": 94,
+        "good value": 87,
+        "great value": 18
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Mint",
+        "Citruses",
+        "Cardamom"
+      ],
+      "Middle Notes": [
+        "Sea Notes",
+        "Sage",
+        "Spices"
+      ],
+      "Base Notes": [
+        "Sandalwood",
+        "Vetiver",
+        "Cedar",
+        "Vanilla"
+      ]
+    },
+    "companyName": "Kenzo",
+    "perfumeName": "Kenzo Homme Eau de Parfum",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.35396.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.55408.jpg",
+    "notes": {
+      "aromatic": 100,
+      "salty": 93.677,
+      "vanilla": 92.6233,
+      "woody": 85.4933,
+      "amber": 74.7311,
+      "sweet": 65.7848,
+      "marine": 61.8387,
+      "fresh spicy": 54.6636,
+      "warm spicy": 47.8922
+    },
+    "seasonData": {
+      "winter": 59.6618,
+      "spring": 71.7391,
+      "summer": 77.7778,
+      "fall": 92.2705,
+      "day": 100,
+      "night": 54.8309
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 17,
+        "weak": 33,
+        "moderate": 206,
+        "long lasting": 258,
+        "eternal": 87
+      },
+      "SILLAGE": {
+        "intimate": 49,
+        "moderate": 296,
+        "strong": 274,
+        "enormous": 92
+      },
+      "GENDER": {
+        "female": 157,
+        "more female": 114,
+        "unisex": 184,
+        "more male": 10,
+        "male": 6
+      },
+      "PRICE VALUE": {
+        "way overpriced": 14,
+        "overpriced": 41,
+        "ok": 190,
+        "good value": 130,
+        "great value": 28
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Cypress"
+      ],
+      "Middle Notes": [
+        "Sea Salt"
+      ],
+      "Base Notes": [
+        "Tonka Bean"
+      ]
+    },
+    "companyName": "Kenzo",
+    "perfumeName": "Kenzo World Power",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.55408.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.71687.jpg",
+    "notes": {
+      "woody": 100,
+      "aromatic": 77.0983,
+      "marine": 65.4429,
+      "aquatic": 63.1256,
+      "conifer": 46.3584,
+      "salty": 44.1773
+    },
+    "seasonData": {
+      "winter": 18.5185,
+      "spring": 96.9136,
+      "summer": 100,
+      "fall": 53.7037,
+      "day": 94.4444,
+      "night": 37.037
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 8,
+        "weak": 25,
+        "moderate": 97,
+        "long lasting": 51,
+        "eternal": 9
+      },
+      "SILLAGE": {
+        "intimate": 35,
+        "moderate": 115,
+        "strong": 27,
+        "enormous": 5
+      },
+      "GENDER": {
+        "female": 11,
+        "more female": 0,
+        "unisex": 32,
+        "more male": 65,
+        "male": 106
+      },
+      "PRICE VALUE": {
+        "way overpriced": 5,
+        "overpriced": 25,
+        "ok": 95,
+        "good value": 43,
+        "great value": 19
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Sea Notes",
+        "Calypsone",
+        "Nutmeg"
+      ],
+      "Middle Notes": [
+        "Pine",
+        "Patchouli"
+      ],
+      "Base Notes": [
+        "Sandalwood",
+        "Cedar"
+      ]
+    },
+    "companyName": "Kenzo",
+    "perfumeName": "Kenzo Homme Eau de Toilette",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.71687.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.74442.jpg",
+    "notes": {
+      "vanilla": 100,
+      "rose": 92.8203,
+      "warm spicy": 85.9404,
+      "musky": 73.6754,
+      "white floral": 73.077,
+      "powdery": 72.8379,
+      "metallic": 62.9059,
+      "sweet": 61.2903,
+      "leather": 56.3246,
+      "citrus": 54.6793
+    },
+    "seasonData": {
+      "winter": 84.058,
+      "spring": 86.2319,
+      "summer": 41.3043,
+      "fall": 97.8261,
+      "day": 100,
+      "night": 73.913
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 5,
+        "weak": 16,
+        "moderate": 80,
+        "long lasting": 67,
+        "eternal": 7
+      },
+      "SILLAGE": {
+        "intimate": 23,
+        "moderate": 109,
+        "strong": 42,
+        "enormous": 3
+      },
+      "GENDER": {
+        "female": 151,
+        "more female": 30,
+        "unisex": 7,
+        "more male": 0,
+        "male": 1
+      },
+      "PRICE VALUE": {
+        "way overpriced": 2,
+        "overpriced": 43,
+        "ok": 77,
+        "good value": 29,
+        "great value": 4
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Saffron"
+      ],
+      "Middle Notes": [
+        "Damask Rose",
+        "Orange Blossom"
+      ],
+      "Base Notes": [
+        "Vanilla",
+        "White Musk"
+      ]
+    },
+    "companyName": "Kenzo",
+    "perfumeName": "Flower by Kenzo L'Absolue",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.74442.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.73081.jpg",
+    "notes": {
+      "musky": 100,
+      "floral": 95.7144,
+      "powdery": 82.1429,
+      "woody": 64.2859,
+      "citrus": 56.2859
+    },
+    "seasonData": {
+      "winter": 25,
+      "spring": 97.2222,
+      "summer": 69.4444,
+      "fall": 51.3889,
+      "day": 100,
+      "night": 26.3889
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 6,
+        "weak": 13,
+        "moderate": 40,
+        "long lasting": 23,
+        "eternal": 6
+      },
+      "SILLAGE": {
+        "intimate": 21,
+        "moderate": 48,
+        "strong": 12,
+        "enormous": 2
+      },
+      "GENDER": {
+        "female": 60,
+        "more female": 21,
+        "unisex": 13,
+        "more male": 0,
+        "male": 0
+      },
+      "PRICE VALUE": {
+        "way overpriced": 5,
+        "overpriced": 26,
+        "ok": 35,
+        "good value": 7,
+        "great value": 4
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Magnolia"
+      ],
+      "Middle Notes": [
+        "Musk"
+      ],
+      "Base Notes": [
+        "Sandalwood"
+      ]
+    },
+    "companyName": "Kenzo",
+    "perfumeName": "Ciel Magnolia",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.73081.jpg"
+  }
+]

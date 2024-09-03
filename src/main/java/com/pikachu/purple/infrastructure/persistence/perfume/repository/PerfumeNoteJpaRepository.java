@@ -10,4 +10,6 @@ public interface PerfumeNoteJpaRepository extends JpaRepository<PerfumeNoteJpaEn
 
     List<PerfumeNoteJpaEntity> findByPerfumeIdIn(List<Long> perfumeIdList);
 
+    List<PerfumeNoteJpaEntity> findAllByPerfumeId(Long perfumeId);
+
 }

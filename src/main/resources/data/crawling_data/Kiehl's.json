@@ -1,0 +1,140 @@
+[
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.6188.jpg",
+    "notes": {
+      "musky": 100,
+      "white floral": 82.4418,
+      "powdery": 66.16,
+      "sweet": 66.1059,
+      "citrus": 64.1106,
+      "yellow floral": 56.6074,
+      "woody": 53.0003,
+      "animalic": 49.0702,
+      "patchouli": 48.0218,
+      "rose": 46.2431
+    },
+    "seasonData": {
+      "winter": 93.3977,
+      "spring": 69.8873,
+      "summer": 47.8261,
+      "fall": 100,
+      "day": 88.2448,
+      "night": 84.5411
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 36,
+        "weak": 111,
+        "moderate": 311,
+        "long lasting": 252,
+        "eternal": 99
+      },
+      "SILLAGE": {
+        "intimate": 173,
+        "moderate": 496,
+        "strong": 149,
+        "enormous": 91
+      },
+      "GENDER": {
+        "female": 16,
+        "more female": 50,
+        "unisex": 365,
+        "more male": 71,
+        "male": 40
+      },
+      "PRICE VALUE": {
+        "way overpriced": 9,
+        "overpriced": 39,
+        "ok": 133,
+        "good value": 204,
+        "great value": 97
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Orange Blossom",
+        "Bergamot"
+      ],
+      "Middle Notes": [
+        "Ylang-Ylang",
+        "Neroli",
+        "Lily",
+        "Rose"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Tonka Bean",
+        "Patchouli"
+      ]
+    },
+    "companyName": "Kiehl's",
+    "perfumeName": "Original Musk",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.6188.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.6187.jpg",
+    "notes": {
+      "musky": 100,
+      "white floral": 97.1996,
+      "fresh": 92.7197,
+      "citrus": 76.8157,
+      "aromatic": 75.3601,
+      "woody": 73.1199,
+      "green": 69.2001,
+      "earthy": 66.9599,
+      "powdery": 65
+    },
+    "seasonData": {
+      "winter": 51.2821,
+      "spring": 84.6154,
+      "summer": 66.6667,
+      "fall": 74.359,
+      "day": 100,
+      "night": 64.1026
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 1,
+        "weak": 4,
+        "moderate": 18,
+        "long lasting": 11,
+        "eternal": 7
+      },
+      "SILLAGE": {
+        "intimate": 11,
+        "moderate": 22,
+        "strong": 20,
+        "enormous": 11
+      },
+      "GENDER": {
+        "female": 2,
+        "more female": 0,
+        "unisex": 5,
+        "more male": 2,
+        "male": 2
+      },
+      "PRICE VALUE": {
+        "way overpriced": 0,
+        "overpriced": 2,
+        "ok": 4,
+        "good value": 1,
+        "great value": 1
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Citruses"
+      ],
+      "Middle Notes": [
+        "Lily-of-the-Valley"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Vetiver"
+      ]
+    },
+    "companyName": "Kiehl's",
+    "perfumeName": "Forest Rain",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.6187.jpg"
+  }
+]

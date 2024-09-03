@@ -1,0 +1,1259 @@
+[
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.66881.jpg",
+    "notes": {
+      "fruity": 100,
+      "fresh spicy": 86.7001,
+      "woody": 72.0001,
+      "camphor": 61.5,
+      "aromatic": 59.4,
+      "sweet": 57.9999,
+      "violet": 44.0001
+    },
+    "seasonData": {
+      "winter": 23.0769,
+      "spring": 76.9231,
+      "summer": 92.3077,
+      "fall": 46.1538,
+      "day": 100,
+      "night": 19.2308
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 4,
+        "weak": 12,
+        "moderate": 13,
+        "long lasting": 5,
+        "eternal": 0
+      },
+      "SILLAGE": {
+        "intimate": 19,
+        "moderate": 13,
+        "strong": 3,
+        "enormous": 0
+      },
+      "GENDER": {
+        "female": 5,
+        "more female": 8,
+        "unisex": 22,
+        "more male": 2,
+        "male": 0
+      },
+      "PRICE VALUE": {
+        "way overpriced": 2,
+        "overpriced": 8,
+        "ok": 18,
+        "good value": 3,
+        "great value": 0
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Blackberry"
+      ],
+      "Middle Notes": [
+        "Bay Leaf"
+      ],
+      "Base Notes": [
+        "Cedar"
+      ]
+    },
+    "companyName": "Jo Malone London",
+    "perfumeName": "Blackberry & Bay Cologne",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.66881.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.10314.jpg",
+    "notes": {
+      "floral": 100,
+      "fruity": 89.0638,
+      "sweet": 70.5425,
+      "rose": 69.2065,
+      "aquatic": 63.4239,
+      "musky": 59.3709,
+      "fresh": 54.2059,
+      "patchouli": 52.8743,
+      "green": 51.074,
+      "powdery": 45.8728
+    },
+    "seasonData": {
+      "winter": 16.7452,
+      "spring": 97.6445,
+      "summer": 73.6617,
+      "fall": 39.3576,
+      "day": 100,
+      "night": 18.6296
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 229,
+        "weak": 702,
+        "moderate": 1244,
+        "long lasting": 315,
+        "eternal": 87
+      },
+      "SILLAGE": {
+        "intimate": 694,
+        "moderate": 1469,
+        "strong": 327,
+        "enormous": 131
+      },
+      "GENDER": {
+        "female": 1244,
+        "more female": 586,
+        "unisex": 338,
+        "more male": 7,
+        "male": 11
+      },
+      "PRICE VALUE": {
+        "way overpriced": 296,
+        "overpriced": 772,
+        "ok": 689,
+        "good value": 122,
+        "great value": 18
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Pear",
+        "Melon"
+      ],
+      "Middle Notes": [
+        "Freesia",
+        "Rose"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Patchouli",
+        "Rhuburb",
+        "Amber"
+      ]
+    },
+    "companyName": "Jo Malone London",
+    "perfumeName": "English Pear & Freesia",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.10314.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.74041.jpg",
+    "notes": {
+      "musky": 100,
+      "salty": 82.7535,
+      "aromatic": 81.739,
+      "floral": 75.6523,
+      "herbal": 61.9566,
+      "marine": 56.3769,
+      "soft spicy": 52.826
+    },
+    "seasonData": {
+      "winter": 21.1538,
+      "spring": 69.2308,
+      "summer": 100,
+      "fall": 32.6923,
+      "day": 96.1538,
+      "night": 21.1538
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 22,
+        "weak": 21,
+        "moderate": 16,
+        "long lasting": 4,
+        "eternal": 0
+      },
+      "SILLAGE": {
+        "intimate": 37,
+        "moderate": 22,
+        "strong": 0,
+        "enormous": 0
+      },
+      "GENDER": {
+        "female": 4,
+        "more female": 8,
+        "unisex": 45,
+        "more male": 7,
+        "male": 1
+      },
+      "PRICE VALUE": {
+        "way overpriced": 16,
+        "overpriced": 20,
+        "ok": 15,
+        "good value": 3,
+        "great value": 0
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Ambrette (Musk Mallow)"
+      ],
+      "Middle Notes": [
+        "Sea Salt",
+        "Mineral notes"
+      ],
+      "Base Notes": [
+        "Sage"
+      ]
+    },
+    "companyName": "Jo Malone London",
+    "perfumeName": "Wood Sage & Sea Salt Cologne",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.74041.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.18767.jpg",
+    "notes": {
+      "floral": 100,
+      "rose": 80.3613,
+      "fresh": 78.3612,
+      "leather": 55.2222,
+      "fruity": 51.6496,
+      "musky": 48.0158
+    },
+    "seasonData": {
+      "winter": 22.3492,
+      "spring": 100,
+      "summer": 59.4921,
+      "fall": 43.9365,
+      "day": 99.619,
+      "night": 23.619
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 120,
+        "weak": 430,
+        "moderate": 844,
+        "long lasting": 270,
+        "eternal": 72
+      },
+      "SILLAGE": {
+        "intimate": 488,
+        "moderate": 992,
+        "strong": 245,
+        "enormous": 179
+      },
+      "GENDER": {
+        "female": 967,
+        "more female": 228,
+        "unisex": 82,
+        "more male": 6,
+        "male": 9
+      },
+      "PRICE VALUE": {
+        "way overpriced": 156,
+        "overpriced": 427,
+        "ok": 439,
+        "good value": 83,
+        "great value": 12
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Red Apple"
+      ],
+      "Middle Notes": [
+        "Peony",
+        "Rose",
+        "Carnation",
+        "Jasmine"
+      ],
+      "Base Notes": [
+        "Suede"
+      ]
+    },
+    "companyName": "Jo Malone London",
+    "perfumeName": "Peony & Blush Suede",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.18767.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.5585.jpg",
+    "notes": {
+      "citrus": 100,
+      "aromatic": 80.2496,
+      "fresh spicy": 78.5263,
+      "green": 61.9807,
+      "woody": 51.4086,
+      "herbal": 45.707
+    },
+    "seasonData": {
+      "winter": 13.7112,
+      "spring": 76.5082,
+      "summer": 96.9835,
+      "fall": 25.9598,
+      "day": 100,
+      "night": 14.808
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 95,
+        "weak": 296,
+        "moderate": 541,
+        "long lasting": 201,
+        "eternal": 37
+      },
+      "SILLAGE": {
+        "intimate": 305,
+        "moderate": 704,
+        "strong": 156,
+        "enormous": 81
+      },
+      "GENDER": {
+        "female": 54,
+        "more female": 82,
+        "unisex": 600,
+        "more male": 159,
+        "male": 48
+      },
+      "PRICE VALUE": {
+        "way overpriced": 109,
+        "overpriced": 306,
+        "ok": 282,
+        "good value": 46,
+        "great value": 9
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Lime",
+        "Bergamot",
+        "Mandarin Orange"
+      ],
+      "Middle Notes": [
+        "Basil",
+        "Thyme",
+        "Iris",
+        "Lilac"
+      ],
+      "Base Notes": [
+        "Vetiver",
+        "Patchouli"
+      ]
+    },
+    "companyName": "Jo Malone London",
+    "perfumeName": "Lime Basil & Mandarin",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.5585.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.40419.jpg",
+    "notes": {
+      "fresh spicy": 100,
+      "aromatic": 96.8524,
+      "green": 83.072,
+      "citrus": 68.7049,
+      "white floral": 68.7049,
+      "fresh": 64.1264,
+      "musky": 58.6142,
+      "herbal": 51.807,
+      "woody": 48.6263,
+      "floral": 45.4821
+    },
+    "seasonData": {
+      "winter": 10.8883,
+      "spring": 84.2407,
+      "summer": 95.702,
+      "fall": 20.0573,
+      "day": 100,
+      "night": 13.467
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 61,
+        "weak": 93,
+        "moderate": 170,
+        "long lasting": 44,
+        "eternal": 16
+      },
+      "SILLAGE": {
+        "intimate": 138,
+        "moderate": 200,
+        "strong": 54,
+        "enormous": 47
+      },
+      "GENDER": {
+        "female": 30,
+        "more female": 33,
+        "unisex": 182,
+        "more male": 20,
+        "male": 3
+      },
+      "PRICE VALUE": {
+        "way overpriced": 31,
+        "overpriced": 68,
+        "ok": 98,
+        "good value": 21,
+        "great value": 2
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Basil"
+      ],
+      "Middle Notes": [
+        "Neroli"
+      ],
+      "Base Notes": [
+        "White Musk",
+        "Vetiver"
+      ]
+    },
+    "companyName": "Jo Malone London",
+    "perfumeName": "Basil & Neroli",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.40419.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.46187.jpg",
+    "notes": {
+      "woody": 100,
+      "nutty": 49.802
+    },
+    "seasonData": {
+      "winter": 65.3696,
+      "spring": 64.3969,
+      "summer": 43.1907,
+      "fall": 100,
+      "day": 92.0233,
+      "night": 39.4942
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 28,
+        "weak": 93,
+        "moderate": 316,
+        "long lasting": 151,
+        "eternal": 33
+      },
+      "SILLAGE": {
+        "intimate": 121,
+        "moderate": 388,
+        "strong": 107,
+        "enormous": 63
+      },
+      "GENDER": {
+        "female": 8,
+        "more female": 10,
+        "unisex": 276,
+        "more male": 156,
+        "male": 70
+      },
+      "PRICE VALUE": {
+        "way overpriced": 28,
+        "overpriced": 131,
+        "ok": 218,
+        "good value": 39,
+        "great value": 9
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Hazelnut"
+      ],
+      "Middle Notes": [
+        "Cedar"
+      ],
+      "Base Notes": [
+        "Oak"
+      ]
+    },
+    "companyName": "Jo Malone London",
+    "perfumeName": "English Oak & Hazelnut",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.46187.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.12310.jpg",
+    "notes": {
+      "musky": 100,
+      "powdery": 91.3009,
+      "green": 81.7151,
+      "aquatic": 75.9526,
+      "sweet": 64.6491,
+      "fruity": 58.5727,
+      "warm spicy": 46.8076
+    },
+    "seasonData": {
+      "winter": 10.4278,
+      "spring": 100,
+      "summer": 87.3663,
+      "fall": 16.5107,
+      "day": 99.7326,
+      "night": 9.95989
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 238,
+        "weak": 524,
+        "moderate": 599,
+        "long lasting": 109,
+        "eternal": 41
+      },
+      "SILLAGE": {
+        "intimate": 747,
+        "moderate": 657,
+        "strong": 141,
+        "enormous": 115
+      },
+      "GENDER": {
+        "female": 675,
+        "more female": 277,
+        "unisex": 194,
+        "more male": 2,
+        "male": 4
+      },
+      "PRICE VALUE": {
+        "way overpriced": 145,
+        "overpriced": 416,
+        "ok": 367,
+        "good value": 72,
+        "great value": 12
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Dew Drop",
+        "Green Leaves",
+        "Clove",
+        "Bluebell"
+      ],
+      "Middle Notes": [
+        "Persimmon",
+        "Peach"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Powdery Notes"
+      ]
+    },
+    "companyName": "Jo Malone London",
+    "perfumeName": "Wild Bluebell",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.12310.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.48316.jpg",
+    "notes": {
+      "powdery": 100,
+      "floral": 84.2078,
+      "lactonic": 64.3285,
+      "sweet": 64.1536,
+      "fresh spicy": 60.6505,
+      "fruity": 59.5412,
+      "herbal": 55.7465,
+      "aromatic": 53.5863,
+      "musky": 44.5956
+    },
+    "seasonData": {
+      "winter": 11.5385,
+      "spring": 98.7179,
+      "summer": 80.7692,
+      "fall": 38.4615,
+      "day": 100,
+      "night": 21.7949
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 6,
+        "weak": 28,
+        "moderate": 43,
+        "long lasting": 16,
+        "eternal": 4
+      },
+      "SILLAGE": {
+        "intimate": 41,
+        "moderate": 51,
+        "strong": 19,
+        "enormous": 26
+      },
+      "GENDER": {
+        "female": 26,
+        "more female": 8,
+        "unisex": 14,
+        "more male": 0,
+        "male": 0
+      },
+      "PRICE VALUE": {
+        "way overpriced": 5,
+        "overpriced": 16,
+        "ok": 18,
+        "good value": 3,
+        "great value": 1
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Jo Malone London",
+    "perfumeName": "Poppy & Barley",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.48316.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.61928.jpg",
+    "notes": {
+      "woody": 100,
+      "aromatic": 66.2414,
+      "green": 51.4929,
+      "fresh spicy": 46.4532
+    },
+    "seasonData": {
+      "winter": 58.9623,
+      "spring": 91.5094,
+      "summer": 57.5472,
+      "fall": 100,
+      "day": 98.5849,
+      "night": 68.8679
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 10,
+        "weak": 29,
+        "moderate": 155,
+        "long lasting": 79,
+        "eternal": 5
+      },
+      "SILLAGE": {
+        "intimate": 46,
+        "moderate": 175,
+        "strong": 54,
+        "enormous": 6
+      },
+      "GENDER": {
+        "female": 3,
+        "more female": 1,
+        "unisex": 57,
+        "more male": 149,
+        "male": 110
+      },
+      "PRICE VALUE": {
+        "way overpriced": 38,
+        "overpriced": 123,
+        "ok": 84,
+        "good value": 11,
+        "great value": 6
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Jo Malone London",
+    "perfumeName": "Cypress & Grapevine Cologne Intense",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.61928.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.3782.jpg",
+    "notes": {
+      "fruity": 100,
+      "sweet": 75.6278,
+      "green": 61.3559,
+      "powdery": 51.3983,
+      "fresh": 46.8334,
+      "white floral": 45.238
+    },
+    "seasonData": {
+      "winter": 9.88764,
+      "spring": 95.3558,
+      "summer": 90.7116,
+      "fall": 19.7004,
+      "day": 100,
+      "night": 10.9363
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 140,
+        "weak": 338,
+        "moderate": 562,
+        "long lasting": 151,
+        "eternal": 45
+      },
+      "SILLAGE": {
+        "intimate": 502,
+        "moderate": 583,
+        "strong": 141,
+        "enormous": 89
+      },
+      "GENDER": {
+        "female": 538,
+        "more female": 271,
+        "unisex": 124,
+        "more male": 2,
+        "male": 1
+      },
+      "PRICE VALUE": {
+        "way overpriced": 114,
+        "overpriced": 344,
+        "ok": 285,
+        "good value": 40,
+        "great value": 11
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Green Notes",
+        "Black Currant",
+        "Petitgrain"
+      ],
+      "Middle Notes": [
+        "Nectarine",
+        "Black locust"
+      ],
+      "Base Notes": [
+        "Peach",
+        "Plum",
+        "Vetiver"
+      ]
+    },
+    "companyName": "Jo Malone London",
+    "perfumeName": "Nectarine Blossom & Honey",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.3782.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.55758.jpg",
+    "notes": {
+      "oud": 100,
+      "rose": 81.5791,
+      "sweet": 70.5264,
+      "warm spicy": 55.7896,
+      "lactonic": 46.2106,
+      "floral": 45.4737,
+      "fresh spicy": 44.0002
+    },
+    "seasonData": {
+      "winter": 80,
+      "spring": 25,
+      "summer": 25,
+      "fall": 85,
+      "day": 45,
+      "night": 100
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 2,
+        "weak": 7,
+        "moderate": 6,
+        "long lasting": 15,
+        "eternal": 3
+      },
+      "SILLAGE": {
+        "intimate": 3,
+        "moderate": 17,
+        "strong": 19,
+        "enormous": 9
+      },
+      "GENDER": {
+        "female": 5,
+        "more female": 3,
+        "unisex": 5,
+        "more male": 5,
+        "male": 1
+      },
+      "PRICE VALUE": {
+        "way overpriced": 3,
+        "overpriced": 2,
+        "ok": 7,
+        "good value": 2,
+        "great value": 3
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Cloves"
+      ],
+      "Middle Notes": [
+        "Damask Rose"
+      ],
+      "Base Notes": [
+        "Agarwood (Oud)",
+        "Praline"
+      ]
+    },
+    "companyName": "Jo Malone London",
+    "perfumeName": "Velvet Rose & Oud Cologne Intense",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.55758.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.71507.jpg",
+    "notes": {
+      "rose": 100,
+      "ozonic": 52.1667,
+      "floral": 51,
+      "aquatic": 46.3334
+    },
+    "seasonData": {
+      "winter": 29.4118,
+      "spring": 100,
+      "summer": 82.3529,
+      "fall": 29.4118,
+      "day": 100,
+      "night": 29.4118
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 3,
+        "weak": 4,
+        "moderate": 9,
+        "long lasting": 4,
+        "eternal": 3
+      },
+      "SILLAGE": {
+        "intimate": 6,
+        "moderate": 11,
+        "strong": 4,
+        "enormous": 2
+      },
+      "GENDER": {
+        "female": 14,
+        "more female": 2,
+        "unisex": 4,
+        "more male": 0,
+        "male": 1
+      },
+      "PRICE VALUE": {
+        "way overpriced": 4,
+        "overpriced": 8,
+        "ok": 8,
+        "good value": 1,
+        "great value": 0
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Violet Leaves",
+        "Lemon"
+      ],
+      "Middle Notes": [
+        "Rose",
+        "Bulgarian Rose",
+        "Turkish Rose",
+        "Damask Rose",
+        "May Rose",
+        "French Rose"
+      ],
+      "Base Notes": [
+        "Honeycomb"
+      ]
+    },
+    "companyName": "Jo Malone London",
+    "perfumeName": "Red Roses Cologne",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.71507.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.90252.jpg",
+    "notes": {
+      "woody": 100,
+      "warm spicy": 78.4344,
+      "aromatic": 66.7676,
+      "cinnamon": 54.7474,
+      "earthy": 49.7978,
+      "musky": 47.6767
+    },
+    "seasonData": {
+      "winter": 43.3333,
+      "spring": 73.3333,
+      "summer": 56.6667,
+      "fall": 100,
+      "day": 83.3333,
+      "night": 60
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 0,
+        "weak": 6,
+        "moderate": 20,
+        "long lasting": 3,
+        "eternal": 2
+      },
+      "SILLAGE": {
+        "intimate": 15,
+        "moderate": 12,
+        "strong": 2,
+        "enormous": 0
+      },
+      "GENDER": {
+        "female": 0,
+        "more female": 3,
+        "unisex": 22,
+        "more male": 12,
+        "male": 0
+      },
+      "PRICE VALUE": {
+        "way overpriced": 2,
+        "overpriced": 7,
+        "ok": 14,
+        "good value": 4,
+        "great value": 0
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Ginger",
+        "Citron"
+      ],
+      "Middle Notes": [
+        "Cinnamon",
+        "Amyris"
+      ],
+      "Base Notes": [
+        "Oak",
+        "Vetiver",
+        "White Musk"
+      ]
+    },
+    "companyName": "Jo Malone London",
+    "perfumeName": "Ginger Beer Cologne"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.49714.jpg",
+    "notes": {
+      "white floral": 100,
+      "sweet": 67.2083,
+      "floral": 61.5689,
+      "yellow floral": 56.6198,
+      "balsamic": 52.9916,
+      "aromatic": 52.0845,
+      "amber": 50.3098,
+      "honey": 48.1409,
+      "herbal": 45.7745,
+      "fresh spicy": 44.1971
+    },
+    "seasonData": {
+      "winter": 40.1869,
+      "spring": 100,
+      "summer": 69.1589,
+      "fall": 73.5202,
+      "day": 88.785,
+      "night": 79.1277
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 14,
+        "weak": 30,
+        "moderate": 191,
+        "long lasting": 125,
+        "eternal": 24
+      },
+      "SILLAGE": {
+        "intimate": 40,
+        "moderate": 223,
+        "strong": 113,
+        "enormous": 38
+      },
+      "GENDER": {
+        "female": 195,
+        "more female": 71,
+        "unisex": 42,
+        "more male": 2,
+        "male": 1
+      },
+      "PRICE VALUE": {
+        "way overpriced": 20,
+        "overpriced": 104,
+        "ok": 118,
+        "good value": 21,
+        "great value": 6
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Marigold"
+      ],
+      "Middle Notes": [
+        "Jasmine Sambac",
+        "Ylang-Ylang",
+        "Honey"
+      ],
+      "Base Notes": [
+        "Benzoin"
+      ]
+    },
+    "companyName": "Jo Malone London",
+    "perfumeName": "Jasmine Sambac & Marigold",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.49714.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.57381.jpg",
+    "notes": {
+      "rose": 100,
+      "floral": 89.6131,
+      "fresh spicy": 70.6451,
+      "warm spicy": 57.3224,
+      "woody": 57.0967,
+      "earthy": 49.8709,
+      "citrus": 49.4195,
+      "mossy": 48.0645,
+      "patchouli": 48.0645
+    },
+    "seasonData": {
+      "winter": 72,
+      "spring": 96,
+      "summer": 40,
+      "fall": 44,
+      "day": 100,
+      "night": 58
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 5,
+        "weak": 11,
+        "moderate": 31,
+        "long lasting": 13,
+        "eternal": 7
+      },
+      "SILLAGE": {
+        "intimate": 15,
+        "moderate": 36,
+        "strong": 18,
+        "enormous": 21
+      },
+      "GENDER": {
+        "female": 21,
+        "more female": 12,
+        "unisex": 9,
+        "more male": 0,
+        "male": 0
+      },
+      "PRICE VALUE": {
+        "way overpriced": 7,
+        "overpriced": 13,
+        "ok": 15,
+        "good value": 1,
+        "great value": 2
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Magnolia",
+        "Black Pepper"
+      ],
+      "Middle Notes": [
+        "Damask Rose",
+        "May Rose",
+        "Geranium"
+      ],
+      "Base Notes": [
+        "Patchouli",
+        "Moss",
+        "Amberwood"
+      ]
+    },
+    "companyName": "Jo Malone London",
+    "perfumeName": "Rose & Magnolia",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.57381.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.2280.jpg",
+    "notes": {
+      "warm spicy": 100,
+      "cacao": 83.6232,
+      "sweet": 65.5524,
+      "aromatic": 56.9394,
+      "vanilla": 56.5168,
+      "powdery": 49.6225,
+      "cinnamon": 46.9906,
+      "yellow floral": 44.9379
+    },
+    "seasonData": {
+      "winter": 67.8082,
+      "spring": 50.6849,
+      "summer": 42.0091,
+      "fall": 79.2237,
+      "day": 100,
+      "night": 43.8356
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 42,
+        "weak": 60,
+        "moderate": 161,
+        "long lasting": 74,
+        "eternal": 12
+      },
+      "SILLAGE": {
+        "intimate": 105,
+        "moderate": 235,
+        "strong": 65,
+        "enormous": 68
+      },
+      "GENDER": {
+        "female": 28,
+        "more female": 37,
+        "unisex": 71,
+        "more male": 3,
+        "male": 3
+      },
+      "PRICE VALUE": {
+        "way overpriced": 15,
+        "overpriced": 44,
+        "ok": 45,
+        "good value": 10,
+        "great value": 2
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Cardamom",
+        "Lime (Linden) Blossom",
+        "Grapefruit",
+        "Red Berries"
+      ],
+      "Middle Notes": [
+        "Lily",
+        "Orchid",
+        "Geranium"
+      ],
+      "Base Notes": [
+        "Cacao",
+        "Vanilla Pod",
+        "Cinnamon",
+        "Vetiver",
+        "Musk"
+      ]
+    },
+    "companyName": "Jo Malone London",
+    "perfumeName": "Blue Agava & Cacao",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.2280.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.6459.jpg",
+    "notes": {
+      "soft spicy": 100,
+      "anis": 88.8503,
+      "vanilla": 82.2854,
+      "floral": 81.7826,
+      "powdery": 63.6968,
+      "white floral": 58.1385,
+      "citrus": 53.4379,
+      "sweet": 49.5948,
+      "fresh": 47.6155,
+      "aromatic": 47.4342
+    },
+    "seasonData": {
+      "winter": 68.2927,
+      "spring": 61.9512,
+      "summer": 38.5366,
+      "fall": 70.2439,
+      "day": 100,
+      "night": 43.4146
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 15,
+        "weak": 28,
+        "moderate": 100,
+        "long lasting": 31,
+        "eternal": 14
+      },
+      "SILLAGE": {
+        "intimate": 65,
+        "moderate": 113,
+        "strong": 49,
+        "enormous": 39
+      },
+      "GENDER": {
+        "female": 20,
+        "more female": 20,
+        "unisex": 26,
+        "more male": 2,
+        "male": 1
+      },
+      "PRICE VALUE": {
+        "way overpriced": 4,
+        "overpriced": 14,
+        "ok": 29,
+        "good value": 8,
+        "great value": 0
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Star Anise",
+        "Fennel",
+        "Neroli",
+        "Bergamot"
+      ],
+      "Middle Notes": [
+        "Frangipani",
+        "Orchid",
+        "Clove",
+        "Tuberose",
+        "Jasmine"
+      ],
+      "Base Notes": [
+        "Vanilla",
+        "Tonka Bean",
+        "Vetiver",
+        "Amber"
+      ]
+    },
+    "companyName": "Jo Malone London",
+    "perfumeName": "Vanilla & Anise",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.6459.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.2278.jpg",
+    "notes": {
+      "green": 100,
+      "aromatic": 98.4134,
+      "white floral": 79.7448,
+      "fresh spicy": 69.181,
+      "citrus": 56.7495,
+      "woody": 54.129,
+      "floral": 51.1201,
+      "herbal": 50.9843,
+      "fresh": 46.6675
+    },
+    "seasonData": {
+      "winter": 10.0775,
+      "spring": 77.1318,
+      "summer": 87.9845,
+      "fall": 22.4806,
+      "day": 100,
+      "night": 11.6279
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 18,
+        "weak": 53,
+        "moderate": 82,
+        "long lasting": 25,
+        "eternal": 7
+      },
+      "SILLAGE": {
+        "intimate": 80,
+        "moderate": 90,
+        "strong": 41,
+        "enormous": 36
+      },
+      "GENDER": {
+        "female": 18,
+        "more female": 17,
+        "unisex": 27,
+        "more male": 4,
+        "male": 0
+      },
+      "PRICE VALUE": {
+        "way overpriced": 13,
+        "overpriced": 13,
+        "ok": 19,
+        "good value": 7,
+        "great value": 0
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Mint",
+        "Bergamot",
+        "Chamomile",
+        "Coriander",
+        "Cardamom",
+        "Black Currant"
+      ],
+      "Middle Notes": [
+        "Jasmine",
+        "Orange Blossom",
+        "Lily-of-the-Valley",
+        "Ylang-Ylang",
+        "May Rose"
+      ],
+      "Base Notes": [
+        "Tea",
+        "Vetiver",
+        "Cedar",
+        "Musk",
+        "Dried Plum",
+        "Guaiac Wood"
+      ]
+    },
+    "companyName": "Jo Malone London",
+    "perfumeName": "White Jasmine & Mint",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.2278.jpg"
+  }
+]

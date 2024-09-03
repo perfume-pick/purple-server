@@ -7,4 +7,6 @@ public interface PerfumeNoteDomainService {
 
     List<PerfumeNote> getAllByPerfumeIds(List<Long> perfumeIds);
 
+    List<PerfumeNote> findAllByPerfumeId(Long perfumeId);
+
 }

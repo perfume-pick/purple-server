@@ -5,23 +5,33 @@ import com.pikachu.purple.domain.perfume.PerfumeNote;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeNoteJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeNoteJpaRepository;
 import java.util.List;
-import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class PerfumeNoteJpaEntityAdaptor implements PerfumeNoteRepository {
+public class PerfumeNoteJpaAdaptor implements PerfumeNoteRepository {
 
     private final PerfumeNoteJpaRepository perfumeNoteJpaRepository;
 
     @Override
     public List<PerfumeNote> getAllByPerfumeIds(List<Long> perfumeIds) {
-        List<PerfumeNoteJpaEntity> perfumeNoteJpaEntities = perfumeNoteJpaRepository.findByPerfumeIdIn(perfumeIds);
+        List<PerfumeNoteJpaEntity> perfumeNoteJpaEntities = perfumeNoteJpaRepository.findByPerfumeIdIn(
+            perfumeIds);
 
         return perfumeNoteJpaEntities.stream()
             .map(PerfumeNoteJpaEntity::toDomain)
-            .collect(Collectors.toList());
+            .toList();
+    }
+
+    @Override
+    public List<PerfumeNote> findAllByPerfumeId(Long perfumeId) {
+        List<PerfumeNoteJpaEntity> perfumeNoteJpaEntities = perfumeNoteJpaRepository.findAllByPerfumeId(
+            perfumeId);
+
+        return perfumeNoteJpaEntities.stream()
+            .map(PerfumeNoteJpaEntity::toDomain)
+            .toList();
     }
 
 }

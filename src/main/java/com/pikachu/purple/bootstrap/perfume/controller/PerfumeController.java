@@ -1,7 +1,6 @@
 package com.pikachu.purple.bootstrap.perfume.controller;
 
-import com.pikachu.purple.application.perfume.port.in.PerfumeCreateUseCase;
-import com.pikachu.purple.application.perfume.port.in.PerfumeCreateUseCase.Command;
+import com.pikachu.purple.application.perfume.port.in.PerfumeDetailGetByPerfumeIdUseCase;
 import com.pikachu.purple.application.perfume.port.in.PerfumeGetByBrandsUseCase;
 import com.pikachu.purple.application.perfume.port.in.PerfumeGetByKeywordUseCase;
 import com.pikachu.purple.application.perfume.port.in.PerfumeGetByUserPreferenceNoteUseCase;
@@ -10,6 +9,7 @@ import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.perfume.api.PerfumeApi;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeByBrandsResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeByKeywordResponse;
+import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeDetailResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPreferenceBasedRecommendResponse;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -23,13 +23,15 @@ public class PerfumeController implements PerfumeApi {
     private final PerfumeGetByBrandsUseCase perfumeGetByBrandsUseCase;
     private final PerfumeGetByUserPreferenceNoteUseCase perfumeGetByUserPreferenceNoteUseCase;
     private final PerfumeGetByKeywordUseCase perfumeGetByKeywordUseCase;
+    private final PerfumeDetailGetByPerfumeIdUseCase perfumeDetailGetByPerfumeIdUseCase;
     private final UserSaveSearchHistoryUseCase userSaveSearchHistoryUseCase;
 
     @Override
     public SuccessResponse<GetPerfumeByBrandsResponse> getPerfumeByBrands(List<String> request) {
-        PerfumeGetByBrandsUseCase.Result result = perfumeGetByBrandsUseCase.invoke(new PerfumeGetByBrandsUseCase.Command(request));
+        PerfumeGetByBrandsUseCase.Result result = perfumeGetByBrandsUseCase.invoke(
+            new PerfumeGetByBrandsUseCase.Command(request));
 
-        return SuccessResponse.of(new GetPerfumeByBrandsResponse(result.perfumes())) ;
+        return SuccessResponse.of(new GetPerfumeByBrandsResponse(result.perfumes()));
     }
 
     @Override
@@ -44,7 +46,8 @@ public class PerfumeController implements PerfumeApi {
 
     @Override
     public SuccessResponse<GetPerfumeByKeywordResponse> findByKeywords(String keyword) {
-        PerfumeGetByKeywordUseCase.Result result = perfumeGetByKeywordUseCase.invoke(new PerfumeGetByKeywordUseCase.Command(keyword));
+        PerfumeGetByKeywordUseCase.Result result = perfumeGetByKeywordUseCase.invoke(
+            new PerfumeGetByKeywordUseCase.Command(keyword));
 
         LocalDateTime searchAt = LocalDateTime.now();
         userSaveSearchHistoryUseCase.invoke(
@@ -53,6 +56,16 @@ public class PerfumeController implements PerfumeApi {
         );
 
         return SuccessResponse.of(new GetPerfumeByKeywordResponse(result.perfumes()));
+    }
+
+    @Override
+    public SuccessResponse<GetPerfumeDetailResponse> findPerfumeDetailByPerfumeId(Long perfumeId) {
+        PerfumeDetailGetByPerfumeIdUseCase.Result result = perfumeDetailGetByPerfumeIdUseCase.invoke(
+            new PerfumeDetailGetByPerfumeIdUseCase.Command(perfumeId));
+
+        // TODO: userSaveVisitedHistoryUseCase 구현
+
+        return SuccessResponse.of(new GetPerfumeDetailResponse(result.perfumeDetail()));
     }
 
 }

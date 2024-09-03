@@ -1,0 +1,1099 @@
+[
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.23280.jpg",
+    "notes": {
+      "floral": 100,
+      "rose": 99.1312,
+      "fresh": 76.363,
+      "fruity": 61.5759,
+      "musky": 56.4126,
+      "citrus": 53.8898,
+      "powdery": 53.7141,
+      "sweet": 45.2701
+    },
+    "seasonData": {
+      "winter": 13.2514,
+      "spring": 100,
+      "summer": 70.1309,
+      "fall": 19.2626,
+      "day": 96.0192,
+      "night": 14.0529
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 658,
+        "weak": 1081,
+        "moderate": 1660,
+        "long lasting": 400,
+        "eternal": 116
+      },
+      "SILLAGE": {
+        "intimate": 1685,
+        "moderate": 1680,
+        "strong": 457,
+        "enormous": 252
+      },
+      "GENDER": {
+        "female": 2274,
+        "more female": 114,
+        "unisex": 24,
+        "more male": 6,
+        "male": 10
+      },
+      "PRICE VALUE": {
+        "way overpriced": 274,
+        "overpriced": 770,
+        "ok": 933,
+        "good value": 204,
+        "great value": 35
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Sicilian Mandarin"
+      ],
+      "Middle Notes": [
+        "Pink Peony",
+        "Damask Rose",
+        "Apricot",
+        "Peach"
+      ],
+      "Base Notes": [
+        "White Musk"
+      ]
+    },
+    "companyName": "Dior",
+    "perfumeName": "Miss Dior Blooming Bouquet",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.23280.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.68905.jpg",
+    "notes": {
+      "vanilla": 100,
+      "powdery": 97.7585,
+      "rose": 77.052,
+      "floral": 70.3183,
+      "fruity": 68.6014,
+      "sweet": 65.5991,
+      "fresh": 58.1245,
+      "iris": 58.0572,
+      "amber": 56.3461,
+      "musky": 55.7569
+    },
+    "seasonData": {
+      "winter": 46.5,
+      "spring": 100,
+      "summer": 59.25,
+      "fall": 64.4375,
+      "day": 98.125,
+      "night": 40.0625
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 99,
+        "weak": 199,
+        "moderate": 1004,
+        "long lasting": 632,
+        "eternal": 158
+      },
+      "SILLAGE": {
+        "intimate": 355,
+        "moderate": 1178,
+        "strong": 366,
+        "enormous": 74
+      },
+      "GENDER": {
+        "female": 1814,
+        "more female": 118,
+        "unisex": 37,
+        "more male": 8,
+        "male": 14
+      },
+      "PRICE VALUE": {
+        "way overpriced": 261,
+        "overpriced": 726,
+        "ok": 723,
+        "good value": 151,
+        "great value": 33
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Iris",
+        "Peony",
+        "Lily-of-the-Valley"
+      ],
+      "Middle Notes": [
+        "Apricot",
+        "Rose",
+        "Peach"
+      ],
+      "Base Notes": [
+        "Vanilla",
+        "Musk",
+        "Tonka Bean",
+        "Benzoin",
+        "Sandalwood"
+      ]
+    },
+    "companyName": "Dior",
+    "perfumeName": "Miss Dior Eau de Parfum (2021)",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.68905.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.17478.jpg",
+    "notes": {
+      "patchouli": 100,
+      "rose": 90.9003,
+      "citrus": 80.4952,
+      "woody": 72.9302,
+      "warm spicy": 65,
+      "earthy": 57.9999,
+      "floral": 57.57,
+      "white floral": 53.2499,
+      "balsamic": 50.9998,
+      "fresh spicy": 44.1401
+    },
+    "seasonData": {
+      "winter": 27.9775,
+      "spring": 100,
+      "summer": 61.3483,
+      "fall": 51.0112,
+      "day": 97.9775,
+      "night": 32.9213
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 41,
+        "weak": 114,
+        "moderate": 384,
+        "long lasting": 247,
+        "eternal": 85
+      },
+      "SILLAGE": {
+        "intimate": 144,
+        "moderate": 522,
+        "strong": 215,
+        "enormous": 155
+      },
+      "GENDER": {
+        "female": 301,
+        "more female": 22,
+        "unisex": 12,
+        "more male": 1,
+        "male": 0
+      },
+      "PRICE VALUE": {
+        "way overpriced": 20,
+        "overpriced": 89,
+        "ok": 163,
+        "good value": 28,
+        "great value": 11
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Blood Orange"
+      ],
+      "Middle Notes": [
+        "Damask Rose",
+        "Bulgarian Rose",
+        "Neroli"
+      ],
+      "Base Notes": [
+        "Patchouli"
+      ]
+    },
+    "companyName": "Dior",
+    "perfumeName": "Miss Dior Eau De Toilette",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.17478.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.48407.jpg",
+    "notes": {
+      "rose": 100,
+      "floral": 97.7489,
+      "citrus": 77.2422,
+      "fresh": 70.9514,
+      "fruity": 63.7355,
+      "powdery": 53.5595,
+      "musky": 50.9692,
+      "sweet": 45.7267
+    },
+    "seasonData": {
+      "winter": 17.3653,
+      "spring": 100,
+      "summer": 75.4491,
+      "fall": 22.7545,
+      "day": 95.8084,
+      "night": 15.5689
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 44,
+        "weak": 63,
+        "moderate": 57,
+        "long lasting": 18,
+        "eternal": 5
+      },
+      "SILLAGE": {
+        "intimate": 109,
+        "moderate": 68,
+        "strong": 11,
+        "enormous": 9
+      },
+      "GENDER": {
+        "female": 136,
+        "more female": 9,
+        "unisex": 0,
+        "more male": 0,
+        "male": 1
+      },
+      "PRICE VALUE": {
+        "way overpriced": 24,
+        "overpriced": 35,
+        "ok": 64,
+        "good value": 17,
+        "great value": 3
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Sicilian Mandarin",
+        "Bergamot"
+      ],
+      "Middle Notes": [
+        "Peony",
+        "Damask Rose",
+        "Peach",
+        "Apricot"
+      ],
+      "Base Notes": [
+        "White Musk"
+      ]
+    },
+    "companyName": "Dior",
+    "perfumeName": "Miss Dior Blooming Bouquet Roller Pearl",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.48407.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.53834.jpg",
+    "notes": {
+      "white floral": 100,
+      "yellow floral": 63.2343,
+      "sweet": 52.2256,
+      "rose": 50.7715,
+      "tuberose": 48.6943,
+      "floral": 46.8249
+    },
+    "seasonData": {
+      "winter": 48.4375,
+      "spring": 98.4375,
+      "summer": 75,
+      "fall": 85.9375,
+      "day": 100,
+      "night": 65.625
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 10,
+        "weak": 24,
+        "moderate": 45,
+        "long lasting": 14,
+        "eternal": 3
+      },
+      "SILLAGE": {
+        "intimate": 47,
+        "moderate": 39,
+        "strong": 7,
+        "enormous": 13
+      },
+      "GENDER": {
+        "female": 63,
+        "more female": 5,
+        "unisex": 3,
+        "more male": 0,
+        "male": 0
+      },
+      "PRICE VALUE": {
+        "way overpriced": 3,
+        "overpriced": 19,
+        "ok": 32,
+        "good value": 10,
+        "great value": 2
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Dior",
+    "perfumeName": "J'Adore Roller Pearl",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.53834.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.51818.jpg",
+    "notes": {
+      "white floral": 100,
+      "floral": 59.0774,
+      "tuberose": 53.9245,
+      "citrus": 47.182,
+      "rose": 45.0573
+    },
+    "seasonData": {
+      "winter": 50.1887,
+      "spring": 93.9623,
+      "summer": 61.8868,
+      "fall": 85.283,
+      "day": 100,
+      "night": 66.4151
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 11,
+        "weak": 33,
+        "moderate": 133,
+        "long lasting": 166,
+        "eternal": 54
+      },
+      "SILLAGE": {
+        "intimate": 33,
+        "moderate": 198,
+        "strong": 177,
+        "enormous": 64
+      },
+      "GENDER": {
+        "female": 225,
+        "more female": 17,
+        "unisex": 7,
+        "more male": 2,
+        "male": 0
+      },
+      "PRICE VALUE": {
+        "way overpriced": 19,
+        "overpriced": 69,
+        "ok": 108,
+        "good value": 29,
+        "great value": 3
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Jasmine Sambac",
+        "Magnolia"
+      ],
+      "Middle Notes": [
+        "Jasmine",
+        "Indian Tuberose",
+        "May Rose"
+      ],
+      "Base Notes": [
+        "Orange Blossom"
+      ]
+    },
+    "companyName": "Dior",
+    "perfumeName": "J'Adore Absolu",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.51818.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.72062.jpg",
+    "notes": {
+      "citrus": 100,
+      "musky": 59.3525,
+      "fresh spicy": 57.1942,
+      "white floral": 51.8561,
+      "powdery": 50.1151,
+      "aromatic": 46.3166
+    },
+    "seasonData": {
+      "winter": 4.55154,
+      "spring": 62.8514,
+      "summer": 100,
+      "fall": 11.178,
+      "day": 83.3333,
+      "night": 11.6466
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 90,
+        "weak": 327,
+        "moderate": 846,
+        "long lasting": 128,
+        "eternal": 19
+      },
+      "SILLAGE": {
+        "intimate": 385,
+        "moderate": 854,
+        "strong": 67,
+        "enormous": 12
+      },
+      "GENDER": {
+        "female": 19,
+        "more female": 17,
+        "unisex": 474,
+        "more male": 614,
+        "male": 296
+      },
+      "PRICE VALUE": {
+        "way overpriced": 88,
+        "overpriced": 406,
+        "ok": 630,
+        "good value": 150,
+        "great value": 18
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Calabrian bergamot"
+      ],
+      "Middle Notes": [
+        "Grapefruit blossom"
+      ],
+      "Base Notes": [
+        "White Musk"
+      ]
+    },
+    "companyName": "Dior",
+    "perfumeName": "Dior Homme Cologne 2022",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.72062.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.13016.jpg",
+    "notes": {
+      "iris": 100,
+      "woody": 80.1136,
+      "powdery": 76.8923,
+      "earthy": 67.988,
+      "violet": 64.9998,
+      "aromatic": 64.5244,
+      "floral": 63.5053,
+      "lavender": 61.6099,
+      "musky": 61.1255,
+      "fruity": 45.3101
+    },
+    "seasonData": {
+      "winter": 100,
+      "spring": 38.5076,
+      "summer": 15.6646,
+      "fall": 87.7218,
+      "day": 39.927,
+      "night": 93.0346
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 234,
+        "weak": 380,
+        "moderate": 2308,
+        "long lasting": 5575,
+        "eternal": 2607
+      },
+      "SILLAGE": {
+        "intimate": 698,
+        "moderate": 4193,
+        "strong": 5249,
+        "enormous": 1210
+      },
+      "GENDER": {
+        "female": 124,
+        "more female": 133,
+        "unisex": 1783,
+        "more male": 2978,
+        "male": 2939
+      },
+      "PRICE VALUE": {
+        "way overpriced": 322,
+        "overpriced": 1388,
+        "ok": 4005,
+        "good value": 1198,
+        "great value": 297
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Lavender"
+      ],
+      "Middle Notes": [
+        "Iris",
+        "Ambrette (Musk Mallow)",
+        "Pear"
+      ],
+      "Base Notes": [
+        "Virginia Cedar",
+        "Vetiver"
+      ]
+    },
+    "companyName": "Dior",
+    "perfumeName": "Dior Homme Intense 2011",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.13016.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.58562.jpg",
+    "notes": {
+      "rose": 100,
+      "musky": 72.7139,
+      "fresh spicy": 67.3293,
+      "citrus": 64.0442,
+      "aromatic": 58.2784,
+      "powdery": 52.9423,
+      "floral": 48.9672
+    },
+    "seasonData": {
+      "winter": 24.9322,
+      "spring": 100,
+      "summer": 65.0407,
+      "fall": 35.953,
+      "day": 93.4959,
+      "night": 24.4806
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 81,
+        "weak": 197,
+        "moderate": 656,
+        "long lasting": 266,
+        "eternal": 87
+      },
+      "SILLAGE": {
+        "intimate": 272,
+        "moderate": 739,
+        "strong": 253,
+        "enormous": 133
+      },
+      "GENDER": {
+        "female": 958,
+        "more female": 95,
+        "unisex": 42,
+        "more male": 4,
+        "male": 5
+      },
+      "PRICE VALUE": {
+        "way overpriced": 119,
+        "overpriced": 342,
+        "ok": 420,
+        "good value": 95,
+        "great value": 21
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Geranium",
+        "Bergamot",
+        "Italian Mandarin"
+      ],
+      "Middle Notes": [
+        "Grasse Rose",
+        "Damask Rose"
+      ],
+      "Base Notes": [
+        "White Musk"
+      ]
+    },
+    "companyName": "Dior",
+    "perfumeName": "Miss Dior Rose N'Roses",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.58562.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.228.jpg",
+    "notes": {
+      "leather": 100,
+      "woody": 88.1815,
+      "ozonic": 81.0927,
+      "fresh spicy": 77.4925,
+      "animalic": 74.0285,
+      "aromatic": 73.7965,
+      "aquatic": 67.6474,
+      "floral": 66.7887,
+      "citrus": 61.2411,
+      "green": 57.4018
+    },
+    "seasonData": {
+      "winter": 99.4646,
+      "spring": 54.1694,
+      "summer": 27.9202,
+      "fall": 99.1077,
+      "day": 70.2953,
+      "night": 100
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 154,
+        "weak": 320,
+        "moderate": 1976,
+        "long lasting": 4020,
+        "eternal": 876
+      },
+      "SILLAGE": {
+        "intimate": 383,
+        "moderate": 2493,
+        "strong": 3843,
+        "enormous": 857
+      },
+      "GENDER": {
+        "female": 35,
+        "more female": 15,
+        "unisex": 282,
+        "more male": 543,
+        "male": 3600
+      },
+      "PRICE VALUE": {
+        "way overpriced": 228,
+        "overpriced": 776,
+        "ok": 2047,
+        "good value": 667,
+        "great value": 160
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Nutmeg Flower",
+        "Lavender",
+        "Cedar",
+        "Chamomile",
+        "Mandarin Orange",
+        "Hawthorn",
+        "Bergamot",
+        "Lemon"
+      ],
+      "Middle Notes": [
+        "Violet Leaf",
+        "Nutmeg",
+        "Cedar",
+        "Sandalwood",
+        "Carnation",
+        "Honeysuckle",
+        "Jasmine",
+        "Lily-of-the-Valley"
+      ],
+      "Base Notes": [
+        "Leather",
+        "Vetiver",
+        "Musk",
+        "Amber",
+        "Patchouli",
+        "Tonka Bean"
+      ]
+    },
+    "companyName": "Dior",
+    "perfumeName": "Fahrenheit",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.228.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.1245.jpg",
+    "notes": {
+      "floral": 100,
+      "rose": 79.3057,
+      "fresh spicy": 48.4897,
+      "white floral": 48.2526,
+      "vanilla": 47.0676,
+      "green": 46.9962,
+      "fruity": 46.0244,
+      "aromatic": 44.7916
+    },
+    "seasonData": {
+      "winter": 10.7623,
+      "spring": 82.5112,
+      "summer": 75.7848,
+      "fall": 25.1121,
+      "day": 100,
+      "night": 19.2825
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 18,
+        "weak": 15,
+        "moderate": 74,
+        "long lasting": 43,
+        "eternal": 10
+      },
+      "SILLAGE": {
+        "intimate": 35,
+        "moderate": 98,
+        "strong": 50,
+        "enormous": 49
+      },
+      "GENDER": {
+        "female": 47,
+        "more female": 4,
+        "unisex": 1,
+        "more male": 1,
+        "male": 0
+      },
+      "PRICE VALUE": {
+        "way overpriced": 3,
+        "overpriced": 9,
+        "ok": 18,
+        "good value": 11,
+        "great value": 0
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Freesia",
+        "Ivy",
+        "Jasmine"
+      ],
+      "Middle Notes": [
+        "Rose Hip",
+        "Almond Blossom",
+        "Geranium"
+      ],
+      "Base Notes": [
+        "Vanilla",
+        "Musk",
+        "Amber"
+      ]
+    },
+    "companyName": "Dior",
+    "perfumeName": "Forever and Ever Dior",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.1245.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.62638.jpg",
+    "notes": {
+      "white floral": 100,
+      "tuberose": 69.6044,
+      "woody": 61.542,
+      "yellow floral": 57.8196,
+      "citrus": 51.3593,
+      "sweet": 47.3389
+    },
+    "seasonData": {
+      "winter": 70.6539,
+      "spring": 83.7321,
+      "summer": 43.0622,
+      "fall": 100,
+      "day": 95.6938,
+      "night": 75.4386
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 45,
+        "weak": 92,
+        "moderate": 405,
+        "long lasting": 233,
+        "eternal": 51
+      },
+      "SILLAGE": {
+        "intimate": 115,
+        "moderate": 498,
+        "strong": 205,
+        "enormous": 73
+      },
+      "GENDER": {
+        "female": 681,
+        "more female": 75,
+        "unisex": 30,
+        "more male": 3,
+        "male": 5
+      },
+      "PRICE VALUE": {
+        "way overpriced": 82,
+        "overpriced": 246,
+        "ok": 297,
+        "good value": 55,
+        "great value": 12
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Blood Orange",
+        "Pink Pepper",
+        "Bergamot"
+      ],
+      "Middle Notes": [
+        "Tuberose",
+        "Jasmine Sambac",
+        "Ylang-Ylang",
+        "Lily-of-the-Valley",
+        "Rose"
+      ],
+      "Base Notes": [
+        "Sandalwood"
+      ]
+    },
+    "companyName": "Dior",
+    "perfumeName": "J'Adore Infinissime",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.62638.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.48100.jpg",
+    "notes": {
+      "fresh spicy": 100,
+      "citrus": 81.5863,
+      "amber": 74.4734,
+      "musky": 56.6838,
+      "lavender": 56.658,
+      "herbal": 51.0285,
+      "aromatic": 50.8922,
+      "anis": 50.0259,
+      "soft spicy": 49.8804,
+      "vanilla": 48.5695
+    },
+    "seasonData": {
+      "winter": 90.8683,
+      "spring": 97.7117,
+      "summer": 79.1275,
+      "fall": 100,
+      "day": 93.0496,
+      "night": 98.2464
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 128,
+        "weak": 194,
+        "moderate": 1489,
+        "long lasting": 3946,
+        "eternal": 818
+      },
+      "SILLAGE": {
+        "intimate": 352,
+        "moderate": 2257,
+        "strong": 3432,
+        "enormous": 642
+      },
+      "GENDER": {
+        "female": 32,
+        "more female": 8,
+        "unisex": 143,
+        "more male": 780,
+        "male": 4283
+      },
+      "PRICE VALUE": {
+        "way overpriced": 302,
+        "overpriced": 1353,
+        "ok": 2570,
+        "good value": 604,
+        "great value": 114
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Bergamot"
+      ],
+      "Middle Notes": [
+        "Sichuan Pepper",
+        "Lavender",
+        "Star Anise",
+        "Nutmeg"
+      ],
+      "Base Notes": [
+        "Ambroxan",
+        "Vanilla"
+      ]
+    },
+    "companyName": "Dior",
+    "perfumeName": "Sauvage Eau de Parfum",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.48100.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.68415.jpg",
+    "notes": {
+      "warm spicy": 100,
+      "fresh spicy": 80.596,
+      "woody": 78.5529,
+      "aromatic": 77.3495,
+      "lavender": 74.8851,
+      "soft spicy": 67.7965,
+      "cinnamon": 61.8379,
+      "amber": 54.2888,
+      "powdery": 50.4758,
+      "balsamic": 48.2272
+    },
+    "seasonData": {
+      "winter": 100,
+      "spring": 54.3284,
+      "summer": 23.3035,
+      "fall": 89.6677,
+      "day": 50.4049,
+      "night": 90.9662
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 71,
+        "weak": 69,
+        "moderate": 691,
+        "long lasting": 2875,
+        "eternal": 5479
+      },
+      "SILLAGE": {
+        "intimate": 159,
+        "moderate": 1338,
+        "strong": 4600,
+        "enormous": 2670
+      },
+      "GENDER": {
+        "female": 67,
+        "more female": 17,
+        "unisex": 270,
+        "more male": 1042,
+        "male": 7435
+      },
+      "PRICE VALUE": {
+        "way overpriced": 1515,
+        "overpriced": 3403,
+        "ok": 2705,
+        "good value": 635,
+        "great value": 223
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Nutmeg",
+        "Cinnamon",
+        "Cardamom",
+        "Grapefruit"
+      ],
+      "Middle Notes": [
+        "Lavender"
+      ],
+      "Base Notes": [
+        "Licorice",
+        "Sandalwood",
+        "Amber",
+        "Patchouli",
+        "Haitian Vetiver"
+      ]
+    },
+    "companyName": "Dior",
+    "perfumeName": "Sauvage Elixir",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.68415.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.31861.jpg",
+    "notes": {
+      "fresh spicy": 100,
+      "amber": 72.9022,
+      "citrus": 69.7778,
+      "aromatic": 63.05,
+      "musky": 58.5403,
+      "woody": 53.3654,
+      "herbal": 45.7668,
+      "lavender": 45.6405,
+      "warm spicy": 45.059
+    },
+    "seasonData": {
+      "winter": 63.6747,
+      "spring": 100,
+      "summer": 91.3282,
+      "fall": 91.3184,
+      "day": 99.6469,
+      "night": 87.7967
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 419,
+        "weak": 595,
+        "moderate": 4285,
+        "long lasting": 7621,
+        "eternal": 1485
+      },
+      "SILLAGE": {
+        "intimate": 980,
+        "moderate": 5779,
+        "strong": 6340,
+        "enormous": 1362
+      },
+      "GENDER": {
+        "female": 93,
+        "more female": 25,
+        "unisex": 378,
+        "more male": 1707,
+        "male": 8385
+      },
+      "PRICE VALUE": {
+        "way overpriced": 724,
+        "overpriced": 2693,
+        "ok": 4788,
+        "good value": 1305,
+        "great value": 267
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Calabrian bergamot",
+        "Pepper"
+      ],
+      "Middle Notes": [
+        "Sichuan Pepper",
+        "Lavender",
+        "Pink Pepper",
+        "Vetiver",
+        "Patchouli",
+        "Geranium",
+        "elemi"
+      ],
+      "Base Notes": [
+        "Ambroxan",
+        "Cedar",
+        "Labdanum"
+      ]
+    },
+    "companyName": "Dior",
+    "perfumeName": "Sauvage",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.31861.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.58714.jpg",
+    "notes": {
+      "woody": 100,
+      "musky": 72.6743,
+      "aromatic": 53.9607,
+      "amber": 52.5164,
+      "citrus": 46.6962
+    },
+    "seasonData": {
+      "winter": 71.7285,
+      "spring": 100,
+      "summer": 81.6799,
+      "fall": 99.0566,
+      "day": 97.9306,
+      "night": 77.6019
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 187,
+        "weak": 247,
+        "moderate": 1537,
+        "long lasting": 1892,
+        "eternal": 191
+      },
+      "SILLAGE": {
+        "intimate": 520,
+        "moderate": 2701,
+        "strong": 711,
+        "enormous": 189
+      },
+      "GENDER": {
+        "female": 37,
+        "more female": 7,
+        "unisex": 197,
+        "more male": 842,
+        "male": 2578
+      },
+      "PRICE VALUE": {
+        "way overpriced": 167,
+        "overpriced": 647,
+        "ok": 1993,
+        "good value": 510,
+        "great value": 80
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Bergamot",
+        "Pink Pepper",
+        "elemi"
+      ],
+      "Middle Notes": [
+        "Atlas Cedar",
+        "Cashmere Wood",
+        "Patchouli"
+      ],
+      "Base Notes": [
+        "Iso E Super",
+        "Haitian Vetiver",
+        "White Musk"
+      ]
+    },
+    "companyName": "Dior",
+    "perfumeName": "Dior Homme 2020",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.58714.jpg"
+  }
+]

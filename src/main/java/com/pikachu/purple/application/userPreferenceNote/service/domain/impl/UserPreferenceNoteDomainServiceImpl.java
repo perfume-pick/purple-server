@@ -5,7 +5,6 @@ import com.pikachu.purple.application.userPreferenceNote.service.domain.UserPref
 import com.pikachu.purple.domain.note.Note;
 import com.pikachu.purple.domain.user.entity.UserPreferenceNote;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -28,7 +27,7 @@ public class UserPreferenceNoteDomainServiceImpl implements UserPreferenceNoteDo
                    .userId(userId)
                    .noteName(perfumeNotes.get(i).getNoteName())
                    .build())
-           .collect(Collectors.toList());
+           .toList();
 
         userPreferenceNoteRepository.save(userPreferenceNotes);
     }

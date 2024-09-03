@@ -1,0 +1,665 @@
+[
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.38351.jpg",
+    "notes": {
+      "citrus": 100,
+      "aromatic": 75.237,
+      "fresh spicy": 67.1092,
+      "rose": 60.3688,
+      "woody": 54.5747,
+      "fresh": 48.713,
+      "floral": 44.3529
+    },
+    "seasonData": {
+      "winter": 19.2053,
+      "spring": 100,
+      "summer": 92.5828,
+      "fall": 29.2715,
+      "day": 96.6887,
+      "night": 27.947
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 59,
+        "weak": 179,
+        "moderate": 465,
+        "long lasting": 131,
+        "eternal": 33
+      },
+      "SILLAGE": {
+        "intimate": 229,
+        "moderate": 526,
+        "strong": 116,
+        "enormous": 60
+      },
+      "GENDER": {
+        "female": 406,
+        "more female": 261,
+        "unisex": 141,
+        "more male": 8,
+        "male": 4
+      },
+      "PRICE VALUE": {
+        "way overpriced": 112,
+        "overpriced": 297,
+        "ok": 229,
+        "good value": 39,
+        "great value": 13
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Lemon",
+        "Bergamot",
+        "Bitter Orange"
+      ],
+      "Middle Notes": [
+        "Rose",
+        "Juniper Berries",
+        "Jasmine"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Balsam Fir",
+        "Ambergris"
+      ]
+    },
+    "companyName": "Penhaligon's",
+    "perfumeName": "Luna",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.38351.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.3940.jpg",
+    "notes": {
+      "citrus": 100,
+      "aromatic": 76.5293,
+      "fresh spicy": 62.2397,
+      "woody": 62.0275,
+      "conifer": 53.3803,
+      "lavender": 52.3897,
+      "green": 44.6175
+    },
+    "seasonData": {
+      "winter": 18.4534,
+      "spring": 89.4552,
+      "summer": 94.3761,
+      "fall": 31.4587,
+      "day": 100,
+      "night": 16.696
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 62,
+        "weak": 155,
+        "moderate": 340,
+        "long lasting": 81,
+        "eternal": 23
+      },
+      "SILLAGE": {
+        "intimate": 237,
+        "moderate": 385,
+        "strong": 85,
+        "enormous": 68
+      },
+      "GENDER": {
+        "female": 10,
+        "more female": 12,
+        "unisex": 221,
+        "more male": 149,
+        "male": 85
+      },
+      "PRICE VALUE": {
+        "way overpriced": 53,
+        "overpriced": 159,
+        "ok": 144,
+        "good value": 26,
+        "great value": 9
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Penhaligon's",
+    "perfumeName": "Blenheim Bouquet",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.3940.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.13266.jpg",
+    "notes": {
+      "aromatic": 100,
+      "fresh spicy": 89.2759,
+      "woody": 67.795,
+      "warm spicy": 58.1199,
+      "citrus": 46.7444,
+      "amber": 46.4053,
+      "sweet": 45.2521,
+      "musky": 45.0503
+    },
+    "seasonData": {
+      "winter": 19.8473,
+      "spring": 85.9542,
+      "summer": 94.8092,
+      "fall": 34.5038,
+      "day": 100,
+      "night": 24.4275
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 147,
+        "weak": 270,
+        "moderate": 321,
+        "long lasting": 56,
+        "eternal": 22
+      },
+      "SILLAGE": {
+        "intimate": 435,
+        "moderate": 335,
+        "strong": 68,
+        "enormous": 69
+      },
+      "GENDER": {
+        "female": 24,
+        "more female": 33,
+        "unisex": 363,
+        "more male": 118,
+        "male": 33
+      },
+      "PRICE VALUE": {
+        "way overpriced": 95,
+        "overpriced": 202,
+        "ok": 144,
+        "good value": 20,
+        "great value": 4
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Juniper Berries",
+        "Orange",
+        "Angelica",
+        "Cinnamon"
+      ],
+      "Middle Notes": [
+        "Pepper",
+        "Cardamom",
+        "Leather",
+        "Orris Root"
+      ],
+      "Base Notes": [
+        "Vetiver",
+        "Sugar",
+        "Cherry",
+        "Amber"
+      ]
+    },
+    "companyName": "Penhaligon's",
+    "perfumeName": "Juniper Sling",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.13266.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.8636.jpg",
+    "notes": {
+      "citrus": 100,
+      "white floral": 82.9687,
+      "floral": 57.6418,
+      "woody": 51.2645,
+      "fresh spicy": 50.7245,
+      "tuberose": 50.3938,
+      "aromatic": 48.437,
+      "powdery": 48.1889,
+      "green": 47.4723,
+      "fresh": 47.059
+    },
+    "seasonData": {
+      "winter": 13.9394,
+      "spring": 100,
+      "summer": 78.7879,
+      "fall": 35.1515,
+      "day": 100,
+      "night": 17.5758
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 12,
+        "weak": 25,
+        "moderate": 91,
+        "long lasting": 24,
+        "eternal": 8
+      },
+      "SILLAGE": {
+        "intimate": 53,
+        "moderate": 95,
+        "strong": 27,
+        "enormous": 31
+      },
+      "GENDER": {
+        "female": 36,
+        "more female": 45,
+        "unisex": 39,
+        "more male": 1,
+        "male": 1
+      },
+      "PRICE VALUE": {
+        "way overpriced": 8,
+        "overpriced": 28,
+        "ok": 55,
+        "good value": 4,
+        "great value": 5
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Neroli",
+        "Bergamot",
+        "Violet Leaf",
+        "Amalfi Lemon",
+        "Pink Pepper",
+        "Cardamon"
+      ],
+      "Middle Notes": [
+        "Orange",
+        "Tuberose",
+        "Jasmine",
+        "Peach Blossom",
+        "Orchid",
+        "Rose"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Sandalwood",
+        "Virginia Cedar",
+        "Vanille"
+      ]
+    },
+    "companyName": "Penhaligon's",
+    "perfumeName": "Orange Blossom",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.8636.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.38352.jpg",
+    "notes": {
+      "leather": 100,
+      "fresh spicy": 96.5772,
+      "aromatic": 90.8729,
+      "lavender": 78.0792,
+      "herbal": 67.1596,
+      "musky": 58.8476,
+      "smoky": 56.5657,
+      "animalic": 48.7427,
+      "powdery": 48.2538,
+      "amber": 47.2352
+    },
+    "seasonData": {
+      "winter": 76.0274,
+      "spring": 73.9726,
+      "summer": 45.2055,
+      "fall": 100,
+      "day": 69.5205,
+      "night": 94.5205
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 25,
+        "weak": 45,
+        "moderate": 178,
+        "long lasting": 75,
+        "eternal": 19
+      },
+      "SILLAGE": {
+        "intimate": 82,
+        "moderate": 211,
+        "strong": 55,
+        "enormous": 31
+      },
+      "GENDER": {
+        "female": 3,
+        "more female": 7,
+        "unisex": 103,
+        "more male": 155,
+        "male": 75
+      },
+      "PRICE VALUE": {
+        "way overpriced": 40,
+        "overpriced": 118,
+        "ok": 100,
+        "good value": 20,
+        "great value": 3
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Lavender",
+        "Sage",
+        "Bergamot"
+      ],
+      "Middle Notes": [
+        "Suede",
+        "Geranium"
+      ],
+      "Base Notes": [
+        "Leather",
+        "Nutmeg",
+        "Incense"
+      ]
+    },
+    "companyName": "Penhaligon's",
+    "perfumeName": "Endymion Concentré",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.38352.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.43808.jpg",
+    "notes": {
+      "woody": 100,
+      "amber": 84.9155,
+      "warm spicy": 81.1386,
+      "vanilla": 78.891,
+      "rum": 73.9327,
+      "cinnamon": 64.9885,
+      "patchouli": 54.3299,
+      "powdery": 52.9045,
+      "sweet": 45.2699,
+      "balsamic": 44.6324
+    },
+    "seasonData": {
+      "winter": 97.6654,
+      "spring": 19.8444,
+      "summer": 13.2296,
+      "fall": 100,
+      "day": 54.8638,
+      "night": 88.716
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 13,
+        "weak": 39,
+        "moderate": 119,
+        "long lasting": 86,
+        "eternal": 26
+      },
+      "SILLAGE": {
+        "intimate": 48,
+        "moderate": 163,
+        "strong": 81,
+        "enormous": 50
+      },
+      "GENDER": {
+        "female": 68,
+        "more female": 64,
+        "unisex": 101,
+        "more male": 13,
+        "male": 5
+      },
+      "PRICE VALUE": {
+        "way overpriced": 66,
+        "overpriced": 68,
+        "ok": 50,
+        "good value": 7,
+        "great value": 3
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Penhaligon's",
+    "perfumeName": "Clandestine Clara",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.43808.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.84256.jpg",
+    "notes": {
+      "powdery": 100,
+      "green": 87.9846,
+      "floral": 79.5643,
+      "musky": 76.4238,
+      "mossy": 63.6799,
+      "white floral": 62.77,
+      "earthy": 62.3147,
+      "woody": 54.9413,
+      "patchouli": 51.8465,
+      "sweet": 49.6621
+    },
+    "seasonData": {
+      "winter": 46.4286,
+      "spring": 100,
+      "summer": 64.2857,
+      "fall": 73.2143,
+      "day": 91.0714,
+      "night": 46.4286
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 2,
+        "weak": 11,
+        "moderate": 31,
+        "long lasting": 10,
+        "eternal": 4
+      },
+      "SILLAGE": {
+        "intimate": 11,
+        "moderate": 41,
+        "strong": 6,
+        "enormous": 0
+      },
+      "GENDER": {
+        "female": 22,
+        "more female": 22,
+        "unisex": 29,
+        "more male": 0,
+        "male": 1
+      },
+      "PRICE VALUE": {
+        "way overpriced": 15,
+        "overpriced": 19,
+        "ok": 21,
+        "good value": 3,
+        "great value": 4
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Clover",
+        "Bergamot",
+        "Rose"
+      ],
+      "Middle Notes": [
+        "Matcha Tea",
+        "Jasmine",
+        "Heliotrope"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Moss",
+        "Patchouli"
+      ]
+    },
+    "companyName": "Penhaligon's",
+    "perfumeName": "A Kiss Of Bliss",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.84256.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.63969.jpg",
+    "notes": {
+      "woody": 100,
+      "aromatic": 57.9516,
+      "amber": 57.3053,
+      "powdery": 50.3981,
+      "warm spicy": 47.4495,
+      "citrus": 46.5609,
+      "earthy": 45.5108
+    },
+    "seasonData": {
+      "winter": 81.6901,
+      "spring": 77.1127,
+      "summer": 32.0423,
+      "fall": 100,
+      "day": 86.9718,
+      "night": 67.9577
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 7,
+        "weak": 18,
+        "moderate": 213,
+        "long lasting": 73,
+        "eternal": 13
+      },
+      "SILLAGE": {
+        "intimate": 33,
+        "moderate": 236,
+        "strong": 46,
+        "enormous": 7
+      },
+      "GENDER": {
+        "female": 8,
+        "more female": 2,
+        "unisex": 123,
+        "more male": 156,
+        "male": 95
+      },
+      "PRICE VALUE": {
+        "way overpriced": 72,
+        "overpriced": 148,
+        "ok": 81,
+        "good value": 17,
+        "great value": 8
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Bergamot",
+        "Jasmine"
+      ],
+      "Middle Notes": [
+        "Vetiver",
+        "Cedar",
+        "Incense"
+      ],
+      "Base Notes": [
+        "Sandalwood",
+        "Ambroxan"
+      ]
+    },
+    "companyName": "Penhaligon's",
+    "perfumeName": "The Inimitable William Penhaligon",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.63969.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.59836.jpg",
+    "notes": {
+      "powdery": 100,
+      "floral": 71.1799,
+      "violet": 70.7915,
+      "musky": 61.1655,
+      "yellow floral": 57.5827,
+      "iris": 52.0144,
+      "woody": 48.5109
+    },
+    "seasonData": {
+      "winter": 30.8311,
+      "spring": 100,
+      "summer": 63.0027,
+      "fall": 44.7721,
+      "day": 93.5657,
+      "night": 28.9544
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 31,
+        "weak": 79,
+        "moderate": 215,
+        "long lasting": 79,
+        "eternal": 11
+      },
+      "SILLAGE": {
+        "intimate": 98,
+        "moderate": 252,
+        "strong": 67,
+        "enormous": 18
+      },
+      "GENDER": {
+        "female": 362,
+        "more female": 60,
+        "unisex": 13,
+        "more male": 2,
+        "male": 0
+      },
+      "PRICE VALUE": {
+        "way overpriced": 85,
+        "overpriced": 176,
+        "ok": 98,
+        "good value": 18,
+        "great value": 4
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Violet",
+        "Freesia",
+        "Mandarin Orange"
+      ],
+      "Middle Notes": [
+        "Mimosa",
+        "Iris",
+        "Jasmine Sambac"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Sandalwood",
+        "Ambroxan"
+      ]
+    },
+    "companyName": "Penhaligon's",
+    "perfumeName": "The Favourite",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.59836.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.40713.jpg",
+    "notes": {
+      "woody": 100,
+      "rose": 94.1964,
+      "fresh spicy": 83.9251,
+      "aromatic": 72.5751,
+      "leather": 54.138,
+      "warm spicy": 51.5701,
+      "floral": 49.2588,
+      "herbal": 48.5913
+    },
+    "seasonData": {
+      "winter": 77.0833,
+      "spring": 90,
+      "summer": 42.5,
+      "fall": 100,
+      "day": 93.75,
+      "night": 82.5
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 26,
+        "weak": 50,
+        "moderate": 153,
+        "long lasting": 60,
+        "eternal": 19
+      },
+      "SILLAGE": {
+        "intimate": 66,
+        "moderate": 197,
+        "strong": 54,
+        "enormous": 37
+      },
+      "GENDER": {
+        "female": 11,
+        "more female": 15,
+        "unisex": 139,
+        "more male": 92,
+        "male": 25
+      },
+      "PRICE VALUE": {
+        "way overpriced": 62,
+        "overpriced": 105,
+        "ok": 53,
+        "good value": 4,
+        "great value": 4
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Penhaligon's",
+    "perfumeName": "Much Ado About The Duke",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.40713.jpg"
+  }
+]

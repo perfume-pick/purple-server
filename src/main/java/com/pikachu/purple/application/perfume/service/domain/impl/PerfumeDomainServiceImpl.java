@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class PerfumeServiceImpl implements PerfumeDomainService {
+public class PerfumeDomainServiceImpl implements PerfumeDomainService {
 
     private final PerfumeRepository perfumeRepository;
 
@@ -26,6 +26,11 @@ public class PerfumeServiceImpl implements PerfumeDomainService {
     @Override
     public List<Perfume> findByKeyword(String keyword) {
         return perfumeRepository.findByKeyword("%" + keyword + "%");
+    }
+
+    @Override
+    public Perfume findByPerfumeId(Long perfumeId) {
+        return perfumeRepository.findByPerfumeId(perfumeId);
     }
 
 }

@@ -1,0 +1,873 @@
+[
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.275.jpg",
+    "notes": {
+      "green": 100,
+      "aromatic": 85.5872,
+      "woody": 81.8739,
+      "powdery": 77.205,
+      "lavender": 75.4931,
+      "fresh spicy": 75.0555,
+      "musky": 70.0907,
+      "citrus": 66.2011,
+      "floral": 66.1444,
+      "sweet": 51.4329
+    },
+    "seasonData": {
+      "winter": 27.3292,
+      "spring": 83.4369,
+      "summer": 86.087,
+      "fall": 46.5839,
+      "day": 100,
+      "night": 36.1077
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 465,
+        "weak": 808,
+        "moderate": 1135,
+        "long lasting": 195,
+        "eternal": 58
+      },
+      "SILLAGE": {
+        "intimate": 1531,
+        "moderate": 943,
+        "strong": 173,
+        "enormous": 119
+      },
+      "GENDER": {
+        "female": 18,
+        "more female": 34,
+        "unisex": 1002,
+        "more male": 499,
+        "male": 211
+      },
+      "PRICE VALUE": {
+        "way overpriced": 50,
+        "overpriced": 101,
+        "ok": 410,
+        "good value": 684,
+        "great value": 336
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Lavender",
+        "Green Notes",
+        "Bergamot",
+        "Mint",
+        "Juniper",
+        "Mandarin Orange"
+      ],
+      "Middle Notes": [
+        "Green Grass",
+        "Peach",
+        "Jasmine",
+        "Freesia",
+        "Magnolia",
+        "Orchid"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Sandalwood",
+        "Cedar",
+        "Vanilla",
+        "Amber",
+        "Opoponax"
+      ]
+    },
+    "companyName": "Calvin Klein",
+    "perfumeName": "CK be",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.275.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.276.jpg",
+    "notes": {
+      "citrus": 100,
+      "green": 71.1725,
+      "woody": 56.7439,
+      "powdery": 56.4538,
+      "white floral": 53.7428,
+      "fresh": 53.2904,
+      "aromatic": 53.1514,
+      "fresh spicy": 48.0735,
+      "floral": 46.9936,
+      "musky": 46.819
+    },
+    "seasonData": {
+      "winter": 12.2022,
+      "spring": 70.3851,
+      "summer": 96.414,
+      "fall": 20.2286,
+      "day": 100,
+      "night": 14.5367
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 804,
+        "weak": 2180,
+        "moderate": 3953,
+        "long lasting": 718,
+        "eternal": 160
+      },
+      "SILLAGE": {
+        "intimate": 2694,
+        "moderate": 4145,
+        "strong": 693,
+        "enormous": 243
+      },
+      "GENDER": {
+        "female": 128,
+        "more female": 254,
+        "unisex": 4026,
+        "more male": 984,
+        "male": 417
+      },
+      "PRICE VALUE": {
+        "way overpriced": 99,
+        "overpriced": 247,
+        "ok": 1274,
+        "good value": 2270,
+        "great value": 1218
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Lemon",
+        "Green Notes",
+        "Bergamot",
+        "Mandarin Orange",
+        "Pineapple",
+        "Cardamom",
+        "Papaya"
+      ],
+      "Middle Notes": [
+        "Lily-of-the-Valley",
+        "Jasmine",
+        "Violet",
+        "Rose",
+        "Nutmeg",
+        "Orris Root",
+        "Freesia"
+      ],
+      "Base Notes": [
+        "Green Accord",
+        "Musk",
+        "Cedar",
+        "Sandalwood",
+        "Oakmoss",
+        "Green Tea",
+        "Amber"
+      ]
+    },
+    "companyName": "Calvin Klein",
+    "perfumeName": "CK One",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.276.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.42944.jpg",
+    "notes": {
+      "citrus": 100,
+      "white floral": 80.5025,
+      "aromatic": 54.0316,
+      "floral": 53.3819,
+      "green": 51.1032,
+      "fruity": 45.2156,
+      "fresh spicy": 44.6806,
+      "musky": 44.2983
+    },
+    "seasonData": {
+      "winter": 15.4791,
+      "spring": 81.2039,
+      "summer": 100,
+      "fall": 28.3784,
+      "day": 99.6314,
+      "night": 20.2703
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 82,
+        "weak": 202,
+        "moderate": 467,
+        "long lasting": 117,
+        "eternal": 56
+      },
+      "SILLAGE": {
+        "intimate": 270,
+        "moderate": 538,
+        "strong": 160,
+        "enormous": 103
+      },
+      "GENDER": {
+        "female": 23,
+        "more female": 80,
+        "unisex": 491,
+        "more male": 83,
+        "male": 23
+      },
+      "PRICE VALUE": {
+        "way overpriced": 10,
+        "overpriced": 36,
+        "ok": 125,
+        "good value": 259,
+        "great value": 170
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Bergamot",
+        "Mandarin Orange",
+        "Grapefruit blossom"
+      ],
+      "Middle Notes": [
+        "Jasmine",
+        "Rhubarb",
+        "Freesia",
+        "Lily"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Amber",
+        "Vetiver"
+      ]
+    },
+    "companyName": "Calvin Klein",
+    "perfumeName": "CK All",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.42944.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.39123.jpg",
+    "notes": {
+      "woody": 100,
+      "aromatic": 88.9426,
+      "citrus": 81.9761,
+      "fruity": 66.3835,
+      "white floral": 65.5532,
+      "herbal": 55.9428,
+      "fresh spicy": 54.6708,
+      "sweet": 52.7395,
+      "floral": 51.3592,
+      "earthy": 50.5738
+    },
+    "seasonData": {
+      "winter": 25.3264,
+      "spring": 77.5457,
+      "summer": 83.0287,
+      "fall": 57.1802,
+      "day": 100,
+      "night": 37.0757
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 138,
+        "weak": 156,
+        "moderate": 181,
+        "long lasting": 28,
+        "eternal": 18
+      },
+      "SILLAGE": {
+        "intimate": 276,
+        "moderate": 209,
+        "strong": 61,
+        "enormous": 61
+      },
+      "GENDER": {
+        "female": 30,
+        "more female": 73,
+        "unisex": 219,
+        "more male": 34,
+        "male": 13
+      },
+      "PRICE VALUE": {
+        "way overpriced": 9,
+        "overpriced": 20,
+        "ok": 110,
+        "good value": 140,
+        "great value": 43
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Fig",
+        "Bergamot",
+        "Sage"
+      ],
+      "Middle Notes": [
+        "Neroli",
+        "Jasmine",
+        "Violet"
+      ],
+      "Base Notes": [
+        "Vetiver",
+        "Guaiac Wood",
+        "Patchouli"
+      ]
+    },
+    "companyName": "Calvin Klein",
+    "perfumeName": "CK One Gold",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.39123.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.79843.jpg",
+    "notes": {
+      "fruity": 100,
+      "white floral": 94.3676,
+      "citrus": 78.2756,
+      "sweet": 75.0576,
+      "woody": 72.9118,
+      "aquatic": 62.1836,
+      "fresh": 60.5748,
+      "powdery": 51.4559,
+      "warm spicy": 47.1647
+    },
+    "seasonData": {
+      "winter": 38.4615,
+      "spring": 92.3077,
+      "summer": 100,
+      "fall": 50,
+      "day": 92.3077,
+      "night": 34.6154
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 5,
+        "weak": 4,
+        "moderate": 12,
+        "long lasting": 2,
+        "eternal": 4
+      },
+      "SILLAGE": {
+        "intimate": 8,
+        "moderate": 12,
+        "strong": 2,
+        "enormous": 3
+      },
+      "GENDER": {
+        "female": 17,
+        "more female": 10,
+        "unisex": 3,
+        "more male": 0,
+        "male": 3
+      },
+      "PRICE VALUE": {
+        "way overpriced": 8,
+        "overpriced": 4,
+        "ok": 7,
+        "good value": 8,
+        "great value": 2
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Pear",
+        "Blood Orange"
+      ],
+      "Middle Notes": [
+        "Jasmine"
+      ],
+      "Base Notes": [
+        "Sandalwood"
+      ]
+    },
+    "companyName": "Calvin Klein",
+    "perfumeName": "Eternity for Women Reflections",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.79843.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.56669.jpg",
+    "notes": {
+      "aromatic": 100,
+      "fresh spicy": 86.1065,
+      "woody": 70.3222,
+      "herbal": 61.6906,
+      "lavender": 60.6536,
+      "fruity": 50.4966,
+      "ozonic": 46.928,
+      "amber": 46.4707,
+      "musky": 45.1893,
+      "leather": 44.0915
+    },
+    "seasonData": {
+      "winter": 33.275,
+      "spring": 100,
+      "summer": 77.0578,
+      "fall": 78.8091,
+      "day": 93.345,
+      "night": 40.9807
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 32,
+        "weak": 65,
+        "moderate": 340,
+        "long lasting": 216,
+        "eternal": 35
+      },
+      "SILLAGE": {
+        "intimate": 89,
+        "moderate": 432,
+        "strong": 167,
+        "enormous": 76
+      },
+      "GENDER": {
+        "female": 5,
+        "more female": 2,
+        "unisex": 43,
+        "more male": 142,
+        "male": 397
+      },
+      "PRICE VALUE": {
+        "way overpriced": 9,
+        "overpriced": 44,
+        "ok": 169,
+        "good value": 253,
+        "great value": 73
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Sage",
+        "Apple",
+        "Ozonic notes"
+      ],
+      "Middle Notes": [
+        "Cypress",
+        "Lavender",
+        "Geranium",
+        "Nutmeg"
+      ],
+      "Base Notes": [
+        "Suede",
+        "Ambergris",
+        "Cypriol Oil or Nagarmotha",
+        "Orris Root"
+      ]
+    },
+    "companyName": "Calvin Klein",
+    "perfumeName": "Eternity for Men Eau de Parfum",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.56669.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.72868.jpg",
+    "notes": {
+      "green": 100,
+      "citrus": 97.8603,
+      "aromatic": 92.2052,
+      "fresh": 59.1412,
+      "musky": 56.492,
+      "fresh spicy": 53.7918
+    },
+    "seasonData": {
+      "winter": 6.47249,
+      "spring": 52.1036,
+      "summer": 100,
+      "fall": 12.6214,
+      "day": 86.4078,
+      "night": 12.2977
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 49,
+        "weak": 112,
+        "moderate": 121,
+        "long lasting": 12,
+        "eternal": 3
+      },
+      "SILLAGE": {
+        "intimate": 123,
+        "moderate": 146,
+        "strong": 11,
+        "enormous": 4
+      },
+      "GENDER": {
+        "female": 18,
+        "more female": 34,
+        "unisex": 228,
+        "more male": 30,
+        "male": 15
+      },
+      "PRICE VALUE": {
+        "way overpriced": 10,
+        "overpriced": 25,
+        "ok": 91,
+        "good value": 110,
+        "great value": 53
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Kumquat"
+      ],
+      "Middle Notes": [
+        "Tea",
+        "Mint"
+      ],
+      "Base Notes": [
+        "White Musk",
+        "Vetiver"
+      ]
+    },
+    "companyName": "Calvin Klein",
+    "perfumeName": "Ck One Summer Daze",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.72868.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.6281.jpg",
+    "notes": {
+      "woody": 100,
+      "aromatic": 80.9325,
+      "fresh spicy": 58.2979,
+      "anis": 52.2486,
+      "soft spicy": 50.0238,
+      "powdery": 48.5527,
+      "leather": 47.762
+    },
+    "seasonData": {
+      "winter": 10.2921,
+      "spring": 73.1572,
+      "summer": 99.5828,
+      "fall": 26.5647,
+      "day": 100,
+      "night": 16.1335
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 273,
+        "weak": 337,
+        "moderate": 196,
+        "long lasting": 29,
+        "eternal": 17
+      },
+      "SILLAGE": {
+        "intimate": 552,
+        "moderate": 236,
+        "strong": 49,
+        "enormous": 35
+      },
+      "GENDER": {
+        "female": 5,
+        "more female": 2,
+        "unisex": 56,
+        "more male": 200,
+        "male": 253
+      },
+      "PRICE VALUE": {
+        "way overpriced": 18,
+        "overpriced": 49,
+        "ok": 169,
+        "good value": 158,
+        "great value": 90
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Juniper Berries",
+        "Star Anise",
+        "Wormwood",
+        "Jackfruit"
+      ],
+      "Middle Notes": [
+        "Suede",
+        "Tobacco",
+        "Coffee",
+        "Buchu or Agathosma"
+      ],
+      "Base Notes": [
+        "Virginia Cedar",
+        "Oak",
+        "Patchouli",
+        "Woody Notes"
+      ]
+    },
+    "companyName": "Calvin Klein",
+    "perfumeName": "CK Free",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.6281.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.59021.jpg",
+    "notes": {
+      "aquatic": 100,
+      "citrus": 98.7842,
+      "fresh": 87.8792,
+      "musky": 65.7369,
+      "warm spicy": 61.371,
+      "woody": 57.8159,
+      "green": 57.3003,
+      "powdery": 54.2607,
+      "sweet": 52.3631,
+      "fresh spicy": 47.0765
+    },
+    "seasonData": {
+      "winter": 12.5296,
+      "spring": 75.5319,
+      "summer": 100,
+      "fall": 23.9953,
+      "day": 94.0898,
+      "night": 14.3026
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 113,
+        "weak": 309,
+        "moderate": 459,
+        "long lasting": 73,
+        "eternal": 27
+      },
+      "SILLAGE": {
+        "intimate": 360,
+        "moderate": 532,
+        "strong": 74,
+        "enormous": 46
+      },
+      "GENDER": {
+        "female": 10,
+        "more female": 31,
+        "unisex": 555,
+        "more male": 276,
+        "male": 75
+      },
+      "PRICE VALUE": {
+        "way overpriced": 22,
+        "overpriced": 53,
+        "ok": 260,
+        "good value": 355,
+        "great value": 116
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Orange Oil",
+        "Ginger"
+      ],
+      "Middle Notes": [
+        "Watery Notes",
+        "Tea"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Cedar",
+        "Amber",
+        "Patchouli"
+      ]
+    },
+    "companyName": "Calvin Klein",
+    "perfumeName": "CK Everyone Eau de Toilette",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.59021.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.68751.jpg",
+    "notes": {
+      "fruity": 100,
+      "patchouli": 97.6268,
+      "woody": 91.5762,
+      "floral": 70.7543,
+      "warm spicy": 63.8134,
+      "soft spicy": 57.8218,
+      "earthy": 57.0508,
+      "balsamic": 50.2882
+    },
+    "seasonData": {
+      "winter": 88.7755,
+      "spring": 42.8571,
+      "summer": 20.4082,
+      "fall": 100,
+      "day": 62.2449,
+      "night": 84.6939
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 2,
+        "weak": 5,
+        "moderate": 52,
+        "long lasting": 42,
+        "eternal": 9
+      },
+      "SILLAGE": {
+        "intimate": 10,
+        "moderate": 56,
+        "strong": 36,
+        "enormous": 4
+      },
+      "GENDER": {
+        "female": 78,
+        "more female": 21,
+        "unisex": 9,
+        "more male": 2,
+        "male": 2
+      },
+      "PRICE VALUE": {
+        "way overpriced": 3,
+        "overpriced": 3,
+        "ok": 47,
+        "good value": 38,
+        "great value": 5
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Black Currant"
+      ],
+      "Middle Notes": [
+        "Orchid"
+      ],
+      "Base Notes": [
+        "Patchouli"
+      ]
+    },
+    "companyName": "Calvin Klein",
+    "perfumeName": "Euphoria Intense",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.68751.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.933.jpg",
+    "notes": {
+      "aromatic": 100,
+      "citrus": 80.5464,
+      "cacao": 74.9022,
+      "woody": 71.7541,
+      "warm spicy": 56.9412,
+      "green": 56.8911,
+      "fresh spicy": 56.7784,
+      "musky": 53.8307,
+      "powdery": 47.5095
+    },
+    "seasonData": {
+      "winter": 14.4509,
+      "spring": 75.3097,
+      "summer": 89.0999,
+      "fall": 29.7275,
+      "day": 100,
+      "night": 21.8827
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 181,
+        "weak": 491,
+        "moderate": 628,
+        "long lasting": 65,
+        "eternal": 21
+      },
+      "SILLAGE": {
+        "intimate": 625,
+        "moderate": 659,
+        "strong": 107,
+        "enormous": 56
+      },
+      "GENDER": {
+        "female": 3,
+        "more female": 6,
+        "unisex": 142,
+        "more male": 439,
+        "male": 352
+      },
+      "PRICE VALUE": {
+        "way overpriced": 17,
+        "overpriced": 32,
+        "ok": 238,
+        "good value": 371,
+        "great value": 228
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Lemon",
+        "Tomato Leaf"
+      ],
+      "Middle Notes": [
+        "Cacao Pod"
+      ],
+      "Base Notes": [
+        "Cedar",
+        "White Musk",
+        "Vetiver"
+      ]
+    },
+    "companyName": "Calvin Klein",
+    "perfumeName": "CK IN2U for Him",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.933.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.248.jpg",
+    "notes": {
+      "amber": 100,
+      "warm spicy": 82.4031,
+      "woody": 80.0842,
+      "powdery": 75.0031,
+      "aromatic": 65.7109,
+      "musky": 63.704,
+      "animalic": 58.54,
+      "vanilla": 57.5256,
+      "smoky": 56.5284,
+      "balsamic": 55.2383
+    },
+    "seasonData": {
+      "winter": 100,
+      "spring": 20.4397,
+      "summer": 16.1113,
+      "fall": 92.8547,
+      "day": 49.021,
+      "night": 97.1144
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 50,
+        "weak": 111,
+        "moderate": 637,
+        "long lasting": 1354,
+        "eternal": 935
+      },
+      "SILLAGE": {
+        "intimate": 158,
+        "moderate": 875,
+        "strong": 1640,
+        "enormous": 632
+      },
+      "GENDER": {
+        "female": 418,
+        "more female": 378,
+        "unisex": 829,
+        "more male": 68,
+        "male": 58
+      },
+      "PRICE VALUE": {
+        "way overpriced": 21,
+        "overpriced": 49,
+        "ok": 358,
+        "good value": 569,
+        "great value": 507
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Vanilla",
+        "Basil",
+        "Bergamot",
+        "Mandarin Orange",
+        "Green Notes",
+        "Peach",
+        "Lemon"
+      ],
+      "Middle Notes": [
+        "Spices",
+        "Sandalwood",
+        "Coriander",
+        "Oakmoss",
+        "Cedar",
+        "Orange Blossom",
+        "Jasmine",
+        "Rose"
+      ],
+      "Base Notes": [
+        "Amber",
+        "Incense",
+        "Vanilla",
+        "Civet",
+        "Musk",
+        "Vetiver"
+      ]
+    },
+    "companyName": "Calvin Klein",
+    "perfumeName": "Obsession",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.248.jpg"
+  }
+]

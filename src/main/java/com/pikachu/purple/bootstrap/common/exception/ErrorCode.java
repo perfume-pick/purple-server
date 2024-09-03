@@ -110,6 +110,13 @@ public enum ErrorCode {
         "파일을 삭제하는데 실패했습니다."
     ),
 
+    // Perfume
+    PERFUME_NOT_FOUND(
+        404,
+        "PF001",
+        "해당하는 향수 정보가 존재하지 않습니다."
+    ),
+
     // Review
     REVIEW_NOT_FOUND(
         404,

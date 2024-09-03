@@ -1,0 +1,1233 @@
+[
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.6686.jpg",
+    "notes": {
+      "fresh": 100,
+      "aldehydic": 95.1361,
+      "musky": 76.1165,
+      "powdery": 75.3771,
+      "floral": 75.2585,
+      "rose": 64.635,
+      "violet": 57.5432,
+      "woody": 55.5117,
+      "soapy": 54.1984,
+      "white floral": 48.6308
+    },
+    "seasonData": {
+      "winter": 34.2814,
+      "spring": 93.0929,
+      "summer": 81.2087,
+      "fall": 36.1097,
+      "day": 100,
+      "night": 15.3377
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 134,
+        "weak": 409,
+        "moderate": 1100,
+        "long lasting": 369,
+        "eternal": 116
+      },
+      "SILLAGE": {
+        "intimate": 586,
+        "moderate": 1231,
+        "strong": 330,
+        "enormous": 224
+      },
+      "GENDER": {
+        "female": 557,
+        "more female": 519,
+        "unisex": 780,
+        "more male": 8,
+        "male": 11
+      },
+      "PRICE VALUE": {
+        "way overpriced": 474,
+        "overpriced": 678,
+        "ok": 383,
+        "good value": 66,
+        "great value": 24
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Aldehydes",
+        "Rose",
+        "Pink Pepper"
+      ],
+      "Middle Notes": [
+        "Peony",
+        "Violet",
+        "African Orange Flower"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Woodsy Notes",
+        "Sandalwood"
+      ]
+    },
+    "companyName": "Byredo",
+    "perfumeName": "Blanche",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.6686.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.8441.jpg",
+    "notes": {
+      "floral": 100,
+      "green": 84.7386,
+      "soft spicy": 45.7611
+    },
+    "seasonData": {
+      "winter": 10.8626,
+      "spring": 100,
+      "summer": 51.5974,
+      "fall": 16.6667,
+      "day": 83.8126,
+      "night": 10.7029
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 113,
+        "weak": 303,
+        "moderate": 840,
+        "long lasting": 273,
+        "eternal": 90
+      },
+      "SILLAGE": {
+        "intimate": 405,
+        "moderate": 978,
+        "strong": 254,
+        "enormous": 172
+      },
+      "GENDER": {
+        "female": 800,
+        "more female": 229,
+        "unisex": 81,
+        "more male": 2,
+        "male": 6
+      },
+      "PRICE VALUE": {
+        "way overpriced": 202,
+        "overpriced": 458,
+        "ok": 280,
+        "good value": 25,
+        "great value": 12
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Freesia",
+        "Cyclamen",
+        "Rhuburb"
+      ],
+      "Middle Notes": [
+        "pink tulip"
+      ],
+      "Base Notes": [
+        "Green Notes",
+        "Vetyver",
+        "Woodsy Notes"
+      ]
+    },
+    "companyName": "Byredo",
+    "perfumeName": "La Tulipe",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.8441.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.31931.jpg",
+    "notes": {
+      "rose": 100,
+      "floral": 63.729,
+      "soft spicy": 54.217,
+      "woody": 51.8937,
+      "amber": 50.2265
+    },
+    "seasonData": {
+      "winter": 44.9348,
+      "spring": 96.5898,
+      "summer": 54.2628,
+      "fall": 78.1344,
+      "day": 100,
+      "night": 48.7462
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 79,
+        "weak": 155,
+        "moderate": 645,
+        "long lasting": 349,
+        "eternal": 108
+      },
+      "SILLAGE": {
+        "intimate": 233,
+        "moderate": 818,
+        "strong": 301,
+        "enormous": 119
+      },
+      "GENDER": {
+        "female": 440,
+        "more female": 330,
+        "unisex": 315,
+        "more male": 18,
+        "male": 7
+      },
+      "PRICE VALUE": {
+        "way overpriced": 169,
+        "overpriced": 423,
+        "ok": 297,
+        "good value": 38,
+        "great value": 12
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Turkey Red Rose",
+        "Pink Pepper"
+      ],
+      "Middle Notes": [
+        "Turkey Red Rose",
+        "Raspberry Bloom"
+      ],
+      "Base Notes": [
+        "Papyrus",
+        "Amber"
+      ]
+    },
+    "companyName": "Byredo",
+    "perfumeName": "Rose Of No Man's Land",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.31931.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.32777.jpg",
+    "notes": {
+      "white floral": 100,
+      "sweet": 70.2239,
+      "tuberose": 65.2614,
+      "honey": 61.3432,
+      "fruity": 58.7315,
+      "woody": 57.1641,
+      "warm spicy": 55.0746,
+      "animalic": 52.071,
+      "lactonic": 46.7164
+    },
+    "seasonData": {
+      "winter": 58.8235,
+      "spring": 100,
+      "summer": 47.0588,
+      "fall": 70.5882,
+      "day": 82.3529,
+      "night": 70.5882
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 9,
+        "weak": 3,
+        "moderate": 3,
+        "long lasting": 1,
+        "eternal": 6
+      },
+      "SILLAGE": {
+        "intimate": 5,
+        "moderate": 18,
+        "strong": 4,
+        "enormous": 1
+      },
+      "GENDER": {
+        "female": 3,
+        "more female": 0,
+        "unisex": 4,
+        "more male": 0,
+        "male": 0
+      },
+      "PRICE VALUE": {
+        "way overpriced": 2,
+        "overpriced": 0,
+        "ok": 0,
+        "good value": 0,
+        "great value": 4
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Gardenia",
+        "Plum"
+      ],
+      "Middle Notes": [
+        "Indian Tuberose",
+        "Cloves"
+      ],
+      "Base Notes": [
+        "Palisander Rosewood",
+        "Honey"
+      ]
+    },
+    "companyName": "Byredo",
+    "perfumeName": "Casablanca Lily",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.32777.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.27040.jpg",
+    "notes": {
+      "floral": 100,
+      "woody": 78.933,
+      "powdery": 73.8874,
+      "violet": 68.0726,
+      "fruity": 57.2669,
+      "musky": 54.4868,
+      "amber": 48.3997,
+      "citrus": 46.0852
+    },
+    "seasonData": {
+      "winter": 27.0898,
+      "spring": 95.5624,
+      "summer": 85.9133,
+      "fall": 50.6192,
+      "day": 100,
+      "night": 27.9154
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 232,
+        "weak": 458,
+        "moderate": 1167,
+        "long lasting": 505,
+        "eternal": 134
+      },
+      "SILLAGE": {
+        "intimate": 783,
+        "moderate": 1311,
+        "strong": 420,
+        "enormous": 257
+      },
+      "GENDER": {
+        "female": 650,
+        "more female": 663,
+        "unisex": 821,
+        "more male": 48,
+        "male": 17
+      },
+      "PRICE VALUE": {
+        "way overpriced": 444,
+        "overpriced": 821,
+        "ok": 508,
+        "good value": 58,
+        "great value": 20
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Sapodilla",
+        "Ambrette (Musk Mallow)"
+      ],
+      "Middle Notes": [
+        "Magnolia",
+        "Violet",
+        "Sandalwood"
+      ],
+      "Base Notes": [
+        "Ambergris",
+        "Cedar"
+      ]
+    },
+    "companyName": "Byredo",
+    "perfumeName": "Mojave Ghost",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.27040.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.3576.jpg",
+    "notes": {
+      "fruity": 100,
+      "sweet": 62.2604,
+      "woody": 52.5572,
+      "floral": 45.5585
+    },
+    "seasonData": {
+      "winter": 22.8994,
+      "spring": 81.7175,
+      "summer": 96.7682,
+      "fall": 45.9834,
+      "day": 100,
+      "night": 26.5928
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 55,
+        "weak": 120,
+        "moderate": 444,
+        "long lasting": 500,
+        "eternal": 202
+      },
+      "SILLAGE": {
+        "intimate": 140,
+        "moderate": 578,
+        "strong": 565,
+        "enormous": 283
+      },
+      "GENDER": {
+        "female": 203,
+        "more female": 189,
+        "unisex": 338,
+        "more male": 15,
+        "male": 12
+      },
+      "PRICE VALUE": {
+        "way overpriced": 112,
+        "overpriced": 237,
+        "ok": 215,
+        "good value": 32,
+        "great value": 15
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Black Currant",
+        "Bergamot",
+        "Cardamon"
+      ],
+      "Middle Notes": [
+        "Fig",
+        "Red Apple",
+        "Tiare Flower"
+      ],
+      "Base Notes": [
+        "Praline",
+        "Peach Blossom",
+        "Cedar"
+      ]
+    },
+    "companyName": "Byredo",
+    "perfumeName": "Pulp",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.3576.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.17798.jpg",
+    "notes": {
+      "white floral": 100,
+      "floral": 88.249,
+      "fresh": 62.2699,
+      "green": 51.3636
+    },
+    "seasonData": {
+      "winter": 8.81834,
+      "spring": 100,
+      "summer": 63.8448,
+      "fall": 15.5203,
+      "day": 90.8289,
+      "night": 10.7584
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 61,
+        "weak": 116,
+        "moderate": 217,
+        "long lasting": 95,
+        "eternal": 43
+      },
+      "SILLAGE": {
+        "intimate": 163,
+        "moderate": 269,
+        "strong": 112,
+        "enormous": 99
+      },
+      "GENDER": {
+        "female": 231,
+        "more female": 71,
+        "unisex": 39,
+        "more male": 2,
+        "male": 0
+      },
+      "PRICE VALUE": {
+        "way overpriced": 73,
+        "overpriced": 129,
+        "ok": 77,
+        "good value": 11,
+        "great value": 8
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Pink Freesia",
+        "Rose"
+      ],
+      "Middle Notes": [
+        "Lily-of-the-Valley",
+        "Magnolia"
+      ],
+      "Base Notes": [
+        "Jasmine"
+      ]
+    },
+    "companyName": "Byredo",
+    "perfumeName": "Inflorescence",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.17798.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.6458.jpg",
+    "notes": {
+      "aromatic": 100,
+      "citrus": 97.9654,
+      "woody": 82.4344,
+      "floral": 65.1157,
+      "fresh spicy": 60.6391,
+      "powdery": 60.2881,
+      "white floral": 59.7712,
+      "fruity": 58.5932,
+      "sweet": 52.6916,
+      "earthy": 50.2985
+    },
+    "seasonData": {
+      "winter": 27.8767,
+      "spring": 92.8262,
+      "summer": 88.6375,
+      "fall": 55.9701,
+      "day": 100,
+      "night": 30.3563
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 390,
+        "weak": 1009,
+        "moderate": 2723,
+        "long lasting": 899,
+        "eternal": 219
+      },
+      "SILLAGE": {
+        "intimate": 1285,
+        "moderate": 3046,
+        "strong": 864,
+        "enormous": 434
+      },
+      "GENDER": {
+        "female": 1090,
+        "more female": 1114,
+        "unisex": 1984,
+        "more male": 104,
+        "male": 53
+      },
+      "PRICE VALUE": {
+        "way overpriced": 872,
+        "overpriced": 1530,
+        "ok": 1102,
+        "good value": 147,
+        "great value": 45
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Amalfi Lemon",
+        "Tagetes",
+        "Black Currant",
+        "Bergamot",
+        "African Orange Flower"
+      ],
+      "Middle Notes": [
+        "Violet",
+        "Cyclamen",
+        "Jasmine"
+      ],
+      "Base Notes": [
+        "Vetiver",
+        "Musk",
+        "Amber",
+        "Virginia Cedar"
+      ]
+    },
+    "companyName": "Byredo",
+    "perfumeName": "Bal d'Afrique",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.6458.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.23881.jpg",
+    "notes": {
+      "white floral": 100,
+      "green": 69.7438,
+      "tuberose": 69.0059,
+      "musky": 56.3026,
+      "amber": 55.4066,
+      "animalic": 48.2592,
+      "powdery": 45.7817
+    },
+    "seasonData": {
+      "winter": 17.7419,
+      "spring": 100,
+      "summer": 69.3548,
+      "fall": 33.5484,
+      "day": 95.4839,
+      "night": 30.3226
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 16,
+        "weak": 29,
+        "moderate": 144,
+        "long lasting": 167,
+        "eternal": 53
+      },
+      "SILLAGE": {
+        "intimate": 52,
+        "moderate": 213,
+        "strong": 147,
+        "enormous": 90
+      },
+      "GENDER": {
+        "female": 168,
+        "more female": 52,
+        "unisex": 46,
+        "more male": 2,
+        "male": 0
+      },
+      "PRICE VALUE": {
+        "way overpriced": 52,
+        "overpriced": 71,
+        "ok": 75,
+        "good value": 14,
+        "great value": 4
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Angelica",
+        "Cranberry",
+        "Lemon"
+      ],
+      "Middle Notes": [
+        "Tuberose",
+        "Jasmine Sambac",
+        "Green Notes",
+        "Rose Petals"
+      ],
+      "Base Notes": [
+        "Suede",
+        "Ambergris"
+      ]
+    },
+    "companyName": "Byredo",
+    "perfumeName": "Flowerhead",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.23881.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.69009.jpg",
+    "notes": {
+      "musky": 100,
+      "rose": 92.3764,
+      "floral": 64.4961,
+      "amber": 62.1333,
+      "powdery": 55.549,
+      "fresh spicy": 52.6822,
+      "iris": 46.0665,
+      "citrus": 45.7202
+    },
+    "seasonData": {
+      "winter": 16.1585,
+      "spring": 100,
+      "summer": 84.1463,
+      "fall": 25.3049,
+      "day": 92.6829,
+      "night": 17.6829
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 38,
+        "weak": 107,
+        "moderate": 194,
+        "long lasting": 26,
+        "eternal": 7
+      },
+      "SILLAGE": {
+        "intimate": 124,
+        "moderate": 193,
+        "strong": 31,
+        "enormous": 5
+      },
+      "GENDER": {
+        "female": 232,
+        "more female": 112,
+        "unisex": 59,
+        "more male": 1,
+        "male": 2
+      },
+      "PRICE VALUE": {
+        "way overpriced": 88,
+        "overpriced": 154,
+        "ok": 85,
+        "good value": 3,
+        "great value": 6
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Sichuan Pepper",
+        "Ambrette (Musk Mallow)"
+      ],
+      "Middle Notes": [
+        "Damask Rose",
+        "Iris"
+      ],
+      "Base Notes": [
+        "Ambroxan",
+        "Musk"
+      ]
+    },
+    "companyName": "Byredo",
+    "perfumeName": "Young Rose",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.69009.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.3575.jpg",
+    "notes": {
+      "woody": 100,
+      "aromatic": 88.7232,
+      "fresh spicy": 73.2387,
+      "citrus": 68.4404,
+      "powdery": 61.3595,
+      "vanilla": 58.6694,
+      "amber": 56.7474,
+      "balsamic": 55.0175,
+      "warm spicy": 52.3561
+    },
+    "seasonData": {
+      "winter": 36.3795,
+      "spring": 85.7267,
+      "summer": 78.416,
+      "fall": 76.1967,
+      "day": 100,
+      "night": 34.1166
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 459,
+        "weak": 811,
+        "moderate": 1362,
+        "long lasting": 333,
+        "eternal": 110
+      },
+      "SILLAGE": {
+        "intimate": 1610,
+        "moderate": 1223,
+        "strong": 309,
+        "enormous": 225
+      },
+      "GENDER": {
+        "female": 319,
+        "more female": 568,
+        "unisex": 1542,
+        "more male": 149,
+        "male": 35
+      },
+      "PRICE VALUE": {
+        "way overpriced": 639,
+        "overpriced": 981,
+        "ok": 519,
+        "good value": 77,
+        "great value": 24
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Juniper",
+        "Lemon",
+        "Bergamot",
+        "Pepper"
+      ],
+      "Middle Notes": [
+        "Pine needles",
+        "Incense",
+        "Orris Root"
+      ],
+      "Base Notes": [
+        "Vanilla",
+        "Sandalwood",
+        "Amber"
+      ]
+    },
+    "companyName": "Byredo",
+    "perfumeName": "Gypsy Water",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.3575.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.65525.jpg",
+    "notes": {
+      "fruity": 100,
+      "woody": 91.1041,
+      "green": 86.163,
+      "leather": 77.3828,
+      "aromatic": 73.1932,
+      "fresh spicy": 61.0093,
+      "smoky": 60.8636,
+      "soft spicy": 54.5002,
+      "fresh": 53.3731,
+      "ozonic": 51.0598
+    },
+    "seasonData": {
+      "winter": 47.5379,
+      "spring": 98.4848,
+      "summer": 77.4621,
+      "fall": 100,
+      "day": 95.0758,
+      "night": 52.8409
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 14,
+        "weak": 60,
+        "moderate": 413,
+        "long lasting": 275,
+        "eternal": 39
+      },
+      "SILLAGE": {
+        "intimate": 99,
+        "moderate": 482,
+        "strong": 167,
+        "enormous": 27
+      },
+      "GENDER": {
+        "female": 111,
+        "more female": 135,
+        "unisex": 568,
+        "more male": 62,
+        "male": 11
+      },
+      "PRICE VALUE": {
+        "way overpriced": 145,
+        "overpriced": 274,
+        "ok": 264,
+        "good value": 25,
+        "great value": 8
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Black Currant",
+        "Mate"
+      ],
+      "Middle Notes": [
+        "Tea",
+        "Violet Leaf"
+      ],
+      "Base Notes": [
+        "Birch",
+        "Papyrus"
+      ]
+    },
+    "companyName": "Byredo",
+    "perfumeName": "Mixed Emotions",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.65525.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.35530.jpg",
+    "notes": {
+      "woody": 100,
+      "aromatic": 55.828,
+      "musky": 50.4822,
+      "powdery": 50.0571,
+      "earthy": 47.9316,
+      "rose": 47.1328
+    },
+    "seasonData": {
+      "winter": 53.2663,
+      "spring": 92.2111,
+      "summer": 69.598,
+      "fall": 90.4523,
+      "day": 100,
+      "night": 46.9849
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 41,
+        "weak": 93,
+        "moderate": 270,
+        "long lasting": 119,
+        "eternal": 32
+      },
+      "SILLAGE": {
+        "intimate": 204,
+        "moderate": 293,
+        "strong": 81,
+        "enormous": 57
+      },
+      "GENDER": {
+        "female": 17,
+        "more female": 33,
+        "unisex": 347,
+        "more male": 82,
+        "male": 18
+      },
+      "PRICE VALUE": {
+        "way overpriced": 81,
+        "overpriced": 177,
+        "ok": 118,
+        "good value": 19,
+        "great value": 6
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Rose"
+      ],
+      "Middle Notes": [
+        "Virginian Cedar"
+      ],
+      "Base Notes": [
+        "Haitian Vetiver",
+        "Musk"
+      ]
+    },
+    "companyName": "Byredo",
+    "perfumeName": "Super Cedar",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.35530.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.3577.jpg",
+    "notes": {
+      "rose": 100,
+      "mossy": 80.3422,
+      "floral": 74.9624,
+      "musky": 71.1717,
+      "earthy": 67.0836,
+      "citrus": 62.1245,
+      "amber": 58.6283,
+      "woody": 56.4571,
+      "powdery": 44.8601
+    },
+    "seasonData": {
+      "winter": 56.4189,
+      "spring": 75.3378,
+      "summer": 41.2162,
+      "fall": 91.5541,
+      "day": 100,
+      "night": 75.3378
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 18,
+        "weak": 43,
+        "moderate": 142,
+        "long lasting": 133,
+        "eternal": 36
+      },
+      "SILLAGE": {
+        "intimate": 70,
+        "moderate": 240,
+        "strong": 118,
+        "enormous": 97
+      },
+      "GENDER": {
+        "female": 53,
+        "more female": 54,
+        "unisex": 81,
+        "more male": 5,
+        "male": 2
+      },
+      "PRICE VALUE": {
+        "way overpriced": 34,
+        "overpriced": 79,
+        "ok": 52,
+        "good value": 4,
+        "great value": 1
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Grapefruit",
+        "Freesia",
+        "Red Berries",
+        "Cardamom"
+      ],
+      "Middle Notes": [
+        "Damask Rose",
+        "Raspberry",
+        "Lily-of-the-Valley",
+        "Jasmine",
+        "Violet"
+      ],
+      "Base Notes": [
+        "Moss",
+        "Musk",
+        "Labdanum",
+        "Patchouli"
+      ]
+    },
+    "companyName": "Byredo",
+    "perfumeName": "Rose Noir",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.3577.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.10757.jpg",
+    "notes": {
+      "leather": 100,
+      "fruity": 85.2881,
+      "oud": 84.473,
+      "warm spicy": 74.6842,
+      "rum": 64.1739,
+      "animalic": 59.8382,
+      "sweet": 57.8881,
+      "woody": 54.1285,
+      "aromatic": 50.3227,
+      "musky": 48.8854
+    },
+    "seasonData": {
+      "winter": 87.2449,
+      "spring": 45.9184,
+      "summer": 21.9388,
+      "fall": 100,
+      "day": 78.5714,
+      "night": 73.7245
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 15,
+        "weak": 36,
+        "moderate": 144,
+        "long lasting": 215,
+        "eternal": 93
+      },
+      "SILLAGE": {
+        "intimate": 63,
+        "moderate": 243,
+        "strong": 224,
+        "enormous": 119
+      },
+      "GENDER": {
+        "female": 8,
+        "more female": 12,
+        "unisex": 144,
+        "more male": 88,
+        "male": 20
+      },
+      "PRICE VALUE": {
+        "way overpriced": 18,
+        "overpriced": 94,
+        "ok": 81,
+        "good value": 12,
+        "great value": 4
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Blackberry",
+        "Rum",
+        "Saffron"
+      ],
+      "Middle Notes": [
+        "Leather",
+        "Agarwood (Oud)",
+        "Clary Sage"
+      ],
+      "Base Notes": [
+        "Patchouli",
+        "Musk"
+      ]
+    },
+    "companyName": "Byredo",
+    "perfumeName": "Accord Oud",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.10757.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.85157.jpg",
+    "notes": {
+      "powdery": 100,
+      "leather": 76.6015,
+      "violet": 68.7736,
+      "musky": 63.2869,
+      "amber": 59.9946,
+      "tobacco": 58.5317,
+      "yellow floral": 56.9954,
+      "floral": 54.2151,
+      "sweet": 53.2644
+    },
+    "seasonData": {
+      "winter": 89.4231,
+      "spring": 64.4231,
+      "summer": 24.0385,
+      "fall": 100,
+      "day": 66.3462,
+      "night": 76.4423
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 6,
+        "weak": 16,
+        "moderate": 137,
+        "long lasting": 99,
+        "eternal": 23
+      },
+      "SILLAGE": {
+        "intimate": 27,
+        "moderate": 174,
+        "strong": 65,
+        "enormous": 5
+      },
+      "GENDER": {
+        "female": 27,
+        "more female": 53,
+        "unisex": 203,
+        "more male": 25,
+        "male": 9
+      },
+      "PRICE VALUE": {
+        "way overpriced": 38,
+        "overpriced": 91,
+        "ok": 98,
+        "good value": 11,
+        "great value": 24
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Bergamot",
+        "Lemon"
+      ],
+      "Middle Notes": [
+        "Violet",
+        "Mimosa"
+      ],
+      "Base Notes": [
+        "Suede",
+        "Amber",
+        "Tobacco Leaf"
+      ]
+    },
+    "companyName": "Byredo",
+    "perfumeName": "Animalique",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.85157.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.76339.jpg",
+    "notes": {
+      "warm spicy": 100,
+      "cinnamon": 68.5227,
+      "powdery": 67.3804,
+      "iris": 58.1231,
+      "earthy": 51.2313,
+      "woody": 51.1363,
+      "soft spicy": 49.0198
+    },
+    "seasonData": {
+      "winter": 89.3836,
+      "spring": 35.274,
+      "summer": 14.726,
+      "fall": 100,
+      "day": 64.3836,
+      "night": 59.589
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 7,
+        "weak": 26,
+        "moderate": 168,
+        "long lasting": 97,
+        "eternal": 19
+      },
+      "SILLAGE": {
+        "intimate": 32,
+        "moderate": 220,
+        "strong": 58,
+        "enormous": 6
+      },
+      "GENDER": {
+        "female": 23,
+        "more female": 55,
+        "unisex": 245,
+        "more male": 50,
+        "male": 10
+      },
+      "PRICE VALUE": {
+        "way overpriced": 59,
+        "overpriced": 127,
+        "ok": 83,
+        "good value": 15,
+        "great value": 7
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Cinnamon",
+        "Cardamom"
+      ],
+      "Middle Notes": [
+        "Orris",
+        "Carrot",
+        "Ginger"
+      ],
+      "Base Notes": [
+        "Papyrus",
+        "Patchouli"
+      ]
+    },
+    "companyName": "Byredo",
+    "perfumeName": "Eyes Closed",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.76339.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.43324.jpg",
+    "notes": {
+      "fruity": 100,
+      "leather": 76.1523,
+      "powdery": 73.5549,
+      "sweet": 69.6861,
+      "violet": 59.8636,
+      "animalic": 55.8805,
+      "patchouli": 52.6441,
+      "vanilla": 52.336,
+      "floral": 51.2376,
+      "musky": 48.6954
+    },
+    "seasonData": {
+      "winter": 72.51,
+      "spring": 47.1116,
+      "summer": 23.008,
+      "fall": 100,
+      "day": 75,
+      "night": 52.8884
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 44,
+        "weak": 130,
+        "moderate": 538,
+        "long lasting": 392,
+        "eternal": 100
+      },
+      "SILLAGE": {
+        "intimate": 202,
+        "moderate": 685,
+        "strong": 311,
+        "enormous": 125
+      },
+      "GENDER": {
+        "female": 231,
+        "more female": 328,
+        "unisex": 545,
+        "more male": 45,
+        "male": 8
+      },
+      "PRICE VALUE": {
+        "way overpriced": 181,
+        "overpriced": 403,
+        "ok": 295,
+        "good value": 43,
+        "great value": 17
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Plum",
+        "Peach"
+      ],
+      "Middle Notes": [
+        "Violet",
+        "Peony"
+      ],
+      "Base Notes": [
+        "Leather",
+        "Patchouli",
+        "Vanilla",
+        "Musk"
+      ]
+    },
+    "companyName": "Byredo",
+    "perfumeName": "Bibliothèque",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.43324.jpg"
+  }
+]

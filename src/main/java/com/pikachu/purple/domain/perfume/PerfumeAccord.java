@@ -1,4 +1,4 @@
-package com.pikachu.purple.domain.mainAccord;
+package com.pikachu.purple.domain.perfume;
 
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -7,21 +7,21 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class MainAccord {
+public class PerfumeAccord {
 
-    private Long mainAccordId;
+    private Long perfumeAccordId;
     private Long perfumeId;
     private String noteName;
     private int accordValue;
 
     @Builder
-    public MainAccord(
-            Long mainAccordId,
-            Long perfumeId,
-            String noteName,
-            Integer accordValue
+    public PerfumeAccord(
+        Long perfumeAccordId,
+        Long perfumeId,
+        String noteName,
+        Integer accordValue
     ) {
-        this.mainAccordId = mainAccordId;
+        this.perfumeAccordId = perfumeAccordId;
         this.perfumeId = perfumeId;
         this.noteName = noteName;
         this.accordValue = accordValue;

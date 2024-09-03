@@ -1,0 +1,1560 @@
+[
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.9828.jpg",
+    "notes": {
+      "fruity": 100,
+      "sweet": 68.219,
+      "leather": 64.406,
+      "woody": 63.3521,
+      "smoky": 57.525,
+      "citrus": 52.8831,
+      "musky": 52.8478,
+      "tropical": 52.3654,
+      "fresh": 51.4356,
+      "mossy": 45.7156
+    },
+    "seasonData": {
+      "winter": 42.61,
+      "spring": 96.958,
+      "summer": 98.1115,
+      "fall": 73.0521,
+      "day": 100,
+      "night": 68.427
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 639,
+        "weak": 1046,
+        "moderate": 4085,
+        "long lasting": 4624,
+        "eternal": 1429
+      },
+      "SILLAGE": {
+        "intimate": 1424,
+        "moderate": 6082,
+        "strong": 3431,
+        "enormous": 1130
+      },
+      "GENDER": {
+        "female": 94,
+        "more female": 31,
+        "unisex": 589,
+        "more male": 1821,
+        "male": 5384
+      },
+      "PRICE VALUE": {
+        "way overpriced": 4707,
+        "overpriced": 1825,
+        "ok": 890,
+        "good value": 234,
+        "great value": 293
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Bergamot",
+        "Black Currant",
+        "Apple",
+        "Lemon",
+        "Pink Pepper"
+      ],
+      "Middle Notes": [
+        "Pineapple",
+        "Patchouli",
+        "Moroccan Jasmine"
+      ],
+      "Base Notes": [
+        "Birch",
+        "Musk",
+        "oak moss",
+        "Ambroxan",
+        "Cedarwood"
+      ]
+    },
+    "companyName": "Creed",
+    "perfumeName": "Aventus",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.9828.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.4262.jpg",
+    "notes": {
+      "floral": 100,
+      "citrus": 91.4955,
+      "yellow floral": 67.1442,
+      "white floral": 63.3797,
+      "powdery": 61.5954,
+      "iris": 60.5388,
+      "sweet": 59.3938,
+      "savory": 58.4973,
+      "woody": 53.3306,
+      "green": 53.2152
+    },
+    "seasonData": {
+      "winter": 26.3889,
+      "spring": 94.8232,
+      "summer": 68.5606,
+      "fall": 34.9747,
+      "day": 100,
+      "night": 23.3586
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 49,
+        "weak": 87,
+        "moderate": 317,
+        "long lasting": 307,
+        "eternal": 94
+      },
+      "SILLAGE": {
+        "intimate": 168,
+        "moderate": 481,
+        "strong": 283,
+        "enormous": 159
+      },
+      "GENDER": {
+        "female": 384,
+        "more female": 83,
+        "unisex": 46,
+        "more male": 4,
+        "male": 5
+      },
+      "PRICE VALUE": {
+        "way overpriced": 196,
+        "overpriced": 140,
+        "ok": 105,
+        "good value": 13,
+        "great value": 11
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Orange Peel"
+      ],
+      "Middle Notes": [
+        "Magnolia",
+        "Rice",
+        "Narcissus",
+        "Italian Jasmine",
+        "Iris",
+        "Bulgarian Rose"
+      ],
+      "Base Notes": [
+        "Ambergris",
+        "Sandalwood",
+        "Vanille"
+      ]
+    },
+    "companyName": "Creed",
+    "perfumeName": "Love in White",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.4262.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.470.jpg",
+    "notes": {
+      "citrus": 100,
+      "warm spicy": 96.038,
+      "tobacco": 75.4758,
+      "woody": 73.3747,
+      "sweet": 61.9685,
+      "animalic": 58.3962,
+      "amber": 58.0661,
+      "leather": 53.1132,
+      "balsamic": 49.5112,
+      "powdery": 48.1455
+    },
+    "seasonData": {
+      "winter": 64.7196,
+      "spring": 84.8131,
+      "summer": 43.9252,
+      "fall": 100,
+      "day": 95.3271,
+      "night": 75.2336
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 40,
+        "weak": 58,
+        "moderate": 255,
+        "long lasting": 159,
+        "eternal": 35
+      },
+      "SILLAGE": {
+        "intimate": 114,
+        "moderate": 337,
+        "strong": 109,
+        "enormous": 75
+      },
+      "GENDER": {
+        "female": 6,
+        "more female": 2,
+        "unisex": 25,
+        "more male": 58,
+        "male": 189
+      },
+      "PRICE VALUE": {
+        "way overpriced": 87,
+        "overpriced": 87,
+        "ok": 63,
+        "good value": 13,
+        "great value": 3
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Tangerine",
+        "Bergamot"
+      ],
+      "Middle Notes": [
+        "Ginger"
+      ],
+      "Base Notes": [
+        "Tobacco",
+        "Sandalwood",
+        "Ambergris",
+        "Leather",
+        "Patchouli"
+      ]
+    },
+    "companyName": "Creed",
+    "perfumeName": "Tabarome",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.470.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.38497.jpg",
+    "notes": {
+      "fruity": 100,
+      "citrus": 83.6885,
+      "woody": 77.6836,
+      "powdery": 73.175,
+      "musky": 72.8776,
+      "floral": 60.3422,
+      "fresh": 59.9148,
+      "soft spicy": 55.3259,
+      "amber": 54.7957,
+      "green": 54.6906
+    },
+    "seasonData": {
+      "winter": 34.6053,
+      "spring": 91.0526,
+      "summer": 81.7105,
+      "fall": 58.4211,
+      "day": 100,
+      "night": 44.6053
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 52,
+        "weak": 86,
+        "moderate": 271,
+        "long lasting": 373,
+        "eternal": 258
+      },
+      "SILLAGE": {
+        "intimate": 110,
+        "moderate": 417,
+        "strong": 476,
+        "enormous": 229
+      },
+      "GENDER": {
+        "female": 260,
+        "more female": 200,
+        "unisex": 320,
+        "more male": 35,
+        "male": 33
+      },
+      "PRICE VALUE": {
+        "way overpriced": 329,
+        "overpriced": 197,
+        "ok": 132,
+        "good value": 29,
+        "great value": 31
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Green Apple",
+        "Bergamot",
+        "Lemon",
+        "Patchouli",
+        "Pink Pepper",
+        "Violet"
+      ],
+      "Middle Notes": [
+        "Musk",
+        "Rose",
+        "Sandalwood",
+        "Styrax"
+      ],
+      "Base Notes": [
+        "Black Currant",
+        "Peach",
+        "Amber",
+        "Lilac",
+        "Ylang-Ylang"
+      ]
+    },
+    "companyName": "Creed",
+    "perfumeName": "Aventus for Her",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.38497.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.899.jpg",
+    "notes": {
+      "citrus": 100,
+      "sweet": 79.7225,
+      "coconut": 76.1182,
+      "vanilla": 50.8457,
+      "lactonic": 46.1414,
+      "rum": 45.9366,
+      "fresh spicy": 45.1893,
+      "woody": 44.2318
+    },
+    "seasonData": {
+      "winter": 5.52913,
+      "spring": 44.3222,
+      "summer": 100,
+      "fall": 10.0773,
+      "day": 89.3282,
+      "night": 20.6005
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 222,
+        "weak": 446,
+        "moderate": 1285,
+        "long lasting": 828,
+        "eternal": 168
+      },
+      "SILLAGE": {
+        "intimate": 679,
+        "moderate": 1771,
+        "strong": 484,
+        "enormous": 269
+      },
+      "GENDER": {
+        "female": 77,
+        "more female": 143,
+        "unisex": 1244,
+        "more male": 373,
+        "male": 107
+      },
+      "PRICE VALUE": {
+        "way overpriced": 760,
+        "overpriced": 570,
+        "ok": 258,
+        "good value": 62,
+        "great value": 43
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Coconut",
+        "Lime",
+        "White Bergamot",
+        "Sicilian Mandarin"
+      ],
+      "Middle Notes": [
+        "Ginger",
+        "Ylang-Ylang",
+        "Indian Jasmine",
+        "Hibiscus"
+      ],
+      "Base Notes": [
+        "White Rum",
+        "Sugar Cane",
+        "Musk"
+      ]
+    },
+    "companyName": "Creed",
+    "perfumeName": "Virgin Island Water",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.899.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.474.jpg",
+    "notes": {
+      "citrus": 100,
+      "ozonic": 95.8396,
+      "iris": 78.9651,
+      "powdery": 78.7914,
+      "woody": 78.6177,
+      "aquatic": 78.5133,
+      "amber": 75.4309,
+      "green": 59.5418,
+      "animalic": 57.2585,
+      "violet": 54.4826
+    },
+    "seasonData": {
+      "winter": 22.707,
+      "spring": 100,
+      "summer": 81.4215,
+      "fall": 58.2219,
+      "day": 95.848,
+      "night": 41.9423
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 136,
+        "weak": 272,
+        "moderate": 1648,
+        "long lasting": 2146,
+        "eternal": 317
+      },
+      "SILLAGE": {
+        "intimate": 422,
+        "moderate": 2908,
+        "strong": 1112,
+        "enormous": 330
+      },
+      "GENDER": {
+        "female": 30,
+        "more female": 5,
+        "unisex": 175,
+        "more male": 695,
+        "male": 1951
+      },
+      "PRICE VALUE": {
+        "way overpriced": 986,
+        "overpriced": 955,
+        "ok": 586,
+        "good value": 120,
+        "great value": 50
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Lemon Verbena",
+        "Iris"
+      ],
+      "Middle Notes": [
+        "Violet Leaf"
+      ],
+      "Base Notes": [
+        "Ambergris",
+        "Sandalwood"
+      ]
+    },
+    "companyName": "Creed",
+    "perfumeName": "Green Irish Tweed",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.474.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.89643.jpg",
+    "notes": {
+      "amber": 100,
+      "warm spicy": 97.0621,
+      "floral": 91.6422,
+      "fruity": 89.4389,
+      "vanilla": 77.6124,
+      "musky": 74.8767,
+      "sweet": 68.1401,
+      "tuberose": 64.9493,
+      "tropical": 58.7192,
+      "white floral": 57.9597
+    },
+    "seasonData": {
+      "winter": 87.5912,
+      "spring": 73.7226,
+      "summer": 37.9562,
+      "fall": 100,
+      "day": 62.0438,
+      "night": 96.3504
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 7,
+        "weak": 8,
+        "moderate": 41,
+        "long lasting": 104,
+        "eternal": 41
+      },
+      "SILLAGE": {
+        "intimate": 16,
+        "moderate": 72,
+        "strong": 87,
+        "enormous": 24
+      },
+      "GENDER": {
+        "female": 86,
+        "more female": 69,
+        "unisex": 43,
+        "more male": 2,
+        "male": 9
+      },
+      "PRICE VALUE": {
+        "way overpriced": 94,
+        "overpriced": 55,
+        "ok": 35,
+        "good value": 10,
+        "great value": 6
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Saffron",
+        "Osmanthus",
+        "Magnolia"
+      ],
+      "Middle Notes": [
+        "Passionfruit",
+        "Tuberose",
+        "Patchouli",
+        "Agarwood (Oud)"
+      ],
+      "Base Notes": [
+        "Madagascar Vanilla",
+        "Ambroxan",
+        "Myrrh",
+        "Musk",
+        "Cedarwood",
+        "Incense"
+      ]
+    },
+    "companyName": "Creed",
+    "perfumeName": "Queen of Silk",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.89643.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.472.jpg",
+    "notes": {
+      "citrus": 100,
+      "green": 98.7386,
+      "fruity": 77.5428,
+      "musky": 70.9587,
+      "woody": 70.5108,
+      "aromatic": 66.8708,
+      "powdery": 64.5475,
+      "fresh spicy": 61.5932,
+      "fresh": 46.4958,
+      "floral": 45.9777
+    },
+    "seasonData": {
+      "winter": 20.734,
+      "spring": 96.675,
+      "summer": 93.7265,
+      "fall": 34.724,
+      "day": 100,
+      "night": 26.7252
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 225,
+        "weak": 531,
+        "moderate": 1773,
+        "long lasting": 867,
+        "eternal": 240
+      },
+      "SILLAGE": {
+        "intimate": 764,
+        "moderate": 2175,
+        "strong": 665,
+        "enormous": 327
+      },
+      "GENDER": {
+        "female": 49,
+        "more female": 88,
+        "unisex": 1235,
+        "more male": 765,
+        "male": 369
+      },
+      "PRICE VALUE": {
+        "way overpriced": 983,
+        "overpriced": 746,
+        "ok": 409,
+        "good value": 72,
+        "great value": 48
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Bergamot",
+        "Mandarin Orange"
+      ],
+      "Middle Notes": [
+        "Green Tea",
+        "Black Currant"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Sandalwood",
+        "Petitgrain",
+        "Galbanum"
+      ]
+    },
+    "companyName": "Creed",
+    "perfumeName": "Silver Mountain Water",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.472.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.466.jpg",
+    "notes": {
+      "marine": 100,
+      "citrus": 93.8975,
+      "salty": 90.2585,
+      "fruity": 83.4335,
+      "aromatic": 73.6137,
+      "sweet": 59.4544,
+      "powdery": 58.5016,
+      "musky": 57.3782,
+      "woody": 52.5859,
+      "iris": 50.9364
+    },
+    "seasonData": {
+      "winter": 9.762,
+      "spring": 78.0557,
+      "summer": 100,
+      "fall": 25.3328,
+      "day": 95.8048,
+      "night": 27.9548
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 227,
+        "weak": 483,
+        "moderate": 1444,
+        "long lasting": 465,
+        "eternal": 112
+      },
+      "SILLAGE": {
+        "intimate": 776,
+        "moderate": 1578,
+        "strong": 370,
+        "enormous": 253
+      },
+      "GENDER": {
+        "female": 27,
+        "more female": 36,
+        "unisex": 603,
+        "more male": 575,
+        "male": 262
+      },
+      "PRICE VALUE": {
+        "way overpriced": 690,
+        "overpriced": 429,
+        "ok": 194,
+        "good value": 41,
+        "great value": 33
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Sea Salt",
+        "Fruity Notes"
+      ],
+      "Middle Notes": [
+        "Sicilian Lemon",
+        "Bergamot",
+        "Iris",
+        "Mandarin Orange"
+      ],
+      "Base Notes": [
+        "Sea Notes",
+        "Musk",
+        "Woody Notes"
+      ]
+    },
+    "companyName": "Creed",
+    "perfumeName": "Millésime Impérial",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.466.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.6272.jpg",
+    "notes": {
+      "citrus": 100,
+      "fruity": 94.2424,
+      "woody": 57.439,
+      "fresh": 55.171,
+      "fresh spicy": 53.9051,
+      "sweet": 52.9717,
+      "aromatic": 51.2706,
+      "green": 46.4322,
+      "rose": 45.3423
+    },
+    "seasonData": {
+      "winter": 10.9694,
+      "spring": 90.8163,
+      "summer": 92.602,
+      "fall": 23.7245,
+      "day": 100,
+      "night": 19.3878
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 39,
+        "weak": 69,
+        "moderate": 178,
+        "long lasting": 85,
+        "eternal": 31
+      },
+      "SILLAGE": {
+        "intimate": 93,
+        "moderate": 249,
+        "strong": 98,
+        "enormous": 109
+      },
+      "GENDER": {
+        "female": 136,
+        "more female": 34,
+        "unisex": 20,
+        "more male": 1,
+        "male": 2
+      },
+      "PRICE VALUE": {
+        "way overpriced": 63,
+        "overpriced": 55,
+        "ok": 40,
+        "good value": 2,
+        "great value": 2
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Apple",
+        "Plum"
+      ],
+      "Middle Notes": [
+        "Bergamot",
+        "Sicilian Bergamot",
+        "Lemon",
+        "Pear",
+        "Rose"
+      ],
+      "Base Notes": [
+        "White Grapefruit",
+        "Virginia Cedar",
+        "Sandalwood"
+      ]
+    },
+    "companyName": "Creed",
+    "perfumeName": "Acqua Fiorentina",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.6272.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.468.jpg",
+    "notes": {
+      "citrus": 100,
+      "woody": 95.0681,
+      "aromatic": 81.999,
+      "earthy": 69.4564,
+      "warm spicy": 64.7078,
+      "powdery": 63.6396,
+      "musky": 52.5323,
+      "amber": 48.6935,
+      "fresh spicy": 48.4011,
+      "green": 47.5501
+    },
+    "seasonData": {
+      "winter": 13.1206,
+      "spring": 98.5816,
+      "summer": 95.656,
+      "fall": 38.9184,
+      "day": 100,
+      "night": 25
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 80,
+        "weak": 146,
+        "moderate": 545,
+        "long lasting": 359,
+        "eternal": 60
+      },
+      "SILLAGE": {
+        "intimate": 219,
+        "moderate": 768,
+        "strong": 184,
+        "enormous": 109
+      },
+      "GENDER": {
+        "female": 5,
+        "more female": 1,
+        "unisex": 174,
+        "more male": 288,
+        "male": 240
+      },
+      "PRICE VALUE": {
+        "way overpriced": 248,
+        "overpriced": 222,
+        "ok": 130,
+        "good value": 26,
+        "great value": 16
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Bergamot",
+        "Ginger",
+        "Mandarin Orange"
+      ],
+      "Middle Notes": [
+        "Haitian Vetiver",
+        "Sandalwood",
+        "Iris"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Ambergris"
+      ]
+    },
+    "companyName": "Creed",
+    "perfumeName": "Original Vetiver",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.468.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.31562.jpg",
+    "notes": {
+      "woody": 100,
+      "aromatic": 69.823,
+      "citrus": 49.9955,
+      "camphor": 49.7868,
+      "rose": 48.8606,
+      "conifer": 44.191
+    },
+    "seasonData": {
+      "winter": 31.2394,
+      "spring": 100,
+      "summer": 76.91,
+      "fall": 77.5891,
+      "day": 92.8693,
+      "night": 49.236
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 54,
+        "weak": 79,
+        "moderate": 274,
+        "long lasting": 329,
+        "eternal": 60
+      },
+      "SILLAGE": {
+        "intimate": 126,
+        "moderate": 524,
+        "strong": 192,
+        "enormous": 121
+      },
+      "GENDER": {
+        "female": 14,
+        "more female": 27,
+        "unisex": 166,
+        "more male": 136,
+        "male": 76
+      },
+      "PRICE VALUE": {
+        "way overpriced": 105,
+        "overpriced": 108,
+        "ok": 139,
+        "good value": 20,
+        "great value": 7
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Pine Tree",
+        "Gin",
+        "Lime"
+      ],
+      "Middle Notes": [
+        "Rose"
+      ],
+      "Base Notes": [
+        "Eucalyptus",
+        "Cedar",
+        "Orange"
+      ]
+    },
+    "companyName": "Creed",
+    "perfumeName": "Royal Mayfair",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.31562.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.7274.jpg",
+    "notes": {
+      "citrus": 100,
+      "fresh": 64.9999,
+      "fresh spicy": 44
+    },
+    "seasonData": {
+      "winter": 21.4286,
+      "spring": 64.2857,
+      "summer": 57.1429,
+      "fall": 14.2857,
+      "day": 100,
+      "night": 14.2857
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 3,
+        "weak": 4,
+        "moderate": 7,
+        "long lasting": 0,
+        "eternal": 0
+      },
+      "SILLAGE": {
+        "intimate": 4,
+        "moderate": 6,
+        "strong": 5,
+        "enormous": 3
+      },
+      "GENDER": {
+        "female": 0,
+        "more female": 0,
+        "unisex": 3,
+        "more male": 0,
+        "male": 1
+      },
+      "PRICE VALUE": {
+        "way overpriced": 0,
+        "overpriced": 1,
+        "ok": 1,
+        "good value": 0,
+        "great value": 1
+      }
+    },
+    "noteTopMiddleBase": {},
+    "companyName": "Creed",
+    "perfumeName": "Zeste Mandarine",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.7274.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.471.jpg",
+    "notes": {
+      "fruity": 100,
+      "fresh": 70.1928,
+      "white floral": 67.0993,
+      "musky": 63.0287,
+      "rose": 58.6386,
+      "aquatic": 55.6206,
+      "ozonic": 54.6667,
+      "powdery": 53.2595,
+      "sweet": 50.4685,
+      "green": 47.91
+    },
+    "seasonData": {
+      "winter": 9.39335,
+      "spring": 98.0431,
+      "summer": 77.1037,
+      "fall": 19.5695,
+      "day": 100,
+      "night": 12.7202
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 33,
+        "weak": 87,
+        "moderate": 191,
+        "long lasting": 92,
+        "eternal": 44
+      },
+      "SILLAGE": {
+        "intimate": 118,
+        "moderate": 233,
+        "strong": 111,
+        "enormous": 83
+      },
+      "GENDER": {
+        "female": 189,
+        "more female": 32,
+        "unisex": 20,
+        "more male": 3,
+        "male": 2
+      },
+      "PRICE VALUE": {
+        "way overpriced": 110,
+        "overpriced": 79,
+        "ok": 38,
+        "good value": 6,
+        "great value": 6
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Apple",
+        "Melon",
+        "Peach"
+      ],
+      "Middle Notes": [
+        "Jasmine",
+        "Rose"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Ambergris"
+      ]
+    },
+    "companyName": "Creed",
+    "perfumeName": "Spring Flower",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.471.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.70182.jpg",
+    "notes": {
+      "white floral": 100,
+      "sweet": 66.2564,
+      "powdery": 62.2252,
+      "musky": 55.1308,
+      "tuberose": 47.8011,
+      "rose": 47.5394,
+      "woody": 46.021,
+      "iris": 45.9685,
+      "animalic": 45.5496
+    },
+    "seasonData": {
+      "winter": 28.2511,
+      "spring": 100,
+      "summer": 77.5785,
+      "fall": 53.3632,
+      "day": 95.0673,
+      "night": 40.3587
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 18,
+        "weak": 27,
+        "moderate": 125,
+        "long lasting": 100,
+        "eternal": 17
+      },
+      "SILLAGE": {
+        "intimate": 40,
+        "moderate": 158,
+        "strong": 79,
+        "enormous": 8
+      },
+      "GENDER": {
+        "female": 248,
+        "more female": 46,
+        "unisex": 27,
+        "more male": 4,
+        "male": 4
+      },
+      "PRICE VALUE": {
+        "way overpriced": 168,
+        "overpriced": 89,
+        "ok": 35,
+        "good value": 9,
+        "great value": 5
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Jasmine",
+        "Orange Blossom",
+        "Peach"
+      ],
+      "Middle Notes": [
+        "Jasmine Sambac",
+        "Tuberose",
+        "Rose"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Orange Blossom",
+        "Praline",
+        "Iris",
+        "Sandalwood"
+      ]
+    },
+    "companyName": "Creed",
+    "perfumeName": "Wind Flowers",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.70182.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.49805.jpg",
+    "notes": {
+      "floral": 100,
+      "citrus": 99.399,
+      "woody": 94.4615,
+      "fruity": 79.3133,
+      "powdery": 73.6415,
+      "amber": 68.7033,
+      "fresh spicy": 63.4984,
+      "fresh": 61.7637,
+      "iris": 60.6957,
+      "rose": 59.6283
+    },
+    "seasonData": {
+      "winter": 8.69565,
+      "spring": 77.1739,
+      "summer": 100,
+      "fall": 22.8261,
+      "day": 91.3043,
+      "night": 17.3913
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 10,
+        "weak": 14,
+        "moderate": 57,
+        "long lasting": 18,
+        "eternal": 6
+      },
+      "SILLAGE": {
+        "intimate": 23,
+        "moderate": 59,
+        "strong": 28,
+        "enormous": 18
+      },
+      "GENDER": {
+        "female": 55,
+        "more female": 18,
+        "unisex": 11,
+        "more male": 1,
+        "male": 0
+      },
+      "PRICE VALUE": {
+        "way overpriced": 26,
+        "overpriced": 28,
+        "ok": 16,
+        "good value": 1,
+        "great value": 3
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Calabrian bergamot",
+        "Magnolia",
+        "Bulgarian Rose"
+      ],
+      "Middle Notes": [
+        "Rice",
+        "Tuscan Iris",
+        "Virginia Cedar"
+      ],
+      "Base Notes": [
+        "Apple",
+        "Ambergris",
+        "Sandalwood",
+        "Jasmine"
+      ]
+    },
+    "companyName": "Creed",
+    "perfumeName": "Love in White for Summer",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.49805.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.24783.jpg",
+    "notes": {
+      "aromatic": 100,
+      "fresh spicy": 94.7117,
+      "woody": 80.4441,
+      "citrus": 78.3934,
+      "rose": 69.7377,
+      "warm spicy": 58.4813,
+      "fruity": 52.7938,
+      "herbal": 50.743,
+      "patchouli": 50.7218,
+      "earthy": 50.5919
+    },
+    "seasonData": {
+      "winter": 16.0377,
+      "spring": 100,
+      "summer": 83.4906,
+      "fall": 49.5283,
+      "day": 89.1509,
+      "night": 31.6038
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 21,
+        "weak": 19,
+        "moderate": 96,
+        "long lasting": 97,
+        "eternal": 31
+      },
+      "SILLAGE": {
+        "intimate": 38,
+        "moderate": 164,
+        "strong": 64,
+        "enormous": 41
+      },
+      "GENDER": {
+        "female": 2,
+        "more female": 2,
+        "unisex": 39,
+        "more male": 31,
+        "male": 19
+      },
+      "PRICE VALUE": {
+        "way overpriced": 25,
+        "overpriced": 31,
+        "ok": 21,
+        "good value": 4,
+        "great value": 0
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Granny Smith apple",
+        "Lemon",
+        "Bergamot"
+      ],
+      "Middle Notes": [
+        "Geranium",
+        "Rose",
+        "Cinnamon"
+      ],
+      "Base Notes": [
+        "Cedar",
+        "Patchouli",
+        "Vetiver",
+        "Musk",
+        "Amber"
+      ]
+    },
+    "companyName": "Creed",
+    "perfumeName": "Vetiver Geranium",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.24783.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.50211.jpg",
+    "notes": {
+      "white floral": 100,
+      "floral": 96.5343,
+      "fresh": 73.6632,
+      "tuberose": 69.8516,
+      "green": 65.6931,
+      "woody": 61.1882,
+      "aromatic": 59.802,
+      "rose": 57.8959,
+      "musky": 57.7224,
+      "sweet": 54.8463
+    },
+    "seasonData": {
+      "winter": 22.2222,
+      "spring": 100,
+      "summer": 81.4815,
+      "fall": 18.5185,
+      "day": 100,
+      "night": 22.2222
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 5,
+        "weak": 10,
+        "moderate": 15,
+        "long lasting": 8,
+        "eternal": 6
+      },
+      "SILLAGE": {
+        "intimate": 14,
+        "moderate": 15,
+        "strong": 16,
+        "enormous": 8
+      },
+      "GENDER": {
+        "female": 21,
+        "more female": 3,
+        "unisex": 3,
+        "more male": 0,
+        "male": 0
+      },
+      "PRICE VALUE": {
+        "way overpriced": 6,
+        "overpriced": 11,
+        "ok": 5,
+        "good value": 0,
+        "great value": 0
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Lilac",
+        "Tuberose",
+        "Tagetes",
+        "Bulgarian Rose"
+      ],
+      "Middle Notes": [
+        "Lily-of-the-Valley",
+        "Cedar",
+        "Amber"
+      ],
+      "Base Notes": [
+        "Cedar",
+        "Musk",
+        "Amber"
+      ]
+    },
+    "companyName": "Creed",
+    "perfumeName": "Floralie",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.50211.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.7515.jpg",
+    "notes": {
+      "citrus": 100,
+      "woody": 95.9613,
+      "aromatic": 72.0976,
+      "amber": 70.3846,
+      "warm spicy": 64.1433,
+      "fresh": 59.7376,
+      "earthy": 54.9649,
+      "animalic": 52.2725,
+      "fresh spicy": 50.1921
+    },
+    "seasonData": {
+      "winter": 36.3636,
+      "spring": 90.9091,
+      "summer": 69.697,
+      "fall": 60.6061,
+      "day": 100,
+      "night": 45.4545
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 10,
+        "weak": 11,
+        "moderate": 16,
+        "long lasting": 7,
+        "eternal": 5
+      },
+      "SILLAGE": {
+        "intimate": 13,
+        "moderate": 28,
+        "strong": 11,
+        "enormous": 12
+      },
+      "GENDER": {
+        "female": 0,
+        "more female": 0,
+        "unisex": 5,
+        "more male": 5,
+        "male": 5
+      },
+      "PRICE VALUE": {
+        "way overpriced": 5,
+        "overpriced": 5,
+        "ok": 7,
+        "good value": 0,
+        "great value": 0
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Citruses",
+        "Bergamot"
+      ],
+      "Middle Notes": [
+        "Ginger"
+      ],
+      "Base Notes": [
+        "Vetyver",
+        "Ambergris",
+        "Virginia Cedar"
+      ]
+    },
+    "companyName": "Creed",
+    "perfumeName": "Vetiver",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.7515.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.7510.jpg",
+    "notes": {
+      "citrus": 100,
+      "fresh spicy": 94.6096,
+      "fresh": 71.0202,
+      "aromatic": 69.4613,
+      "musky": 66.5511,
+      "green": 60.6078,
+      "herbal": 50.9093,
+      "powdery": 48.8592
+    },
+    "seasonData": {
+      "winter": 11.994,
+      "spring": 95.0525,
+      "summer": 98.8006,
+      "fall": 34.033,
+      "day": 100,
+      "night": 25.4873
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 39,
+        "weak": 60,
+        "moderate": 322,
+        "long lasting": 258,
+        "eternal": 60
+      },
+      "SILLAGE": {
+        "intimate": 122,
+        "moderate": 487,
+        "strong": 162,
+        "enormous": 91
+      },
+      "GENDER": {
+        "female": 13,
+        "more female": 13,
+        "unisex": 174,
+        "more male": 148,
+        "male": 111
+      },
+      "PRICE VALUE": {
+        "way overpriced": 129,
+        "overpriced": 167,
+        "ok": 98,
+        "good value": 20,
+        "great value": 9
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Citruses",
+        "Lemon Verbena",
+        "Bergamot",
+        "Mandarin Orange"
+      ],
+      "Middle Notes": [
+        "Basil",
+        "Allspice",
+        "Cumin"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Cedarwood"
+      ]
+    },
+    "companyName": "Creed",
+    "perfumeName": "Royal Water",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.7510.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.51692.jpg",
+    "notes": {
+      "woody": 100,
+      "citrus": 98.9271,
+      "musky": 87.8847,
+      "warm spicy": 83.1417,
+      "leather": 73.5458,
+      "smoky": 64.8365,
+      "powdery": 63.5926,
+      "aromatic": 57.3718,
+      "sweet": 55.8631,
+      "earthy": 55.4122
+    },
+    "seasonData": {
+      "winter": 17.0113,
+      "spring": 90.9774,
+      "summer": 100,
+      "fall": 47.0865,
+      "day": 93.703,
+      "night": 38.9098
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 87,
+        "weak": 137,
+        "moderate": 598,
+        "long lasting": 376,
+        "eternal": 56
+      },
+      "SILLAGE": {
+        "intimate": 199,
+        "moderate": 795,
+        "strong": 276,
+        "enormous": 109
+      },
+      "GENDER": {
+        "female": 7,
+        "more female": 3,
+        "unisex": 82,
+        "more male": 362,
+        "male": 541
+      },
+      "PRICE VALUE": {
+        "way overpriced": 394,
+        "overpriced": 327,
+        "ok": 186,
+        "good value": 31,
+        "great value": 22
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Mandarin Orange",
+        "Ginger",
+        "Pink Pepper"
+      ],
+      "Middle Notes": [
+        "Vetiver",
+        "Patchouli",
+        "Sandalwood"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Birch",
+        "Tonka Bean",
+        "Styrax"
+      ]
+    },
+    "companyName": "Creed",
+    "perfumeName": "Aventus Cologne",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.51692.jpg"
+  },
+  {
+    "imageSrc": "https://fimgs.net/mdimg/perfume/375x500.465.jpg",
+    "notes": {
+      "citrus": 100,
+      "woody": 84.691,
+      "powdery": 70.6425,
+      "musky": 65.7579,
+      "amber": 56.4566,
+      "aromatic": 53.9833,
+      "animalic": 51.2375,
+      "fresh spicy": 50.3456,
+      "balsamic": 44.3582
+    },
+    "seasonData": {
+      "winter": 35.0202,
+      "spring": 94.332,
+      "summer": 80.9717,
+      "fall": 63.664,
+      "day": 100,
+      "night": 38.9676
+    },
+    "perfumeProperties": {
+      "LONGEVITY": {
+        "very weak": 65,
+        "weak": 99,
+        "moderate": 536,
+        "long lasting": 313,
+        "eternal": 77
+      },
+      "SILLAGE": {
+        "intimate": 165,
+        "moderate": 705,
+        "strong": 232,
+        "enormous": 131
+      },
+      "GENDER": {
+        "female": 9,
+        "more female": 4,
+        "unisex": 112,
+        "more male": 259,
+        "male": 316
+      },
+      "PRICE VALUE": {
+        "way overpriced": 255,
+        "overpriced": 206,
+        "ok": 119,
+        "good value": 28,
+        "great value": 24
+      }
+    },
+    "noteTopMiddleBase": {
+      "Top Notes": [
+        "Calabrian bergamot",
+        "Grapefruit",
+        "Sicilian Lemon"
+      ],
+      "Middle Notes": [
+        "Sandalwood"
+      ],
+      "Base Notes": [
+        "Musk",
+        "Ambergris",
+        "Cedar"
+      ]
+    },
+    "companyName": "Creed",
+    "perfumeName": "Himalaya",
+    "thumbnailSrc": "https://fimgs.net/mdimg/perfume/m.465.jpg"
+  }
+]

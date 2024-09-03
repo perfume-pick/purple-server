@@ -1,7 +1,12 @@
 package com.pikachu.purple.infrastructure.persistence.evaluation.entity;
 
 import com.pikachu.purple.domain.evaluation.enums.EvaluationCodeType;
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +18,7 @@ import lombok.NoArgsConstructor;
 public class EvaluationCodeJpaEntity {
 
     @Id
-    @Column(name = "code", columnDefinition = "char(5)", nullable = false)
+    @Column(name = "code", columnDefinition = "char(5)")
     private String code;
 
     @Column(name = "name", nullable = false)

@@ -1,11 +1,12 @@
 package com.pikachu.purple.infrastructure.persistence.perfume.adaptor;
 
+import static com.pikachu.purple.bootstrap.common.exception.BusinessException.PerfumeNotFoundException;
+
 import com.pikachu.purple.application.perfume.port.out.PerfumeRepository;
 import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeJpaRepository;
 import java.util.List;
-import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Component;
@@ -22,7 +23,7 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
 
         return perfumeJpaEntities.stream()
             .map(PerfumeJpaEntity::toDomain)
-            .collect(Collectors.toList());
+            .toList();
     }
 
     @Override
@@ -35,7 +36,7 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
 
         return perfumeJpaEntities.stream()
             .map(PerfumeJpaEntity::toDomain)
-            .collect(Collectors.toList());
+            .toList();
     }
 
     @Override
@@ -45,6 +46,14 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
         return perfumes.stream()
             .map(PerfumeJpaEntity::toDomain)
             .toList();
+    }
+
+    @Override
+    public Perfume findByPerfumeId(Long perfumeId) {
+        PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository.findByPerfumeId(perfumeId)
+            .orElseThrow(() -> PerfumeNotFoundException);
+
+        return PerfumeJpaEntity.toDomain(perfumeJpaEntity);
     }
 
 }

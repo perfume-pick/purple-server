@@ -7,7 +7,6 @@ import com.pikachu.purple.domain.rating.Rating;
 import com.pikachu.purple.infrastructure.persistence.rating.entity.RatingJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.rating.repository.RatingJpaRepository;
 import java.util.List;
-import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -39,7 +38,7 @@ public class RatingJpaAdaptor implements RatingRepository {
 
         return ratingJpaEntities.stream()
             .map(RatingJpaEntity::toDomain)
-            .collect(Collectors.toList());
+            .toList();
     }
 
     @Override
