@@ -5,7 +5,7 @@ public record EvaluationOptionDTO(
     String optionName
 ) {
 
-    public static EvaluationOptionDTO from(
+    public static EvaluationOptionDTO of(
         String optionCode,
         String optionName
     ) {

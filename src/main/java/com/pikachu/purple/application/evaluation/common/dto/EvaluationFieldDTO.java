@@ -8,7 +8,7 @@ public record EvaluationFieldDTO(
     List<EvaluationOptionDTO> evaluationOptionDTOs
 ) {
 
-    public static EvaluationFieldDTO from(
+    public static EvaluationFieldDTO of(
         String fieldCode,
         String fieldName,
         List<EvaluationOptionDTO> evaluationOptionDTOS

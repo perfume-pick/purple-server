@@ -39,11 +39,11 @@ public class EvaluationCodeGetApplicationService implements EvaluationCodeGetUse
             .collect(Collectors.groupingBy(EvaluationFieldOption::getFieldCode));
 
         List<EvaluationFieldDTO> evaluationFieldDTOs = groupByFieldMap.entrySet().stream()
-            .map(entry -> EvaluationFieldDTO.from(
+            .map(entry -> EvaluationFieldDTO.of(
                 entry.getKey(),
                 codeMap.get(entry.getKey()),
                 entry.getValue().stream()
-                    .map(option -> EvaluationOptionDTO.from(
+                    .map(option -> EvaluationOptionDTO.of(
                         option.getOptionCode(),
                         codeMap.get(option.getOptionCode())
                     ))
