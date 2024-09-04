@@ -1,8 +1,8 @@
 package com.pikachu.purple.application.review.port.in;
 
-public interface ReviewCreateUseCase {
+public interface ReviewCreateSimpleUseCase {
 
-    void create(Command command);
+    void invoke(Command command);
 
     record Command(
         Long perfumeId,
