@@ -1,5 +1,7 @@
 package com.pikachu.purple.domain.evaluation;
 
+import com.pikachu.purple.domain.evaluation.enums.EvaluationField;
+import com.pikachu.purple.domain.evaluation.enums.EvaluationOption;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -11,28 +13,22 @@ public class FragranticaEvaluation {
 
     private Long fragranticaEvaluationId;
     private Long perfumeId;
-    private String fieldCode;
-    private String fieldName;
-    private String optionCode;
-    private String optionName;
+    private EvaluationField field;
+    private EvaluationOption option;
     private int votes;
 
     @Builder
     public FragranticaEvaluation(
             Long fragranticaEvaluationId,
             Long perfumeId,
-            String fieldCode,
-            String fieldName,
-            String optionCode,
-            String optionName,
-            Integer votes
+            EvaluationField field,
+            EvaluationOption option,
+            int votes
     ) {
         this.fragranticaEvaluationId = fragranticaEvaluationId;
         this.perfumeId = perfumeId;
-        this.fieldCode = fieldCode;
-        this.fieldName = fieldName;
-        this.optionCode = optionCode;
-        this.optionName = optionName;
+        this.field = field;
+        this.option = option;
         this.votes = votes;
     }
 
