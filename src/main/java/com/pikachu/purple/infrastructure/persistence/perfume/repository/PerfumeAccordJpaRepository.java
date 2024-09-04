@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PerfumeAccordJpaRepository extends JpaRepository<PerfumeAccordJpaEntity, Long> {
 
-    List<PerfumeAccordJpaEntity> findAllByPerfumeId(Long perfumeId, Limit limit);
+    List<PerfumeAccordJpaEntity> findAllByPerfumeIdOrderByAccordValueDesc(Long perfumeId, Limit limit);
 
 }
