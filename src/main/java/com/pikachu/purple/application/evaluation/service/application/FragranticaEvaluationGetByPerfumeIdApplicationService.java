@@ -20,7 +20,7 @@ public class FragranticaEvaluationGetByPerfumeIdApplicationService implements
 
     @Override
     public Result invoke(Command command) {
-        List<FragranticaEvaluationDTO> fragranticaEvaluationDTOS = new ArrayList<>();
+        List<FragranticaEvaluationDTO> fragranticaEvaluationDTOs = new ArrayList<>();
 
         for (EvaluationField evaluationField : EvaluationField.values()) {
             if (evaluationField == EvaluationField.SEASON_TIME) {
@@ -31,7 +31,7 @@ public class FragranticaEvaluationGetByPerfumeIdApplicationService implements
                     3
                 );
 
-                fragranticaEvaluationDTOS.add(fragranticaEvaluationDTO);
+                fragranticaEvaluationDTOs.add(fragranticaEvaluationDTO);
 
             } else {
                 FragranticaEvaluationDTO fragranticaEvaluationDTO = findResultByEachField(
@@ -40,10 +40,10 @@ public class FragranticaEvaluationGetByPerfumeIdApplicationService implements
                     1
                 );
 
-                fragranticaEvaluationDTOS.add(fragranticaEvaluationDTO);
+                fragranticaEvaluationDTOs.add(fragranticaEvaluationDTO);
             }
         }
-        return new Result(fragranticaEvaluationDTOS);
+        return new Result(fragranticaEvaluationDTOs);
     }
 
     private FragranticaEvaluationDTO findResultByEachField(Long perfumeId, EvaluationField field, int maxSize) {
