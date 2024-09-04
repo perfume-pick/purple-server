@@ -1,6 +1,6 @@
 package com.pikachu.purple.application.evaluation.service.application;
 
-import com.pikachu.purple.application.evaluation.common.dto.FragranticaEvaluationDto;
+import com.pikachu.purple.application.evaluation.common.dto.FragranticaEvaluationDTO;
 import com.pikachu.purple.application.evaluation.common.dto.MostVotedOption;
 import com.pikachu.purple.application.evaluation.port.in.FragranticaEvaluationGetByPerfumeIdUseCase;
 import com.pikachu.purple.application.evaluation.service.domain.FragranticaEvaluationDomainService;
@@ -20,33 +20,33 @@ public class FragranticaEvaluationGetByPerfumeIdApplicationService implements
 
     @Override
     public Result invoke(Command command) {
-        List<FragranticaEvaluationDto> fragranticaEvaluationDtos = new ArrayList<>();
+        List<FragranticaEvaluationDTO> fragranticaEvaluationDTOS = new ArrayList<>();
 
         for (EvaluationField evaluationField : EvaluationField.values()) {
             if (evaluationField == EvaluationField.SEASON_TIME) {
 
-                FragranticaEvaluationDto fragranticaEvaluationDto = findResultByEachField(
+                FragranticaEvaluationDTO fragranticaEvaluationDTO = findResultByEachField(
                     command.perfumeId(),
                     evaluationField,
                     3
                 );
 
-                fragranticaEvaluationDtos.add(fragranticaEvaluationDto);
+                fragranticaEvaluationDTOS.add(fragranticaEvaluationDTO);
 
             } else {
-                FragranticaEvaluationDto fragranticaEvaluationDto = findResultByEachField(
+                FragranticaEvaluationDTO fragranticaEvaluationDTO = findResultByEachField(
                     command.perfumeId(),
                     evaluationField,
                     1
                 );
 
-                fragranticaEvaluationDtos.add(fragranticaEvaluationDto);
+                fragranticaEvaluationDTOS.add(fragranticaEvaluationDTO);
             }
         }
-        return new Result(fragranticaEvaluationDtos);
+        return new Result(fragranticaEvaluationDTOS);
     }
 
-    private FragranticaEvaluationDto findResultByEachField(Long perfumeId, EvaluationField field, int maxSize) {
+    private FragranticaEvaluationDTO findResultByEachField(Long perfumeId, EvaluationField field, int maxSize) {
         List<FragranticaEvaluation> fragranticaEvaluations =
             fragranticaEvaluationDomainService.findAllByPerfumeIdAndFieldCodeOrderByVotesDesc(
                 perfumeId,
@@ -57,7 +57,7 @@ public class FragranticaEvaluationGetByPerfumeIdApplicationService implements
         List<MostVotedOption> mostVotedOptions =
             fragranticaEvaluations.stream().map(MostVotedOption::from).toList();
 
-        return FragranticaEvaluationDto.of(
+        return FragranticaEvaluationDTO.of(
             field,
             mostVotedOptions
         );
