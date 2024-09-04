@@ -1,5 +1,7 @@
 package com.pikachu.purple.infrastructure.persistence.evaluation.entity;
 
+import com.pikachu.purple.domain.evaluation.EvaluationCode;
+import com.pikachu.purple.domain.evaluation.EvaluationFieldOption;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationCodeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -27,5 +29,13 @@ public class EvaluationCodeJpaEntity {
     @Enumerated(EnumType.STRING)
     @Column(name = "type", columnDefinition = "varchar(255)", nullable = false)
     private EvaluationCodeType type;
+
+    public static EvaluationCode toDomain(EvaluationCodeJpaEntity evaluationCodeJpaEntity) {
+        return EvaluationCode.builder()
+            .code(evaluationCodeJpaEntity.getCode())
+            .name(evaluationCodeJpaEntity.getName())
+            .type(evaluationCodeJpaEntity.getType())
+            .build();
+    }
 
 }

@@ -1,5 +1,6 @@
 package com.pikachu.purple.infrastructure.persistence.evaluation.entity;
 
+import com.pikachu.purple.domain.evaluation.EvaluationFieldOption;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -32,5 +33,13 @@ public class EvaluationFieldOptionJpaEntity {
 
     @Column(name = "option_code", columnDefinition = "char(5)", nullable = false)
     private String optionCode;
+
+    public static EvaluationFieldOption toDomain(EvaluationFieldOptionJpaEntity evaluationFieldOptionJpaEntity) {
+        return EvaluationFieldOption.builder()
+            .evaluationFieldOptionId(evaluationFieldOptionJpaEntity.getEvaluationFieldOptionId())
+            .fieldCode(evaluationFieldOptionJpaEntity.getFieldCode())
+            .optionCode(evaluationFieldOptionJpaEntity.getOptionCode())
+            .build();
+    }
 
 }
