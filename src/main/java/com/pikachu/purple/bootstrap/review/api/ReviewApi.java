@@ -32,7 +32,7 @@ public interface ReviewApi {
         summary = "자세한 리뷰 평가 항목 정보 조회",
         description = "지속력, 시야주, 계절감/시간, 성별, 분위기"
     )
-    @GetMapping("/detail")
+    @GetMapping("/evaluation-fields")
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<GetReviewDetailInfoResponse> getDetailInfo();
 
