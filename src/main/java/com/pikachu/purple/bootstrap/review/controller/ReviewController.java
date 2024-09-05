@@ -37,9 +37,10 @@ public class ReviewController implements ReviewApi {
     public SuccessResponse<GetEvaluationFormFieldResponse> findEvaluationFormField() {
         Result result = evaluationFormFieldGetUseCase.invoke();
 
-        return SuccessResponse.of(new GetEvaluationFormFieldResponse(
-            result.evaluationFieldDTOs(),
-            result.evaluationMoods()
+        return SuccessResponse.of(
+            new GetEvaluationFormFieldResponse(
+                result.evaluationFieldDTOs(),
+                result.evaluationMoods()
         ));
     }
 
