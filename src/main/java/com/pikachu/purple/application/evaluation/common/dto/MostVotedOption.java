@@ -16,7 +16,10 @@ public record MostVotedOption(
         return new MostVotedOption(
             fragranticaEvaluation.getOption().getCode(),
             fragranticaEvaluation.getOption().getName(),
-            MathUtil.getPercentage(fragranticaEvaluation.getVotes(), totalVotesByField)
+            MathUtil.getPercentage(
+                fragranticaEvaluation.getVotes(),
+                totalVotesByField
+            )
         );
     }
 
