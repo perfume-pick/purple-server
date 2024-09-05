@@ -4,7 +4,7 @@ import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.common.security.Secured;
 import com.pikachu.purple.bootstrap.review.dto.request.CreateReviewSimpleRequest;
 import com.pikachu.purple.bootstrap.review.dto.request.UpdateReviewSimpleRequest;
-import com.pikachu.purple.bootstrap.review.dto.response.GetEvaluationFieldAndEvaluationMoodResponse;
+import com.pikachu.purple.bootstrap.review.dto.response.GetEvaluationFormFieldResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public interface ReviewApi {
 
     @Secured
-    @Operation(summary = "향수 평가시 간단한 리뷰 작성")
+    @Operation(summary = "간단한 코멘트 작성")
     @PostMapping("/simple")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void createSimple(@RequestBody @Valid CreateReviewSimpleRequest request);
@@ -34,11 +34,14 @@ public interface ReviewApi {
     )
     @GetMapping("/evaluation-fields")
     @ResponseStatus(HttpStatus.OK)
-    SuccessResponse<GetEvaluationFieldAndEvaluationMoodResponse> findEvaluationFieldAndEvaluationMood();
+    SuccessResponse<GetEvaluationFormFieldResponse> findEvaluationFormField();
 
     @Secured
-    @Operation(summary = "자신이 작성한 리뷰 내용 및 별점 수정")
-    @PatchMapping("/{review-id}/content")
+    @Operation(
+        summary = "간단한 코멘트 수정",
+        description = "간단한 코멘트 내용 및 별점 수정"
+    )
+    @PatchMapping("/simple/{review-id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void update(
         @PathVariable("review-id") Long reviewId,
@@ -46,11 +49,9 @@ public interface ReviewApi {
     );
 
     @Secured
-    @Operation(summary = "자신이 작성한 리뷰 삭제")
+    @Operation(summary = "리뷰 삭제")
     @DeleteMapping("/{review-id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void delete(
-        @PathVariable("review-id") Long reviewId
-    );
+    void delete(@PathVariable("review-id") Long reviewId);
 
 }

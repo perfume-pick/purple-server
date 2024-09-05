@@ -2,7 +2,7 @@ package com.pikachu.purple.application.evaluation.service.application;
 
 import com.pikachu.purple.application.evaluation.common.dto.EvaluationFieldDTO;
 import com.pikachu.purple.application.evaluation.common.dto.EvaluationOptionDTO;
-import com.pikachu.purple.application.evaluation.port.in.EvaluationFieldAndEvaluationMoodGetUseCase;
+import com.pikachu.purple.application.evaluation.port.in.EvaluationFormFieldGetUseCase;
 import com.pikachu.purple.application.evaluation.service.domain.EvaluationMoodDomainService;
 import com.pikachu.purple.domain.evaluation.EvaluationMood;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationField;
@@ -13,8 +13,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class EvaluationFieldAndEvaluationMoodGetApplicationService implements
-    EvaluationFieldAndEvaluationMoodGetUseCase {
+public class EvaluationFormFieldGetApplicationService implements
+    EvaluationFormFieldGetUseCase {
 
     private final EvaluationMoodDomainService evaluationMoodDomainService;
 
