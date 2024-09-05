@@ -30,10 +30,11 @@ public class PerfumeDetailGetByPerfumeIdApplicationService implements
     public Result invoke(Command command) {
         Perfume perfume = perfumeDomainService.findByPerfumeId(command.perfumeId());
 
-        List<PerfumeAccord> perfumeAccords = perfumeAccordDomainService.findAllByPerfumeId(
-            perfume.getPerfumeId(),
-            MAX_SIZE
-        );
+        List<PerfumeAccord> perfumeAccords = perfumeAccordDomainService
+            .findAllByPerfumeIdOrderByAccordValueDesc(
+                perfume.getPerfumeId(),
+                MAX_SIZE
+            );
         List<PerfumeAccordDto> perfumeAccordDtos = perfumeAccords.stream()
             .map(PerfumeAccordDto::from).toList();
 

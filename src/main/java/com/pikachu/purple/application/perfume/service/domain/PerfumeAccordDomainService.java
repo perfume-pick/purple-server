@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface PerfumeAccordDomainService {
 
-    List<PerfumeAccord> findAllByPerfumeId(
+    List<PerfumeAccord> findAllByPerfumeIdOrderByAccordValueDesc(
         Long perfumeId,
         int maxSize
     );
