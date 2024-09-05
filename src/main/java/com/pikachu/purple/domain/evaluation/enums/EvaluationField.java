@@ -61,7 +61,7 @@ public enum EvaluationField {
     private final String name;
     private final List<EvaluationOption> evaluationOptions;
 
-    private final static Map<String, String> CODE_MAP = Collections.unmodifiableMap(
+    private static final Map<String, String> CODE_MAP = Collections.unmodifiableMap(
         Stream.of(values())
             .collect(Collectors.toMap(EvaluationField::getCode, EvaluationField::name))
     );

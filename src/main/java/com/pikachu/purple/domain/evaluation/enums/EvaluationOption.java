@@ -38,7 +38,7 @@ public enum EvaluationOption {
     private final String code;
     private final String name;
 
-    private final static Map<String, String> CODE_MAP = Collections.unmodifiableMap(
+    private static final Map<String, String> CODE_MAP = Collections.unmodifiableMap(
         Stream.of(values())
             .collect(Collectors.toMap(EvaluationOption::getCode, EvaluationOption::name))
     );
