@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public interface ReviewApi {
 
     @Secured
-    @Operation(summary = "간단한 코멘트 작성")
+    @Operation(summary = "간단한 리뷰 작성")
     @PostMapping("/simple")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void createSimple(@RequestBody @Valid CreateReviewSimpleRequest request);
@@ -38,8 +38,8 @@ public interface ReviewApi {
 
     @Secured
     @Operation(
-        summary = "간단한 코멘트 수정",
-        description = "간단한 코멘트 내용 및 별점 수정"
+        summary = "간단한 리뷰 수정",
+        description = "간단한 리뷰 내용 및 별점 수정"
     )
     @PatchMapping("/simple/{review-id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
