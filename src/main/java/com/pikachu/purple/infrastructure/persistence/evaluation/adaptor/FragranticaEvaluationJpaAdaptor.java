@@ -6,7 +6,6 @@ import com.pikachu.purple.infrastructure.persistence.evaluation.entity.Fragranti
 import com.pikachu.purple.infrastructure.persistence.evaluation.repository.FragranticaEvaluationJpaRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Limit;
 import org.springframework.stereotype.Component;
 
 
