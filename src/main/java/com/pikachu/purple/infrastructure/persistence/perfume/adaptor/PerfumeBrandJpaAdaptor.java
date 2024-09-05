@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class PerfumeBrandJpaAdaptor implements PerfumeBrandRepository {
 
-    private final static int MAX_SIZE = 30;
+    private static final int MAX_SIZE = 30;
     private final PerfumeBrandJpaRepository perfumeBrandJpaRepository;
 
     @Override

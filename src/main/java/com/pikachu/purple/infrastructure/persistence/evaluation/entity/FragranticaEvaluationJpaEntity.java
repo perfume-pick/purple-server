@@ -1,5 +1,10 @@
 package com.pikachu.purple.infrastructure.persistence.evaluation.entity;
 
+import com.pikachu.purple.domain.evaluation.FragranticaEvaluation;
+import com.pikachu.purple.domain.evaluation.enums.EvaluationField;
+import com.pikachu.purple.domain.evaluation.enums.EvaluationOption;
+import com.pikachu.purple.domain.perfume.Perfume;
+import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -29,5 +34,16 @@ public class FragranticaEvaluationJpaEntity {
 
     @Column(name = "votes", nullable = false)
     private int votes;
+
+    public static FragranticaEvaluation toDomain(FragranticaEvaluationJpaEntity jpaEntity) {
+
+        return FragranticaEvaluation.builder()
+            .fragranticaEvaluationId(jpaEntity.getFragranticaEvaluationId())
+            .perfumeId(jpaEntity.getPerfumeId())
+            .field(EvaluationField.of(jpaEntity.getFieldCode()))
+            .option(EvaluationOption.of(jpaEntity.getOptionCode()))
+            .votes(jpaEntity.getVotes())
+            .build();
+    }
 
 }
