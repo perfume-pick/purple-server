@@ -4,7 +4,7 @@ import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.common.security.Secured;
 import com.pikachu.purple.bootstrap.review.dto.request.CreateReviewSimpleRequest;
 import com.pikachu.purple.bootstrap.review.dto.request.UpdateReviewSimpleRequest;
-import com.pikachu.purple.bootstrap.review.dto.response.GetReviewDetailInfoResponse;
+import com.pikachu.purple.bootstrap.review.dto.response.GetEvaluationFieldAndEvaluationMoodResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -34,7 +34,7 @@ public interface ReviewApi {
     )
     @GetMapping("/evaluation-fields")
     @ResponseStatus(HttpStatus.OK)
-    SuccessResponse<GetReviewDetailInfoResponse> getDetailInfo();
+    SuccessResponse<GetEvaluationFieldAndEvaluationMoodResponse> findEvaluationFieldAndEvaluationMood();
 
     @Secured
     @Operation(summary = "자신이 작성한 리뷰 내용 및 별점 수정")

@@ -11,12 +11,12 @@ public record EvaluationFieldDTO(
     public static EvaluationFieldDTO of(
         String fieldCode,
         String fieldName,
-        List<EvaluationOptionDTO> evaluationOptionDTOS
+        List<EvaluationOptionDTO> evaluationOptionDTOs
     ) {
         return new EvaluationFieldDTO(
             fieldCode,
             fieldName,
-            evaluationOptionDTOS
+            evaluationOptionDTOs
         );
     }
 
