@@ -6,12 +6,10 @@ import com.pikachu.purple.infrastructure.persistence.evaluation.entity.Fragranti
 import com.pikachu.purple.infrastructure.persistence.evaluation.repository.FragranticaEvaluationJpaRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Limit;
 import org.springframework.stereotype.Component;
 
 
-@Slf4j
 @Component
 @RequiredArgsConstructor
 public class FragranticaEvaluationJpaAdaptor implements FragranticaEvaluationRepository {
