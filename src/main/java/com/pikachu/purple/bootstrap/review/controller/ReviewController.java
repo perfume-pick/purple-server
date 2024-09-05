@@ -1,7 +1,7 @@
 package com.pikachu.purple.bootstrap.review.controller;
 
-import com.pikachu.purple.application.evaluation.port.in.EvaluationCodeGetUseCase;
-import com.pikachu.purple.application.evaluation.port.in.EvaluationCodeGetUseCase.Result;
+import com.pikachu.purple.application.evaluation.port.in.EvaluationFormFieldGetUseCase;
+import com.pikachu.purple.application.evaluation.port.in.EvaluationFormFieldGetUseCase.Result;
 import com.pikachu.purple.application.review.port.in.ReviewCreateSimpleUseCase;
 import com.pikachu.purple.application.review.port.in.ReviewDeleteUseCase;
 import com.pikachu.purple.application.review.port.in.ReviewUpdateUseCase;
@@ -9,7 +9,7 @@ import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.review.api.ReviewApi;
 import com.pikachu.purple.bootstrap.review.dto.request.CreateReviewSimpleRequest;
 import com.pikachu.purple.bootstrap.review.dto.request.UpdateReviewSimpleRequest;
-import com.pikachu.purple.bootstrap.review.dto.response.GetReviewDetailInfoResponse;
+import com.pikachu.purple.bootstrap.review.dto.response.GetEvaluationFormFieldResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ReviewController implements ReviewApi {
 
     private final ReviewCreateSimpleUseCase reviewCreateSimpleUseCase;
-    private final EvaluationCodeGetUseCase evaluationCodeGetUseCase;
+    private final EvaluationFormFieldGetUseCase evaluationFormFieldGetUseCase;
     private final ReviewUpdateUseCase reviewUpdateUseCase;
     private final ReviewDeleteUseCase reviewDeleteUseCase;
 
@@ -34,12 +34,13 @@ public class ReviewController implements ReviewApi {
     }
 
     @Override
-    public SuccessResponse<GetReviewDetailInfoResponse> getDetailInfo() {
-        Result result = evaluationCodeGetUseCase.invoke();
+    public SuccessResponse<GetEvaluationFormFieldResponse> findEvaluationFormField() {
+        Result result = evaluationFormFieldGetUseCase.invoke();
 
-        return SuccessResponse.of(new GetReviewDetailInfoResponse(
-            result.evaluationFieldDTOS(),
-            result.evaluationMoods()
+        return SuccessResponse.of(
+            new GetEvaluationFormFieldResponse(
+                result.evaluationFieldDTOs(),
+                result.evaluationMoods()
         ));
     }
 

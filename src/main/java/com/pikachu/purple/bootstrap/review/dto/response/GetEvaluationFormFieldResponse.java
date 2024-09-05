@@ -4,7 +4,7 @@ import com.pikachu.purple.application.evaluation.common.dto.EvaluationFieldDTO;
 import com.pikachu.purple.domain.evaluation.EvaluationMood;
 import java.util.List;
 
-public record GetReviewDetailInfoResponse(
+public record GetEvaluationFormFieldResponse(
     List<EvaluationFieldDTO> evaluationFieldDTOs,
     List<EvaluationMood> moods
 ) {
