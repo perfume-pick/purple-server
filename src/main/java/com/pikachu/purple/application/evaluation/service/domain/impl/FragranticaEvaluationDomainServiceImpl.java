@@ -16,13 +16,11 @@ public class FragranticaEvaluationDomainServiceImpl implements FragranticaEvalua
     @Override
     public List<FragranticaEvaluation> findAllByPerfumeIdAndFieldCodeOrderByVotesDesc(
         Long perfumeId,
-        String fieldCode,
-        int maxSize
+        String fieldCode
     ) {
         return fragranticaEvaluationRepository.findAllByPerfumeIdAndFieldCodeOrderByVotesDesc(
             perfumeId,
-            fieldCode,
-            maxSize
+            fieldCode
         );
     }
 

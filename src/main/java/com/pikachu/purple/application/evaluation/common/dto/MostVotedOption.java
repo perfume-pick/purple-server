@@ -1,18 +1,22 @@
 package com.pikachu.purple.application.evaluation.common.dto;
 
+import com.pikachu.purple.application.util.MathUtil;
 import com.pikachu.purple.domain.evaluation.FragranticaEvaluation;
 
 public record MostVotedOption(
     String optionCode,
     String optionName,
-    int votes
+    int votePercent
 ) {
 
-    public static MostVotedOption from(FragranticaEvaluation fragranticaEvaluation) {
+    public static MostVotedOption of(
+        FragranticaEvaluation fragranticaEvaluation,
+        int totalVotesByField
+    ) {
         return new MostVotedOption(
             fragranticaEvaluation.getOption().getCode(),
             fragranticaEvaluation.getOption().getName(),
-            fragranticaEvaluation.getVotes()
+            MathUtil.getPercentage(fragranticaEvaluation.getVotes(), totalVotesByField)
         );
     }
 

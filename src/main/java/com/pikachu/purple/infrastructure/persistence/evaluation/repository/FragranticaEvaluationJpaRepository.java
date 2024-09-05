@@ -10,8 +10,7 @@ public interface FragranticaEvaluationJpaRepository extends
 
   List<FragranticaEvaluationJpaEntity> findAllByPerfumeIdAndFieldCodeOrderByVotesDesc(
       Long perfumeId,
-      String fieldCode,
-      Limit limit
+      String fieldCode
   );
 
 }

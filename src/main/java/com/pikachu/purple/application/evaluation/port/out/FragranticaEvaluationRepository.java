@@ -7,8 +7,7 @@ public interface FragranticaEvaluationRepository {
 
     List<FragranticaEvaluation> findAllByPerfumeIdAndFieldCodeOrderByVotesDesc(
         Long perfumeId,
-        String fieldCode,
-        int maxSize
+        String fieldCode
     );
 
 }

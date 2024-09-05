@@ -19,13 +19,11 @@ public class FragranticaEvaluationJpaAdaptor implements FragranticaEvaluationRep
     @Override
     public List<FragranticaEvaluation> findAllByPerfumeIdAndFieldCodeOrderByVotesDesc(
         Long perfumeId,
-        String fieldCode,
-        int maxSize
+        String fieldCode
     ) {
         List<FragranticaEvaluationJpaEntity> fragranticaEvaluationJpaEntities = fragranticaEvaluationJpaRepository.findAllByPerfumeIdAndFieldCodeOrderByVotesDesc(
             perfumeId,
-            fieldCode,
-            Limit.of(maxSize)
+            fieldCode
         );
 
         return fragranticaEvaluationJpaEntities.stream()

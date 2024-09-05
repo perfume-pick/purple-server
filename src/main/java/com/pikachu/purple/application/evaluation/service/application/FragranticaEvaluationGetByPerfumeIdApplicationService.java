@@ -4,11 +4,13 @@ import com.pikachu.purple.application.evaluation.common.dto.FragranticaEvaluatio
 import com.pikachu.purple.application.evaluation.common.dto.MostVotedOption;
 import com.pikachu.purple.application.evaluation.port.in.FragranticaEvaluationGetByPerfumeIdUseCase;
 import com.pikachu.purple.application.evaluation.service.domain.FragranticaEvaluationDomainService;
+import com.pikachu.purple.application.util.MathUtil;
 import com.pikachu.purple.domain.evaluation.FragranticaEvaluation;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationField;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -50,12 +52,21 @@ public class FragranticaEvaluationGetByPerfumeIdApplicationService implements
         List<FragranticaEvaluation> fragranticaEvaluations =
             fragranticaEvaluationDomainService.findAllByPerfumeIdAndFieldCodeOrderByVotesDesc(
                 perfumeId,
-                field.getCode(),
-                maxSize
+                field.getCode()
             );
 
-        List<MostVotedOption> mostVotedOptions =
-            fragranticaEvaluations.stream().map(MostVotedOption::from).toList();
+        int totalVotesByField = fragranticaEvaluations.stream()
+            .mapToInt(FragranticaEvaluation::getVotes).sum();
+
+        List<MostVotedOption> mostVotedOptions = new ArrayList<>();
+        for (int i=0; i < maxSize; i++) {
+            mostVotedOptions.add(
+                MostVotedOption.of(
+                    fragranticaEvaluations.get(i),
+                    totalVotesByField
+                )
+            );
+        }
 
         return FragranticaEvaluationDTO.of(
             field,
