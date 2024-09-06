@@ -1,9 +1,9 @@
-package com.pikachu.purple.application.userPreferenceNote.service.application;
+package com.pikachu.purple.application.userpreferencenote.service.application;
 
 import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
 
-import com.pikachu.purple.application.userPreferenceNote.port.in.UserPreferenceNoteGetUseCase;
-import com.pikachu.purple.application.userPreferenceNote.service.domain.UserPreferenceNoteDomainService;
+import com.pikachu.purple.application.userpreferencenote.port.in.UserPreferenceNoteGetUseCase;
+import com.pikachu.purple.application.userpreferencenote.service.domain.UserPreferenceNoteDomainService;
 import com.pikachu.purple.domain.user.entity.UserPreferenceNote;
 import java.util.List;
 import lombok.RequiredArgsConstructor;

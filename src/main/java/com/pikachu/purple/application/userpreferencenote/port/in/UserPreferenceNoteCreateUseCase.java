@@ -1,4 +1,4 @@
-package com.pikachu.purple.application.userPreferenceNote.port.in;
+package com.pikachu.purple.application.userpreferencenote.port.in;
 
 public interface UserPreferenceNoteCreateUseCase {
 

@@ -1,4 +1,4 @@
-package com.pikachu.purple.application.userPreferenceNote.service.domain;
+package com.pikachu.purple.application.userpreferencenote.service.domain;
 
 import com.pikachu.purple.domain.note.Note;
 import com.pikachu.purple.domain.user.entity.UserPreferenceNote;

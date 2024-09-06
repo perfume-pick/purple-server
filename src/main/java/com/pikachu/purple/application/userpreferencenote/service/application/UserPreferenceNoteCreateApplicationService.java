@@ -1,18 +1,16 @@
-package com.pikachu.purple.application.userPreferenceNote.service.application;
+package com.pikachu.purple.application.userpreferencenote.service.application;
 
 import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
 
-import com.pikachu.purple.application.userPreferenceNote.port.in.UserPreferenceNoteCreateUseCase;
+import com.pikachu.purple.application.userpreferencenote.port.in.UserPreferenceNoteCreateUseCase;
 import com.pikachu.purple.application.perfume.port.in.PerfumeNoteGetUseCase;
 import com.pikachu.purple.application.perfume.util.RecommendNotesProvider;
 import com.pikachu.purple.application.rating.port.in.RatingGetUseCase;
-import com.pikachu.purple.application.userPreferenceNote.service.domain.UserPreferenceNoteDomainService;
-import com.pikachu.purple.application.util.IdGenerator;
+import com.pikachu.purple.application.userpreferencenote.service.domain.UserPreferenceNoteDomainService;
 import com.pikachu.purple.domain.note.Note;
 import com.pikachu.purple.domain.perfume.PerfumeNote;
 import com.pikachu.purple.domain.rating.Rating;
 import java.util.List;
-import java.util.stream.IntStream;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

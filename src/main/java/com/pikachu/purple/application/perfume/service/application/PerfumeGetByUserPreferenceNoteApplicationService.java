@@ -4,7 +4,7 @@ import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUse
 
 import com.pikachu.purple.application.perfume.port.in.PerfumeGetByUserPreferenceNoteUseCase;
 import com.pikachu.purple.application.perfume.service.domain.PerfumeDomainService;
-import com.pikachu.purple.application.userPreferenceNote.port.in.UserPreferenceNoteGetUseCase;
+import com.pikachu.purple.application.userpreferencenote.port.in.UserPreferenceNoteGetUseCase;
 import com.pikachu.purple.domain.perfume.Perfume;
 import java.util.List;
 import lombok.RequiredArgsConstructor;

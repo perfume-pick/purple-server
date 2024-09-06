@@ -5,12 +5,10 @@ import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUse
 import com.pikachu.purple.application.favorite.port.in.FavoriteCreateUseCase;
 import com.pikachu.purple.application.rating.port.in.RatingCreateUseCase;
 import com.pikachu.purple.application.rating.service.domain.RatingDomainService;
-import com.pikachu.purple.application.userPreferenceNote.port.in.UserPreferenceNoteCreateUseCase;
-import com.pikachu.purple.application.util.IdGenerator;
+import com.pikachu.purple.application.userpreferencenote.port.in.UserPreferenceNoteCreateUseCase;
 import com.pikachu.purple.bootstrap.rating.vo.RatingInfo;
 import com.pikachu.purple.domain.rating.Rating;
 import java.util.List;
-import java.util.stream.IntStream;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

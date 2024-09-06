@@ -1,9 +1,9 @@
-package com.pikachu.purple.infrastructure.persistence.userPreferenceNote.adaptor;
+package com.pikachu.purple.infrastructure.persistence.userpreferencenote.adaptor;
 
-import com.pikachu.purple.application.userPreferenceNote.port.out.UserPreferenceNoteRepository;
+import com.pikachu.purple.application.userpreferencenote.port.out.UserPreferenceNoteRepository;
 import com.pikachu.purple.domain.user.entity.UserPreferenceNote;
-import com.pikachu.purple.infrastructure.persistence.userPreferenceNote.entity.UserPreferenceNoteJpaEntity;
-import com.pikachu.purple.infrastructure.persistence.userPreferenceNote.repository.UserPreferenceNoteJpaRepository;
+import com.pikachu.purple.infrastructure.persistence.userpreferencenote.entity.UserPreferenceNoteJpaEntity;
+import com.pikachu.purple.infrastructure.persistence.userpreferencenote.repository.UserPreferenceNoteJpaRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

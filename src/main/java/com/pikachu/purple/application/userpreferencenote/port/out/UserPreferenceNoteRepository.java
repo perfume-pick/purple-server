@@ -1,4 +1,4 @@
-package com.pikachu.purple.application.userPreferenceNote.port.out;
+package com.pikachu.purple.application.userpreferencenote.port.out;
 
 import com.pikachu.purple.domain.user.entity.UserPreferenceNote;
 import java.util.List;
