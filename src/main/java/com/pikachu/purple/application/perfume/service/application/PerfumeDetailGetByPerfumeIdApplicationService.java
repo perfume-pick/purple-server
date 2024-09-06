@@ -10,6 +10,7 @@ import com.pikachu.purple.application.perfume.service.domain.PerfumeNoteDomainSe
 import com.pikachu.purple.domain.perfume.PerfumeAccord;
 import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.perfume.PerfumeNote;
+import java.util.ArrayList;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -35,8 +36,17 @@ public class PerfumeDetailGetByPerfumeIdApplicationService implements
                 perfume.getPerfumeId(),
                 MAX_SIZE
             );
-        List<PerfumeAccordDto> perfumeAccordDtos = perfumeAccords.stream()
-            .map(PerfumeAccordDto::from).toList();
+        List<PerfumeAccordDto> perfumeAccordDtos = new ArrayList<>();
+        for (int i = 0; i < perfumeAccords.size(); i++) {
+            int order = i + 1;
+            perfumeAccordDtos.add(
+                PerfumeAccordDto.of(
+                    order,
+                    perfumeAccords.get(i)
+                )
+            );
+        }
+
 
         List<PerfumeNote> perfumeNotes = perfumeNoteDomainService.findAllByPerfumeId(
             perfume.getPerfumeId());
