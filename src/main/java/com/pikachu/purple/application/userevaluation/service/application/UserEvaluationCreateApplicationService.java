@@ -4,10 +4,6 @@ import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUse
 
 import com.pikachu.purple.application.userevaluation.port.in.UserEvaluationCreateUseCase;
 import com.pikachu.purple.application.userevaluation.service.domain.UserEvaluationDomainService;
-import com.pikachu.purple.application.util.IdGenerator;
-import com.pikachu.purple.bootstrap.review.vo.EvaluationForm;
-import java.util.List;
-import java.util.stream.IntStream;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -24,9 +20,8 @@ public class UserEvaluationCreateApplicationService implements UserEvaluationCre
         userEvaluationDomainService.create(
             userId,
             command.perfumeId(),
-            command.evaluationForms()
+            command.evaluationFieldVOs()
         );
-
 
     }
 

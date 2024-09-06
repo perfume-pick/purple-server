@@ -20,7 +20,7 @@ public class EvaluationMoodCreateApplicationService implements EvaluationMoodCre
         evaluationMoodDomainService.create(
             userId,
             command.perfumeId(),
-            command.moods()
+            command.moodNames()
         );
     }
 

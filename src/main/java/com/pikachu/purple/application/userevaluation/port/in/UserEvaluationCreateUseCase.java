@@ -1,6 +1,6 @@
 package com.pikachu.purple.application.userevaluation.port.in;
 
-import com.pikachu.purple.bootstrap.review.vo.EvaluationForm;
+import com.pikachu.purple.bootstrap.review.vo.EvaluationFieldVO;
 import java.util.List;
 
 public interface UserEvaluationCreateUseCase {
@@ -9,7 +9,7 @@ public interface UserEvaluationCreateUseCase {
 
     record Command(
         Long perfumeId,
-        List<EvaluationForm> evaluationForms
+        List<EvaluationFieldVO> evaluationFieldVOs
     ) {
 
     }

@@ -8,7 +8,7 @@ public interface EvaluationMoodCreateUseCase {
 
     record Command(
         Long perfumeId,
-        List<String> moods
+        List<String> moodNames
     ){
 
     }

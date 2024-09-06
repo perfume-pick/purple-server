@@ -43,8 +43,8 @@ public class ReviewController implements ReviewApi {
                 request.perfumeId(),
                 request.score(),
                 request.content(),
-                request.evaluationForms(),
-                request.moods()
+                request.evaluationFieldVOs(),
+                request.moodNames()
             )
         );
     }

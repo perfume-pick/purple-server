@@ -41,14 +41,14 @@ public class ReviewCreateDetailApplicationService implements ReviewCreateDetailU
         userEvaluationCreateUseCase.invoke(
             new UserEvaluationCreateUseCase.Command(
                 command.perfumeId(),
-                command.evaluationForms()
+                command.evaluationFieldVOs()
             )
         );
 
         evaluationMoodCreateUseCase.invoke(
             new EvaluationMoodCreateUseCase.Command(
                 command.perfumeId(),
-                command.moods()
+                command.moodNames()
             )
         );
     }

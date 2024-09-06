@@ -1,6 +1,6 @@
 package com.pikachu.purple.application.userevaluation.service.domain;
 
-import com.pikachu.purple.bootstrap.review.vo.EvaluationForm;
+import com.pikachu.purple.bootstrap.review.vo.EvaluationFieldVO;
 import java.util.List;
 
 public interface UserEvaluationDomainService {
@@ -8,7 +8,7 @@ public interface UserEvaluationDomainService {
     void create(
         Long userId,
         Long perfumeId,
-        List<EvaluationForm> evaluationForms
+        List<EvaluationFieldVO> evaluationFieldVOs
     );
 
 }

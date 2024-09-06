@@ -1,6 +1,6 @@
 package com.pikachu.purple.application.review.port.in;
 
-import com.pikachu.purple.bootstrap.review.vo.EvaluationForm;
+import com.pikachu.purple.bootstrap.review.vo.EvaluationFieldVO;
 import java.util.List;
 
 public interface ReviewCreateDetailUseCase {
@@ -11,8 +11,8 @@ public interface ReviewCreateDetailUseCase {
         Long perfumeId,
         int score,
         String content,
-        List<EvaluationForm> evaluationForms,
-        List<String> moods
+        List<EvaluationFieldVO> evaluationFieldVOs,
+        List<String> moodNames
     ) {
 
     }

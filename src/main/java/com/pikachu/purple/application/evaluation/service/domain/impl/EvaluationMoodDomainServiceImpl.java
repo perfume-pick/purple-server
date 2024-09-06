@@ -19,9 +19,9 @@ public class EvaluationMoodDomainServiceImpl implements EvaluationMoodDomainServ
     public void create(
         Long userId,
         Long perfumeId,
-        List<String> moods
+        List<String> moodNames
     ) {
-        List<Long> evaluationMoodIds = IntStream.range(0, moods.size())
+        List<Long> evaluationMoodIds = IntStream.range(0, moodNames.size())
             .mapToObj(i -> IdGenerator.generate())
             .toList();
 
@@ -30,7 +30,7 @@ public class EvaluationMoodDomainServiceImpl implements EvaluationMoodDomainServ
                 .evaluationMoodId(evaluationMoodIds.get(i))
                 .userId(userId)
                 .perfumeId(perfumeId)
-                .moodName(moods.get(i))
+                .moodName(moodNames.get(i))
                 .build())
             .toList();
 

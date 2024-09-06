@@ -1,6 +1,6 @@
 package com.pikachu.purple.bootstrap.review.dto.request;
 
-import com.pikachu.purple.bootstrap.review.vo.EvaluationForm;
+import com.pikachu.purple.bootstrap.review.vo.EvaluationFieldVO;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Size;
 import java.util.List;
@@ -12,9 +12,9 @@ public record CreateReviewDetailRequest(
     int score,
     @Size(min = 10, max = 300, message = "최소 10자 ~ 최대 300자 입력할 수 있습니다.")
     String content,
-    List<EvaluationForm> evaluationForms,
+    List<EvaluationFieldVO> evaluationFieldVOs,
     @Schema(description = "향수에 어울리는 분위기")
-    List<String> moods
+    List<String> moodNames
 ) {
 
 }

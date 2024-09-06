@@ -7,7 +7,7 @@ public interface EvaluationMoodDomainService {
     void create(
         Long userId,
         Long perfumeId,
-        List<String> moods
+        List<String> moodNames
     );
 
 }
