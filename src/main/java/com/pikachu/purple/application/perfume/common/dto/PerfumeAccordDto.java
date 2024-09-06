@@ -2,13 +2,15 @@ package com.pikachu.purple.application.perfume.common.dto;
 
 import com.pikachu.purple.domain.perfume.PerfumeAccord;
 
-public record PerfumeAccordDto(
+public record PerfumeAccordDTO(
+    int order,
     String noteName,
     int accordValue
 ) {
 
-    public static PerfumeAccordDto from(PerfumeAccord perfumeAccord) {
-        return new PerfumeAccordDto(
+    public static PerfumeAccordDTO of(int order, PerfumeAccord perfumeAccord) {
+        return new PerfumeAccordDTO(
+            order,
             perfumeAccord.getNoteName(),
             perfumeAccord.getAccordValue()
         );
