@@ -1,8 +1,8 @@
 package com.pikachu.purple.application.perfume.service.application;
 
-import com.pikachu.purple.application.perfume.common.dto.PerfumeAccordDto;
-import com.pikachu.purple.application.perfume.common.dto.PerfumeDetailDto;
-import com.pikachu.purple.application.perfume.common.dto.PerfumeNoteDto;
+import com.pikachu.purple.application.perfume.common.dto.PerfumeAccordDTO;
+import com.pikachu.purple.application.perfume.common.dto.PerfumeDetailDTO;
+import com.pikachu.purple.application.perfume.common.dto.PerfumeNoteDTO;
 import com.pikachu.purple.application.perfume.service.domain.PerfumeAccordDomainService;
 import com.pikachu.purple.application.perfume.port.in.PerfumeDetailGetByPerfumeIdUseCase;
 import com.pikachu.purple.application.perfume.service.domain.PerfumeDomainService;
@@ -36,11 +36,11 @@ public class PerfumeDetailGetByPerfumeIdApplicationService implements
                 perfume.getPerfumeId(),
                 MAX_SIZE
             );
-        List<PerfumeAccordDto> perfumeAccordDtos = new ArrayList<>();
+        List<PerfumeAccordDTO> perfumeAccordDTOs = new ArrayList<>();
         for (int i = 0; i < perfumeAccords.size(); i++) {
             int order = i + 1;
-            perfumeAccordDtos.add(
-                PerfumeAccordDto.of(
+            perfumeAccordDTOs.add(
+                PerfumeAccordDTO.of(
                     order,
                     perfumeAccords.get(i)
                 )
@@ -50,16 +50,16 @@ public class PerfumeDetailGetByPerfumeIdApplicationService implements
 
         List<PerfumeNote> perfumeNotes = perfumeNoteDomainService.findAllByPerfumeId(
             perfume.getPerfumeId());
-        List<PerfumeNoteDto> perfumeNoteDtos = perfumeNotes.stream()
-            .map(PerfumeNoteDto::from).toList();
+        List<PerfumeNoteDTO> perfumeNoteDTOs = perfumeNotes.stream()
+            .map(PerfumeNoteDTO::from).toList();
 
-        PerfumeDetailDto perfumeDetailDto = PerfumeDetailDto.of(
+        PerfumeDetailDTO perfumeDetailDTO = PerfumeDetailDTO.of(
             perfume,
-            perfumeAccordDtos,
-            perfumeNoteDtos
+            perfumeAccordDTOs,
+            perfumeNoteDTOs
         );
 
-        return new Result(perfumeDetailDto);
+        return new Result(perfumeDetailDTO);
     }
 
 }

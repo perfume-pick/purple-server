@@ -3,20 +3,20 @@ package com.pikachu.purple.application.perfume.common.dto;
 import com.pikachu.purple.domain.perfume.Perfume;
 import java.util.List;
 
-public record PerfumeDetailDto(
+public record PerfumeDetailDTO(
     String perfumeName,
     String brandName,
     String imageUrl,
-    List<PerfumeAccordDto> perfumeAccords,
-    List<PerfumeNoteDto> perfumeNotes
+    List<PerfumeAccordDTO> perfumeAccords,
+    List<PerfumeNoteDTO> perfumeNotes
 ) {
 
-    public static PerfumeDetailDto of(
+    public static PerfumeDetailDTO of(
         Perfume perfume,
-        List<PerfumeAccordDto> perfumeAccords,
-        List<PerfumeNoteDto> perfumeNotes
+        List<PerfumeAccordDTO> perfumeAccords,
+        List<PerfumeNoteDTO> perfumeNotes
     ) {
-        return new PerfumeDetailDto(
+        return new PerfumeDetailDTO(
             perfume.getPerfumeName(),
             perfume.getBrandName(),
             perfume.getImageUrl(),
