@@ -43,12 +43,7 @@ public class UserPreferenceNoteCreateApplicationService implements
             perfumeNotes
         );
 
-        List<Long> userPreferenceNoteIds = IntStream.range(0, topThreeNotes.size())
-                .mapToObj(i -> IdGenerator.generate())
-                .toList();
-
         userPreferenceNoteDomainService.save(
-            userPreferenceNoteIds,
             userId,
             topThreeNotes
         );

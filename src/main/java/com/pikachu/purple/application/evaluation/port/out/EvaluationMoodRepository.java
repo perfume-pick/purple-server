@@ -5,6 +5,6 @@ import java.util.List;
 
 public interface EvaluationMoodRepository {
 
-    List<EvaluationMood> findAll();
+    void create(List<EvaluationMood> evaluationMoods);
 
 }

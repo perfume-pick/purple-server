@@ -6,7 +6,6 @@ import java.util.List;
 public interface UserEvaluationDomainService {
 
     void create(
-        List<Long> userEvaluationIds,
         Long userId,
         Long perfumeId,
         List<EvaluationForm> evaluationForms

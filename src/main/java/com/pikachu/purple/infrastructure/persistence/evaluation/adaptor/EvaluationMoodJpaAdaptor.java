@@ -15,12 +15,12 @@ public class EvaluationMoodJpaAdaptor implements EvaluationMoodRepository {
     private final EvaluationMoodJpaRepository evaluationMoodJpaRepository;
 
     @Override
-    public List<EvaluationMood> findAll() {
-        List<EvaluationMoodJpaEntity> evaluationMoodJpaEntities = evaluationMoodJpaRepository.findAll();
-
-        return evaluationMoodJpaEntities.stream()
-            .map(EvaluationMoodJpaEntity::toDomain)
+    public void create(List<EvaluationMood> evaluationMoods) {
+        List<EvaluationMoodJpaEntity> userMoodJpaEntities = evaluationMoods.stream()
+            .map(EvaluationMoodJpaEntity::toJpaEntity)
             .toList();
+
+        evaluationMoodJpaRepository.saveAll(userMoodJpaEntities);
     }
 
 }

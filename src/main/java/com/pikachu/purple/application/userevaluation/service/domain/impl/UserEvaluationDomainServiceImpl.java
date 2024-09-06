@@ -2,6 +2,7 @@ package com.pikachu.purple.application.userevaluation.service.domain.impl;
 
 import com.pikachu.purple.application.userevaluation.port.out.UserEvaluationRepository;
 import com.pikachu.purple.application.userevaluation.service.domain.UserEvaluationDomainService;
+import com.pikachu.purple.application.util.IdGenerator;
 import com.pikachu.purple.bootstrap.review.vo.EvaluationForm;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationField;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationOption;
@@ -19,19 +20,34 @@ public class UserEvaluationDomainServiceImpl implements UserEvaluationDomainServ
 
     @Override
     public void create(
-        List<Long> userEvaluationIds,
         Long userId,
         Long perfumeId,
         List<EvaluationForm> evaluationForms
     ) {
-        List<UserEvaluation> userEvaluations = IntStream.range(0, userEvaluationIds.size())
-            .mapToObj(i -> UserEvaluation.builder()
-                .userEvaluationId(userEvaluationIds.get(i))
-                .userId(userId)
-                .perfumeId(perfumeId)
-                .fieldCode(EvaluationField.of(evaluationForms.get(i).fieldCode()))
-                .optionCode(EvaluationOption.of(evaluationForms.get(i).optionCodes().get(i)))
-                .build())
+        List<Long> userEvaluationIds = evaluationForms.stream()
+            .flatMap(evaluationForm -> IntStream.range(
+                0,
+                    evaluationForm.optionCodes().size()
+                )
+                .mapToObj(i -> IdGenerator.generate()))
+            .toList();
+
+
+        List<UserEvaluation> userEvaluations = evaluationForms.stream()
+            .flatMap(evaluationForm -> {
+                int evaluationFormIndex = evaluationForms.indexOf(evaluationForm);
+                return IntStream.range(
+                    0,
+                        evaluationForm.optionCodes().size()
+                    )
+                    .mapToObj(optionIndex -> UserEvaluation.builder()
+                        .userEvaluationId(userEvaluationIds.get(evaluationFormIndex + optionIndex))
+                        .userId(userId)
+                        .perfumeId(perfumeId)
+                        .field(EvaluationField.of(evaluationForm.fieldCode()))
+                        .option(EvaluationOption.of(evaluationForm.optionCodes().get(optionIndex)))
+                        .build());
+            })
             .toList();
 
         userEvaluationRepository.create(userEvaluations);

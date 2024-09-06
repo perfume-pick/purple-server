@@ -21,16 +21,7 @@ public class UserEvaluationCreateApplicationService implements UserEvaluationCre
     public void invoke(Command command) {
         Long userId = getCurrentUserAuthentication().userId();
 
-        List<Long> userEvaluationIds = command.evaluationForms().stream()
-            .flatMap(evaluationForm -> IntStream.range(
-                    0,
-                    evaluationForm.optionCodes().size()
-                )
-                .mapToObj(i -> IdGenerator.generate()))
-            .toList();
-
         userEvaluationDomainService.create(
-            userEvaluationIds,
             userId,
             command.perfumeId(),
             command.evaluationForms()

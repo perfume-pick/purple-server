@@ -3,8 +3,7 @@ package com.pikachu.purple.application.evaluation.service.application;
 import com.pikachu.purple.application.evaluation.common.dto.EvaluationFieldDTO;
 import com.pikachu.purple.application.evaluation.common.dto.EvaluationOptionDTO;
 import com.pikachu.purple.application.evaluation.port.in.EvaluationFormFieldGetUseCase;
-import com.pikachu.purple.application.evaluation.service.domain.EvaluationMoodDomainService;
-import com.pikachu.purple.domain.evaluation.EvaluationMood;
+import com.pikachu.purple.application.mood.port.in.MoodGetUseCase;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationField;
 import java.util.List;
 import java.util.stream.Stream;
@@ -16,7 +15,7 @@ import org.springframework.stereotype.Service;
 public class EvaluationFormFieldGetApplicationService implements
     EvaluationFormFieldGetUseCase {
 
-    private final EvaluationMoodDomainService evaluationMoodDomainService;
+    private final MoodGetUseCase moodGetUseCase;
 
     @Override
     public Result invoke() {
@@ -33,11 +32,11 @@ public class EvaluationFormFieldGetApplicationService implements
             ))
             .toList();
 
-        List<EvaluationMood> evaluationMoods = evaluationMoodDomainService.findAll();
+        MoodGetUseCase.Result moodResult = moodGetUseCase.invoke();
 
         return new Result(
             evaluationFieldDTOs,
-            evaluationMoods
+            moodResult.moods()
         );
     }
 

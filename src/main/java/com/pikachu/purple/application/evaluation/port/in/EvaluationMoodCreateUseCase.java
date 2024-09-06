@@ -1,8 +1,8 @@
-package com.pikachu.purple.application.usermood.port.in;
+package com.pikachu.purple.application.evaluation.port.in;
 
 import java.util.List;
 
-public interface UserMoodCreateUseCase {
+public interface EvaluationMoodCreateUseCase {
 
     void invoke(Command command);
 

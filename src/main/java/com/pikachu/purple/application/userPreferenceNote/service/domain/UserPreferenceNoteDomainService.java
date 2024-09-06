@@ -7,7 +7,6 @@ import java.util.List;
 public interface UserPreferenceNoteDomainService {
 
     void save(
-        List<Long> userPreferenceNoteIds,
         Long userId,
         List<Note> perfumeNotes
     );

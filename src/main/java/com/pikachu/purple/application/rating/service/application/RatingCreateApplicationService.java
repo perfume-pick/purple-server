@@ -26,14 +26,9 @@ public class RatingCreateApplicationService implements RatingCreateUseCase {
     @Override
     @Transactional
     public void createOnboarding(OnboardingCommand command) {
-        List<Long> ratingIds = IntStream.range(0, command.ratingInfos().size())
-            .mapToObj(i -> IdGenerator.generate())
-            .toList();
-
         Long userId = getCurrentUserAuthentication().userId();
 
         ratingDomainService.createOnboarding(
-            ratingIds,
             userId,
             command.ratingInfos()
         );
@@ -52,7 +47,6 @@ public class RatingCreateApplicationService implements RatingCreateUseCase {
         Long userId = getCurrentUserAuthentication().userId();
 
         return ratingDomainService.create(
-            IdGenerator.generate(),
             userId,
             command.perfumeId(),
             command.score()

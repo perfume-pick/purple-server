@@ -1,7 +1,5 @@
 package com.pikachu.purple.infrastructure.persistence.userevaluation.entity;
 
-import com.pikachu.purple.domain.evaluation.enums.EvaluationField;
-import com.pikachu.purple.domain.evaluation.enums.EvaluationOption;
 import com.pikachu.purple.domain.user.entity.UserEvaluation;
 import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
 import jakarta.persistence.Column;
@@ -55,8 +53,8 @@ public class UserEvaluationJpaEntity extends BaseEntity {
             .userEvaluationId(userEvaluation.getUserEvaluationId())
             .userId(userEvaluation.getUserId())
             .perfumeId(userEvaluation.getPerfumeId())
-            .fieldCode(userEvaluation.getFieldCode().getCode())
-            .optionCode(userEvaluation.getOptionCode().getCode())
+            .fieldCode(userEvaluation.getField().getCode())
+            .optionCode(userEvaluation.getOption().getCode())
             .build();
     }
 }

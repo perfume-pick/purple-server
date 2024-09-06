@@ -9,10 +9,21 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class EvaluationMood {
 
+    private Long evaluationMoodId;
+    private Long userId;
+    private Long perfumeId;
     private String moodName;
 
     @Builder
-    public EvaluationMood(String moodName) {
+    public EvaluationMood(
+        Long evaluationMoodId,
+        Long userId,
+        Long perfumeId,
+        String moodName
+    ) {
+        this.evaluationMoodId = evaluationMoodId;
+        this.userId = userId;
+        this.perfumeId = perfumeId;
         this.moodName = moodName;
     }
 

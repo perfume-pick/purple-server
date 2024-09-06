@@ -29,7 +29,6 @@ public class ReviewCreateSimpleApplicationService implements ReviewCreateSimpleU
         ));
 
         reviewDomainService.create(
-            IdGenerator.generate(),
             command.perfumeId(),
             userId,
             rating.getRatingId(),

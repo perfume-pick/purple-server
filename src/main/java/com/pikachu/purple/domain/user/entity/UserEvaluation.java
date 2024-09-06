@@ -14,22 +14,22 @@ public class UserEvaluation {
     private Long userEvaluationId;
     private Long userId;
     private Long perfumeId;
-    private EvaluationField fieldCode;
-    private EvaluationOption optionCode;
+    private EvaluationField field;
+    private EvaluationOption option;
 
     @Builder
     public UserEvaluation(
         Long userEvaluationId,
         Long userId,
         Long perfumeId,
-        EvaluationField fieldCode,
-        EvaluationOption optionCode
+        EvaluationField field,
+        EvaluationOption option
     ) {
         this.userEvaluationId = userEvaluationId;
         this.userId = userId;
         this.perfumeId = perfumeId;
-        this.fieldCode = fieldCode;
-        this.optionCode = optionCode;
+        this.field = field;
+        this.option = option;
     }
 
 }
