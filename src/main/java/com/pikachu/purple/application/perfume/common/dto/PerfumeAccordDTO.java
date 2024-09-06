@@ -8,7 +8,10 @@ public record PerfumeAccordDTO(
     int accordValue
 ) {
 
-    public static PerfumeAccordDTO of(int order, PerfumeAccord perfumeAccord) {
+    public static PerfumeAccordDTO of(
+        int order,
+        PerfumeAccord perfumeAccord
+    ) {
         return new PerfumeAccordDTO(
             order,
             perfumeAccord.getNoteName(),
