@@ -12,7 +12,6 @@ public interface ReviewDomainService {
     );
 
     void create(
-        Long reviewId,
         Long perfumeId,
         Long userId,
         Long ratingId,

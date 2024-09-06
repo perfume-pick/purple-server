@@ -2,6 +2,7 @@ package com.pikachu.purple.bootstrap.review.api;
 
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.common.security.Secured;
+import com.pikachu.purple.bootstrap.review.dto.request.CreateReviewDetailRequest;
 import com.pikachu.purple.bootstrap.review.dto.request.CreateReviewSimpleRequest;
 import com.pikachu.purple.bootstrap.review.dto.request.UpdateReviewSimpleRequest;
 import com.pikachu.purple.bootstrap.review.dto.response.GetEvaluationFormFieldResponse;
@@ -27,6 +28,12 @@ public interface ReviewApi {
     @PostMapping("/simple")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void createSimple(@RequestBody @Valid CreateReviewSimpleRequest request);
+
+    @Secured
+    @Operation(summary = "자세한 리뷰 작성")
+    @PostMapping("/detail")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    void createDetail(@RequestBody @Valid CreateReviewDetailRequest request);
 
     @Operation(
         summary = "자세한 리뷰 평가 항목 정보 조회",

@@ -5,7 +5,6 @@ import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUse
 import com.pikachu.purple.application.rating.port.in.RatingCreateUseCase;
 import com.pikachu.purple.application.review.port.in.ReviewCreateSimpleUseCase;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
-import com.pikachu.purple.application.util.IdGenerator;
 import com.pikachu.purple.domain.rating.Rating;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -29,7 +28,6 @@ public class ReviewCreateSimpleApplicationService implements ReviewCreateSimpleU
         ));
 
         reviewDomainService.create(
-            IdGenerator.generate(),
             command.perfumeId(),
             userId,
             rating.getRatingId(),

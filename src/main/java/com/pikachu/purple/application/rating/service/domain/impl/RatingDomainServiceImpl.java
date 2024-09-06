@@ -2,6 +2,7 @@ package com.pikachu.purple.application.rating.service.domain.impl;
 
 import com.pikachu.purple.application.rating.port.out.RatingRepository;
 import com.pikachu.purple.application.rating.service.domain.RatingDomainService;
+import com.pikachu.purple.application.util.IdGenerator;
 import com.pikachu.purple.bootstrap.rating.vo.RatingInfo;
 import com.pikachu.purple.domain.rating.Rating;
 import java.util.List;
@@ -17,11 +18,20 @@ public class RatingDomainServiceImpl implements RatingDomainService {
 
     @Override
     public void createOnboarding(
-        List<Long> ratingIds,
         Long userId,
         List<RatingInfo> ratingInfos
     ) {
-        List<Rating> ratings = IntStream.range(0, ratingIds.size())
+        List<Long> ratingIds = IntStream.range(
+            0,
+                ratingInfos.size()
+            )
+            .mapToObj(i -> IdGenerator.generate())
+            .toList();
+
+        List<Rating> ratings = IntStream.range(
+            0,
+                ratingIds.size()
+            )
             .mapToObj(i -> Rating.builder()
                 .ratingId(ratingIds.get(i))
                 .userId(userId)
@@ -35,11 +45,12 @@ public class RatingDomainServiceImpl implements RatingDomainService {
 
     @Override
     public Rating create(
-        Long ratingId,
         Long userId,
         Long perfumeId,
         int score
     ) {
+        Long ratingId = IdGenerator.generate();
+
         Rating rating = Rating.builder()
             .ratingId(ratingId)
             .userId(userId)

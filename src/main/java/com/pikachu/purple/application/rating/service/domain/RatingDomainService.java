@@ -7,13 +7,11 @@ import java.util.List;
 public interface RatingDomainService {
 
     void createOnboarding(
-        List<Long> ratingIds,
         Long userId,
         List<RatingInfo> ratingInfos
     );
 
     Rating create(
-        Long ratingId,
         Long userId,
         Long perfumeId,
         int score
