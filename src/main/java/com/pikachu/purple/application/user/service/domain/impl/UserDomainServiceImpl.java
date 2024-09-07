@@ -37,7 +37,7 @@ public class UserDomainServiceImpl implements UserDomainService {
     }
 
     @Override
-    public void updateProfile(
+    public User updateProfile(
         Long userId,
         String nickname,
         boolean isChanged,
@@ -55,7 +55,7 @@ public class UserDomainServiceImpl implements UserDomainService {
             picture
         );
 
-        userRepository.save(user);
+        return userRepository.save(user);
     }
 
     private void isValidToUpdateNickname(

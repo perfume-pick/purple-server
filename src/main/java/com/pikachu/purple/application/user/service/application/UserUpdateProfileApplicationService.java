@@ -4,6 +4,7 @@ import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUse
 
 import com.pikachu.purple.application.user.port.in.UserUpdateProfileUseCase;
 import com.pikachu.purple.application.user.service.domain.UserDomainService;
+import com.pikachu.purple.domain.user.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,14 +17,16 @@ public class UserUpdateProfileApplicationService implements UserUpdateProfileUse
 
     @Transactional
     @Override
-    public void invoke(Command command) {
+    public Result invoke(Command command) {
         Long userId = getCurrentUserAuthentication().userId();
 
-        userDomainService.updateProfile(
-            userId,
-            command.nickname(),
-            command.isChanged(),
-            command.picture()
+        return new Result(
+            userDomainService.updateProfile(
+                userId,
+                command.nickname(),
+                command.isChanged(),
+                command.picture()
+            )
         );
     }
 

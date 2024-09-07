@@ -10,7 +10,7 @@ public interface UserRepository {
         SocialLoginProvider socialLoginProvider
     );
 
-    void save(User user);
+    User save(User user);
 
     User getById(Long userId);
 

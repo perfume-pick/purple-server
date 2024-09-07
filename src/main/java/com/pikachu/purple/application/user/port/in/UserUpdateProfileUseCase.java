@@ -1,16 +1,21 @@
 package com.pikachu.purple.application.user.port.in;
 
+import com.pikachu.purple.domain.user.entity.User;
 import org.springframework.web.multipart.MultipartFile;
 
 public interface UserUpdateProfileUseCase {
 
-    void invoke(Command command);
+    Result invoke(Command command);
 
     record Command(
         String nickname,
         boolean isChanged,
         MultipartFile picture
     ) {
+
+    }
+
+    record Result(User user) {
 
     }
 

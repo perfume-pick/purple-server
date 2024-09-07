@@ -9,7 +9,7 @@ public interface UserDomainService {
 
     void create(User createdUser);
 
-    void updateProfile(
+    User updateProfile(
         Long userId,
         String nickname,
         boolean isChanged,

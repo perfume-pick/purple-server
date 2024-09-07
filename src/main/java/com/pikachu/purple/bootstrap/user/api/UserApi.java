@@ -2,6 +2,7 @@ package com.pikachu.purple.bootstrap.user.api;
 
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.common.security.Secured;
+import com.pikachu.purple.bootstrap.user.dto.response.GetUserProfileResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.SearchPageResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -27,7 +28,7 @@ public interface UserApi {
     @ApiResponses(
         value = {
             @ApiResponse(
-                responseCode = "204", description = "프로필 수정 성공"
+                responseCode = "200", description = "프로필 수정 성공 및 반환"
             ),
             @ApiResponse(
                 responseCode = "404", description = "U003: 사용자를 찾을 수 없습니다."
@@ -49,22 +50,22 @@ public interface UserApi {
             ),
         }
     )
-    @PatchMapping(value = "/profile", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    void updateProfile(
+    @PatchMapping(value = "/my/profile", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
+    @ResponseStatus(HttpStatus.OK)
+    SuccessResponse<GetUserProfileResponse> updateProfile(
         @RequestParam String nickname,
         @RequestParam boolean isChanged,
         @RequestPart(required = false) MultipartFile picture
     );
 
     @Secured
-    @Operation(summary = "내 최근 검색 기록 전체 조회")
+    @Operation(summary = "최근 검색 기록 전체 조회")
     @GetMapping("/my/search-histories")
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<SearchPageResponse> getSearchHistories();
 
     @Secured
-    @Operation(summary = "내 최근 검색 기록 전체 삭제")
+    @Operation(summary = "최근 검색 기록 전체 삭제")
     @DeleteMapping("/my/search-histories")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void deleteSearchHistories();
