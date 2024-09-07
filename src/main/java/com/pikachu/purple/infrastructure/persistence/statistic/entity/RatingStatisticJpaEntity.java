@@ -22,6 +22,7 @@ public class RatingStatisticJpaEntity extends BaseEntity {
     private Long perfumeId;
 
     @Id
+    @Column(name = "score")
     private int score;
 
     @Column(name = "votes")
