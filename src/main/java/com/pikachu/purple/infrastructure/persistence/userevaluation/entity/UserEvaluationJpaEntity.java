@@ -27,10 +27,10 @@ public class UserEvaluationJpaEntity extends BaseEntity {
     @Column(name = "perfume_id", nullable = false)
     private Long perfumeId;
 
-    @Column(name = "field_code", nullable = false)
+    @Column(name = "field_code", nullable = false, columnDefinition = "char(5)")
     private String fieldCode;
 
-    @Column(name = "option_code", nullable = false)
+    @Column(name = "option_code", nullable = false, columnDefinition = "char(5)")
     private String optionCode;
 
     @Builder
