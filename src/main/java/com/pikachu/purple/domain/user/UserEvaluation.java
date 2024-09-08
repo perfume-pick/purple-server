@@ -1,4 +1,4 @@
-package com.pikachu.purple.domain.user.entity;
+package com.pikachu.purple.domain.user;
 
 import com.pikachu.purple.domain.evaluation.enums.EvaluationField;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationOption;

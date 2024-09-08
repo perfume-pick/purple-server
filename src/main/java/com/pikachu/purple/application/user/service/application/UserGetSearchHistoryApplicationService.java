@@ -4,7 +4,7 @@ import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUse
 
 import com.pikachu.purple.application.user.port.in.UserGetSearchHistoryUseCase;
 import com.pikachu.purple.application.user.service.domain.UserSearchHistoryService;
-import com.pikachu.purple.domain.user.entity.UserSearchHistory;
+import com.pikachu.purple.domain.user.UserSearchHistory;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

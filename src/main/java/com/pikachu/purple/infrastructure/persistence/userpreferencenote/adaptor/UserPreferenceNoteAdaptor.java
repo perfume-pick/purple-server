@@ -1,7 +1,7 @@
 package com.pikachu.purple.infrastructure.persistence.userpreferencenote.adaptor;
 
 import com.pikachu.purple.application.userpreferencenote.port.out.UserPreferenceNoteRepository;
-import com.pikachu.purple.domain.user.entity.UserPreferenceNote;
+import com.pikachu.purple.domain.user.UserPreferenceNote;
 import com.pikachu.purple.infrastructure.persistence.userpreferencenote.entity.UserPreferenceNoteJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.userpreferencenote.repository.UserPreferenceNoteJpaRepository;
 import java.util.List;

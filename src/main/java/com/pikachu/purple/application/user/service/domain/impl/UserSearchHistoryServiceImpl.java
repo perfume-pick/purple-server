@@ -2,7 +2,7 @@ package com.pikachu.purple.application.user.service.domain.impl;
 
 import com.pikachu.purple.application.user.port.out.UserSearchHistoryRepository;
 import com.pikachu.purple.application.user.service.domain.UserSearchHistoryService;
-import com.pikachu.purple.domain.user.entity.UserSearchHistory;
+import com.pikachu.purple.domain.user.UserSearchHistory;
 import java.time.LocalDateTime;
 import java.util.List;
 import lombok.RequiredArgsConstructor;

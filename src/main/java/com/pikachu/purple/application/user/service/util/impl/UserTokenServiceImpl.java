@@ -14,7 +14,7 @@ import com.pikachu.purple.application.user.vo.tokens.JwtToken;
 import com.pikachu.purple.application.user.vo.tokens.RefreshToken;
 import com.pikachu.purple.bootstrap.common.exception.BusinessException;
 import com.pikachu.purple.bootstrap.common.exception.ErrorCode;
-import com.pikachu.purple.domain.user.entity.User;
+import com.pikachu.purple.domain.user.User;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import com.pikachu.purple.support.security.auth.util.JwtTokenProvider;
 import com.pikachu.purple.support.security.auth.vo.JwtClaims;

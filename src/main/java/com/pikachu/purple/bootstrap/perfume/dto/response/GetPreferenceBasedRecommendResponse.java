@@ -1,7 +1,7 @@
 package com.pikachu.purple.bootstrap.perfume.dto.response;
 
 import com.pikachu.purple.domain.perfume.Perfume;
-import com.pikachu.purple.domain.user.entity.UserPreferenceNote;
+import com.pikachu.purple.domain.user.UserPreferenceNote;
 import java.util.List;
 
 public record GetPreferenceBasedRecommendResponse(

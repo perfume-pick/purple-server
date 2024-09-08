@@ -1,6 +1,6 @@
 package com.pikachu.purple.application.user.port.in;
 
-import com.pikachu.purple.domain.user.entity.UserSearchHistory;
+import com.pikachu.purple.domain.user.UserSearchHistory;
 import java.util.List;
 
 public interface UserGetSearchHistoryUseCase {

@@ -4,7 +4,7 @@ import com.pikachu.purple.application.user.vo.tokens.AccessToken;
 import com.pikachu.purple.application.user.vo.tokens.IdToken;
 import com.pikachu.purple.application.user.vo.tokens.JwtToken;
 import com.pikachu.purple.application.user.vo.tokens.RefreshToken;
-import com.pikachu.purple.domain.user.entity.User;
+import com.pikachu.purple.domain.user.User;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 
 public interface UserTokenService {

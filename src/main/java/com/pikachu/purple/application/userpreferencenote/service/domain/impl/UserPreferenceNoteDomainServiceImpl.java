@@ -4,7 +4,7 @@ import com.pikachu.purple.application.userpreferencenote.port.out.UserPreference
 import com.pikachu.purple.application.userpreferencenote.service.domain.UserPreferenceNoteDomainService;
 import com.pikachu.purple.application.util.IdGenerator;
 import com.pikachu.purple.domain.note.Note;
-import com.pikachu.purple.domain.user.entity.UserPreferenceNote;
+import com.pikachu.purple.domain.user.UserPreferenceNote;
 import java.util.List;
 import java.util.stream.IntStream;
 import lombok.RequiredArgsConstructor;
