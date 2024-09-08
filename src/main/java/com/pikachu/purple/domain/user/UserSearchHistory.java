@@ -1,4 +1,4 @@
-package com.pikachu.purple.domain.user.entity;
+package com.pikachu.purple.domain.user;
 
 import java.time.LocalDateTime;
 import lombok.AccessLevel;

@@ -1,4 +1,4 @@
-package com.pikachu.purple.domain.user.entity;
+package com.pikachu.purple.domain.user;
 
 import lombok.AccessLevel;
 import lombok.Builder;

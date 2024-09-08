@@ -1,6 +1,6 @@
 package com.pikachu.purple.infrastructure.persistence.userevaluation.entity;
 
-import com.pikachu.purple.domain.user.entity.UserEvaluation;
+import com.pikachu.purple.domain.user.UserEvaluation;
 import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

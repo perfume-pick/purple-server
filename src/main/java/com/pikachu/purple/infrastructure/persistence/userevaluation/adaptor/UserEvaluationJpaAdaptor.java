@@ -1,7 +1,7 @@
 package com.pikachu.purple.infrastructure.persistence.userevaluation.adaptor;
 
 import com.pikachu.purple.application.userevaluation.port.out.UserEvaluationRepository;
-import com.pikachu.purple.domain.user.entity.UserEvaluation;
+import com.pikachu.purple.domain.user.UserEvaluation;
 import com.pikachu.purple.infrastructure.persistence.userevaluation.entity.UserEvaluationJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.userevaluation.repository.UserEvaluationJpaRepository;
 import java.util.List;

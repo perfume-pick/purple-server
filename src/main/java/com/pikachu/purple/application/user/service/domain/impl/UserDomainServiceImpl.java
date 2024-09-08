@@ -3,7 +3,7 @@ package com.pikachu.purple.application.user.service.domain.impl;
 import com.pikachu.purple.application.user.port.out.ImageUrlS3Uploader;
 import com.pikachu.purple.application.user.port.out.UserRepository;
 import com.pikachu.purple.application.user.service.domain.UserDomainService;
-import com.pikachu.purple.domain.user.entity.User;
+import com.pikachu.purple.domain.user.User;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -37,7 +37,7 @@ public class UserDomainServiceImpl implements UserDomainService {
     }
 
     @Override
-    public void updateProfile(
+    public User updateProfile(
         Long userId,
         String nickname,
         boolean isChanged,
@@ -55,7 +55,7 @@ public class UserDomainServiceImpl implements UserDomainService {
             picture
         );
 
-        userRepository.save(user);
+        return userRepository.save(user);
     }
 
     private void isValidToUpdateNickname(

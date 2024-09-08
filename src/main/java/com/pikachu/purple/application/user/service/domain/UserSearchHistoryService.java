@@ -1,6 +1,6 @@
 package com.pikachu.purple.application.user.service.domain;
 
-import com.pikachu.purple.domain.user.entity.UserSearchHistory;
+import com.pikachu.purple.domain.user.UserSearchHistory;
 import java.time.LocalDateTime;
 import java.util.List;
 

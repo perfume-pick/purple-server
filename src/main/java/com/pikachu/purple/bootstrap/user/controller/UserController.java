@@ -5,6 +5,7 @@ import com.pikachu.purple.application.user.port.in.UserGetSearchHistoryUseCase;
 import com.pikachu.purple.application.user.port.in.UserUpdateProfileUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.user.api.UserApi;
+import com.pikachu.purple.bootstrap.user.dto.response.GetUserProfileResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.SearchPageResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,16 +20,23 @@ public class UserController implements UserApi {
     private final UserDeleteAllSearchHistoryUseCase userDeleteAllSearchLogUseCase;
 
     @Override
-    public void updateProfile(
+    public SuccessResponse<GetUserProfileResponse> updateProfile(
         String nickname,
         boolean isChanged,
         MultipartFile picture
     ) {
-        userUpdateProfileUseCase.invoke(
+        UserUpdateProfileUseCase.Result result = userUpdateProfileUseCase.invoke(
             new UserUpdateProfileUseCase.Command(
                 nickname,
                 isChanged,
                 picture
+            )
+        );
+
+        return SuccessResponse.of(
+            new GetUserProfileResponse(
+                result.user().getNickname(),
+                result.user().getImageUrl()
             )
         );
     }

@@ -6,7 +6,7 @@ import com.pikachu.purple.application.util.IdGenerator;
 import com.pikachu.purple.bootstrap.review.vo.EvaluationFieldVO;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationField;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationOption;
-import com.pikachu.purple.domain.user.entity.UserEvaluation;
+import com.pikachu.purple.domain.user.UserEvaluation;
 import java.util.List;
 import java.util.stream.IntStream;
 import lombok.RequiredArgsConstructor;

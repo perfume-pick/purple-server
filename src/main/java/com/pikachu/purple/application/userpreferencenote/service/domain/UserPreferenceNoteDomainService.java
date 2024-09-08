@@ -1,7 +1,7 @@
 package com.pikachu.purple.application.userpreferencenote.service.domain;
 
 import com.pikachu.purple.domain.note.Note;
-import com.pikachu.purple.domain.user.entity.UserPreferenceNote;
+import com.pikachu.purple.domain.user.UserPreferenceNote;
 import java.util.List;
 
 public interface UserPreferenceNoteDomainService {

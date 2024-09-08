@@ -1,7 +1,7 @@
 package com.pikachu.purple.infrastructure.redis.user.adapter;
 
 import com.pikachu.purple.application.user.port.out.UserSearchHistoryRepository;
-import com.pikachu.purple.domain.user.entity.UserSearchHistory;
+import com.pikachu.purple.domain.user.UserSearchHistory;
 import com.pikachu.purple.infrastructure.redis.user.entity.UserSearchHistoryRedisHash;
 import com.pikachu.purple.infrastructure.redis.user.repository.UserSearchHistoryRedisRepository;
 import java.time.LocalDateTime;

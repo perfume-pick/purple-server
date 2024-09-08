@@ -16,14 +16,16 @@ public class UserUpdateProfileApplicationService implements UserUpdateProfileUse
 
     @Transactional
     @Override
-    public void invoke(Command command) {
+    public Result invoke(Command command) {
         Long userId = getCurrentUserAuthentication().userId();
 
-        userDomainService.updateProfile(
-            userId,
-            command.nickname(),
-            command.isChanged(),
-            command.picture()
+        return new Result(
+            userDomainService.updateProfile(
+                userId,
+                command.nickname(),
+                command.isChanged(),
+                command.picture()
+            )
         );
     }
 

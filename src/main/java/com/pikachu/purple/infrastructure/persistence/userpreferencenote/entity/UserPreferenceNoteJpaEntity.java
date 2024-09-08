@@ -1,6 +1,6 @@
 package com.pikachu.purple.infrastructure.persistence.userpreferencenote.entity;
 
-import com.pikachu.purple.domain.user.entity.UserPreferenceNote;
+import com.pikachu.purple.domain.user.UserPreferenceNote;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
