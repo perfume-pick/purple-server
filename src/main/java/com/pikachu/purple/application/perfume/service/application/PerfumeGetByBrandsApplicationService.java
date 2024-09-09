@@ -27,11 +27,13 @@ public class PerfumeGetByBrandsApplicationService implements PerfumeGetByBrandsU
             .map(entry -> BrandPerfumesDTO.of(
                 entry.getKey(),
                     entry.getValue().stream()
-                        .map(perfume -> Perfume.builder()
-                                .perfumeId(perfume.getPerfumeId())
-                                .perfumeName(perfume.getPerfumeName())
-                                .imageUrl(perfume.getImageUrl())
-                            .build())
+                        .map(perfume -> Perfume.of(
+                            perfume.getPerfumeId(),
+                            perfume.getPerfumeName(),
+                            perfume.getBrandName(),
+                            perfume.getImageUrl()
+                            )
+                        )
                         .toList()
                 )
             )

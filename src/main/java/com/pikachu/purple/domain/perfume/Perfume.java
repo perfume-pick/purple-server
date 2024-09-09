@@ -27,4 +27,18 @@ public class Perfume {
         this.imageUrl = imageUrl;
     }
 
+    public static Perfume of(
+        Long perfumeId,
+        String perfumeName,
+        String brandName,
+        String imageUrl
+    ) {
+        return new Perfume(
+            perfumeId,
+            perfumeName,
+            brandName,
+            imageUrl
+        );
+    }
+
 }
