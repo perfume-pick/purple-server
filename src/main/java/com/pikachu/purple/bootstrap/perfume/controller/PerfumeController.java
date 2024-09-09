@@ -30,11 +30,11 @@ public class PerfumeController implements PerfumeApi {
     private final UserSaveSearchHistoryUseCase userSaveSearchHistoryUseCase;
 
     @Override
-    public SuccessResponse<GetPerfumeByBrandsResponse> getPerfumeByBrands(List<String> request) {
+    public SuccessResponse<GetPerfumeByBrandsResponse> findAllPerfumeByBrands(List<String> request) {
         PerfumeGetByBrandsUseCase.Result result = perfumeGetByBrandsUseCase.invoke(
             new PerfumeGetByBrandsUseCase.Command(request));
 
-        return SuccessResponse.of(new GetPerfumeByBrandsResponse(result.perfumes()));
+        return SuccessResponse.of(new GetPerfumeByBrandsResponse(result.brandPerfumesDTOS()));
     }
 
     @Override

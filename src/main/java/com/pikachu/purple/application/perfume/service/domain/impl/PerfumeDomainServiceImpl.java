@@ -14,8 +14,8 @@ public class PerfumeDomainServiceImpl implements PerfumeDomainService {
     private final PerfumeRepository perfumeRepository;
 
     @Override
-    public List<Perfume> findByPerfumeBrands(List<String> brands) {
-        return perfumeRepository.findByPerfumeBrands(brands);
+    public List<Perfume> findAllByPerfumeBrands(List<String> brands) {
+        return perfumeRepository.findAllByPerfumeBrands(brands);
     }
 
     @Override
