@@ -26,8 +26,7 @@ public class PerfumeGetByBrandsApplicationService implements PerfumeGetByBrandsU
         List<BrandPerfumesDTO> brandPerfumesDTOs = groupedByBrand.entrySet().stream()
             .map(entry -> BrandPerfumesDTO.of(
                 entry.getKey(),
-                    entry.getValue().stream()
-                        .toList()
+                entry.getValue()
                 )
             )
             .toList();
