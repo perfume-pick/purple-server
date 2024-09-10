@@ -11,7 +11,7 @@ public interface PerfumeGetByBrandsUseCase {
 
     }
 
-    record Result(List<BrandPerfumesDTO> brandPerfumesDTOS) {
+    record Result(List<BrandPerfumesDTO> brandPerfumesDTOs) {
 
     }
 

@@ -23,23 +23,16 @@ public class PerfumeGetByBrandsApplicationService implements PerfumeGetByBrandsU
         Map<String, List<Perfume>> groupedByBrand = perfumes.stream()
             .collect(Collectors.groupingBy(Perfume::getBrandName));
 
-        List<BrandPerfumesDTO> brandPerfumesDTOS = groupedByBrand.entrySet().stream()
+        List<BrandPerfumesDTO> brandPerfumesDTOs = groupedByBrand.entrySet().stream()
             .map(entry -> BrandPerfumesDTO.of(
                 entry.getKey(),
                     entry.getValue().stream()
-                        .map(perfume -> Perfume.of(
-                            perfume.getPerfumeId(),
-                            perfume.getPerfumeName(),
-                            perfume.getBrandName(),
-                            perfume.getImageUrl()
-                            )
-                        )
                         .toList()
                 )
             )
             .toList();
 
-        return new Result(brandPerfumesDTOS);
+        return new Result(brandPerfumesDTOs);
     }
 
 }

@@ -34,7 +34,7 @@ public class PerfumeController implements PerfumeApi {
         PerfumeGetByBrandsUseCase.Result result = perfumeGetByBrandsUseCase.invoke(
             new PerfumeGetByBrandsUseCase.Command(request));
 
-        return SuccessResponse.of(new GetPerfumeByBrandsResponse(result.brandPerfumesDTOS()));
+        return SuccessResponse.of(new GetPerfumeByBrandsResponse(result.brandPerfumesDTOs()));
     }
 
     @Override
