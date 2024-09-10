@@ -13,11 +13,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PerfumeJpaRepository extends JpaRepository<PerfumeJpaEntity, Long> {
 
-    @Query(value =
-        "SELECT p.*, pb.brand_name AS pb_brand_name FROM perfume p INNER JOIN perfume_brand pb ON p.brand_name = pb.brand_name WHERE p.brand_name IN :brandList",
-        nativeQuery = true)
-    List<PerfumeJpaEntity> findByBrandNames(List<String> brandList);
-
+    List<PerfumeJpaEntity> findAllByBrandNameIn(List<String> brandList);
 
     @Query(value = "SELECT p.* FROM perfume p " +
         "INNER JOIN perfume_note pn ON p.perfume_id = pn.perfume_id " +

@@ -21,10 +21,10 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @RequestMapping(value = "/perpicks/perfumes", produces = "application/json")
 public interface PerfumeApi {
 
-    @Operation(summary = "온보딩에서 선택한 향수브랜드에 대한 제품 조회")
-    @GetMapping
+    @Operation(summary = "온보딩에서 선택한 향수브랜드의 향수 조회")
+    @GetMapping("/perfume-brands")
     @ResponseStatus(HttpStatus.OK)
-    SuccessResponse<GetPerfumeByBrandsResponse> getPerfumeByBrands(
+    SuccessResponse<GetPerfumeByBrandsResponse> findAllByPerfumeBrands(
         @RequestParam List<String> request);
 
     @Secured

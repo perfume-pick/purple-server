@@ -1,6 +1,6 @@
 package com.pikachu.purple.application.perfume.port.in;
 
-import com.pikachu.purple.domain.perfume.Perfume;
+import com.pikachu.purple.application.perfume.common.dto.BrandPerfumesDTO;
 import java.util.List;
 
 public interface PerfumeGetByBrandsUseCase {
@@ -11,7 +11,7 @@ public interface PerfumeGetByBrandsUseCase {
 
     }
 
-    record Result(List<Perfume> perfumes) {
+    record Result(List<BrandPerfumesDTO> brandPerfumesDTOs) {
 
     }
 

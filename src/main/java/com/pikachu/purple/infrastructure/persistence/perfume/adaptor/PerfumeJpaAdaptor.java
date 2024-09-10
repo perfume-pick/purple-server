@@ -18,8 +18,8 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
     private static final int MAX_SIZE = 30;
     private final PerfumeJpaRepository perfumeJpaRepository;
 
-    public List<Perfume> findByPerfumeBrands(List<String> brands) {
-        List<PerfumeJpaEntity> perfumeJpaEntities = perfumeJpaRepository.findByBrandNames(brands);
+    public List<Perfume> findAllByPerfumeBrands(List<String> brands) {
+        List<PerfumeJpaEntity> perfumeJpaEntities = perfumeJpaRepository.findAllByBrandNameIn(brands);
 
         return perfumeJpaEntities.stream()
             .map(PerfumeJpaEntity::toDomain)
