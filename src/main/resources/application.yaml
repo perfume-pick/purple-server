@@ -78,6 +78,10 @@ spring:
 springdoc:
   swagger-ui:
     enabled: true
+logging:
+  level:
+    root: info
+
 ---
 spring:
   config:
