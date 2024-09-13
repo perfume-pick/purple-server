@@ -16,7 +16,6 @@ import org.springframework.stereotype.Component;
 /**
  * @DistributedLock 선언 시 수행되는 Aop class
  */
-@Slf4j
 @Aspect
 @Component
 @RequiredArgsConstructor
