@@ -4,7 +4,6 @@ import com.pikachu.purple.infrastructure.redis.annotation.DistributedLock;
 import com.pikachu.purple.infrastructure.redis.util.SpringELParser;
 import java.lang.reflect.Method;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
