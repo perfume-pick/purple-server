@@ -5,8 +5,6 @@ import java.util.List;
 
 public interface ReviewRepository {
 
-    void createOnboarding(List<Review> reviews);
-
     void create(Review review);
 
     List<Review> findAllByUserId(Long userId);
@@ -15,6 +13,8 @@ public interface ReviewRepository {
         Long reviewId,
         Long userId
     );
+
+    Review findById(Long reviewId);
 
     void save(Review review);
 

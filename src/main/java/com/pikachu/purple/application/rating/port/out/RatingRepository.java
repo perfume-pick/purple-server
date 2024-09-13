@@ -7,7 +7,7 @@ public interface RatingRepository {
 
     void createOnboarding(List<Rating> ratings);
 
-    Rating create(Rating rating);
+    void create(Rating rating);
 
     List<Rating> getAllByUserId(Long userId);
 
@@ -15,8 +15,8 @@ public interface RatingRepository {
 
     void save(Rating rating);
 
-    Rating getByIdAndUserId(
-        Long ratingId,
+    Rating findByPerfumeIdAndUserId(
+        Long perfumeId,
         Long userId
     );
 

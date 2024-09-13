@@ -21,17 +21,11 @@ public class RatingDomainServiceImpl implements RatingDomainService {
         Long userId,
         List<RatingInfo> ratingInfos
     ) {
-        List<Long> ratingIds = IntStream.range(
-            0,
-                ratingInfos.size()
-            )
+        List<Long> ratingIds = IntStream.range(0, ratingInfos.size())
             .mapToObj(i -> IdGenerator.generate())
             .toList();
 
-        List<Rating> ratings = IntStream.range(
-            0,
-                ratingIds.size()
-            )
+        List<Rating> ratings = IntStream.range(0, ratingIds.size())
             .mapToObj(i -> Rating.builder()
                 .ratingId(ratingIds.get(i))
                 .userId(userId)
@@ -44,7 +38,7 @@ public class RatingDomainServiceImpl implements RatingDomainService {
     }
 
     @Override
-    public Rating create(
+    public void create(
         Long userId,
         Long perfumeId,
         int score
@@ -58,7 +52,7 @@ public class RatingDomainServiceImpl implements RatingDomainService {
             .score(score)
             .build();
 
-        return ratingRepository.create(rating);
+        ratingRepository.create(rating);
     }
 
     @Override
@@ -80,12 +74,12 @@ public class RatingDomainServiceImpl implements RatingDomainService {
     }
 
     @Override
-    public Rating getByIdAndUserId(
-        Long ratingId,
+    public Rating findByPerfumeIdAndUserId(
+        Long perfumeId,
         Long userId
     ) {
-        return ratingRepository.getByIdAndUserId(
-            ratingId,
+        return ratingRepository.findByPerfumeIdAndUserId(
+            perfumeId,
             userId
         );
     }

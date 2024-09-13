@@ -2,8 +2,11 @@ package com.pikachu.purple.infrastructure.persistence.review.entity;
 
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
+import com.pikachu.purple.domain.review.enums.ReviewType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
@@ -31,25 +34,26 @@ public class ReviewJpaEntity extends BaseEntity {
     @Column(name = "user_id", nullable = false)
     private Long userId;
 
-    @Column(name = "rating_id", nullable = false)
-    private Long ratingId;
-
     @Column(name = "content", nullable = false)
     private String content;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "review_type", columnDefinition = "varchar(255)")
+    private ReviewType reviewType;
 
     @Builder
     public ReviewJpaEntity(
         Long reviewId,
         Long perfumeId,
         Long userId,
-        Long ratingId,
-        String content
+        String content,
+        ReviewType reviewType
     ) {
         this.reviewId = reviewId;
         this.perfumeId = perfumeId;
         this.userId = userId;
-        this.ratingId = ratingId;
         this.content = content;
+        this.reviewType = reviewType;
     }
 
     public static ReviewJpaEntity toJpaEntity(Review review) {
@@ -57,8 +61,8 @@ public class ReviewJpaEntity extends BaseEntity {
             .reviewId(review.getReviewId())
             .perfumeId(review.getPerfumeId())
             .userId(review.getUserId())
-            .ratingId(review.getRatingId())
             .content(review.getContent())
+            .reviewType(review.getReviewType())
             .build();
     }
 
@@ -67,8 +71,8 @@ public class ReviewJpaEntity extends BaseEntity {
             .reviewId(reviewJpaEntity.getReviewId())
             .perfumeId(reviewJpaEntity.getPerfumeId())
             .userId(reviewJpaEntity.getUserId())
-            .ratingId(reviewJpaEntity.getRatingId())
             .content(reviewJpaEntity.getContent())
+            .reviewType(reviewJpaEntity.getReviewType())
             .build();
     }
 

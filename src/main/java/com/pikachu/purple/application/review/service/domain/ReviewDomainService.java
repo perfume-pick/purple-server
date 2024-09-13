@@ -1,21 +1,16 @@
 package com.pikachu.purple.application.review.service.domain;
 
 import com.pikachu.purple.domain.review.Review;
+import com.pikachu.purple.domain.review.enums.ReviewType;
 import java.util.List;
 
 public interface ReviewDomainService {
 
-    void createOnboarding(
-        List<Long> reviewIds,
-        List<Long> longs,
-        Long userId
-    );
-
     void create(
         Long perfumeId,
         Long userId,
-        Long ratingId,
-        String content
+        String content,
+        ReviewType reviewType
     );
 
     List<Review> findAllByUserId(Long userId);
@@ -26,10 +21,7 @@ public interface ReviewDomainService {
         String content
     );
 
-    Review getByIdAndUserId(
-        Long reviewId,
-        Long userId
-    );
+    Review findById(Long reviewId);
 
     void delete(Review review);
 

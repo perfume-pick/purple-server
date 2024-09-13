@@ -11,7 +11,7 @@ public interface RatingDomainService {
         List<RatingInfo> ratingInfos
     );
 
-    Rating create(
+    void create(
         Long userId,
         Long perfumeId,
         int score
@@ -25,8 +25,8 @@ public interface RatingDomainService {
         int score
     );
 
-    Rating getByIdAndUserId(
-        Long ratingId,
+    Rating findByPerfumeIdAndUserId(
+        Long perfumeId,
         Long userId
     );
 

@@ -26,10 +26,10 @@ public class RatingJpaAdaptor implements RatingRepository {
     }
 
     @Override
-    public Rating create(Rating rating) {
+    public void create(Rating rating) {
         RatingJpaEntity ratingJpaEntity = RatingJpaEntity.toJpaEntity(rating);
 
-        return RatingJpaEntity.toDomain(ratingJpaRepository.save(ratingJpaEntity));
+        ratingJpaRepository.save(ratingJpaEntity);
     }
 
     @Override
@@ -56,12 +56,12 @@ public class RatingJpaAdaptor implements RatingRepository {
     }
 
     @Override
-    public Rating getByIdAndUserId(
-        Long ratingId,
+    public Rating findByPerfumeIdAndUserId(
+        Long perfumeId,
         Long userId
     ) {
-        RatingJpaEntity ratingJpaEntity = ratingJpaRepository.findByRatingIdAndUserId(
-            ratingId,
+        RatingJpaEntity ratingJpaEntity = ratingJpaRepository.findByPerfumeIdAndUserId(
+            perfumeId,
             userId
         ).orElseThrow(() -> RatingNotFoundException);
 
