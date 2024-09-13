@@ -53,22 +53,9 @@ public class DistributedLockAop {
             return aopForTransaction.proceed(joinPoint);
         } catch (InterruptedException e) {
             throw new InterruptedException();
-        } catch (IllegalMonitorStateException e) {
-            log.error(
-                "IllegalMonitorStateException occurred in tryLock: serviceName={}, key={}",
-                method.getName(),
-                key
-            );
-            throw new IllegalMonitorStateException();
         } finally {
-            try {
+            synchronized (rLock) {
                 rLock.unlock();
-            } catch (IllegalMonitorStateException e) {
-                log.info(
-                    "Redisson Lock Already UnLock: serviceName={}, key={}",
-                    method.getName(),
-                    key
-                );
             }
         }
     }
