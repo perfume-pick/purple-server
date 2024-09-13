@@ -15,11 +15,11 @@ public class RatingDeleteApplicationService implements RatingDeleteUseCase {
     private final RatingDomainService ratingDomainService;
 
     @Override
-    public void invoke(Long ratingId) {
+    public void invoke(Long perfumeId) {
         Long userId = getCurrentUserAuthentication().userId();
 
-        Rating rating = ratingDomainService.getByIdAndUserId(
-            ratingId,
+        Rating rating = ratingDomainService.findByPerfumeIdAndUserId(
+            perfumeId,
             userId
         );
 

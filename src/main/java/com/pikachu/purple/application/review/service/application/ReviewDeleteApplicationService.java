@@ -1,7 +1,5 @@
 package com.pikachu.purple.application.review.service.application;
 
-import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
-
 import com.pikachu.purple.application.rating.port.in.RatingDeleteUseCase;
 import com.pikachu.purple.application.review.port.in.ReviewDeleteUseCase;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
@@ -20,16 +18,11 @@ public class ReviewDeleteApplicationService implements ReviewDeleteUseCase {
     @Override
     @Transactional
     public void invoke(Long reviewId) {
-        Long userId = getCurrentUserAuthentication().userId();
-
-        Review review = reviewDomainService.getByIdAndUserId(
-            reviewId,
-            userId
-        );
+        Review review = reviewDomainService.findById(reviewId);
 
         reviewDomainService.delete(review);
 
-        ratingDeleteUseCase.invoke(review.getRatingId());
+        ratingDeleteUseCase.invoke(review.getPerfumeId());
     }
 
 }

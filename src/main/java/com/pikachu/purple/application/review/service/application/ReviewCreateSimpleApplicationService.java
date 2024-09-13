@@ -5,7 +5,7 @@ import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUse
 import com.pikachu.purple.application.rating.port.in.RatingCreateUseCase;
 import com.pikachu.purple.application.review.port.in.ReviewCreateSimpleUseCase;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
-import com.pikachu.purple.domain.rating.Rating;
+import com.pikachu.purple.domain.review.enums.ReviewType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,7 +22,7 @@ public class ReviewCreateSimpleApplicationService implements ReviewCreateSimpleU
     public void invoke(Command command) {
         Long userId = getCurrentUserAuthentication().userId();
 
-        Rating rating = ratingCreateUseCase.create(new RatingCreateUseCase.Command(
+        ratingCreateUseCase.invoke(new RatingCreateUseCase.Command(
             command.perfumeId(),
             command.score()
         ));
@@ -30,8 +30,8 @@ public class ReviewCreateSimpleApplicationService implements ReviewCreateSimpleU
         reviewDomainService.create(
             command.perfumeId(),
             userId,
-            rating.getRatingId(),
-            command.content()
+            command.content(),
+            ReviewType.SIMPLE
         );
     }
 

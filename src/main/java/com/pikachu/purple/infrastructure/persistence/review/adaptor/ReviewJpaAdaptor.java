@@ -17,15 +17,6 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     private final ReviewJpaRepository reviewJpaRepository;
 
     @Override
-    public void createOnboarding(List<Review> reviews) {
-        List<ReviewJpaEntity> reviewJpaEntities = reviews.stream()
-            .map(ReviewJpaEntity::toJpaEntity)
-            .toList();
-
-        reviewJpaRepository.saveAll(reviewJpaEntities);
-    }
-
-    @Override
     public void create(Review review) {
         ReviewJpaEntity reviewJpaEntity = ReviewJpaEntity.toJpaEntity(review);
         reviewJpaRepository.save(reviewJpaEntity);
@@ -49,6 +40,14 @@ public class ReviewJpaAdaptor implements ReviewRepository {
             reviewId,
             userId
         ).orElseThrow(() -> ReviewNotFoundException);
+
+        return ReviewJpaEntity.toDomain(reviewJpaEntity);
+    }
+
+    @Override
+    public Review findById(Long reviewId) {
+        ReviewJpaEntity reviewJpaEntity = reviewJpaRepository.findById(reviewId)
+            .orElseThrow(() -> ReviewNotFoundException);
 
         return ReviewJpaEntity.toDomain(reviewJpaEntity);
     }
