@@ -50,13 +50,14 @@ public class DistributedLockAop {
                 return false;
             }
 
-            return aopForTransaction.proceed(joinPoint);
-        } catch (InterruptedException e) {
-            throw new InterruptedException();
-        } finally {
-            synchronized (rLock) {
+            try {
+                return aopForTransaction.proceed(joinPoint);
+            } finally {
                 rLock.unlock();
             }
+
+        } catch (InterruptedException e) {
+            throw new InterruptedException();
         }
     }
 
