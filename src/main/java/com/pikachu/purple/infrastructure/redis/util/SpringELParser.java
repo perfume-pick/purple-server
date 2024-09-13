@@ -11,14 +11,24 @@ import org.springframework.expression.spel.support.StandardEvaluationContext;
 @UtilityClass
 public class SpringELParser {
 
-    public static Object getDynamicValue(String[] parameterNames, Object[] args, String key) {
+    public static Object getDynamicValue(
+        String[] parameterNames,
+        Object[] args,
+        String key
+    ) {
         ExpressionParser parser = new SpelExpressionParser();
         StandardEvaluationContext context = new StandardEvaluationContext();
 
         for (int i = 0; i < parameterNames.length; i++) {
-            context.setVariable(parameterNames[i], args[i]);
+            context.setVariable(
+                parameterNames[i],
+                args[i]
+            );
         }
 
-        return parser.parseExpression(key).getValue(context, Object.class);
+        return parser.parseExpression(key).getValue(
+            context,
+            Object.class
+        );
     }
 }
