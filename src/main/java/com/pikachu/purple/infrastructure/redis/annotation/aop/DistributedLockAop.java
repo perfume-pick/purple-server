@@ -21,6 +21,7 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class DistributedLockAop {
+
     private static final String REDISSON_LOCK_PREFIX = "LOCK:";
 
     private final RedissonClient redissonClient;
@@ -32,7 +33,11 @@ public class DistributedLockAop {
         Method method = signature.getMethod();
         DistributedLock distributedLock = method.getAnnotation(DistributedLock.class);
 
-        String key = REDISSON_LOCK_PREFIX + SpringELParser.getDynamicValue(signature.getParameterNames(), joinPoint.getArgs(), distributedLock.key());
+        String key = REDISSON_LOCK_PREFIX + SpringELParser.getDynamicValue(
+            signature.getParameterNames(),
+            joinPoint.getArgs(),
+            distributedLock.key()
+        );
         RLock rLock = redissonClient.getLock(key);
 
         try {
@@ -60,4 +65,5 @@ public class DistributedLockAop {
             }
         }
     }
+    
 }
