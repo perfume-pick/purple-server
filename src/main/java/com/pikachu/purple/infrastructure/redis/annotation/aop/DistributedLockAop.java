@@ -54,11 +54,12 @@ public class DistributedLockAop {
         } catch (InterruptedException e) {
             throw new InterruptedException();
         } catch (IllegalMonitorStateException e) {
-            log.info(
+            log.error(
                 "IllegalMonitorStateException occurred in tryLock: serviceName={}, key={}",
                 method.getName(),
                 key
             );
+            throw new IllegalMonitorStateException();
         } finally {
             try {
                 rLock.unlock();
