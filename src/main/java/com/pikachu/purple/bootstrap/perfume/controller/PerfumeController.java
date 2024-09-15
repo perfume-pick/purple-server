@@ -58,7 +58,7 @@ public class PerfumeController implements PerfumeApi {
             searchAt
         );
 
-        return SuccessResponse.of(new GetPerfumeByKeywordResponse(result.perfumes()));
+        return SuccessResponse.of(new GetPerfumeByKeywordResponse(result.perfumeDTOs()));
     }
 
     @Override
