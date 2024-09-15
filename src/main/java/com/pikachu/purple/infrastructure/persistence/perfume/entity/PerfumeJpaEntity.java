@@ -3,7 +3,10 @@ package com.pikachu.purple.infrastructure.persistence.perfume.entity;
 import com.pikachu.purple.domain.perfume.Perfume;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 import lombok.AccessLevel;
@@ -12,38 +15,25 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @Entity
-@Table(
-    name = "perfume",
-    uniqueConstraints = {
-        @UniqueConstraint(
-            name = "uq_perfume_brand_name_perfume_name",
-            columnNames = {"brand_name", "perfume_name"}
-        )
-    }
-)
+@Table(name = "perfume")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class PerfumeJpaEntity {
 
     @Id
     @Column(name = "perfume_id")
-    private Long perfumeId;
+    private Long id;
 
     @Column(name = "perfume_name", nullable = false)
-    private String perfumeName;
+    private String name;
 
-    @Column(name = "brand_name", nullable = false)
-    private String brandName;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "brand_name")
+    private BrandJpaEntity brandJpaEntity;
 
     @Column(name = "image_url")
     private String imageUrl;
 
-    public static Perfume toDomain(PerfumeJpaEntity perfumeJpaEntity) {
-        return Perfume.builder()
-            .perfumeId(perfumeJpaEntity.getPerfumeId())
-            .perfumeName(perfumeJpaEntity.getPerfumeName())
-            .brandName(perfumeJpaEntity.getBrandName())
-            .imageUrl(perfumeJpaEntity.getImageUrl())
-            .build();
-    }
+    private double averageScore;
+
 
 }

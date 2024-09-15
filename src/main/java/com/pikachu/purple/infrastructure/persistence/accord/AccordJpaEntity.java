@@ -1,6 +1,5 @@
-package com.pikachu.purple.infrastructure.persistence.mood.entity;
+package com.pikachu.purple.infrastructure.persistence.accord;
 
-import com.pikachu.purple.domain.mood.Mood;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -11,12 +10,13 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @Entity
-@Table(name = "mood")
+@Table(name = "accord")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class MoodJpaEntity {
+public class AccordJpaEntity {
 
     @Id
-    @Column(name = "mood_name")
+    @Column(name = "accord_name")
     private String name;
 
 }
+

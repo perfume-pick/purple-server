@@ -2,7 +2,7 @@ package com.pikachu.purple.infrastructure.persistence.perfume.adaptor;
 
 import com.pikachu.purple.application.perfume.port.out.PerfumeBrandRepository;
 import com.pikachu.purple.domain.perfume.PerfumeBrand;
-import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeBrandJpaEntity;
+import com.pikachu.purple.infrastructure.persistence.perfume.entity.BrandJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeBrandJpaRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -17,9 +17,9 @@ public class PerfumeBrandJpaAdaptor implements PerfumeBrandRepository {
 
     @Override
     public List<PerfumeBrand> getTopThirty() {
-        List<PerfumeBrandJpaEntity> perfumeBrandEntityList = perfumeBrandJpaRepository.getTopThirtyBy(MAX_SIZE);
+        List<BrandJpaEntity> perfumeBrandEntityList = perfumeBrandJpaRepository.getTopThirtyBy(MAX_SIZE);
         return perfumeBrandEntityList.stream()
-            .map(PerfumeBrandJpaEntity::toDomain)
+            .map(BrandJpaEntity::toDomain)
             .toList();
     }
 

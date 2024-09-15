@@ -8,8 +8,6 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 import java.time.LocalDateTime;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -23,6 +21,7 @@ import lombok.NoArgsConstructor;
 public class UserJpaEntity {
 
     @Id
+    @Column(name = "user_id")
     private Long id;
 
     @Column(nullable = false)
@@ -34,13 +33,11 @@ public class UserJpaEntity {
     @Column(name = "image_url")
     private String imageUrl;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "registered_at", nullable = false)
-    private LocalDateTime registeredAt;
-
     @Enumerated(EnumType.STRING)
     @Column(name = "social_login_provider", nullable = false)
     private SocialLoginProvider socialLoginProvider;
+
+
 
     @Builder
     public UserJpaEntity(
@@ -55,7 +52,6 @@ public class UserJpaEntity {
         this.email = email;
         this.nickname = nickname;
         this.imageUrl = imageUrl;
-        this.registeredAt = registeredAt;
         this.socialLoginProvider = socialLoginProvider;
     }
 
@@ -65,7 +61,6 @@ public class UserJpaEntity {
             .email(user.getEmail())
             .nickname(user.getNickname())
             .imageUrl(user.getImageUrl())
-            .registeredAt(user.getRegisteredAt())
             .socialLoginProvider(user.getSocialLoginProvider())
             .build();
     }
@@ -76,7 +71,6 @@ public class UserJpaEntity {
             .email(entity.getEmail())
             .nickname(entity.getNickname())
             .imageUrl(entity.getImageUrl())
-            .registeredAt(entity.getRegisteredAt())
             .socialLoginProvider(entity.getSocialLoginProvider())
             .build();
     }
