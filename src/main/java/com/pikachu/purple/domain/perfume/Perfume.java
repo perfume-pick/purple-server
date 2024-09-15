@@ -13,18 +13,21 @@ public class Perfume {
     private String perfumeName;
     private String brandName;
     private String imageUrl;
+    private double averageScore;
 
     @Builder
     public Perfume(
         Long perfumeId,
         String perfumeName,
         String brandName,
-        String imageUrl
+        String imageUrl,
+        double averageScore
     ) {
         this.perfumeId = perfumeId;
         this.perfumeName = perfumeName;
         this.brandName = brandName;
         this.imageUrl = imageUrl;
+        this.averageScore = averageScore;
     }
 
 }

@@ -37,12 +37,16 @@ public class PerfumeJpaEntity {
     @Column(name = "image_url")
     private String imageUrl;
 
+    @Column(name = "average_score")
+    private double averageScore;
+
     public static Perfume toDomain(PerfumeJpaEntity perfumeJpaEntity) {
         return Perfume.builder()
             .perfumeId(perfumeJpaEntity.getPerfumeId())
             .perfumeName(perfumeJpaEntity.getPerfumeName())
             .brandName(perfumeJpaEntity.getBrandName())
             .imageUrl(perfumeJpaEntity.getImageUrl())
+            .averageScore(perfumeJpaEntity.getAverageScore())
             .build();
     }
 

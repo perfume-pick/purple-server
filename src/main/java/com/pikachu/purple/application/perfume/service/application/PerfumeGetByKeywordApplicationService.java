@@ -1,5 +1,6 @@
 package com.pikachu.purple.application.perfume.service.application;
 
+import com.pikachu.purple.application.perfume.common.dto.PerfumeDTO;
 import com.pikachu.purple.application.perfume.port.in.PerfumeGetByKeywordUseCase;
 import com.pikachu.purple.application.perfume.service.domain.PerfumeDomainService;
 import com.pikachu.purple.domain.perfume.Perfume;
@@ -17,7 +18,10 @@ public class PerfumeGetByKeywordApplicationService implements PerfumeGetByKeywor
     public Result invoke(Command command) {
         List<Perfume> perfumes = perfumeDomainService.findByKeyword(command.keyword());
 
-        return new Result(perfumes);
+        return new Result(perfumes.stream()
+            .map(PerfumeDTO::of)
+            .toList()
+        );
     }
 
 }
