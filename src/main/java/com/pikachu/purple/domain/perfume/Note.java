@@ -1,16 +1,17 @@
 package com.pikachu.purple.domain.perfume;
 
-import com.pikachu.purple.domain.accord.Accord;
+import com.pikachu.purple.domain.perfume.enums.NoteType;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
-import lombok.experimental.SuperBuilder;
 
 @Getter
-@SuperBuilder
+@Builder
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
-public class PerfumeAccord extends Accord {
+public class Note {
 
-    private int value;
+    private String name;
+    private NoteType type;
 
 }

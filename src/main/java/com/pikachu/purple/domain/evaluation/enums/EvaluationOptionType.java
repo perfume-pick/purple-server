@@ -9,7 +9,7 @@ import lombok.RequiredArgsConstructor;
 
 @Getter
 @RequiredArgsConstructor
-public enum EvaluationOption {
+public enum EvaluationOptionType {
 
     LONGEVITY_VERY_WEEK("EO101", "매우 약함"),
     LONGEVITY_WEEK("EO102", "약함"),
@@ -40,11 +40,11 @@ public enum EvaluationOption {
 
     private static final Map<String, String> CODE_MAP = Collections.unmodifiableMap(
         Stream.of(values())
-            .collect(Collectors.toMap(EvaluationOption::getCode, EvaluationOption::name))
+            .collect(Collectors.toMap(EvaluationOptionType::getCode, EvaluationOptionType::name))
     );
 
-    public static EvaluationOption of(String code) {
-        return EvaluationOption.valueOf(CODE_MAP.get(code));
+    public static EvaluationOptionType of(String code) {
+        return EvaluationOptionType.valueOf(CODE_MAP.get(code));
     }
 
 }

@@ -1,6 +1,5 @@
-package com.pikachu.purple.domain.perfume;
+package com.pikachu.purple.domain.evaluation;
 
-import com.pikachu.purple.domain.accord.Accord;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,8 +8,8 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @SuperBuilder
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
-public class PerfumeAccord extends Accord {
+public class EvaluationOptionStatistic extends EvaluationOption {
 
-    private int value;
+    private int votes;
 
 }
