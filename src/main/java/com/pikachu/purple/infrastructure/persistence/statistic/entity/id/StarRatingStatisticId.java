@@ -8,6 +8,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode
 public class StarRatingStatisticId implements Serializable {
 
+    private String statisticsDate;
     private Long perfumeJpaEntity;
     private int score;
 

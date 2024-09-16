@@ -26,14 +26,14 @@ public class FragranticaEvaluationJpaEntity {
     private PerfumeJpaEntity perfumeJpaEntity;
 
     @Id
-    @Column(name = "field_code", columnDefinition = "char(5)", nullable = false)
+    @Column(name = "field_code", columnDefinition = "char(5)")
     private String fieldCode;
 
     @Id
-    @Column(name = "option_code", columnDefinition = "char(5)", nullable = false)
+    @Column(name = "option_code", columnDefinition = "char(5)")
     private String optionCode;
 
-    @Column(name = "votes", nullable = false)
+    @Column(name = "votes")
     private int votes;
 
 

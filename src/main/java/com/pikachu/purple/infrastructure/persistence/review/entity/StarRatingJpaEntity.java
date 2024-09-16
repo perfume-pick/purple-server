@@ -1,8 +1,10 @@
 package com.pikachu.purple.infrastructure.persistence.review.entity;
 
+import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.review.entity.id.StarRatingId;
 import com.pikachu.purple.infrastructure.persistence.user.entity.UserJpaEntity;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
@@ -20,7 +22,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "star_rating")
 @IdClass(StarRatingId.class)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class StarRatingJpaEntity {
+public class StarRatingJpaEntity extends BaseEntity {
 
     @Id
     @ManyToOne(fetch = FetchType.LAZY)
@@ -32,6 +34,7 @@ public class StarRatingJpaEntity {
     @JoinColumn(name = "perfume_id")
     private PerfumeJpaEntity perfumeJpaEntity;
 
+    @Column(name = "score")
     private int score;
 
 }

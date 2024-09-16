@@ -1,6 +1,5 @@
 package com.pikachu.purple.infrastructure.persistence.perfume.entity;
 
-import com.pikachu.purple.domain.perfume.PerfumeAccord;
 import com.pikachu.purple.infrastructure.persistence.accord.AccordJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.id.PerfumeAccordId;
 import jakarta.persistence.Column;
@@ -11,7 +10,6 @@ import jakarta.persistence.IdClass;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.persistence.UniqueConstraint;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,6 +31,7 @@ public class PerfumeAccordJpaEntity {
     @JoinColumn(name = "accord_name")
     private AccordJpaEntity accordJpaEntity;
 
+    @Column(name = "value")
     private int value;
 
 }

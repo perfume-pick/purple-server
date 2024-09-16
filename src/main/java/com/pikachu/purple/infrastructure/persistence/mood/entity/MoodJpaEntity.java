@@ -1,6 +1,5 @@
 package com.pikachu.purple.infrastructure.persistence.mood.entity;
 
-import com.pikachu.purple.domain.mood.Mood;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
