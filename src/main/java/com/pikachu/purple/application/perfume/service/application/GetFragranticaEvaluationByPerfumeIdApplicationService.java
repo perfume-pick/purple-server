@@ -1,4 +1,4 @@
-package com.pikachu.purple.application.evaluation.service.application;
+package com.pikachu.purple.application.perfume.service.application;
 
 import static com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType.*;
 
