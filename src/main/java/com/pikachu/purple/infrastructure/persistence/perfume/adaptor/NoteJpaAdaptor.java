@@ -1,6 +1,6 @@
 package com.pikachu.purple.infrastructure.persistence.perfume.adaptor;
 
-import com.pikachu.purple.application.perfume.port.out.PerfumeNoteRepository;
+import com.pikachu.purple.application.perfume.port.out.NoteRepository;
 import com.pikachu.purple.domain.perfume.PerfumeNote;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeNoteJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeNoteJpaRepository;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class PerfumeNoteJpaAdaptor implements PerfumeNoteRepository {
+public class NoteJpaAdaptor implements NoteRepository {
 
     private final PerfumeNoteJpaRepository perfumeNoteJpaRepository;
 
