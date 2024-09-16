@@ -1,25 +1,25 @@
 package com.pikachu.purple.application.rating.port.out;
 
-import com.pikachu.purple.domain.rating.Rating;
+import com.pikachu.purple.domain.review.StarRating;
 import java.util.List;
 
 public interface RatingRepository {
 
-    void createOnboarding(List<Rating> ratings);
+    void createOnboarding(List<StarRating> starRatings);
 
-    void create(Rating rating);
+    void create(StarRating starRating);
 
-    List<Rating> getAllByUserId(Long userId);
+    List<StarRating> getAllByUserId(Long userId);
 
-    Rating getById(Long ratingId);
+    StarRating getById(Long ratingId);
 
-    void save(Rating rating);
+    void save(StarRating starRating);
 
-    Rating findByPerfumeIdAndUserId(
+    StarRating findByPerfumeIdAndUserId(
         Long perfumeId,
         Long userId
     );
 
-    void delete(Rating rating);
+    void delete(StarRating starRating);
 
 }

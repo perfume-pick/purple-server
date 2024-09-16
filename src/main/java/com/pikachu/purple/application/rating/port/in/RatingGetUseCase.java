@@ -1,10 +1,10 @@
 package com.pikachu.purple.application.rating.port.in;
 
-import com.pikachu.purple.domain.rating.Rating;
+import com.pikachu.purple.domain.review.StarRating;
 import java.util.List;
 
 public interface RatingGetUseCase {
 
-    List<Rating> getAllByUserId(Long userId);
+    List<StarRating> getAllByUserId(Long userId);
 
 }

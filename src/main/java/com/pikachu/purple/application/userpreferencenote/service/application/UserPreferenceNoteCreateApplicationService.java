@@ -6,10 +6,9 @@ import com.pikachu.purple.application.userpreferencenote.port.in.UserPreferenceN
 import com.pikachu.purple.application.perfume.port.in.PerfumeNoteGetUseCase;
 import com.pikachu.purple.application.perfume.util.RecommendNotesProvider;
 import com.pikachu.purple.application.rating.port.in.RatingGetUseCase;
-import com.pikachu.purple.application.userpreferencenote.service.domain.UserPreferenceNoteDomainService;
-import com.pikachu.purple.domain.note.Note;
-import com.pikachu.purple.domain.perfume.PerfumeNote;
-import com.pikachu.purple.domain.rating.Rating;
+import com.pikachu.purple.application.userpreferencenote.service.domain.UserAccordDomainService;
+import com.pikachu.purple.domain.perfume.Note;
+import com.pikachu.purple.domain.review.StarRating;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -22,26 +21,26 @@ public class UserPreferenceNoteCreateApplicationService implements
     private final RatingGetUseCase ratingGetUseCase;
     private final PerfumeNoteGetUseCase perfumeNoteGetByRatingsUseCase;
     private final RecommendNotesProvider recommendNotesProvider;
-    private final UserPreferenceNoteDomainService userPreferenceNoteDomainService;
+    private final UserAccordDomainService userAccordDomainService;
 
     @Override
     public void invoke() {
         Long userId = getCurrentUserAuthentication().userId();
 
-        List<Rating> ratings = ratingGetUseCase.getAllByUserId(userId);
+        List<StarRating> starRatings = ratingGetUseCase.getAllByUserId(userId);
 
-        List<Long> perfumeIds = ratings.stream()
-            .map(Rating::getPerfumeId)
+        List<Long> perfumeIds = starRatings.stream()
+            .map(StarRating::getPerfumeId)
             .toList();
 
         List<PerfumeNote> perfumeNotes = perfumeNoteGetByRatingsUseCase.getAllByPerfumeIds(perfumeIds);
 
         List<Note> topThreeNotes = recommendNotesProvider.getTopThreeNotes(
-            ratings,
+            starRatings,
             perfumeNotes
         );
 
-        userPreferenceNoteDomainService.save(
+        userAccordDomainService.save(
             userId,
             topThreeNotes
         );

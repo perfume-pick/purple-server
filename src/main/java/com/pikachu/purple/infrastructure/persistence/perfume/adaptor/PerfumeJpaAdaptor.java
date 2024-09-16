@@ -18,7 +18,7 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
     private static final int MAX_SIZE = 30;
     private final PerfumeJpaRepository perfumeJpaRepository;
 
-    public List<Perfume> findAllByPerfumeBrands(List<String> brands) {
+    public List<Perfume> findAllByBrands(List<String> brands) {
         List<PerfumeJpaEntity> perfumeJpaEntities = perfumeJpaRepository.findAllByBrandNameIn(brands);
 
         return perfumeJpaEntities.stream()
@@ -27,7 +27,7 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
     }
 
     @Override
-    public List<Perfume> findByUserPreferenceNotes(Long userId) {
+    public List<Perfume> findAllByUserAccords(Long userId) {
         PageRequest pageRequest = PageRequest.of(0, MAX_SIZE);
         List<PerfumeJpaEntity> perfumeJpaEntities = perfumeJpaRepository.findByUserPreferenceNotes(
             userId,
@@ -40,7 +40,7 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
     }
 
     @Override
-    public List<Perfume> findByKeyword(String keyword) {
+    public List<Perfume> findAllByKeyword(String keyword) {
         List<PerfumeJpaEntity> perfumes = perfumeJpaRepository.findByKeyword(keyword);
 
         return perfumes.stream()

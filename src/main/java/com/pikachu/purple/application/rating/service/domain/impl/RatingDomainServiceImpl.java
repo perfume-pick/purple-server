@@ -4,7 +4,7 @@ import com.pikachu.purple.application.rating.port.out.RatingRepository;
 import com.pikachu.purple.application.rating.service.domain.RatingDomainService;
 import com.pikachu.purple.application.util.IdGenerator;
 import com.pikachu.purple.bootstrap.rating.vo.RatingInfo;
-import com.pikachu.purple.domain.rating.Rating;
+import com.pikachu.purple.domain.review.StarRating;
 import java.util.List;
 import java.util.stream.IntStream;
 import lombok.RequiredArgsConstructor;
@@ -25,8 +25,8 @@ public class RatingDomainServiceImpl implements RatingDomainService {
             .mapToObj(i -> IdGenerator.generate())
             .toList();
 
-        List<Rating> ratings = IntStream.range(0, ratingIds.size())
-            .mapToObj(i -> Rating.builder()
+        List<StarRating> starRatings = IntStream.range(0, ratingIds.size())
+            .mapToObj(i -> StarRating.builder()
                 .ratingId(ratingIds.get(i))
                 .userId(userId)
                 .perfumeId(ratingInfos.get(i).perfumeId())
@@ -34,7 +34,7 @@ public class RatingDomainServiceImpl implements RatingDomainService {
                 .build())
             .toList();
 
-        ratingRepository.createOnboarding(ratings);
+        ratingRepository.createOnboarding(starRatings);
     }
 
     @Override
@@ -45,18 +45,18 @@ public class RatingDomainServiceImpl implements RatingDomainService {
     ) {
         Long ratingId = IdGenerator.generate();
 
-        Rating rating = Rating.builder()
+        StarRating starRating = StarRating.builder()
             .ratingId(ratingId)
             .userId(userId)
             .perfumeId(perfumeId)
             .score(score)
             .build();
 
-        ratingRepository.create(rating);
+        ratingRepository.create(starRating);
     }
 
     @Override
-    public List<Rating> getAllByUserId(Long userId) {
+    public List<StarRating> getAllByUserId(Long userId) {
         return ratingRepository.getAllByUserId(userId);
     }
 
@@ -66,15 +66,15 @@ public class RatingDomainServiceImpl implements RatingDomainService {
         Long ratingId,
         int score
     ) {
-        Rating rating = ratingRepository.getById(ratingId);
+        StarRating starRating = ratingRepository.getById(ratingId);
 
-        rating.updateScore(score);
+        starRating.updateScore(score);
 
-        ratingRepository.save(rating);
+        ratingRepository.save(starRating);
     }
 
     @Override
-    public Rating findByPerfumeIdAndUserId(
+    public StarRating findByPerfumeIdAndUserId(
         Long perfumeId,
         Long userId
     ) {
@@ -85,8 +85,8 @@ public class RatingDomainServiceImpl implements RatingDomainService {
     }
 
     @Override
-    public void delete(Rating rating) {
-        ratingRepository.delete(rating);
+    public void delete(StarRating starRating) {
+        ratingRepository.delete(starRating);
     }
 
 }

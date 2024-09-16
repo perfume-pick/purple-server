@@ -11,7 +11,6 @@ import lombok.Getter;
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 public class Brand {
 
-    private Long id;
     private String name;
     private String imageUrl;
     private Set<Perfume> perfumes;

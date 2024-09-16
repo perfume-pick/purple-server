@@ -1,8 +1,7 @@
 package com.pikachu.purple.application.perfume.util;
 
-import com.pikachu.purple.domain.note.Note;
-import com.pikachu.purple.domain.perfume.PerfumeNote;
-import com.pikachu.purple.domain.rating.Rating;
+import com.pikachu.purple.domain.perfume.Note;
+import com.pikachu.purple.domain.review.StarRating;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,14 +14,14 @@ public class RecommendNotesProvider {
     private static final Map<String, Double> noteScoreMap = new HashMap<>();
 
     public List<Note> getTopThreeNotes(
-        List<Rating> ratings,
+        List<StarRating> starRatings,
         List<PerfumeNote> perfumeNotes
     ) {
         noteScoreMap.clear();
 
-        for (Rating rating : ratings) {
-            Long perfumeId = rating.getPerfumeId();
-            int score = rating.getScore();
+        for (StarRating starRating : starRatings) {
+            Long perfumeId = starRating.getPerfumeId();
+            int score = starRating.getScore();
             Double weightedScore = convert(score);
 
             for (PerfumeNote note : perfumeNotes) {

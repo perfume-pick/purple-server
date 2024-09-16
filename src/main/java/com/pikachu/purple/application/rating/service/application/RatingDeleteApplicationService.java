@@ -4,7 +4,7 @@ import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUse
 
 import com.pikachu.purple.application.rating.port.in.RatingDeleteUseCase;
 import com.pikachu.purple.application.rating.service.domain.RatingDomainService;
-import com.pikachu.purple.domain.rating.Rating;
+import com.pikachu.purple.domain.review.StarRating;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,12 +18,12 @@ public class RatingDeleteApplicationService implements RatingDeleteUseCase {
     public void invoke(Long perfumeId) {
         Long userId = getCurrentUserAuthentication().userId();
 
-        Rating rating = ratingDomainService.findByPerfumeIdAndUserId(
+        StarRating starRating = ratingDomainService.findByPerfumeIdAndUserId(
             perfumeId,
             userId
         );
 
-        ratingDomainService.delete(rating);
+        ratingDomainService.delete(starRating);
     }
 
 }

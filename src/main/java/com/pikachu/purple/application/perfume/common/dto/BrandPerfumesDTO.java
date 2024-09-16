@@ -1,20 +1,19 @@
 package com.pikachu.purple.application.perfume.common.dto;
 
-import com.pikachu.purple.domain.perfume.Perfume;
+import com.pikachu.purple.domain.perfume.Brand;
 import java.util.List;
 
 public record BrandPerfumesDTO(
     String brandName,
-    List<Perfume> perfumes
+    List<PerfumeSimpleDTO> perfumeSimpleDTOs
 ) {
 
-    public static BrandPerfumesDTO of(
-        String brandName,
-        List<Perfume> perfumes
-    ) {
+    public static BrandPerfumesDTO from(Brand brand) {
         return new BrandPerfumesDTO(
-            brandName,
-            perfumes
+            brand.getName(),
+            brand.getPerfumes().stream()
+                .map(PerfumeSimpleDTO::from)
+                .toList()
         );
     }
 

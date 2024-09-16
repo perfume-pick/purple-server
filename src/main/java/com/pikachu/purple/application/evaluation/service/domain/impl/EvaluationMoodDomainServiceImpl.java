@@ -3,7 +3,6 @@ package com.pikachu.purple.application.evaluation.service.domain.impl;
 import com.pikachu.purple.application.evaluation.port.out.EvaluationMoodRepository;
 import com.pikachu.purple.application.evaluation.service.domain.EvaluationMoodDomainService;
 import com.pikachu.purple.application.util.IdGenerator;
-import com.pikachu.purple.domain.evaluation.EvaluationMood;
 import java.util.List;
 import java.util.stream.IntStream;
 import lombok.RequiredArgsConstructor;

@@ -1,6 +1,6 @@
 package com.pikachu.purple.infrastructure.redis.user.repository.impl;
 
-import com.pikachu.purple.infrastructure.redis.user.entity.UserSearchHistoryRedisHash;
+import com.pikachu.purple.infrastructure.redis.user.entity.SearchHistoryRedisHash;
 import com.pikachu.purple.infrastructure.redis.user.repository.UserSearchHistoryRedisRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -18,8 +18,8 @@ public class UserSearchHistoryRedisRepositoryImpl implements
     private final RedisTemplate<String, Object> redisTemplate;
 
     @Override
-    public List<UserSearchHistoryRedisHash> findSearchHistoryByUserId(Long userId){
-        return (List<UserSearchHistoryRedisHash>) (List<?>) redisTemplate.opsForList().range(
+    public List<SearchHistoryRedisHash> findSearchHistoryByUserId(Long userId){
+        return (List<SearchHistoryRedisHash>) (List<?>) redisTemplate.opsForList().range(
             KEY + userId,
             0,
             MAX_SIZE
@@ -29,12 +29,12 @@ public class UserSearchHistoryRedisRepositoryImpl implements
     @Override
     public void saveSearchHistory(
         Long userId,
-        UserSearchHistoryRedisHash userSearchHistoryRedisHash
+        SearchHistoryRedisHash searchHistoryRedisHash
     ) {
         Long getCount = redisTemplate.opsForList().size(KEY + userId);
         redisTemplate.opsForList().leftPush(
             KEY + userId,
-            userSearchHistoryRedisHash
+            searchHistoryRedisHash
         );
         if(getCount != null && getCount >= 10) redisTemplate.opsForList().trim(
             KEY + userId,

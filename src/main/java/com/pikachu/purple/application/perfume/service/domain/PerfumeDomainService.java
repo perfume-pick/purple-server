@@ -1,15 +1,14 @@
 package com.pikachu.purple.application.perfume.service.domain;
 
 import com.pikachu.purple.domain.perfume.Perfume;
+import com.pikachu.purple.domain.user.UserAccord;
 import java.util.List;
 
 public interface PerfumeDomainService {
 
-    List<Perfume> findAllByPerfumeBrands(List<String> brands);
+    List<Perfume> findAllByUserAccords(List<UserAccord> userAccords);
 
-    List<Perfume> findByUserPreferenceNotes(Long userId);
-
-    List<Perfume> findByKeyword(String keyword);
+    List<Perfume> findAllByKeyword(String keyword);
 
     Perfume findByPerfumeId(Long perfumeId);
 

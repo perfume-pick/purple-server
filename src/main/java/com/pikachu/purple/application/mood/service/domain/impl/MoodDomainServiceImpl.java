@@ -2,7 +2,7 @@ package com.pikachu.purple.application.mood.service.domain.impl;
 
 import com.pikachu.purple.application.mood.port.out.MoodRepository;
 import com.pikachu.purple.application.mood.service.domain.MoodDomainService;
-import com.pikachu.purple.domain.mood.Mood;
+import com.pikachu.purple.domain.review.Mood;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

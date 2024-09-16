@@ -4,9 +4,8 @@ import com.pikachu.purple.application.userevaluation.port.out.UserEvaluationRepo
 import com.pikachu.purple.application.userevaluation.service.domain.UserEvaluationDomainService;
 import com.pikachu.purple.application.util.IdGenerator;
 import com.pikachu.purple.bootstrap.review.vo.EvaluationFieldVO;
-import com.pikachu.purple.domain.evaluation.enums.EvaluationField;
-import com.pikachu.purple.domain.evaluation.enums.EvaluationOption;
-import com.pikachu.purple.domain.user.UserEvaluation;
+import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
+import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 import java.util.List;
 import java.util.stream.IntStream;
 import lombok.RequiredArgsConstructor;
@@ -37,8 +36,8 @@ public class UserEvaluationDomainServiceImpl implements UserEvaluationDomainServ
                         .userEvaluationId(userEvaluationIds.get(evaluationFormIndex + optionIndex))
                         .userId(userId)
                         .perfumeId(perfumeId)
-                        .field(EvaluationField.of(evaluationForm.fieldCode()))
-                        .option(EvaluationOption.of(evaluationForm.optionCodes().get(optionIndex)))
+                        .field(EvaluationFieldType.of(evaluationForm.fieldCode()))
+                        .option(EvaluationOptionType.of(evaluationForm.optionCodes().get(optionIndex)))
                         .build());
             })
             .toList();

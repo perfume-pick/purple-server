@@ -1,7 +1,7 @@
 package com.pikachu.purple.application.rating.service.domain;
 
 import com.pikachu.purple.bootstrap.rating.vo.RatingInfo;
-import com.pikachu.purple.domain.rating.Rating;
+import com.pikachu.purple.domain.review.StarRating;
 import java.util.List;
 
 public interface RatingDomainService {
@@ -17,7 +17,7 @@ public interface RatingDomainService {
         int score
     );
 
-    List<Rating> getAllByUserId(Long userId);
+    List<StarRating> getAllByUserId(Long userId);
 
     void updateScore(
         Long userId,
@@ -25,11 +25,11 @@ public interface RatingDomainService {
         int score
     );
 
-    Rating findByPerfumeIdAndUserId(
+    StarRating findByPerfumeIdAndUserId(
         Long perfumeId,
         Long userId
     );
 
-    void delete(Rating rating);
+    void delete(StarRating starRating);
 
 }
