@@ -1,6 +1,6 @@
 package com.pikachu.purple.bootstrap.perfume.controller;
 
-import com.pikachu.purple.application.evaluation.port.in.FragranticaEvaluationGetByPerfumeIdUseCase;
+import com.pikachu.purple.application.perfume.port.in.GetFragranticaEvaluationByPerfumeIdUseCase;
 import com.pikachu.purple.application.perfume.port.in.GetAccordsAndNotesByPerfumeIdUseCase;
 import com.pikachu.purple.application.perfume.port.in.PerfumeGetByBrandsUseCase;
 import com.pikachu.purple.application.perfume.port.in.PerfumeGetByKeywordUseCase;
@@ -8,7 +8,7 @@ import com.pikachu.purple.application.perfume.port.in.PerfumeGetByUserPreference
 import com.pikachu.purple.application.user.port.in.UserSaveSearchHistoryUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.perfume.api.PerfumeApi;
-import com.pikachu.purple.bootstrap.perfume.dto.response.GetFragranticaEvaluationsResponse;
+import com.pikachu.purple.bootstrap.perfume.dto.response.GetFragranticaEvaluationResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeByBrandsResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeByKeywordResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetAccordsAndNotesResponse;
@@ -26,7 +26,7 @@ public class PerfumeController implements PerfumeApi {
     private final PerfumeGetByUserPreferenceNoteUseCase perfumeGetByUserPreferenceNoteUseCase;
     private final PerfumeGetByKeywordUseCase perfumeGetByKeywordUseCase;
     private final GetAccordsAndNotesByPerfumeIdUseCase getAccordsAndNotesByPerfumeIdUseCase;
-    private final FragranticaEvaluationGetByPerfumeIdUseCase fragranticaEvaluationGetByPerfumeIdUseCase;
+    private final GetFragranticaEvaluationByPerfumeIdUseCase getFragranticaEvaluationByPerfumeIdUseCase;
     private final UserSaveSearchHistoryUseCase userSaveSearchHistoryUseCase;
 
     @Override
@@ -72,13 +72,14 @@ public class PerfumeController implements PerfumeApi {
     }
 
     @Override
-    public SuccessResponse<GetFragranticaEvaluationsResponse> findFragranticaEvaluationsByPerfumeId(
+    public SuccessResponse<GetFragranticaEvaluationResponse> findFragranticaEvaluationByPerfumeId(
         Long perfumeId) {
 
-        FragranticaEvaluationGetByPerfumeIdUseCase.Result result = fragranticaEvaluationGetByPerfumeIdUseCase.invoke(
-            new FragranticaEvaluationGetByPerfumeIdUseCase.Command(perfumeId));
+        GetFragranticaEvaluationByPerfumeIdUseCase.Result result = getFragranticaEvaluationByPerfumeIdUseCase.invoke(
+            new GetFragranticaEvaluationByPerfumeIdUseCase.Command(perfumeId));
 
-        return SuccessResponse.of(new GetFragranticaEvaluationsResponse(result.fragranticaEvaluations()));
+        return SuccessResponse.of(
+            new GetFragranticaEvaluationResponse(result.fragranticaEvaluation()));
     }
 
 }

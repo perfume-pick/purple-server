@@ -70,4 +70,8 @@ public enum EvaluationFieldType {
         return EvaluationFieldType.valueOf(CODE_MAP.get(code));
     }
 
+    public boolean is(EvaluationFieldType evaluationFieldType) {
+        return this == evaluationFieldType;
+    }
+
 }

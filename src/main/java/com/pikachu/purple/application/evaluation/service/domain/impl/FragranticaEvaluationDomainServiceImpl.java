@@ -2,8 +2,7 @@ package com.pikachu.purple.application.evaluation.service.domain.impl;
 
 import com.pikachu.purple.application.evaluation.port.out.FragranticaEvaluationRepository;
 import com.pikachu.purple.application.evaluation.service.domain.FragranticaEvaluationDomainService;
-import com.pikachu.purple.domain.evaluation.FragranticaEvaluation;
-import java.util.List;
+import com.pikachu.purple.domain.perfume.FragranticaEvaluation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,14 +13,8 @@ public class FragranticaEvaluationDomainServiceImpl implements FragranticaEvalua
     private final FragranticaEvaluationRepository fragranticaEvaluationRepository;
 
     @Override
-    public List<FragranticaEvaluation> findAllByPerfumeIdAndFieldCodeOrderByVotesDesc(
-        Long perfumeId,
-        String fieldCode
-    ) {
-        return fragranticaEvaluationRepository.findAllByPerfumeIdAndFieldCodeOrderByVotesDesc(
-            perfumeId,
-            fieldCode
-        );
+    public FragranticaEvaluation findByPerfumeIdOrderByVotesDesc(Long perfumeId) {
+        return fragranticaEvaluationRepository.findByPerfumeIdOrderByVotesDesc(perfumeId);
     }
 
 }

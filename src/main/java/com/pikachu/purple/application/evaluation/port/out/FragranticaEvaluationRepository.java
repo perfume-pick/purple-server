@@ -1,13 +1,9 @@
 package com.pikachu.purple.application.evaluation.port.out;
 
-import com.pikachu.purple.domain.evaluation.FragranticaEvaluation;
-import java.util.List;
+import com.pikachu.purple.domain.perfume.FragranticaEvaluation;
 
 public interface FragranticaEvaluationRepository {
 
-    List<FragranticaEvaluation> findAllByPerfumeIdAndFieldCodeOrderByVotesDesc(
-        Long perfumeId,
-        String fieldCode
-    );
+    FragranticaEvaluation findByPerfumeIdOrderByVotesDesc(Long perfumeId);
 
 }

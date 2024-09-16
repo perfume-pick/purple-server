@@ -2,7 +2,7 @@ package com.pikachu.purple.bootstrap.perfume.api;
 
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.common.security.Secured;
-import com.pikachu.purple.bootstrap.perfume.dto.response.GetFragranticaEvaluationsResponse;
+import com.pikachu.purple.bootstrap.perfume.dto.response.GetFragranticaEvaluationResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeByBrandsResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeByKeywordResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetAccordsAndNotesResponse;
@@ -53,7 +53,7 @@ public interface PerfumeApi {
     @Operation(summary = "프라그란티카 평가 정보 조회")
     @GetMapping("/{perfume-id}/fragrantica-evaluation")
     @ResponseStatus(HttpStatus.OK)
-    SuccessResponse<GetFragranticaEvaluationsResponse> findFragranticaEvaluationsByPerfumeId(
+    SuccessResponse<GetFragranticaEvaluationResponse> findFragranticaEvaluationByPerfumeId(
         @PathVariable("perfume-id") Long perfumeId);
 
 }
