@@ -5,9 +5,7 @@ import static com.pikachu.purple.bootstrap.common.exception.BusinessException.Pe
 import com.pikachu.purple.application.perfume.port.out.PerfumeRepository;
 import com.pikachu.purple.domain.accord.Accord;
 import com.pikachu.purple.domain.perfume.Perfume;
-import com.pikachu.purple.domain.perfume.PerfumeAccord;
-import com.pikachu.purple.domain.user.UserAccord;
-import com.pikachu.purple.infrastructure.persistence.accord.AccordJpaEntity;
+import com.pikachu.purple.infrastructure.persistence.accord.entity.AccordJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeJpaRepository;
 import java.util.List;

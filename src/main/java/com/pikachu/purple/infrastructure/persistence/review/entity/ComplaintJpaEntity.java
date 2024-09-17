@@ -1,6 +1,7 @@
 package com.pikachu.purple.infrastructure.persistence.review.entity;
 
 import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
+import com.pikachu.purple.infrastructure.persistence.review.entity.id.ComplaintId;
 import com.pikachu.purple.infrastructure.persistence.review.entity.id.ReviewMoodId;
 import com.pikachu.purple.infrastructure.persistence.user.entity.UserJpaEntity;
 import jakarta.persistence.Entity;
@@ -17,7 +18,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @Entity
 @Table(name = "complaint")
-@IdClass(ReviewMoodId.class)
+@IdClass(ComplaintId.class)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class ComplaintJpaEntity extends BaseEntity {
 

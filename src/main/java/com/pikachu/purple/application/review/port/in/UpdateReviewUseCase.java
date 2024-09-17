@@ -1,6 +1,6 @@
 package com.pikachu.purple.application.review.port.in;
 
-public interface ReviewUpdateUseCase {
+public interface UpdateReviewUseCase {
 
     void invoke(Command command);
 

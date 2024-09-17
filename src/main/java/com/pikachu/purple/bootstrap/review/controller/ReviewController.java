@@ -1,11 +1,11 @@
 package com.pikachu.purple.bootstrap.review.controller;
 
-import com.pikachu.purple.application.evaluation.port.in.EvaluationFormFieldGetUseCase;
-import com.pikachu.purple.application.evaluation.port.in.EvaluationFormFieldGetUseCase.Result;
+import com.pikachu.purple.application.review.port.in.EvaluationFormFieldGetUseCase;
+import com.pikachu.purple.application.review.port.in.EvaluationFormFieldGetUseCase.Result;
 import com.pikachu.purple.application.review.port.in.CreateReviewDetailUseCase;
 import com.pikachu.purple.application.review.port.in.CreateReviewSimpleUseCase;
-import com.pikachu.purple.application.review.port.in.ReviewDeleteUseCase;
-import com.pikachu.purple.application.review.port.in.ReviewUpdateUseCase;
+import com.pikachu.purple.application.review.port.in.DeleteReviewUseCase;
+import com.pikachu.purple.application.review.port.in.UpdateReviewUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.review.api.ReviewApi;
 import com.pikachu.purple.bootstrap.review.dto.request.CreateReviewDetailRequest;
@@ -22,8 +22,8 @@ public class ReviewController implements ReviewApi {
     private final CreateReviewSimpleUseCase createReviewSimpleUseCase;
     private final CreateReviewDetailUseCase createReviewDetailUseCase;
     private final EvaluationFormFieldGetUseCase evaluationFormFieldGetUseCase;
-    private final ReviewUpdateUseCase reviewUpdateUseCase;
-    private final ReviewDeleteUseCase reviewDeleteUseCase;
+    private final UpdateReviewUseCase updateReviewUseCase;
+    private final DeleteReviewUseCase deleteReviewUseCase;
 
     @Override
     public void createSimple(CreateReviewSimpleRequest request) {
@@ -65,8 +65,8 @@ public class ReviewController implements ReviewApi {
         Long reviewId,
         UpdateSimpleReviewRequest request
     ) {
-        reviewUpdateUseCase.invoke(
-            new ReviewUpdateUseCase.Command(
+        updateReviewUseCase.invoke(
+            new UpdateReviewUseCase.Command(
                 reviewId,
                 request.ratingId(),
                 request.score(),
@@ -77,7 +77,7 @@ public class ReviewController implements ReviewApi {
 
     @Override
     public void delete(Long reviewId) {
-        reviewDeleteUseCase.invoke(reviewId);
+        deleteReviewUseCase.invoke(reviewId);
     }
 
 }

@@ -23,7 +23,7 @@ public class BrandJpaEntity {
     @Column(name = "image_url")
     private String imageUrl;
 
-    @Column(name = "order")
+    @Column(name = "display_order")
     private int order;
 
     public static Brand toDomain(BrandJpaEntity jpaEntity) {

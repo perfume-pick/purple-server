@@ -11,10 +11,6 @@ public interface ReviewRepository {
         Review review
     );
 
-    List<Review> findAllByUserId(Long userId);
-
-    Review findWithPerfumeById(Long reviewId);
-
     Review updateContent(
         Long reviewId,
         String content

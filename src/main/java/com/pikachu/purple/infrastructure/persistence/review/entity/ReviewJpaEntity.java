@@ -1,10 +1,8 @@
 package com.pikachu.purple.infrastructure.persistence.review.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.review.Review;
-import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
 import com.pikachu.purple.domain.review.enums.ReviewType;
+import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.user.entity.UserJpaEntity;
 import jakarta.persistence.Column;
@@ -23,8 +21,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.SQLDelete;
-import org.hibernate.annotations.SQLRestriction;
 
 @Getter
 @Entity
@@ -69,8 +65,8 @@ public class ReviewJpaEntity extends BaseEntity {
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumns({
-        @JoinColumn(name = "user_id"),
-        @JoinColumn(name = "perfume_id")
+        @JoinColumn(name = "user_id", insertable = false, updatable = false),
+        @JoinColumn(name = "perfume_id", insertable = false, updatable = false)
     })
     private StarRatingJpaEntity starRatingJpaEntity;
 

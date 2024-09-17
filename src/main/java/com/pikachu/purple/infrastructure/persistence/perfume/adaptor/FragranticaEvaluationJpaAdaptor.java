@@ -1,6 +1,6 @@
 package com.pikachu.purple.infrastructure.persistence.perfume.adaptor;
 
-import com.pikachu.purple.application.evaluation.port.out.FragranticaEvaluationRepository;
+import com.pikachu.purple.application.perfume.port.out.FragranticaEvaluationRepository;
 import com.pikachu.purple.domain.perfume.FragranticaEvaluation;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.FragranticaEvaluationJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.FragranticaEvaluationJpaRepository;

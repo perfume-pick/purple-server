@@ -1,7 +1,7 @@
 package com.pikachu.purple.infrastructure.persistence.perfume.entity;
 
 import com.pikachu.purple.domain.perfume.PerfumeAccord;
-import com.pikachu.purple.infrastructure.persistence.accord.AccordJpaEntity;
+import com.pikachu.purple.infrastructure.persistence.accord.entity.AccordJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.id.PerfumeAccordId;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,7 +14,6 @@ import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.SQLRestriction;
 
 @Getter
 @Entity

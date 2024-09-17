@@ -2,7 +2,7 @@ package com.pikachu.purple.application.perfume.service.application;
 
 import static com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType.SEASON_TIME;
 
-import com.pikachu.purple.application.evaluation.service.domain.FragranticaEvaluationDomainService;
+import com.pikachu.purple.application.perfume.service.domain.FragranticaEvaluationDomainService;
 import com.pikachu.purple.application.perfume.common.dto.FragranticaEvaluationFieldDTO;
 import com.pikachu.purple.application.perfume.common.dto.FragranticaMostVotedOptionDTO;
 import com.pikachu.purple.application.perfume.port.in.GetFragranticaEvaluationByPerfumeIdUseCase;

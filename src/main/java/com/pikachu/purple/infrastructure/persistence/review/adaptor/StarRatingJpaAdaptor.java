@@ -43,8 +43,10 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
 
         List<StarRatingJpaEntity> starRatingJpaEntities = new ArrayList<>();
         for (StarRatingInfo starRatingInfo: starRatingInfos) {
-            PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository.findById(perfumeId)
+            PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository
+                .findById(starRatingInfo.perfumeId())
                 .orElseThrow(() -> PerfumeNotFoundException);
+
             starRatingJpaEntities.add(
                 StarRatingJpaEntity.builder()
                     .userJpaEntity(userJpaEntity)

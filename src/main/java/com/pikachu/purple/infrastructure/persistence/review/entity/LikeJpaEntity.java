@@ -1,6 +1,7 @@
 package com.pikachu.purple.infrastructure.persistence.review.entity;
 
 import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
+import com.pikachu.purple.infrastructure.persistence.review.entity.id.LikeId;
 import com.pikachu.purple.infrastructure.persistence.review.entity.id.ReviewMoodId;
 import com.pikachu.purple.infrastructure.persistence.user.entity.UserJpaEntity;
 import jakarta.persistence.Entity;
@@ -16,8 +17,8 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @Entity
-@Table(name = "like")
-@IdClass(ReviewMoodId.class)
+@Table(name = "likes")
+@IdClass(LikeId.class)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class LikeJpaEntity extends BaseEntity {
 

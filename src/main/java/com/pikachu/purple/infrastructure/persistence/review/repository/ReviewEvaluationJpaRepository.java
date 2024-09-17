@@ -6,8 +6,4 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ReviewEvaluationJpaRepository extends
-    JpaRepository<ReviewEvaluationJpaEntity, ReviewEvaluationId> {
-
-    List<ReviewEvaluationJpaEntity> findByReviewEvalu(
-        ReviewEvaluationId reviewEvaluationId);
-}
+    JpaRepository<ReviewEvaluationJpaEntity, ReviewEvaluationId> {}

@@ -13,14 +13,10 @@ public interface ReviewDomainService {
         ReviewType reviewType
     );
 
-    List<Review> findAllByUserId(Long userId);
-
     Review updateContent(
         Long reviewId,
         String content
     );
-
-    Review findWithPerfumeById(Long reviewId);
 
     Review deleteById(Long Id);
 

@@ -1,6 +1,6 @@
 package com.pikachu.purple.application.review.port.in;
 
-public interface ReviewDeleteUseCase {
+public interface DeleteReviewUseCase {
 
     void invoke(Long reviewId);
 

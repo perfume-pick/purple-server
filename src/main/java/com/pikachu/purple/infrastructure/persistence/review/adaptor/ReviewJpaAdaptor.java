@@ -55,34 +55,6 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public List<Review> findAllByUserId(Long userId) {
-        List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository.findByUserId(userId);
-
-        return reviewJpaEntities.stream()
-            .map(ReviewJpaEntity::toDomain)
-            .toList();
-    }
-
-    public Review getByIdAndUserId(
-        Long reviewId,
-        Long userId
-    ) {
-        ReviewJpaEntity reviewJpaEntity = reviewJpaRepository.findByReviewIdAndUserId(
-            reviewId,
-            userId
-        ).orElseThrow(() -> ReviewNotFoundException);
-
-        return ReviewJpaEntity.toDomain(reviewJpaEntity);
-    }
-
-    @Override
-    public Review findWithPerfumeById(Long reviewId) {
-        ReviewJpaEntity reviewJpaEntity = findEntityById(reviewId);
-
-        return ReviewJpaEntity.toDomain(reviewJpaEntity);
-    }
-
-    @Override
     public Review updateContent(
         Long reviewId,
         String content

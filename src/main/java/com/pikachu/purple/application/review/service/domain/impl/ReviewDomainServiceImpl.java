@@ -40,11 +40,6 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
     }
 
     @Override
-    public List<Review> findAllByUserId(Long userId) {
-        return reviewRepository.findAllByUserId(userId);
-    }
-
-    @Override
     public Review updateContent(
         Long reviewId,
         String content
@@ -53,11 +48,6 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
             reviewId,
             content
         );
-    }
-
-    @Override
-    public Review findWithPerfumeById(Long reviewId) {
-        return reviewRepository.findWithPerfumeById(reviewId);
     }
 
     public Review deleteById(Long id) {
