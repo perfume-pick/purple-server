@@ -10,6 +10,6 @@ public interface PerfumeDomainService {
 
     List<Perfume> findAllByKeyword(String keyword);
 
-    Perfume findByPerfumeId(Long perfumeId);
+    Perfume findById(Long perfumeId);
 
 }

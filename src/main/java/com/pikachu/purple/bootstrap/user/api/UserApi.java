@@ -68,6 +68,6 @@ public interface UserApi {
     @Operation(summary = "최근 검색 기록 전체 삭제")
     @DeleteMapping("/my/search-histories")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void deleteSearchHistories();
+    void deleteAllSearchHistory();
 
 }

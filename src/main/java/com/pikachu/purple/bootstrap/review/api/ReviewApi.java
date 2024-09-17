@@ -4,7 +4,7 @@ import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.common.security.Secured;
 import com.pikachu.purple.bootstrap.review.dto.request.CreateReviewDetailRequest;
 import com.pikachu.purple.bootstrap.review.dto.request.CreateReviewSimpleRequest;
-import com.pikachu.purple.bootstrap.review.dto.request.UpdateReviewSimpleRequest;
+import com.pikachu.purple.bootstrap.review.dto.request.UpdateSimpleReviewRequest;
 import com.pikachu.purple.bootstrap.review.dto.response.GetEvaluationFormFieldResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -52,7 +52,7 @@ public interface ReviewApi {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void update(
         @PathVariable("review-id") Long reviewId,
-        @RequestBody @Valid UpdateReviewSimpleRequest request
+        @RequestBody @Valid UpdateSimpleReviewRequest request
     );
 
     @Secured

@@ -25,4 +25,6 @@ public interface UserDomainService {
 
     int countAll();
 
+    User findById(Long userId);
+
 }

@@ -113,4 +113,9 @@ public class UserDomainServiceImpl implements UserDomainService {
         return userRepository.countAll();
     }
 
+    @Override
+    public User findById(Long userId) {
+        return userRepository.findById(userId);
+    }
+
 }

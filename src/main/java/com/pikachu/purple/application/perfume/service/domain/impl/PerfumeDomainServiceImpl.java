@@ -25,8 +25,8 @@ public class PerfumeDomainServiceImpl implements PerfumeDomainService {
     }
 
     @Override
-    public Perfume findByPerfumeId(Long perfumeId) {
-        return perfumeRepository.findByPerfumeId(perfumeId);
+    public Perfume findById(Long perfumeId) {
+        return perfumeRepository.findById(perfumeId);
     }
 
 }

@@ -1,6 +1,6 @@
 package com.pikachu.purple.bootstrap.user.controller;
 
-import com.pikachu.purple.application.user.port.in.UserDeleteAllSearchHistoryUseCase;
+import com.pikachu.purple.application.user.port.in.DeleteSearchHistoriesUseCase;
 import com.pikachu.purple.application.user.port.in.GetSearchHistoriesUseCase;
 import com.pikachu.purple.application.user.port.in.UserUpdateProfileUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
@@ -17,7 +17,7 @@ public class UserController implements UserApi {
 
     private final UserUpdateProfileUseCase userUpdateProfileUseCase;
     private final GetSearchHistoriesUseCase getSearchHistoriesUseCase;
-    private final UserDeleteAllSearchHistoryUseCase userDeleteAllSearchLogUseCase;
+    private final DeleteSearchHistoriesUseCase deleteSearchHistoriesUseCase;
 
     @Override
     public SuccessResponse<GetUserProfileResponse> updateProfile(
@@ -49,8 +49,8 @@ public class UserController implements UserApi {
     }
 
     @Override
-    public void deleteSearchHistories() {
-        userDeleteAllSearchLogUseCase.invoke();
+    public void deleteAllSearchHistory() {
+        deleteSearchHistoriesUseCase.invoke();
     }
 
 }

@@ -18,4 +18,6 @@ public interface UserRepository {
 
     int countAll();
 
+    User findById(Long userId);
+
 }

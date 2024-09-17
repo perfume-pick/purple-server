@@ -14,6 +14,6 @@ public interface SearchHistoryDomainService {
         Instant searchAt
     );
 
-    void deleteAllSearchHistory(Long userId);
+    void deleteAllSearchHistoryByUserId(Long userId);
 
 }

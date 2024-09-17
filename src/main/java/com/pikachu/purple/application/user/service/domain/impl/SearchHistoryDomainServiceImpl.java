@@ -33,8 +33,8 @@ public class SearchHistoryDomainServiceImpl implements SearchHistoryDomainServic
     }
 
     @Override
-    public void deleteAllSearchHistory(Long userId) {
-        searchHistoryRepository.deleteAllSearchHistory(userId);
+    public void deleteAllSearchHistoryByUserId(Long userId) {
+        searchHistoryRepository.deleteAllSearchHistoryByUserId(userId);
     }
 
 }

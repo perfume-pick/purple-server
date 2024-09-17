@@ -57,4 +57,12 @@ public class UserJpaAdaptor implements UserRepository {
         return userJpaRepository.countAll();
     }
 
+    /*
+    User 반환
+     */
+    @Override
+    public User findById(Long userId) {
+
+    }
+
 }

@@ -1,5 +1,6 @@
 package com.pikachu.purple.domain.review;
 
+import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.review.enums.ReviewType;
 import com.pikachu.purple.domain.user.User;
 import java.util.Set;
@@ -17,6 +18,7 @@ public class Review {
 
     private Long id;
     private User user;
+    private Perfume perfume;
     private String content;
     private ReviewType type;
     private StarRating starRating;

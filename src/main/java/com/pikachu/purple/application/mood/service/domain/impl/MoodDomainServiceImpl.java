@@ -4,6 +4,7 @@ import com.pikachu.purple.application.mood.port.out.MoodRepository;
 import com.pikachu.purple.application.mood.service.domain.MoodDomainService;
 import com.pikachu.purple.domain.review.Mood;
 import java.util.List;
+import java.util.Set;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,11 @@ public class MoodDomainServiceImpl implements MoodDomainService {
     @Override
     public List<Mood> findAll() {
         return moodRepository.findAll();
+    }
+
+    @Override
+    public Set<Mood> findAllByNames(List<String> moodNames) {
+        return moodRepository.findAllByNames(moodNames);
     }
 
 }

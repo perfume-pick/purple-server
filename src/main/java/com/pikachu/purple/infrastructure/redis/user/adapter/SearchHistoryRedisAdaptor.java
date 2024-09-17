@@ -43,7 +43,7 @@ public class SearchHistoryRedisAdaptor implements SearchHistoryRepository {
     }
 
     @Override
-    public void deleteAllSearchHistory(Long userId) {
+    public void deleteAllSearchHistoryByUserId(Long userId) {
         userSearchHistoryRedisRepository.deleteAllSearchHistory(userId);
     }
 
