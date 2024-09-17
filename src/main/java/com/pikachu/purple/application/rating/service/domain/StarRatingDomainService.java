@@ -9,7 +9,8 @@ import java.util.List;
 public interface StarRatingDomainService {
 
     void createOnboarding(
-        Long userId,
+        User user,
+        List<Perfume> perfumes,
         List<StarRatingInfo> starRatingInfos
     );
 
@@ -19,7 +20,7 @@ public interface StarRatingDomainService {
         int score
     );
 
-    List<StarRating> getAllByUserId(Long userId);
+    List<StarRating> findAllWithPerfumeAndPerfumeAccordByUserId(Long userId);
 
     void updateScore(
         Long userId,

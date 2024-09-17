@@ -12,7 +12,7 @@ public interface StarRatingRepository {
      */
     StarRating create(StarRating starRating);
 
-    List<StarRating> getAllByUserId(Long userId);
+    List<StarRating> findAllWithPerfumeAndPerfumeAccordByUserId(Long userId);
 
     StarRating getById(Long ratingId);
 

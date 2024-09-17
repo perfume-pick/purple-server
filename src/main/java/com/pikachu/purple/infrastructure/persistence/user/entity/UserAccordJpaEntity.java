@@ -31,6 +31,6 @@ public class UserAccordJpaEntity {
     private AccordJpaEntity accordJpaEntity;
 
 
-    private int value;
+    private double score;
 
 }

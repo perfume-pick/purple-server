@@ -14,4 +14,6 @@ public interface PerfumeDomainService {
 
     List<Perfume> findAllByBrandNames(List<String> brandNames);
 
+    List<Perfume> findAllByIds(List<Long> perfumeIds);
+
 }

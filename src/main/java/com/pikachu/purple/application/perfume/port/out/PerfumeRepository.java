@@ -17,4 +17,9 @@ public interface PerfumeRepository {
 
     List<Perfume> findAllByBrandNames(List<String> brandNames);
 
+    /*
+    잘 반환해주세요~
+     */
+    List<Perfume> findAllByIds(List<Long> perfumeIds);
+
 }

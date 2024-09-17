@@ -1,4 +1,4 @@
-package com.pikachu.purple.application.userpreferencenote.port.in;
+package com.pikachu.purple.application.useraccrod.port.in;
 
 import com.pikachu.purple.domain.user.UserAccord;
 import java.util.List;

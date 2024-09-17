@@ -1,6 +1,6 @@
 package com.pikachu.purple.application.rating.service.application;
 
-import com.pikachu.purple.application.rating.port.in.RatingGetUseCase;
+import com.pikachu.purple.application.rating.port.in.GetRatingsByUserIdUseCase;
 import com.pikachu.purple.application.rating.service.domain.StarRatingDomainService;
 import com.pikachu.purple.domain.review.StarRating;
 import java.util.List;
@@ -9,13 +9,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class RatingGetApplicationService implements RatingGetUseCase {
+public class GetRatingsByUserIdApplicationService implements GetRatingsByUserIdUseCase {
 
     private final StarRatingDomainService starRatingDomainService;
 
     @Override
-    public List<StarRating> getAllByUserId(Long userId) {
-        return starRatingDomainService.getAllByUserId(userId);
+    public List<StarRating> invoke(Long userId) {
+        return starRatingDomainService.findAllWithPerfumeAndPerfumeAccordByUserId(userId);
     }
 
 }

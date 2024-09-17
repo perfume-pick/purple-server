@@ -2,13 +2,13 @@ package com.pikachu.purple.application.rating.service.domain.impl;
 
 import com.pikachu.purple.application.rating.port.out.StarRatingRepository;
 import com.pikachu.purple.application.rating.service.domain.StarRatingDomainService;
-import com.pikachu.purple.application.util.IdGenerator;
 import com.pikachu.purple.bootstrap.StarRating.vo.StarRatingInfo;
 import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.domain.user.User;
 import java.util.List;
-import java.util.stream.IntStream;
+import java.util.Map;
+import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -20,20 +20,23 @@ public class StarRatingDomainServiceImpl implements StarRatingDomainService {
 
     @Override
     public void createOnboarding(
-        Long userId,
+        User user,
+        List<Perfume> perfumes,
         List<StarRatingInfo> starRatingInfos
     ) {
-        List<Long> ratingIds = IntStream.range(0, starRatingInfos.size())
-            .mapToObj(i -> IdGenerator.generate())
-            .toList();
 
-        List<StarRating> starRatings = IntStream.range(0, ratingIds.size())
-            .mapToObj(i -> StarRating.builder()
-                .ratingId(ratingIds.get(i))
-                .userId(userId)
-                .perfumeId(starRatingInfos.get(i).perfumeId())
-                .score(starRatingInfos.get(i).score())
-                .build())
+        Map<Long, Perfume> perfumeMap = perfumes.stream()
+            .collect(Collectors.toMap(Perfume::getId, perfume -> perfume));
+
+        List<StarRating> starRatings = starRatingInfos.stream()
+            .map(info -> {
+                Perfume perfume = perfumeMap.get(info.perfumeId());
+                return StarRating.builder()
+                    .user(user)
+                    .perfume(perfume)
+                    .score(info.score())
+                    .build();
+            })
             .toList();
 
         starRatingRepository.createOnboarding(starRatings);
@@ -55,8 +58,8 @@ public class StarRatingDomainServiceImpl implements StarRatingDomainService {
     }
 
     @Override
-    public List<StarRating> getAllByUserId(Long userId) {
-        return starRatingRepository.getAllByUserId(userId);
+    public List<StarRating> findAllWithPerfumeAndPerfumeAccordByUserId(Long userId) {
+        return starRatingRepository.findAllWithPerfumeAndPerfumeAccordByUserId(userId);
     }
 
     @Override

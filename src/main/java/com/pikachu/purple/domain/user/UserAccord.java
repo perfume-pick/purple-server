@@ -13,6 +13,7 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class UserAccord extends Accord {
 
-    private int value;
+    private User user;
+    private double score;
 
 }

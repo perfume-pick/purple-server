@@ -3,7 +3,7 @@ package com.pikachu.purple.application.perfume.service.application;
 import com.pikachu.purple.application.perfume.common.dto.RecommendedPerfumeDTO;
 import com.pikachu.purple.application.perfume.port.in.GetPerfumesAndUserAccordsByUserUseCase;
 import com.pikachu.purple.application.perfume.service.domain.PerfumeDomainService;
-import com.pikachu.purple.application.userpreferencenote.port.in.GetUserAccordsUseCase;
+import com.pikachu.purple.application.useraccrod.port.in.GetUserAccordsUseCase;
 import com.pikachu.purple.domain.accord.Accord;
 import com.pikachu.purple.domain.perfume.Perfume;
 import java.util.List;
