@@ -15,11 +15,6 @@ public class NoteDomainServiceImpl implements NoteDomainService {
     private final NoteRepository noteRepository;
 
     @Override
-    public List<Note> findAllByPerfumeIds(List<Long> perfumeIds) {
-        return noteRepository.getAllByPerfumeIds(perfumeIds);
-    }
-
-    @Override
     public List<Note> findAllByPerfumeId(Long perfumeId) {
         return noteRepository.findAllByPerfumeId(perfumeId);
     }

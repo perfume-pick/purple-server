@@ -26,7 +26,7 @@ public class GetAccordsAndNotesByPerfumeIdApplicationService implements
     public Result invoke(Command command) {
 
         List<PerfumeAccord> perfumeAccords = perfumeAccordDomainService
-            .findAllByPerfumeIdOrderByAccordValueDesc(
+            .findAllByPerfumeIdOrderByValueDesc(
                 command.perfumeId(),
                 MAX_SIZE
             );

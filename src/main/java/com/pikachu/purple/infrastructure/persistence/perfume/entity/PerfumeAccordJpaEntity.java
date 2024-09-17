@@ -1,5 +1,6 @@
 package com.pikachu.purple.infrastructure.persistence.perfume.entity;
 
+import com.pikachu.purple.domain.perfume.PerfumeAccord;
 import com.pikachu.purple.infrastructure.persistence.accord.AccordJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.id.PerfumeAccordId;
 import jakarta.persistence.Column;
@@ -33,5 +34,12 @@ public class PerfumeAccordJpaEntity {
 
     @Column(name = "value")
     private int value;
+
+    public static PerfumeAccord toDomain(PerfumeAccordJpaEntity jpaEntity) {
+        return PerfumeAccord.builder()
+            .name(jpaEntity.getAccordJpaEntity().getName())
+            .value(jpaEntity.getValue())
+            .build();
+    }
 
 }

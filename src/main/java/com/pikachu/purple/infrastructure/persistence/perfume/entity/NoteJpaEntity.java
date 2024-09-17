@@ -1,5 +1,6 @@
 package com.pikachu.purple.infrastructure.persistence.perfume.entity;
 
+import com.pikachu.purple.domain.perfume.Note;
 import com.pikachu.purple.domain.perfume.enums.NoteType;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.id.PerfumeNoteId;
 import jakarta.persistence.Column;
@@ -18,10 +19,10 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @Entity
-@Table(name = "perfume_note")
+@Table(name = "note")
 @IdClass(PerfumeNoteId.class)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class PerfumeNoteJpaEntity {
+public class NoteJpaEntity {
 
     @Id
     @ManyToOne(fetch = FetchType.LAZY)
@@ -39,5 +40,12 @@ public class PerfumeNoteJpaEntity {
         nullable = false
     )
     private NoteType type;
+
+    public static Note toDomain(NoteJpaEntity noteJpaEntity) {
+        return Note.builder()
+            .name(noteJpaEntity.getName())
+            .type(noteJpaEntity.getType())
+            .build();
+    }
 
 }

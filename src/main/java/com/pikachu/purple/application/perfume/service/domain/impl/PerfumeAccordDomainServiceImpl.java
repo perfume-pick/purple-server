@@ -15,11 +15,11 @@ public class PerfumeAccordDomainServiceImpl implements PerfumeAccordDomainServic
     private final PerfumeAccordRepository perfumeAccordRepository;
 
     @Override
-    public List<PerfumeAccord> findAllByPerfumeIdOrderByAccordValueDesc(
+    public List<PerfumeAccord> findAllByPerfumeIdOrderByValueDesc(
         Long perfumeId,
         int maxSize
     ) {
-        return perfumeAccordRepository.findAllByPerfumeIdOrderByAccordValueDesc(
+        return perfumeAccordRepository.findAllByPerfumeIdOrderByValueDesc(
             perfumeId,
             maxSize
         );

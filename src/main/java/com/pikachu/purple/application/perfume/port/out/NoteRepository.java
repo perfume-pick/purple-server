@@ -5,8 +5,6 @@ import java.util.List;
 
 public interface NoteRepository {
 
-    List<Note> getAllByPerfumeIds(List<Long> perfumeIds);
-
     List<Note> findAllByPerfumeId(Long perfumeId);
 
 }
