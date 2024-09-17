@@ -34,7 +34,6 @@ public interface ReviewDomainService {
 
     void updateContent(
         Long reviewId,
-        Long userId,
         String content
     );
 

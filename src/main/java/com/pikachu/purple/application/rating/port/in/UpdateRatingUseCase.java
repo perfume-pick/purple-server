@@ -1,11 +1,11 @@
 package com.pikachu.purple.application.rating.port.in;
 
-public interface RatingUpdateUseCase {
+public interface UpdateRatingUseCase {
 
     void invoke(Command command);
 
     record Command(
-        Long ratingId,
+        Long perfumeId,
         int score
     ) {
 

@@ -14,9 +14,7 @@ public interface StarRatingRepository {
 
     List<StarRating> findAllWithPerfumeAndPerfumeAccordByUserId(Long userId);
 
-    StarRating getById(Long ratingId);
-
-    void save(StarRating starRating);
+    void update(StarRating starRating);
 
     StarRating findByUserIdAndPerfumeId(
         Long userId,

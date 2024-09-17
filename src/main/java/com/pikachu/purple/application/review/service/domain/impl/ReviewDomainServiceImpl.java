@@ -76,17 +76,13 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
     @Override
     public void updateContent(
         Long reviewId,
-        Long userId,
         String content
     ) {
-        Review review = reviewRepository.getByIdAndUserId(
-            reviewId,
-            userId
-        );
+        Review review = reviewRepository.findById(reviewId);
 
         review.updateContent(content);
 
-        reviewRepository.save(review);
+        reviewRepository.update(review);
     }
 
     @Override

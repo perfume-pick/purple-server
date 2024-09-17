@@ -2,14 +2,14 @@ package com.pikachu.purple.application.rating.service.application;
 
 import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
 
-import com.pikachu.purple.application.rating.port.in.RatingUpdateUseCase;
+import com.pikachu.purple.application.rating.port.in.UpdateRatingUseCase;
 import com.pikachu.purple.application.rating.service.domain.StarRatingDomainService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class RatingUpdateApplicationService implements RatingUpdateUseCase {
+public class UpdateRatingApplicationService implements UpdateRatingUseCase {
 
     private final StarRatingDomainService starRatingDomainService;
 
@@ -19,7 +19,7 @@ public class RatingUpdateApplicationService implements RatingUpdateUseCase {
 
         starRatingDomainService.updateScore(
             userId,
-            command.ratingId(),
+            command.perfumeId(),
             command.score()
         );
     }

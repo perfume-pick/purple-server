@@ -65,14 +65,17 @@ public class StarRatingDomainServiceImpl implements StarRatingDomainService {
     @Override
     public void updateScore(
         Long userId,
-        Long ratingId,
+        Long perfumeId,
         int score
     ) {
-        StarRating starRating = starRatingRepository.getById(ratingId);
+        StarRating starRating = starRatingRepository.findByUserIdAndPerfumeId(
+            userId,
+            perfumeId
+        );
 
         starRating.updateScore(score);
 
-        starRatingRepository.save(starRating);
+        starRatingRepository.update(starRating);
     }
 
     @Override

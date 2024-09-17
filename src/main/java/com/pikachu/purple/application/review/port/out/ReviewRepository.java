@@ -9,14 +9,11 @@ public interface ReviewRepository {
 
     List<Review> findAllByUserId(Long userId);
 
-    Review getByIdAndUserId(
-        Long reviewId,
-        Long userId
-    );
+    Review findById(Long reviewId);
 
     Review findWithPerfumeById(Long reviewId);
 
-    void save(Review review);
+    void update(Review review);
 
     void deleteById(Long id);
 
