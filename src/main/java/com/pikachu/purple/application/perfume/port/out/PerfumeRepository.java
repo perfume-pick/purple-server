@@ -11,7 +11,7 @@ public interface PerfumeRepository {
     /*
     Perfume 반환할 때, PerfumeAccord <value> 값으로 내림차순 정렬
     */
-    List<Perfume> findAllByKeyword(String keyword);
+    List<Perfume> findAllWithPerfumeAccordsByKeyword(String keyword);
 
     Perfume findById(Long perfumeId);
 

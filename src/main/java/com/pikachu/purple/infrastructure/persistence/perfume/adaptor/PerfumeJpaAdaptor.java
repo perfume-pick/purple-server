@@ -31,11 +31,16 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
     }
 
     @Override
-    public List<Perfume> findAllByKeyword(String keyword) {
+    public List<Perfume> findAllByIds(List<Long> perfumeIds) {
+        return List.of();
+    }
+
+    @Override
+    public List<Perfume> findAllWithPerfumeAccordsByKeyword(String keyword) {
         List<PerfumeJpaEntity> perfumes = perfumeJpaRepository.findByKeyword(keyword);
 
         return perfumes.stream()
-            .map(PerfumeJpaEntity::toDomain)
+            .map(PerfumeJpaEntity::toDomainWithPerfumeAccord)
             .toList();
     }
 

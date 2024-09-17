@@ -17,7 +17,7 @@ public class GetPerfumesByKeywordApplicationService implements GetPerfumesByKeyw
 
     @Override
     public Result invoke(Command command) {
-        List<Perfume> perfumes = perfumeDomainService.findAllByKeyword(command.keyword());
+        List<Perfume> perfumes = perfumeDomainService.findAllWithPerfumeAccordsByKeyword(command.keyword());
 
         //TODO null -> Exception 처리
         List<PerfumeDTO> perfumeDTOs = perfumes.stream()

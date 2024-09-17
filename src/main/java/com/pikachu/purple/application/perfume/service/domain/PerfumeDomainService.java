@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface PerfumeDomainService {
 
-    List<Perfume> findAllByKeyword(String keyword);
+    List<Perfume> findAllWithPerfumeAccordsByKeyword(String keyword);
 
     Perfume findById(Long perfumeId);
 

@@ -27,8 +27,9 @@ public interface PerfumeJpaRepository extends JpaRepository<PerfumeJpaEntity, Lo
     List<PerfumeJpaEntity> findAllByAccords(List<AccordJpaEntity> accordJpaEntities);
 
 
-    @Query(value = "SELECT p.* FROM perfume p WHERE p.perfume_name LIKE :keyword OR p.brand_name LIKE :keyword",
-        nativeQuery = true)
+    @Query("select p "
+        + "from PerfumeJpaEntity p "
+        + "where p.name like :keyword or p.brandJpaEntity.name like :keyword")
     List<PerfumeJpaEntity> findByKeyword(String keyword);
 
     Optional<PerfumeJpaEntity> findByPerfumeId(Long perfumeId);

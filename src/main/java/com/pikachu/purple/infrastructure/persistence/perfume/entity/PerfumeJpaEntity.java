@@ -9,6 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OrderBy;
 import jakarta.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +41,7 @@ public class PerfumeJpaEntity {
     private double averageScore;
 
     @OneToMany(mappedBy = "perfume")
+    @OrderBy("value desc")
     private List<PerfumeAccordJpaEntity> perfumeAccordJpaEntities = new ArrayList<>();
 
     private static Perfume.PerfumeBuilder buildDefault(PerfumeJpaEntity jpaEntity) {

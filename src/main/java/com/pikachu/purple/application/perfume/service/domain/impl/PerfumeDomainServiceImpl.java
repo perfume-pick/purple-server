@@ -17,8 +17,8 @@ public class PerfumeDomainServiceImpl implements PerfumeDomainService {
     private final PerfumeRepository perfumeRepository;
 
     @Override
-    public List<Perfume> findAllByKeyword(String keyword) {
-        return perfumeRepository.findAllByKeyword("%" + keyword + "%");
+    public List<Perfume> findAllWithPerfumeAccordsByKeyword(String keyword) {
+        return perfumeRepository.findAllWithPerfumeAccordsByKeyword("%" + keyword + "%");
     }
 
     @Override
