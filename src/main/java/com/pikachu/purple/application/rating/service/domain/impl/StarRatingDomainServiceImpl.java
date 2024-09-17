@@ -44,17 +44,11 @@ public class StarRatingDomainServiceImpl implements StarRatingDomainService {
 
     @Override
     public StarRating create(
-        User user,
-        Perfume perfume,
+        Long userId,
+        Long perfumeId,
         int score
     ) {
-        StarRating starRating = StarRating.builder()
-            .user(user)
-            .perfume(perfume)
-            .score(score)
-            .build();
-
-        return starRatingRepository.create(starRating);
+        return starRatingRepository.create(userId, perfumeId, score);
     }
 
     @Override

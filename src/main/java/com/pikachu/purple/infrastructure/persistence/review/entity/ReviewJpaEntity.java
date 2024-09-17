@@ -1,5 +1,7 @@
 package com.pikachu.purple.infrastructure.persistence.review.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
 import com.pikachu.purple.domain.review.enums.ReviewType;
@@ -17,6 +19,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,8 +28,10 @@ import org.hibernate.annotations.SQLRestriction;
 
 @Getter
 @Entity
+@Builder
 @Table(name = "review")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor(access = AccessLevel.PROTECTED)
 public class ReviewJpaEntity extends BaseEntity {
 
     @Id
@@ -64,12 +69,23 @@ public class ReviewJpaEntity extends BaseEntity {
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumns({
-        @JoinColumn(name="user_id"),
-        @JoinColumn(name="perfume_id")
+        @JoinColumn(name = "user_id"),
+        @JoinColumn(name = "perfume_id")
     })
     private StarRatingJpaEntity starRatingJpaEntity;
 
     @Column(name = "like_count")
     private int likeCount;
+
+    public static Review toDomain(ReviewJpaEntity jpaEntity) {
+        return Review.builder()
+            .id(jpaEntity.getId())
+            .user(UserJpaEntity.toDomain(jpaEntity.getUserJpaEntity()))
+            .perfume(PerfumeJpaEntity.toDomain(jpaEntity.getPerfumeJpaEntity()))
+            .content(jpaEntity.getContent())
+            .type(jpaEntity.getReviewType())
+            .starRating(StarRatingJpaEntity.toDomain(jpaEntity.getStarRatingJpaEntity()))
+            .build();
+    }
 
 }

@@ -40,7 +40,7 @@ public class PerfumeJpaEntity {
     @Column(name = "average_score")
     private double averageScore;
 
-    @OneToMany(mappedBy = "perfume")
+    @OneToMany(mappedBy = "perfumeJpaEntity")
     @OrderBy("value desc")
     private List<PerfumeAccordJpaEntity> perfumeAccordJpaEntities = new ArrayList<>();
 

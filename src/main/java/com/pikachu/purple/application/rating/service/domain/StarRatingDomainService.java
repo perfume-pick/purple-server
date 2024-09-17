@@ -15,8 +15,8 @@ public interface StarRatingDomainService {
     );
 
     StarRating create(
-        User user,
-        Perfume perfume,
+        Long userId,
+        Long perfumeId,
         int score
     );
 

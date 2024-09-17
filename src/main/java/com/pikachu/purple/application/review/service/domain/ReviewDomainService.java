@@ -12,22 +12,11 @@ import java.util.Set;
 
 public interface ReviewDomainService {
 
-    void createSimple(
-        User user,
-        Perfume perfume,
+    Review create(
+        Long userId,
+        Long perfumeId,
         String content,
-        ReviewType reviewType,
-        StarRating starRating
-    );
-
-    void createDetail(
-        User user,
-        Perfume perfume,
-        String content,
-        ReviewType reviewType,
-        StarRating starRating,
-        Set<Mood> moods,
-        ReviewEvaluation reviewEvaluation
+        ReviewType reviewType
     );
 
     List<Review> findAllByUserId(Long userId);
@@ -41,4 +30,8 @@ public interface ReviewDomainService {
 
     void deleteById(Long Id);
 
+    void createReviewMoods(
+        Long reviewId,
+        List<String> moodNames
+    );
 }

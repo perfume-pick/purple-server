@@ -7,6 +7,7 @@ import com.pikachu.purple.application.perfume.port.in.GetPerfumeByIdUseCase;
 import com.pikachu.purple.application.rating.service.domain.StarRatingDomainService;
 import com.pikachu.purple.application.review.port.in.CreateReviewDetailUseCase;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
+import com.pikachu.purple.application.review.service.domain.ReviewEvaluationDomainService;
 import com.pikachu.purple.application.user.port.in.GetUserByIdUseCase;
 import com.pikachu.purple.bootstrap.review.vo.EvaluationFieldVO;
 import com.pikachu.purple.domain.evaluation.EvaluationField;
@@ -14,6 +15,7 @@ import com.pikachu.purple.domain.evaluation.EvaluationOption;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 import com.pikachu.purple.domain.review.Mood;
+import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.ReviewEvaluation;
 import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.domain.review.enums.ReviewType;
@@ -26,37 +28,35 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class CreateReviewDetailApplicationService implements CreateReviewDetailUseCase {
 
-    private final GetPerfumeByIdUseCase getPerfumeByIdUseCase;
-    private final GetUserByIdUseCase getUserByIdUseCase;
-    private final StarRatingDomainService starRatingDomainService;
     private final ReviewDomainService reviewDomainService;
-    private final MoodDomainService moodDomainService;
+    private final StarRatingDomainService starRatingDomainService;
+    private final ReviewEvaluationDomainService reviewEvaluationDomainService;
 
     @Override
     public void invoke(Command command) {
         Long userId = getCurrentUserAuthentication().userId();
 
-        GetUserByIdUseCase.Result user = getUserByIdUseCase.invoke(new GetUserByIdUseCase.Command(userId));
-        GetPerfumeByIdUseCase.Result perfume = getPerfumeByIdUseCase.invoke(new GetPerfumeByIdUseCase.Command(
-            command.perfumeId()));
-
         StarRating starRating = starRatingDomainService.create(
-            user.user(),
-            perfume.perfume(),
+            userId,
+            command.perfumeId(),
             command.score()
         );
 
-        Set<Mood> moods = moodDomainService.findAllByNames(command.moodNames());
+        Review review = reviewDomainService.create(
+            starRating.getUser().getId(),
+            starRating.getPerfume().getId(),
+            command.content(),
+            ReviewType.DETAIL
+        );
+
+        reviewDomainService.createReviewMoods(
+            review.getId(),
+            command.moodNames()
+        );
 
         ReviewEvaluation reviewEvaluation = convertToReviewEvaluation(command.evaluationFieldVOs());
-
-        reviewDomainService.createDetail(
-            user.user(),
-            perfume.perfume(),
-            command.content(),
-            ReviewType.DETAIL,
-            starRating,
-            moods,
+        reviewEvaluationDomainService.create(
+            review.getId(),
             reviewEvaluation
         );
     }

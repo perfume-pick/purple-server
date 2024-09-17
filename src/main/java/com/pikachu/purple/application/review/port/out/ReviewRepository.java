@@ -5,7 +5,11 @@ import java.util.List;
 
 public interface ReviewRepository {
 
-    void create(Review review);
+    Review create(
+        Long userId,
+        Long perfumeId,
+        Review review
+    );
 
     List<Review> findAllByUserId(Long userId);
 
@@ -17,4 +21,8 @@ public interface ReviewRepository {
 
     void deleteById(Long id);
 
+    void createReviewMoods(
+        Long reviewId,
+        List<String> moodNames
+    );
 }

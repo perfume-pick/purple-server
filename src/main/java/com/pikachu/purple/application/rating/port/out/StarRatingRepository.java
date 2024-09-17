@@ -10,7 +10,7 @@ public interface StarRatingRepository {
     /*
     StarRating 반환
      */
-    StarRating create(StarRating starRating);
+    StarRating create(Long userId, Long perfumeId, int score);
 
     List<StarRating> findAllWithPerfumeAndPerfumeAccordByUserId(Long userId);
 

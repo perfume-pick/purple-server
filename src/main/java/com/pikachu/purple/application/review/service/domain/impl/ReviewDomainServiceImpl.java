@@ -22,50 +22,21 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
     private final ReviewRepository reviewRepository;
 
     @Override
-    public void createSimple(
-        User user,
-        Perfume perfume,
+    public Review create(
+        Long userId,
+        Long perfumeId,
         String content,
-        ReviewType reviewType,
-        StarRating starRating
+        ReviewType reviewType
     ) {
         Long reviewId = IdGenerator.generate();
 
         Review review = Review.builder()
             .id(reviewId)
-            .user(user)
-            .perfume(perfume)
             .content(content)
             .type(reviewType)
-            .starRating(starRating)
             .build();
 
-        reviewRepository.create(review);
-    }
-
-    @Override
-    public void createDetail(
-        User user,
-        Perfume perfume,
-        String content,
-        ReviewType reviewType,
-        StarRating starRating,
-        Set<Mood> moods,
-        ReviewEvaluation reviewEvaluation
-    ) {
-        Long reviewId = IdGenerator.generate();
-
-        Review review = Review.builder()
-            .id(reviewId)
-            .user(user)
-            .perfume(perfume)
-            .type(reviewType)
-            .starRating(starRating)
-            .moods(moods)
-            .evaluation(reviewEvaluation)
-            .build();
-
-        reviewRepository.create(review);
+        return reviewRepository.create(userId, perfumeId, review);
     }
 
     @Override
@@ -92,6 +63,17 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
 
     public void deleteById(Long id) {
         reviewRepository.deleteById(id);
+    }
+
+    @Override
+    public void createReviewMoods(
+        Long reviewId,
+        List<String> moodNames
+    ) {
+        reviewRepository.createReviewMoods(
+            reviewId,
+            moodNames
+        );
     }
 
 }

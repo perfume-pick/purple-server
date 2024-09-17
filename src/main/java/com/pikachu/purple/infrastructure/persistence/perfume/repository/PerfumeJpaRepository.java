@@ -32,6 +32,4 @@ public interface PerfumeJpaRepository extends JpaRepository<PerfumeJpaEntity, Lo
         + "where p.name like :keyword or p.brandJpaEntity.name like :keyword")
     List<PerfumeJpaEntity> findByKeyword(String keyword);
 
-    Optional<PerfumeJpaEntity> findByPerfumeId(Long perfumeId);
-
 }

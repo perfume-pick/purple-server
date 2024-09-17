@@ -51,7 +51,7 @@ public class BusinessException extends RuntimeException {
         ErrorCode.REVIEW_NOT_FOUND
     );
     public static final BusinessException RatingNotFoundException = new BusinessException(
-        ErrorCode.RATING_NOT_FOUND
+        ErrorCode.STAR_RATING_NOT_FOUND
     );
 
     private final ErrorCode errorCode;

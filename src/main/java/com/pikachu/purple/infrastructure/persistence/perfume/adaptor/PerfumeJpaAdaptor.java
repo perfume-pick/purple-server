@@ -46,7 +46,7 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
 
     @Override
     public Perfume findById(Long perfumeId) {
-        PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository.findByPerfumeId(perfumeId)
+        PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository.findById(perfumeId)
             .orElseThrow(() -> PerfumeNotFoundException);
 
         return PerfumeJpaEntity.toDomain(perfumeJpaEntity);

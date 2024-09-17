@@ -1,5 +1,6 @@
 package com.pikachu.purple.infrastructure.persistence.review.entity;
 
+import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.review.entity.id.StarRatingId;
@@ -14,14 +15,18 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
 @Entity
+@Builder
 @Table(name = "star_rating")
 @IdClass(StarRatingId.class)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor(access = AccessLevel.PROTECTED)
 public class StarRatingJpaEntity extends BaseEntity {
 
     @Id
@@ -36,5 +41,13 @@ public class StarRatingJpaEntity extends BaseEntity {
 
     @Column(name = "score")
     private int score;
+
+    public static StarRating toDomain(StarRatingJpaEntity jpaEntity) {
+        return StarRating.builder()
+            .user(UserJpaEntity.toDomain(jpaEntity.getUserJpaEntity()))
+            .perfume(PerfumeJpaEntity.toDomain(jpaEntity.getPerfumeJpaEntity()))
+            .score(jpaEntity.getScore())
+            .build();
+    }
 
 }

@@ -6,6 +6,7 @@ import com.pikachu.purple.application.perfume.port.in.GetPerfumeByIdUseCase;
 import com.pikachu.purple.application.rating.port.in.CreateStarRatingUseCase;
 import com.pikachu.purple.application.rating.service.domain.StarRatingDomainService;
 import com.pikachu.purple.application.user.port.in.GetUserByIdUseCase;
+import com.pikachu.purple.domain.review.StarRating;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,12 +24,9 @@ public class CreateStarRatingApplicationService implements CreateStarRatingUseCa
     public void invoke(Command command) {
         Long userId = getCurrentUserAuthentication().userId();
 
-        GetUserByIdUseCase.Result user = getUserByIdUseCase.invoke(new GetUserByIdUseCase.Command(userId));
-        GetPerfumeByIdUseCase.Result perfume = getPerfumeByIdUseCase.invoke(new GetPerfumeByIdUseCase.Command(command.perfumeId()));
-
         starRatingDomainService.create(
-            user.user(),
-            perfume.perfume(),
+            userId,
+            command.perfumeId(),
             command.score()
         );
     }

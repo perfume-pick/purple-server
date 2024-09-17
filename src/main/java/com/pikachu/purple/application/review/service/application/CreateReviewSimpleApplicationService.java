@@ -27,23 +27,17 @@ public class CreateReviewSimpleApplicationService implements CreateReviewSimpleU
     public void invoke(Command command) {
         Long userId = getCurrentUserAuthentication().userId();
 
-        GetUserByIdUseCase.Result user = getUserByIdUseCase.invoke(new GetUserByIdUseCase.Command(userId));
-
-        GetPerfumeByIdUseCase.Result perfume = getPerfumeByIdUseCase.invoke(new GetPerfumeByIdUseCase.Command(
-            command.perfumeId()));
-
         StarRating starRating = starRatingDomainService.create(
-            user.user(),
-            perfume.perfume(),
+            userId,
+            command.perfumeId(),
             command.score()
         );
 
-        reviewDomainService.createSimple(
-            user.user(),
-            perfume.perfume(),
+        reviewDomainService.create(
+            starRating.getUser().getId(),
+            starRating.getPerfume().getId(),
             command.content(),
-            ReviewType.SIMPLE,
-            starRating
+            ReviewType.SIMPLE
         );
     }
 
