@@ -19,9 +19,4 @@ public class MoodDomainServiceImpl implements MoodDomainService {
         return moodRepository.findAll();
     }
 
-    @Override
-    public Set<Mood> findAllByNames(List<String> moodNames) {
-        return moodRepository.findAllByNames(moodNames);
-    }
-
 }

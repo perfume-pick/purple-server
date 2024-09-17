@@ -1,9 +1,9 @@
 package com.pikachu.purple.application.evaluation.service.application;
 
-import com.pikachu.purple.application.evaluation.common.dto.EvaluationFieldDTO;
-import com.pikachu.purple.application.evaluation.common.dto.EvaluationOptionDTO;
 import com.pikachu.purple.application.evaluation.port.in.EvaluationFormFieldGetUseCase;
-import com.pikachu.purple.application.mood.port.in.MoodGetUseCase;
+import com.pikachu.purple.application.mood.port.in.GetMoodsUseCase;
+import com.pikachu.purple.application.perfume.common.dto.EvaluationFieldDTO;
+import com.pikachu.purple.application.perfume.common.dto.EvaluationOptionDTO;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
 import java.util.List;
 import java.util.stream.Stream;
@@ -15,24 +15,19 @@ import org.springframework.stereotype.Service;
 public class EvaluationFormFieldGetApplicationService implements
     EvaluationFormFieldGetUseCase {
 
-    private final MoodGetUseCase moodGetUseCase;
+    private final GetMoodsUseCase getMoodsUseCase;
 
     @Override
     public Result invoke() {
         List<EvaluationFieldDTO> evaluationFieldDTOs = Stream.of(EvaluationFieldType.values())
             .map(field -> EvaluationFieldDTO.of(
-                field.getCode(),
-                field.getName(),
+                field,
                 field.getEvaluationOptionTypes().stream()
-                    .map(option -> EvaluationOptionDTO.of(
-                        option.getCode(),
-                        option.getName()
-                    ))
-                    .toList()
-            ))
+                    .map(EvaluationOptionDTO::from)
+                    .toList()))
             .toList();
 
-        MoodGetUseCase.Result moodResult = moodGetUseCase.invoke();
+        GetMoodsUseCase.Result moodResult = getMoodsUseCase.invoke();
 
         return new Result(
             evaluationFieldDTOs,

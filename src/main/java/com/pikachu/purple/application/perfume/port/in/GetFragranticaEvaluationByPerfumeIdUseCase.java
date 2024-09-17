@@ -1,7 +1,6 @@
 package com.pikachu.purple.application.perfume.port.in;
 
-import com.pikachu.purple.application.perfume.common.dto.EvaluationFieldDTO;
-import com.pikachu.purple.domain.perfume.FragranticaEvaluation;
+import com.pikachu.purple.application.perfume.common.dto.FragranticaEvaluationFieldDTO;
 import java.util.List;
 
 public interface GetFragranticaEvaluationByPerfumeIdUseCase {
@@ -11,6 +10,6 @@ public interface GetFragranticaEvaluationByPerfumeIdUseCase {
 
     record Command(Long perfumeId) {}
 
-    record Result(List<EvaluationFieldDTO> fragranticaEvaluation) {}
+    record Result(List<FragranticaEvaluationFieldDTO> fragranticaEvaluation) {}
 
 }

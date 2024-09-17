@@ -3,21 +3,21 @@ package com.pikachu.purple.application.perfume.common.dto;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
 import java.util.List;
 
-public record EvaluationFieldDTO(
+public record FragranticaEvaluationFieldDTO(
     String fieldCode,
     String fieldName,
-    List<EvaluationOptionDTO> evaluationOptions
+    List<FragranticaMostVotedOptionDTO> mostVotedOptions
 ) {
 
-    public static EvaluationFieldDTO of(
+    public static FragranticaEvaluationFieldDTO of(
         EvaluationFieldType fieldType,
-        List<EvaluationOptionDTO> evaluationOptionDTOs
+        List<FragranticaMostVotedOptionDTO> mostVotedOptions
     ) {
 
-        return new EvaluationFieldDTO(
+        return new FragranticaEvaluationFieldDTO(
             fieldType.getCode(),
             fieldType.getName(),
-            evaluationOptionDTOs
+            mostVotedOptions
         );
     }
 

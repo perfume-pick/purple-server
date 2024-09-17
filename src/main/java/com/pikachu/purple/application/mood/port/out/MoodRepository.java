@@ -8,9 +8,4 @@ public interface MoodRepository {
 
     List<Mood> findAll();
 
-    /*
-    NamesIn -> List<Mood> 반환
-     */
-    Set<Mood> findAllByNames(List<String> moodNames);
-
 }

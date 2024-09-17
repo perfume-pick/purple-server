@@ -1,6 +1,6 @@
 package com.pikachu.purple.application.mood.service.application;
 
-import com.pikachu.purple.application.mood.port.in.MoodGetUseCase;
+import com.pikachu.purple.application.mood.port.in.GetMoodsUseCase;
 import com.pikachu.purple.application.mood.service.domain.MoodDomainService;
 import com.pikachu.purple.domain.review.Mood;
 import java.util.List;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class MoodGetApplicationService implements MoodGetUseCase {
+public class GetMoodsApplicationService implements GetMoodsUseCase {
 
     private final MoodDomainService moodDomainService;
 

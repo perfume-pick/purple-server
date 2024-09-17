@@ -8,6 +8,4 @@ public interface MoodDomainService {
 
     List<Mood> findAll();
 
-    Set<Mood> findAllByNames(List<String> moodNames);
-
 }
