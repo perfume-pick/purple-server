@@ -2,7 +2,7 @@ package com.pikachu.purple.bootstrap.user.controller;
 
 import com.pikachu.purple.application.user.port.in.DeleteSearchHistoriesUseCase;
 import com.pikachu.purple.application.user.port.in.GetSearchHistoriesUseCase;
-import com.pikachu.purple.application.user.port.in.UserUpdateProfileUseCase;
+import com.pikachu.purple.application.user.port.in.UpdateProfileUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.user.api.UserApi;
 import com.pikachu.purple.bootstrap.user.dto.response.GetUserProfileResponse;
@@ -15,7 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RequiredArgsConstructor
 public class UserController implements UserApi {
 
-    private final UserUpdateProfileUseCase userUpdateProfileUseCase;
+    private final UpdateProfileUseCase updateProfileUseCase;
     private final GetSearchHistoriesUseCase getSearchHistoriesUseCase;
     private final DeleteSearchHistoriesUseCase deleteSearchHistoriesUseCase;
 
@@ -25,8 +25,8 @@ public class UserController implements UserApi {
         boolean isChanged,
         MultipartFile picture
     ) {
-        UserUpdateProfileUseCase.Result result = userUpdateProfileUseCase.invoke(
-            new UserUpdateProfileUseCase.Command(
+        UpdateProfileUseCase.Result result = updateProfileUseCase.invoke(
+            new UpdateProfileUseCase.Command(
                 nickname,
                 isChanged,
                 picture

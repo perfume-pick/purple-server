@@ -10,9 +10,9 @@ public interface UserRepository {
         SocialLoginProvider socialLoginProvider
     );
 
-    User save(User user);
+    void create(User user);
 
-    User getById(Long userId);
+    User update(User user);
 
     void validateNotExistedNickname(String nickname);
 

@@ -31,19 +31,17 @@ public class UserJpaAdaptor implements UserRepository {
     }
 
     @Override
-    public User save(User user) {
+    public void create(User user) {
+        UserJpaEntity userJpaEntity = UserJpaEntity.toJpaEntity(user);
+        userJpaRepository.save(userJpaEntity);
+    }
+
+    @Override
+    public User update(User user) {
         UserJpaEntity userJpaEntity = UserJpaEntity.toJpaEntity(user);
         UserJpaEntity savedUserJpaEntity = userJpaRepository.save(userJpaEntity);
 
         return UserJpaEntity.toDomain(savedUserJpaEntity);
-    }
-
-    @Override
-    public User getById(Long userId) {
-        UserJpaEntity userJpaEntity = userJpaRepository.findById(userId)
-            .orElseThrow(() -> UserNotFoundException);
-
-        return UserJpaEntity.toDomain(userJpaEntity);
     }
 
     @Override
@@ -62,7 +60,10 @@ public class UserJpaAdaptor implements UserRepository {
      */
     @Override
     public User findById(Long userId) {
+        UserJpaEntity userJpaEntity = userJpaRepository.findById(userId)
+            .orElseThrow(() -> UserNotFoundException);
 
+        return UserJpaEntity.toDomain(userJpaEntity);
     }
 
 }

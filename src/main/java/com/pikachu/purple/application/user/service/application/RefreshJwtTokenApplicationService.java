@@ -28,7 +28,7 @@ public class RefreshJwtTokenApplicationService implements RefreshJwtTokenUseCase
         userTokenRepository.findRefreshTokenByUserId(userId)
             .orElseThrow(() -> RefreshTokenNotFoundException);
 
-        User user = userDomainService.getById(userId);
+        User user = userDomainService.findById(userId);
         String accessToken = userTokenService.generateAccessToken(user);
         String newRefreshToken = userTokenService.generateRefreshToken(user);
 
