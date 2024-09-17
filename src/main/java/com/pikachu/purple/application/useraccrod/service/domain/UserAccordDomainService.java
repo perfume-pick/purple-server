@@ -7,6 +7,6 @@ public interface UserAccordDomainService {
 
     List<UserAccord> findAllByUserId(Long userId);
 
-    void createAll(List<UserAccord> userAccords);
+    void createAll(Long userId, List<UserAccord> userAccords);
 
 }

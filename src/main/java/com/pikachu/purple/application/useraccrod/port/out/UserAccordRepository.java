@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface UserAccordRepository {
 
-    void createAll(List<UserAccord> userAccords);
+    void createAll(Long userId, List<UserAccord> userAccords);
 
     List<UserAccord> findAllByUserId(Long userId);
 

@@ -53,6 +53,9 @@ public class BusinessException extends RuntimeException {
     public static final BusinessException StarRatingNotFoundException = new BusinessException(
         ErrorCode.STAR_RATING_NOT_FOUND
     );
+    public static final BusinessException AccordNotFountException = new BusinessException(
+        ErrorCode.ACCORD_NOT_FOUND
+    );
 
     private final ErrorCode errorCode;
 

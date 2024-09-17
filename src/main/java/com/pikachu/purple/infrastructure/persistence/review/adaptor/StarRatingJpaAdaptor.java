@@ -78,7 +78,14 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
 
     @Override
     public List<StarRating> findAllWithPerfumeAndPerfumeAccordByUserId(Long userId) {
-        return List.of();
+        UserJpaEntity userJpaEntity = userJpaRepository.findById(userId)
+            .orElseThrow(() -> UserNotFoundException);
+
+        List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAllByUserJpaEntity(userJpaEntity);
+
+        return starRatingJpaEntities.stream()
+            .map(StarRatingJpaEntity::toDomainWithPerfumeAccord)
+            .toList();
     }
 
     @Override

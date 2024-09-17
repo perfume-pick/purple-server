@@ -129,6 +129,13 @@ public enum ErrorCode {
         404,
         "RT001",
         "해당하는 별점이 존재하지 않습니다."
+    ),
+
+    // Accord
+    ACCORD_NOT_FOUND(
+        404,
+            "RT001",
+            "해당하는 어코드가 존재하지 않습니다."
     );
 
     private final int status;

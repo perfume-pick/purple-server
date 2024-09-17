@@ -1,4 +1,4 @@
-package com.pikachu.purple.infrastructure.persistence.accord;
+package com.pikachu.purple.infrastructure.persistence.accord.entity;
 
 import com.pikachu.purple.domain.accord.Accord;
 import jakarta.persistence.Column;

@@ -28,13 +28,13 @@ public class CreateUserAccordApplicationService implements CreateUserAccordUseCa
 
         GetUserByIdUseCase.Result user = getUserByIdUseCase.invoke(new GetUserByIdUseCase.Command(userId));
 
-        List<StarRating> starRatings = getRatingsByUserIdUseCase.invoke(userId);
+        List<StarRating> starRatings = getRatingsByUserIdUseCase.invoke(user.user().getId());
         List<UserAccord> userAccords = recommendUserAccordsProvider.getTopThreeUserAccords(
             user.user(),
             starRatings
         );
 
-        userAccordDomainService.createAll(userAccords);
+        userAccordDomainService.createAll(user.user().getId(), userAccords);
     }
 
 }

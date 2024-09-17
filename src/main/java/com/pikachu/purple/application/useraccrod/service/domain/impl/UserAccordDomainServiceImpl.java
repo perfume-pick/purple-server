@@ -14,8 +14,8 @@ public class UserAccordDomainServiceImpl implements UserAccordDomainService {
     private final UserAccordRepository userAccordRepository;
 
     @Override
-    public void createAll(List<UserAccord> userAccords) {
-        userAccordRepository.createAll(userAccords);
+    public void createAll(Long userId, List<UserAccord> userAccords) {
+        userAccordRepository.createAll(userId, userAccords);
     }
 
     @Override

@@ -54,4 +54,12 @@ public class StarRatingJpaEntity extends BaseEntity {
             .build();
     }
 
+    public static StarRating toDomainWithPerfumeAccord(StarRatingJpaEntity jpaEntity) {
+        return StarRating.builder()
+            .user(UserJpaEntity.toDomain(jpaEntity.getUserJpaEntity()))
+            .perfume(PerfumeJpaEntity.toDomainWithPerfumeAccord(jpaEntity.getPerfumeJpaEntity()))
+            .score(jpaEntity.getScore())
+            .build();
+    }
+
 }
