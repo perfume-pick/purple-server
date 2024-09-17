@@ -20,26 +20,13 @@ public class StarRatingDomainServiceImpl implements StarRatingDomainService {
 
     @Override
     public void createOnboarding(
-        User user,
-        List<Perfume> perfumes,
+        Long userId,
         List<StarRatingInfo> starRatingInfos
     ) {
-
-        Map<Long, Perfume> perfumeMap = perfumes.stream()
-            .collect(Collectors.toMap(Perfume::getId, perfume -> perfume));
-
-        List<StarRating> starRatings = starRatingInfos.stream()
-            .map(info -> {
-                Perfume perfume = perfumeMap.get(info.perfumeId());
-                return StarRating.builder()
-                    .user(user)
-                    .perfume(perfume)
-                    .score(info.score())
-                    .build();
-            })
-            .toList();
-
-        starRatingRepository.createOnboarding(starRatings);
+        starRatingRepository.createOnboarding(
+            userId,
+            starRatingInfos
+        );
     }
 
     @Override

@@ -39,6 +39,11 @@ public class UserJpaEntity {
     @Column(name = "social_login_provider", nullable = false)
     private SocialLoginProvider socialLoginProvider;
 
+    public void update(User user) {
+        this.nickname = user.getNickname();
+        this.imageUrl = user.getImageUrl();
+    }
+
     public static UserJpaEntity toJpaEntity(User domain){
         return UserJpaEntity.builder()
             .id(domain.getId())

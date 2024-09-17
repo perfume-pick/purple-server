@@ -5,6 +5,7 @@ import static com.pikachu.purple.bootstrap.common.exception.BusinessException.St
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.UserNotFoundException;
 
 import com.pikachu.purple.application.rating.port.out.StarRatingRepository;
+import com.pikachu.purple.bootstrap.StarRating.vo.StarRatingInfo;
 import com.pikachu.purple.bootstrap.common.exception.BusinessException;
 import com.pikachu.purple.bootstrap.common.exception.ErrorCode;
 import com.pikachu.purple.domain.review.StarRating;
@@ -14,6 +15,7 @@ import com.pikachu.purple.infrastructure.persistence.review.entity.StarRatingJpa
 import com.pikachu.purple.infrastructure.persistence.review.repository.StarRatingJpaRepository;
 import com.pikachu.purple.infrastructure.persistence.user.entity.UserJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.user.repository.UserJpaRepository;
+import java.util.ArrayList;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -32,8 +34,27 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
     }
 
     @Override
-    public void createOnboarding(List<StarRating> starRatings) {
+    public void createOnboarding(
+        Long userId,
+        List<StarRatingInfo> starRatingInfos
+    ) {
+        UserJpaEntity userJpaEntity = userJpaRepository.findById(userId)
+            .orElseThrow(() -> UserNotFoundException);
 
+        List<StarRatingJpaEntity> starRatingJpaEntities = new ArrayList<>();
+        for (StarRatingInfo starRatingInfo: starRatingInfos) {
+            PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository.findById(perfumeId)
+                .orElseThrow(() -> PerfumeNotFoundException);
+            starRatingJpaEntities.add(
+                StarRatingJpaEntity.builder()
+                    .userJpaEntity(userJpaEntity)
+                    .perfumeJpaEntity(perfumeJpaEntity)
+                    .score(starRatingInfo.score())
+                    .build()
+            );
+        }
+
+        starRatingJpaRepository.saveAll(starRatingJpaEntities);
     }
 
     @Override

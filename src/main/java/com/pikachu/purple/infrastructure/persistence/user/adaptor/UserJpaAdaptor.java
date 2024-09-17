@@ -17,6 +17,11 @@ public class UserJpaAdaptor implements UserRepository {
 
     private final UserJpaRepository userJpaRepository;
 
+    private UserJpaEntity findEntityById(Long userId) {
+        return userJpaRepository.findById(userId)
+            .orElseThrow(() -> UserNotFoundException);
+    }
+
     @Override
     public User findByEmailAndSocialLoginProvider(
         String email,
@@ -38,7 +43,8 @@ public class UserJpaAdaptor implements UserRepository {
 
     @Override
     public User update(User user) {
-        UserJpaEntity userJpaEntity = UserJpaEntity.toJpaEntity(user);
+        UserJpaEntity userJpaEntity = findEntityById(user.getId());
+        userJpaEntity.update(user);
         UserJpaEntity savedUserJpaEntity = userJpaRepository.save(userJpaEntity);
 
         return UserJpaEntity.toDomain(savedUserJpaEntity);
@@ -60,8 +66,7 @@ public class UserJpaAdaptor implements UserRepository {
      */
     @Override
     public User findById(Long userId) {
-        UserJpaEntity userJpaEntity = userJpaRepository.findById(userId)
-            .orElseThrow(() -> UserNotFoundException);
+        UserJpaEntity userJpaEntity = findEntityById(userId);
 
         return UserJpaEntity.toDomain(userJpaEntity);
     }

@@ -18,8 +18,6 @@ import org.springframework.transaction.annotation.Transactional;
 public class CreateStarRatingOnboardingApplicationService implements
     CreateStarRatingOnboardingUseCase {
 
-    private final GetUserByIdUseCase getUserByIdUseCase;
-    private final GetPerfumesByIdsUseCase getPerfumesByIdsUseCase;
     private final CreateUserAccordUseCase createUserAccordUseCase;
     private final StarRatingDomainService starRatingDomainService;
 
@@ -28,17 +26,8 @@ public class CreateStarRatingOnboardingApplicationService implements
     public void invoke(Command command) {
         Long userId = getCurrentUserAuthentication().userId();
 
-        GetUserByIdUseCase.Result user = getUserByIdUseCase.invoke(new GetUserByIdUseCase.Command(userId));
-
-        List<Long> perfumeIds = command.starRatingInfos().stream()
-            .map(StarRatingInfo::perfumeId)
-            .toList();
-
-        GetPerfumesByIdsUseCase.Result perfumes = getPerfumesByIdsUseCase.invoke(new GetPerfumesByIdsUseCase.Command(perfumeIds));
-
         starRatingDomainService.createOnboarding(
-            user.user(),
-            perfumes.perfumes(),
+            userId,
             command.starRatingInfos()
         );
 

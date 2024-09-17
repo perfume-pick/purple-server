@@ -9,8 +9,7 @@ import java.util.List;
 public interface StarRatingDomainService {
 
     void createOnboarding(
-        User user,
-        List<Perfume> perfumes,
+        Long userId,
         List<StarRatingInfo> starRatingInfos
     );
 

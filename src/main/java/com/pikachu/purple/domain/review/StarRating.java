@@ -16,8 +16,4 @@ public class StarRating {
     private Perfume perfume;
     private int score;
 
-    public void updateScore(int score) {
-        this.score = score;
-    }
-
 }
