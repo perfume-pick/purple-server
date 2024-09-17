@@ -4,6 +4,7 @@ import static com.pikachu.purple.bootstrap.common.exception.BusinessException.Pe
 
 import com.pikachu.purple.application.perfume.port.out.PerfumeRepository;
 import com.pikachu.purple.domain.perfume.Perfume;
+import com.pikachu.purple.domain.user.UserAccord;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeJpaRepository;
 import java.util.List;
@@ -40,6 +41,11 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
     }
 
     @Override
+    public List<Perfume> findAllByUserAccords(List<UserAccord> userAccords) {
+        return List.of();
+    }
+
+    @Override
     public List<Perfume> findAllByKeyword(String keyword) {
         List<PerfumeJpaEntity> perfumes = perfumeJpaRepository.findByKeyword(keyword);
 
@@ -54,6 +60,16 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
             .orElseThrow(() -> PerfumeNotFoundException);
 
         return PerfumeJpaEntity.toDomain(perfumeJpaEntity);
+    }
+
+    @Override
+    public List<Perfume> findAllByBrandNames(List<String> brandNames) {
+        List<PerfumeJpaEntity> perfumeJpaEntities = perfumeJpaRepository.findAllByBrandNameIn(
+            brandNames);
+
+        return perfumeJpaEntities.stream()
+            .map(PerfumeJpaEntity::toDomain)
+            .toList();
     }
 
 }

@@ -7,6 +7,4 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BrandJpaRepository extends JpaRepository<BrandJpaEntity, String> {
-
-}
+public interface BrandJpaRepository extends JpaRepository<BrandJpaEntity, String> {}

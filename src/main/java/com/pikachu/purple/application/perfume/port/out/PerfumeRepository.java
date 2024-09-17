@@ -15,4 +15,6 @@ public interface PerfumeRepository {
 
     Perfume findById(Long perfumeId);
 
+    List<Perfume> findAllByBrandNames(List<String> brandNames);
+
 }

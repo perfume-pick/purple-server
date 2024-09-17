@@ -7,6 +7,4 @@ public interface BrandRepository {
 
     List<Brand> findAll();
 
-    List<Brand> findAllByBrandNames(List<String> brands);
-
 }

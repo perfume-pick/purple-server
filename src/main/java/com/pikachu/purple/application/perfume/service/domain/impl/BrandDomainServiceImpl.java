@@ -19,9 +19,4 @@ public class BrandDomainServiceImpl implements BrandDomainService {
         return brandRepository.findAll();
     }
 
-    @Override
-    public List<Brand> findAllByBrandNames(List<String> brandNames) {
-        return brandRepository.findAllByBrandNames(brandNames);
-    }
-
 }

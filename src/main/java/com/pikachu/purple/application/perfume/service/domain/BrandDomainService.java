@@ -7,6 +7,4 @@ public interface BrandDomainService {
 
     List<Brand> findAll();
 
-    List<Brand> findAllByBrandNames(List<String> brandNames);
-
 }

@@ -1,5 +1,6 @@
 package com.pikachu.purple.infrastructure.persistence.perfume.entity;
 
+import com.pikachu.purple.domain.perfume.Perfume;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -34,5 +35,14 @@ public class PerfumeJpaEntity {
     @Column(name = "average_score")
     private double averageScore;
 
+    public static Perfume toDomain(PerfumeJpaEntity jpaEntity) {
+        return Perfume.builder()
+            .id(jpaEntity.getId())
+            .name(jpaEntity.getName())
+            .brand(BrandJpaEntity.toDomain(jpaEntity.getBrandJpaEntity()))
+            .imageUrl(jpaEntity.getImageUrl())
+            .averageScore(jpaEntity.getAverageScore())
+            .build();
+    }
 
 }
