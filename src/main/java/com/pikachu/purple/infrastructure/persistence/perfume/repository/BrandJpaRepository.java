@@ -7,9 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PerfumeBrandJpaRepository extends JpaRepository<BrandJpaEntity, String> {
-
-    @Query(value = "SELECT * FROM perfume_brand ORDER BY display_order LIMIT :maxSize", nativeQuery = true)
-    List<BrandJpaEntity> getTopThirtyBy(int maxSize);
+public interface BrandJpaRepository extends JpaRepository<BrandJpaEntity, String> {
 
 }
