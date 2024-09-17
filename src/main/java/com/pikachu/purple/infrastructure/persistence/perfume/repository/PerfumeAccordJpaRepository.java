@@ -1,7 +1,6 @@
 package com.pikachu.purple.infrastructure.persistence.perfume.repository;
 
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeAccordJpaEntity;
-import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
 import java.util.List;
 import org.springframework.data.domain.Limit;
 import org.springframework.data.jpa.repository.JpaRepository;

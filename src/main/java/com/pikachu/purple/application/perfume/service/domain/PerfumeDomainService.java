@@ -1,12 +1,11 @@
 package com.pikachu.purple.application.perfume.service.domain;
 
+import com.pikachu.purple.domain.accord.Accord;
 import com.pikachu.purple.domain.perfume.Perfume;
-import com.pikachu.purple.domain.user.UserAccord;
+import com.pikachu.purple.domain.perfume.PerfumeAccord;
 import java.util.List;
 
 public interface PerfumeDomainService {
-
-    List<Perfume> findAllByUserAccords(List<UserAccord> userAccords);
 
     List<Perfume> findAllByKeyword(String keyword);
 
@@ -15,5 +14,7 @@ public interface PerfumeDomainService {
     List<Perfume> findAllByBrandNames(List<String> brandNames);
 
     List<Perfume> findAllByIds(List<Long> perfumeIds);
+
+    List<Perfume> findAllWithPerfumeAccordsByAccords(List<Accord> accords);
 
 }

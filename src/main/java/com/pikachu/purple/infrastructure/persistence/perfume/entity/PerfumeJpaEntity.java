@@ -1,13 +1,17 @@
 package com.pikachu.purple.infrastructure.persistence.perfume.entity;
 
 import com.pikachu.purple.domain.perfume.Perfume;
+import com.pikachu.purple.domain.perfume.PerfumeAccord;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import java.util.ArrayList;
+import java.util.List;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -35,13 +39,26 @@ public class PerfumeJpaEntity {
     @Column(name = "average_score")
     private double averageScore;
 
-    public static Perfume toDomain(PerfumeJpaEntity jpaEntity) {
+    @OneToMany(mappedBy = "perfume")
+    private List<PerfumeAccordJpaEntity> perfumeAccordJpaEntities = new ArrayList<>();
+
+    private static Perfume.PerfumeBuilder buildDefault(PerfumeJpaEntity jpaEntity) {
         return Perfume.builder()
             .id(jpaEntity.getId())
             .name(jpaEntity.getName())
             .brand(BrandJpaEntity.toDomain(jpaEntity.getBrandJpaEntity()))
             .imageUrl(jpaEntity.getImageUrl())
-            .averageScore(jpaEntity.getAverageScore())
+            .averageScore(jpaEntity.getAverageScore());
+    }
+
+    public static Perfume toDomain(PerfumeJpaEntity jpaEntity) {
+        return buildDefault(jpaEntity).build();
+    }
+
+    public static Perfume toDomainWithPerfumeAccord(PerfumeJpaEntity jpaEntity) {
+        return buildDefault(jpaEntity)
+            .accords(jpaEntity.getPerfumeAccordJpaEntities().stream()
+                .map(PerfumeAccordJpaEntity::toDomain).toList())
             .build();
     }
 

@@ -2,7 +2,6 @@ package com.pikachu.purple.domain.user;
 
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
-import java.time.LocalDateTime;
 import java.util.List;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

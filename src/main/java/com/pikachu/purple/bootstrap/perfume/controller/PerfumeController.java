@@ -26,7 +26,7 @@ public class PerfumeController implements PerfumeApi {
     private final CreateSearchHistoryUseCase createSearchHistoryUseCase;
 
     @Override
-    public SuccessResponse<GetPerfumesAndUserAccordsByUserResponse> findPerfumesAndUserAccordsByUser() {
+    public SuccessResponse<GetPerfumesAndUserAccordsByUserResponse> findAllWithUserAccordsByUser() {
         GetPerfumesAndUserAccordsByUserUseCase.Result result = getPerfumesAndUserAccordsByUserUseCase.invoke();
 
         return SuccessResponse.of(new GetPerfumesAndUserAccordsByUserResponse(
