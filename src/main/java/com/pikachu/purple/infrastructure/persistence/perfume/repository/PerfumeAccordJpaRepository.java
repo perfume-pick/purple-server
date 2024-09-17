@@ -13,7 +13,8 @@ public interface PerfumeAccordJpaRepository extends JpaRepository<PerfumeAccordJ
 
     @Query("select pa "
         + "from PerfumeAccordJpaEntity pa "
-        + "where pa.perfumeJpaEntity.id = :perfumeId")
+        + "where pa.perfumeJpaEntity.id = :perfumeId "
+        + "order by pa.value")
     List<PerfumeAccordJpaEntity> findAllByPerfumeIdOrderByValueDesc(
         Long perfumeId, Limit limit);
 
