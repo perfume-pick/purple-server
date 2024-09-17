@@ -38,8 +38,8 @@ public interface ReviewDomainService {
         String content
     );
 
-    Review findById(Long reviewId);
+    Review findWithPerfumeById(Long reviewId);
 
-    void delete(Review review);
+    void deleteById(Long Id);
 
 }

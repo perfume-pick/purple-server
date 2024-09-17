@@ -28,11 +28,14 @@ public interface StarRatingDomainService {
         int score
     );
 
-    StarRating findByPerfumeIdAndUserId(
-        Long perfumeId,
-        Long userId
+    StarRating findByUserIdAndPerfumeId(
+        Long userId,
+        Long perfumeId
     );
 
-    void delete(StarRating starRating);
+    void deleteByUserIdAndPerfumeId(
+        Long userId,
+        Long perfumeId
+    );
 
 }

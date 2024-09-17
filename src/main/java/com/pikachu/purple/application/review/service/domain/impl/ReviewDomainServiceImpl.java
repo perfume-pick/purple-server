@@ -90,13 +90,12 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
     }
 
     @Override
-    public Review findById(Long reviewId) {
-        return reviewRepository.findById(reviewId);
+    public Review findWithPerfumeById(Long reviewId) {
+        return reviewRepository.findWithPerfumeById(reviewId);
     }
 
-    @Override
-    public void delete(Review review) {
-        reviewRepository.delete(review);
+    public void deleteById(Long id) {
+        reviewRepository.deleteById(id);
     }
 
 }

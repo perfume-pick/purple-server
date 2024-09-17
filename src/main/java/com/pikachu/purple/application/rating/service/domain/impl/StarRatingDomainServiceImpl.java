@@ -76,19 +76,25 @@ public class StarRatingDomainServiceImpl implements StarRatingDomainService {
     }
 
     @Override
-    public StarRating findByPerfumeIdAndUserId(
-        Long perfumeId,
-        Long userId
+    public StarRating findByUserIdAndPerfumeId(
+        Long userId,
+        Long perfumeId
     ) {
-        return starRatingRepository.findByPerfumeIdAndUserId(
-            perfumeId,
-            userId
+        return starRatingRepository.findByUserIdAndPerfumeId(
+            userId,
+            perfumeId
         );
     }
 
     @Override
-    public void delete(StarRating starRating) {
-        starRatingRepository.delete(starRating);
+    public void deleteByUserIdAndPerfumeId(
+        Long userId,
+        Long perfumeId
+    ) {
+        starRatingRepository.deleteByUserIdAndPerfumeId(
+            userId,
+            perfumeId
+        );
     }
 
 }

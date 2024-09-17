@@ -1,6 +1,6 @@
 package com.pikachu.purple.application.review.service.application;
 
-import com.pikachu.purple.application.rating.port.in.RatingDeleteUseCase;
+import com.pikachu.purple.application.rating.port.in.DeleteStarRatingUseCase;
 import com.pikachu.purple.application.review.port.in.ReviewDeleteUseCase;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
 import com.pikachu.purple.domain.review.Review;
@@ -13,16 +13,16 @@ import org.springframework.transaction.annotation.Transactional;
 public class ReviewDeleteApplicationService implements ReviewDeleteUseCase {
 
     private final ReviewDomainService reviewDomainService;
-    private final RatingDeleteUseCase ratingDeleteUseCase;
+    private final DeleteStarRatingUseCase deleteStarRatingUseCase;
 
     @Override
     @Transactional
     public void invoke(Long reviewId) {
-        Review review = reviewDomainService.findById(reviewId);
+        Review review = reviewDomainService.findWithPerfumeById(reviewId);
 
-        reviewDomainService.delete(review);
+        reviewDomainService.deleteById(review.getId());
 
-        ratingDeleteUseCase.invoke(review.getPerfumeId());
+        deleteStarRatingUseCase.invoke(review.getPerfume().getId());
     }
 
 }

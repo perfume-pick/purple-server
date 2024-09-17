@@ -14,10 +14,10 @@ public interface ReviewRepository {
         Long userId
     );
 
-    Review findById(Long reviewId);
+    Review findWithPerfumeById(Long reviewId);
 
     void save(Review review);
 
-    void delete(Review review);
+    void deleteById(Long id);
 
 }

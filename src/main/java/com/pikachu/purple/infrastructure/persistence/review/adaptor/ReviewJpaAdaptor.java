@@ -45,7 +45,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public Review findById(Long reviewId) {
+    public Review findWithPerfumeById(Long reviewId) {
         ReviewJpaEntity reviewJpaEntity = reviewJpaRepository.findById(reviewId)
             .orElseThrow(() -> ReviewNotFoundException);
 
@@ -59,7 +59,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public void delete(Review review) {
+    public void deleteById(Review review) {
         ReviewJpaEntity reviewJpaEntity = ReviewJpaEntity.toJpaEntity(review);
         reviewJpaRepository.delete(reviewJpaEntity);
     }
