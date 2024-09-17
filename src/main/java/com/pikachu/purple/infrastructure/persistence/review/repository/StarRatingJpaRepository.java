@@ -9,7 +9,7 @@ public interface StarRatingJpaRepository extends JpaRepository<StarRatingJpaEnti
 
     @Query("select sr "
         + "from StarRatingJpaEntity sr "
-        + "where sr.userJpaEntity.id = :userId")
+        + "where sr.userJpaEntity.id = :userId and sr.perfumeJpaEntity.id = :perfumeId")
     Optional<StarRatingJpaEntity> findByUserIdAndPerfumeId(Long userId, Long perfumeId);
 
 }

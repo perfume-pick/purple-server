@@ -30,6 +30,11 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     private final MoodJpaRepository moodJpaRepository;
     private final ReviewMoodJpaRepository reviewMoodJpaRepository;
 
+    private ReviewJpaEntity findEntityById(Long reviewId) {
+        return reviewJpaRepository.findById(reviewId)
+            .orElseThrow(() -> ReviewNotFoundException);
+    }
+
     @Override
     public Review create(Long userId, Long perfumeId, Review review) {
         UserJpaEntity userJpaEntity = userJpaRepository.findById(userId)
@@ -58,7 +63,6 @@ public class ReviewJpaAdaptor implements ReviewRepository {
             .toList();
     }
 
-    @Override
     public Review getByIdAndUserId(
         Long reviewId,
         Long userId
@@ -73,10 +77,22 @@ public class ReviewJpaAdaptor implements ReviewRepository {
 
     @Override
     public Review findWithPerfumeById(Long reviewId) {
-        ReviewJpaEntity reviewJpaEntity = reviewJpaRepository.findById(reviewId)
-            .orElseThrow(() -> ReviewNotFoundException);
+        ReviewJpaEntity reviewJpaEntity = findEntityById(reviewId);
 
         return ReviewJpaEntity.toDomain(reviewJpaEntity);
+    }
+
+    @Override
+    public Review updateContent(
+        Long reviewId,
+        String content
+    ) {
+        ReviewJpaEntity reviewJpaEntity = findEntityById(reviewId);
+        reviewJpaEntity.updateContent(content);
+
+        ReviewJpaEntity reviewJpaEntitySaved = reviewJpaRepository.save(reviewJpaEntity);
+
+        return ReviewJpaEntity.toDomain(reviewJpaEntitySaved);
     }
 
     @Override
@@ -84,8 +100,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
         Long reviewId,
         List<String> moodNames
     ) {
-        ReviewJpaEntity reviewJpaEntity = reviewJpaRepository.findById(reviewId)
-            .orElseThrow(() -> new BusinessException(ErrorCode.REVIEW_NOT_FOUND));
+        ReviewJpaEntity reviewJpaEntity = findEntityById(reviewId);
 
         List<MoodJpaEntity> moodJpaEntities = moodJpaRepository.findAllByNameIn(moodNames);
         List<ReviewMoodJpaEntity> reviewMoodJpaEntities = moodJpaEntities.stream()
@@ -98,16 +113,13 @@ public class ReviewJpaAdaptor implements ReviewRepository {
         reviewMoodJpaRepository.saveAll(reviewMoodJpaEntities);
     }
 
-    @Override
-    public void save(Review review) {
-        ReviewJpaEntity reviewJpaEntity = ReviewJpaEntity.toJpaEntity(review);
-        reviewJpaRepository.save(reviewJpaEntity);
-    }
 
     @Override
-    public void deleteById(Review review) {
-        ReviewJpaEntity reviewJpaEntity = ReviewJpaEntity.toJpaEntity(review);
+    public Review deleteById(Long reviewId) {
+        ReviewJpaEntity reviewJpaEntity = findEntityById(reviewId);
+
         reviewJpaRepository.delete(reviewJpaEntity);
+        return ReviewJpaEntity.toDomain(reviewJpaEntity);
     }
 
 

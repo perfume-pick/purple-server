@@ -62,24 +62,10 @@ public class StarRatingDomainServiceImpl implements StarRatingDomainService {
         Long perfumeId,
         int score
     ) {
-        StarRating starRating = starRatingRepository.findByUserIdAndPerfumeId(
+        starRatingRepository.updateScore(
             userId,
-            perfumeId
-        );
-
-        starRating.updateScore(score);
-
-        starRatingRepository.update(starRating);
-    }
-
-    @Override
-    public StarRating findByUserIdAndPerfumeId(
-        Long userId,
-        Long perfumeId
-    ) {
-        return starRatingRepository.findByUserIdAndPerfumeId(
-            userId,
-            perfumeId
+            perfumeId,
+            score
         );
     }
 

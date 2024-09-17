@@ -42,6 +42,10 @@ public class StarRatingJpaEntity extends BaseEntity {
     @Column(name = "score")
     private int score;
 
+    public void updateScore(int score) {
+        this.score = score;
+    }
+
     public static StarRating toDomain(StarRatingJpaEntity jpaEntity) {
         return StarRating.builder()
             .user(UserJpaEntity.toDomain(jpaEntity.getUserJpaEntity()))

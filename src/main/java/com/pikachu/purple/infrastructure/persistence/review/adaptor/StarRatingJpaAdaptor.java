@@ -1,5 +1,9 @@
 package com.pikachu.purple.infrastructure.persistence.review.adaptor;
 
+import static com.pikachu.purple.bootstrap.common.exception.BusinessException.PerfumeNotFoundException;
+import static com.pikachu.purple.bootstrap.common.exception.BusinessException.StarRatingNotFoundException;
+import static com.pikachu.purple.bootstrap.common.exception.BusinessException.UserNotFoundException;
+
 import com.pikachu.purple.application.rating.port.out.StarRatingRepository;
 import com.pikachu.purple.bootstrap.common.exception.BusinessException;
 import com.pikachu.purple.bootstrap.common.exception.ErrorCode;
@@ -22,6 +26,11 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
     private final PerfumeJpaRepository perfumeJpaRepository;
     private final UserJpaRepository userJpaRepository;
 
+    private StarRatingJpaEntity findEntityByUserIdAndPerfumeId(Long userId, Long perfumeId) {
+        return starRatingJpaRepository.findByUserIdAndPerfumeId(
+            userId, perfumeId).orElseThrow(() -> StarRatingNotFoundException);
+    }
+
     @Override
     public void createOnboarding(List<StarRating> starRatings) {
 
@@ -30,10 +39,10 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
     @Override
     public StarRating create(Long userId, Long perfumeId, int score) {
         UserJpaEntity userJpaEntity = userJpaRepository.findById(userId)
-            .orElseThrow(() -> new BusinessException(ErrorCode.USER_NOT_FOUND));
+            .orElseThrow(() -> UserNotFoundException);
 
         PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository.findById(perfumeId)
-            .orElseThrow(() -> new BusinessException(ErrorCode.PERFUME_NOT_FOUND));
+            .orElseThrow(() -> PerfumeNotFoundException);
 
         StarRatingJpaEntity starRatingJpaEntity = StarRatingJpaEntity.builder()
             .userJpaEntity(userJpaEntity)
@@ -52,20 +61,22 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
     }
 
     @Override
-    public void update(StarRating starRating) {
+    public void updateScore(Long userId, Long perfumeId, int score) {
+        StarRatingJpaEntity starRatingJpaEntity = findEntityByUserIdAndPerfumeId(
+            userId,
+            perfumeId
+        );
 
-    }
-
-    @Override
-    public StarRating findByUserIdAndPerfumeId(Long userId, Long perfumeId) {
-        StarRatingJpaEntity starRatingJpaEntity = starRatingJpaRepository.findByUserIdAndPerfumeId(
-            userId, perfumeId).orElseThrow(() -> new BusinessException(ErrorCode.STAR_RATING_NOT_FOUND));
-
-        return StarRatingJpaEntity.toDomain(starRatingJpaEntity);
+        starRatingJpaEntity.updateScore(score);
+        starRatingJpaRepository.save(starRatingJpaEntity);
     }
 
     @Override
     public void deleteByUserIdAndPerfumeId(Long userId, Long perfumeId) {
-
+        StarRatingJpaEntity starRatingJpaEntity = findEntityByUserIdAndPerfumeId(
+            userId,
+            perfumeId
+        );
+        starRatingJpaRepository.delete(starRatingJpaEntity);
     }
 }

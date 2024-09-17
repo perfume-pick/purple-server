@@ -13,13 +13,14 @@ public interface ReviewRepository {
 
     List<Review> findAllByUserId(Long userId);
 
-    Review findById(Long reviewId);
-
     Review findWithPerfumeById(Long reviewId);
 
-    void update(Review review);
+    Review updateContent(
+        Long reviewId,
+        String content
+    );
 
-    void deleteById(Long id);
+    Review deleteById(Long id);
 
     void createReviewMoods(
         Long reviewId,

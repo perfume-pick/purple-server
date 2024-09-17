@@ -77,6 +77,10 @@ public class ReviewJpaEntity extends BaseEntity {
     @Column(name = "like_count")
     private int likeCount;
 
+    public void updateContent(String content) {
+        this.content = content;
+    }
+
     public static Review toDomain(ReviewJpaEntity jpaEntity) {
         return Review.builder()
             .id(jpaEntity.getId())

@@ -1,6 +1,6 @@
 package com.pikachu.purple.application.rating.port.in;
 
-public interface UpdateRatingUseCase {
+public interface UpdateStarRatingUseCase {
 
     void invoke(Command command);
 

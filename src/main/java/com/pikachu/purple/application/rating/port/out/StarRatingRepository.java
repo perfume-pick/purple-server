@@ -14,11 +14,10 @@ public interface StarRatingRepository {
 
     List<StarRating> findAllWithPerfumeAndPerfumeAccordByUserId(Long userId);
 
-    void update(StarRating starRating);
-
-    StarRating findByUserIdAndPerfumeId(
+    void updateScore(
         Long userId,
-        Long perfumeId
+        Long perfumeId,
+        int score
     );
 
     void deleteByUserIdAndPerfumeId(

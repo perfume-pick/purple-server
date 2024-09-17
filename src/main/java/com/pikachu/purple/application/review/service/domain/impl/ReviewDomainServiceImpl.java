@@ -45,15 +45,14 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
     }
 
     @Override
-    public void updateContent(
+    public Review updateContent(
         Long reviewId,
         String content
     ) {
-        Review review = reviewRepository.findById(reviewId);
-
-        review.updateContent(content);
-
-        reviewRepository.update(review);
+        return reviewRepository.updateContent(
+            reviewId,
+            content
+        );
     }
 
     @Override
@@ -61,8 +60,8 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
         return reviewRepository.findWithPerfumeById(reviewId);
     }
 
-    public void deleteById(Long id) {
-        reviewRepository.deleteById(id);
+    public Review deleteById(Long id) {
+        return reviewRepository.deleteById(id);
     }
 
     @Override
