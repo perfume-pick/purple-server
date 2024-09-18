@@ -5,6 +5,7 @@ import com.pikachu.purple.application.perfume.port.in.GetPerfumesByKeywordUseCas
 import com.pikachu.purple.application.perfume.service.domain.PerfumeDomainService;
 import com.pikachu.purple.domain.accord.Accord;
 import com.pikachu.purple.domain.perfume.Perfume;
+import jakarta.transaction.Transactional;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,7 @@ public class GetPerfumesByKeywordApplicationService implements GetPerfumesByKeyw
     private final PerfumeDomainService perfumeDomainService;
 
     @Override
+    @Transactional
     public Result invoke(Command command) {
         List<Perfume> perfumes = perfumeDomainService.findAllWithPerfumeAccordsByKeyword(command.keyword());
 
