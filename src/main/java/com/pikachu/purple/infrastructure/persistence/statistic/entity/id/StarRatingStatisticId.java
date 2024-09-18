@@ -3,9 +3,10 @@ package com.pikachu.purple.infrastructure.persistence.statistic.entity.id;
 import java.io.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
 @EqualsAndHashCode
+@NoArgsConstructor
 public class StarRatingStatisticId implements Serializable {
 
     private String statisticsDate;

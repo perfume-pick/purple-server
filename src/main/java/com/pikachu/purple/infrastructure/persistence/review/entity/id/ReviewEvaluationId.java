@@ -4,9 +4,10 @@ import jakarta.persistence.Embeddable;
 import java.io.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
 @EqualsAndHashCode
+@NoArgsConstructor
 public class ReviewEvaluationId implements Serializable {
 
     private Long reviewJpaEntity;

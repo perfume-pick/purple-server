@@ -5,9 +5,10 @@ import java.time.Instant;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
 @EqualsAndHashCode
+@NoArgsConstructor
 public class EvaluationStatisticId implements Serializable {
 
     private String statisticsDate;
