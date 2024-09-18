@@ -2,6 +2,7 @@ package com.pikachu.purple.infrastructure.persistence.user.entity;
 
 import com.pikachu.purple.domain.user.User;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
+import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -20,7 +21,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
-public class UserJpaEntity {
+public class UserJpaEntity extends BaseEntity {
 
     @Id
     @Column(name = "user_id")
