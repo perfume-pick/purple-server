@@ -31,7 +31,7 @@ public class RecommendUserAccordsProvider {
             for (PerfumeAccord perfumeAccord : perfumeAccords) {
                 perfumeAccordScoreMap.merge(
                     perfumeAccord.getName(),
-                    weightedScore * perfumeAccord.getValue(),
+                    weightedScore,
                     Double::sum
                 );
             }
