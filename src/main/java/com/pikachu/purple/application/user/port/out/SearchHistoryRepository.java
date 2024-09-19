@@ -8,9 +8,8 @@ public interface SearchHistoryRepository {
 
     List<SearchHistory> findAllByUserId(Long userId);
 
-    void createSearchHistory(
-        Long userId,
-        String keyword,
+    void create(
+        SearchHistory searchHistory,
         Instant searchAt
     );
 

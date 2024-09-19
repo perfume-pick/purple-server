@@ -24,6 +24,17 @@ public class SearchHistoryRedisHash {
 
     private Instant searchAt;
 
+    public static SearchHistoryRedisHash toHash(
+        SearchHistory searchHistory,
+        Instant searchAt
+    ){
+        return SearchHistoryRedisHash.builder()
+            .id(searchHistory.getId())
+            .keyword(searchHistory.getKeyword())
+            .searchAt(searchAt)
+            .build();
+    }
+
     public static SearchHistory toDomain(SearchHistoryRedisHash hash){
         return SearchHistory.builder()
             .id(hash.id)

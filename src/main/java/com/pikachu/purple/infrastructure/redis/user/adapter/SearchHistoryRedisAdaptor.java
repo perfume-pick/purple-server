@@ -25,21 +25,16 @@ public class SearchHistoryRedisAdaptor implements SearchHistoryRepository {
     }
 
     @Override
-    public void createSearchHistory(
-        Long userId,
-        String keyword,
+    public void create(
+        SearchHistory searchHistory,
         Instant searchAt
     ) {
-        SearchHistoryRedisHash searchHistoryRedisHash = SearchHistoryRedisHash.builder()
-            .id(userId)
-            .keyword(keyword)
-            .searchAt(searchAt)
-            .build();
-
-        userSearchHistoryRedisRepository.saveSearchHistory(
-            userId,
-            searchHistoryRedisHash
+        SearchHistoryRedisHash searchHistoryRedisHash = SearchHistoryRedisHash.toHash(
+            searchHistory,
+            searchAt
         );
+
+        userSearchHistoryRedisRepository.saveSearchHistory(searchHistoryRedisHash);
     }
 
     @Override

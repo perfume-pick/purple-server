@@ -7,10 +7,7 @@ public interface UserSearchHistoryRedisRepository {
 
     List<SearchHistoryRedisHash> findSearchHistoryByUserId(Long userId);
 
-    void saveSearchHistory(
-        Long userId,
-        SearchHistoryRedisHash searchHistoryRedisHash
-    );
+    void saveSearchHistory(SearchHistoryRedisHash searchHistoryRedisHash);
 
     void deleteAllSearchHistory(Long userId);
 

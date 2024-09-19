@@ -25,9 +25,13 @@ public class SearchHistoryDomainServiceImpl implements SearchHistoryDomainServic
         String keyword,
         Instant searchAt
     ) {
-        searchHistoryRepository.createSearchHistory(
-            userId,
-            keyword,
+        SearchHistory searchHistory = SearchHistory.builder()
+            .id(userId)
+            .keyword(keyword)
+            .build();
+
+        searchHistoryRepository.create(
+            searchHistory,
             searchAt
         );
     }
