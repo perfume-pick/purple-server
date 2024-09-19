@@ -6,5 +6,5 @@ import java.util.List;
 
 public record GetPerfumesAndUserAccordsByUserResponse(
     List<UserAccord> userAccords,
-    List<RecommendedPerfumeDTO> recommendedPerfumeDTOs
+    List<RecommendedPerfumeDTO> perfumes
 ) {}

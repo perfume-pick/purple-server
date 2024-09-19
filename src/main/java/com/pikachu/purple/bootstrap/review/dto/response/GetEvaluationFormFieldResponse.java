@@ -5,6 +5,6 @@ import com.pikachu.purple.domain.review.Mood;
 import java.util.List;
 
 public record GetEvaluationFormFieldResponse(
-    List<EvaluationFieldDTO> evaluationFieldDTOs,
+    List<EvaluationFieldDTO> evaluationFields,
     List<Mood> moods
 ) {}
