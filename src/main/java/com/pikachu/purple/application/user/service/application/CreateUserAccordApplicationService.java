@@ -7,7 +7,6 @@ import com.pikachu.purple.application.rating.port.in.GetRatingsByUserIdUseCase;
 import com.pikachu.purple.application.user.port.in.CreateUserAccordUseCase;
 import com.pikachu.purple.application.user.port.in.GetUserByIdUseCase;
 import com.pikachu.purple.application.useraccrod.service.domain.UserAccordDomainService;
-import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.domain.user.UserAccord;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -17,21 +16,21 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class CreateUserAccordApplicationService implements CreateUserAccordUseCase {
 
+    private final GetUserByIdUseCase getUserByIdUseCase;
     private final GetRatingsByUserIdUseCase getRatingsByUserIdUseCase;
     private final RecommendUserAccordsProvider recommendUserAccordsProvider;
     private final UserAccordDomainService userAccordDomainService;
-    private final GetUserByIdUseCase getUserByIdUseCase;
 
     @Override
     public void invoke() {
         Long userId = getCurrentUserAuthentication().userId();
 
         GetUserByIdUseCase.Result user = getUserByIdUseCase.invoke(new GetUserByIdUseCase.Command(userId));
+        GetRatingsByUserIdUseCase.Result starRatings = getRatingsByUserIdUseCase.invoke(new GetRatingsByUserIdUseCase.Command(userId));
 
-        List<StarRating> starRatings = getRatingsByUserIdUseCase.invoke(user.user().getId());
         List<UserAccord> userAccords = recommendUserAccordsProvider.getTopThreeUserAccords(
             user.user(),
-            starRatings
+            starRatings.starRatings()
         );
 
         userAccordDomainService.createAll(user.user().getId(), userAccords);
