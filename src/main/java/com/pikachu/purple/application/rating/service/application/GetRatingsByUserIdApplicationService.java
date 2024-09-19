@@ -14,8 +14,10 @@ public class GetRatingsByUserIdApplicationService implements GetRatingsByUserIdU
     private final StarRatingDomainService starRatingDomainService;
 
     @Override
-    public List<StarRating> invoke(Long userId) {
-        return starRatingDomainService.findAllWithPerfumeAndPerfumeAccordByUserId(userId);
+    public Result invoke(Command command) {
+        List<StarRating> starRatings = starRatingDomainService.findAllWithPerfumeAndPerfumeAccordByUserId(command.userId());
+
+        return new Result(starRatings);
     }
 
 }
