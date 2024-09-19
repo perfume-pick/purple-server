@@ -15,7 +15,7 @@ public interface FragranticaEvaluationJpaRepository extends
     @Query("select fe "
         + "from FragranticaEvaluationJpaEntity fe "
         + "where fe.perfumeJpaEntity.id = :perfumeId "
-        + "order by fe.fieldCode, fe.optionCode, fe.votes")
+        + "order by fe.fieldCode, fe.votes DESC, fe.optionCode")
     List<FragranticaEvaluationJpaEntity> findByPerfumeIdOrderByVotesDesc(Long perfumeId);
 
 }

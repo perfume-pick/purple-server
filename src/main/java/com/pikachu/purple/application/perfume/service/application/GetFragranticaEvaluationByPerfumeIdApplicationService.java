@@ -2,10 +2,10 @@ package com.pikachu.purple.application.perfume.service.application;
 
 import static com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType.SEASON_TIME;
 
-import com.pikachu.purple.application.perfume.service.domain.FragranticaEvaluationDomainService;
 import com.pikachu.purple.application.perfume.common.dto.FragranticaEvaluationFieldDTO;
 import com.pikachu.purple.application.perfume.common.dto.FragranticaMostVotedOptionDTO;
 import com.pikachu.purple.application.perfume.port.in.GetFragranticaEvaluationByPerfumeIdUseCase;
+import com.pikachu.purple.application.perfume.service.domain.FragranticaEvaluationDomainService;
 import com.pikachu.purple.domain.evaluation.EvaluationField;
 import com.pikachu.purple.domain.evaluation.EvaluationOptionStatistic;
 import com.pikachu.purple.domain.perfume.FragranticaEvaluation;
@@ -32,7 +32,7 @@ public class GetFragranticaEvaluationByPerfumeIdApplicationService implements
             int totalVotesByField = evaluationField.getOptions().stream()
                 .mapToInt(EvaluationOptionStatistic::getVotes).sum();
 
-            int maxSize = evaluationField.getType().is(SEASON_TIME) ? 3 : 0;
+            int maxSize = evaluationField.getType().is(SEASON_TIME) ? 3 : 1;
 
             List<FragranticaMostVotedOptionDTO> fragranticaMostVotedOptionDTOS = new ArrayList<>();
             for (int i=0; i < maxSize; i++) {
