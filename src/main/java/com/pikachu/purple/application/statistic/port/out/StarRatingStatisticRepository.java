@@ -7,4 +7,13 @@ public interface StarRatingStatisticRepository {
 
     List<StarRatingStatistic> findAllByPerfumeId(Long perfumeId);
 
+    void increaseVotes(
+        Long perfumeId,
+        int score
+    );
+
+    void decreaseVotes(
+        Long perfumeId,
+        int score
+    );
 }

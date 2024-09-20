@@ -8,6 +8,7 @@ import com.pikachu.purple.infrastructure.persistence.perfume.entity.BrandJpaEnti
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.BrandJpaRepository;
 import com.pikachu.purple.infrastructure.persistence.statistic.entity.EvaluationStatisticJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.statistic.repository.EvaluationStatisticJpaRepository;
+import com.pikachu.purple.infrastructure.persistence.statistic.util.TimeUtil;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
@@ -24,13 +25,10 @@ public class EvaluationStatisticJpaAdaptor implements EvaluationStatisticReposit
 
     @Override
     public EvaluationStatistic findByPerfumeIdOrderByVotesDesc(Long perfumeId) {
-        Instant today = Instant.now();
-        ZonedDateTime zonedDateTime = today.atZone(ZoneId.systemDefault());
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
-        String formattedDate = zonedDateTime.format(formatter);
+        String today = TimeUtil.today();
 
         List<EvaluationStatisticJpaEntity> evaluationStatisticJpaEntities =
-            evaluationStatisticJpaRepository.findAllByTodayAndPerfumeIdOrderByVotesDesc(formattedDate, perfumeId);
+            evaluationStatisticJpaRepository.findAllByTodayAndPerfumeIdOrderByVotesDesc(today, perfumeId);
 
         return EvaluationStatisticJpaEntity.toDomain(evaluationStatisticJpaEntities);
     }

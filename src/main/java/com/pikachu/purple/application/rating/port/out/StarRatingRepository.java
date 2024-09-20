@@ -26,4 +26,8 @@ public interface StarRatingRepository {
         Long perfumeId
     );
 
+    StarRating findByUserIdAndPerfumeId(
+        Long userId,
+        Long perfumeId
+    );
 }

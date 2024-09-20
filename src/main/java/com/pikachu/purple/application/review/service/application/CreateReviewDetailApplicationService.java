@@ -6,6 +6,7 @@ import com.pikachu.purple.application.rating.service.domain.StarRatingDomainServ
 import com.pikachu.purple.application.review.port.in.CreateReviewDetailUseCase;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
 import com.pikachu.purple.application.review.service.domain.ReviewEvaluationDomainService;
+import com.pikachu.purple.application.statistic.port.in.UpdateStarRatingStatisticUseCase;
 import com.pikachu.purple.bootstrap.review.vo.EvaluationFieldVO;
 import com.pikachu.purple.domain.evaluation.EvaluationField;
 import com.pikachu.purple.domain.evaluation.EvaluationOption;
@@ -27,6 +28,7 @@ public class CreateReviewDetailApplicationService implements CreateReviewDetailU
     private final ReviewDomainService reviewDomainService;
     private final StarRatingDomainService starRatingDomainService;
     private final ReviewEvaluationDomainService reviewEvaluationDomainService;
+    private final UpdateStarRatingStatisticUseCase updateStarRatingStatisticUseCase;
 
     @Transactional
     @Override
@@ -37,6 +39,14 @@ public class CreateReviewDetailApplicationService implements CreateReviewDetailU
             userId,
             command.perfumeId(),
             command.score()
+        );
+
+        updateStarRatingStatisticUseCase.invoke(
+            new UpdateStarRatingStatisticUseCase.Command(
+                userId,
+                starRating.getPerfume().getId(),
+                starRating.getScore()
+            )
         );
 
         Review review = reviewDomainService.create(

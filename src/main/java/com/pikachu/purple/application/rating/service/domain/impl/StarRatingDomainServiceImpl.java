@@ -63,4 +63,15 @@ public class StarRatingDomainServiceImpl implements StarRatingDomainService {
         );
     }
 
+    @Override
+    public StarRating findByUserIdAndPerfumeId(
+        Long userId,
+        Long perfumeId
+    ) {
+        return starRatingRepository.findByUserIdAndPerfumeId(
+            userId,
+            perfumeId
+        );
+    }
+
 }

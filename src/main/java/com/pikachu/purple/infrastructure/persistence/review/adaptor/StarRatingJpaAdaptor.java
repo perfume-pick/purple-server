@@ -15,6 +15,7 @@ import com.pikachu.purple.infrastructure.persistence.user.entity.UserJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.user.repository.UserJpaRepository;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -26,7 +27,10 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
     private final PerfumeJpaRepository perfumeJpaRepository;
     private final UserJpaRepository userJpaRepository;
 
-    private StarRatingJpaEntity findEntityByUserIdAndPerfumeId(Long userId, Long perfumeId) {
+    private StarRatingJpaEntity findEntityOrThrowException(
+        Long userId,
+        Long perfumeId
+    ) {
         return starRatingJpaRepository.findByUserIdAndPerfumeId(
             userId, perfumeId).orElseThrow(() -> StarRatingNotFoundException);
     }
@@ -77,7 +81,7 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
 
         StarRatingJpaEntity starRatingJpaEntitySaved = starRatingJpaRepository.save(starRatingJpaEntity);
 
-        return StarRatingJpaEntity.toDomain(starRatingJpaEntitySaved);
+        return StarRatingJpaEntity.toDomainWithUserAndPerfume(starRatingJpaEntitySaved);
     }
 
     @Override
@@ -94,7 +98,7 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
 
     @Override
     public void updateScore(Long userId, Long perfumeId, int score) {
-        StarRatingJpaEntity starRatingJpaEntity = findEntityByUserIdAndPerfumeId(
+        StarRatingJpaEntity starRatingJpaEntity = findEntityOrThrowException(
             userId,
             perfumeId
         );
@@ -105,10 +109,23 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
 
     @Override
     public void deleteByUserIdAndPerfumeId(Long userId, Long perfumeId) {
-        StarRatingJpaEntity starRatingJpaEntity = findEntityByUserIdAndPerfumeId(
+        StarRatingJpaEntity starRatingJpaEntity = findEntityOrThrowException(
             userId,
             perfumeId
         );
         starRatingJpaRepository.delete(starRatingJpaEntity);
+    }
+
+    @Override
+    public StarRating findByUserIdAndPerfumeId(
+        Long userId,
+        Long perfumeId
+    ) {
+        Optional<StarRatingJpaEntity> findResult = starRatingJpaRepository.findByUserIdAndPerfumeId(
+            userId,
+            perfumeId
+        );
+
+        return findResult.map(StarRatingJpaEntity::toDomain).orElse(null);
     }
 }

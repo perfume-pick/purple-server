@@ -46,11 +46,20 @@ public class StarRatingJpaEntity extends BaseEntity {
         this.score = score;
     }
 
-    public static StarRating toDomain(StarRatingJpaEntity jpaEntity) {
+    public static StarRating.StarRatingBuilder buildDefault(StarRatingJpaEntity jpaEntity) {
         return StarRating.builder()
+            .score(jpaEntity.getScore());
+    }
+
+    public static StarRating toDomain(StarRatingJpaEntity jpaEntity) {
+        return buildDefault(jpaEntity)
+            .build();
+    }
+
+    public static StarRating toDomainWithUserAndPerfume(StarRatingJpaEntity jpaEntity) {
+        return buildDefault(jpaEntity)
             .user(UserJpaEntity.toDomain(jpaEntity.getUserJpaEntity()))
             .perfume(PerfumeJpaEntity.toDomain(jpaEntity.getPerfumeJpaEntity()))
-            .score(jpaEntity.getScore())
             .build();
     }
 

@@ -4,6 +4,7 @@ import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUse
 
 import com.pikachu.purple.application.rating.port.in.CreateStarRatingOnboardingUseCase;
 import com.pikachu.purple.application.rating.service.domain.StarRatingDomainService;
+import com.pikachu.purple.application.statistic.port.in.UpdateStarRatingStatisticsUseCase;
 import com.pikachu.purple.application.user.port.in.CreateUserAccordUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,7 @@ public class CreateStarRatingOnboardingApplicationService implements
 
     private final CreateUserAccordUseCase createUserAccordUseCase;
     private final StarRatingDomainService starRatingDomainService;
+    private final UpdateStarRatingStatisticsUseCase updateStarRatingStatisticsUseCase;
 
     @Override
     @Transactional
@@ -25,6 +27,12 @@ public class CreateStarRatingOnboardingApplicationService implements
         starRatingDomainService.createOnboarding(
             userId,
             command.starRatingInfos()
+        );
+
+        updateStarRatingStatisticsUseCase.invoke(
+            new UpdateStarRatingStatisticsUseCase.Command(
+                command.starRatingInfos()
+            )
         );
 
         createUserAccordUseCase.invoke();

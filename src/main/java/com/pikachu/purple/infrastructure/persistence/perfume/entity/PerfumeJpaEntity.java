@@ -14,13 +14,17 @@ import jakarta.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
 @Entity
+@Builder
 @Table(name = "perfume")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor(access = AccessLevel.PROTECTED)
 public class PerfumeJpaEntity {
 
     @Id

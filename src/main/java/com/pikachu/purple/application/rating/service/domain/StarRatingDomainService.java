@@ -30,4 +30,8 @@ public interface StarRatingDomainService {
         Long perfumeId
     );
 
+    StarRating findByUserIdAndPerfumeId(
+        Long userId,
+        Long perfumeId
+    );
 }

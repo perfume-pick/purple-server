@@ -56,4 +56,12 @@ public class StarRatingStatisticJpaEntity extends BaseEntity {
             .build();
     }
 
+    public void increase() {
+        this.votes++;
+    }
+
+    public void decrease() {
+        this.votes--;
+    }
+
 }
