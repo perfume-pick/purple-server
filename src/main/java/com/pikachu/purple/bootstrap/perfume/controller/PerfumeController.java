@@ -3,11 +3,14 @@ package com.pikachu.purple.bootstrap.perfume.controller;
 import com.pikachu.purple.application.perfume.port.in.GetAccordsAndNotesByPerfumeIdUseCase;
 import com.pikachu.purple.application.perfume.port.in.GetFragranticaEvaluationByPerfumeIdUseCase;
 import com.pikachu.purple.application.perfume.port.in.GetPerfumesByKeywordUseCase;
+import com.pikachu.purple.application.statistic.port.in.GetPerfumeStatisticByPerfumeIdUseCase;
 import com.pikachu.purple.application.user.port.in.CreateSearchHistoryUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.perfume.api.PerfumeApi;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetAccordsAndNotesResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetFragranticaEvaluationResponse;
+import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeStatisticResponse;
+import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumesAndUserAccordsByUserResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumesResponse;
 import java.time.Instant;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +24,7 @@ public class PerfumeController implements PerfumeApi {
     private final GetAccordsAndNotesByPerfumeIdUseCase getAccordsAndNotesByPerfumeIdUseCase;
     private final GetFragranticaEvaluationByPerfumeIdUseCase getFragranticaEvaluationByPerfumeIdUseCase;
     private final CreateSearchHistoryUseCase createSearchHistoryUseCase;
+    private final GetPerfumeStatisticByPerfumeIdUseCase getPerfumeStatisticByPerfumeIdUseCase;
 
     @Override
     public SuccessResponse<GetPerfumesResponse> findAllByKeyword(String keyword) {
@@ -58,6 +62,20 @@ public class PerfumeController implements PerfumeApi {
 
         return SuccessResponse.of(
             new GetFragranticaEvaluationResponse(result.fragranticaEvaluation()));
+    }
+
+    @Override
+    public SuccessResponse<GetPerfumeStatisticResponse> findPerfumeStatisticResponse(
+        Long perfumeId) {
+        GetPerfumeStatisticByPerfumeIdUseCase.Result result = getPerfumeStatisticByPerfumeIdUseCase.invoke(
+            new GetPerfumeStatisticByPerfumeIdUseCase.Command(perfumeId));
+
+        return SuccessResponse.of(
+            new GetPerfumeStatisticResponse(
+                result.starRatingStatistics(),
+                result.evaluationStatistics()
+            )
+        );
     }
 
 }
