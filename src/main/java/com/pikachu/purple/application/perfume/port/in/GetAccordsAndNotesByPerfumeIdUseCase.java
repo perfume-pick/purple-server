@@ -1,6 +1,8 @@
 package com.pikachu.purple.application.perfume.port.in;
 
-import com.pikachu.purple.application.perfume.common.dto.AccordsAndNotesDTO;
+import com.pikachu.purple.application.perfume.common.dto.PerfumeAccordDTO;
+import com.pikachu.purple.domain.perfume.Note;
+import java.util.List;
 
 public interface GetAccordsAndNotesByPerfumeIdUseCase {
 
@@ -9,6 +11,9 @@ public interface GetAccordsAndNotesByPerfumeIdUseCase {
 
     record Command(Long perfumeId) {}
 
-    record Result(AccordsAndNotesDTO perfumeDetail) {}
+    record Result(
+        List<PerfumeAccordDTO> accords,
+        List<Note> notes
+    ) {}
 
 }

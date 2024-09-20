@@ -43,7 +43,10 @@ public class PerfumeController implements PerfumeApi {
 
         // TODO: userSaveVisitedHistoryUseCase 구현
 
-        return SuccessResponse.of(new GetAccordsAndNotesResponse(result.perfumeDetail()));
+        return SuccessResponse.of(new GetAccordsAndNotesResponse(
+            result.accords(),
+            result.notes()
+        ));
     }
 
     @Override

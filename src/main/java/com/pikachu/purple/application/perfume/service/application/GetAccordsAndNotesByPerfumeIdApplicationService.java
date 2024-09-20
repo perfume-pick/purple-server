@@ -1,10 +1,9 @@
 package com.pikachu.purple.application.perfume.service.application;
 
-import com.pikachu.purple.application.perfume.common.dto.AccordsAndNotesDTO;
 import com.pikachu.purple.application.perfume.common.dto.PerfumeAccordDTO;
 import com.pikachu.purple.application.perfume.port.in.GetAccordsAndNotesByPerfumeIdUseCase;
-import com.pikachu.purple.application.perfume.service.domain.PerfumeAccordDomainService;
 import com.pikachu.purple.application.perfume.service.domain.NoteDomainService;
+import com.pikachu.purple.application.perfume.service.domain.PerfumeAccordDomainService;
 import com.pikachu.purple.domain.perfume.Note;
 import com.pikachu.purple.domain.perfume.PerfumeAccord;
 import java.util.ArrayList;
@@ -45,12 +44,10 @@ public class GetAccordsAndNotesByPerfumeIdApplicationService implements
         List<Note> notes = noteDomainService.findAllByPerfumeId(
             command.perfumeId());
 
-        AccordsAndNotesDTO accordsAndNotesDTO = AccordsAndNotesDTO.of(
+        return new Result(
             perfumeAccordDTOs,
             notes
         );
-
-        return new Result(accordsAndNotesDTO);
     }
 
 }
