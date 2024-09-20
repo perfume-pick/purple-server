@@ -10,7 +10,6 @@ import com.pikachu.purple.bootstrap.perfume.api.PerfumeApi;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetAccordsAndNotesResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetFragranticaEvaluationResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeStatisticResponse;
-import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumesAndUserAccordsByUserResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumesResponse;
 import java.time.Instant;
 import lombok.RequiredArgsConstructor;
