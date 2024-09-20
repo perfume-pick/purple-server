@@ -1,9 +1,11 @@
+DROP TABLE IF EXISTS accord;
 CREATE TABLE accord
 (
     accord_name VARCHAR(255) NOT NULL,
     CONSTRAINT pk_accord PRIMARY KEY (accord_name)
 );
 
+DROP TABLE IF EXISTS brand;
 CREATE TABLE brand
 (
     brand_name    VARCHAR(255) NOT NULL,
@@ -12,6 +14,7 @@ CREATE TABLE brand
     CONSTRAINT pk_brand PRIMARY KEY (brand_name)
 );
 
+DROP TABLE IF EXISTS complaint;
 CREATE TABLE complaint
 (
     review_id  BIGINT   NOT NULL,
@@ -22,6 +25,7 @@ CREATE TABLE complaint
     CONSTRAINT pk_complaint PRIMARY KEY (review_id, user_id)
 );
 
+DROP TABLE IF EXISTS evaluation_statistic;
 CREATE TABLE evaluation_statistic
 (
     statistics_date CHAR(8)       NOT NULL,
@@ -35,6 +39,7 @@ CREATE TABLE evaluation_statistic
     CONSTRAINT pk_evaluation_statistic PRIMARY KEY (statistics_date, perfume_id, field_code, option_code)
 );
 
+DROP TABLE IF EXISTS fragrantica_evaluation;
 CREATE TABLE fragrantica_evaluation
 (
     perfume_id  BIGINT        NOT NULL,
@@ -44,6 +49,7 @@ CREATE TABLE fragrantica_evaluation
     CONSTRAINT pk_fragrantica_evaluation PRIMARY KEY (perfume_id, field_code, option_code)
 );
 
+DROP TABLE IF EXISTS likes;
 CREATE TABLE likes
 (
     review_id  BIGINT   NOT NULL,
@@ -54,12 +60,14 @@ CREATE TABLE likes
     CONSTRAINT pk_likes PRIMARY KEY (review_id, user_id)
 );
 
+DROP TABLE IF EXISTS mood;
 CREATE TABLE mood
 (
     mood_name VARCHAR(255) NOT NULL,
     CONSTRAINT pk_mood PRIMARY KEY (mood_name)
 );
 
+DROP TABLE IF EXISTS note;
 CREATE TABLE note
 (
     perfume_id BIGINT       NOT NULL,
@@ -68,6 +76,7 @@ CREATE TABLE note
     CONSTRAINT pk_note PRIMARY KEY (perfume_id, note_name)
 );
 
+DROP TABLE IF EXISTS perfume;
 CREATE TABLE perfume
 (
     perfume_id    BIGINT           NOT NULL,
@@ -78,6 +87,7 @@ CREATE TABLE perfume
     CONSTRAINT pk_perfume PRIMARY KEY (perfume_id)
 );
 
+DROP TABLE IF EXISTS perfume_accord;
 CREATE TABLE perfume_accord
 (
     perfume_id  BIGINT        NOT NULL,
@@ -86,6 +96,7 @@ CREATE TABLE perfume_accord
     CONSTRAINT pk_perfume_accord PRIMARY KEY (perfume_id, accord_name)
 );
 
+DROP TABLE IF EXISTS review;
 CREATE TABLE review
 (
     review_id   BIGINT        NOT NULL,
@@ -100,6 +111,7 @@ CREATE TABLE review
     CONSTRAINT pk_review PRIMARY KEY (review_id)
 );
 
+DROP TABLE IF EXISTS review_evaluation;
 CREATE TABLE review_evaluation
 (
     review_id   BIGINT   NOT NULL,
@@ -111,6 +123,7 @@ CREATE TABLE review_evaluation
     CONSTRAINT pk_review_evaluation PRIMARY KEY (review_id, field_code, option_code)
 );
 
+DROP TABLE IF EXISTS review_mood;
 CREATE TABLE review_mood
 (
     review_id  BIGINT       NOT NULL,
@@ -121,6 +134,7 @@ CREATE TABLE review_mood
     CONSTRAINT pk_review_mood PRIMARY KEY (review_id, mood_name)
 );
 
+DROP TABLE IF EXISTS star_rating;
 CREATE TABLE star_rating
 (
     perfume_id BIGINT   NOT NULL,
@@ -132,6 +146,7 @@ CREATE TABLE star_rating
     CONSTRAINT pk_star_rating PRIMARY KEY (perfume_id, user_id)
 );
 
+DROP TABLE IF EXISTS star_rating_statistic;
 CREATE TABLE star_rating_statistic
 (
     statistics_date CHAR(8)       NOT NULL,
@@ -144,6 +159,7 @@ CREATE TABLE star_rating_statistic
     CONSTRAINT pk_star_rating_statistic PRIMARY KEY (statistics_date, perfume_id, score)
 );
 
+DROP TABLE IF EXISTS user;
 CREATE TABLE user
 (
     user_id               BIGINT         NOT NULL,
@@ -157,6 +173,7 @@ CREATE TABLE user
     CONSTRAINT pk_user PRIMARY KEY (user_id)
 );
 
+DROP TABLE IF EXISTS user_accord;
 CREATE TABLE user_accord
 (
     user_id     BIGINT       NOT NULL,
