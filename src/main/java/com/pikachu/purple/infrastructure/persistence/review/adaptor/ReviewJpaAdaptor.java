@@ -76,7 +76,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
 
         ReviewJpaEntity reviewJpaEntitySaved = reviewJpaRepository.save(reviewJpaEntity);
 
-        return ReviewJpaEntity.toDomain(reviewJpaEntitySaved);
+        return ReviewJpaEntity.toDomainWithPerfume(reviewJpaEntitySaved);
     }
 
     @Override

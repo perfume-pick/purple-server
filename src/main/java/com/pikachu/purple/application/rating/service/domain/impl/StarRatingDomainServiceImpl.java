@@ -3,8 +3,10 @@ package com.pikachu.purple.application.rating.service.domain.impl;
 import com.pikachu.purple.application.rating.port.out.StarRatingRepository;
 import com.pikachu.purple.application.rating.service.domain.StarRatingDomainService;
 import com.pikachu.purple.application.util.IdGenerator;
-import com.pikachu.purple.bootstrap.onboarding.vo.StarRatingInfo;
+import com.pikachu.purple.bootstrap.onboarding.vo.StarRatingVO;
+import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.review.StarRating;
+import java.util.ArrayList;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -20,9 +22,27 @@ public class StarRatingDomainServiceImpl implements StarRatingDomainService {
         Long userId,
         List<StarRatingVO> starRatingVOs
     ) {
+        List<StarRating> starRatings = new ArrayList<>();
+
+        for(StarRatingVO starRatingVO : starRatingVOs) {
+            Long starRatingId = IdGenerator.generate();
+
+            Perfume perfume = Perfume.builder()
+                .id(starRatingVO.perfumeId())
+                .build();
+
+            StarRating starRating = StarRating.builder()
+                .id(starRatingId)
+                .perfume(perfume)
+                .score(starRatingVO.score())
+                .build();
+
+            starRatings.add(starRating);
+        }
+
         starRatingRepository.createOnboarding(
             userId,
-            starRatingInfos
+            starRatings
         );
     }
 

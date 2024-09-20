@@ -99,8 +99,8 @@ public class ReviewJpaEntity extends BaseEntity {
     public static Review toFullDomain(ReviewJpaEntity jpaEntity) {
         return buildDefault(jpaEntity)
             .perfume(PerfumeJpaEntity.toDomain(jpaEntity.getPerfumeJpaEntity()))
-            .evaluation(ReviewEvaluationJpaEntity.toDomain(jpaEntity.reviewEvaluationJpaEntities))
-            .moods(jpaEntity.reviewMoodJpaEntities.stream()
+            .evaluation(ReviewEvaluationJpaEntity.toDomain(jpaEntity.getReviewEvaluationJpaEntities()))
+            .moods(jpaEntity.getReviewMoodJpaEntities().stream()
                 .map(reviewMoodJpaEntity ->
                     MoodJpaEntity.toDomain(reviewMoodJpaEntity.getMoodJpaEntity())
                 )
@@ -110,6 +110,12 @@ public class ReviewJpaEntity extends BaseEntity {
 
     public static Review toDomain(ReviewJpaEntity jpaEntity) {
         return buildDefault(jpaEntity).build();
+    }
+
+    public static Review toDomainWithPerfume(ReviewJpaEntity jpaEntity){
+        return buildDefault(jpaEntity)
+            .perfume(PerfumeJpaEntity.toDomain(jpaEntity.getPerfumeJpaEntity()))
+            .build();
     }
 
 }

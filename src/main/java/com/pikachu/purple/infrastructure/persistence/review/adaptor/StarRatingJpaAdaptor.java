@@ -5,7 +5,6 @@ import static com.pikachu.purple.bootstrap.common.exception.BusinessException.St
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.UserNotFoundException;
 
 import com.pikachu.purple.application.rating.port.out.StarRatingRepository;
-import com.pikachu.purple.bootstrap.onboarding.vo.StarRatingInfo;
 import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeJpaRepository;
@@ -38,22 +37,23 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
     @Override
     public void createOnboarding(
         Long userId,
-        List<StarRatingInfo> starRatingInfos
+        List<StarRating> starRatings
     ) {
         UserJpaEntity userJpaEntity = userJpaRepository.findById(userId)
             .orElseThrow(() -> UserNotFoundException);
 
         List<StarRatingJpaEntity> starRatingJpaEntities = new ArrayList<>();
-        for (StarRatingInfo starRatingInfo: starRatingInfos) {
+        for (StarRating starRating: starRatings) {
             PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository
-                .findById(starRatingInfo.perfumeId())
+                .findById(starRating.getPerfume().getId())
                 .orElseThrow(() -> PerfumeNotFoundException);
 
             starRatingJpaEntities.add(
                 StarRatingJpaEntity.builder()
+                    .id(starRating.getId())
                     .userJpaEntity(userJpaEntity)
                     .perfumeJpaEntity(perfumeJpaEntity)
-                    .score(starRatingInfo.score())
+                    .score(starRating.getScore())
                     .build()
             );
         }
