@@ -15,9 +15,8 @@ public class UpdateReviewApplicationService implements UpdateReviewUseCase {
     private final UpdateStarRatingUseCase updateStarRatingUseCase;
     private final ReviewDomainService reviewDomainService;
 
-
-    @Override
     @Transactional
+    @Override
     public void invoke(Command command) {
         Review review = reviewDomainService.updateContent(
             command.reviewId(),
