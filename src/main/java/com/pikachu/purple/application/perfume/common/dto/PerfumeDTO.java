@@ -4,7 +4,8 @@ import com.pikachu.purple.domain.perfume.Perfume;
 
 public record PerfumeDTO(
     Long perfumeId,
-    String name,
+    String perfumeName,
+    String brandName,
     String imageUrl,
     double averageScore,
     String accordName
@@ -17,6 +18,7 @@ public record PerfumeDTO(
         return new PerfumeDTO(
             perfume.getId(),
             perfume.getName(),
+            perfume.getBrand().getName(),
             perfume.getImageUrl(),
             perfume.getAverageScore(),
             accordName

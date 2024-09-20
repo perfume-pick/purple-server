@@ -5,7 +5,7 @@ import java.util.List;
 
 public record RecommendedPerfumeDTO(
     String name,
-    String brand,
+    String brandName,
     String imageUrl,
     double averageScore,
     List<String> accordNames
