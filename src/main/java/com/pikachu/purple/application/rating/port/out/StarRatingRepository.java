@@ -1,6 +1,6 @@
 package com.pikachu.purple.application.rating.port.out;
 
-import com.pikachu.purple.bootstrap.StarRating.vo.StarRatingInfo;
+import com.pikachu.purple.bootstrap.onboarding.vo.StarRatingInfo;
 import com.pikachu.purple.domain.review.StarRating;
 import java.util.List;
 

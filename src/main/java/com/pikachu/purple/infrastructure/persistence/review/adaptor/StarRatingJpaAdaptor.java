@@ -5,9 +5,7 @@ import static com.pikachu.purple.bootstrap.common.exception.BusinessException.St
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.UserNotFoundException;
 
 import com.pikachu.purple.application.rating.port.out.StarRatingRepository;
-import com.pikachu.purple.bootstrap.StarRating.vo.StarRatingInfo;
-import com.pikachu.purple.bootstrap.common.exception.BusinessException;
-import com.pikachu.purple.bootstrap.common.exception.ErrorCode;
+import com.pikachu.purple.bootstrap.onboarding.vo.StarRatingInfo;
 import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeJpaRepository;

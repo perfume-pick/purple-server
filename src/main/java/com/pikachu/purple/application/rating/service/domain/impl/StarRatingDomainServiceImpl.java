@@ -2,13 +2,9 @@ package com.pikachu.purple.application.rating.service.domain.impl;
 
 import com.pikachu.purple.application.rating.port.out.StarRatingRepository;
 import com.pikachu.purple.application.rating.service.domain.StarRatingDomainService;
-import com.pikachu.purple.bootstrap.StarRating.vo.StarRatingInfo;
-import com.pikachu.purple.domain.perfume.Perfume;
+import com.pikachu.purple.bootstrap.onboarding.vo.StarRatingInfo;
 import com.pikachu.purple.domain.review.StarRating;
-import com.pikachu.purple.domain.user.User;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

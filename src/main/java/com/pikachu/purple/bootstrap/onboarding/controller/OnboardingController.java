@@ -1,15 +1,15 @@
-package com.pikachu.purple.bootstrap.StarRating.controller;
+package com.pikachu.purple.bootstrap.onboarding.controller;
 
 import com.pikachu.purple.application.rating.port.in.CreateStarRatingOnboardingUseCase;
 import com.pikachu.purple.application.rating.port.in.CreateStarRatingOnboardingUseCase.Command;
-import com.pikachu.purple.bootstrap.StarRating.api.StarRatingApi;
-import com.pikachu.purple.bootstrap.StarRating.dto.request.CreateStarRatingOnboardingRequest;
+import com.pikachu.purple.bootstrap.onboarding.api.OnboardingApi;
+import com.pikachu.purple.bootstrap.onboarding.dto.request.CreateStarRatingOnboardingRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-public class StarRatingController implements StarRatingApi {
+public class OnboardingController implements OnboardingApi {
 
     private final CreateStarRatingOnboardingUseCase createStarRatingOnboardingUseCase;
 

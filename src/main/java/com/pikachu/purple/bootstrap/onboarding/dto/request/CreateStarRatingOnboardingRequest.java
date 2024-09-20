@@ -1,6 +1,6 @@
-package com.pikachu.purple.bootstrap.StarRating.dto.request;
+package com.pikachu.purple.bootstrap.onboarding.dto.request;
 
-import com.pikachu.purple.bootstrap.StarRating.vo.StarRatingInfo;
+import com.pikachu.purple.bootstrap.onboarding.vo.StarRatingInfo;
 import jakarta.validation.Valid;
 import java.util.List;
 
