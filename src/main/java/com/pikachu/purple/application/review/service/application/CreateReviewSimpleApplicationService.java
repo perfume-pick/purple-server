@@ -22,8 +22,8 @@ public class CreateReviewSimpleApplicationService implements CreateReviewSimpleU
     private final ReviewDomainService reviewDomainService;
     private final StarRatingDomainService starRatingDomainService;
 
-    @Override
     @Transactional
+    @Override
     public void invoke(Command command) {
         Long userId = getCurrentUserAuthentication().userId();
 

@@ -58,7 +58,11 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
     }
 
     @Override
-    public StarRating create(Long userId, Long perfumeId, int score) {
+    public StarRating create(
+        Long userId,
+        Long perfumeId,
+        int score
+    ) {
         UserJpaEntity userJpaEntity = userJpaRepository.findById(userId)
             .orElseThrow(() -> UserNotFoundException);
 

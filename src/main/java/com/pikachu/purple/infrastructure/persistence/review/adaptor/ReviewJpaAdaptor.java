@@ -1,10 +1,10 @@
 package com.pikachu.purple.infrastructure.persistence.review.adaptor;
 
+import static com.pikachu.purple.bootstrap.common.exception.BusinessException.PerfumeNotFoundException;
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.ReviewNotFoundException;
+import static com.pikachu.purple.bootstrap.common.exception.BusinessException.UserNotFoundException;
 
 import com.pikachu.purple.application.review.port.out.ReviewRepository;
-import com.pikachu.purple.bootstrap.common.exception.BusinessException;
-import com.pikachu.purple.bootstrap.common.exception.ErrorCode;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.infrastructure.persistence.mood.entity.MoodJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.mood.repository.MoodJpaRepository;
@@ -38,20 +38,27 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     @Override
     public Review create(Long userId, Long perfumeId, Review review) {
         UserJpaEntity userJpaEntity = userJpaRepository.findById(userId)
-            .orElseThrow(() -> new BusinessException(ErrorCode.USER_NOT_FOUND));
+            .orElseThrow(() -> UserNotFoundException);
 
         PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository.findById(perfumeId)
-            .orElseThrow(() -> new BusinessException(ErrorCode.PERFUME_NOT_FOUND));
+            .orElseThrow(() -> PerfumeNotFoundException);
 
         ReviewJpaEntity reviewJpaEntity = ReviewJpaEntity.builder()
+            .id(review.getId())
             .userJpaEntity(userJpaEntity)
             .perfumeJpaEntity(perfumeJpaEntity)
             .content(review.getContent())
             .reviewType(review.getType())
             .build();
 
-        ReviewJpaEntity reviewJpaEntitySaved = reviewJpaRepository.save(reviewJpaEntity);
-        return ReviewJpaEntity.toDomain(reviewJpaEntitySaved);
+        reviewJpaRepository.save(reviewJpaEntity);
+
+        ReviewJpaEntity reviewJpaEntitySaved = findEntityById(review.getId());
+        StarRatingJpaEntity starRatingJpaEntity = starRatingJpaRepository.findByUserIdAndPerfumeId(
+            userId, perfumeId).orElseThrow();
+
+        return ReviewJpaEntity.buildDefault(reviewJpaEntitySaved)
+            .starRating(StarRatingJpaEntity.toDomain(starRatingJpaEntity)).build();
     }
 
     @Override
@@ -91,9 +98,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
         ReviewJpaEntity reviewJpaEntity = findEntityById(reviewId);
 
         reviewJpaRepository.delete(reviewJpaEntity);
-        return ReviewJpaEntity.toDomain(reviewJpaEntity);
+        return ReviewJpaEntity.buildDefault(reviewJpaEntity).build();
     }
-
-
 
 }

@@ -68,7 +68,6 @@ public class ReviewController implements ReviewApi {
         updateReviewUseCase.invoke(
             new UpdateReviewUseCase.Command(
                 reviewId,
-                request.ratingId(),
                 request.score(),
                 request.content()
             )
