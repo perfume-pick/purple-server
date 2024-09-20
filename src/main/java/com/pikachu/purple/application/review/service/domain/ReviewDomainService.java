@@ -18,7 +18,7 @@ public interface ReviewDomainService {
         String content
     );
 
-    Review deleteById(Long Id);
+    void deleteById(Long Id);
 
     void createReviewMoods(
         Long reviewId,
