@@ -1,6 +1,7 @@
 package com.pikachu.purple.application.perfume.service.application;
 
 import com.pikachu.purple.application.perfume.common.dto.RecommendedPerfumeDTO;
+import com.pikachu.purple.application.perfume.common.dto.UserAccordDTO;
 import com.pikachu.purple.application.perfume.common.vo.PerfumeAccordMatchVO;
 import com.pikachu.purple.application.perfume.port.in.GetPerfumesAndUserAccordsByUserUseCase;
 import com.pikachu.purple.application.perfume.service.domain.PerfumeDomainService;
@@ -9,6 +10,7 @@ import com.pikachu.purple.domain.accord.Accord;
 import com.pikachu.purple.domain.perfume.Perfume;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,16 +28,33 @@ public class GetPerfumesAndUserAccordsByUserApplicationService implements
     public Result invoke() {
         GetUserAccordsUseCase.Result result = getUserAccordsUseCase.invoke();
 
+        List<UserAccordDTO> userAccordDTOs = IntStream.range(0, 3)
+            .mapToObj(i -> UserAccordDTO.of(
+                result.userAccords().stream()
+                    .sorted((a, b) -> Double.compare(b.getScore(), a.getScore()))
+                    .toList()
+                    .get(i),
+                i + 1
+            ))
+            .toList();
+
+        List<String> topThreeUserAccordNames = userAccordDTOs.stream()
+            .map(UserAccordDTO::accordName)
+            .toList();
+
         List<Accord> accords = new ArrayList<>(result.userAccords());
         List<Perfume> perfumes = perfumeDomainService.findAllWithPerfumeAccordsByAccords(
-            accords);
+            accords.stream()
+                .filter(accord -> topThreeUserAccordNames.contains(accord.getName()))
+                .toList()
+        );
+
 
         List<RecommendedPerfumeDTO> recommendedPerfumeDTOs = perfumes.stream()
             .map(perfume -> {
                 List<String> matchAccords = perfume.getAccords().stream()
                     .map(Accord::getName)
-                    .filter(name -> result.userAccords().stream()
-                        .anyMatch(userAccord -> userAccord.getName().equals(name)))
+                    .filter(topThreeUserAccordNames::contains)
                     .toList();
 
                 return new PerfumeAccordMatchVO(
@@ -52,7 +71,7 @@ public class GetPerfumesAndUserAccordsByUserApplicationService implements
             .toList();
 
         return new Result(
-            result.userAccords(),
+            userAccordDTOs,
             recommendedPerfumeDTOs
         );
     }

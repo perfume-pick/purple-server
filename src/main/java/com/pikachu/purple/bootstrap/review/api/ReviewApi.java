@@ -39,7 +39,7 @@ public interface ReviewApi {
         summary = "자세한 리뷰 평가 항목 정보 조회",
         description = "지속력, 시야주, 계절감/시간, 성별, 분위기"
     )
-    @GetMapping("/evaluation-fields")
+    @GetMapping("/evaluation-form")
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<GetEvaluationFormFieldResponse> findEvaluationFormField();
 
@@ -48,7 +48,7 @@ public interface ReviewApi {
         summary = "간단한 리뷰 수정",
         description = "간단한 리뷰 내용 및 별점 수정"
     )
-    @PatchMapping("/simple/{review-id}")
+    @PatchMapping("/{review-id}/simple")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void update(
         @PathVariable("review-id") Long reviewId,

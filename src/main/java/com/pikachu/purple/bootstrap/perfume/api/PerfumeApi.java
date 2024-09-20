@@ -4,7 +4,6 @@ import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.common.security.Secured;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetAccordsAndNotesResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetFragranticaEvaluationResponse;
-import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumesAndUserAccordsByUserResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumesResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -18,15 +17,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @Tag(name = "Perfume", description = "Perfume API")
 @RequestMapping(value = "/perpicks/perfumes", produces = "application/json")
 public interface PerfumeApi {
-
-    @Secured
-    @Operation(
-        summary = "어코드 기반 추천 향수 리스트 조회",
-        description = "메인페이지 어코드 기반 정보 반환"
-    )
-    @GetMapping("/user-accord")
-    @ResponseStatus(HttpStatus.OK)
-    SuccessResponse<GetPerfumesAndUserAccordsByUserResponse> findAllWithUserAccordsByUser();
 
     @Secured
     @Operation(
