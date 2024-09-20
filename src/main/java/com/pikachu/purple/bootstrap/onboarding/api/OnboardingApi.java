@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Tag(name = "Onboarding", description = "Onboarding API")
-@RequestMapping(value = "/perpicks/onboardings", produces = "application/json")
+@RequestMapping(value = "/perpicks/onboarding", produces = "application/json")
 public interface OnboardingApi {
 
     @Secured
