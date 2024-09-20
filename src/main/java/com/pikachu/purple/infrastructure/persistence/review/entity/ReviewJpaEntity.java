@@ -77,15 +77,13 @@ public class ReviewJpaEntity extends BaseEntity {
         this.content = content;
     }
 
-    public static Review toDomain(ReviewJpaEntity jpaEntity) {
+    public static Review.ReviewBuilder buildDefault(ReviewJpaEntity jpaEntity) {
         return Review.builder()
             .id(jpaEntity.getId())
             .user(UserJpaEntity.toDomain(jpaEntity.getUserJpaEntity()))
             .perfume(PerfumeJpaEntity.toDomain(jpaEntity.getPerfumeJpaEntity()))
             .content(jpaEntity.getContent())
-            .type(jpaEntity.getReviewType())
-            .starRating(StarRatingJpaEntity.toDomain(jpaEntity.getStarRatingJpaEntity()))
-            .build();
+            .type(jpaEntity.getReviewType());
     }
 
 }

@@ -12,8 +12,10 @@ import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEn
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeJpaRepository;
 import com.pikachu.purple.infrastructure.persistence.review.entity.ReviewJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.review.entity.ReviewMoodJpaEntity;
+import com.pikachu.purple.infrastructure.persistence.review.entity.StarRatingJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.review.repository.ReviewJpaRepository;
 import com.pikachu.purple.infrastructure.persistence.review.repository.ReviewMoodJpaRepository;
+import com.pikachu.purple.infrastructure.persistence.review.repository.StarRatingJpaRepository;
 import com.pikachu.purple.infrastructure.persistence.user.entity.UserJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.user.repository.UserJpaRepository;
 import java.util.List;
@@ -29,6 +31,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     private final UserJpaRepository userJpaRepository;
     private final MoodJpaRepository moodJpaRepository;
     private final ReviewMoodJpaRepository reviewMoodJpaRepository;
+    private final StarRatingJpaRepository starRatingJpaRepository;
 
     private ReviewJpaEntity findEntityById(Long reviewId) {
         return reviewJpaRepository.findById(reviewId)
@@ -71,7 +74,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
 
         ReviewJpaEntity reviewJpaEntitySaved = reviewJpaRepository.save(reviewJpaEntity);
 
-        return ReviewJpaEntity.toDomain(reviewJpaEntitySaved);
+        return ReviewJpaEntity.buildDefault(reviewJpaEntitySaved).build();
     }
 
     @Override
