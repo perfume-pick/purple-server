@@ -26,12 +26,12 @@ public class CreateStarRatingOnboardingApplicationService implements
 
         starRatingDomainService.createOnboarding(
             userId,
-            command.starRatingInfos()
+            command.starRatingVOs()
         );
 
         updateStarRatingStatisticsUseCase.invoke(
             new UpdateStarRatingStatisticsUseCase.Command(
-                command.starRatingInfos()
+                command.starRatingVOs()
             )
         );
 

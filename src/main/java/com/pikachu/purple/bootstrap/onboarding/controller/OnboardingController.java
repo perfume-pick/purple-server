@@ -17,7 +17,7 @@ public class OnboardingController implements OnboardingApi {
     public void createOnboarding(CreateStarRatingOnboardingRequest request) {
         createStarRatingOnboardingUseCase.invoke(
             new Command(
-                request.starRatingInfos()
+                request.starRatingVOs()
             )
         );
     }
