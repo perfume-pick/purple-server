@@ -84,7 +84,10 @@ public class UserDomainServiceImpl implements UserDomainService {
     }
 
     private void deleteExistingImage(User user) {
-        if (!user.getImageUrl().isEmpty()) imageUrlS3Uploader.delete(user.getImageUrl());
+        String imageUrl = user.getImageUrl();
+        if (imageUrl != null && !imageUrl.isEmpty()) {
+            imageUrlS3Uploader.delete(imageUrl);
+        }
     }
 
     private String changeImage(Long userId, MultipartFile picture) {
