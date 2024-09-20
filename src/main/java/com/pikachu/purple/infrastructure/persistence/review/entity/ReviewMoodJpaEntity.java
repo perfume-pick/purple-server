@@ -31,7 +31,7 @@ public class ReviewMoodJpaEntity extends BaseEntity {
     private ReviewJpaEntity reviewJpaEntity;
 
     @Id
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "mood_name")
     private MoodJpaEntity moodJpaEntity;
 

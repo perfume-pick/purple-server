@@ -22,4 +22,13 @@ public interface ReviewRepository {
         Long reviewId,
         List<String> moodNames
     );
+
+    List<Review> findAllWithReviewEvaluationAndMoodOrderByCreatedAtDesc(Long perfumeId);
+
+    List<Review> findAllWithStarRatingAndReviewEvaluationAndMoodOrderByScoreDesc(Long perfumeId);
+
+    List<Review> findAllWithStarRatingAndReviewEvaluationAndMoodOrderByScoreAsc(Long perfumeId);
+
+    Review findById(Long reviewId);
+
 }

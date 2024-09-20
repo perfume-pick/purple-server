@@ -45,11 +45,16 @@ public class ReviewJpaAdaptor implements ReviewRepository {
 
         PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository.findById(perfumeId)
             .orElseThrow(() -> PerfumeNotFoundException);
+        
+        StarRatingJpaEntity starRatingJpaEntity = starRatingJpaRepository.findByUserIdAndPerfumeId(
+            userId, perfumeId
+        ).orElseThrow();
 
         ReviewJpaEntity reviewJpaEntity = ReviewJpaEntity.builder()
             .id(review.getId())
             .userJpaEntity(userJpaEntity)
             .perfumeJpaEntity(perfumeJpaEntity)
+            .starRatingJpaEntity(starRatingJpaEntity)
             .content(review.getContent())
             .reviewType(review.getType())
             .build();
@@ -57,11 +62,8 @@ public class ReviewJpaAdaptor implements ReviewRepository {
         reviewJpaRepository.save(reviewJpaEntity);
 
         ReviewJpaEntity reviewJpaEntitySaved = findEntityById(review.getId());
-        StarRatingJpaEntity starRatingJpaEntity = starRatingJpaRepository.findByUserIdAndPerfumeId(
-            userId, perfumeId).orElseThrow();
 
-        return ReviewJpaEntity.buildDefault(reviewJpaEntitySaved)
-            .starRating(StarRatingJpaEntity.toDomain(starRatingJpaEntity)).build();
+        return ReviewJpaEntity.toDomain(reviewJpaEntitySaved);
     }
 
     @Override
@@ -74,7 +76,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
 
         ReviewJpaEntity reviewJpaEntitySaved = reviewJpaRepository.save(reviewJpaEntity);
 
-        return ReviewJpaEntity.buildDefault(reviewJpaEntitySaved).build();
+        return ReviewJpaEntity.toDomain(reviewJpaEntitySaved);
     }
 
     @Override
@@ -95,10 +97,35 @@ public class ReviewJpaAdaptor implements ReviewRepository {
         reviewMoodJpaRepository.saveAll(reviewMoodJpaEntities);
     }
 
+    @Override
+    public List<Review> findAllWithReviewEvaluationAndMoodOrderByCreatedAtDesc(
+        Long perfumeId) {
+        List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository.findAllWithStarRatingAndMoodOrderByCreatedAtDesc(perfumeId);
+
+        return reviewJpaEntities.stream()
+            .map(ReviewJpaEntity::toFullDomain)
+            .toList();
+    }
 
     @Override
-    public Review deleteById(Long reviewId) {
+    public List<Review> findAllWithStarRatingAndReviewEvaluationAndMoodOrderByScoreDesc(
+        Long perfumeId) {
+//        List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository.findAllWithStarRatingAndReviewEvaluationAndMoodOrderByScoreDesc(perfumeId);
+        return null;
+    }
+
+    @Override
+    public List<Review> findAllWithStarRatingAndReviewEvaluationAndMoodOrderByScoreAsc(
+        Long perfumeId) {
+//        List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository.findAllWithStarRatingAndReviewEvaluationAndMoodOrderByScoreAsc(perfumeId);
+        return null;
+    }
+
+    @Override
+    public Review findById(Long reviewId) {
         ReviewJpaEntity reviewJpaEntity = findEntityById(reviewId);
+        return ReviewJpaEntity.toDomain(reviewJpaEntity);
+    }
 
 
     @Override

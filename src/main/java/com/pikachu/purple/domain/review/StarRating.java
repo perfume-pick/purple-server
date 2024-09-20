@@ -12,6 +12,7 @@ import lombok.Getter;
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 public class StarRating {
 
+    private Long id;
     private User user;
     private Perfume perfume;
     private int score;

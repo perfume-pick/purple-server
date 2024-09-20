@@ -3,18 +3,11 @@ package com.pikachu.purple.application.review.service.domain.impl;
 import com.pikachu.purple.application.review.port.out.ReviewRepository;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
 import com.pikachu.purple.application.util.IdGenerator;
-import com.pikachu.purple.domain.review.Mood;
-import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.review.Review;
-import com.pikachu.purple.domain.review.ReviewEvaluation;
-import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.domain.review.enums.ReviewType;
-import com.pikachu.purple.domain.user.User;
 import java.util.List;
-import java.util.Set;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -64,6 +57,28 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
             reviewId,
             moodNames
         );
+    }
+
+    @Override
+    public List<Review> findAllWithReviewEvaluationAndMoodOrderByCreatedAtDesc(Long perfumeId) {
+        return reviewRepository.findAllWithReviewEvaluationAndMoodOrderByCreatedAtDesc(perfumeId);
+    }
+
+    @Override
+    public List<Review> findAllWithReviewEvaluationAndMoodOrderByScoreDesc(Long perfumeId) {
+//        return reviewRepository.findAllWithStarRatingAndReviewEvaluationAndMoodOrderByScoreDesc(perfumeId);
+        return null;
+    }
+
+    @Override
+    public List<Review> findAllWithReviewEvaluationAndMoodOrderByScoreAsc(Long perfumeId) {
+//        return reviewRepository.findAllWithStarRatingAndReviewEvaluationAndMoodOrderByScoreAsc(perfumeId);
+        return null;
+    }
+
+    @Override
+    public Review findById(Long reviewId) {
+        return reviewRepository.findById(reviewId);
     }
 
 }
