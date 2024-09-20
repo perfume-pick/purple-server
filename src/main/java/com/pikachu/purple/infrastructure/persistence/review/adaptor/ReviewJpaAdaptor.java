@@ -100,8 +100,10 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     public Review deleteById(Long reviewId) {
         ReviewJpaEntity reviewJpaEntity = findEntityById(reviewId);
 
-        reviewJpaRepository.delete(reviewJpaEntity);
-        return ReviewJpaEntity.buildDefault(reviewJpaEntity).build();
+
+    @Override
+    public void deleteById(Long reviewId) {
+        reviewJpaRepository.deleteById(reviewId);
     }
 
 }

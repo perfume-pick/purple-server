@@ -53,14 +53,8 @@ public class StarRatingDomainServiceImpl implements StarRatingDomainService {
     }
 
     @Override
-    public void deleteByUserIdAndPerfumeId(
-        Long userId,
-        Long perfumeId
-    ) {
-        starRatingRepository.deleteByUserIdAndPerfumeId(
-            userId,
-            perfumeId
-        );
+    public void deleteById(Long starRatingId) {
+        starRatingRepository.deleteById(starRatingId);
     }
 
     @Override

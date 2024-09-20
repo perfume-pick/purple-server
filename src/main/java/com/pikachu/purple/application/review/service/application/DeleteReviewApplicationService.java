@@ -15,13 +15,15 @@ public class DeleteReviewApplicationService implements DeleteReviewUseCase {
     private final ReviewDomainService reviewDomainService;
     private final DeleteStarRatingUseCase deleteStarRatingUseCase;
 
-    @Override
     @Transactional
+    @Override
     public void invoke(Long reviewId) {
 
-        Review review = reviewDomainService.deleteById(reviewId);
+        Review review = reviewDomainService.findById(reviewId);
 
-        deleteStarRatingUseCase.invoke(review.getPerfume().getId());
+        deleteStarRatingUseCase.invoke(review.getStarRating().getId());
+
+        reviewDomainService.deleteById(reviewId);
     }
 
 }

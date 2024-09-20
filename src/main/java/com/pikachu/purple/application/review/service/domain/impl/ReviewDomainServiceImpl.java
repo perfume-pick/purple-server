@@ -51,8 +51,8 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
         );
     }
 
-    public Review deleteById(Long id) {
-        return reviewRepository.deleteById(id);
+    public void deleteById(Long id) {
+        reviewRepository.deleteById(id);
     }
 
     @Override

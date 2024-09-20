@@ -108,11 +108,10 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
     }
 
     @Override
-    public void deleteByUserIdAndPerfumeId(Long userId, Long perfumeId) {
-        StarRatingJpaEntity starRatingJpaEntity = findEntityOrThrowException(
-            userId,
-            perfumeId
-        );
+    public void deleteById(Long starRatingId) {
+        StarRatingJpaEntity starRatingJpaEntity = starRatingJpaRepository.findById(starRatingId)
+            .orElseThrow(() -> StarRatingNotFoundException);
+
         starRatingJpaRepository.delete(starRatingJpaEntity);
     }
 

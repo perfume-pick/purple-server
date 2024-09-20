@@ -16,7 +16,7 @@ public interface ReviewRepository {
         String content
     );
 
-    Review deleteById(Long id);
+    void deleteById(Long id);
 
     void createReviewMoods(
         Long reviewId,
