@@ -4,8 +4,6 @@ import com.pikachu.purple.domain.perfume.FragranticaEvaluation;
 
 public interface FragranticaEvaluationDomainService {
 
-    FragranticaEvaluation findByPerfumeIdOrderByVotesDesc(
-        Long perfumeId
-    );
+    FragranticaEvaluation findByPerfumeIdOrderByVotesDesc(Long perfumeId);
 
 }

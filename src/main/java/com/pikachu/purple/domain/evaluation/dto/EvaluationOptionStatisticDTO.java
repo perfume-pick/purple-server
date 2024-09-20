@@ -1,19 +1,22 @@
-package com.pikachu.purple.application.perfume.common.dto;
+package com.pikachu.purple.domain.evaluation.dto;
 
 import com.pikachu.purple.application.util.MathUtil;
 import com.pikachu.purple.domain.evaluation.EvaluationOptionStatistic;
 
-public record FragranticaMostVotedOptionDTO(
+public record EvaluationOptionStatisticDTO(
+    int order,
     String optionCode,
     String optionName,
     int votePercent
 ) {
 
-    public static FragranticaMostVotedOptionDTO of(
+    public static EvaluationOptionStatisticDTO of(
+        int order,
         EvaluationOptionStatistic evaluationOptionStatistic,
         int totalVotesByField
     ) {
-        return new FragranticaMostVotedOptionDTO(
+        return new EvaluationOptionStatisticDTO(
+            order,
             evaluationOptionStatistic.getType().getCode(),
             evaluationOptionStatistic.getType().getName(),
             MathUtil.getPercentage(

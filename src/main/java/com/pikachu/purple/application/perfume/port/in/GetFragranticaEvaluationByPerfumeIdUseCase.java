@@ -5,8 +5,7 @@ import java.util.List;
 
 public interface GetFragranticaEvaluationByPerfumeIdUseCase {
 
-    GetFragranticaEvaluationByPerfumeIdUseCase.Result invoke(
-        GetFragranticaEvaluationByPerfumeIdUseCase.Command command);
+    Result invoke(Command command);
 
     record Command(Long perfumeId) {}
 

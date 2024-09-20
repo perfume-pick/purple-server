@@ -1,7 +1,7 @@
 package com.pikachu.purple.bootstrap.review.controller;
 
-import com.pikachu.purple.application.review.port.in.EvaluationFormFieldGetUseCase;
-import com.pikachu.purple.application.review.port.in.EvaluationFormFieldGetUseCase.Result;
+import com.pikachu.purple.application.evaluation.port.in.GetEvaluationFormFieldUseCase;
+import com.pikachu.purple.application.evaluation.port.in.GetEvaluationFormFieldUseCase.Result;
 import com.pikachu.purple.application.review.port.in.CreateReviewDetailUseCase;
 import com.pikachu.purple.application.review.port.in.CreateReviewSimpleUseCase;
 import com.pikachu.purple.application.review.port.in.DeleteReviewUseCase;
@@ -21,7 +21,7 @@ public class ReviewController implements ReviewApi {
 
     private final CreateReviewSimpleUseCase createReviewSimpleUseCase;
     private final CreateReviewDetailUseCase createReviewDetailUseCase;
-    private final EvaluationFormFieldGetUseCase evaluationFormFieldGetUseCase;
+    private final GetEvaluationFormFieldUseCase getEvaluationFormFieldUseCase;
     private final UpdateReviewUseCase updateReviewUseCase;
     private final DeleteReviewUseCase deleteReviewUseCase;
 
@@ -51,7 +51,7 @@ public class ReviewController implements ReviewApi {
 
     @Override
     public SuccessResponse<GetEvaluationFormFieldResponse> findEvaluationFormField() {
-        Result result = evaluationFormFieldGetUseCase.invoke();
+        Result result = getEvaluationFormFieldUseCase.invoke();
 
         return SuccessResponse.of(
             new GetEvaluationFormFieldResponse(

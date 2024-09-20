@@ -1,9 +1,9 @@
-package com.pikachu.purple.application.review.service.application;
+package com.pikachu.purple.application.evaluation.service.application;
 
-import com.pikachu.purple.application.review.port.in.EvaluationFormFieldGetUseCase;
+import com.pikachu.purple.application.evaluation.port.in.GetEvaluationFormFieldUseCase;
 import com.pikachu.purple.application.mood.port.in.GetMoodsUseCase;
-import com.pikachu.purple.application.perfume.common.dto.EvaluationFieldDTO;
-import com.pikachu.purple.application.perfume.common.dto.EvaluationOptionDTO;
+import com.pikachu.purple.domain.evaluation.dto.EvaluationFieldDTO;
+import com.pikachu.purple.domain.evaluation.dto.EvaluationOptionDTO;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
 import java.util.List;
 import java.util.stream.Stream;
@@ -12,14 +12,14 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class EvaluationFormFieldGetApplicationService implements
-    EvaluationFormFieldGetUseCase {
+public class GetEvaluationFormFieldApplicationService implements
+    GetEvaluationFormFieldUseCase {
 
     private final GetMoodsUseCase getMoodsUseCase;
 
     @Override
     public Result invoke() {
-        List<EvaluationFieldDTO> evaluationFieldDTOs = Stream.of(EvaluationFieldType.values())
+        List<EvaluationFieldDTO<EvaluationOptionDTO>> evaluationFieldDTOs = Stream.of(EvaluationFieldType.values())
             .map(field -> EvaluationFieldDTO.of(
                 field,
                 field.getEvaluationOptionTypes().stream()
