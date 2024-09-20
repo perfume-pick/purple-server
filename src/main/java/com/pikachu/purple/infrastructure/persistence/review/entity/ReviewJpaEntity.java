@@ -3,6 +3,7 @@ package com.pikachu.purple.infrastructure.persistence.review.entity;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.enums.ReviewType;
 import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
+import com.pikachu.purple.infrastructure.persistence.mood.entity.MoodJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.user.entity.UserJpaEntity;
 import jakarta.persistence.Column;
@@ -12,10 +13,12 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinColumns;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import java.util.ArrayList;
+import java.util.List;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -64,26 +67,49 @@ public class ReviewJpaEntity extends BaseEntity {
     private ReviewType reviewType;
 
     @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumns({
-        @JoinColumn(name = "user_id", insertable = false, updatable = false),
-        @JoinColumn(name = "perfume_id", insertable = false, updatable = false)
-    })
+    @JoinColumn(
+        name = "star_rating_id"
+    )
     private StarRatingJpaEntity starRatingJpaEntity;
 
     @Column(name = "like_count")
     private int likeCount;
 
+    @OneToMany(mappedBy = "reviewJpaEntity")
+    private List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities = new ArrayList<>();
+
+    @OneToMany(mappedBy = "reviewJpaEntity")
+    private List<ReviewMoodJpaEntity> reviewMoodJpaEntities = new ArrayList<>();
+
     public void updateContent(String content) {
         this.content = content;
     }
 
-    public static Review.ReviewBuilder buildDefault(ReviewJpaEntity jpaEntity) {
+    private static Review.ReviewBuilder buildDefault(ReviewJpaEntity jpaEntity) {
         return Review.builder()
             .id(jpaEntity.getId())
             .user(UserJpaEntity.toDomain(jpaEntity.getUserJpaEntity()))
-            .perfume(PerfumeJpaEntity.toDomain(jpaEntity.getPerfumeJpaEntity()))
+            .starRating(StarRatingJpaEntity.toDomain(jpaEntity.getStarRatingJpaEntity()))
             .content(jpaEntity.getContent())
+            .date(jpaEntity.getUpdatedAt())
+            .likeCount(jpaEntity.getLikeCount())
             .type(jpaEntity.getReviewType());
+    }
+
+    public static Review toFullDomain(ReviewJpaEntity jpaEntity) {
+        return buildDefault(jpaEntity)
+            .perfume(PerfumeJpaEntity.toDomain(jpaEntity.getPerfumeJpaEntity()))
+            .evaluation(ReviewEvaluationJpaEntity.toDomain(jpaEntity.reviewEvaluationJpaEntities))
+            .moods(jpaEntity.reviewMoodJpaEntities.stream()
+                .map(reviewMoodJpaEntity ->
+                    MoodJpaEntity.toDomain(reviewMoodJpaEntity.getMoodJpaEntity())
+                )
+                .toList())
+            .build();
+    }
+
+    public static Review toDomain(ReviewJpaEntity jpaEntity) {
+        return buildDefault(jpaEntity).build();
     }
 
 }
