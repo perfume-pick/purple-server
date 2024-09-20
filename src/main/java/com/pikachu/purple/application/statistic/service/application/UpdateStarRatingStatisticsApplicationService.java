@@ -1,6 +1,5 @@
 package com.pikachu.purple.application.statistic.service.application;
 
-import com.pikachu.purple.application.rating.port.in.GetStarRatingsByUserIdUseCase;
 import com.pikachu.purple.application.statistic.port.in.UpdateStarRatingStatisticsUseCase;
 import com.pikachu.purple.application.statistic.service.domain.StarRatingStatisticDomainService;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +16,7 @@ public class UpdateStarRatingStatisticsApplicationService implements
     public void invoke(Command command) {
 
         starRatingStatisticDomainService.increaseAllVotes(
-            command.starRatingInfos()
+            command.starRatingVOs()
         );
     }
 }

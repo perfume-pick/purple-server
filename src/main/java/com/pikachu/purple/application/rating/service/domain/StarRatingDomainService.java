@@ -1,6 +1,6 @@
 package com.pikachu.purple.application.rating.service.domain;
 
-import com.pikachu.purple.bootstrap.onboarding.vo.StarRatingInfo;
+import com.pikachu.purple.bootstrap.onboarding.vo.StarRatingVO;
 import com.pikachu.purple.domain.review.StarRating;
 import java.util.List;
 
@@ -8,7 +8,7 @@ public interface StarRatingDomainService {
 
     void createOnboarding(
         Long userId,
-        List<StarRatingInfo> starRatingInfos
+        List<StarRatingVO> starRatingVOs
     );
 
     StarRating create(

@@ -18,7 +18,7 @@ public class StarRatingDomainServiceImpl implements StarRatingDomainService {
     @Override
     public void createOnboarding(
         Long userId,
-        List<StarRatingInfo> starRatingInfos
+        List<StarRatingVO> starRatingVOs
     ) {
         starRatingRepository.createOnboarding(
             userId,
