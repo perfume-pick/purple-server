@@ -21,26 +21,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class PerfumeController implements PerfumeApi {
 
-    private final GetPerfumesByKeywordUseCase getPerfumesByKeywordUseCase;
     private final GetAccordsAndNotesByPerfumeIdUseCase getAccordsAndNotesByPerfumeIdUseCase;
     private final GetFragranticaEvaluationByPerfumeIdUseCase getFragranticaEvaluationByPerfumeIdUseCase;
-    private final CreateSearchHistoryUseCase createSearchHistoryUseCase;
     private final GetPerfumeStatisticByPerfumeIdUseCase getPerfumeStatisticByPerfumeIdUseCase;
     private final GetReviewsByPerfumeIdAndSortTypeUseCase getReviewsByPerfumeIdAndSortTypeUseCase;
-
-    @Override
-    public SuccessResponse<GetPerfumesResponse> findAllByKeyword(String keyword) {
-        GetPerfumesByKeywordUseCase.Result result = getPerfumesByKeywordUseCase.invoke(
-            new GetPerfumesByKeywordUseCase.Command(keyword));
-
-        Instant searchAt = Instant.now();
-        createSearchHistoryUseCase.invoke(
-            keyword,
-            searchAt
-        );
-
-        return SuccessResponse.of(new GetPerfumesResponse(result.perfumeDTOs()));
-    }
 
     @Override
     public SuccessResponse<GetAccordsAndNotesResponse> findAccordsAndNotesByPerfumeId(Long perfumeId) {
