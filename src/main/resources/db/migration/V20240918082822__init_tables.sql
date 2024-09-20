@@ -99,15 +99,16 @@ CREATE TABLE perfume_accord
 DROP TABLE IF EXISTS review;
 CREATE TABLE review
 (
-    review_id   BIGINT        NOT NULL,
-    perfume_id  BIGINT        NOT NULL,
-    user_id     BIGINT        NOT NULL,
-    content     LONGTEXT      NOT NULL,
-    review_type CHAR(6)       NOT NULL,
-    like_count  INT DEFAULT 0 NOT NULL,
-    is_active   BIT(1)        NOT NULL,
-    created_at  datetime      NOT NULL,
-    updated_at  datetime      NOT NULL,
+    review_id          BIGINT        NOT NULL,
+    perfume_id         BIGINT        NOT NULL,
+    user_id            BIGINT        NOT NULL,
+    star_rating_id     BIGINT        NULL,
+    content            LONGTEXT      NOT NULL,
+    review_type        CHAR(6)       NOT NULL,
+    like_count         INT DEFAULT 0 NOT NULL,
+    is_active          BIT(1)        NOT NULL,
+    created_at         datetime      NOT NULL,
+    updated_at         datetime      NOT NULL,
     CONSTRAINT pk_review PRIMARY KEY (review_id)
 );
 
@@ -137,13 +138,14 @@ CREATE TABLE review_mood
 DROP TABLE IF EXISTS star_rating;
 CREATE TABLE star_rating
 (
+    star_rating_id BIGINT NOT NULL,
     perfume_id BIGINT   NOT NULL,
     user_id    BIGINT   NOT NULL,
     score      INT      NOT NULL,
     is_active  BIT(1)   NOT NULL,
     created_at datetime NOT NULL,
     updated_at datetime NOT NULL,
-    CONSTRAINT pk_star_rating PRIMARY KEY (perfume_id, user_id)
+    CONSTRAINT pk_star_rating PRIMARY KEY (star_rating_id)
 );
 
 DROP TABLE IF EXISTS star_rating_statistic;
@@ -191,12 +193,12 @@ ALTER TABLE complaint
 ALTER TABLE complaint
     ADD CONSTRAINT fk_complaint_user_id FOREIGN KEY (user_id) REFERENCES user (user_id) ON DELETE NO ACTION;
 
-CREATE INDEX fk_complaint_user_id ON complaint (user_id);
+CREATE INDEX idx_complaint_user_id ON complaint (user_id);
 
 ALTER TABLE evaluation_statistic
     ADD CONSTRAINT fk_evaluation_statistic_perfume_id FOREIGN KEY (perfume_id) REFERENCES perfume (perfume_id) ON DELETE NO ACTION;
 
-CREATE INDEX fk_evaluation_statistic_perfume_id ON evaluation_statistic (perfume_id);
+CREATE INDEX idx_evaluation_statistic_perfume_id ON evaluation_statistic (perfume_id);
 
 ALTER TABLE fragrantica_evaluation
     ADD CONSTRAINT fk_fragrantica_evaluation_perfume_id FOREIGN KEY (perfume_id) REFERENCES perfume (perfume_id) ON DELETE NO ACTION;
@@ -207,7 +209,7 @@ ALTER TABLE likes
 ALTER TABLE likes
     ADD CONSTRAINT fk_likes_user_id FOREIGN KEY (user_id) REFERENCES user (user_id) ON DELETE NO ACTION;
 
-CREATE INDEX fk_likes_user_id ON likes (user_id);
+CREATE INDEX idx_likes_user_id ON likes (user_id);
 
 ALTER TABLE note
     ADD CONSTRAINT fk_note_perfume_id FOREIGN KEY (perfume_id) REFERENCES perfume (perfume_id) ON DELETE NO ACTION;
@@ -215,7 +217,7 @@ ALTER TABLE note
 ALTER TABLE perfume_accord
     ADD CONSTRAINT fk_perfume_accord_accord_name FOREIGN KEY (accord_name) REFERENCES accord (accord_name) ON DELETE NO ACTION;
 
-CREATE INDEX fk_perfume_accord_accord_name ON perfume_accord (accord_name);
+CREATE INDEX idx_perfume_accord_accord_name ON perfume_accord (accord_name);
 
 ALTER TABLE perfume_accord
     ADD CONSTRAINT fk_perfume_accord_perfume_id FOREIGN KEY (perfume_id) REFERENCES perfume (perfume_id) ON DELETE NO ACTION;
@@ -223,7 +225,7 @@ ALTER TABLE perfume_accord
 ALTER TABLE perfume
     ADD CONSTRAINT fk_perfume_brand_name FOREIGN KEY (brand_name) REFERENCES brand (brand_name) ON DELETE NO ACTION;
 
-CREATE INDEX fk_perfume_brand_name ON perfume (brand_name);
+CREATE INDEX idx_perfume_brand_name ON perfume (brand_name);
 
 ALTER TABLE review_evaluation
     ADD CONSTRAINT fk_review_evaluation_review_id FOREIGN KEY (review_id) REFERENCES review (review_id) ON DELETE NO ACTION;
@@ -240,9 +242,9 @@ ALTER TABLE review
     ADD CONSTRAINT fk_review_perfume_id FOREIGN KEY (perfume_id) REFERENCES perfume (perfume_id) ON DELETE NO ACTION;
 
 ALTER TABLE review
-    ADD CONSTRAINT fk_review_perfume_id_user_id FOREIGN KEY (perfume_id, user_id) REFERENCES star_rating (perfume_id, user_id) ON DELETE NO ACTION;
+    ADD CONSTRAINT fk_review_star_rating_id FOREIGN KEY (star_rating_id) REFERENCES star_rating (star_rating_id) ON DELETE NO ACTION;
 
-CREATE INDEX fk_review_perfume_id_user_id ON review (perfume_id, user_id);
+CREATE INDEX idx_review_perfume_id_user_id ON review (perfume_id, user_id);
 
 ALTER TABLE review
     ADD CONSTRAINT fk_review_user_id FOREIGN KEY (user_id) REFERENCES user (user_id) ON DELETE NO ACTION;
@@ -253,17 +255,17 @@ ALTER TABLE star_rating
 ALTER TABLE star_rating_statistic
     ADD CONSTRAINT fk_star_rating_statistic_perfume_id FOREIGN KEY (perfume_id) REFERENCES perfume (perfume_id) ON DELETE NO ACTION;
 
-CREATE INDEX fk_star_rating_statistic_perfume_id ON star_rating_statistic (perfume_id);
+CREATE INDEX idx_star_rating_statistic_perfume_id ON star_rating_statistic (perfume_id);
 
 ALTER TABLE star_rating
     ADD CONSTRAINT fk_star_rating_user_id FOREIGN KEY (user_id) REFERENCES user (user_id) ON DELETE NO ACTION;
 
-CREATE INDEX fk_star_rating_user_id ON star_rating (user_id);
+CREATE INDEX idx_star_rating_user_id ON star_rating (user_id);
 
 ALTER TABLE user_accord
     ADD CONSTRAINT fk_user_accord_accord_name FOREIGN KEY (accord_name) REFERENCES accord (accord_name) ON DELETE NO ACTION;
 
-CREATE INDEX fk_user_accord_accord_name ON user_accord (accord_name);
+CREATE INDEX idx_user_accord_accord_name ON user_accord (accord_name);
 
 ALTER TABLE user_accord
     ADD CONSTRAINT fk_user_accord_user_id FOREIGN KEY (user_id) REFERENCES user (user_id) ON DELETE NO ACTION;
