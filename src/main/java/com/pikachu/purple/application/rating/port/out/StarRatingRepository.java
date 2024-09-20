@@ -8,10 +8,7 @@ public interface StarRatingRepository {
 
     void createOnboarding(Long userId, List<StarRatingInfo> starRatings);
 
-    /*
-    StarRating 반환
-     */
-    StarRating create(Long userId, Long perfumeId, int score);
+    StarRating create(Long starRatingId, Long userId, Long perfumeId, int score);
 
     List<StarRating> findAllWithPerfumeAndPerfumeAccordByUserId(Long userId);
 

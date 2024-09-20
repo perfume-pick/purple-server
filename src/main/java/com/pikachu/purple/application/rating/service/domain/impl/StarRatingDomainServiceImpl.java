@@ -2,6 +2,7 @@ package com.pikachu.purple.application.rating.service.domain.impl;
 
 import com.pikachu.purple.application.rating.port.out.StarRatingRepository;
 import com.pikachu.purple.application.rating.service.domain.StarRatingDomainService;
+import com.pikachu.purple.application.util.IdGenerator;
 import com.pikachu.purple.bootstrap.onboarding.vo.StarRatingInfo;
 import com.pikachu.purple.domain.review.StarRating;
 import java.util.List;
@@ -31,7 +32,8 @@ public class StarRatingDomainServiceImpl implements StarRatingDomainService {
         Long perfumeId,
         int score
     ) {
-        return starRatingRepository.create(userId, perfumeId, score);
+        Long starRatingId = IdGenerator.generate();
+        return starRatingRepository.create(starRatingId, userId, perfumeId, score);
     }
 
     @Override

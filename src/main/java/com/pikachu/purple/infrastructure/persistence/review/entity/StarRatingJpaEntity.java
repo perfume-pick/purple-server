@@ -3,16 +3,13 @@ package com.pikachu.purple.infrastructure.persistence.review.entity;
 import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
-import com.pikachu.purple.infrastructure.persistence.review.entity.id.StarRatingId;
 import com.pikachu.purple.infrastructure.persistence.user.entity.UserJpaEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
-import jakarta.persistence.IdClass;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -24,17 +21,18 @@ import lombok.NoArgsConstructor;
 @Entity
 @Builder
 @Table(name = "star_rating")
-@IdClass(StarRatingId.class)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 public class StarRatingJpaEntity extends BaseEntity {
 
     @Id
+    @Column(name = "star_rating_id")
+    private Long id;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private UserJpaEntity userJpaEntity;
 
-    @Id
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "perfume_id")
     private PerfumeJpaEntity perfumeJpaEntity;
@@ -48,6 +46,7 @@ public class StarRatingJpaEntity extends BaseEntity {
 
     public static StarRating.StarRatingBuilder buildDefault(StarRatingJpaEntity jpaEntity) {
         return StarRating.builder()
+            .id(jpaEntity.getId())
             .score(jpaEntity.getScore());
     }
 
