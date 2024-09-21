@@ -1,7 +1,7 @@
 package com.pikachu.purple.application.perfume.service.application;
 
 import com.pikachu.purple.application.perfume.common.dto.BrandDTO;
-import com.pikachu.purple.application.perfume.port.in.GetBrandsUseCase;
+import com.pikachu.purple.application.perfume.port.in.brand.GetBrandsUseCase;
 import com.pikachu.purple.application.perfume.service.domain.BrandDomainService;
 import com.pikachu.purple.domain.perfume.Brand;
 import java.util.List;

@@ -1,7 +1,7 @@
 package com.pikachu.purple.application.perfume.service.application;
 
 import com.pikachu.purple.application.perfume.common.dto.PerfumeDTO;
-import com.pikachu.purple.application.perfume.port.in.GetPerfumesByKeywordUseCase;
+import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesByKeywordUseCase;
 import com.pikachu.purple.application.perfume.service.domain.PerfumeDomainService;
 import com.pikachu.purple.domain.accord.Accord;
 import com.pikachu.purple.domain.perfume.Perfume;

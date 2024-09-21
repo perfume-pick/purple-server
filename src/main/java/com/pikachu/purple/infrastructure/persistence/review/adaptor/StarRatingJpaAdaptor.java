@@ -4,7 +4,7 @@ import static com.pikachu.purple.bootstrap.common.exception.BusinessException.Pe
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.StarRatingNotFoundException;
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.UserNotFoundException;
 
-import com.pikachu.purple.application.rating.port.out.StarRatingRepository;
+import com.pikachu.purple.application.review.port.out.StarRatingRepository;
 import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeJpaRepository;
@@ -99,14 +99,19 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
     }
 
     @Override
-    public void updateScore(Long userId, Long perfumeId, int score) {
+    public StarRating updateScore(
+        Long userId,
+        Long perfumeId,
+        int score
+    ) {
         StarRatingJpaEntity starRatingJpaEntity = findEntityOrThrowException(
             userId,
             perfumeId
         );
 
         starRatingJpaEntity.updateScore(score);
-        starRatingJpaRepository.save(starRatingJpaEntity);
+        StarRatingJpaEntity starRatingJpaEntitySaved = starRatingJpaRepository.save(starRatingJpaEntity);
+        return StarRatingJpaEntity.toDomain(starRatingJpaEntitySaved);
     }
 
     @Override

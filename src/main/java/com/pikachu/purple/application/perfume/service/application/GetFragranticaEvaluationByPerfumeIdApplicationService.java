@@ -4,11 +4,10 @@ import static com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType.SEA
 
 import com.pikachu.purple.application.perfume.common.dto.FragranticaEvaluationFieldDTO;
 import com.pikachu.purple.application.perfume.common.dto.FragranticaEvaluationOptionDTO;
-import com.pikachu.purple.application.perfume.port.in.GetFragranticaEvaluationByPerfumeIdUseCase;
+import com.pikachu.purple.application.perfume.port.in.fragranticaevaluation.GetFragranticaEvaluationByPerfumeIdUseCase;
 import com.pikachu.purple.application.perfume.service.domain.FragranticaEvaluationDomainService;
 import com.pikachu.purple.domain.evaluation.EvaluationField;
 import com.pikachu.purple.domain.evaluation.EvaluationOptionStatistic;
-import com.pikachu.purple.domain.evaluation.dto.EvaluationOptionStatisticDTO;
 import com.pikachu.purple.domain.perfume.FragranticaEvaluation;
 import java.util.ArrayList;
 import java.util.List;

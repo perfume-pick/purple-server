@@ -1,7 +1,7 @@
 package com.pikachu.purple.bootstrap.onboarding.controller;
 
-import com.pikachu.purple.application.rating.port.in.CreateStarRatingOnboardingUseCase;
-import com.pikachu.purple.application.rating.port.in.CreateStarRatingOnboardingUseCase.Command;
+import com.pikachu.purple.application.review.port.in.starrating.CreateStarRatingOnboardingUseCase;
+import com.pikachu.purple.application.review.port.in.starrating.CreateStarRatingOnboardingUseCase.Command;
 import com.pikachu.purple.bootstrap.onboarding.api.OnboardingApi;
 import com.pikachu.purple.bootstrap.onboarding.dto.request.CreateStarRatingOnboardingRequest;
 import lombok.RequiredArgsConstructor;

@@ -1,8 +1,8 @@
 package com.pikachu.purple.bootstrap.perfume.controller;
 
-import com.pikachu.purple.application.perfume.port.in.GetBrandsUseCase;
-import com.pikachu.purple.application.perfume.port.in.GetBrandsUseCase.Result;
-import com.pikachu.purple.application.perfume.port.in.GetPerfumesByBrandsUseCase;
+import com.pikachu.purple.application.perfume.port.in.brand.GetBrandsUseCase;
+import com.pikachu.purple.application.perfume.port.in.brand.GetBrandsUseCase.Result;
+import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesByBrandsUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.perfume.api.BrandApi;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetBrandsResponse;

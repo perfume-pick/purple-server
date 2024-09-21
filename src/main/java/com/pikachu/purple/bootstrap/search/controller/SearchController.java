@@ -1,6 +1,6 @@
 package com.pikachu.purple.bootstrap.search.controller;
 
-import com.pikachu.purple.application.perfume.port.in.GetPerfumesByKeywordUseCase;
+import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesByKeywordUseCase;
 import com.pikachu.purple.application.user.port.in.CreateSearchHistoryUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumesResponse;

@@ -1,6 +1,6 @@
 package com.pikachu.purple.application.perfume.service.application;
 
-import com.pikachu.purple.application.perfume.port.in.GetPerfumeByIdUseCase;
+import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumeByIdUseCase;
 import com.pikachu.purple.application.perfume.service.domain.PerfumeDomainService;
 import com.pikachu.purple.domain.perfume.Perfume;
 import lombok.RequiredArgsConstructor;

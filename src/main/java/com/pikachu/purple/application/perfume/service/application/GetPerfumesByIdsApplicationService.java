@@ -1,6 +1,6 @@
 package com.pikachu.purple.application.perfume.service.application;
 
-import com.pikachu.purple.application.perfume.port.in.GetPerfumesByIdsUseCase;
+import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesByIdsUseCase;
 import com.pikachu.purple.application.perfume.service.domain.PerfumeDomainService;
 import com.pikachu.purple.domain.perfume.Perfume;
 import java.util.List;

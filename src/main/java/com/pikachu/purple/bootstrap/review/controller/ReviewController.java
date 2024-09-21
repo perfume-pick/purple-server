@@ -1,11 +1,11 @@
 package com.pikachu.purple.bootstrap.review.controller;
 
-import com.pikachu.purple.application.evaluation.port.in.GetEvaluationFormFieldUseCase;
-import com.pikachu.purple.application.evaluation.port.in.GetEvaluationFormFieldUseCase.Result;
-import com.pikachu.purple.application.review.port.in.CreateReviewDetailUseCase;
-import com.pikachu.purple.application.review.port.in.CreateReviewSimpleUseCase;
-import com.pikachu.purple.application.review.port.in.DeleteReviewUseCase;
-import com.pikachu.purple.application.review.port.in.UpdateReviewUseCase;
+import com.pikachu.purple.application.review.port.in.GetEvaluationFormFieldUseCase;
+import com.pikachu.purple.application.review.port.in.GetEvaluationFormFieldUseCase.Result;
+import com.pikachu.purple.application.review.port.in.review.CreateReviewDetailUseCase;
+import com.pikachu.purple.application.review.port.in.review.CreateReviewSimpleUseCase;
+import com.pikachu.purple.application.review.port.in.review.DeleteReviewUseCase;
+import com.pikachu.purple.application.review.port.in.review.UpdateReviewUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.review.api.ReviewApi;
 import com.pikachu.purple.bootstrap.review.dto.request.CreateReviewDetailRequest;

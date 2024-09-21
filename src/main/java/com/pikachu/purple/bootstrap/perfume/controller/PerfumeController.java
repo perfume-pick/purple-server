@@ -1,19 +1,15 @@
 package com.pikachu.purple.bootstrap.perfume.controller;
 
 import com.pikachu.purple.application.perfume.port.in.GetAccordsAndNotesByPerfumeIdUseCase;
-import com.pikachu.purple.application.perfume.port.in.GetFragranticaEvaluationByPerfumeIdUseCase;
-import com.pikachu.purple.application.perfume.port.in.GetPerfumesByKeywordUseCase;
-import com.pikachu.purple.application.review.port.in.GetReviewsByPerfumeIdAndSortTypeUseCase;
+import com.pikachu.purple.application.perfume.port.in.fragranticaevaluation.GetFragranticaEvaluationByPerfumeIdUseCase;
+import com.pikachu.purple.application.review.port.in.review.GetReviewsByPerfumeIdAndSortTypeUseCase;
 import com.pikachu.purple.application.statistic.port.in.GetPerfumeStatisticByPerfumeIdUseCase;
-import com.pikachu.purple.application.user.port.in.CreateSearchHistoryUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.perfume.api.PerfumeApi;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetAccordsAndNotesResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetFragranticaEvaluationResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeStatisticResponse;
-import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumesResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetReviewsResponse;
-import java.time.Instant;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
 
