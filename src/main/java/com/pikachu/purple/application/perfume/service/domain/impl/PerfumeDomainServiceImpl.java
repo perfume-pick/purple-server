@@ -4,8 +4,6 @@ import com.pikachu.purple.application.perfume.port.out.PerfumeRepository;
 import com.pikachu.purple.application.perfume.service.domain.PerfumeDomainService;
 import com.pikachu.purple.domain.accord.Accord;
 import com.pikachu.purple.domain.perfume.Perfume;
-import com.pikachu.purple.domain.perfume.PerfumeAccord;
-import com.pikachu.purple.domain.user.UserAccord;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

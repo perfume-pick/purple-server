@@ -1,6 +1,5 @@
 package com.pikachu.purple.infrastructure.persistence.statistic.entity;
 
-import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.domain.statistic.StarRatingStatistic;
 import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
@@ -13,7 +12,6 @@ import jakarta.persistence.IdClass;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import java.util.List;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

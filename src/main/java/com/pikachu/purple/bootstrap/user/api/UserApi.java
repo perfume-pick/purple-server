@@ -2,8 +2,8 @@ package com.pikachu.purple.bootstrap.user.api;
 
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.common.security.Secured;
-import com.pikachu.purple.bootstrap.user.dto.response.GetUserProfileResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetSearchHistoriesResponse;
+import com.pikachu.purple.bootstrap.user.dto.response.GetUserProfileResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;

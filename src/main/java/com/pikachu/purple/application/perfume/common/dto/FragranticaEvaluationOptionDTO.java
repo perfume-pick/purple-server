@@ -2,9 +2,6 @@ package com.pikachu.purple.application.perfume.common.dto;
 
 import com.pikachu.purple.application.util.MathUtil;
 import com.pikachu.purple.domain.evaluation.EvaluationOptionStatistic;
-import com.pikachu.purple.domain.evaluation.dto.EvaluationOptionStatisticDTO;
-import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
-import java.util.List;
 
 public record FragranticaEvaluationOptionDTO(
     String optionCode,

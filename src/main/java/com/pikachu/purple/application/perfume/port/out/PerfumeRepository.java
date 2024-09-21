@@ -2,8 +2,6 @@ package com.pikachu.purple.application.perfume.port.out;
 
 import com.pikachu.purple.domain.accord.Accord;
 import com.pikachu.purple.domain.perfume.Perfume;
-import com.pikachu.purple.domain.perfume.PerfumeAccord;
-import com.pikachu.purple.domain.user.UserAccord;
 import java.util.List;
 
 public interface PerfumeRepository {

@@ -8,8 +8,6 @@ public interface UpdateReviewUseCase {
         Long reviewId,
         int score,
         String content
-    ) {
-
-    }
+    ) {}
 
 }

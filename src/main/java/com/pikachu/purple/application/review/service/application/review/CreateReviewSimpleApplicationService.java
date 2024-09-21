@@ -1,7 +1,6 @@
 package com.pikachu.purple.application.review.service.application.review;
 
 import com.pikachu.purple.application.review.port.in.review.CreateReviewSimpleUseCase;
-import com.pikachu.purple.application.review.port.in.review.UpdateReviewUseCase;
 import com.pikachu.purple.application.review.port.in.starrating.CreateStarRatingUseCase;
 import com.pikachu.purple.application.review.port.in.starrating.UpdateStarRatingUseCase;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;

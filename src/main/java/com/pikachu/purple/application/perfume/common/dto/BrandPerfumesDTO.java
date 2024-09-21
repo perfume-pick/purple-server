@@ -1,6 +1,5 @@
 package com.pikachu.purple.application.perfume.common.dto;
 
-import com.pikachu.purple.domain.perfume.Brand;
 import com.pikachu.purple.domain.perfume.Perfume;
 import java.util.List;
 

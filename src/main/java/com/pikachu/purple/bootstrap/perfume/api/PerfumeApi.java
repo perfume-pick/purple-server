@@ -5,7 +5,6 @@ import com.pikachu.purple.bootstrap.common.security.Secured;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetAccordsAndNotesResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetFragranticaEvaluationResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeStatisticResponse;
-import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumesResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetReviewsResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

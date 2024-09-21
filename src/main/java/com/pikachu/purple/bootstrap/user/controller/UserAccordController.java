@@ -2,8 +2,8 @@ package com.pikachu.purple.bootstrap.user.controller;
 
 import com.pikachu.purple.application.perfume.port.in.GetPerfumesAndUserAccordsByUserUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
-import com.pikachu.purple.bootstrap.user.dto.response.GetPerfumesAndUserAccordsByUserResponse;
 import com.pikachu.purple.bootstrap.user.api.UserAccordApi;
+import com.pikachu.purple.bootstrap.user.dto.response.GetPerfumesAndUserAccordsByUserResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
 

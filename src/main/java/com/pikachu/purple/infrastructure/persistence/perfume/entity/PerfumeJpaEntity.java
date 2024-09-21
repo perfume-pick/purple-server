@@ -1,7 +1,6 @@
 package com.pikachu.purple.infrastructure.persistence.perfume.entity;
 
 import com.pikachu.purple.domain.perfume.Perfume;
-import com.pikachu.purple.domain.perfume.PerfumeAccord;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

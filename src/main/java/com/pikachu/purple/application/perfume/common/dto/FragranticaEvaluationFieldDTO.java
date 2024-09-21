@@ -1,6 +1,5 @@
 package com.pikachu.purple.application.perfume.common.dto;
 
-import com.pikachu.purple.domain.evaluation.dto.EvaluationOptionStatisticDTO;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
 import java.util.List;
 

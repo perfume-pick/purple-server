@@ -5,8 +5,8 @@ import com.pikachu.purple.application.history.port.in.searchhistory.GetSearchHis
 import com.pikachu.purple.application.user.port.in.user.UpdateProfileUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.user.api.UserApi;
-import com.pikachu.purple.bootstrap.user.dto.response.GetUserProfileResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetSearchHistoriesResponse;
+import com.pikachu.purple.bootstrap.user.dto.response.GetUserProfileResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;

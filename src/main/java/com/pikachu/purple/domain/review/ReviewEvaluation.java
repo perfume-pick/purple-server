@@ -1,6 +1,5 @@
 package com.pikachu.purple.domain.review;
 
-
 import com.pikachu.purple.domain.evaluation.EvaluationField;
 import com.pikachu.purple.domain.evaluation.EvaluationOption;
 import java.util.List;

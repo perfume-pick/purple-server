@@ -1,7 +1,6 @@
 package com.pikachu.purple.infrastructure.persistence.perfume.entity;
 
 import com.pikachu.purple.domain.perfume.Brand;
-import com.pikachu.purple.infrastructure.persistence.perfume.repository.BrandJpaRepository;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

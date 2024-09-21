@@ -6,7 +6,6 @@ import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 import com.pikachu.purple.domain.statistic.EvaluationStatistic;
 import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
-import com.pikachu.purple.infrastructure.persistence.perfume.entity.FragranticaEvaluationJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.statistic.entity.id.EvaluationStatisticId;
 import jakarta.persistence.Column;

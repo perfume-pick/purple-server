@@ -7,8 +7,6 @@ public interface CreateStarRatingOnboardingUseCase {
 
     void invoke(Command command);
 
-    record Command(List<StarRatingVO> starRatingVOs) {
-
-    }
+    record Command(List<StarRatingVO> starRatingVOs) {}
 
 }
