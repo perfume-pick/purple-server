@@ -1,5 +1,7 @@
 package com.pikachu.purple.domain.review.enums;
 
+import static com.pikachu.purple.bootstrap.common.exception.BusinessException.SortTypeNotFoundException;
+
 import java.util.EnumSet;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,12 +17,11 @@ public enum SortType {
 
     private final String sortTypeStr;
 
-    //TODO null 처리
     public static SortType transByStr(String sortTypeStr) {
         return EnumSet.allOf(SortType.class).stream()
             .filter(e -> e.getSortTypeStr().equals(sortTypeStr))
             .findAny()
-            .orElseThrow();
+            .orElseThrow(() -> SortTypeNotFoundException);
     }
 
 }

@@ -1,5 +1,7 @@
 package com.pikachu.purple.application.perfume.service.application;
 
+import static com.pikachu.purple.bootstrap.common.exception.BusinessException.PerfumeAccordNotFoundException;
+
 import com.pikachu.purple.application.perfume.common.dto.PerfumeDTO;
 import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesByKeywordUseCase;
 import com.pikachu.purple.application.perfume.service.domain.PerfumeDomainService;
@@ -21,14 +23,13 @@ public class GetPerfumesByKeywordApplicationService implements GetPerfumesByKeyw
     public Result invoke(Command command) {
         List<Perfume> perfumes = perfumeDomainService.findAllWithPerfumeAccordsByKeyword(command.keyword());
 
-        //TODO null -> Exception 처리
         List<PerfumeDTO> perfumeDTOs = perfumes.stream()
             .map(perfume -> PerfumeDTO.from(
                 perfume,
                 perfume.getAccords().stream()
                     .map(Accord::getName)
                     .findFirst()
-                    .orElse(null)
+                    .orElseThrow(() -> PerfumeAccordNotFoundException)
             ))
             .toList();
 

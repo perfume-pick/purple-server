@@ -1,5 +1,7 @@
 package com.pikachu.purple.application.perfume.service.application;
 
+import static com.pikachu.purple.bootstrap.common.exception.BusinessException.UserAccordNotFoundException;
+
 import com.pikachu.purple.application.perfume.common.dto.RecommendedPerfumeDTO;
 import com.pikachu.purple.application.perfume.common.dto.UserAccordDTO;
 import com.pikachu.purple.application.perfume.common.vo.PerfumeAccordMatchVO;
@@ -27,6 +29,10 @@ public class GetPerfumesAndUserAccordsByUserApplicationService implements
     @Override
     public Result invoke() {
         GetUserAccordsUseCase.Result result = getUserAccordsUseCase.invoke();
+
+        if (result.userAccords().isEmpty()) {
+            throw UserAccordNotFoundException;
+        }
 
         List<UserAccordDTO> userAccordDTOs = IntStream.range(0, 3)
             .mapToObj(i -> UserAccordDTO.of(
