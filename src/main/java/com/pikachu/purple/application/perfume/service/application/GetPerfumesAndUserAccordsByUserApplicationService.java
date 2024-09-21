@@ -7,7 +7,7 @@ import com.pikachu.purple.application.perfume.common.dto.UserAccordDTO;
 import com.pikachu.purple.application.perfume.common.vo.PerfumeAccordMatchVO;
 import com.pikachu.purple.application.perfume.port.in.GetPerfumesAndUserAccordsByUserUseCase;
 import com.pikachu.purple.application.perfume.service.domain.PerfumeDomainService;
-import com.pikachu.purple.application.useraccrod.port.in.GetUserAccordsUseCase;
+import com.pikachu.purple.application.user.port.in.useraccord.GetUserAccordsUseCase;
 import com.pikachu.purple.domain.accord.Accord;
 import com.pikachu.purple.domain.perfume.Perfume;
 import java.util.ArrayList;

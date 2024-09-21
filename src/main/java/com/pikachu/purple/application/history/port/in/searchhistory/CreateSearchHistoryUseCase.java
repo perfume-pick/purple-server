@@ -1,4 +1,4 @@
-package com.pikachu.purple.application.user.port.in;
+package com.pikachu.purple.application.history.port.in.searchhistory;
 
 import java.time.Instant;
 

@@ -1,9 +1,9 @@
-package com.pikachu.purple.application.user.service.application;
+package com.pikachu.purple.application.history.service.application.searchhistory;
 
 import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
 
-import com.pikachu.purple.application.user.port.in.DeleteSearchHistoriesUseCase;
-import com.pikachu.purple.application.user.service.domain.SearchHistoryDomainService;
+import com.pikachu.purple.application.history.port.in.searchhistory.DeleteSearchHistoriesUseCase;
+import com.pikachu.purple.application.history.service.domain.SearchHistoryDomainService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

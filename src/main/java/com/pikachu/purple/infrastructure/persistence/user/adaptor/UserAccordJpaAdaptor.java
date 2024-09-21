@@ -1,9 +1,8 @@
 package com.pikachu.purple.infrastructure.persistence.user.adaptor;
 
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.AccordNotFountException;
-import static com.pikachu.purple.bootstrap.common.exception.BusinessException.PerfumeNotFoundException;
 
-import com.pikachu.purple.application.useraccrod.port.out.UserAccordRepository;
+import com.pikachu.purple.application.user.port.out.UserAccordRepository;
 import com.pikachu.purple.bootstrap.common.exception.BusinessException;
 import com.pikachu.purple.bootstrap.common.exception.ErrorCode;
 import com.pikachu.purple.domain.user.UserAccord;

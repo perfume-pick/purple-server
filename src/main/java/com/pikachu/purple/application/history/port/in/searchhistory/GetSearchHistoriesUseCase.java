@@ -1,4 +1,4 @@
-package com.pikachu.purple.application.user.port.in;
+package com.pikachu.purple.application.history.port.in.searchhistory;
 
 import com.pikachu.purple.application.user.common.dto.SearchHistoryDTO;
 import java.util.List;

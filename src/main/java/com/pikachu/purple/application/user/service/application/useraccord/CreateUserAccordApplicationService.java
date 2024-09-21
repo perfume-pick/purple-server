@@ -6,7 +6,7 @@ import com.pikachu.purple.application.perfume.util.RecommendUserAccordsProvider;
 import com.pikachu.purple.application.review.port.in.starrating.GetStarRatingsByUserIdUseCase;
 import com.pikachu.purple.application.user.port.in.useraccord.CreateUserAccordUseCase;
 import com.pikachu.purple.application.user.port.in.user.GetUserByIdUseCase;
-import com.pikachu.purple.application.useraccrod.service.domain.UserAccordDomainService;
+import com.pikachu.purple.application.user.service.domain.UserAccordDomainService;
 import com.pikachu.purple.domain.user.UserAccord;
 import java.util.List;
 import lombok.RequiredArgsConstructor;

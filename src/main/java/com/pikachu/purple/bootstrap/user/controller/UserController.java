@@ -1,7 +1,7 @@
 package com.pikachu.purple.bootstrap.user.controller;
 
-import com.pikachu.purple.application.user.port.in.DeleteSearchHistoriesUseCase;
-import com.pikachu.purple.application.user.port.in.GetSearchHistoriesUseCase;
+import com.pikachu.purple.application.history.port.in.searchhistory.DeleteSearchHistoriesUseCase;
+import com.pikachu.purple.application.history.port.in.searchhistory.GetSearchHistoriesUseCase;
 import com.pikachu.purple.application.user.port.in.user.UpdateProfileUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.user.api.UserApi;

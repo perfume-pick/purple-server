@@ -1,4 +1,4 @@
-package com.pikachu.purple.application.user.service.domain;
+package com.pikachu.purple.application.history.service.domain;
 
 import com.pikachu.purple.domain.history.SearchHistory;
 import java.time.Instant;

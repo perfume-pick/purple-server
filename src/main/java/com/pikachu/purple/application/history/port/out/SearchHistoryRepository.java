@@ -1,4 +1,4 @@
-package com.pikachu.purple.application.user.port.out;
+package com.pikachu.purple.application.history.port.out;
 
 import com.pikachu.purple.domain.history.SearchHistory;
 import java.time.Instant;

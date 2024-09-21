@@ -1,7 +1,7 @@
-package com.pikachu.purple.application.useraccrod.service.domain.impl;
+package com.pikachu.purple.application.user.service.domain.impl;
 
-import com.pikachu.purple.application.useraccrod.port.out.UserAccordRepository;
-import com.pikachu.purple.application.useraccrod.service.domain.UserAccordDomainService;
+import com.pikachu.purple.application.user.port.out.UserAccordRepository;
+import com.pikachu.purple.application.user.service.domain.UserAccordDomainService;
 import com.pikachu.purple.domain.user.UserAccord;
 import java.util.List;
 import lombok.RequiredArgsConstructor;

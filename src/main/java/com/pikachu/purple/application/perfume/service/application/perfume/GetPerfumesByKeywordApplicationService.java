@@ -1,4 +1,4 @@
-package com.pikachu.purple.application.perfume.service.application;
+package com.pikachu.purple.application.perfume.service.application.perfume;
 
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.PerfumeAccordNotFoundException;
 

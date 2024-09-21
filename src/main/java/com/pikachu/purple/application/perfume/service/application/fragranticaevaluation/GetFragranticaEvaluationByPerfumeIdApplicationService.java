@@ -1,4 +1,4 @@
-package com.pikachu.purple.application.perfume.service.application;
+package com.pikachu.purple.application.perfume.service.application.fragranticaevaluation;
 
 import static com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType.SEASON_TIME;
 

@@ -1,7 +1,7 @@
-package com.pikachu.purple.application.user.service.domain.impl;
+package com.pikachu.purple.application.history.service.domain.impl;
 
-import com.pikachu.purple.application.user.port.out.SearchHistoryRepository;
-import com.pikachu.purple.application.user.service.domain.SearchHistoryDomainService;
+import com.pikachu.purple.application.history.port.out.SearchHistoryRepository;
+import com.pikachu.purple.application.history.service.domain.SearchHistoryDomainService;
 import com.pikachu.purple.domain.history.SearchHistory;
 import java.time.Instant;
 import java.util.List;

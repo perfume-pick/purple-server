@@ -1,6 +1,6 @@
 package com.pikachu.purple.infrastructure.redis.user.adapter;
 
-import com.pikachu.purple.application.user.port.out.SearchHistoryRepository;
+import com.pikachu.purple.application.history.port.out.SearchHistoryRepository;
 import com.pikachu.purple.domain.history.SearchHistory;
 import com.pikachu.purple.infrastructure.redis.user.entity.SearchHistoryRedisHash;
 import com.pikachu.purple.infrastructure.redis.user.repository.UserSearchHistoryRedisRepository;

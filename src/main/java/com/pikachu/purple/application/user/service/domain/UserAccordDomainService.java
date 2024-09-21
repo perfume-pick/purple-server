@@ -1,4 +1,4 @@
-package com.pikachu.purple.application.useraccrod.service.domain;
+package com.pikachu.purple.application.user.service.domain;
 
 import com.pikachu.purple.domain.user.UserAccord;
 import java.util.List;
