@@ -17,7 +17,10 @@ public class GetPerfumesByIdsApplicationService implements GetPerfumesByIdsUseCa
     public Result invoke(Command command) {
         List<Perfume> perfumes = perfumeDomainService.findAllByIds(command.perfumeIds());
 
-        return new Result(perfumes);
+        return new Result(perfumes.stream()
+            .map(PerfumeDTO::of)
+            .toList()
+        );
     }
 
 }
