@@ -71,6 +71,7 @@ public class PerfumeController implements PerfumeApi {
                 sortType
             )
         );
+
         return SuccessResponse.of(new GetReviewsResponse(result.reviewDTOs()));
     }
 

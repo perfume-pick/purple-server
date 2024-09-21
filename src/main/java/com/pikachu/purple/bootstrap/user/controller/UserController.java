@@ -43,9 +43,9 @@ public class UserController implements UserApi {
 
     @Override
     public SuccessResponse<GetSearchHistoriesResponse> findAllSearchHistory() {
-        GetSearchHistoriesUseCase.Result getUserSearchHistories = getSearchHistoriesUseCase.invoke();
+        GetSearchHistoriesUseCase.Result result = getSearchHistoriesUseCase.invoke();
 
-        return SuccessResponse.of(new GetSearchHistoriesResponse(getUserSearchHistories.searchHistories()));
+        return SuccessResponse.of(new GetSearchHistoriesResponse(result.searchHistories()));
     }
 
     @Override

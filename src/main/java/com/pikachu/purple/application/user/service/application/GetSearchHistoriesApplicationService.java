@@ -2,10 +2,12 @@ package com.pikachu.purple.application.user.service.application;
 
 import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
 
+import com.pikachu.purple.application.user.common.dto.SearchHistoryDTO;
 import com.pikachu.purple.application.user.port.in.GetSearchHistoriesUseCase;
 import com.pikachu.purple.application.user.service.domain.SearchHistoryDomainService;
 import com.pikachu.purple.domain.history.SearchHistory;
 import java.util.List;
+import java.util.stream.IntStream;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +23,14 @@ public class GetSearchHistoriesApplicationService implements GetSearchHistoriesU
 
         List<SearchHistory> searchHistories = searchHistoryDomainService.findAllByUserId(userId);
 
-        return new Result(searchHistories);
+        List<SearchHistoryDTO> searchHistoryDTOs = IntStream.range(0, searchHistories.size())
+            .mapToObj(i -> SearchHistoryDTO.of(
+                i + 1,
+                searchHistories.get(i).getKeyword()
+            ))
+            .toList();
+
+        return new Result(searchHistoryDTOs);
     }
 
 }
