@@ -117,11 +117,23 @@ public enum ErrorCode {
         "해당하는 향수 정보가 존재하지 않습니다."
     ),
 
+    // PerfumeAccord
+    PERFUME_ACCORD_NOT_FOUND(
+        404,
+        "PFA001",
+        "해당하는 향수의 어코드가 존재하지 않습니다."
+    ),
+
     // Review
     REVIEW_NOT_FOUND(
         404,
         "RV001",
         "해당하는 리뷰가 존재하지 않습니다."
+    ),
+    SORT_TYPE_NOT_FOUND(
+        404,
+        "RV002",
+        "해당하는 정렬 타입이 존재하지 않습니다."
     ),
 
     // Rating
@@ -134,8 +146,15 @@ public enum ErrorCode {
     // Accord
     ACCORD_NOT_FOUND(
         404,
-            "RT001",
-            "해당하는 어코드가 존재하지 않습니다."
+        "AC001",
+        "해당하는 어코드가 존재하지 않습니다."
+    ),
+
+    // UserAccord
+    USER_ACCORD_NOT_FOUND(
+        404,
+        "UAC001",
+        "사용자 선호 어코드가 존재하지 않습니다."
     );
 
     private final int status;

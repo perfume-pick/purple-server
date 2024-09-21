@@ -47,14 +47,23 @@ public class BusinessException extends RuntimeException {
     public static final BusinessException PerfumeNotFoundException = new BusinessException(
         ErrorCode.PERFUME_NOT_FOUND
     );
+    public static final BusinessException PerfumeAccordNotFoundException = new BusinessException(
+        ErrorCode.PERFUME_ACCORD_NOT_FOUND
+    );
     public static final BusinessException ReviewNotFoundException = new BusinessException(
         ErrorCode.REVIEW_NOT_FOUND
     );
     public static final BusinessException StarRatingNotFoundException = new BusinessException(
         ErrorCode.STAR_RATING_NOT_FOUND
     );
+    public static final BusinessException SortTypeNotFoundException = new BusinessException(
+        ErrorCode.SORT_TYPE_NOT_FOUND
+    );
     public static final BusinessException AccordNotFountException = new BusinessException(
         ErrorCode.ACCORD_NOT_FOUND
+    );
+    public static final BusinessException UserAccordNotFoundException = new BusinessException(
+        ErrorCode.USER_ACCORD_NOT_FOUND
     );
 
     private final ErrorCode errorCode;
