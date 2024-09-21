@@ -25,11 +25,11 @@ public interface ReviewDomainService {
         List<String> moodNames
     );
 
-    List<Review> findAllWithReviewEvaluationAndMoodOrderByCreatedAtDesc(Long perfumeId);
+    List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodOrderByCreatedAtDesc(Long perfumeId);
 
-    List<Review> findAllWithReviewEvaluationAndMoodOrderByScoreDesc(Long perfumeId);
+    List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreDesc(Long perfumeId);
 
-    List<Review> findAllWithReviewEvaluationAndMoodOrderByScoreAsc(Long perfumeId);
+    List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreAsc(Long perfumeId);
 
     Review findById(Long reviewId);
 

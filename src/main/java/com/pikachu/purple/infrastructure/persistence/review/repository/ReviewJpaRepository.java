@@ -13,9 +13,18 @@ public interface ReviewJpaRepository extends JpaRepository<ReviewJpaEntity, Long
         + "FROM ReviewJpaEntity re "
         + "WHERE re.perfumeJpaEntity.id = :perfumeId "
         + "ORDER BY re.createdAt DESC")
-    List<ReviewJpaEntity> findAllWithStarRatingAndMoodOrderByCreatedAtDesc(Long perfumeId);
+    List<ReviewJpaEntity> findAllByPerfumeIdOrderByCreateAtDesc(Long perfumeId);
 
-//    List<ReviewJpaEntity> findAllWithStarRatingAndReviewEvaluationAndMoodOrderByScoreDesc(Long perfumeId);
+    @Query("SELECT re "
+        + "FROM ReviewJpaEntity re "
+        + "WHERE re.starRatingJpaEntity.perfumeJpaEntity.id = :perfumeId "
+        + "ORDER BY re.starRatingJpaEntity.score DESC")
+    List<ReviewJpaEntity> findAllByPerfumeIdOrderByScoreDesc(Long perfumeId);
 
-//    List<ReviewJpaEntity> findAllWithStarRatingAndReviewEvaluationAndMoodOrderByScoreAsc(Long perfumeId);
+    @Query("SELECT re "
+        + "FROM ReviewJpaEntity re "
+        + "WHERE re.starRatingJpaEntity.perfumeJpaEntity.id = :perfumeId "
+        + "ORDER BY re.starRatingJpaEntity.score")
+    List<ReviewJpaEntity> findAllByPerfumeIdOrderByScoreAsc(Long perfumeId);
+
 }

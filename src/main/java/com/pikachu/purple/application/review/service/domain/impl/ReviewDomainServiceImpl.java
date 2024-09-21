@@ -60,20 +60,18 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
     }
 
     @Override
-    public List<Review> findAllWithReviewEvaluationAndMoodOrderByCreatedAtDesc(Long perfumeId) {
-        return reviewRepository.findAllWithReviewEvaluationAndMoodOrderByCreatedAtDesc(perfumeId);
+    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodOrderByCreatedAtDesc(Long perfumeId) {
+        return reviewRepository.findAllWithPerfumeAndReviewEvaluationAndMoodOrderByCreatedAtDesc(perfumeId);
     }
 
     @Override
-    public List<Review> findAllWithReviewEvaluationAndMoodOrderByScoreDesc(Long perfumeId) {
-//        return reviewRepository.findAllWithStarRatingAndReviewEvaluationAndMoodOrderByScoreDesc(perfumeId);
-        return null;
+    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreDesc(Long perfumeId) {
+        return reviewRepository.findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreDesc(perfumeId);
     }
 
     @Override
-    public List<Review> findAllWithReviewEvaluationAndMoodOrderByScoreAsc(Long perfumeId) {
-//        return reviewRepository.findAllWithStarRatingAndReviewEvaluationAndMoodOrderByScoreAsc(perfumeId);
-        return null;
+    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreAsc(Long perfumeId) {
+        return reviewRepository.findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreAsc(perfumeId);
     }
 
     @Override
