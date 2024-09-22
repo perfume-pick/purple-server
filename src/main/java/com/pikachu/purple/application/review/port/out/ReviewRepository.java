@@ -5,19 +5,30 @@ import java.util.List;
 
 public interface ReviewRepository {
 
-    void create(Review review);
-
-    List<Review> findAllByUserId(Long userId);
-
-    Review getByIdAndUserId(
-        Long reviewId,
-        Long userId
+    Review create(
+        Long userId,
+        Long perfumeId,
+        Review review
     );
 
+    Review updateContent(
+        Long reviewId,
+        String content
+    );
+
+    void deleteById(Long id);
+
+    void createReviewMoods(
+        Long reviewId,
+        List<String> moodNames
+    );
+
+    List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodOrderByCreatedAtDesc(Long perfumeId);
+
+    List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreDesc(Long perfumeId);
+
+    List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreAsc(Long perfumeId);
+
     Review findById(Long reviewId);
-
-    void save(Review review);
-
-    void delete(Review review);
 
 }

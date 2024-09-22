@@ -1,33 +1,27 @@
 package com.pikachu.purple.domain.perfume;
 
+import com.pikachu.purple.domain.statistic.EvaluationStatistic;
+import com.pikachu.purple.domain.statistic.StarRatingStatistic;
+import java.util.List;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Builder
+@AllArgsConstructor(access = AccessLevel.PROTECTED)
 public class Perfume {
 
-    private Long perfumeId;
-    private String perfumeName;
-    private String brandName;
+    private Long id;
+    private String name;
     private String imageUrl;
     private double averageScore;
-
-    @Builder
-    public Perfume(
-        Long perfumeId,
-        String perfumeName,
-        String brandName,
-        String imageUrl,
-        double averageScore
-    ) {
-        this.perfumeId = perfumeId;
-        this.perfumeName = perfumeName;
-        this.brandName = brandName;
-        this.imageUrl = imageUrl;
-        this.averageScore = averageScore;
-    }
+    private Brand brand;
+    private List<PerfumeAccord> accords;
+    private List<Note> notes;
+    private FragranticaEvaluation fragranticaEvaluation;
+    private EvaluationStatistic evaluationStatistic;
+    private StarRatingStatistic starRatingStatistic;
 
 }

@@ -1,16 +1,13 @@
 package com.pikachu.purple.infrastructure.redis.user.repository;
 
-import com.pikachu.purple.infrastructure.redis.user.entity.UserSearchHistoryRedisHash;
+import com.pikachu.purple.infrastructure.redis.user.entity.SearchHistoryRedisHash;
 import java.util.List;
 
 public interface UserSearchHistoryRedisRepository {
 
-    List<UserSearchHistoryRedisHash> findSearchHistoryByUserId(Long userId);
+    List<SearchHistoryRedisHash> findSearchHistoryByUserId(Long userId);
 
-    void saveSearchHistory(
-        Long userId,
-        UserSearchHistoryRedisHash userSearchHistoryRedisHash
-    );
+    void saveSearchHistory(SearchHistoryRedisHash searchHistoryRedisHash);
 
     void deleteAllSearchHistory(Long userId);
 

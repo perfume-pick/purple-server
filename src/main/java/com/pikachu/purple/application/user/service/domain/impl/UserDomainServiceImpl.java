@@ -3,6 +3,7 @@ package com.pikachu.purple.application.user.service.domain.impl;
 import com.pikachu.purple.application.user.port.out.ImageUrlS3Uploader;
 import com.pikachu.purple.application.user.port.out.UserRepository;
 import com.pikachu.purple.application.user.service.domain.UserDomainService;
+import com.pikachu.purple.application.util.IdGenerator;
 import com.pikachu.purple.domain.user.User;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import lombok.RequiredArgsConstructor;
@@ -18,22 +19,19 @@ public class UserDomainServiceImpl implements UserDomainService {
     private final ImageUrlS3Uploader imageUrlS3Uploader;
 
     @Override
-    public void create(User createdUser) {
+    public void create(
+        String email,
+        String nickname,
+        SocialLoginProvider socialLoginProvider
+    ) {
         User user = User.builder()
-            .id(createdUser.getId())
-            .email(createdUser.getEmail())
-            .nickname(createdUser.getNickname())
-            .imageUrl(createdUser.getImageUrl())
-            .registeredAt(createdUser.getRegisteredAt())
-            .socialLoginProvider(createdUser.getSocialLoginProvider())
+            .id(IdGenerator.generate())
+            .email(email)
+            .nickname(nickname)
+            .socialLoginProvider(socialLoginProvider)
             .build();
 
-        userRepository.save(user);
-    }
-
-    @Override
-    public User getById(Long userId) {
-        return userRepository.getById(userId);
+        userRepository.create(user);
     }
 
     @Override
@@ -43,19 +41,20 @@ public class UserDomainServiceImpl implements UserDomainService {
         boolean isChanged,
         MultipartFile picture
     ) {
-        User user = userRepository.getById(userId);
+        User user = userRepository.findById(userId);
 
         isValidToUpdateNickname(
             user,
             nickname
         );
+
         isValidToUpdateImage(
             user,
             isChanged,
             picture
         );
 
-        return userRepository.save(user);
+        return userRepository.update(user);
     }
 
     private void isValidToUpdateNickname(
@@ -85,7 +84,10 @@ public class UserDomainServiceImpl implements UserDomainService {
     }
 
     private void deleteExistingImage(User user) {
-        if (!user.getImageUrl().isEmpty()) imageUrlS3Uploader.delete(user.getImageUrl());
+        String imageUrl = user.getImageUrl();
+        if (imageUrl != null && !imageUrl.isEmpty()) {
+            imageUrlS3Uploader.delete(imageUrl);
+        }
     }
 
     private String changeImage(Long userId, MultipartFile picture) {
@@ -111,6 +113,11 @@ public class UserDomainServiceImpl implements UserDomainService {
     @Override
     public int countAll() {
         return userRepository.countAll();
+    }
+
+    @Override
+    public User findById(Long userId) {
+        return userRepository.findById(userId);
     }
 
 }

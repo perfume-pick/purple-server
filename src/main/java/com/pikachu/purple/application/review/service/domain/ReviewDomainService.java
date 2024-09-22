@@ -6,23 +6,31 @@ import java.util.List;
 
 public interface ReviewDomainService {
 
-    void create(
-        Long perfumeId,
+    Review create(
         Long userId,
+        Long perfumeId,
         String content,
         ReviewType reviewType
     );
 
-    List<Review> findAllByUserId(Long userId);
-
-    void updateContent(
+    Review updateContent(
         Long reviewId,
-        Long userId,
         String content
     );
 
-    Review findById(Long reviewId);
+    void deleteById(Long id);
 
-    void delete(Review review);
+    void createReviewMoods(
+        Long reviewId,
+        List<String> moodNames
+    );
+
+    List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodOrderByCreatedAtDesc(Long perfumeId);
+
+    List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreDesc(Long perfumeId);
+
+    List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreAsc(Long perfumeId);
+
+    Review findById(Long reviewId);
 
 }

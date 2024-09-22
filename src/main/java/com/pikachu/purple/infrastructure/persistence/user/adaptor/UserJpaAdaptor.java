@@ -17,6 +17,11 @@ public class UserJpaAdaptor implements UserRepository {
 
     private final UserJpaRepository userJpaRepository;
 
+    private UserJpaEntity findEntityById(Long userId) {
+        return userJpaRepository.findById(userId)
+            .orElseThrow(() -> UserNotFoundException);
+    }
+
     @Override
     public User findByEmailAndSocialLoginProvider(
         String email,
@@ -31,19 +36,18 @@ public class UserJpaAdaptor implements UserRepository {
     }
 
     @Override
-    public User save(User user) {
+    public void create(User user) {
         UserJpaEntity userJpaEntity = UserJpaEntity.toJpaEntity(user);
-        UserJpaEntity savedUserJpaEntity = userJpaRepository.save(userJpaEntity);
-
-        return UserJpaEntity.toDomain(savedUserJpaEntity);
+        userJpaRepository.save(userJpaEntity);
     }
 
     @Override
-    public User getById(Long userId) {
-        UserJpaEntity userJpaEntity = userJpaRepository.findById(userId)
-            .orElseThrow(() -> UserNotFoundException);
+    public User update(User user) {
+        UserJpaEntity userJpaEntity = findEntityById(user.getId());
+        userJpaEntity.update(user);
+        UserJpaEntity savedUserJpaEntity = userJpaRepository.save(userJpaEntity);
 
-        return UserJpaEntity.toDomain(userJpaEntity);
+        return UserJpaEntity.toDomain(savedUserJpaEntity);
     }
 
     @Override
@@ -55,6 +59,16 @@ public class UserJpaAdaptor implements UserRepository {
     @Override
     public int countAll() {
         return userJpaRepository.countAll();
+    }
+
+    /*
+    User 반환
+     */
+    @Override
+    public User findById(Long userId) {
+        UserJpaEntity userJpaEntity = findEntityById(userId);
+
+        return UserJpaEntity.toDomain(userJpaEntity);
     }
 
 }

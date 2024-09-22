@@ -7,7 +7,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 public interface UserDomainService {
 
-    void create(User createdUser);
+    void create(
+        String email,
+        String nickname,
+        SocialLoginProvider socialLoginProvider
+    );
 
     User updateProfile(
         Long userId,
@@ -16,13 +20,13 @@ public interface UserDomainService {
         MultipartFile picture
     );
 
-    User getById(Long userId);
-
     User findByEmailAndSocialLoginProvider(
         String email,
         SocialLoginProvider socialLoginProvider
     );
 
     int countAll();
+
+    User findById(Long userId);
 
 }

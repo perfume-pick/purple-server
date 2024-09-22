@@ -4,7 +4,7 @@ import com.pikachu.purple.domain.perfume.PerfumeAccord;
 
 public record PerfumeAccordDTO(
     int order,
-    String noteName,
+    String accordName,
     int accordValue
 ) {
 
@@ -14,8 +14,8 @@ public record PerfumeAccordDTO(
     ) {
         return new PerfumeAccordDTO(
             order,
-            perfumeAccord.getNoteName(),
-            perfumeAccord.getAccordValue()
+            perfumeAccord.getName(),
+            perfumeAccord.getValue()
         );
     }
 

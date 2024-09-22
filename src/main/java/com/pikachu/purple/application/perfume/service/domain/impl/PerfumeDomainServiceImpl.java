@@ -2,6 +2,7 @@ package com.pikachu.purple.application.perfume.service.domain.impl;
 
 import com.pikachu.purple.application.perfume.port.out.PerfumeRepository;
 import com.pikachu.purple.application.perfume.service.domain.PerfumeDomainService;
+import com.pikachu.purple.domain.accord.Accord;
 import com.pikachu.purple.domain.perfume.Perfume;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -14,23 +15,28 @@ public class PerfumeDomainServiceImpl implements PerfumeDomainService {
     private final PerfumeRepository perfumeRepository;
 
     @Override
-    public List<Perfume> findAllByPerfumeBrands(List<String> brands) {
-        return perfumeRepository.findAllByPerfumeBrands(brands);
+    public List<Perfume> findAllWithPerfumeAccordsByKeyword(String keyword) {
+        return perfumeRepository.findAllWithPerfumeAccordsByKeyword("%" + keyword + "%");
     }
 
     @Override
-    public List<Perfume> findByUserPreferenceNotes(Long userId) {
-        return perfumeRepository.findByUserPreferenceNotes(userId);
+    public Perfume findById(Long perfumeId) {
+        return perfumeRepository.findById(perfumeId);
     }
 
     @Override
-    public List<Perfume> findByKeyword(String keyword) {
-        return perfumeRepository.findByKeyword("%" + keyword + "%");
+    public List<Perfume> findAllByBrandNames(List<String> brandNames) {
+        return perfumeRepository.findAllByBrandNames(brandNames);
     }
 
     @Override
-    public Perfume findByPerfumeId(Long perfumeId) {
-        return perfumeRepository.findByPerfumeId(perfumeId);
+    public List<Perfume> findAllByIds(List<Long> perfumeIds) {
+        return perfumeRepository.findAllByIds(perfumeIds);
+    }
+
+    @Override
+    public List<Perfume> findAllWithPerfumeAccordsByAccords(List<Accord> accords) {
+        return perfumeRepository.findAllWithPerfumeAccordsByAccords(accords);
     }
 
 }

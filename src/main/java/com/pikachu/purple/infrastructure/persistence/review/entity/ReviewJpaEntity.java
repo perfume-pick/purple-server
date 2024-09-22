@@ -1,78 +1,120 @@
 package com.pikachu.purple.infrastructure.persistence.review.entity;
 
 import com.pikachu.purple.domain.review.Review;
-import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
 import com.pikachu.purple.domain.review.enums.ReviewType;
+import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
+import com.pikachu.purple.infrastructure.persistence.mood.entity.MoodJpaEntity;
+import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
+import com.pikachu.purple.infrastructure.persistence.user.entity.UserJpaEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import java.util.ArrayList;
+import java.util.List;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.SQLDelete;
-import org.hibernate.annotations.SQLRestriction;
 
 @Getter
 @Entity
+@Builder
 @Table(name = "review")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@SQLDelete(sql = "UPDATE review SET is_active = false WHERE review_id = ?")
-@SQLRestriction("is_active = true")
+@AllArgsConstructor(access = AccessLevel.PROTECTED)
 public class ReviewJpaEntity extends BaseEntity {
 
     @Id
     @Column(name = "review_id")
-    private Long reviewId;
+    private Long id;
 
-    @Column(name = "perfume_id", nullable = false)
-    private Long perfumeId;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(
+        name = "user_id",
+        nullable = false
+    )
+    private UserJpaEntity userJpaEntity;
 
-    @Column(name = "user_id", nullable = false)
-    private Long userId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(
+        name = "perfume_id",
+        nullable = false
+    )
+    private PerfumeJpaEntity perfumeJpaEntity;
 
-    @Column(name = "content", nullable = false)
+    @Column(
+        name = "content",
+        columnDefinition = "text",
+        nullable = false
+    )
     private String content;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "review_type", columnDefinition = "varchar(255)")
+    @Column(
+        name = "review_type",
+        columnDefinition = "char(6)",
+        nullable = false
+    )
     private ReviewType reviewType;
 
-    @Builder
-    public ReviewJpaEntity(
-        Long reviewId,
-        Long perfumeId,
-        Long userId,
-        String content,
-        ReviewType reviewType
-    ) {
-        this.reviewId = reviewId;
-        this.perfumeId = perfumeId;
-        this.userId = userId;
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(
+        name = "star_rating_id"
+    )
+    private StarRatingJpaEntity starRatingJpaEntity;
+
+    @Column(name = "like_count")
+    private int likeCount;
+
+    @OneToMany(mappedBy = "reviewJpaEntity")
+    private List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities = new ArrayList<>();
+
+    @OneToMany(mappedBy = "reviewJpaEntity")
+    private List<ReviewMoodJpaEntity> reviewMoodJpaEntities = new ArrayList<>();
+
+    public void updateContent(String content) {
         this.content = content;
-        this.reviewType = reviewType;
     }
 
-    public static ReviewJpaEntity toJpaEntity(Review review) {
-        return ReviewJpaEntity.builder()
-            .reviewId(review.getReviewId())
-            .perfumeId(review.getPerfumeId())
-            .userId(review.getUserId())
-            .content(review.getContent())
-            .reviewType(review.getReviewType())
+    private static Review.ReviewBuilder buildDefault(ReviewJpaEntity jpaEntity) {
+        return Review.builder()
+            .id(jpaEntity.getId())
+            .user(UserJpaEntity.toDomain(jpaEntity.getUserJpaEntity()))
+            .starRating(StarRatingJpaEntity.toDomain(jpaEntity.getStarRatingJpaEntity()))
+            .content(jpaEntity.getContent())
+            .date(jpaEntity.getUpdatedAt())
+            .likeCount(jpaEntity.getLikeCount())
+            .type(jpaEntity.getReviewType());
+    }
+
+    public static Review toFullDomain(ReviewJpaEntity jpaEntity) {
+        return buildDefault(jpaEntity)
+            .perfume(PerfumeJpaEntity.toDomain(jpaEntity.getPerfumeJpaEntity()))
+            .evaluation(ReviewEvaluationJpaEntity.toDomain(jpaEntity.getReviewEvaluationJpaEntities()))
+            .moods(jpaEntity.getReviewMoodJpaEntities().stream()
+                .map(reviewMoodJpaEntity ->
+                    MoodJpaEntity.toDomain(reviewMoodJpaEntity.getMoodJpaEntity())
+                )
+                .toList())
             .build();
     }
 
-    public static Review toDomain(ReviewJpaEntity reviewJpaEntity) {
-        return Review.builder()
-            .reviewId(reviewJpaEntity.getReviewId())
-            .perfumeId(reviewJpaEntity.getPerfumeId())
-            .userId(reviewJpaEntity.getUserId())
-            .content(reviewJpaEntity.getContent())
-            .reviewType(reviewJpaEntity.getReviewType())
+    public static Review toDomain(ReviewJpaEntity jpaEntity) {
+        return buildDefault(jpaEntity).build();
+    }
+
+    public static Review toDomainWithPerfume(ReviewJpaEntity jpaEntity){
+        return buildDefault(jpaEntity)
+            .perfume(PerfumeJpaEntity.toDomain(jpaEntity.getPerfumeJpaEntity()))
             .build();
     }
 

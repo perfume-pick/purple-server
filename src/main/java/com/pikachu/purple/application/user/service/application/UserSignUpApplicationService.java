@@ -3,7 +3,6 @@ package com.pikachu.purple.application.user.service.application;
 import com.pikachu.purple.application.user.port.in.UserSignUpUseCase;
 import com.pikachu.purple.application.user.service.domain.UserDomainService;
 import com.pikachu.purple.application.user.vo.Nickname;
-import com.pikachu.purple.application.util.IdGenerator;
 import com.pikachu.purple.domain.user.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -24,12 +23,11 @@ public class UserSignUpApplicationService implements UserSignUpUseCase {
         );
 
         if(user == null) {
-            User createdUser = User.create(
-                IdGenerator.generate(),
+            userDomainService.create(
                 command.email(),
                 new Nickname(userDomainService.countAll()).getValue(),
-                command.socialLoginProvider());
-            userDomainService.create(createdUser);
+                command.socialLoginProvider()
+            );
         }
     }
 }

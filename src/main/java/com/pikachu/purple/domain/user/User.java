@@ -1,50 +1,27 @@
 package com.pikachu.purple.domain.user;
 
+import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
-import java.time.LocalDateTime;
+import java.util.List;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
+@Builder
+@AllArgsConstructor(access = AccessLevel.PROTECTED)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class User {
 
     private Long id;
-    private String email;
     private String nickname;
+    private String email;
     private String imageUrl;
-    private LocalDateTime registeredAt;
     private SocialLoginProvider socialLoginProvider;
-
-    @Builder
-    public User(
-        Long id,
-        String email,
-        String nickname,
-        String imageUrl,
-        LocalDateTime registeredAt,
-        SocialLoginProvider socialLoginProvider
-    ){
-        this.id = id;
-        this.email = email;
-        this.nickname = nickname;
-        this.imageUrl = imageUrl;
-        this.registeredAt = registeredAt;
-        this.socialLoginProvider = socialLoginProvider;
-    }
-
-    public static User create(Long id, String email, String nickname, SocialLoginProvider socialLoginProvider) {
-        return new User(
-            id,
-            email,
-            nickname,
-            "",
-            LocalDateTime.now(),
-            socialLoginProvider
-        );
-    }
+    private List<UserAccord> accords;
+    private List<Review> reviews;
 
     public void updateNickname(String nickname) {
         this.nickname = nickname;

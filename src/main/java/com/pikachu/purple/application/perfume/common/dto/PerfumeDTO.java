@@ -3,22 +3,25 @@ package com.pikachu.purple.application.perfume.common.dto;
 import com.pikachu.purple.domain.perfume.Perfume;
 
 public record PerfumeDTO(
-    String brandName,
+    Long perfumeId,
     String perfumeName,
+    String brandName,
     String imageUrl,
     double averageScore,
-    String topAccordName
+    String accordName
 ) {
 
-    public static PerfumeDTO of(
-        Perfume perfume
+    public static PerfumeDTO from(
+        Perfume perfume,
+        String accordName
     ) {
         return new PerfumeDTO(
-            perfume.getBrandName(),
-            perfume.getPerfumeName(),
+            perfume.getId(),
+            perfume.getName(),
+            perfume.getBrand().getName(),
             perfume.getImageUrl(),
             perfume.getAverageScore(),
-            "sample" //TODO 긴급 수정 요망
+            accordName
         );
     }
 

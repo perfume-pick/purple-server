@@ -1,16 +1,25 @@
 package com.pikachu.purple.application.perfume.port.out;
 
+import com.pikachu.purple.domain.accord.Accord;
 import com.pikachu.purple.domain.perfume.Perfume;
 import java.util.List;
 
 public interface PerfumeRepository {
 
-    List<Perfume> findAllByPerfumeBrands(List<String> brands);
+    /*
+    Perfume 반환할 때, PerfumeAccord <value> 값으로 내림차순 정렬
+    */
+    List<Perfume> findAllWithPerfumeAccordsByKeyword(String keyword);
 
-    List<Perfume> findByUserPreferenceNotes(Long userId);
+    Perfume findById(Long perfumeId);
 
-    List<Perfume> findByKeyword(String keyword);
+    List<Perfume> findAllByBrandNames(List<String> brandNames);
 
-    Perfume findByPerfumeId(Long perfumeId);
+    /*
+    잘 반환해주세요~
+     */
+    List<Perfume> findAllByIds(List<Long> perfumeIds);
+
+    List<Perfume> findAllWithPerfumeAccordsByAccords(List<Accord> accords);
 
 }

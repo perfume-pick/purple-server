@@ -1,20 +1,15 @@
 package com.pikachu.purple.bootstrap.perfume.controller;
 
-import com.pikachu.purple.application.evaluation.port.in.FragranticaEvaluationGetByPerfumeIdUseCase;
-import com.pikachu.purple.application.perfume.port.in.PerfumeDetailGetByPerfumeIdUseCase;
-import com.pikachu.purple.application.perfume.port.in.PerfumeGetByBrandsUseCase;
-import com.pikachu.purple.application.perfume.port.in.PerfumeGetByKeywordUseCase;
-import com.pikachu.purple.application.perfume.port.in.PerfumeGetByUserPreferenceNoteUseCase;
-import com.pikachu.purple.application.user.port.in.UserSaveSearchHistoryUseCase;
+import com.pikachu.purple.application.perfume.port.in.GetAccordsAndNotesByPerfumeIdUseCase;
+import com.pikachu.purple.application.perfume.port.in.fragranticaevaluation.GetFragranticaEvaluationByPerfumeIdUseCase;
+import com.pikachu.purple.application.review.port.in.review.GetReviewsByPerfumeIdAndSortTypeUseCase;
+import com.pikachu.purple.application.statistic.port.in.GetPerfumeStatisticByPerfumeIdUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.perfume.api.PerfumeApi;
-import com.pikachu.purple.bootstrap.perfume.dto.response.GetFragranticaEvaluationsResponse;
-import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeByBrandsResponse;
-import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeByKeywordResponse;
-import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeDetailResponse;
-import com.pikachu.purple.bootstrap.perfume.dto.response.GetPreferenceBasedRecommendResponse;
-import java.time.LocalDateTime;
-import java.util.List;
+import com.pikachu.purple.bootstrap.perfume.dto.response.GetAccordsAndNotesResponse;
+import com.pikachu.purple.bootstrap.perfume.dto.response.GetFragranticaEvaluationResponse;
+import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeStatisticResponse;
+import com.pikachu.purple.bootstrap.perfume.dto.response.GetReviewsResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,63 +17,62 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class PerfumeController implements PerfumeApi {
 
-    private final PerfumeGetByBrandsUseCase perfumeGetByBrandsUseCase;
-    private final PerfumeGetByUserPreferenceNoteUseCase perfumeGetByUserPreferenceNoteUseCase;
-    private final PerfumeGetByKeywordUseCase perfumeGetByKeywordUseCase;
-    private final PerfumeDetailGetByPerfumeIdUseCase perfumeDetailGetByPerfumeIdUseCase;
-    private final FragranticaEvaluationGetByPerfumeIdUseCase fragranticaEvaluationGetByPerfumeIdUseCase;
-    private final UserSaveSearchHistoryUseCase userSaveSearchHistoryUseCase;
+    private final GetAccordsAndNotesByPerfumeIdUseCase getAccordsAndNotesByPerfumeIdUseCase;
+    private final GetFragranticaEvaluationByPerfumeIdUseCase getFragranticaEvaluationByPerfumeIdUseCase;
+    private final GetPerfumeStatisticByPerfumeIdUseCase getPerfumeStatisticByPerfumeIdUseCase;
+    private final GetReviewsByPerfumeIdAndSortTypeUseCase getReviewsByPerfumeIdAndSortTypeUseCase;
 
     @Override
-    public SuccessResponse<GetPerfumeByBrandsResponse> findAllByPerfumeBrands(List<String> request) {
-        PerfumeGetByBrandsUseCase.Result result = perfumeGetByBrandsUseCase.invoke(
-            new PerfumeGetByBrandsUseCase.Command(request));
+    public SuccessResponse<GetAccordsAndNotesResponse> findAccordsAndNotesByPerfumeId(Long perfumeId) {
+        GetAccordsAndNotesByPerfumeIdUseCase.Result result = getAccordsAndNotesByPerfumeIdUseCase.invoke(
+            new GetAccordsAndNotesByPerfumeIdUseCase.Command(perfumeId));
 
-        return SuccessResponse.of(new GetPerfumeByBrandsResponse(result.brandPerfumesDTOs()));
-    }
+        // TODO: userSaveVisitedHistoryUseCase 구현
 
-    @Override
-    public SuccessResponse<GetPreferenceBasedRecommendResponse> getAllPerfumeByPreference() {
-        PerfumeGetByUserPreferenceNoteUseCase.Result result = perfumeGetByUserPreferenceNoteUseCase.invoke();
-
-        return SuccessResponse.of(new GetPreferenceBasedRecommendResponse(
-            result.userPreferenceNotes(),
-            result.perfumes()
+        return SuccessResponse.of(new GetAccordsAndNotesResponse(
+            result.accords(),
+            result.notes()
         ));
     }
 
     @Override
-    public SuccessResponse<GetPerfumeByKeywordResponse> findByKeywords(String keyword) {
-        PerfumeGetByKeywordUseCase.Result result = perfumeGetByKeywordUseCase.invoke(
-            new PerfumeGetByKeywordUseCase.Command(keyword));
-
-        LocalDateTime searchAt = LocalDateTime.now();
-        userSaveSearchHistoryUseCase.invoke(
-            keyword,
-            searchAt
-        );
-
-        return SuccessResponse.of(new GetPerfumeByKeywordResponse(result.perfumeDTOs()));
-    }
-
-    @Override
-    public SuccessResponse<GetPerfumeDetailResponse> findPerfumeDetailByPerfumeId(Long perfumeId) {
-        PerfumeDetailGetByPerfumeIdUseCase.Result result = perfumeDetailGetByPerfumeIdUseCase.invoke(
-            new PerfumeDetailGetByPerfumeIdUseCase.Command(perfumeId));
-
-        // TODO: userSaveVisitedHistoryUseCase 구현
-
-        return SuccessResponse.of(new GetPerfumeDetailResponse(result.perfumeDetail()));
-    }
-
-    @Override
-    public SuccessResponse<GetFragranticaEvaluationsResponse> findFragranticaEvaluationsByPerfumeId(
+    public SuccessResponse<GetFragranticaEvaluationResponse> findFragranticaEvaluationByPerfumeId(
         Long perfumeId) {
 
-        FragranticaEvaluationGetByPerfumeIdUseCase.Result result = fragranticaEvaluationGetByPerfumeIdUseCase.invoke(
-            new FragranticaEvaluationGetByPerfumeIdUseCase.Command(perfumeId));
+        GetFragranticaEvaluationByPerfumeIdUseCase.Result result = getFragranticaEvaluationByPerfumeIdUseCase.invoke(
+            new GetFragranticaEvaluationByPerfumeIdUseCase.Command(perfumeId));
 
-        return SuccessResponse.of(new GetFragranticaEvaluationsResponse(result.fragranticaEvaluations()));
+        return SuccessResponse.of(
+            new GetFragranticaEvaluationResponse(result.fragranticaEvaluation()));
+    }
+
+    @Override
+    public SuccessResponse<GetPerfumeStatisticResponse> findPerfumeStatisticResponse(
+        Long perfumeId) {
+        GetPerfumeStatisticByPerfumeIdUseCase.Result result = getPerfumeStatisticByPerfumeIdUseCase.invoke(
+            new GetPerfumeStatisticByPerfumeIdUseCase.Command(perfumeId));
+
+        return SuccessResponse.of(
+            new GetPerfumeStatisticResponse(
+                result.starRatingStatistics(),
+                result.evaluationStatistics()
+            )
+        );
+    }
+
+    @Override
+    public SuccessResponse<GetReviewsResponse> findReviewsByPerfumeIdAndSortType(
+        Long perfumeId,
+        String sortType
+    ) {
+        GetReviewsByPerfumeIdAndSortTypeUseCase.Result result = getReviewsByPerfumeIdAndSortTypeUseCase.invoke(
+            new GetReviewsByPerfumeIdAndSortTypeUseCase.Command(
+                perfumeId,
+                sortType
+            )
+        );
+
+        return SuccessResponse.of(new GetReviewsResponse(result.reviewDTOs()));
     }
 
 }

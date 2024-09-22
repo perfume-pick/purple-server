@@ -2,16 +2,15 @@ package com.pikachu.purple.infrastructure.persistence.user.entity;
 
 import com.pikachu.purple.domain.user.User;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
+import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
-import java.time.LocalDateTime;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,10 +18,13 @@ import lombok.NoArgsConstructor;
 @Getter
 @Entity
 @Table(name = "user")
+@Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class UserJpaEntity {
+@AllArgsConstructor(access = AccessLevel.PROTECTED)
+public class UserJpaEntity extends BaseEntity {
 
     @Id
+    @Column(name = "user_id")
     private Long id;
 
     @Column(nullable = false)
@@ -34,50 +36,32 @@ public class UserJpaEntity {
     @Column(name = "image_url")
     private String imageUrl;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "registered_at", nullable = false)
-    private LocalDateTime registeredAt;
-
     @Enumerated(EnumType.STRING)
     @Column(name = "social_login_provider", nullable = false)
     private SocialLoginProvider socialLoginProvider;
 
-    @Builder
-    public UserJpaEntity(
-        Long id,
-        String email,
-        String nickname,
-        String imageUrl,
-        LocalDateTime registeredAt,
-        SocialLoginProvider socialLoginProvider
-    ){
-        this.id = id;
-        this.email = email;
-        this.nickname = nickname;
-        this.imageUrl = imageUrl;
-        this.registeredAt = registeredAt;
-        this.socialLoginProvider = socialLoginProvider;
+    public void update(User user) {
+        this.nickname = user.getNickname();
+        this.imageUrl = user.getImageUrl();
     }
 
-    public static UserJpaEntity toJpaEntity(User user){
+    public static UserJpaEntity toJpaEntity(User domain){
         return UserJpaEntity.builder()
-            .id(user.getId())
-            .email(user.getEmail())
-            .nickname(user.getNickname())
-            .imageUrl(user.getImageUrl())
-            .registeredAt(user.getRegisteredAt())
-            .socialLoginProvider(user.getSocialLoginProvider())
+            .id(domain.getId())
+            .email(domain.getEmail())
+            .nickname(domain.getNickname())
+            .imageUrl(domain.getImageUrl())
+            .socialLoginProvider(domain.getSocialLoginProvider())
             .build();
     }
 
-    public static User toDomain(UserJpaEntity entity){
+    public static User toDomain(UserJpaEntity jpaEntity){
         return User.builder()
-            .id(entity.getId())
-            .email(entity.getEmail())
-            .nickname(entity.getNickname())
-            .imageUrl(entity.getImageUrl())
-            .registeredAt(entity.getRegisteredAt())
-            .socialLoginProvider(entity.getSocialLoginProvider())
+            .id(jpaEntity.getId())
+            .email(jpaEntity.getEmail())
+            .nickname(jpaEntity.getNickname())
+            .imageUrl(jpaEntity.getImageUrl())
+            .socialLoginProvider(jpaEntity.getSocialLoginProvider())
             .build();
     }
 

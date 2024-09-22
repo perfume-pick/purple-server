@@ -3,23 +3,25 @@ package com.pikachu.purple.infrastructure.persistence.perfume.adaptor;
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.PerfumeNotFoundException;
 
 import com.pikachu.purple.application.perfume.port.out.PerfumeRepository;
+import com.pikachu.purple.domain.accord.Accord;
 import com.pikachu.purple.domain.perfume.Perfume;
+import com.pikachu.purple.infrastructure.persistence.accord.entity.AccordJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeJpaRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
 public class PerfumeJpaAdaptor implements PerfumeRepository {
 
-    private static final int MAX_SIZE = 30;
     private final PerfumeJpaRepository perfumeJpaRepository;
 
-    public List<Perfume> findAllByPerfumeBrands(List<String> brands) {
-        List<PerfumeJpaEntity> perfumeJpaEntities = perfumeJpaRepository.findAllByBrandNameIn(brands);
+    @Override
+    public List<Perfume> findAllByBrandNames(List<String> brandNames) {
+        List<PerfumeJpaEntity> perfumeJpaEntities = perfumeJpaRepository.findAllByBrandNameIn(
+            brandNames);
 
         return perfumeJpaEntities.stream()
             .map(PerfumeJpaEntity::toDomain)
@@ -27,33 +29,38 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
     }
 
     @Override
-    public List<Perfume> findByUserPreferenceNotes(Long userId) {
-        PageRequest pageRequest = PageRequest.of(0, MAX_SIZE);
-        List<PerfumeJpaEntity> perfumeJpaEntities = perfumeJpaRepository.findByUserPreferenceNotes(
-            userId,
-            pageRequest
-        ).getContent();
-
-        return perfumeJpaEntities.stream()
-            .map(PerfumeJpaEntity::toDomain)
-            .toList();
+    public List<Perfume> findAllByIds(List<Long> perfumeIds) {
+        return List.of();
     }
 
     @Override
-    public List<Perfume> findByKeyword(String keyword) {
+    public List<Perfume> findAllWithPerfumeAccordsByKeyword(String keyword) {
         List<PerfumeJpaEntity> perfumes = perfumeJpaRepository.findByKeyword(keyword);
 
         return perfumes.stream()
-            .map(PerfumeJpaEntity::toDomain)
+            .map(PerfumeJpaEntity::toDomainWithPerfumeAccord)
             .toList();
     }
 
     @Override
-    public Perfume findByPerfumeId(Long perfumeId) {
-        PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository.findByPerfumeId(perfumeId)
+    public Perfume findById(Long perfumeId) {
+        PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository.findById(perfumeId)
             .orElseThrow(() -> PerfumeNotFoundException);
 
         return PerfumeJpaEntity.toDomain(perfumeJpaEntity);
+    }
+
+    @Override
+    public List<Perfume> findAllWithPerfumeAccordsByAccords(List<Accord> accords) {
+        List<AccordJpaEntity> accordJpaEntities = accords.stream()
+            .map(AccordJpaEntity::toJpaEntity).toList();
+
+        List<PerfumeJpaEntity> perfumeJpaEntities = perfumeJpaRepository.findAllByAccords(
+            accordJpaEntities);
+
+        return perfumeJpaEntities.stream()
+            .map(PerfumeJpaEntity::toDomainWithPerfumeAccord)
+            .toList();
     }
 
 }

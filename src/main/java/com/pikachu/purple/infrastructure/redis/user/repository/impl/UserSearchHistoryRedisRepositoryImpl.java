@@ -1,7 +1,9 @@
 package com.pikachu.purple.infrastructure.redis.user.repository.impl;
 
-import com.pikachu.purple.infrastructure.redis.user.entity.UserSearchHistoryRedisHash;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.pikachu.purple.infrastructure.redis.user.entity.SearchHistoryRedisHash;
 import com.pikachu.purple.infrastructure.redis.user.repository.UserSearchHistoryRedisRepository;
+import java.util.Collections;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -16,28 +18,37 @@ public class UserSearchHistoryRedisRepositoryImpl implements
     private static final String KEY = "searchHistory:";
 
     private final RedisTemplate<String, Object> redisTemplate;
+    private final ObjectMapper objectMapper;
 
     @Override
-    public List<UserSearchHistoryRedisHash> findSearchHistoryByUserId(Long userId){
-        return (List<UserSearchHistoryRedisHash>) (List<?>) redisTemplate.opsForList().range(
+    public List<SearchHistoryRedisHash> findSearchHistoryByUserId(Long userId){
+        List<Object> result = redisTemplate.opsForList().range(
             KEY + userId,
             0,
             MAX_SIZE
         );
+
+        if (result == null) {
+            return Collections.emptyList();
+        }
+
+        return result.stream()
+            .map(object -> objectMapper.convertValue(
+                object,
+                SearchHistoryRedisHash.class
+            ))
+            .toList();
     }
 
     @Override
-    public void saveSearchHistory(
-        Long userId,
-        UserSearchHistoryRedisHash userSearchHistoryRedisHash
-    ) {
-        Long getCount = redisTemplate.opsForList().size(KEY + userId);
+    public void saveSearchHistory(SearchHistoryRedisHash searchHistoryRedisHash) {
+        Long getCount = redisTemplate.opsForList().size(KEY + searchHistoryRedisHash.getId());
         redisTemplate.opsForList().leftPush(
-            KEY + userId,
-            userSearchHistoryRedisHash
+            KEY + searchHistoryRedisHash.getId(),
+            searchHistoryRedisHash
         );
         if(getCount != null && getCount >= 10) redisTemplate.opsForList().trim(
-            KEY + userId,
+            KEY + searchHistoryRedisHash.getId(),
             0,
             MAX_SIZE
         );

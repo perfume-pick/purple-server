@@ -16,54 +16,67 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
     private final ReviewRepository reviewRepository;
 
     @Override
-    public void create(
-        Long perfumeId,
+    public Review create(
         Long userId,
+        Long perfumeId,
         String content,
         ReviewType reviewType
     ) {
         Long reviewId = IdGenerator.generate();
 
         Review review = Review.builder()
-            .reviewId(reviewId)
-            .perfumeId(perfumeId)
-            .userId(userId)
+            .id(reviewId)
             .content(content)
-            .reviewType(reviewType)
+            .type(reviewType)
             .build();
 
-        reviewRepository.create(review);
+        return reviewRepository.create(userId, perfumeId, review);
     }
 
     @Override
-    public List<Review> findAllByUserId(Long userId) {
-        return reviewRepository.findAllByUserId(userId);
-    }
-
-    @Override
-    public void updateContent(
+    public Review updateContent(
         Long reviewId,
-        Long userId,
         String content
     ) {
-        Review review = reviewRepository.getByIdAndUserId(
+        return reviewRepository.updateContent(
             reviewId,
-            userId
+            content
         );
+    }
 
-        review.updateContent(content);
+    public void deleteById(Long id) {
+        reviewRepository.deleteById(id);
+    }
 
-        reviewRepository.save(review);
+    @Override
+    public void createReviewMoods(
+        Long reviewId,
+        List<String> moodNames
+    ) {
+        reviewRepository.createReviewMoods(
+            reviewId,
+            moodNames
+        );
+    }
+
+    @Override
+    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodOrderByCreatedAtDesc(Long perfumeId) {
+        return reviewRepository.findAllWithPerfumeAndReviewEvaluationAndMoodOrderByCreatedAtDesc(perfumeId);
+    }
+
+    @Override
+    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreDesc(Long perfumeId) {
+        return reviewRepository.findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreDesc(perfumeId);
+    }
+
+    @Override
+    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreAsc(Long perfumeId) {
+        return reviewRepository.findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreAsc(perfumeId);
     }
 
     @Override
     public Review findById(Long reviewId) {
         return reviewRepository.findById(reviewId);
-    }
-
-    @Override
-    public void delete(Review review) {
-        reviewRepository.delete(review);
     }
 
 }
