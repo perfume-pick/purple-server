@@ -3,6 +3,7 @@ package com.pikachu.purple.infrastructure.redis.user.repository.impl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pikachu.purple.infrastructure.redis.user.entity.SearchHistoryRedisHash;
 import com.pikachu.purple.infrastructure.redis.user.repository.UserSearchHistoryRedisRepository;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
@@ -27,6 +28,11 @@ public class UserSearchHistoryRedisRepositoryImpl implements
             0,
             MAX_SIZE
         );
+
+        if (result == null) {
+            return Collections.emptyList();
+        }
+
         return result.stream()
             .map(object -> objectMapper.convertValue(
                 object,
