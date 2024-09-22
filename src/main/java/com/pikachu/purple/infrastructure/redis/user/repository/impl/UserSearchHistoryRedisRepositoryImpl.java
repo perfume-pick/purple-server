@@ -32,7 +32,7 @@ public class UserSearchHistoryRedisRepositoryImpl implements
                 object,
                 SearchHistoryRedisHash.class
             ))
-            .collect(Collectors.toList());
+            .toList();
     }
 
     @Override

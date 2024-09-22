@@ -74,7 +74,7 @@ public class ReviewEvaluationJpaEntity extends BaseEntity {
                         .options(options)
                         .build();
                 })
-                .collect(Collectors.toList());
+                .toList();
 
         return ReviewEvaluation.builder()
             .fields(fields)

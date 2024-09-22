@@ -35,7 +35,6 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
         Optional<StarRatingStatisticJpaEntity> findResult =
             starRatingStatisticJpaRepository.findByCompositeKey(compositeKey);
 
-        StarRatingStatisticJpaEntity starRatingStatisticJpaEntity;
         if (findResult.isEmpty()) {
             PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository.findById(perfumeId)
                 .orElseThrow(() -> PerfumeNotFoundException);
