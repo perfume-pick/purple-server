@@ -5,7 +5,6 @@ import com.pikachu.purple.infrastructure.redis.user.entity.SearchHistoryRedisHas
 import com.pikachu.purple.infrastructure.redis.user.repository.UserSearchHistoryRedisRepository;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
