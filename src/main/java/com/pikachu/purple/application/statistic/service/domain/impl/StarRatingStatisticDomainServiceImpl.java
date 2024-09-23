@@ -2,7 +2,6 @@ package com.pikachu.purple.application.statistic.service.domain.impl;
 
 import com.pikachu.purple.application.statistic.port.out.StarRatingStatisticRepository;
 import com.pikachu.purple.application.statistic.service.domain.StarRatingStatisticDomainService;
-import com.pikachu.purple.bootstrap.onboarding.vo.StarRatingVO;
 import com.pikachu.purple.domain.statistic.StarRatingStatistic;
 import com.pikachu.purple.infrastructure.redis.annotation.DistributedLock;
 import java.util.List;
@@ -33,16 +32,6 @@ public class StarRatingStatisticDomainServiceImpl implements StarRatingStatistic
             perfumeId,
             score
         );
-    }
-
-    @Override
-    public void increaseAllVotes(List<StarRatingVO> starRatingVOs) {
-        for (StarRatingVO starRatingVO : starRatingVOs) {
-            increaseVotes(
-                starRatingVO.perfumeId(),
-                starRatingVO.score()
-            );
-        }
     }
 
     @Override

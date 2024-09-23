@@ -70,7 +70,10 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
         Long perfumeId,
         int score
     ) {
-        StarRatingStatisticJpaEntity starRatingStatisticJpaEntity = findEntityByToday(perfumeId, score);
+        StarRatingStatisticJpaEntity starRatingStatisticJpaEntity = findEntityByToday(
+            perfumeId,
+            score
+        );
 
         starRatingStatisticJpaEntity.increase();
         starRatingStatisticJpaRepository.save(starRatingStatisticJpaEntity);
@@ -81,7 +84,10 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
         Long perfumeId,
         int score
     ) {
-        StarRatingStatisticJpaEntity starRatingStatisticJpaEntity = findEntityByToday(perfumeId, score);
+        StarRatingStatisticJpaEntity starRatingStatisticJpaEntity = findEntityByToday(
+            perfumeId,
+            score
+        );
 
         starRatingStatisticJpaEntity.decrease();
         starRatingStatisticJpaRepository.save(starRatingStatisticJpaEntity);
