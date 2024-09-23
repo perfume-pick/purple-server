@@ -9,6 +9,7 @@ import com.pikachu.purple.infrastructure.persistence.review.entity.ReviewJpaEnti
 import com.pikachu.purple.infrastructure.persistence.review.repository.ReviewEvaluationJpaRepository;
 import com.pikachu.purple.infrastructure.persistence.review.repository.ReviewJpaRepository;
 import java.util.List;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -38,5 +39,13 @@ public class ReviewEvaluationJpaAdaptor implements ReviewEvaluationRepository {
                 .toList();
 
         reviewEvaluationJpaRepository.saveAll(reviewEvaluationJpaEntities);
+    }
+
+    @Override
+    public ReviewEvaluation findByReviewId(Long reviewId) {
+
+        List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities =
+            reviewEvaluationJpaRepository.findByReviewId(reviewId);
+        return ReviewEvaluationJpaEntity.toDomain(reviewEvaluationJpaEntities);
     }
 }
