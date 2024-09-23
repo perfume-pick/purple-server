@@ -1,11 +1,7 @@
 package com.pikachu.purple.application.review.service.application.review;
 
-import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
-
 import com.pikachu.purple.application.review.port.in.review.CreateReviewDetailUseCase;
-import com.pikachu.purple.application.review.port.in.starrating.CreateStarRatingUseCase;
-import com.pikachu.purple.application.review.port.in.starrating.GetStarRatingUseCase;
-import com.pikachu.purple.application.review.port.in.starrating.UpdateStarRatingUseCase;
+import com.pikachu.purple.application.review.port.in.starrating.CreateOrUpdateStarRatingUseCase;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
 import com.pikachu.purple.application.review.service.domain.ReviewEvaluationDomainService;
 import com.pikachu.purple.bootstrap.review.vo.EvaluationFieldVO;
@@ -30,44 +26,20 @@ public class CreateReviewDetailApplicationService implements CreateReviewDetailU
 
     private final ReviewDomainService reviewDomainService;
     private final ReviewEvaluationDomainService reviewEvaluationDomainService;
-    private final GetStarRatingUseCase getStarRatingUseCase;
-    private final CreateStarRatingUseCase createStarRatingUseCase;
-    private final UpdateStarRatingUseCase updateStarRatingUseCase;
+    private final CreateOrUpdateStarRatingUseCase createOrUpdateStarRatingUseCase;
 
     @Transactional
     @Override
     public void invoke(Command command) {
 
-        Long userId = getCurrentUserAuthentication().userId();
-
-        GetStarRatingUseCase.Result getStarRatingResult = getStarRatingUseCase.invoke(
-            new GetStarRatingUseCase.Command(
-                userId,
-                command.perfumeId()
+        CreateOrUpdateStarRatingUseCase.Result starRatingResult = createOrUpdateStarRatingUseCase.invoke(
+            new CreateOrUpdateStarRatingUseCase.Command(
+                command.perfumeId(),
+                command.score()
             )
         );
 
-        StarRating starRating;
-        if (getStarRatingResult.starRating() == null) {
-            CreateStarRatingUseCase.Result createStarRatingResult = createStarRatingUseCase.invoke(
-                new CreateStarRatingUseCase.Command(
-                    command.perfumeId(),
-                    command.score()
-                )
-            );
-            starRating = createStarRatingResult.starRating();
-        } else {
-            StarRating previousStarRating = getStarRatingResult.starRating();
-            UpdateStarRatingUseCase.Result updateStarRatingResult = updateStarRatingUseCase.invoke(
-                new UpdateStarRatingUseCase.Command(
-                    previousStarRating.getPerfume().getId(),
-                    previousStarRating.getScore(),
-                    command.score()
-                )
-            );
-            starRating = updateStarRatingResult.starRating();
-        }
-
+        StarRating starRating = starRatingResult.starRating();
         User user = starRating.getUser();
         Perfume perfume = starRating.getPerfume();
 
