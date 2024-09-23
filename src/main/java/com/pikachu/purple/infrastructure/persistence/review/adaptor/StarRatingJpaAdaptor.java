@@ -83,7 +83,7 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
 
         StarRatingJpaEntity starRatingJpaEntitySaved = starRatingJpaRepository.save(starRatingJpaEntity);
 
-        return StarRatingJpaEntity.toDomainWithUserAndPerfume(starRatingJpaEntitySaved);
+        return StarRatingJpaEntity.toDomain(starRatingJpaEntitySaved);
     }
 
     @Override

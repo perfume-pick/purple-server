@@ -49,6 +49,7 @@ public class StarRatingStatisticJpaEntity extends BaseEntity {
 
     public static StarRatingStatistic toDomain(StarRatingStatisticJpaEntity jpaEntity) {
         return StarRatingStatistic.builder()
+            .perfume(PerfumeJpaEntity.toDummy(jpaEntity.getPerfumeJpaEntity()))
             .score(jpaEntity.getScore())
             .votes(jpaEntity.getVotes())
             .build();

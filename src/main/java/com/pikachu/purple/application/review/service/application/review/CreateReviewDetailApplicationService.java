@@ -1,7 +1,11 @@
 package com.pikachu.purple.application.review.service.application.review;
 
+import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
+
 import com.pikachu.purple.application.review.port.in.review.CreateReviewDetailUseCase;
 import com.pikachu.purple.application.review.port.in.starrating.CreateStarRatingUseCase;
+import com.pikachu.purple.application.review.port.in.starrating.GetStarRatingUseCase;
+import com.pikachu.purple.application.review.port.in.starrating.UpdateStarRatingUseCase;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
 import com.pikachu.purple.application.review.service.domain.ReviewEvaluationDomainService;
 import com.pikachu.purple.bootstrap.review.vo.EvaluationFieldVO;
@@ -12,6 +16,7 @@ import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.ReviewEvaluation;
+import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.domain.review.enums.ReviewType;
 import com.pikachu.purple.domain.user.User;
 import java.util.List;
@@ -25,21 +30,46 @@ public class CreateReviewDetailApplicationService implements CreateReviewDetailU
 
     private final ReviewDomainService reviewDomainService;
     private final ReviewEvaluationDomainService reviewEvaluationDomainService;
+    private final GetStarRatingUseCase getStarRatingUseCase;
     private final CreateStarRatingUseCase createStarRatingUseCase;
+    private final UpdateStarRatingUseCase updateStarRatingUseCase;
 
     @Transactional
     @Override
     public void invoke(Command command) {
 
-        CreateStarRatingUseCase.Result result = createStarRatingUseCase.invoke(
-            new CreateStarRatingUseCase.Command(
-                command.perfumeId(),
-                command.score()
+        Long userId = getCurrentUserAuthentication().userId();
+
+        GetStarRatingUseCase.Result getStarRatingResult = getStarRatingUseCase.invoke(
+            new GetStarRatingUseCase.Command(
+                userId,
+                command.perfumeId()
             )
         );
 
-        User user = result.starRating().getUser();
-        Perfume perfume = result.starRating().getPerfume();
+        StarRating starRating;
+        if (getStarRatingResult.starRating() == null) {
+            CreateStarRatingUseCase.Result createStarRatingResult = createStarRatingUseCase.invoke(
+                new CreateStarRatingUseCase.Command(
+                    command.perfumeId(),
+                    command.score()
+                )
+            );
+            starRating = createStarRatingResult.starRating();
+        } else {
+            StarRating previousStarRating = getStarRatingResult.starRating();
+            UpdateStarRatingUseCase.Result updateStarRatingResult = updateStarRatingUseCase.invoke(
+                new UpdateStarRatingUseCase.Command(
+                    previousStarRating.getPerfume().getId(),
+                    previousStarRating.getScore(),
+                    command.score()
+                )
+            );
+            starRating = updateStarRatingResult.starRating();
+        }
+
+        User user = starRating.getUser();
+        Perfume perfume = starRating.getPerfume();
 
         Review review = reviewDomainService.create(
             user.getId(),
@@ -70,7 +100,9 @@ public class CreateReviewDetailApplicationService implements CreateReviewDetailU
             .build();
     }
 
-    private EvaluationField<EvaluationOption> convertToEvaluationField(EvaluationFieldVO evaluationFieldVO) {
+    private EvaluationField<EvaluationOption> convertToEvaluationField(
+        EvaluationFieldVO evaluationFieldVO) {
+
         EvaluationFieldType fieldType = EvaluationFieldType.of(evaluationFieldVO.fieldCode());
 
         List<EvaluationOption> options = evaluationFieldVO.optionCodes().stream()
@@ -90,7 +122,6 @@ public class CreateReviewDetailApplicationService implements CreateReviewDetailU
             .type(optionType)
             .build();
     }
-
 
 
 }

@@ -2,7 +2,6 @@ package com.pikachu.purple.application.review.service.application.starrating;
 
 import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
 
-import com.pikachu.purple.application.review.port.in.starrating.GetStarRatingUseCase;
 import com.pikachu.purple.application.review.port.in.starrating.UpdateStarRatingUseCase;
 import com.pikachu.purple.application.review.service.domain.StarRatingDomainService;
 import com.pikachu.purple.application.statistic.port.in.starratingstatistic.DecreaseStarRatingStatisticUseCase;
@@ -16,26 +15,17 @@ import org.springframework.stereotype.Service;
 public class UpdateStarStarRatingApplicationService implements UpdateStarRatingUseCase {
 
     private final StarRatingDomainService starRatingDomainService;
-    private final GetStarRatingUseCase getStarRatingUseCase;
     private final DecreaseStarRatingStatisticUseCase decreaseStarRatingStatisticUseCase;
     private final IncreaseStarRatingStatisticUseCase increaseStarRatingStatisticUseCase;
 
     @Override
-    public void invoke(Command command) {
+    public Result invoke(Command command) {
         Long userId = getCurrentUserAuthentication().userId();
 
-        GetStarRatingUseCase.Result result = getStarRatingUseCase.invoke(
-            new GetStarRatingUseCase.Command(
-                userId,
-                command.perfumeId()
-            )
-        );
-
-        StarRating previousStarRating = result.starRating();
         decreaseStarRatingStatisticUseCase.invoke(
             new DecreaseStarRatingStatisticUseCase.Command(
-                previousStarRating.getPerfume().getId(),
-                previousStarRating.getScore()
+                command.perfumeId(),
+                command.previousScore()
             )
         );
 
@@ -51,6 +41,8 @@ public class UpdateStarStarRatingApplicationService implements UpdateStarRatingU
                 starRating.getScore()
             )
         );
+
+        return new Result(starRating);
     }
 
 }

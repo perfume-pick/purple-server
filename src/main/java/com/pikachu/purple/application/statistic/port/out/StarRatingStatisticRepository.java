@@ -16,4 +16,9 @@ public interface StarRatingStatisticRepository {
         Long perfumeId,
         int score
     );
+
+    StarRatingStatistic findByPerfumeIdAndScore(
+        Long perfumeId,
+        int score
+    );
 }

@@ -54,7 +54,25 @@ public class StarRatingStatisticDomainServiceImpl implements StarRatingStatistic
         Long perfumeId,
         int score
     ) {
+        StarRatingStatistic starRatingStatistic = findByPerfumeIdAndScore(
+            perfumeId,
+            score
+        );
+
+        if (starRatingStatistic.isZero()) {
+            return;
+        }
         starRatingStatisticRepository.decreaseVotes(
+            perfumeId,
+            score
+        );
+    }
+
+    private StarRatingStatistic findByPerfumeIdAndScore(
+        Long perfumeId,
+        int score
+    ) {
+        return starRatingStatisticRepository.findByPerfumeIdAndScore(
             perfumeId,
             score
         );
