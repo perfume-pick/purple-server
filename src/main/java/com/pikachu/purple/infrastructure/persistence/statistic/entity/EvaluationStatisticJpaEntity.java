@@ -58,6 +58,14 @@ public class EvaluationStatisticJpaEntity extends BaseEntity {
     @Column(name = "votes")
     private int votes;
 
+    public void increase() {
+        this.votes++;
+    }
+
+    public void decrease() {
+        this.votes--;
+    }
+
     public static EvaluationStatistic toDomain(List<EvaluationStatisticJpaEntity> jpaEntities) {
         Map<EvaluationFieldType, List<EvaluationStatisticJpaEntity>> groupedByFieldType =
             jpaEntities.stream()
