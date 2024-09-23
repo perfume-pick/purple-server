@@ -2,6 +2,7 @@ package com.pikachu.purple.application.review.service.application.review;
 
 import com.pikachu.purple.application.review.port.in.review.DeleteReviewUseCase;
 import com.pikachu.purple.application.review.port.in.starrating.DeleteStarRatingUseCase;
+import com.pikachu.purple.application.review.port.in.starrating.DeleteStarRatingUseCase.Command;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
 import com.pikachu.purple.domain.review.Review;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +22,9 @@ public class DeleteReviewApplicationService implements DeleteReviewUseCase {
 
         Review review = reviewDomainService.findById(reviewId);
 
-        deleteStarRatingUseCase.invoke(review.getStarRating().getId());
+        deleteStarRatingUseCase.invoke(
+            new DeleteStarRatingUseCase.Command(review.getStarRating().getId())
+        );
 
         reviewDomainService.deleteById(reviewId);
     }

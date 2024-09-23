@@ -115,11 +115,13 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
     }
 
     @Override
-    public void deleteById(Long starRatingId) {
+    public StarRating deleteById(Long starRatingId) {
         StarRatingJpaEntity starRatingJpaEntity = starRatingJpaRepository.findById(starRatingId)
             .orElseThrow(() -> StarRatingNotFoundException);
 
         starRatingJpaRepository.delete(starRatingJpaEntity);
+
+        return StarRatingJpaEntity.toDomain(starRatingJpaEntity);
     }
 
     @Override
