@@ -87,4 +87,14 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
         starRatingStatisticJpaRepository.save(starRatingStatisticJpaEntity);
     }
 
+    @Override
+    public StarRatingStatistic findByPerfumeIdAndScore(Long perfumeId, int score) {
+        StarRatingStatisticJpaEntity starRatingStatistic = findEntityByToday(
+            perfumeId,
+            score
+        );
+
+        return StarRatingStatisticJpaEntity.toDomain(starRatingStatistic);
+    }
+
 }

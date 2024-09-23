@@ -47,6 +47,8 @@ public class StarRatingJpaEntity extends BaseEntity {
     public static StarRating.StarRatingBuilder buildDefault(StarRatingJpaEntity jpaEntity) {
         return StarRating.builder()
             .id(jpaEntity.getId())
+            .user(UserJpaEntity.toDummy(jpaEntity.getUserJpaEntity()))
+            .perfume(PerfumeJpaEntity.toDummy(jpaEntity.getPerfumeJpaEntity()))
             .score(jpaEntity.getScore());
     }
 

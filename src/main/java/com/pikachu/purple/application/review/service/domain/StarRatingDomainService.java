@@ -25,7 +25,7 @@ public interface StarRatingDomainService {
         int score
     );
 
-    void deleteById(Long starRatingId);
+    StarRating deleteById(Long starRatingId);
 
     StarRating findByUserIdAndPerfumeId(
         Long userId,

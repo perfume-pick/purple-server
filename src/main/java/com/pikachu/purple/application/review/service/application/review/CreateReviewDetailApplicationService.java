@@ -1,7 +1,7 @@
 package com.pikachu.purple.application.review.service.application.review;
 
 import com.pikachu.purple.application.review.port.in.review.CreateReviewDetailUseCase;
-import com.pikachu.purple.application.review.port.in.starrating.CreateStarRatingUseCase;
+import com.pikachu.purple.application.review.port.in.starrating.CreateOrUpdateStarRatingUseCase;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
 import com.pikachu.purple.application.review.service.domain.ReviewEvaluationDomainService;
 import com.pikachu.purple.bootstrap.review.vo.EvaluationFieldVO;
@@ -12,6 +12,7 @@ import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.ReviewEvaluation;
+import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.domain.review.enums.ReviewType;
 import com.pikachu.purple.domain.user.User;
 import java.util.List;
@@ -25,21 +26,22 @@ public class CreateReviewDetailApplicationService implements CreateReviewDetailU
 
     private final ReviewDomainService reviewDomainService;
     private final ReviewEvaluationDomainService reviewEvaluationDomainService;
-    private final CreateStarRatingUseCase createStarRatingUseCase;
+    private final CreateOrUpdateStarRatingUseCase createOrUpdateStarRatingUseCase;
 
     @Transactional
     @Override
     public void invoke(Command command) {
 
-        CreateStarRatingUseCase.Result result = createStarRatingUseCase.invoke(
-            new CreateStarRatingUseCase.Command(
+        CreateOrUpdateStarRatingUseCase.Result starRatingResult = createOrUpdateStarRatingUseCase.invoke(
+            new CreateOrUpdateStarRatingUseCase.Command(
                 command.perfumeId(),
                 command.score()
             )
         );
 
-        User user = result.starRating().getUser();
-        Perfume perfume = result.starRating().getPerfume();
+        StarRating starRating = starRatingResult.starRating();
+        User user = starRating.getUser();
+        Perfume perfume = starRating.getPerfume();
 
         Review review = reviewDomainService.create(
             user.getId(),
@@ -70,7 +72,9 @@ public class CreateReviewDetailApplicationService implements CreateReviewDetailU
             .build();
     }
 
-    private EvaluationField<EvaluationOption> convertToEvaluationField(EvaluationFieldVO evaluationFieldVO) {
+    private EvaluationField<EvaluationOption> convertToEvaluationField(
+        EvaluationFieldVO evaluationFieldVO) {
+
         EvaluationFieldType fieldType = EvaluationFieldType.of(evaluationFieldVO.fieldCode());
 
         List<EvaluationOption> options = evaluationFieldVO.optionCodes().stream()
@@ -90,7 +94,6 @@ public class CreateReviewDetailApplicationService implements CreateReviewDetailU
             .type(optionType)
             .build();
     }
-
 
 
 }

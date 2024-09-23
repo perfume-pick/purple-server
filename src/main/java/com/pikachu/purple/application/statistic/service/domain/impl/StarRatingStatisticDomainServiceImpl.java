@@ -1,5 +1,6 @@
 package com.pikachu.purple.application.statistic.service.domain.impl;
 
+import com.pikachu.purple.application.review.service.domain.impl.StarRatingDomainServiceImpl;
 import com.pikachu.purple.application.statistic.port.out.StarRatingStatisticRepository;
 import com.pikachu.purple.application.statistic.service.domain.StarRatingStatisticDomainService;
 import com.pikachu.purple.bootstrap.onboarding.vo.StarRatingVO;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 public class StarRatingStatisticDomainServiceImpl implements StarRatingStatisticDomainService {
 
     private final StarRatingStatisticRepository starRatingStatisticRepository;
+    private final StarRatingDomainServiceImpl starRatingDomainServiceImpl;
 
     @Override
     public List<StarRatingStatistic> findAllByPerfumeId(Long perfumeId) {
@@ -54,7 +56,25 @@ public class StarRatingStatisticDomainServiceImpl implements StarRatingStatistic
         Long perfumeId,
         int score
     ) {
+        StarRatingStatistic starRatingStatistic = findByPerfumeIdAndScore(
+            perfumeId,
+            score
+        );
+
+        if (starRatingStatistic.isZero()) {
+            return;
+        }
         starRatingStatisticRepository.decreaseVotes(
+            perfumeId,
+            score
+        );
+    }
+
+    private StarRatingStatistic findByPerfumeIdAndScore(
+        Long perfumeId,
+        int score
+    ) {
+        return starRatingStatisticRepository.findByPerfumeIdAndScore(
             perfumeId,
             score
         );

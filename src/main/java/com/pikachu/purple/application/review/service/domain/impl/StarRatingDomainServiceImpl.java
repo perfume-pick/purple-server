@@ -75,8 +75,8 @@ public class StarRatingDomainServiceImpl implements StarRatingDomainService {
     }
 
     @Override
-    public void deleteById(Long starRatingId) {
-        starRatingRepository.deleteById(starRatingId);
+    public StarRating deleteById(Long starRatingId) {
+        return starRatingRepository.deleteById(starRatingId);
     }
 
     @Override

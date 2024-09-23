@@ -21,7 +21,9 @@ public class DeleteReviewApplicationService implements DeleteReviewUseCase {
 
         Review review = reviewDomainService.findById(reviewId);
 
-        deleteStarRatingUseCase.invoke(review.getStarRating().getId());
+        deleteStarRatingUseCase.invoke(
+            new DeleteStarRatingUseCase.Command(review.getStarRating().getId())
+        );
 
         reviewDomainService.deleteById(reviewId);
     }

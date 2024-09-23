@@ -67,4 +67,10 @@ public class PerfumeJpaEntity {
             .build();
     }
 
+    public static Perfume toDummy(PerfumeJpaEntity jpaEntity) {
+        return Perfume.builder()
+            .id(jpaEntity.getId())
+            .build();
+    }
+
 }
