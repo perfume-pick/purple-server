@@ -89,6 +89,7 @@ public class ReviewJpaEntity extends BaseEntity {
         return Review.builder()
             .id(jpaEntity.getId())
             .user(UserJpaEntity.toDomain(jpaEntity.getUserJpaEntity()))
+            .perfume(PerfumeJpaEntity.toDummy(jpaEntity.getPerfumeJpaEntity()))
             .starRating(StarRatingJpaEntity.toDomain(jpaEntity.getStarRatingJpaEntity()))
             .content(jpaEntity.getContent())
             .date(jpaEntity.getUpdatedAt())
