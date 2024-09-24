@@ -19,3 +19,6 @@ services:
     image: redis:7.2.4
     ports:
       - "6379:6379"
+    environment:
+      REDIS_PASSWORD: secret
+    command: [ "redis-server", "--requirepass", "secret" ]
