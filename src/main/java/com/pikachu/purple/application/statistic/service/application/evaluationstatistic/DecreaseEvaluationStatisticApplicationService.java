@@ -16,7 +16,7 @@ public class DecreaseEvaluationStatisticApplicationService implements
 
     @Override
     public void invoke(Command command) {
-        for (EvaluationField<EvaluationOption> field: command.reviewEvaluation().getFields()) {
+        for (EvaluationField<EvaluationOption> field : command.reviewEvaluation().getFields()) {
             for (EvaluationOption option : field.getOptions()) {
                 evaluationStatisticDomainService.decreaseVotes(
                     command.perfumeId(),
@@ -26,4 +26,5 @@ public class DecreaseEvaluationStatisticApplicationService implements
             }
         }
     }
+
 }

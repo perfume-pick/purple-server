@@ -17,4 +17,5 @@ public interface EvaluationStatisticRepository {
         String fieldCode,
         String optionCode
     );
+
 }

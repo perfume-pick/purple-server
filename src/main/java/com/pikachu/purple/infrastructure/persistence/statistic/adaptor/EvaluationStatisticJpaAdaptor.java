@@ -94,5 +94,4 @@ public class EvaluationStatisticJpaAdaptor implements EvaluationStatisticReposit
         evaluationStatisticJpaRepository.save(evaluationStatisticJpaEntity);
     }
 
-
 }

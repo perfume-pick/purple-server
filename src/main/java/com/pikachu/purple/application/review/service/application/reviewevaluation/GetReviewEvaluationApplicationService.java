@@ -19,4 +19,5 @@ public class GetReviewEvaluationApplicationService implements GetReviewEvaluatio
 
         return new Result(reviewEvaluation);
     }
+
 }

@@ -26,4 +26,5 @@ public class IncreaseEvaluationStatisticApplicationService implements
             }
         }
     }
+
 }

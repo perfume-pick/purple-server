@@ -17,4 +17,5 @@ public interface EvaluationStatisticDomainService {
         String fieldCode,
         String optionCode
     );
+
 }

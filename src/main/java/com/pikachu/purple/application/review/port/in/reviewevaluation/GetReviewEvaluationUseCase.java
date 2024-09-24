@@ -7,9 +7,7 @@ public interface GetReviewEvaluationUseCase {
 
     Result invoke(Command command);
 
-    record Command(
-        Long reviewId
-    ) {}
+    record Command(Long reviewId) {}
 
     record Result(ReviewEvaluation reviewEvaluation) {}
 

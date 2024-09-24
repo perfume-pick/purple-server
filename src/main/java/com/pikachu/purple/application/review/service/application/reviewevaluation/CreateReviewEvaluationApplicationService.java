@@ -72,4 +72,5 @@ public class CreateReviewEvaluationApplicationService implements CreateReviewEva
             .type(optionType)
             .build();
     }
+    
 }
