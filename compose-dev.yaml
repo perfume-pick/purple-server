@@ -38,7 +38,6 @@ services:
     environment:
       REDIS_PASSWORD: ${REDIS_PASSWORD}
     command: [ "redis-server", "--requirepass", "${REDIS_PASSWORD}" ]
-    container_name: redis_dev
 
 volumes:
   mysql-volume:
