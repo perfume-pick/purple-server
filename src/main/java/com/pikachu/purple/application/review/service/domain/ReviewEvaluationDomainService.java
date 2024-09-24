@@ -9,4 +9,5 @@ public interface ReviewEvaluationDomainService {
         ReviewEvaluation reviewEvaluation
     );
 
+    ReviewEvaluation findByReviewId(Long reviewId);
 }

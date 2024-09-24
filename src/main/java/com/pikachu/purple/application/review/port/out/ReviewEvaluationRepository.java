@@ -8,4 +8,6 @@ public interface ReviewEvaluationRepository {
         Long reviewId,
         ReviewEvaluation reviewEvaluation
     );
+
+    ReviewEvaluation findByReviewId(Long reviewId);
 }

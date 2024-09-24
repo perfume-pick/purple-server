@@ -16,7 +16,8 @@ public interface StarRatingStatisticJpaRepository extends
         + "where srs.statisticsDate = :#{#compositeKey.statisticsDate}"
         + " and srs.perfumeJpaEntity.id = :#{#compositeKey.perfumeId}"
         + " and srs.score = :#{#compositeKey.score}")
-    Optional<StarRatingStatisticJpaEntity> findByCompositeKey(StarRatingStatisticCompositeKey compositeKey);
+    Optional<StarRatingStatisticJpaEntity> findByCompositeKey(
+        StarRatingStatisticCompositeKey compositeKey);
 
     @Query("select srs "
         + "from StarRatingStatisticJpaEntity srs "
