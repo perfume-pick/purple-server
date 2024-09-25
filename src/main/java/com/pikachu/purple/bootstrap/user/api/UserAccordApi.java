@@ -21,6 +21,6 @@ public interface UserAccordApi {
     )
     @GetMapping("/perfumes")
     @ResponseStatus(HttpStatus.OK)
-    SuccessResponse<GetPerfumesAndUserAccordsByUserResponse> findAllWithUserAccordsByUser();
+    SuccessResponse<GetPerfumesAndUserAccordsByUserResponse> findAllPerfumeWithUserAccordsByUser();
 
 }

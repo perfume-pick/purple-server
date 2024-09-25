@@ -14,7 +14,7 @@ public class UserAccordController implements UserAccordApi {
     private final GetPerfumesAndUserAccordsByUserUseCase getPerfumesAndUserAccordsByUserUseCase;
 
     @Override
-    public SuccessResponse<GetPerfumesAndUserAccordsByUserResponse> findAllWithUserAccordsByUser() {
+    public SuccessResponse<GetPerfumesAndUserAccordsByUserResponse> findAllPerfumeWithUserAccordsByUser() {
         GetPerfumesAndUserAccordsByUserUseCase.Result result = getPerfumesAndUserAccordsByUserUseCase.invoke();
 
         return SuccessResponse.of(new GetPerfumesAndUserAccordsByUserResponse(
