@@ -28,4 +28,11 @@ public interface PerfumeJpaRepository extends JpaRepository<PerfumeJpaEntity, Lo
         + "where p.name like :keyword or p.brandJpaEntity.name like :keyword")
     List<PerfumeJpaEntity> findByKeyword(String keyword);
 
+    @Query("select p "
+        + "from PerfumeJpaEntity p "
+        + "left join ReviewJpaEntity r on r.perfumeJpaEntity = p "
+        + "group by p "
+        + "order by count(r) desc")
+    List<PerfumeJpaEntity> findAllOrderByReviewCounts();
+
 }

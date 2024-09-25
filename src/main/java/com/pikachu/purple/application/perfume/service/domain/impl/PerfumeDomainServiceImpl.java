@@ -39,4 +39,9 @@ public class PerfumeDomainServiceImpl implements PerfumeDomainService {
         return perfumeRepository.findAllWithPerfumeAccordsByAccords(accords);
     }
 
+    @Override
+    public List<Perfume> findAllOrderByReviewCounts() {
+        return perfumeRepository.findAllOrderByReviewCounts();
+    }
+
 }

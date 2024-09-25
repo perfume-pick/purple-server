@@ -63,4 +63,13 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
             .toList();
     }
 
+    @Override
+    public List<Perfume> findAllOrderByReviewCounts() {
+        List<PerfumeJpaEntity> perfumeJpaEntities = perfumeJpaRepository.findAllOrderByReviewCounts();
+
+        return perfumeJpaEntities.stream()
+            .map(PerfumeJpaEntity::toDomain)
+            .toList();
+    }
+
 }

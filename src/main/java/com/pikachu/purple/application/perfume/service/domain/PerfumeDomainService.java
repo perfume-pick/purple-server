@@ -16,4 +16,5 @@ public interface PerfumeDomainService {
 
     List<Perfume> findAllWithPerfumeAccordsByAccords(List<Accord> accords);
 
+    List<Perfume> findAllOrderByReviewCounts();
 }
