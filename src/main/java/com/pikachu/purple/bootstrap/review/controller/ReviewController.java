@@ -1,6 +1,6 @@
 package com.pikachu.purple.bootstrap.review.controller;
 
-import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesByReviewCountsUseCase;
+import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesByReviewCountUseCase;
 import com.pikachu.purple.application.review.port.in.GetEvaluationFormFieldUseCase;
 import com.pikachu.purple.application.review.port.in.GetEvaluationFormFieldUseCase.Result;
 import com.pikachu.purple.application.review.port.in.review.CreateReviewDetailUseCase;
@@ -26,7 +26,7 @@ public class ReviewController implements ReviewApi {
     private final GetEvaluationFormFieldUseCase getEvaluationFormFieldUseCase;
     private final UpdateReviewUseCase updateReviewUseCase;
     private final DeleteReviewUseCase deleteReviewUseCase;
-    private final GetPerfumesByReviewCountsUseCase getPerfumesByReviewCountsUseCase;
+    private final GetPerfumesByReviewCountUseCase getPerfumesByReviewCountUseCase;
 
     @Override
     public void createSimple(CreateReviewSimpleRequest request) {
@@ -83,8 +83,8 @@ public class ReviewController implements ReviewApi {
     }
 
     @Override
-    public SuccessResponse<GetPerfumesByReviewCountsResponse> findAllPerfumeOrderByReviewCounts() {
-        GetPerfumesByReviewCountsUseCase.Result result = getPerfumesByReviewCountsUseCase.invoke();
+    public SuccessResponse<GetPerfumesByReviewCountsResponse> findAllPerfumeOrderByReviewCount() {
+        GetPerfumesByReviewCountUseCase.Result result = getPerfumesByReviewCountUseCase.invoke();
         
         return SuccessResponse.of(new GetPerfumesByReviewCountsResponse(
             result.perfumeDTOs()

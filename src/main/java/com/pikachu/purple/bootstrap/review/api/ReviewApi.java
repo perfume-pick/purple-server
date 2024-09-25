@@ -69,6 +69,6 @@ public interface ReviewApi {
     )
     @GetMapping("/perfumes")
     @ResponseStatus(HttpStatus.OK)
-    SuccessResponse<GetPerfumesByReviewCountsResponse> findAllPerfumeOrderByReviewCounts();
+    SuccessResponse<GetPerfumesByReviewCountsResponse> findAllPerfumeOrderByReviewCount();
 
 }

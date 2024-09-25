@@ -12,10 +12,8 @@ public interface PerfumeRepository {
 
     List<Perfume> findAllByBrandNames(List<String> brandNames);
 
-    List<Perfume> findAllByIds(List<Long> perfumeIds);
-
     List<Perfume> findAllWithPerfumeAccordsByAccords(List<Accord> accords);
 
-    List<Perfume> findAllOrderByReviewCounts();
+    List<Perfume> findAllHavingReviewCountNotZeroOrderByReviewCount(int maxSize);
 
 }
