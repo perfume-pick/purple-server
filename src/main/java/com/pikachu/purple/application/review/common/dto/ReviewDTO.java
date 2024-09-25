@@ -1,11 +1,12 @@
 package com.pikachu.purple.application.review.common.dto;
 
+import com.pikachu.purple.application.util.IdUtil;
 import com.pikachu.purple.domain.review.Review;
 import java.time.Instant;
 import java.util.List;
 
 public record ReviewDTO(
-    Long reviewId,
+    String reviewId,
     String nickname,
     String imageUrl,
     Instant date,
@@ -24,7 +25,7 @@ public record ReviewDTO(
         List<String> moodNames
     ) {
         return new ReviewDTO(
-            review.getId(),
+            IdUtil.toString(review.getId()),
             review.getUser().getNickname(),
             review.getUser().getImageUrl(),
             review.getDate(),

@@ -52,7 +52,7 @@ public interface ReviewApi {
     @PatchMapping("/{review-id}/simple")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void update(
-        @PathVariable("review-id") Long reviewId,
+        @PathVariable("review-id") String reviewId,
         @RequestBody @Valid UpdateSimpleReviewRequest request
     );
 
@@ -60,7 +60,7 @@ public interface ReviewApi {
     @Operation(summary = "리뷰 삭제")
     @DeleteMapping("/{review-id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void delete(@PathVariable("review-id") Long reviewId);
+    void delete(@PathVariable("review-id") String reviewId);
 
     @Secured
     @Operation(

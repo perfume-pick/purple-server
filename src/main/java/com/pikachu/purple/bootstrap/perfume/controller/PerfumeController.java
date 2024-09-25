@@ -4,6 +4,7 @@ import com.pikachu.purple.application.perfume.port.in.GetAccordsAndNotesByPerfum
 import com.pikachu.purple.application.perfume.port.in.fragranticaevaluation.GetFragranticaEvaluationByPerfumeIdUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetReviewsByPerfumeIdAndSortTypeUseCase;
 import com.pikachu.purple.application.statistic.port.in.GetPerfumeStatisticByPerfumeIdUseCase;
+import com.pikachu.purple.application.util.IdUtil;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.perfume.api.PerfumeApi;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetAccordsAndNotesResponse;
@@ -23,9 +24,9 @@ public class PerfumeController implements PerfumeApi {
     private final GetReviewsByPerfumeIdAndSortTypeUseCase getReviewsByPerfumeIdAndSortTypeUseCase;
 
     @Override
-    public SuccessResponse<GetAccordsAndNotesResponse> findAccordsAndNotesByPerfumeId(Long perfumeId) {
+    public SuccessResponse<GetAccordsAndNotesResponse> findAccordsAndNotesByPerfumeId(String perfumeId) {
         GetAccordsAndNotesByPerfumeIdUseCase.Result result = getAccordsAndNotesByPerfumeIdUseCase.invoke(
-            new GetAccordsAndNotesByPerfumeIdUseCase.Command(perfumeId));
+            new GetAccordsAndNotesByPerfumeIdUseCase.Command(IdUtil.from(perfumeId)));
 
         // TODO: userSaveVisitedHistoryUseCase 구현
 
@@ -37,10 +38,10 @@ public class PerfumeController implements PerfumeApi {
 
     @Override
     public SuccessResponse<GetFragranticaEvaluationResponse> findFragranticaEvaluationByPerfumeId(
-        Long perfumeId) {
+        String perfumeId) {
 
         GetFragranticaEvaluationByPerfumeIdUseCase.Result result = getFragranticaEvaluationByPerfumeIdUseCase.invoke(
-            new GetFragranticaEvaluationByPerfumeIdUseCase.Command(perfumeId));
+            new GetFragranticaEvaluationByPerfumeIdUseCase.Command(IdUtil.from(perfumeId)));
 
         return SuccessResponse.of(
             new GetFragranticaEvaluationResponse(result.fragranticaEvaluation()));
@@ -48,9 +49,9 @@ public class PerfumeController implements PerfumeApi {
 
     @Override
     public SuccessResponse<GetPerfumeStatisticResponse> findPerfumeStatisticResponse(
-        Long perfumeId) {
+        String perfumeId) {
         GetPerfumeStatisticByPerfumeIdUseCase.Result result = getPerfumeStatisticByPerfumeIdUseCase.invoke(
-            new GetPerfumeStatisticByPerfumeIdUseCase.Command(perfumeId));
+            new GetPerfumeStatisticByPerfumeIdUseCase.Command(IdUtil.from(perfumeId)));
 
         return SuccessResponse.of(
             new GetPerfumeStatisticResponse(
@@ -62,12 +63,12 @@ public class PerfumeController implements PerfumeApi {
 
     @Override
     public SuccessResponse<GetReviewsResponse> findReviewsByPerfumeIdAndSortType(
-        Long perfumeId,
+        String perfumeId,
         String sortType
     ) {
         GetReviewsByPerfumeIdAndSortTypeUseCase.Result result = getReviewsByPerfumeIdAndSortTypeUseCase.invoke(
             new GetReviewsByPerfumeIdAndSortTypeUseCase.Command(
-                perfumeId,
+                IdUtil.from(perfumeId),
                 sortType
             )
         );

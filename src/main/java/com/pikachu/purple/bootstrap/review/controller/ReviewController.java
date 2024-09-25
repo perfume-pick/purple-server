@@ -7,6 +7,7 @@ import com.pikachu.purple.application.review.port.in.review.CreateReviewDetailUs
 import com.pikachu.purple.application.review.port.in.review.CreateReviewSimpleUseCase;
 import com.pikachu.purple.application.review.port.in.review.DeleteReviewUseCase;
 import com.pikachu.purple.application.review.port.in.review.UpdateReviewUseCase;
+import com.pikachu.purple.application.util.IdUtil;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.review.api.ReviewApi;
 import com.pikachu.purple.bootstrap.review.dto.request.CreateReviewDetailRequest;
@@ -65,12 +66,12 @@ public class ReviewController implements ReviewApi {
 
     @Override
     public void update(
-        Long reviewId,
+        String reviewId,
         UpdateSimpleReviewRequest request
     ) {
         updateReviewUseCase.invoke(
             new UpdateReviewUseCase.Command(
-                reviewId,
+                IdUtil.from(reviewId),
                 request.score(),
                 request.content()
             )
@@ -78,8 +79,8 @@ public class ReviewController implements ReviewApi {
     }
 
     @Override
-    public void delete(Long reviewId) {
-        deleteReviewUseCase.invoke(reviewId);
+    public void delete(String reviewId) {
+        deleteReviewUseCase.invoke(IdUtil.from(reviewId));
     }
 
     @Override
