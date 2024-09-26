@@ -30,13 +30,13 @@ public class PerfumeDomainServiceImpl implements PerfumeDomainService {
     }
 
     @Override
-    public List<Perfume> findAllByIds(List<Long> perfumeIds) {
-        return perfumeRepository.findAllByIds(perfumeIds);
+    public List<Perfume> findAllWithPerfumeAccordsByAccords(List<Accord> accords) {
+        return perfumeRepository.findAllWithPerfumeAccordsByAccords(accords);
     }
 
     @Override
-    public List<Perfume> findAllWithPerfumeAccordsByAccords(List<Accord> accords) {
-        return perfumeRepository.findAllWithPerfumeAccordsByAccords(accords);
+    public List<Perfume> findAllOrderByReviewCount(int maxSize) {
+        return perfumeRepository.findAllHavingReviewCountNotZeroOrderByReviewCount(maxSize);
     }
 
 }

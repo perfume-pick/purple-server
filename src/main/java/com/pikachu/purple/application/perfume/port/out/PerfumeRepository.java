@@ -6,20 +6,14 @@ import java.util.List;
 
 public interface PerfumeRepository {
 
-    /*
-    Perfume 반환할 때, PerfumeAccord <value> 값으로 내림차순 정렬
-    */
     List<Perfume> findAllWithPerfumeAccordsByKeyword(String keyword);
 
     Perfume findById(Long perfumeId);
 
     List<Perfume> findAllByBrandNames(List<String> brandNames);
 
-    /*
-    잘 반환해주세요~
-     */
-    List<Perfume> findAllByIds(List<Long> perfumeIds);
-
     List<Perfume> findAllWithPerfumeAccordsByAccords(List<Accord> accords);
+
+    List<Perfume> findAllHavingReviewCountNotZeroOrderByReviewCount(int maxSize);
 
 }

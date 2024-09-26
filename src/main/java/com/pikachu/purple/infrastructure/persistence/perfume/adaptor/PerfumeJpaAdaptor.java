@@ -10,6 +10,7 @@ import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEn
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeJpaRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Limit;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -26,11 +27,6 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
         return perfumeJpaEntities.stream()
             .map(PerfumeJpaEntity::toDomain)
             .toList();
-    }
-
-    @Override
-    public List<Perfume> findAllByIds(List<Long> perfumeIds) {
-        return List.of();
     }
 
     @Override
@@ -60,6 +56,16 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
 
         return perfumeJpaEntities.stream()
             .map(PerfumeJpaEntity::toDomainWithPerfumeAccord)
+            .toList();
+    }
+
+    @Override
+    public List<Perfume> findAllHavingReviewCountNotZeroOrderByReviewCount(int maxSize) {
+        List<PerfumeJpaEntity> perfumeJpaEntities = perfumeJpaRepository.findAllHavingReviewCountNotZeroOrderByReviewCount(
+            Limit.of(maxSize));
+
+        return perfumeJpaEntities.stream()
+            .map(PerfumeJpaEntity::toDomain)
             .toList();
     }
 
