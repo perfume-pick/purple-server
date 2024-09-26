@@ -62,7 +62,7 @@ public class ReviewController implements ReviewApi {
 
     @Override
     public void update(
-        Long reviewId,
+        String reviewId,
         UpdateSimpleReviewRequest request
     ) {
         updateReviewUseCase.invoke(
@@ -75,8 +75,8 @@ public class ReviewController implements ReviewApi {
     }
 
     @Override
-    public void delete(Long reviewId) {
-        deleteReviewUseCase.invoke(reviewId);
+    public void delete(String reviewId) {
+        deleteReviewUseCase.invoke(new DeleteReviewUseCase.Command(reviewId));
     }
 
 }

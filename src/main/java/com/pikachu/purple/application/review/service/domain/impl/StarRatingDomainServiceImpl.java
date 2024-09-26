@@ -2,7 +2,7 @@ package com.pikachu.purple.application.review.service.domain.impl;
 
 import com.pikachu.purple.application.review.port.out.StarRatingRepository;
 import com.pikachu.purple.application.review.service.domain.StarRatingDomainService;
-import com.pikachu.purple.application.util.IdGenerator;
+import com.pikachu.purple.application.util.IdUtil;
 import com.pikachu.purple.bootstrap.onboarding.vo.StarRatingVO;
 import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.review.StarRating;
@@ -25,7 +25,7 @@ public class StarRatingDomainServiceImpl implements StarRatingDomainService {
         List<StarRating> starRatings = new ArrayList<>();
 
         for(StarRatingVO starRatingVO : starRatingVOs) {
-            Long starRatingId = IdGenerator.generate();
+            Long starRatingId = IdUtil.generateId();
 
             Perfume perfume = Perfume.builder()
                 .id(starRatingVO.perfumeId())
@@ -52,7 +52,7 @@ public class StarRatingDomainServiceImpl implements StarRatingDomainService {
         Long perfumeId,
         int score
     ) {
-        Long starRatingId = IdGenerator.generate();
+        Long starRatingId = IdUtil.generateId();
         return starRatingRepository.create(starRatingId, userId, perfumeId, score);
     }
 

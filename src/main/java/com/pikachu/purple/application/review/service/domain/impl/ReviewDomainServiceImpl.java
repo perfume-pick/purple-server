@@ -2,7 +2,7 @@ package com.pikachu.purple.application.review.service.domain.impl;
 
 import com.pikachu.purple.application.review.port.out.ReviewRepository;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
-import com.pikachu.purple.application.util.IdGenerator;
+import com.pikachu.purple.application.util.IdUtil;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.enums.ReviewType;
 import java.util.List;
@@ -22,7 +22,7 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
         String content,
         ReviewType reviewType
     ) {
-        Long reviewId = IdGenerator.generate();
+        Long reviewId = IdUtil.generateId();
 
         Review review = Review.builder()
             .id(reviewId)

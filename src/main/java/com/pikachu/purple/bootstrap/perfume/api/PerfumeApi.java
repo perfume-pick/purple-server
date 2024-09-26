@@ -27,21 +27,21 @@ public interface PerfumeApi {
     @GetMapping("/{perfume-id}/accords-notes")
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<GetAccordsAndNotesResponse> findAccordsAndNotesByPerfumeId(
-        @PathVariable("perfume-id") Long perfumeId);
+        @PathVariable("perfume-id") String perfumeId);
 
     @Secured
     @Operation(summary = "프라그란티카 평가 정보 조회")
     @GetMapping("/{perfume-id}/fragrantica-evaluation")
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<GetFragranticaEvaluationResponse> findFragranticaEvaluationByPerfumeId(
-        @PathVariable("perfume-id") Long perfumeId);
+        @PathVariable("perfume-id") String perfumeId);
 
     @Secured
     @Operation(summary = "코멘트 토픽 조회")
     @GetMapping("/{perfume-id}/statistics")
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<GetPerfumeStatisticResponse> findPerfumeStatisticResponse(
-        @PathVariable("perfume-id") Long perfumeId);
+        @PathVariable("perfume-id") String perfumeId);
 
     @Secured
     @Operation(
@@ -50,7 +50,7 @@ public interface PerfumeApi {
     )
     @GetMapping("/{perfume-id}/reviews")
     SuccessResponse<GetReviewsResponse> findReviewsByPerfumeIdAndSortType(
-        @PathVariable("perfume-id") Long perfumeId,
+        @PathVariable("perfume-id") String perfumeId,
         @RequestParam("sort-type") String sortType
     );
 

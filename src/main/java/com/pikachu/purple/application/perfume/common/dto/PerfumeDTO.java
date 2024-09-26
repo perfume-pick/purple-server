@@ -1,9 +1,10 @@
 package com.pikachu.purple.application.perfume.common.dto;
 
+import com.pikachu.purple.application.util.IdUtil;
 import com.pikachu.purple.domain.perfume.Perfume;
 
 public record PerfumeDTO(
-    Long perfumeId,
+    String perfumeId,
     String perfumeName,
     String brandName,
     String imageUrl,
@@ -16,7 +17,7 @@ public record PerfumeDTO(
         String accordName
     ) {
         return new PerfumeDTO(
-            perfume.getId(),
+            IdUtil.toString(perfume.getId()),
             perfume.getName(),
             perfume.getBrand().getName(),
             perfume.getImageUrl(),
