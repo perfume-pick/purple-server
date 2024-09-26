@@ -1,4 +1,4 @@
-package com.pikachu.purple.bootstrap.user.dto.response;
+package com.pikachu.purple.bootstrap.recommend.dto.response;
 
 import com.pikachu.purple.application.perfume.common.dto.RecommendedPerfumeDTO;
 import com.pikachu.purple.application.perfume.common.dto.UserAccordDTO;

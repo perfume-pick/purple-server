@@ -6,7 +6,6 @@ import com.pikachu.purple.bootstrap.review.dto.request.CreateReviewDetailRequest
 import com.pikachu.purple.bootstrap.review.dto.request.CreateReviewSimpleRequest;
 import com.pikachu.purple.bootstrap.review.dto.request.UpdateSimpleReviewRequest;
 import com.pikachu.purple.bootstrap.review.dto.response.GetEvaluationFormFieldResponse;
-import com.pikachu.purple.bootstrap.review.dto.response.GetPerfumesByReviewCountsResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -61,14 +60,5 @@ public interface ReviewApi {
     @DeleteMapping("/{review-id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void delete(@PathVariable("review-id") Long reviewId);
-
-    @Secured
-    @Operation(
-        summary = "리뷰 수 기반 추천 향수 리스트 조회",
-        description = "메인페이지 리뷰 수 기반 정보 반환"
-    )
-    @GetMapping("/perfumes")
-    @ResponseStatus(HttpStatus.OK)
-    SuccessResponse<GetPerfumesByReviewCountsResponse> findAllPerfumeOrderByReviewCount();
 
 }

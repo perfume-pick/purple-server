@@ -1,6 +1,5 @@
 package com.pikachu.purple.bootstrap.review.controller;
 
-import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesByReviewCountUseCase;
 import com.pikachu.purple.application.review.port.in.GetEvaluationFormFieldUseCase;
 import com.pikachu.purple.application.review.port.in.GetEvaluationFormFieldUseCase.Result;
 import com.pikachu.purple.application.review.port.in.review.CreateReviewDetailUseCase;
@@ -13,7 +12,6 @@ import com.pikachu.purple.bootstrap.review.dto.request.CreateReviewDetailRequest
 import com.pikachu.purple.bootstrap.review.dto.request.CreateReviewSimpleRequest;
 import com.pikachu.purple.bootstrap.review.dto.request.UpdateSimpleReviewRequest;
 import com.pikachu.purple.bootstrap.review.dto.response.GetEvaluationFormFieldResponse;
-import com.pikachu.purple.bootstrap.review.dto.response.GetPerfumesByReviewCountsResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,7 +24,6 @@ public class ReviewController implements ReviewApi {
     private final GetEvaluationFormFieldUseCase getEvaluationFormFieldUseCase;
     private final UpdateReviewUseCase updateReviewUseCase;
     private final DeleteReviewUseCase deleteReviewUseCase;
-    private final GetPerfumesByReviewCountUseCase getPerfumesByReviewCountUseCase;
 
     @Override
     public void createSimple(CreateReviewSimpleRequest request) {
@@ -80,15 +77,6 @@ public class ReviewController implements ReviewApi {
     @Override
     public void delete(Long reviewId) {
         deleteReviewUseCase.invoke(reviewId);
-    }
-
-    @Override
-    public SuccessResponse<GetPerfumesByReviewCountsResponse> findAllPerfumeOrderByReviewCount() {
-        GetPerfumesByReviewCountUseCase.Result result = getPerfumesByReviewCountUseCase.invoke();
-        
-        return SuccessResponse.of(new GetPerfumesByReviewCountsResponse(
-            result.perfumeDTOs()
-        ));
     }
 
 }
