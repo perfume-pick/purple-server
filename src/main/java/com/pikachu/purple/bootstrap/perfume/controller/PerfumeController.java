@@ -23,7 +23,7 @@ public class PerfumeController implements PerfumeApi {
     private final GetReviewsByPerfumeIdAndSortTypeUseCase getReviewsByPerfumeIdAndSortTypeUseCase;
 
     @Override
-    public SuccessResponse<GetAccordsAndNotesResponse> findAccordsAndNotesByPerfumeId(String perfumeId) {
+    public SuccessResponse<GetAccordsAndNotesResponse> findAccordsAndNotesByPerfumeId(Long perfumeId) {
         GetAccordsAndNotesByPerfumeIdUseCase.Result result = getAccordsAndNotesByPerfumeIdUseCase.invoke(
             new GetAccordsAndNotesByPerfumeIdUseCase.Command(perfumeId));
 
@@ -37,7 +37,7 @@ public class PerfumeController implements PerfumeApi {
 
     @Override
     public SuccessResponse<GetFragranticaEvaluationResponse> findFragranticaEvaluationByPerfumeId(
-        String perfumeId) {
+        Long perfumeId) {
 
         GetFragranticaEvaluationByPerfumeIdUseCase.Result result = getFragranticaEvaluationByPerfumeIdUseCase.invoke(
             new GetFragranticaEvaluationByPerfumeIdUseCase.Command(perfumeId));
@@ -48,7 +48,7 @@ public class PerfumeController implements PerfumeApi {
 
     @Override
     public SuccessResponse<GetPerfumeStatisticResponse> findPerfumeStatisticResponse(
-        String perfumeId) {
+        Long perfumeId) {
         GetPerfumeStatisticByPerfumeIdUseCase.Result result = getPerfumeStatisticByPerfumeIdUseCase.invoke(
             new GetPerfumeStatisticByPerfumeIdUseCase.Command(perfumeId));
 
@@ -62,7 +62,7 @@ public class PerfumeController implements PerfumeApi {
 
     @Override
     public SuccessResponse<GetReviewsResponse> findReviewsByPerfumeIdAndSortType(
-        String perfumeId,
+        Long perfumeId,
         String sortType
     ) {
         GetReviewsByPerfumeIdAndSortTypeUseCase.Result result = getReviewsByPerfumeIdAndSortTypeUseCase.invoke(
