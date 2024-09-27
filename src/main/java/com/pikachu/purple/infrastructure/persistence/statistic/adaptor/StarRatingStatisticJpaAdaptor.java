@@ -9,16 +9,14 @@ import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEn
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeJpaRepository;
 import com.pikachu.purple.infrastructure.persistence.statistic.entity.StarRatingStatisticJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.statistic.repository.StarRatingStatisticJpaRepository;
-import com.pikachu.purple.util.DateUtil;
 import com.pikachu.purple.infrastructure.persistence.statistic.vo.StarRatingStatisticCompositeKey;
+import com.pikachu.purple.util.DateUtil;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-@Slf4j
 @Component
 @RequiredArgsConstructor
 public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticRepository {
@@ -152,12 +150,8 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
             }
         }
 
-        log.info("start save.");
-
-        List<StarRatingStatisticJpaEntity> statisticJpaEntities = starRatingStatisticJpaRepository.saveAll(
+        starRatingStatisticJpaRepository.saveAll(
             starRatingStatisticJpaEntities);
-
-        log.info(String.valueOf(statisticJpaEntities.size()));
     }
 
 }
