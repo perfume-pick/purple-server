@@ -15,6 +15,4 @@ public record CreateReviewDetailRequest(
     List<EvaluationFieldVO> evaluationFieldVOs,
     @Schema(description = "향수에 어울리는 분위기")
     List<String> moodNames
-) {
-
-}
+) {}

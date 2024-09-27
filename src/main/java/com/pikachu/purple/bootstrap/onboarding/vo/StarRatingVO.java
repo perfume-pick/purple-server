@@ -7,6 +7,4 @@ public record StarRatingVO(
 
     @Range(min = 1, max = 5)
     int score
-) {
-
-}
+) {}

@@ -3,7 +3,7 @@ package com.pikachu.purple.application.user.service.domain.impl;
 import com.pikachu.purple.application.user.port.out.ImageUrlS3Uploader;
 import com.pikachu.purple.application.user.port.out.UserRepository;
 import com.pikachu.purple.application.user.service.domain.UserDomainService;
-import com.pikachu.purple.application.util.IdGenerator;
+import com.pikachu.purple.application.util.IdUtil;
 import com.pikachu.purple.domain.user.User;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import lombok.RequiredArgsConstructor;
@@ -25,7 +25,7 @@ public class UserDomainServiceImpl implements UserDomainService {
         SocialLoginProvider socialLoginProvider
     ) {
         User user = User.builder()
-            .id(IdGenerator.generate())
+            .id(IdUtil.generateId())
             .email(email)
             .nickname(nickname)
             .socialLoginProvider(socialLoginProvider)

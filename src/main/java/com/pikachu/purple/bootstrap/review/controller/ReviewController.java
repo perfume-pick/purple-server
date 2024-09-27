@@ -76,7 +76,7 @@ public class ReviewController implements ReviewApi {
 
     @Override
     public void delete(Long reviewId) {
-        deleteReviewUseCase.invoke(reviewId);
+        deleteReviewUseCase.invoke(new DeleteReviewUseCase.Command(reviewId));
     }
 
 }

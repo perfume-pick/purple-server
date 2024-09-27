@@ -17,15 +17,15 @@ public class DeleteReviewApplicationService implements DeleteReviewUseCase {
 
     @Transactional
     @Override
-    public void invoke(Long reviewId) {
+    public void invoke(Command command) {
 
-        Review review = reviewDomainService.findById(reviewId);
+        Review review = reviewDomainService.findById(command.reviewId());
 
         deleteStarRatingUseCase.invoke(
             new DeleteStarRatingUseCase.Command(review.getStarRating().getId())
         );
 
-        reviewDomainService.deleteById(reviewId);
+        reviewDomainService.deleteById(command.reviewId());
     }
 
 }
