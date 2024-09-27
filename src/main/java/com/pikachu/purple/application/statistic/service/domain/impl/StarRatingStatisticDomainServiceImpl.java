@@ -1,13 +1,18 @@
 package com.pikachu.purple.application.statistic.service.domain.impl;
 
+import com.pikachu.purple.application.review.common.dto.PerfumeStarRatingStatisticDTO;
 import com.pikachu.purple.application.statistic.port.out.StarRatingStatisticRepository;
 import com.pikachu.purple.application.statistic.service.domain.StarRatingStatisticDomainService;
 import com.pikachu.purple.domain.statistic.StarRatingStatistic;
 import com.pikachu.purple.infrastructure.redis.annotation.DistributedLock;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class StarRatingStatisticDomainServiceImpl implements StarRatingStatisticDomainService {
@@ -54,6 +59,26 @@ public class StarRatingStatisticDomainServiceImpl implements StarRatingStatistic
         starRatingStatisticRepository.decreaseVotes(
             perfumeId,
             score
+        );
+    }
+
+    @Override
+    public List<StarRatingStatistic> findAllByStatisticsDate(
+        String StatisticsDate
+    ) {
+       return starRatingStatisticRepository.findAllByStatisticsDate(
+           StatisticsDate
+       );
+    }
+
+    @Override
+    public void updateAll(
+        String statisticsDate,
+        List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs
+    ) {
+        starRatingStatisticRepository.updateAll(
+            statisticsDate,
+            perfumeStarRatingStatisticDTOs
         );
     }
 
