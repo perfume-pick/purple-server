@@ -1,5 +1,6 @@
 package com.pikachu.purple.infrastructure.persistence.review.repository;
 
+import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.infrastructure.persistence.review.entity.StarRatingJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.user.entity.UserJpaEntity;
 import java.util.List;
@@ -16,4 +17,9 @@ public interface StarRatingJpaRepository extends JpaRepository<StarRatingJpaEnti
 
     List<StarRatingJpaEntity> findAllByUserJpaEntity(UserJpaEntity userJpaEntity);
 
+    @Query("select sr "
+        + "from StarRatingJpaEntity sr "
+        + "where FUNCTION('DATE_FORMAT', sr.updatedAt, '%Y%m%d') = :updatedDate "
+        + "order by sr.perfumeJpaEntity.id asc, sr.score asc ")
+    List<StarRatingJpaEntity> findAllByUpdatedDate(String updatedDate);
 }

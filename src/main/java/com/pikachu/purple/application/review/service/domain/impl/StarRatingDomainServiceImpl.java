@@ -90,4 +90,9 @@ public class StarRatingDomainServiceImpl implements StarRatingDomainService {
         );
     }
 
+    @Override
+    public List<StarRating> findAllByUpdatedDate(String updatedDate) {
+        return starRatingRepository.findAllByUpdatedDate(updatedDate);
+    }
+
 }
