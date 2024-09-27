@@ -136,4 +136,15 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
 
         return findResult.map(StarRatingJpaEntity::toDomain).orElse(null);
     }
+
+    @Override
+    public List<StarRating> findAllByUpdatedDate(String updatedDate) {
+        List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAllByUpdatedDate(
+            updatedDate);
+
+        return starRatingJpaEntities.stream()
+            .map(StarRatingJpaEntity::toDomain)
+            .toList();
+    }
+
 }

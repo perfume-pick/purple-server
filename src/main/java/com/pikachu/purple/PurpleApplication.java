@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 @OpenAPIDefinition(
     servers = {
@@ -17,9 +18,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 )
 
 @SpringBootApplication
-@EnableConfigurationProperties({KakaoSocialLoginProperties.class, JwtTokenProperties.class})
-@EnableFeignClients
+@EnableScheduling
 @EnableJpaAuditing
+@EnableFeignClients
+@EnableConfigurationProperties({KakaoSocialLoginProperties.class, JwtTokenProperties.class})
 public class PurpleApplication {
 
     public static void main(String[] args) {

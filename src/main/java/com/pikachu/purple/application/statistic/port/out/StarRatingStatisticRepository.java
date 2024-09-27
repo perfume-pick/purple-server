@@ -1,5 +1,6 @@
 package com.pikachu.purple.application.statistic.port.out;
 
+import com.pikachu.purple.application.review.common.dto.PerfumeStarRatingStatisticDTO;
 import com.pikachu.purple.domain.statistic.StarRatingStatistic;
 import java.util.List;
 
@@ -21,4 +22,14 @@ public interface StarRatingStatisticRepository {
         Long perfumeId,
         int score
     );
+
+    List<StarRatingStatistic> findAllByStatisticsDate(
+        String statisticsDate
+    );
+
+    void updateAll(
+        String statisticsDate,
+        List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs
+    );
+
 }

@@ -24,4 +24,9 @@ public interface StarRatingStatisticJpaRepository extends
         + "where srs.statisticsDate = :today and srs.perfumeJpaEntity.id = :perfumeId")
     List<StarRatingStatisticJpaEntity> findAllByTodayAndPerfumeId(String today, Long perfumeId);
 
+    @Query("select srs "
+        + "from StarRatingStatisticJpaEntity srs "
+        + "where srs.statisticsDate = :statisticsDate "
+        + "order by srs.perfumeJpaEntity.id asc, srs.score asc ")
+    List<StarRatingStatisticJpaEntity> findAllByStatisticsDate(String statisticsDate);
 }
