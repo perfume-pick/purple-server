@@ -18,4 +18,5 @@ public class GetPerfumeIdsApplicationService implements GetPerfumeIdsUseCase {
 
         return new Result(perfumeIds);
     }
+
 }

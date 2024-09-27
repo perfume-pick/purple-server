@@ -19,6 +19,6 @@ public interface StarRatingJpaRepository extends JpaRepository<StarRatingJpaEnti
     @Query("select sr "
         + "from StarRatingJpaEntity sr "
         + "where FUNCTION('DATE_FORMAT', sr.updatedAt, '%Y%m%d') = :updatedDate "
-        + "order by sr.perfumeJpaEntity.id asc, sr.score asc ")
+        + "order by sr.perfumeJpaEntity.id asc, sr.score asc")
     List<StarRatingJpaEntity> findAllByUpdatedDate(String updatedDate);
 }

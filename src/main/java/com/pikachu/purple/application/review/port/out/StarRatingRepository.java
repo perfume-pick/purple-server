@@ -25,4 +25,5 @@ public interface StarRatingRepository {
     );
 
     List<StarRating> findAllByUpdatedDate(String updatedDate);
+
 }

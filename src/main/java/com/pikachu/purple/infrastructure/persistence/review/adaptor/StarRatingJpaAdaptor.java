@@ -146,4 +146,5 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
             .map(StarRatingJpaEntity::toDomain)
             .toList();
     }
+
 }

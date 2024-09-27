@@ -33,4 +33,5 @@ public interface StarRatingDomainService {
     );
 
     List<StarRating> findAllByUpdatedDate(String updatedDate);
+
 }

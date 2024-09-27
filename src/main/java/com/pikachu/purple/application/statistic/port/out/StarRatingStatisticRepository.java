@@ -31,4 +31,5 @@ public interface StarRatingStatisticRepository {
         String statisticsDate,
         List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs
     );
+
 }

@@ -7,9 +7,7 @@ public interface GetStarRatingsByUpdatedDateUseCase {
 
     Result invoke(Command command);
 
-    record Command(
-        String updatedDate
-    ) {}
+    record Command(String updatedDate) {}
 
     record Result(List<StarRating> starRatings) {}
 

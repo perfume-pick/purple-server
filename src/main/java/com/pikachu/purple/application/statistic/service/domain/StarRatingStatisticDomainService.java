@@ -26,4 +26,5 @@ public interface StarRatingStatisticDomainService {
         String statisticsDate,
         List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs
     );
+
 }
