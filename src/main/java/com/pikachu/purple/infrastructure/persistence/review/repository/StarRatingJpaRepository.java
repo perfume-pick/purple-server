@@ -1,6 +1,5 @@
 package com.pikachu.purple.infrastructure.persistence.review.repository;
 
-import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.infrastructure.persistence.review.entity.StarRatingJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.user.entity.UserJpaEntity;
 import java.util.List;

@@ -19,7 +19,7 @@ public interface StarRatingStatisticDomainService {
     );
 
     List<StarRatingStatistic> findAllByStatisticsDate(
-        String StatisticsDate
+        String statisticsDate
     );
 
     void updateAll(

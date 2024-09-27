@@ -8,8 +8,6 @@ import com.pikachu.purple.infrastructure.redis.annotation.DistributedLock;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 @Slf4j
@@ -64,10 +62,10 @@ public class StarRatingStatisticDomainServiceImpl implements StarRatingStatistic
 
     @Override
     public List<StarRatingStatistic> findAllByStatisticsDate(
-        String StatisticsDate
+        String statisticsDate
     ) {
        return starRatingStatisticRepository.findAllByStatisticsDate(
-           StatisticsDate
+           statisticsDate
        );
     }
 
