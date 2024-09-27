@@ -8,8 +8,8 @@ import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEn
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeJpaRepository;
 import com.pikachu.purple.infrastructure.persistence.statistic.entity.EvaluationStatisticJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.statistic.repository.EvaluationStatisticJpaRepository;
-import com.pikachu.purple.infrastructure.persistence.statistic.util.TimeUtil;
 import com.pikachu.purple.infrastructure.persistence.statistic.vo.EvaluationStatisticCompositeKey;
+import com.pikachu.purple.util.DateUtil;
 import java.util.List;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
@@ -27,7 +27,7 @@ public class EvaluationStatisticJpaAdaptor implements EvaluationStatisticReposit
         String fieldCode,
         String optionCode
     ) {
-        String today = TimeUtil.today();
+        String today = DateUtil.today();
 
         EvaluationStatisticCompositeKey compositeKey =
             EvaluationStatisticCompositeKey.builder()
@@ -57,7 +57,7 @@ public class EvaluationStatisticJpaAdaptor implements EvaluationStatisticReposit
 
     @Override
     public EvaluationStatistic findByPerfumeIdOrderByVotesDesc(Long perfumeId) {
-        String today = TimeUtil.today();
+        String today = DateUtil.today();
 
         List<EvaluationStatisticJpaEntity> evaluationStatisticJpaEntities =
             evaluationStatisticJpaRepository.findAllByTodayAndPerfumeIdOrderByVotesDesc(today, perfumeId);
