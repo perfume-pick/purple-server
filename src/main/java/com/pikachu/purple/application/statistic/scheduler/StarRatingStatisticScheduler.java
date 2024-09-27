@@ -9,6 +9,7 @@ import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.domain.statistic.StarRatingStatistic;
 import com.pikachu.purple.util.DateUtil;
+import jakarta.persistence.criteria.CriteriaBuilder.In;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -27,7 +28,6 @@ public class StarRatingStatisticScheduler {
     private final StarRatingStatisticDomainService starRatingStatisticDomainService;
     private final GetStarRatingsByUpdatedDateUseCase getStarRatingsByUpdateDateUseCase;
 
-    //    @Scheduled(cron = "0 0 3 * * *")
     @Scheduled(cron = "${scheduler.daily-cron}")
     protected void dailyRecountStarRatingStatistics() {
         log.info("cron test start");
@@ -41,7 +41,6 @@ public class StarRatingStatisticScheduler {
         );
 
         String yesterday = DateUtil.yesterday();
-//        starRatingStatisticDomainService.deleteAllByStatisticsDate(yesterday);
 
         Map<Long, Map<Integer, Integer>> starRatingStatisticMap = starRatingStatisticsFound.stream()
             .collect(Collectors.groupingBy(
@@ -71,20 +70,9 @@ public class StarRatingStatisticScheduler {
         for (Long perfumeId : perfumeIds) {
             List<StarRatingStatistic> starRatingStatistics = new ArrayList<>();
             for (int score : scores) {
-                int previousVotes;
-                if (starRatingStatisticMap.get(perfumeId) == null) {
-                    previousVotes = 0;
-                } else {
-                    previousVotes = starRatingStatisticMap.get(perfumeId).get(score) == null ? 0
-                        : starRatingStatisticMap.get(perfumeId).get(score);
-                }
-                int yesterdayCounts;
-                if (starRatingsCountsMap.get(perfumeId) == null) {
-                    yesterdayCounts = 0;
-                } else {
-                    yesterdayCounts = starRatingsCountsMap.get(perfumeId).get(score) == null ? 0
-                        : starRatingsCountsMap.get(perfumeId).get(score);
-                }
+                int previousVotes = getMapValue(starRatingStatisticMap, perfumeId, score);
+                int yesterdayCounts = getMapValue(starRatingsCountsMap, perfumeId, score);
+
                 StarRatingStatistic starRatingStatistic = StarRatingStatistic.builder()
                     .score(score)
                     .votes(previousVotes + yesterdayCounts)
@@ -105,6 +93,14 @@ public class StarRatingStatisticScheduler {
         );
 
         log.info("cron test end");
+    }
+
+    private int getMapValue(Map<Long, Map<Integer, Integer>> map, Long perfumeId, int score) {
+        if (map.get(perfumeId) != null
+            && map.get(perfumeId).get(score) != null) {
+            return map.get(perfumeId).get(score);
+        }
+        return 0;
     }
 
 }
