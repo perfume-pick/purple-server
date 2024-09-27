@@ -39,4 +39,9 @@ public class PerfumeDomainServiceImpl implements PerfumeDomainService {
         return perfumeRepository.findAllHavingReviewCountNotZeroOrderByReviewCount(maxSize);
     }
 
+    @Override
+    public List<Long> findAllId() {
+        return perfumeRepository.findAllId();
+    }
+
 }

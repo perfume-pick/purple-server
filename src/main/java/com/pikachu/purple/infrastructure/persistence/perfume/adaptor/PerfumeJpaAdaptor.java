@@ -69,4 +69,9 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
             .toList();
     }
 
+    @Override
+    public List<Long> findAllId() {
+        return perfumeJpaRepository.findAllId();
+    }
+
 }
