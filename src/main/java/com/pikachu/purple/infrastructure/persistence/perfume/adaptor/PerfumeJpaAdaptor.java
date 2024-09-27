@@ -69,4 +69,13 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
             .toList();
     }
 
+    @Override
+    public List<Perfume> findAllWithPerfumeAccordsByIds(List<Long> perfumeIds) {
+        List<PerfumeJpaEntity> perfumeJpaEntities = perfumeJpaRepository.findAllByIdIn(perfumeIds);
+
+        return perfumeJpaEntities.stream()
+            .map(PerfumeJpaEntity::toDomainWithPerfumeAccord)
+            .toList();
+    }
+
 }

@@ -16,4 +16,6 @@ public interface PerfumeDomainService {
 
     List<Perfume> findAllOrderByReviewCount(int maxSize);
 
+    List<Perfume> findAllWithPerfumeAccordsByIds(List<Long> longs);
+
 }

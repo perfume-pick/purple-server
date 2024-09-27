@@ -4,7 +4,7 @@ import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUse
 
 import com.pikachu.purple.application.history.port.in.searchhistory.GetSearchHistoriesUseCase;
 import com.pikachu.purple.application.history.service.domain.SearchHistoryDomainService;
-import com.pikachu.purple.application.user.common.dto.SearchHistoryDTO;
+import com.pikachu.purple.application.history.common.dto.SearchHistoryDTO;
 import com.pikachu.purple.domain.history.SearchHistory;
 import java.util.List;
 import java.util.stream.IntStream;
