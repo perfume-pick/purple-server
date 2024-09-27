@@ -28,7 +28,7 @@ public class StarRatingStatisticScheduler {
     private final GetStarRatingsByUpdatedDateUseCase getStarRatingsByUpdateDateUseCase;
 
     //    @Scheduled(cron = "0 0 3 * * *")
-    @Scheduled(cron = "0 * * * * *")
+    @Scheduled(cron = "${scheduler.daily-cron}")
     protected void dailyRecountStarRatingStatistics() {
         log.info("cron test start");
         // perfumeId 전부 가져오기
