@@ -1,6 +1,7 @@
 package com.pikachu.purple.application.review.port.out;
 
 import com.pikachu.purple.domain.review.Review;
+import com.pikachu.purple.domain.review.enums.ReviewType;
 import java.util.List;
 
 public interface ReviewRepository {
@@ -31,4 +32,9 @@ public interface ReviewRepository {
 
     Review findById(Long reviewId);
 
+    List<Review> findAllWithEvaluation(
+        ReviewType reviewType,
+        String updatedDate
+    );
+    
 }

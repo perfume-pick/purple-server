@@ -1,5 +1,6 @@
 package com.pikachu.purple.infrastructure.persistence.review.repository;
 
+import com.pikachu.purple.domain.review.enums.ReviewType;
 import com.pikachu.purple.infrastructure.persistence.review.entity.ReviewJpaEntity;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -26,5 +27,12 @@ public interface ReviewJpaRepository extends JpaRepository<ReviewJpaEntity, Long
         + "WHERE re.starRatingJpaEntity.perfumeJpaEntity.id = :perfumeId "
         + "ORDER BY re.starRatingJpaEntity.score")
     List<ReviewJpaEntity> findAllByPerfumeIdOrderByScoreAsc(Long perfumeId);
+
+    @Query("select r "
+        + "from ReviewJpaEntity r "
+        + "where r.reviewType = :reviewType "
+        + " and FUNCTION('DATE_FORMAT', r.updatedAt, '%Y%m%d') = :updatedDate "
+        + "order by r.id asc")
+    List<ReviewJpaEntity> findAllByReviewTypeAndUpdateDate(ReviewType reviewType, String updatedDate);
 
 }

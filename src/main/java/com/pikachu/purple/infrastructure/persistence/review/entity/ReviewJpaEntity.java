@@ -16,6 +16,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.OrderBy;
 import jakarta.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
@@ -76,6 +77,7 @@ public class ReviewJpaEntity extends BaseEntity {
     private int likeCount;
 
     @OneToMany(mappedBy = "reviewJpaEntity")
+    @OrderBy("fieldCode asc, optionCode asc")
     private List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities = new ArrayList<>();
 
     @OneToMany(mappedBy = "reviewJpaEntity")
@@ -116,6 +118,12 @@ public class ReviewJpaEntity extends BaseEntity {
     public static Review toDomainWithPerfume(ReviewJpaEntity jpaEntity){
         return buildDefault(jpaEntity)
             .perfume(PerfumeJpaEntity.toDomain(jpaEntity.getPerfumeJpaEntity()))
+            .build();
+    }
+
+    public static Review toDomainWithEvaluation(ReviewJpaEntity jpaEntity) {
+        return buildDefault(jpaEntity)
+            .evaluation(ReviewEvaluationJpaEntity.toDomain(jpaEntity.reviewEvaluationJpaEntities))
             .build();
     }
 

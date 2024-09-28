@@ -33,4 +33,8 @@ public interface ReviewDomainService {
 
     Review findById(Long reviewId);
 
+    List<Review> findAllWithEvaluation(
+        ReviewType reviewType,
+        String updatedDate
+    );
 }

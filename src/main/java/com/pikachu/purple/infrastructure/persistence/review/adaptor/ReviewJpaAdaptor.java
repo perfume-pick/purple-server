@@ -6,6 +6,7 @@ import static com.pikachu.purple.bootstrap.common.exception.BusinessException.Us
 
 import com.pikachu.purple.application.review.port.out.ReviewRepository;
 import com.pikachu.purple.domain.review.Review;
+import com.pikachu.purple.domain.review.enums.ReviewType;
 import com.pikachu.purple.infrastructure.persistence.mood.entity.MoodJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.mood.repository.MoodJpaRepository;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
@@ -131,6 +132,21 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     public Review findById(Long reviewId) {
         ReviewJpaEntity reviewJpaEntity = findEntityById(reviewId);
         return ReviewJpaEntity.toDomain(reviewJpaEntity);
+    }
+
+    @Override
+    public List<Review> findAllWithEvaluation(
+        ReviewType reviewType,
+        String updatedDate
+    ) {
+        List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository.findAllByReviewTypeAndUpdateDate(
+            reviewType,
+            updatedDate
+        );
+
+        return reviewJpaEntities.stream()
+            .map(ReviewJpaEntity::toDomainWithEvaluation)
+            .toList();
     }
 
 
