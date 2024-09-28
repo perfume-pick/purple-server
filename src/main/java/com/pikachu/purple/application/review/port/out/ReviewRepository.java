@@ -36,5 +36,5 @@ public interface ReviewRepository {
         ReviewType reviewType,
         String updatedDate
     );
-    
+
 }

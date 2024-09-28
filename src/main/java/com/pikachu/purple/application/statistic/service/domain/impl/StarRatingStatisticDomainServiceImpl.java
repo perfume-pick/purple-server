@@ -61,12 +61,8 @@ public class StarRatingStatisticDomainServiceImpl implements StarRatingStatistic
     }
 
     @Override
-    public List<StarRatingStatistic> findAllByStatisticsDate(
-        String statisticsDate
-    ) {
-       return starRatingStatisticRepository.findAllByStatisticsDate(
-           statisticsDate
-       );
+    public List<StarRatingStatistic> findAllByStatisticsDate(String statisticsDate) {
+       return starRatingStatisticRepository.findAllByStatisticsDate(statisticsDate);
     }
 
     @Override

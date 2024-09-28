@@ -28,12 +28,8 @@ public class StarRatingStatisticScheduler {
         List<Long> perfumeIds = getPerfumeIdsUseCase.invoke().perfumeIds();
 
         String theDayBeforeYesterday = DateUtil.theDayBeforeYesterday();
-        List<StarRatingStatistic> starRatingStatisticsFound = starRatingStatisticDomainService.findAllByStatisticsDate(
-            theDayBeforeYesterday
-        );
-
-        String yesterday = DateUtil.yesterday();
-
+        List<StarRatingStatistic> starRatingStatisticsFound = starRatingStatisticDomainService
+            .findAllByStatisticsDate(theDayBeforeYesterday);
         Map<Long, Map<Integer, Integer>> starRatingStatisticMap = starRatingStatisticsFound.stream()
             .collect(Collectors.groupingBy(
                 starRatingStatistic -> starRatingStatistic.getPerfume().getId(),
@@ -43,6 +39,7 @@ public class StarRatingStatisticScheduler {
                 )
             ));
 
+        String yesterday = DateUtil.yesterday();
         List<StarRating> starRatings = getStarRatingsByUpdateDateUseCase.invoke(
             new GetStarRatingsByUpdatedDateUseCase.Command(yesterday)
         ).starRatings();

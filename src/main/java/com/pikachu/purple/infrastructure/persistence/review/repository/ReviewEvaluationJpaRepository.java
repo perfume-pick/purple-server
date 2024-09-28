@@ -13,4 +13,5 @@ public interface ReviewEvaluationJpaRepository extends
         + "from ReviewEvaluationJpaEntity re "
         + "where re.reviewJpaEntity.id = :reviewId")
     List<ReviewEvaluationJpaEntity> findByReviewId(Long reviewId);
+
 }
