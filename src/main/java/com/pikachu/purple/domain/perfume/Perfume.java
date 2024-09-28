@@ -1,7 +1,5 @@
 package com.pikachu.purple.domain.perfume;
 
-import com.pikachu.purple.domain.statistic.EvaluationStatistic;
-import com.pikachu.purple.domain.statistic.StarRatingStatistic;
 import java.util.List;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -19,9 +17,5 @@ public class Perfume {
     private double averageScore;
     private Brand brand;
     private List<PerfumeAccord> accords;
-    private List<Note> notes;
-    private FragranticaEvaluation fragranticaEvaluation;
-    private EvaluationStatistic evaluationStatistic;
-    private StarRatingStatistic starRatingStatistic;
 
 }

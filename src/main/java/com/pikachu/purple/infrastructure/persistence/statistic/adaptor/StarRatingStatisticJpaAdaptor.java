@@ -2,14 +2,16 @@ package com.pikachu.purple.infrastructure.persistence.statistic.adaptor;
 
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.PerfumeNotFoundException;
 
+import com.pikachu.purple.application.review.common.dto.PerfumeStarRatingStatisticDTO;
 import com.pikachu.purple.application.statistic.port.out.StarRatingStatisticRepository;
 import com.pikachu.purple.domain.statistic.StarRatingStatistic;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeJpaRepository;
 import com.pikachu.purple.infrastructure.persistence.statistic.entity.StarRatingStatisticJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.statistic.repository.StarRatingStatisticJpaRepository;
-import com.pikachu.purple.infrastructure.persistence.statistic.util.TimeUtil;
 import com.pikachu.purple.infrastructure.persistence.statistic.vo.StarRatingStatisticCompositeKey;
+import com.pikachu.purple.util.DateUtil;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
@@ -22,12 +24,11 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
     private final StarRatingStatisticJpaRepository starRatingStatisticJpaRepository;
     private final PerfumeJpaRepository perfumeJpaRepository;
 
-    private StarRatingStatisticJpaEntity findEntityByToday(Long perfumeId, int score) {
-        String today = TimeUtil.today();
-
+    private StarRatingStatisticJpaEntity findEntity(String statisticsDate, Long perfumeId,
+        int score) {
         StarRatingStatisticCompositeKey compositeKey =
             StarRatingStatisticCompositeKey.builder()
-                .statisticsDate(today)
+                .statisticsDate(statisticsDate)
                 .perfumeId(perfumeId)
                 .score(score)
                 .build();
@@ -40,7 +41,7 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
                 .orElseThrow(() -> PerfumeNotFoundException);
 
             return StarRatingStatisticJpaEntity.builder()
-                .statisticsDate(today)
+                .statisticsDate(statisticsDate)
                 .perfumeJpaEntity(perfumeJpaEntity)
                 .score(score)
                 .build();
@@ -50,9 +51,15 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
         }
     }
 
+    private StarRatingStatisticJpaEntity findEntityByToday(Long perfumeId, int score) {
+        String today = DateUtil.today();
+
+        return findEntity(today, perfumeId, score);
+    }
+
     @Override
     public List<StarRatingStatistic> findAllByPerfumeId(Long perfumeId) {
-        String today = TimeUtil.today();
+        String today = DateUtil.today();
 
         List<StarRatingStatisticJpaEntity> starRatingStatisticJpaEntities =
             starRatingStatisticJpaRepository.findAllByTodayAndPerfumeId(
@@ -101,6 +108,50 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
         );
 
         return StarRatingStatisticJpaEntity.toDomain(starRatingStatistic);
+    }
+
+    @Override
+    public List<StarRatingStatistic> findAllByStatisticsDate(
+        String statisticsDate
+    ) {
+
+        List<StarRatingStatisticJpaEntity> starRatingStatisticJpaEntities =
+            starRatingStatisticJpaRepository.findAllByStatisticsDate(
+            statisticsDate
+        );
+
+        return starRatingStatisticJpaEntities.stream()
+            .map(StarRatingStatisticJpaEntity::toDomain)
+            .toList();
+
+    }
+
+    @Override
+    public void updateAll(
+        String statisticsDate,
+        List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs
+    ) {
+
+        List<StarRatingStatisticJpaEntity> starRatingStatisticJpaEntities = new ArrayList<>();
+        for (PerfumeStarRatingStatisticDTO perfumeStarRatingStatisticDTO : perfumeStarRatingStatisticDTOs) {
+            Long perfumeId = perfumeStarRatingStatisticDTO.perfumeId();
+            PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository.findById(perfumeId)
+                .orElseThrow(() -> PerfumeNotFoundException);
+
+            for (StarRatingStatistic starRatingStatistic : perfumeStarRatingStatisticDTO.starRatingStatistics()) {
+                StarRatingStatisticJpaEntity starRatingStatisticJpaEntity = StarRatingStatisticJpaEntity
+                    .builder()
+                    .statisticsDate(statisticsDate)
+                    .perfumeJpaEntity(perfumeJpaEntity)
+                    .score(starRatingStatistic.getScore())
+                    .votes(starRatingStatistic.getVotes())
+                    .build();
+                starRatingStatisticJpaEntities.add(starRatingStatisticJpaEntity);
+            }
+        }
+
+        starRatingStatisticJpaRepository.saveAll(
+            starRatingStatisticJpaEntities);
     }
 
 }

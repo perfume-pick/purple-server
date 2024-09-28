@@ -16,6 +16,8 @@ public interface PerfumeRepository {
 
     List<Perfume> findAllHavingReviewCountNotZeroOrderByReviewCount(int maxSize);
 
+    List<Long> findAllId();
+
     List<Perfume> findAllWithPerfumeAccordsByIds(List<Long> perfumeIds);
 
 }

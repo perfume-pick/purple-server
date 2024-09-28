@@ -82,6 +82,9 @@ spring:
     compose:
       file: ./compose-local.yaml
 
+scheduler:
+  daily-cron: 0 0 3 * * *
+
 springdoc:
   swagger-ui:
     enabled: true
@@ -103,3 +106,6 @@ spring:
   docker:
     compose:
       enabled: false
+
+scheduler:
+  daily-cron: 0 0 3 * * *

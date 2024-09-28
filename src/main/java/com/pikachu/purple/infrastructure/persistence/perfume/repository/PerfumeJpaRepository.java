@@ -36,6 +36,10 @@ public interface PerfumeJpaRepository extends JpaRepository<PerfumeJpaEntity, Lo
         + "order by count(r) desc")
     List<PerfumeJpaEntity> findAllHavingReviewCountNotZeroOrderByReviewCount(Limit limit);
 
+    @Query("select p.id "
+        + "from PerfumeJpaEntity p")
+    List<Long> findAllId();
+
     List<PerfumeJpaEntity> findAllByIdIn(List<Long> perfumeIds);
 
 }
