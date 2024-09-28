@@ -1,6 +1,6 @@
 package com.pikachu.purple.infrastructure.redis.user.entity;
 
-import com.pikachu.purple.domain.history.PerfumeHistory;
+import com.pikachu.purple.domain.history.VisitHistory;
 import jakarta.persistence.Id;
 import java.time.Instant;
 import lombok.AccessLevel;
@@ -15,7 +15,7 @@ import org.springframework.data.redis.core.RedisHash;
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @RedisHash(value = "perfume_history")
-public class PerfumeHistoryRedisHash {
+public class VisitHistoryRedisHash {
 
     @Id
     private Long id;
@@ -24,16 +24,16 @@ public class PerfumeHistoryRedisHash {
 
     private Instant searchAt;
 
-    public static PerfumeHistoryRedisHash toHash(PerfumeHistory perfumeHistory) {
-        return PerfumeHistoryRedisHash.builder()
-            .id(perfumeHistory.getId())
-            .perfumeId(perfumeHistory.getPerfumeId())
-            .searchAt(perfumeHistory.getSearchAt())
+    public static VisitHistoryRedisHash toHash(VisitHistory visitHistory) {
+        return VisitHistoryRedisHash.builder()
+            .id(visitHistory.getId())
+            .perfumeId(visitHistory.getPerfumeId())
+            .searchAt(visitHistory.getSearchAt())
             .build();
     }
 
-    public static PerfumeHistory toDomain(PerfumeHistoryRedisHash hash) {
-        return PerfumeHistory.builder()
+    public static VisitHistory toDomain(VisitHistoryRedisHash hash) {
+        return VisitHistory.builder()
             .id(hash.getId())
             .perfumeId(hash.getPerfumeId())
             .searchAt(hash.getSearchAt())

@@ -1,8 +1,8 @@
-package com.pikachu.purple.application.history.port.in.perfumehistory;
+package com.pikachu.purple.application.history.port.in.visithistory;
 
 import java.time.Instant;
 
-public interface CreatePerfumeHistoryUseCase {
+public interface CreateVisitHistoryUseCase {
 
     void invoke(Command command);
 

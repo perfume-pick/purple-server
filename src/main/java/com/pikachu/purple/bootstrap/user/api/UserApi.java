@@ -2,7 +2,7 @@ package com.pikachu.purple.bootstrap.user.api;
 
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.common.security.Secured;
-import com.pikachu.purple.bootstrap.user.dto.response.GetPerfumeHistoriesResponse;
+import com.pikachu.purple.bootstrap.user.dto.response.GetVisitHistoriesResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetSearchHistoriesResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetUserProfileResponse;
 import io.swagger.v3.oas.annotations.Operation;
@@ -75,20 +75,20 @@ public interface UserApi {
 
     @Secured
     @Operation(summary = "최근 본 상품 기록 저장")
-    @PostMapping("/my/perfume-history/{perfume-id}")
+    @PostMapping("/my/visit-history/{perfume-id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void createPerfumeHistory(@PathVariable("perfume-id") Long perfumeId);
+    void createVisitHistory(@PathVariable("perfume-id") Long perfumeId);
 
     @Secured
     @Operation(summary = "최근 본 상품 전체 조회")
-    @GetMapping("/my/perfume-histories")
+    @GetMapping("/my/visit-histories")
     @ResponseStatus(HttpStatus.OK)
-    SuccessResponse<GetPerfumeHistoriesResponse> findAllPerfumeHistory();
+    SuccessResponse<GetVisitHistoriesResponse> findAllVisitHistory();
 
     @Secured
     @Operation(summary = "최근 본 상품 전체 삭제")
-    @DeleteMapping("/my/perfume-histories")
+    @DeleteMapping("/my/visit-histories")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void deleteAllPerfumeHistory();
+    void deleteAllVisitHistory();
 
 }

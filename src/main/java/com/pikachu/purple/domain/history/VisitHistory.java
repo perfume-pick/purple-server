@@ -9,7 +9,7 @@ import lombok.Getter;
 @Getter
 @Builder
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
-public class PerfumeHistory {
+public class VisitHistory {
 
     Long id;
     Long perfumeId;
