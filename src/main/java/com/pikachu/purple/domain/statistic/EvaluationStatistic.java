@@ -2,6 +2,7 @@ package com.pikachu.purple.domain.statistic;
 
 import com.pikachu.purple.domain.evaluation.EvaluationField;
 import com.pikachu.purple.domain.evaluation.EvaluationOptionStatistic;
+import com.pikachu.purple.domain.perfume.Perfume;
 import java.util.List;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -13,6 +14,7 @@ import lombok.Getter;
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 public class EvaluationStatistic {
 
+    private Perfume perfume;
     private List<EvaluationField<EvaluationOptionStatistic>> fields;
 
 }

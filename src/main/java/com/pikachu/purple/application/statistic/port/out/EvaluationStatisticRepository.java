@@ -1,6 +1,7 @@
 package com.pikachu.purple.application.statistic.port.out;
 
 import com.pikachu.purple.domain.statistic.EvaluationStatistic;
+import java.util.List;
 
 public interface EvaluationStatisticRepository {
 
@@ -18,4 +19,10 @@ public interface EvaluationStatisticRepository {
         String optionCode
     );
 
+    List<EvaluationStatistic> findAllByStatisticsDate(String statisticsDate);
+
+    void updateAll(
+        String statisticsDate,
+        List<EvaluationStatistic> evaluationStatistics
+    );
 }

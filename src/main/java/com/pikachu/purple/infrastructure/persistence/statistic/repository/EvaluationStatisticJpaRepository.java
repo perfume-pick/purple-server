@@ -26,4 +26,10 @@ public interface EvaluationStatisticJpaRepository extends
       + "order by es.fieldCode asc, es.votes desc")
   List<EvaluationStatisticJpaEntity> findAllByTodayAndPerfumeIdOrderByVotesDesc(String today, Long perfumeId);
 
+  @Query("select es "
+      + "from EvaluationStatisticJpaEntity es "
+      + "where es.statisticsDate = :statisticsDate "
+      + "order by es.perfumeJpaEntity.id asc, es.fieldCode asc, es.optionCode asc")
+  List<EvaluationStatisticJpaEntity> findAllByStatisticsDate(String statisticsDate);
+
 }

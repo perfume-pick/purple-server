@@ -4,6 +4,7 @@ import com.pikachu.purple.application.statistic.port.out.EvaluationStatisticRepo
 import com.pikachu.purple.application.statistic.service.domain.EvaluationStatisticDomainService;
 import com.pikachu.purple.domain.statistic.EvaluationStatistic;
 import com.pikachu.purple.infrastructure.redis.annotation.DistributedLock;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -45,6 +46,22 @@ public class EvaluationStatisticDomainServiceImpl implements EvaluationStatistic
             perfumeId,
             fieldCode,
             optionCode
+        );
+    }
+
+    @Override
+    public List<EvaluationStatistic> findAllByStatisticsDate(String statisticsDate) {
+        return evaluationStatisticRepository.findAllByStatisticsDate(statisticsDate);
+    }
+
+    @Override
+    public void updateAll(
+        String statisticsDate,
+        List<EvaluationStatistic> evaluationStatistics
+    ) {
+        evaluationStatisticRepository.updateAll(
+            statisticsDate,
+            evaluationStatistics
         );
     }
 
