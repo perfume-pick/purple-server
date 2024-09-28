@@ -50,8 +50,8 @@ public class EvaluationStatisticDomainServiceImpl implements EvaluationStatistic
     }
 
     @Override
-    public List<EvaluationStatistic> findAllByStatisticsDate(String statisticsDate) {
-        return evaluationStatisticRepository.findAllByStatisticsDate(statisticsDate);
+    public List<EvaluationStatistic> findAll(String statisticsDate) {
+        return evaluationStatisticRepository.findAll(statisticsDate);
     }
 
     @Override

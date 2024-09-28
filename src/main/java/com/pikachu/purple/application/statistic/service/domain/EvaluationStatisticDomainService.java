@@ -19,7 +19,7 @@ public interface EvaluationStatisticDomainService {
         String optionCode
     );
 
-    List<EvaluationStatistic> findAllByStatisticsDate(String statisticsDate);
+    List<EvaluationStatistic> findAll(String statisticsDate);
 
     void updateAll(
         String statisticsDate,

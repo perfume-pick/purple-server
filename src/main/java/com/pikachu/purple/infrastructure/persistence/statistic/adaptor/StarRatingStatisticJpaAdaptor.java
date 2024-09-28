@@ -114,7 +114,7 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
     }
 
     @Override
-    public List<StarRatingStatistic> findAllByStatisticsDate(String statisticsDate) {
+    public List<StarRatingStatistic> findAll(String statisticsDate) {
 
         List<StarRatingStatisticJpaEntity> starRatingStatisticJpaEntities =
             starRatingStatisticJpaRepository.findAllByStatisticsDate(statisticsDate);

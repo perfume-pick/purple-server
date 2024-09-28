@@ -34,7 +34,7 @@ public class EvaluationStatisticScheduler {
 
         String theDayBeforeYesterday = DateUtil.theDayBeforeYesterday();
         List<EvaluationStatistic> evaluationStatisticsFound = evaluationStatisticDomainService
-            .findAllByStatisticsDate(theDayBeforeYesterday);
+            .findAll(theDayBeforeYesterday);
         Map<Long, List<EvaluationStatistic>> statisticsGroupedByPerfumeId =
             evaluationStatisticsFound.stream()
                 .collect(Collectors.groupingBy(

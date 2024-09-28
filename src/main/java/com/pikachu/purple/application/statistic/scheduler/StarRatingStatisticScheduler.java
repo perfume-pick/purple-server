@@ -29,7 +29,7 @@ public class StarRatingStatisticScheduler {
 
         String theDayBeforeYesterday = DateUtil.theDayBeforeYesterday();
         List<StarRatingStatistic> starRatingStatisticsFound = starRatingStatisticDomainService
-            .findAllByStatisticsDate(theDayBeforeYesterday);
+            .findAll(theDayBeforeYesterday);
         Map<Long, Map<Integer, Integer>> starRatingStatisticMap = starRatingStatisticsFound.stream()
             .collect(Collectors.groupingBy(
                 starRatingStatistic -> starRatingStatistic.getPerfume().getId(),

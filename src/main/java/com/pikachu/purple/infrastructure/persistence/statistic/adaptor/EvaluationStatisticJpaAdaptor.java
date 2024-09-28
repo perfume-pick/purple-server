@@ -105,7 +105,7 @@ public class EvaluationStatisticJpaAdaptor implements EvaluationStatisticReposit
     }
 
     @Override
-    public List<EvaluationStatistic> findAllByStatisticsDate(String statisticsDate) {
+    public List<EvaluationStatistic> findAll(String statisticsDate) {
         List<EvaluationStatisticJpaEntity> evaluationStatisticJpaEntities =
             evaluationStatisticJpaRepository.findAllByStatisticsDate(statisticsDate);
         return EvaluationStatisticJpaEntity.toDomainList(evaluationStatisticJpaEntities);
