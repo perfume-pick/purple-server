@@ -19,6 +19,7 @@ import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 @Component
 @RequiredArgsConstructor
@@ -27,6 +28,7 @@ public class EvaluationStatisticScheduler {
     private final EvaluationStatisticDomainService evaluationStatisticDomainService;
     private final GetReviewsDetailWithEvaluationByUpdatedDateUseCase getReviewsDetailWithEvaluationByUpdatedDateUseCase;
 
+    @Transactional
     @Scheduled(cron = "${scheduler.daily-cron}")
     protected void dailyRecountEvaluationStatistics() {
         List<Long> perfumeIds = getPerfumeIdsUseCase.invoke().perfumeIds();
