@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 @Component
 @RequiredArgsConstructor
@@ -23,17 +24,14 @@ public class StarRatingStatisticScheduler {
     private final StarRatingStatisticDomainService starRatingStatisticDomainService;
     private final GetStarRatingsByUpdatedDateUseCase getStarRatingsByUpdateDateUseCase;
 
+    @Transactional
     @Scheduled(cron = "${scheduler.daily-cron}")
-    protected void dailyRecountStarRatingStatistics() {
+    public void dailyRecountStarRatingStatistics() {
         List<Long> perfumeIds = getPerfumeIdsUseCase.invoke().perfumeIds();
 
         String theDayBeforeYesterday = DateUtil.theDayBeforeYesterday();
-        List<StarRatingStatistic> starRatingStatisticsFound = starRatingStatisticDomainService.findAllByStatisticsDate(
-            theDayBeforeYesterday
-        );
-
-        String yesterday = DateUtil.yesterday();
-
+        List<StarRatingStatistic> starRatingStatisticsFound = starRatingStatisticDomainService
+            .findAll(theDayBeforeYesterday);
         Map<Long, Map<Integer, Integer>> starRatingStatisticMap = starRatingStatisticsFound.stream()
             .collect(Collectors.groupingBy(
                 starRatingStatistic -> starRatingStatistic.getPerfume().getId(),
@@ -43,6 +41,7 @@ public class StarRatingStatisticScheduler {
                 )
             ));
 
+        String yesterday = DateUtil.yesterday();
         List<StarRating> starRatings = getStarRatingsByUpdateDateUseCase.invoke(
             new GetStarRatingsByUpdatedDateUseCase.Command(yesterday)
         ).starRatings();

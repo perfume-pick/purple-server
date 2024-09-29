@@ -24,8 +24,11 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
     private final StarRatingStatisticJpaRepository starRatingStatisticJpaRepository;
     private final PerfumeJpaRepository perfumeJpaRepository;
 
-    private StarRatingStatisticJpaEntity findEntity(String statisticsDate, Long perfumeId,
-        int score) {
+    private StarRatingStatisticJpaEntity findEntity(
+        String statisticsDate,
+        Long perfumeId,
+        int score
+    ) {
         StarRatingStatisticCompositeKey compositeKey =
             StarRatingStatisticCompositeKey.builder()
                 .statisticsDate(statisticsDate)
@@ -111,14 +114,10 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
     }
 
     @Override
-    public List<StarRatingStatistic> findAllByStatisticsDate(
-        String statisticsDate
-    ) {
+    public List<StarRatingStatistic> findAll(String statisticsDate) {
 
         List<StarRatingStatisticJpaEntity> starRatingStatisticJpaEntities =
-            starRatingStatisticJpaRepository.findAllByStatisticsDate(
-            statisticsDate
-        );
+            starRatingStatisticJpaRepository.findAllByStatisticsDate(statisticsDate);
 
         return starRatingStatisticJpaEntities.stream()
             .map(StarRatingStatisticJpaEntity::toDomain)

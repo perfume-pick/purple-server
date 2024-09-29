@@ -4,6 +4,7 @@ import com.pikachu.purple.domain.evaluation.EvaluationField;
 import com.pikachu.purple.domain.evaluation.EvaluationOptionStatistic;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
+import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.statistic.EvaluationStatistic;
 import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
@@ -16,6 +17,7 @@ import jakarta.persistence.IdClass;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -66,7 +68,10 @@ public class EvaluationStatisticJpaEntity extends BaseEntity {
         this.votes--;
     }
 
-    public static EvaluationStatistic toDomain(List<EvaluationStatisticJpaEntity> jpaEntities) {
+    public static EvaluationStatistic toDomain(
+        Long perfumeId,
+        List<EvaluationStatisticJpaEntity> jpaEntities
+    ) {
         Map<EvaluationFieldType, List<EvaluationStatisticJpaEntity>> groupedByFieldType =
             jpaEntities.stream()
                 .collect(Collectors.groupingBy(
@@ -92,7 +97,47 @@ public class EvaluationStatisticJpaEntity extends BaseEntity {
                 .toList();
 
         return EvaluationStatistic.builder()
+            .perfume(Perfume.builder().id(perfumeId).build())
             .fields(fields)
             .build();
+    }
+
+    public static List<EvaluationStatistic> toDomainList(List<EvaluationStatisticJpaEntity> jpaEntities) {
+        Map<Long, List<EvaluationStatisticJpaEntity>> groupedByPerfumeId =
+            jpaEntities.stream()
+                .collect(Collectors.groupingBy(
+                    jpaEntity -> jpaEntity.getPerfumeJpaEntity().getId()
+                ));
+
+        return groupedByPerfumeId.entrySet().stream()
+            .map(entry -> EvaluationStatisticJpaEntity.toDomain(
+                entry.getKey(),
+                entry.getValue()
+                ))
+            .toList();
+    }
+
+    public static List<EvaluationStatisticJpaEntity> toJpaEntityList(
+        String statisticsDate,
+        PerfumeJpaEntity perfumeJpaEntity,
+        EvaluationStatistic evaluationStatistic
+    ) {
+        List<EvaluationStatisticJpaEntity> jpaEntities = new ArrayList<>();
+        for (EvaluationField<EvaluationOptionStatistic> field : evaluationStatistic.getFields()) {
+            for (EvaluationOptionStatistic optionStatistic : field.getOptions()) {
+                jpaEntities.add(
+                    EvaluationStatisticJpaEntity.builder()
+                        .statisticsDate(statisticsDate)
+                        .perfumeJpaEntity(perfumeJpaEntity)
+                        .fieldCode(field.getType().getCode())
+                        .optionCode(optionStatistic.getType().getCode())
+                        .votes(optionStatistic.getVotes())
+                        .build()
+                );
+
+            }
+        }
+
+        return jpaEntities;
     }
 }

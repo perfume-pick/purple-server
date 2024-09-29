@@ -47,4 +47,5 @@ public class ReviewEvaluationJpaAdaptor implements ReviewEvaluationRepository {
             reviewEvaluationJpaRepository.findByReviewId(reviewId);
         return ReviewEvaluationJpaEntity.toDomain(reviewEvaluationJpaEntities);
     }
+
 }

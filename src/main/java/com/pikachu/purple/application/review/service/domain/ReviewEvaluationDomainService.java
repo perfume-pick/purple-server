@@ -10,4 +10,5 @@ public interface ReviewEvaluationDomainService {
     );
 
     ReviewEvaluation findByReviewId(Long reviewId);
+
 }

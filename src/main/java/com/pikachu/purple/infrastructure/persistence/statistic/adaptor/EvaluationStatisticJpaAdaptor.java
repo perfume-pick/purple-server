@@ -10,6 +10,7 @@ import com.pikachu.purple.infrastructure.persistence.statistic.entity.Evaluation
 import com.pikachu.purple.infrastructure.persistence.statistic.repository.EvaluationStatisticJpaRepository;
 import com.pikachu.purple.infrastructure.persistence.statistic.vo.EvaluationStatisticCompositeKey;
 import com.pikachu.purple.util.DateUtil;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
@@ -22,16 +23,15 @@ public class EvaluationStatisticJpaAdaptor implements EvaluationStatisticReposit
     private final EvaluationStatisticJpaRepository evaluationStatisticJpaRepository;
     private final PerfumeJpaRepository perfumeJpaRepository;
 
-    private EvaluationStatisticJpaEntity findEntityByToday(
+    private EvaluationStatisticJpaEntity findEntity(
+        String statisticDates,
         Long perfumeId,
         String fieldCode,
         String optionCode
     ) {
-        String today = DateUtil.today();
-
         EvaluationStatisticCompositeKey compositeKey =
             EvaluationStatisticCompositeKey.builder()
-                .statisticsDate(today)
+                .statisticsDate(statisticDates)
                 .perfumeId(perfumeId)
                 .fieldCode(fieldCode)
                 .optionCode(optionCode)
@@ -45,7 +45,7 @@ public class EvaluationStatisticJpaAdaptor implements EvaluationStatisticReposit
                 .orElseThrow(() -> PerfumeNotFoundException);
 
             return EvaluationStatisticJpaEntity.builder()
-                .statisticsDate(today)
+                .statisticsDate(statisticDates)
                 .perfumeJpaEntity(perfumeJpaEntity)
                 .fieldCode(fieldCode)
                 .optionCode(optionCode)
@@ -55,14 +55,30 @@ public class EvaluationStatisticJpaAdaptor implements EvaluationStatisticReposit
         }
     }
 
+    private EvaluationStatisticJpaEntity findEntityByToday(
+        Long perfumeId,
+        String fieldCode,
+        String optionCode
+    ) {
+        String today = DateUtil.today();
+
+        return findEntity(today, perfumeId, fieldCode, optionCode);
+    }
+
     @Override
     public EvaluationStatistic findByPerfumeIdOrderByVotesDesc(Long perfumeId) {
         String today = DateUtil.today();
 
         List<EvaluationStatisticJpaEntity> evaluationStatisticJpaEntities =
-            evaluationStatisticJpaRepository.findAllByTodayAndPerfumeIdOrderByVotesDesc(today, perfumeId);
+            evaluationStatisticJpaRepository.findAllByTodayAndPerfumeIdOrderByVotesDesc(
+                today,
+                perfumeId
+            );
 
-        return EvaluationStatisticJpaEntity.toDomain(evaluationStatisticJpaEntities);
+        return EvaluationStatisticJpaEntity.toDomain(
+            perfumeId,
+            evaluationStatisticJpaEntities
+        );
     }
 
     @Override
@@ -92,6 +108,36 @@ public class EvaluationStatisticJpaAdaptor implements EvaluationStatisticReposit
 
         evaluationStatisticJpaEntity.decrease();
         evaluationStatisticJpaRepository.save(evaluationStatisticJpaEntity);
+    }
+
+    @Override
+    public List<EvaluationStatistic> findAll(String statisticsDate) {
+        List<EvaluationStatisticJpaEntity> evaluationStatisticJpaEntities =
+            evaluationStatisticJpaRepository.findAllByStatisticsDate(statisticsDate);
+        return EvaluationStatisticJpaEntity.toDomainList(evaluationStatisticJpaEntities);
+    }
+
+    @Override
+    public void updateAll(
+        String statisticsDate,
+        List<EvaluationStatistic> evaluationStatistics
+    ) {
+        List<EvaluationStatisticJpaEntity> evaluationStatisticJpaEntities = new ArrayList<>();
+        for (EvaluationStatistic evaluationStatistic : evaluationStatistics) {
+            Long perfumeId = evaluationStatistic.getPerfume().getId();
+            PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository.findById(perfumeId)
+                .orElseThrow(() -> PerfumeNotFoundException);
+
+            evaluationStatisticJpaEntities.addAll(
+                EvaluationStatisticJpaEntity.toJpaEntityList(
+                    statisticsDate,
+                    perfumeJpaEntity,
+                    evaluationStatistic
+                )
+            );
+        }
+
+        evaluationStatisticJpaRepository.saveAll(evaluationStatisticJpaEntities);
     }
 
 }

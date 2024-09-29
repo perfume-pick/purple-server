@@ -30,9 +30,4 @@ public class Review {
     private boolean isLiked;
     private int likeCount;
 
-
-    public void updateContent(String content) {
-        this.content = content;
-    }
-
 }
