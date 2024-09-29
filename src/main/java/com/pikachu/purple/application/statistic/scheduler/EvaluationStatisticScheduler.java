@@ -30,7 +30,7 @@ public class EvaluationStatisticScheduler {
 
     @Transactional
     @Scheduled(cron = "${scheduler.daily-cron}")
-    protected void dailyRecountEvaluationStatistics() {
+    public void dailyRecountEvaluationStatistics() {
         List<Long> perfumeIds = getPerfumeIdsUseCase.invoke().perfumeIds();
 
         String theDayBeforeYesterday = DateUtil.theDayBeforeYesterday();

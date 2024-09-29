@@ -26,7 +26,7 @@ public class StarRatingStatisticScheduler {
 
     @Transactional
     @Scheduled(cron = "${scheduler.daily-cron}")
-    protected void dailyRecountStarRatingStatistics() {
+    public void dailyRecountStarRatingStatistics() {
         List<Long> perfumeIds = getPerfumeIdsUseCase.invoke().perfumeIds();
 
         String theDayBeforeYesterday = DateUtil.theDayBeforeYesterday();
