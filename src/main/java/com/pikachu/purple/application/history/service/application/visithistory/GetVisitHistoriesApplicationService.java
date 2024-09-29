@@ -1,6 +1,5 @@
 package com.pikachu.purple.application.history.service.application.visithistory;
 
-import static com.pikachu.purple.bootstrap.common.exception.BusinessException.PerfumeAccordNotFoundException;
 import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
 
 import com.pikachu.purple.application.history.common.dto.VisitHistoryDTO;
@@ -9,7 +8,6 @@ import com.pikachu.purple.application.history.service.domain.VisitHistoryDomainS
 import com.pikachu.purple.application.perfume.common.dto.PerfumeDTO;
 import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesByIdsUseCase;
 import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesByIdsUseCase.Command;
-import com.pikachu.purple.domain.accord.Accord;
 import com.pikachu.purple.domain.history.VisitHistory;
 import java.util.List;
 import java.util.stream.IntStream;
@@ -38,13 +36,7 @@ public class GetVisitHistoriesApplicationService implements GetVisitHistoriesUse
         GetPerfumesByIdsUseCase.Result result = getPerfumesByIdsUseCase.invoke(new Command(perfumeIds));
 
         List<PerfumeDTO> perfumeDTOs = result.perfumes().stream()
-            .map(perfume -> PerfumeDTO.from(
-                perfume,
-                perfume.getAccords().stream()
-                    .map(Accord::getName)
-                    .findFirst()
-                    .orElseThrow(() -> PerfumeAccordNotFoundException)
-            ))
+            .map(PerfumeDTO::from)
             .toList();
 
         List<VisitHistoryDTO> visitHistoryDTOs = IntStream.range(0, perfumeDTOs.size())
