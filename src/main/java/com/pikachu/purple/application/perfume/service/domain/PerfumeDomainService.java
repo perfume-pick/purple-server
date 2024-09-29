@@ -18,4 +18,6 @@ public interface PerfumeDomainService {
 
     List<Long> findAllId();
 
+    List<Perfume> findAllWithPerfumeAccordsByIds(List<Long> longs);
+
 }

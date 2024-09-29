@@ -18,4 +18,6 @@ public interface PerfumeRepository {
 
     List<Long> findAllId();
 
+    List<Perfume> findAllWithPerfumeAccordsByIds(List<Long> perfumeIds);
+
 }

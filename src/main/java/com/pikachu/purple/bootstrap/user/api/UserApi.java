@@ -2,6 +2,7 @@ package com.pikachu.purple.bootstrap.user.api;
 
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.common.security.Secured;
+import com.pikachu.purple.bootstrap.user.dto.response.GetVisitHistoriesResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetSearchHistoriesResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetUserProfileResponse;
 import io.swagger.v3.oas.annotations.Operation;
@@ -13,6 +14,8 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
@@ -69,5 +72,23 @@ public interface UserApi {
     @DeleteMapping("/my/search-histories")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void deleteAllSearchHistory();
+
+    @Secured
+    @Operation(summary = "최근 본 상품 기록 저장")
+    @PostMapping("/my/visit-history/{perfume-id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    void createVisitHistory(@PathVariable("perfume-id") Long perfumeId);
+
+    @Secured
+    @Operation(summary = "최근 본 상품 전체 조회")
+    @GetMapping("/my/visit-histories")
+    @ResponseStatus(HttpStatus.OK)
+    SuccessResponse<GetVisitHistoriesResponse> findAllVisitHistory();
+
+    @Secured
+    @Operation(summary = "최근 본 상품 전체 삭제")
+    @DeleteMapping("/my/visit-histories")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    void deleteAllVisitHistory();
 
 }

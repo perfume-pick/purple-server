@@ -1,4 +1,4 @@
-package com.pikachu.purple.application.user.common.dto;
+package com.pikachu.purple.application.history.common.dto;
 
 public record SearchHistoryDTO(
     int order,

@@ -40,4 +40,6 @@ public interface PerfumeJpaRepository extends JpaRepository<PerfumeJpaEntity, Lo
         + "from PerfumeJpaEntity p")
     List<Long> findAllId();
 
+    List<PerfumeJpaEntity> findAllByIdIn(List<Long> perfumeIds);
+
 }
