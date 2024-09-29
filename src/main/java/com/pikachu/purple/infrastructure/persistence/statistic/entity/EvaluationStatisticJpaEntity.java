@@ -68,7 +68,10 @@ public class EvaluationStatisticJpaEntity extends BaseEntity {
         this.votes--;
     }
 
-    public static EvaluationStatistic toDomain(Long perfumeId, List<EvaluationStatisticJpaEntity> jpaEntities) {
+    public static EvaluationStatistic toDomain(
+        Long perfumeId,
+        List<EvaluationStatisticJpaEntity> jpaEntities
+    ) {
         Map<EvaluationFieldType, List<EvaluationStatisticJpaEntity>> groupedByFieldType =
             jpaEntities.stream()
                 .collect(Collectors.groupingBy(

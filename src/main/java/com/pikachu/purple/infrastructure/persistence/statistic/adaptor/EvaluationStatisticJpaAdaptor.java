@@ -70,9 +70,15 @@ public class EvaluationStatisticJpaAdaptor implements EvaluationStatisticReposit
         String today = DateUtil.today();
 
         List<EvaluationStatisticJpaEntity> evaluationStatisticJpaEntities =
-            evaluationStatisticJpaRepository.findAllByTodayAndPerfumeIdOrderByVotesDesc(today, perfumeId);
+            evaluationStatisticJpaRepository.findAllByTodayAndPerfumeIdOrderByVotesDesc(
+                today,
+                perfumeId
+            );
 
-        return EvaluationStatisticJpaEntity.toDomain(perfumeId, evaluationStatisticJpaEntities);
+        return EvaluationStatisticJpaEntity.toDomain(
+            perfumeId,
+            evaluationStatisticJpaEntities
+        );
     }
 
     @Override

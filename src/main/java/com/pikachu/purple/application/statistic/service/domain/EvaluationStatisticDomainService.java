@@ -25,4 +25,5 @@ public interface EvaluationStatisticDomainService {
         String statisticsDate,
         List<EvaluationStatistic> evaluationStatistics
     );
+
 }

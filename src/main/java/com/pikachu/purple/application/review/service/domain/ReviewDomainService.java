@@ -37,4 +37,5 @@ public interface ReviewDomainService {
         ReviewType reviewType,
         String updatedDate
     );
+
 }

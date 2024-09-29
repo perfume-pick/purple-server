@@ -25,4 +25,5 @@ public interface EvaluationStatisticRepository {
         String statisticsDate,
         List<EvaluationStatistic> evaluationStatistics
     );
+
 }
