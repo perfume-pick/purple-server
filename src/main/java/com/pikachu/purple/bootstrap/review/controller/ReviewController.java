@@ -24,6 +24,7 @@ public class ReviewController implements ReviewApi {
     private final GetEvaluationFormFieldUseCase getEvaluationFormFieldUseCase;
     private final UpdateReviewUseCase updateReviewUseCase;
     private final DeleteReviewUseCase deleteReviewUseCase;
+    private final CreateComplaintUseCase createComplaintUseCase;
 
     @Override
     public void createSimple(CreateReviewSimpleRequest request) {
@@ -77,6 +78,11 @@ public class ReviewController implements ReviewApi {
     @Override
     public void delete(Long reviewId) {
         deleteReviewUseCase.invoke(new DeleteReviewUseCase.Command(reviewId));
+    }
+
+    @Override
+    public void complain(Long reviewId) {
+        createComplaintUseCase.invoke(new CreateComplaintUseCase.Command(reviewId));
     }
 
 }
