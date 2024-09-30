@@ -19,7 +19,7 @@ public class ComplaintDomainServiceImpl implements ComplaintDomainService {
         complaintRepository.create(
             userId,
             reviewId
-        )
+        );
     }
 
 }

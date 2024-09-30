@@ -2,6 +2,7 @@ package com.pikachu.purple.bootstrap.review.controller;
 
 import com.pikachu.purple.application.review.port.in.GetEvaluationFormFieldUseCase;
 import com.pikachu.purple.application.review.port.in.GetEvaluationFormFieldUseCase.Result;
+import com.pikachu.purple.application.review.port.in.complaint.CreateComplaintUseCase;
 import com.pikachu.purple.application.review.port.in.review.CreateReviewDetailUseCase;
 import com.pikachu.purple.application.review.port.in.review.CreateReviewSimpleUseCase;
 import com.pikachu.purple.application.review.port.in.review.DeleteReviewUseCase;
