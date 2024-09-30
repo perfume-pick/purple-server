@@ -16,7 +16,10 @@ public class CreateComplaintApplicationService implements CreateComplaintUseCase
     @Override
     public void invoke(Command command) {
         Long userId = getCurrentUserAuthentication().userId();
-        complaintDomainService.create(userId, command.reviewId());
+        complaintDomainService.create(
+            userId,
+            command.reviewId()
+        );
     }
 
 }
