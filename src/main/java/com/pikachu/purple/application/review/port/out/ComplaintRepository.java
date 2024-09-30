@@ -6,4 +6,5 @@ public interface ComplaintRepository {
         Long userId,
         Long reviewId
     );
+
 }
