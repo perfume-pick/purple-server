@@ -2,6 +2,7 @@ package com.pikachu.purple.bootstrap.review.controller;
 
 import com.pikachu.purple.application.review.port.in.GetEvaluationFormFieldUseCase;
 import com.pikachu.purple.application.review.port.in.GetEvaluationFormFieldUseCase.Result;
+import com.pikachu.purple.application.review.port.in.complaint.CreateComplaintUseCase;
 import com.pikachu.purple.application.review.port.in.review.CreateReviewDetailUseCase;
 import com.pikachu.purple.application.review.port.in.review.CreateReviewSimpleUseCase;
 import com.pikachu.purple.application.review.port.in.review.DeleteReviewUseCase;
@@ -24,6 +25,7 @@ public class ReviewController implements ReviewApi {
     private final GetEvaluationFormFieldUseCase getEvaluationFormFieldUseCase;
     private final UpdateReviewUseCase updateReviewUseCase;
     private final DeleteReviewUseCase deleteReviewUseCase;
+    private final CreateComplaintUseCase createComplaintUseCase;
 
     @Override
     public void createSimple(CreateReviewSimpleRequest request) {
@@ -77,6 +79,11 @@ public class ReviewController implements ReviewApi {
     @Override
     public void delete(Long reviewId) {
         deleteReviewUseCase.invoke(new DeleteReviewUseCase.Command(reviewId));
+    }
+
+    @Override
+    public void complain(Long reviewId) {
+        createComplaintUseCase.invoke(new CreateComplaintUseCase.Command(reviewId));
     }
 
 }

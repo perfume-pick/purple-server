@@ -61,4 +61,10 @@ public interface ReviewApi {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void delete(@PathVariable("review-id") Long reviewId);
 
+    @Secured
+    @Operation(summary = "리뷰 신고")
+    @PostMapping("/{review-id}/complain")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    void complain(@PathVariable("review-id") Long reviewId);
+
 }
