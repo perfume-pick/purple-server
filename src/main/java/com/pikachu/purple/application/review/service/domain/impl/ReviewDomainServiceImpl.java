@@ -90,4 +90,31 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
         );
     }
 
+    @Override
+    public void updateReviewType(
+        Long reviewId,
+        ReviewType reviewType
+    ) {
+        reviewRepository.updateReviewType(
+            reviewId,
+            reviewType
+        );
+    }
+
+    @Override
+    public void deleteReviewMoods(Long reviewId) {
+        reviewRepository.deleteReviewMoods(reviewId);
+    }
+
+    @Override
+    public void updateReviewMood(
+        Long reviewId,
+        List<String> moodNames
+    ) {
+        reviewRepository.updateReviewMood(
+            reviewId,
+            moodNames
+        );
+    }
+
 }

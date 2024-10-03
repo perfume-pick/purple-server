@@ -149,6 +149,37 @@ public class ReviewJpaAdaptor implements ReviewRepository {
             .toList();
     }
 
+    @Override
+    public void updateReviewType(
+        Long reviewId,
+        ReviewType reviewType
+    ) {
+        ReviewJpaEntity reviewJpaEntity = findEntityById(reviewId);
+        reviewJpaEntity.updateReviewType(reviewType);
+
+        reviewJpaRepository.save(reviewJpaEntity);
+    }
+
+    @Override
+    public void deleteReviewMoods(Long reviewId) {
+        List<ReviewMoodJpaEntity> reviewMoodJpaEntities = reviewMoodJpaRepository.findByReviewId(reviewId);
+        reviewMoodJpaRepository.deleteAll(reviewMoodJpaEntities);
+    }
+
+    @Override
+    public void updateReviewMood(
+        Long reviewId,
+        List<String> moodNames
+    ) {
+        List<ReviewMoodJpaEntity> reviewMoodJpaEntities = reviewMoodJpaRepository.findByReviewId(reviewId);
+        reviewMoodJpaRepository.deleteAll(reviewMoodJpaEntities);
+
+        createReviewMoods(
+            reviewId,
+            moodNames
+        );
+    }
+
 
     @Override
     public void deleteById(Long reviewId) {

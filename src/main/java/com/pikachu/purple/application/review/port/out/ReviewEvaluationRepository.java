@@ -11,4 +11,11 @@ public interface ReviewEvaluationRepository {
 
     ReviewEvaluation findByReviewId(Long reviewId);
 
+    void deleteAll(Long reviewId);
+
+    void update(
+        Long reviewId,
+        ReviewEvaluation reviewEvaluation
+    );
+
 }

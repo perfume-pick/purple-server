@@ -38,4 +38,16 @@ public interface ReviewDomainService {
         String updatedDate
     );
 
+    void updateReviewType(
+        Long reviewId,
+        ReviewType reviewType
+    );
+
+    void deleteReviewMoods(Long reviewId);
+
+    void updateReviewMood(
+        Long reviewId,
+        List<String> moodNames
+    );
+
 }

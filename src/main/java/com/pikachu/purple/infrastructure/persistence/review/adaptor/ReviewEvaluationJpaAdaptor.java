@@ -42,10 +42,30 @@ public class ReviewEvaluationJpaAdaptor implements ReviewEvaluationRepository {
 
     @Override
     public ReviewEvaluation findByReviewId(Long reviewId) {
-
         List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities =
             reviewEvaluationJpaRepository.findByReviewId(reviewId);
+
         return ReviewEvaluationJpaEntity.toDomain(reviewEvaluationJpaEntities);
+    }
+
+    @Override
+    public void deleteAll(Long reviewId) {
+        List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities =
+            reviewEvaluationJpaRepository.findByReviewId(reviewId);
+
+        reviewEvaluationJpaRepository.deleteAll(reviewEvaluationJpaEntities);
+    }
+
+    @Override
+    public void update(
+        Long reviewId,
+        ReviewEvaluation reviewEvaluation
+    ) {
+        deleteAll(reviewId);
+        create(
+            reviewId,
+            reviewEvaluation
+        );
     }
 
 }

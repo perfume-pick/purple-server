@@ -29,4 +29,20 @@ public class ReviewEvaluationDomainServiceImpl implements ReviewEvaluationDomain
         return reviewEvaluationRepository.findByReviewId(reviewId);
     }
 
+    @Override
+    public void deleteAll(Long reviewId) {
+        reviewEvaluationRepository.deleteAll(reviewId);
+    }
+
+    @Override
+    public void update(
+        Long reviewId,
+        ReviewEvaluation reviewEvaluation
+    ) {
+       reviewEvaluationRepository.update(
+           reviewId,
+           reviewEvaluation
+       );
+    }
+
 }

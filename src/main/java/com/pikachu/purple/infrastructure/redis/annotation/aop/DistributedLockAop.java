@@ -52,7 +52,9 @@ public class DistributedLockAop {
             try {
                 return aopForTransaction.proceed(joinPoint);
             } finally {
-                rLock.unlock();
+                if (rLock.isHeldByCurrentThread()) {
+                    rLock.unlock();
+                }
             }
 
         } catch (InterruptedException e) {
