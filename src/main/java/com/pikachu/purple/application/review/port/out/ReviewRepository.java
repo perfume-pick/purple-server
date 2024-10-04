@@ -8,9 +8,11 @@ public interface ReviewRepository {
 
     Review create(Long userId, Long perfumeId, Review review);
 
-    void deleteById(Long id);
-
     void createReviewMoods(Long reviewId, List<String> moodNames);
+
+    Review find(Long reviewId);
+
+    Review findWithPerfume(Long reviewId);
 
     List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodOrderByCreatedAtDesc(Long perfumeId);
 
@@ -18,16 +20,14 @@ public interface ReviewRepository {
 
     List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreAsc(Long perfumeId);
 
-    Review find(Long reviewId);
-
     List<Review> findAllWithEvaluation(ReviewType reviewType, String updatedDate);
 
-    void deleteReviewMoods(Long reviewId);
+    void update(Long reviewId, String content, ReviewType reviewType);
 
     void updateReviewMood(Long reviewId, List<String> moodNames);
 
-    Review findWithPerfume(Long reviewId);
+    void deleteReviewMoods(Long reviewId);
 
-    void update(Long reviewId, String content, ReviewType reviewType);
+    void deleteById(Long id);
 
 }
