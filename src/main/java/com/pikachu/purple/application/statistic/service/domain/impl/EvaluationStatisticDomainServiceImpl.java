@@ -21,7 +21,7 @@ public class EvaluationStatisticDomainServiceImpl implements EvaluationStatistic
 
     @Override
     @DistributedLock(
-        name = "increaseStarRatingStatistic",
+        name = "EvaluationStatistic",
         key = "T(String).valueOf(#perfumeId).concat('-').concat(#fieldCode).concat('-').concat(#optionCode)"
     )
     public void increaseVotes(
@@ -37,6 +37,10 @@ public class EvaluationStatisticDomainServiceImpl implements EvaluationStatistic
     }
 
     @Override
+    @DistributedLock(
+        name = "EvaluationStatistic",
+        key = "T(String).valueOf(#perfumeId).concat('-').concat(#fieldCode).concat('-').concat(#optionCode)"
+    )
     public void decreaseVotes(
         Long perfumeId,
         String fieldCode,

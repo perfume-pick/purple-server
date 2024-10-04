@@ -13,11 +13,6 @@ public interface ReviewDomainService {
         ReviewType reviewType
     );
 
-    Review updateContent(
-        Long reviewId,
-        String content
-    );
-
     void deleteById(Long id);
 
     void createReviewMoods(
@@ -31,11 +26,26 @@ public interface ReviewDomainService {
 
     List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreAsc(Long perfumeId);
 
-    Review findById(Long reviewId);
+    Review find(Long reviewId);
 
     List<Review> findAllWithEvaluation(
         ReviewType reviewType,
         String updatedDate
+    );
+
+    void deleteReviewMoods(Long reviewId);
+
+    void updateReviewMood(
+        Long reviewId,
+        List<String> moodNames
+    );
+
+    Review findWithPerfume(Long reviewId);
+
+    void update(
+        Long reviewId,
+        String content,
+        ReviewType reviewType
     );
 
 }

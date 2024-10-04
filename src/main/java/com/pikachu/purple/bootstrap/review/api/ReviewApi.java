@@ -4,7 +4,8 @@ import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.common.security.Secured;
 import com.pikachu.purple.bootstrap.review.dto.request.CreateReviewDetailRequest;
 import com.pikachu.purple.bootstrap.review.dto.request.CreateReviewSimpleRequest;
-import com.pikachu.purple.bootstrap.review.dto.request.UpdateSimpleReviewRequest;
+import com.pikachu.purple.bootstrap.review.dto.request.UpdateReviewDetailRequest;
+import com.pikachu.purple.bootstrap.review.dto.request.UpdateReviewSimpleRequest;
 import com.pikachu.purple.bootstrap.review.dto.response.GetEvaluationFormFieldResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -50,9 +51,17 @@ public interface ReviewApi {
     )
     @PatchMapping("/{review-id}/simple")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void update(
+    void updateSimple(
         @PathVariable("review-id") Long reviewId,
-        @RequestBody @Valid UpdateSimpleReviewRequest request
+        @RequestBody @Valid UpdateReviewSimpleRequest request
+    );
+
+    @Secured
+    @Operation(summary = "자세한 리뷰 수정")
+    @PatchMapping("/{review-id}/detail")
+    void updateDetail(
+        @PathVariable("review-id") Long reviewId,
+        @RequestBody @Valid UpdateReviewDetailRequest request
     );
 
     @Secured

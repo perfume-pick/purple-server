@@ -27,8 +27,6 @@ public class PerfumeController implements PerfumeApi {
         GetAccordsAndNotesByPerfumeIdUseCase.Result result = getAccordsAndNotesByPerfumeIdUseCase.invoke(
             new GetAccordsAndNotesByPerfumeIdUseCase.Command(perfumeId));
 
-        // TODO: userSaveVisitedHistoryUseCase 구현
-
         return SuccessResponse.of(new GetAccordsAndNotesResponse(
             result.accords(),
             result.notes()

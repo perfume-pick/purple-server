@@ -1,7 +1,7 @@
 package com.pikachu.purple.application.review.service.application.review;
 
-import com.pikachu.purple.application.review.port.in.review.DeleteReviewUseCase;
-import com.pikachu.purple.application.review.port.in.starrating.DeleteStarRatingUseCase;
+import com.pikachu.purple.application.review.port.in.review.UpdateReviewSimpleUseCase;
+import com.pikachu.purple.application.review.port.in.review.UpdateReviewUseCase;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
 import com.pikachu.purple.application.review.service.domain.ReviewEvaluationDomainService;
 import com.pikachu.purple.application.statistic.port.in.evaluationstatistic.DecreaseEvaluationStatisticUseCase;
@@ -14,38 +14,37 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class DeleteReviewApplicationService implements DeleteReviewUseCase {
+public class UpdateReviewSimpleApplicationService implements UpdateReviewSimpleUseCase {
 
     private final ReviewDomainService reviewDomainService;
     private final ReviewEvaluationDomainService reviewEvaluationDomainService;
-    private final DeleteStarRatingUseCase deleteStarRatingUseCase;
     private final DecreaseEvaluationStatisticUseCase decreaseEvaluationStatisticUseCase;
+    private final UpdateReviewUseCase updateReviewUseCase;
 
     @Transactional
     @Override
     public void invoke(Command command) {
-
-        Review review = reviewDomainService.find(command.reviewId());
-
-        deleteStarRatingUseCase.invoke(
-            new DeleteStarRatingUseCase.Command(review.getStarRating().getId())
-        );
+        Review review = reviewDomainService.findWithPerfume(command.reviewId());
 
         if(review.getType() == ReviewType.DETAIL) {
-            ReviewEvaluation reviewEvaluation = reviewEvaluationDomainService.find(
-                command.reviewId());
-
+            ReviewEvaluation reviewEvaluation = reviewEvaluationDomainService.find(command.reviewId());
             reviewEvaluationDomainService.deleteAll(command.reviewId());
-
             decreaseEvaluationStatisticUseCase.invoke(new DecreaseEvaluationStatisticUseCase.Command(
-                review.getPerfume().getId(),
-                reviewEvaluation
-            ));
-
+                    review.getPerfume().getId(),
+                    reviewEvaluation
+                )
+            );
             reviewDomainService.deleteReviewMoods(command.reviewId());
         }
 
-        reviewDomainService.deleteById(command.reviewId());
+        updateReviewUseCase.invoke(new UpdateReviewUseCase.Command(
+            command.reviewId(),
+            review.getPerfume().getId(),
+            ReviewType.SIMPLE,
+            command.content(),
+            command.score()
+            )
+        );
     }
 
 }

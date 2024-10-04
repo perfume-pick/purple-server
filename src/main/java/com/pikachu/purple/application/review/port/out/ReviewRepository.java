@@ -6,23 +6,13 @@ import java.util.List;
 
 public interface ReviewRepository {
 
-    Review create(
-        Long userId,
-        Long perfumeId,
-        Review review
-    );
+    Review create(Long userId, Long perfumeId, Review review);
 
-    Review updateContent(
-        Long reviewId,
-        String content
-    );
+    void createReviewMoods(Long reviewId, List<String> moodNames);
 
-    void deleteById(Long id);
+    Review find(Long reviewId);
 
-    void createReviewMoods(
-        Long reviewId,
-        List<String> moodNames
-    );
+    Review findWithPerfume(Long reviewId);
 
     List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodOrderByCreatedAtDesc(Long perfumeId);
 
@@ -30,11 +20,14 @@ public interface ReviewRepository {
 
     List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreAsc(Long perfumeId);
 
-    Review findById(Long reviewId);
+    List<Review> findAllWithEvaluation(ReviewType reviewType, String updatedDate);
 
-    List<Review> findAllWithEvaluation(
-        ReviewType reviewType,
-        String updatedDate
-    );
+    void update(Long reviewId, String content, ReviewType reviewType);
+
+    void updateReviewMood(Long reviewId, List<String> moodNames);
+
+    void deleteReviewMoods(Long reviewId);
+
+    void deleteById(Long id);
 
 }
