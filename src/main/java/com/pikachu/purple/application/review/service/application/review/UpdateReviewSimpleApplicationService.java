@@ -1,16 +1,12 @@
 package com.pikachu.purple.application.review.service.application.review;
 
-import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
-
 import com.pikachu.purple.application.review.port.in.review.UpdateReviewSimpleUseCase;
-import com.pikachu.purple.application.review.port.in.starrating.GetStarRatingUseCase;
-import com.pikachu.purple.application.review.port.in.starrating.UpdateStarRatingUseCase;
+import com.pikachu.purple.application.review.port.in.review.UpdateReviewUseCase;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
 import com.pikachu.purple.application.review.service.domain.ReviewEvaluationDomainService;
 import com.pikachu.purple.application.statistic.port.in.evaluationstatistic.DecreaseEvaluationStatisticUseCase;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.ReviewEvaluation;
-import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.domain.review.enums.ReviewType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -22,44 +18,16 @@ public class UpdateReviewSimpleApplicationService implements UpdateReviewSimpleU
 
     private final ReviewDomainService reviewDomainService;
     private final ReviewEvaluationDomainService reviewEvaluationDomainService;
-    private final GetStarRatingUseCase getStarRatingUseCase;
-    private final UpdateStarRatingUseCase updateStarRatingUseCase;
     private final DecreaseEvaluationStatisticUseCase decreaseEvaluationStatisticUseCase;
+    private final UpdateReviewUseCase updateReviewUseCase;
 
     @Transactional
     @Override
     public void invoke(Command command) {
-        Long userId = getCurrentUserAuthentication().userId();
-
-        Review review = reviewDomainService.updateContent(
-            command.reviewId(),
-            command.content()
-        );
-
-        GetStarRatingUseCase.Result starRatingResult = getStarRatingUseCase.invoke(
-            new GetStarRatingUseCase.Command(
-                userId,
-                review.getPerfume().getId()
-            )
-        );
-
-        StarRating previousStarRating = starRatingResult.starRating();
-
-        updateStarRatingUseCase.invoke(
-            new UpdateStarRatingUseCase.Command(
-                previousStarRating.getPerfume().getId(),
-                previousStarRating.getScore(),
-                command.score()
-            )
-        );
+        Review review = reviewDomainService.findWithPerfume(command.reviewId());
 
         if(review.getType() == ReviewType.DETAIL) {
-            reviewDomainService.updateReviewType(
-                command.reviewId(),
-                ReviewType.SIMPLE
-            );
-
-            ReviewEvaluation reviewEvaluation = reviewEvaluationDomainService.findByReviewId(command.reviewId());
+            ReviewEvaluation reviewEvaluation = reviewEvaluationDomainService.find(command.reviewId());
             reviewEvaluationDomainService.deleteAll(command.reviewId());
             decreaseEvaluationStatisticUseCase.invoke(new DecreaseEvaluationStatisticUseCase.Command(
                     review.getPerfume().getId(),
@@ -68,6 +36,15 @@ public class UpdateReviewSimpleApplicationService implements UpdateReviewSimpleU
             );
             reviewDomainService.deleteReviewMoods(command.reviewId());
         }
+
+        updateReviewUseCase.invoke(new UpdateReviewUseCase.Command(
+            command.reviewId(),
+            review.getPerfume().getId(),
+            ReviewType.SIMPLE,
+            command.content(),
+            command.score()
+            )
+        );
     }
 
 }

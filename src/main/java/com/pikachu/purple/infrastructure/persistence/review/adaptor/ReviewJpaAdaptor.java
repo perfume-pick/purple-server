@@ -68,19 +68,6 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public Review updateContent(
-        Long reviewId,
-        String content
-    ) {
-        ReviewJpaEntity reviewJpaEntity = findEntityById(reviewId);
-        reviewJpaEntity.updateContent(content);
-
-        ReviewJpaEntity reviewJpaEntitySaved = reviewJpaRepository.save(reviewJpaEntity);
-
-        return ReviewJpaEntity.toDomainWithPerfume(reviewJpaEntitySaved);
-    }
-
-    @Override
     public void createReviewMoods(
         Long reviewId,
         List<String> moodNames
@@ -129,7 +116,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public Review findById(Long reviewId) {
+    public Review find(Long reviewId) {
         ReviewJpaEntity reviewJpaEntity = findEntityById(reviewId);
         return ReviewJpaEntity.toDomain(reviewJpaEntity);
     }
@@ -150,17 +137,6 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public void updateReviewType(
-        Long reviewId,
-        ReviewType reviewType
-    ) {
-        ReviewJpaEntity reviewJpaEntity = findEntityById(reviewId);
-        reviewJpaEntity.updateReviewType(reviewType);
-
-        reviewJpaRepository.save(reviewJpaEntity);
-    }
-
-    @Override
     public void deleteReviewMoods(Long reviewId) {
         List<ReviewMoodJpaEntity> reviewMoodJpaEntities = reviewMoodJpaRepository.findByReviewId(reviewId);
         reviewMoodJpaRepository.deleteAll(reviewMoodJpaEntities);
@@ -178,6 +154,28 @@ public class ReviewJpaAdaptor implements ReviewRepository {
             reviewId,
             moodNames
         );
+    }
+
+    @Override
+    public Review findWithPerfume(Long reviewId) {
+        ReviewJpaEntity reviewJpaEntity = findEntityById(reviewId);
+
+        return ReviewJpaEntity.toDomainWithPerfume(reviewJpaEntity);
+    }
+
+    @Override
+    public void update(
+        Long reviewId,
+        String content,
+        ReviewType reviewType
+    ) {
+        ReviewJpaEntity reviewJpaEntity = findEntityById(reviewId);
+        reviewJpaEntity.update(
+            content,
+            reviewType
+        );
+
+        reviewJpaRepository.save(reviewJpaEntity);
     }
 
 

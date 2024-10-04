@@ -41,7 +41,7 @@ public class ReviewEvaluationJpaAdaptor implements ReviewEvaluationRepository {
     }
 
     @Override
-    public ReviewEvaluation findByReviewId(Long reviewId) {
+    public ReviewEvaluation find(Long reviewId) {
         List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities =
             reviewEvaluationJpaRepository.findByReviewId(reviewId);
 

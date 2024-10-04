@@ -14,7 +14,7 @@ public class GetReviewEvaluationApplicationService implements GetReviewEvaluatio
 
     @Override
     public Result invoke(Command command) {
-        ReviewEvaluation reviewEvaluation = reviewEvaluationDomainService.findByReviewId(
+        ReviewEvaluation reviewEvaluation = reviewEvaluationDomainService.find(
             command.reviewId());
 
         return new Result(reviewEvaluation);

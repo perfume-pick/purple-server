@@ -83,14 +83,6 @@ public class ReviewJpaEntity extends BaseEntity {
     @OneToMany(mappedBy = "reviewJpaEntity")
     private List<ReviewMoodJpaEntity> reviewMoodJpaEntities = new ArrayList<>();
 
-    public void updateContent(String content) {
-        this.content = content;
-    }
-
-    public void updateReviewType(ReviewType reviewType) {
-        this.reviewType = reviewType;
-    }
-
     private static Review.ReviewBuilder buildDefault(ReviewJpaEntity jpaEntity) {
         return Review.builder()
             .id(jpaEntity.getId())
@@ -131,4 +123,11 @@ public class ReviewJpaEntity extends BaseEntity {
             .build();
     }
 
+    public void update(
+        String content,
+        ReviewType reviewType
+    ) {
+        this.content = content;
+        this.reviewType = reviewType;
+    }
 }

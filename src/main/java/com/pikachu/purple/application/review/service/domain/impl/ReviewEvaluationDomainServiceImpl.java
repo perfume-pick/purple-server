@@ -25,8 +25,8 @@ public class ReviewEvaluationDomainServiceImpl implements ReviewEvaluationDomain
     }
 
     @Override
-    public ReviewEvaluation findByReviewId(Long reviewId) {
-        return reviewEvaluationRepository.findByReviewId(reviewId);
+    public ReviewEvaluation find(Long reviewId) {
+        return reviewEvaluationRepository.find(reviewId);
     }
 
     @Override

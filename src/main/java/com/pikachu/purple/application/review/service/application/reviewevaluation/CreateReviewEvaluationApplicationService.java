@@ -3,7 +3,6 @@ package com.pikachu.purple.application.review.service.application.reviewevaluati
 import com.pikachu.purple.application.review.port.in.reviewevaluation.CreateReviewEvaluationUseCase;
 import com.pikachu.purple.application.review.service.domain.ReviewEvaluationDomainService;
 import com.pikachu.purple.application.statistic.port.in.evaluationstatistic.IncreaseEvaluationStatisticUseCase;
-import com.pikachu.purple.application.util.ReviewEvaluationUtil;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.ReviewEvaluation;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +19,7 @@ public class CreateReviewEvaluationApplicationService implements CreateReviewEva
     public void invoke(Command command) {
 
         Review review = command.review();
-        ReviewEvaluation reviewEvaluation = ReviewEvaluationUtil.from(command.evaluationFieldVOs());
+        ReviewEvaluation reviewEvaluation = ReviewEvaluation.from(command.evaluationFieldVOs());
 
         reviewEvaluationDomainService.create(
             review.getId(),

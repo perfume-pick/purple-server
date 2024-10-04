@@ -25,14 +25,14 @@ public class DeleteReviewApplicationService implements DeleteReviewUseCase {
     @Override
     public void invoke(Command command) {
 
-        Review review = reviewDomainService.findById(command.reviewId());
+        Review review = reviewDomainService.find(command.reviewId());
 
         deleteStarRatingUseCase.invoke(
             new DeleteStarRatingUseCase.Command(review.getStarRating().getId())
         );
 
         if(review.getType() == ReviewType.DETAIL) {
-            ReviewEvaluation reviewEvaluation = reviewEvaluationDomainService.findByReviewId(
+            ReviewEvaluation reviewEvaluation = reviewEvaluationDomainService.find(
                 command.reviewId());
 
             reviewEvaluationDomainService.deleteAll(command.reviewId());

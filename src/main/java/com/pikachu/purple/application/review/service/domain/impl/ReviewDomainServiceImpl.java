@@ -33,17 +33,6 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
         return reviewRepository.create(userId, perfumeId, review);
     }
 
-    @Override
-    public Review updateContent(
-        Long reviewId,
-        String content
-    ) {
-        return reviewRepository.updateContent(
-            reviewId,
-            content
-        );
-    }
-
     public void deleteById(Long id) {
         reviewRepository.deleteById(id);
     }
@@ -75,8 +64,8 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
     }
 
     @Override
-    public Review findById(Long reviewId) {
-        return reviewRepository.findById(reviewId);
+    public Review find(Long reviewId) {
+        return reviewRepository.find(reviewId);
     }
 
     @Override
@@ -87,17 +76,6 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
         return reviewRepository.findAllWithEvaluation(
             reviewType,
             updatedDate
-        );
-    }
-
-    @Override
-    public void updateReviewType(
-        Long reviewId,
-        ReviewType reviewType
-    ) {
-        reviewRepository.updateReviewType(
-            reviewId,
-            reviewType
         );
     }
 
@@ -114,6 +92,24 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
         reviewRepository.updateReviewMood(
             reviewId,
             moodNames
+        );
+    }
+
+    @Override
+    public Review findWithPerfume(Long reviewId) {
+        return reviewRepository.findWithPerfume(reviewId);
+    }
+
+    @Override
+    public void update(
+        Long reviewId,
+        String content,
+        ReviewType reviewType
+    ) {
+        reviewRepository.update(
+            reviewId,
+            content,
+            reviewType
         );
     }
 

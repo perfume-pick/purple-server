@@ -9,7 +9,7 @@ public interface ReviewEvaluationRepository {
         ReviewEvaluation reviewEvaluation
     );
 
-    ReviewEvaluation findByReviewId(Long reviewId);
+    ReviewEvaluation find(Long reviewId);
 
     void deleteAll(Long reviewId);
 
