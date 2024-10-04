@@ -1,19 +1,22 @@
 package com.pikachu.purple.domain.perfume;
 
-import java.util.Set;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 
 @Getter
-@Builder
-@AllArgsConstructor(access = AccessLevel.PROTECTED)
 public class Brand {
 
-    private String name;
-    private String imageUrl;
-    private Set<Perfume> perfumes;
-    private int order;
+    private final String name;
+    private final String imageUrl;
+    private final int order;
+
+    public Brand(
+        String name,
+        String imageUrl,
+        int order
+    ) {
+        this.name = name;
+        this.imageUrl = imageUrl;
+        this.order = order;
+    }
 
 }

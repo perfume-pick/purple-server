@@ -1,6 +1,7 @@
 package com.pikachu.purple.infrastructure.persistence.review.entity;
 
 import com.pikachu.purple.domain.review.Review;
+import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.domain.review.enums.ReviewType;
 import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
 import com.pikachu.purple.infrastructure.persistence.mood.entity.MoodJpaEntity;
@@ -83,46 +84,6 @@ public class ReviewJpaEntity extends BaseEntity {
     @OneToMany(mappedBy = "reviewJpaEntity")
     private List<ReviewMoodJpaEntity> reviewMoodJpaEntities = new ArrayList<>();
 
-    private static Review.ReviewBuilder buildDefault(ReviewJpaEntity jpaEntity) {
-        return Review.builder()
-            .id(jpaEntity.getId())
-            .user(UserJpaEntity.toDomain(jpaEntity.getUserJpaEntity()))
-            .perfume(PerfumeJpaEntity.toDummy(jpaEntity.getPerfumeJpaEntity()))
-            .starRating(StarRatingJpaEntity.toDomain(jpaEntity.getStarRatingJpaEntity()))
-            .content(jpaEntity.getContent())
-            .date(jpaEntity.getUpdatedAt())
-            .likeCount(jpaEntity.getLikeCount())
-            .type(jpaEntity.getReviewType());
-    }
-
-    public static Review toFullDomain(ReviewJpaEntity jpaEntity) {
-        return buildDefault(jpaEntity)
-            .perfume(PerfumeJpaEntity.toDomain(jpaEntity.getPerfumeJpaEntity()))
-            .evaluation(ReviewEvaluationJpaEntity.toDomain(jpaEntity.getReviewEvaluationJpaEntities()))
-            .moods(jpaEntity.getReviewMoodJpaEntities().stream()
-                .map(reviewMoodJpaEntity ->
-                    MoodJpaEntity.toDomain(reviewMoodJpaEntity.getMoodJpaEntity())
-                )
-                .toList())
-            .build();
-    }
-
-    public static Review toDomain(ReviewJpaEntity jpaEntity) {
-        return buildDefault(jpaEntity).build();
-    }
-
-    public static Review toDomainWithPerfume(ReviewJpaEntity jpaEntity){
-        return buildDefault(jpaEntity)
-            .perfume(PerfumeJpaEntity.toDomain(jpaEntity.getPerfumeJpaEntity()))
-            .build();
-    }
-
-    public static Review toDomainWithEvaluation(ReviewJpaEntity jpaEntity) {
-        return buildDefault(jpaEntity)
-            .evaluation(ReviewEvaluationJpaEntity.toDomain(jpaEntity.reviewEvaluationJpaEntities))
-            .build();
-    }
-
     public void update(
         String content,
         ReviewType reviewType
@@ -130,4 +91,47 @@ public class ReviewJpaEntity extends BaseEntity {
         this.content = content;
         this.reviewType = reviewType;
     }
+
+    public static Review toDomain(ReviewJpaEntity jpaEntity) {
+        Review domain = new Review(
+            jpaEntity.getId(),
+            UserJpaEntity.toDomain(jpaEntity.getUserJpaEntity()),
+            jpaEntity.getContent(),
+            jpaEntity.getReviewType(),
+            StarRatingJpaEntity.toDomain(jpaEntity.getStarRatingJpaEntity()),
+            jpaEntity.getUpdatedAt(),
+            jpaEntity.getLikeCount()
+        );
+        domain.setPerfume(PerfumeJpaEntity.toDummy(jpaEntity.getPerfumeJpaEntity()));
+
+        return domain;
+    }
+
+    public static Review toDomainWithPerfume(ReviewJpaEntity jpaEntity){
+        Review domain = toDomain(jpaEntity);
+        domain.setPerfume(PerfumeJpaEntity.toDomain(jpaEntity.getPerfumeJpaEntity()));
+
+        return domain;
+    }
+
+    public static Review toDomainWithEvaluation(ReviewJpaEntity jpaEntity) {
+        Review domain = toDomain(jpaEntity);
+        domain.setEvaluation(ReviewEvaluationJpaEntity.toDomain(jpaEntity.reviewEvaluationJpaEntities));
+
+        return domain;
+    }
+
+    public static Review toFullDomain(ReviewJpaEntity jpaEntity) {
+        Review domain = toDomain(jpaEntity);
+        domain.setPerfume(PerfumeJpaEntity.toDomain(jpaEntity.getPerfumeJpaEntity()));
+        domain.setEvaluation(ReviewEvaluationJpaEntity.toDomain(jpaEntity.getReviewEvaluationJpaEntities()));
+        domain.setMoods(jpaEntity.getReviewMoodJpaEntities().stream()
+            .map(reviewMoodJpaEntity ->
+                MoodJpaEntity.toDomain(reviewMoodJpaEntity.getMoodJpaEntity())
+            )
+            .toList());
+
+        return domain;
+    }
+
 }

@@ -28,7 +28,7 @@ public class PerfumeAccordJpaEntity {
     private PerfumeJpaEntity perfumeJpaEntity;
 
     @Id
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "accord_name")
     private AccordJpaEntity accordJpaEntity;
 
@@ -36,10 +36,10 @@ public class PerfumeAccordJpaEntity {
     private int value;
 
     public static PerfumeAccord toDomain(PerfumeAccordJpaEntity jpaEntity) {
-        return PerfumeAccord.builder()
-            .name(jpaEntity.getAccordJpaEntity().getName())
-            .value(jpaEntity.getValue())
-            .build();
+        return new PerfumeAccord(
+            jpaEntity.getAccordJpaEntity().getName(),
+            jpaEntity.getValue()
+        );
     }
 
 }

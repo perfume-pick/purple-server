@@ -24,9 +24,7 @@ public class MoodJpaEntity {
     private String name;
 
     public static Mood toDomain(MoodJpaEntity jpaEntity) {
-        return Mood.builder()
-            .name(jpaEntity.name)
-            .build();
+        return new Mood(jpaEntity.getName());
     }
 
 }

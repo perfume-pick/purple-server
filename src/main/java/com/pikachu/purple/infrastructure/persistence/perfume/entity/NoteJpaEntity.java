@@ -41,11 +41,11 @@ public class NoteJpaEntity {
     )
     private NoteType type;
 
-    public static Note toDomain(NoteJpaEntity noteJpaEntity) {
-        return Note.builder()
-            .name(noteJpaEntity.getName())
-            .type(noteJpaEntity.getType())
-            .build();
+    public static Note toDomain(NoteJpaEntity jpaEntity) {
+        return new Note(
+            jpaEntity.getName(),
+            jpaEntity.getType()
+        );
     }
 
 }

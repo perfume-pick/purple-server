@@ -28,7 +28,7 @@ public record ReviewDTO(
             IdUtil.toString(review.getId()),
             review.getUser().getNickname(),
             review.getUser().getImageUrl(),
-            review.getDate(),
+            review.getUpdatedAt(),
             review.getStarRating().getScore(),
             review.getContent(),
             perfumeEvaluation,
