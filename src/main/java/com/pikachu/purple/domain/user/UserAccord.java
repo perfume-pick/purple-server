@@ -1,19 +1,25 @@
 package com.pikachu.purple.domain.user;
 
 import com.pikachu.purple.domain.accord.Accord;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
 @Getter
 @SuperBuilder
-@AllArgsConstructor(access = AccessLevel.PROTECTED)
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class UserAccord extends Accord {
 
+    private final double score;
+
+    @Setter
     private User user;
-    private double score;
+
+    public UserAccord(
+        String name,
+        double score
+    ) {
+        super(name);
+        this.score = score;
+    }
 
 }

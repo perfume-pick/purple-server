@@ -26,11 +26,11 @@ public class BrandJpaEntity {
     private int order;
 
     public static Brand toDomain(BrandJpaEntity jpaEntity) {
-        return Brand.builder()
-            .name(jpaEntity.getName())
-            .imageUrl(jpaEntity.getImageUrl())
-            .order(jpaEntity.getOrder())
-            .build();
+        return new Brand(
+            jpaEntity.getName(),
+            jpaEntity.getImageUrl(),
+            jpaEntity.getOrder()
+        );
     }
 
 }

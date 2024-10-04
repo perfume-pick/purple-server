@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
 @Builder
@@ -20,7 +21,10 @@ public class User {
     private String email;
     private String imageUrl;
     private SocialLoginProvider socialLoginProvider;
+
+    @Setter
     private List<UserAccord> accords;
+    @Setter
     private List<Review> reviews;
 
     public void updateNickname(String nickname) {
@@ -29,6 +33,15 @@ public class User {
 
     public void updateImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public User(Long id, String nickname, String email, String imageUrl,
+        SocialLoginProvider socialLoginProvider) {
+        this.id = id;
+        this.nickname = nickname;
+        this.email = email;
+        this.imageUrl = imageUrl;
+        this.socialLoginProvider = socialLoginProvider;
     }
 
 }

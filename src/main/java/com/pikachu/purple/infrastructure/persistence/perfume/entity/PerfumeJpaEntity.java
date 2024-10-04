@@ -47,24 +47,21 @@ public class PerfumeJpaEntity {
     @OrderBy("value desc")
     private List<PerfumeAccordJpaEntity> perfumeAccordJpaEntities = new ArrayList<>();
 
-    private static Perfume.PerfumeBuilder buildDefault(PerfumeJpaEntity jpaEntity) {
-        return Perfume.builder()
-            .id(jpaEntity.getId())
-            .name(jpaEntity.getName())
-            .brand(BrandJpaEntity.toDomain(jpaEntity.getBrandJpaEntity()))
-            .imageUrl(jpaEntity.getImageUrl())
-            .averageScore(jpaEntity.getAverageScore());
-    }
-
     public static Perfume toDomain(PerfumeJpaEntity jpaEntity) {
-        return buildDefault(jpaEntity).build();
+        return new Perfume(
+            jpaEntity.getId(),
+            jpaEntity.getName(),
+            jpaEntity.getImageUrl(),
+            jpaEntity.getAverageScore(),
+            BrandJpaEntity.toDomain(jpaEntity.getBrandJpaEntity())
+        );
     }
 
     public static Perfume toDomainWithPerfumeAccord(PerfumeJpaEntity jpaEntity) {
-        return buildDefault(jpaEntity)
-            .accords(jpaEntity.getPerfumeAccordJpaEntities().stream()
-                .map(PerfumeAccordJpaEntity::toDomain).toList())
-            .build();
+        Perfume domain = toDomain(jpaEntity);
+        domain.setAccords(jpaEntity.getPerfumeAccordJpaEntities().stream()
+            .map(PerfumeAccordJpaEntity::toDomain).toList());
+        return domain;
     }
 
     public static Perfume toDummy(PerfumeJpaEntity jpaEntity) {

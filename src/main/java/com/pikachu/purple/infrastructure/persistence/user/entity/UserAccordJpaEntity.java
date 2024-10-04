@@ -1,5 +1,8 @@
 package com.pikachu.purple.infrastructure.persistence.user.entity;
 
+import com.pikachu.purple.domain.perfume.Brand;
+import com.pikachu.purple.domain.perfume.Note;
+import com.pikachu.purple.domain.perfume.enums.NoteType;
 import com.pikachu.purple.domain.user.UserAccord;
 import com.pikachu.purple.infrastructure.persistence.accord.entity.AccordJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.user.entity.id.UserAccordId;
@@ -31,18 +34,20 @@ public class UserAccordJpaEntity {
     private UserJpaEntity userJpaEntity;
 
     @Id
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "accord_name")
     private AccordJpaEntity accordJpaEntity;
-
 
     private double score;
 
     public static UserAccord toDomain(UserAccordJpaEntity jpaEntity) {
-        return UserAccord.builder()
-            .name(jpaEntity.getAccordJpaEntity().getName())
-            .score(jpaEntity.getScore())
-            .build();
+        UserAccord domain = new UserAccord(
+            jpaEntity.getAccordJpaEntity().getName(),
+            jpaEntity.getScore()
+        );
+        domain.setUser(UserJpaEntity.toDummy(jpaEntity.getUserJpaEntity()));
+
+        return domain;
     }
 
 }

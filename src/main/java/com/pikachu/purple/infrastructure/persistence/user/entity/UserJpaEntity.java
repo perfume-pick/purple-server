@@ -56,13 +56,13 @@ public class UserJpaEntity extends BaseEntity {
     }
 
     public static User toDomain(UserJpaEntity jpaEntity){
-        return User.builder()
-            .id(jpaEntity.getId())
-            .email(jpaEntity.getEmail())
-            .nickname(jpaEntity.getNickname())
-            .imageUrl(jpaEntity.getImageUrl())
-            .socialLoginProvider(jpaEntity.getSocialLoginProvider())
-            .build();
+        return new User(
+            jpaEntity.getId(),
+            jpaEntity.getNickname(),
+            jpaEntity.getEmail(),
+            jpaEntity.getImageUrl(),
+            jpaEntity.getSocialLoginProvider()
+        );
     }
 
     public static User toDummy(UserJpaEntity jpaEntity) {

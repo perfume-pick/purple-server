@@ -44,32 +44,22 @@ public class StarRatingJpaEntity extends BaseEntity {
         this.score = score;
     }
 
-    public static StarRating.StarRatingBuilder buildDefault(StarRatingJpaEntity jpaEntity) {
-        return StarRating.builder()
-            .id(jpaEntity.getId())
-            .user(UserJpaEntity.toDummy(jpaEntity.getUserJpaEntity()))
-            .perfume(PerfumeJpaEntity.toDummy(jpaEntity.getPerfumeJpaEntity()))
-            .score(jpaEntity.getScore());
-    }
-
     public static StarRating toDomain(StarRatingJpaEntity jpaEntity) {
-        return buildDefault(jpaEntity)
-            .build();
-    }
+        StarRating domain = new StarRating(
+            jpaEntity.getId(),
+            jpaEntity.getScore()
+        );
+        domain.setUser(UserJpaEntity.toDummy(jpaEntity.getUserJpaEntity()));
+        domain.setPerfume(PerfumeJpaEntity.toDummy(jpaEntity.getPerfumeJpaEntity()));
 
-    public static StarRating toDomainWithUserAndPerfume(StarRatingJpaEntity jpaEntity) {
-        return buildDefault(jpaEntity)
-            .user(UserJpaEntity.toDomain(jpaEntity.getUserJpaEntity()))
-            .perfume(PerfumeJpaEntity.toDomain(jpaEntity.getPerfumeJpaEntity()))
-            .build();
+        return domain;
     }
 
     public static StarRating toDomainWithPerfumeAccord(StarRatingJpaEntity jpaEntity) {
-        return StarRating.builder()
-            .user(UserJpaEntity.toDomain(jpaEntity.getUserJpaEntity()))
-            .perfume(PerfumeJpaEntity.toDomainWithPerfumeAccord(jpaEntity.getPerfumeJpaEntity()))
-            .score(jpaEntity.getScore())
-            .build();
+        StarRating domain = toDomain(jpaEntity);
+        domain.setPerfume(PerfumeJpaEntity.toDomainWithPerfumeAccord(jpaEntity.getPerfumeJpaEntity()));
+
+        return domain;
     }
 
 }

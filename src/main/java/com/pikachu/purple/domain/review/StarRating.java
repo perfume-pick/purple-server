@@ -6,6 +6,7 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Builder
@@ -13,8 +14,16 @@ import lombok.Getter;
 public class StarRating {
 
     private Long id;
-    private User user;
-    private Perfume perfume;
     private int score;
+
+    @Setter
+    private User user;
+    @Setter
+    private Perfume perfume;
+
+    public StarRating(Long id, int score) {
+        this.id = id;
+        this.score = score;
+    }
 
 }
