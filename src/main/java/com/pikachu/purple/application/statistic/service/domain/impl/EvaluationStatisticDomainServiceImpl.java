@@ -62,11 +62,11 @@ public class EvaluationStatisticDomainServiceImpl implements EvaluationStatistic
     @Override
     public void update(
         String statisticsDate,
-        EvaluationStatistic evaluationStatistics
+        EvaluationStatistic evaluationStatistic
     ) {
         evaluationStatisticRepository.update(
             statisticsDate,
-            evaluationStatistics
+            evaluationStatistic
         );
     }
 

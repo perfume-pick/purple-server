@@ -31,12 +31,8 @@ public class EvaluationStatisticScheduler {
         List<Long> perfumeIds = getPerfumeIdsUseCase.invoke().perfumeIds();
 
         String theDayBeforeYesterday = DateUtil.theDayBeforeYesterday();
-        EvaluationStatistic evaluationStatisticsFound = evaluationStatisticDomainService
+        EvaluationStatistic evaluationStatisticFound = evaluationStatisticDomainService
             .find(theDayBeforeYesterday);
-
-//        Map<Long, Map<EvaluationFieldType, Map<EvaluationOptionType, Integer>>>
-//            evaluationStatisticsMap = convertToMap(evaluationStatisticsFound);
-
 
         String yesterday = DateUtil.yesterday();
         List<Review> reviews =
@@ -47,15 +43,15 @@ public class EvaluationStatisticScheduler {
             reviewEvaluationCountMap = sumToMap(reviews);
 
 
-        EvaluationStatistic evaluationStatistics = calculateVotes(
+        EvaluationStatistic evaluationStatistic = calculateVotes(
             perfumeIds,
-            evaluationStatisticsFound,
+            evaluationStatisticFound,
             reviewEvaluationCountMap
         );
 
         evaluationStatisticDomainService.update(
             yesterday,
-            evaluationStatistics
+            evaluationStatistic
         );
 
     }

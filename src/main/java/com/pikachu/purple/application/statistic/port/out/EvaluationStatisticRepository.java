@@ -24,7 +24,7 @@ public interface EvaluationStatisticRepository {
 
     void update(
         String statisticsDate,
-        EvaluationStatistic evaluationStatistics
+        EvaluationStatistic evaluationStatistic
     );
 
 }
