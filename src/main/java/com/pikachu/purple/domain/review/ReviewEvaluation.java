@@ -12,8 +12,8 @@ import java.util.Set;
 
 public class ReviewEvaluation {
 
-    private final Map<String, List<EvaluationOptionType>> fieldOptionsMap;
     private final Map<Long, List<EvaluationFieldType>> reviewFieldsMap;
+    private final Map<String, List<EvaluationOptionType>> fieldOptionsMap;
 
     public ReviewEvaluation() {
         this.reviewFieldsMap = new HashMap<>();

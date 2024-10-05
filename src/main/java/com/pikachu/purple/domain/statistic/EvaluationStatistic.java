@@ -9,13 +9,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-//@Getter
-//@Builder
-//@AllArgsConstructor(access = AccessLevel.PROTECTED)
 public class EvaluationStatistic {
 
-    //    private Perfume perfume;
-//    private List<EvaluationField<EvaluationOptionStatistic>> fields;
     private Map<Long, List<EvaluationFieldType>> perfumeFieldsMap;
     private Map<String, List<EvaluationOptionType>> fieldOptionsMap;
     private Map<String, Integer> optionVotesMap;

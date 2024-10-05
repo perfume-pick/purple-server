@@ -42,7 +42,7 @@ public class FragranticaEvaluation {
     public void add(
         EvaluationFieldType field,
         EvaluationOptionType option,
-        Integer votes
+        int votes
     ) {
         if (!containsKey(field)) {
             add(field);
@@ -67,8 +67,14 @@ public class FragranticaEvaluation {
         );
     }
 
-    public int getVotes(EvaluationFieldType field, EvaluationOptionType option) {
-        String optionVotesKey = buildOptionVotesKey(field, option);
+    public int getVotes(
+        EvaluationFieldType field,
+        EvaluationOptionType option
+    ) {
+        String optionVotesKey = buildOptionVotesKey(
+            field,
+            option
+        );
         return this.optionVotesMap.getOrDefault(
             optionVotesKey,
             0
