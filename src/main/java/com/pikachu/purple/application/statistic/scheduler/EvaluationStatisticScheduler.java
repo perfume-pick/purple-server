@@ -4,7 +4,6 @@ import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumeIdsUseCa
 import com.pikachu.purple.application.review.port.in.review.GetReviewsDetailWithEvaluationByUpdatedDateUseCase;
 import com.pikachu.purple.application.statistic.service.domain.EvaluationStatisticDomainService;
 import com.pikachu.purple.domain.evaluation.EvaluationField;
-import com.pikachu.purple.domain.evaluation.EvaluationOption;
 import com.pikachu.purple.domain.evaluation.EvaluationOptionStatistic;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
@@ -13,6 +12,8 @@ import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.statistic.EvaluationStatistic;
 import com.pikachu.purple.util.DateUtil;
 import java.util.Arrays;
+import java.util.EnumMap;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -83,23 +84,48 @@ public class EvaluationStatisticScheduler {
 
     private Map<Long, Map<EvaluationFieldType, Map<EvaluationOptionType, Integer>>>
     sumToMap(List<Review> reviews) {
-        return reviews.stream()
-            .collect(Collectors.groupingBy(
-                review -> review.getPerfume().getId(),
-                Collectors.flatMapping(
-                    review -> review.getEvaluation().getFields().stream(),
-                    Collectors.groupingBy(
-                        EvaluationField::getType,
-                        Collectors.flatMapping(
-                            field -> field.getOptions().stream(),
-                            Collectors.groupingBy(
-                                EvaluationOption::getType,
-                                Collectors.summingInt(option -> 1)
-                            )
-                        )
+        Map<Long, Map<EvaluationFieldType, Map<EvaluationOptionType, Integer>>>
+            reviewEvaluationCountMap = new HashMap<>();
+
+        reviews.forEach(
+            review -> review.getEvaluation().getFields(review.getId()).forEach(
+                fieldType -> review.getEvaluation().getOptions(review.getId(), fieldType).forEach(
+                    optionType -> add(
+                        reviewEvaluationCountMap,
+                        review.getPerfume().getId(),
+                        fieldType,
+                        optionType
                     )
                 )
-            ));
+            )
+        );
+
+        return reviewEvaluationCountMap;
+    }
+
+    private void add(
+        Map<Long, Map<EvaluationFieldType, Map<EvaluationOptionType, Integer>>> reviewEvaluationCountMap,
+        Long perfumeId,
+        EvaluationFieldType fieldType,
+        EvaluationOptionType optionType
+    ) {
+        int votes = reviewEvaluationCountMap
+            .getOrDefault(
+                perfumeId,
+                new EnumMap<>(EvaluationFieldType.class)
+            ).getOrDefault(
+                fieldType,
+                new EnumMap<>(EvaluationOptionType.class)
+            ).getOrDefault(
+                optionType,
+                0
+            );
+
+        reviewEvaluationCountMap
+            .get(perfumeId)
+            .get(fieldType)
+            .put(optionType, votes + 1);
+
     }
 
     private List<EvaluationStatistic> calculateVotes(

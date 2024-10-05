@@ -34,13 +34,16 @@ public class GetReviewsByPerfumeIdAndSortTypeApplicationService implements
             case LIKED:
                 break;
             case LATEST:
-                reviews = reviewDomainService.findAllWithPerfumeAndReviewEvaluationAndMoodOrderByCreatedAtDesc(command.perfumeId());
+                reviews = reviewDomainService.findAllWithPerfumeAndReviewEvaluationAndMoodOrderByCreatedAtDesc(
+                    command.perfumeId());
                 break;
             case STAR_RATING_HIGH:
-                reviews = reviewDomainService.findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreDesc(command.perfumeId());
+                reviews = reviewDomainService.findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreDesc(
+                    command.perfumeId());
                 break;
             case STAR_RATING_LOW:
-                reviews = reviewDomainService.findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreAsc(command.perfumeId());
+                reviews = reviewDomainService.findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreAsc(
+                    command.perfumeId());
                 break;
             default:
                 break;
@@ -48,12 +51,13 @@ public class GetReviewsByPerfumeIdAndSortTypeApplicationService implements
 
         List<ReviewDTO> reviewDTOs = reviews.stream()
             .map(review -> {
-                List<ReviewEvaluationFieldDTO> reviewEvaluation = review.getEvaluation().getFields().stream()
-                    .map(evaluationField ->
+                List<ReviewEvaluationFieldDTO> reviewEvaluation = review.getEvaluation()
+                    .getFields(review.getId()).stream()
+                    .map(fieldType ->
                         ReviewEvaluationFieldDTO.of(
-                            evaluationField.getType(),
-                            evaluationField.getOptions().stream()
-                                .map(option -> ReviewEvaluationOptionDTO.of(option.getType()))
+                            fieldType,
+                            review.getEvaluation().getOptions(review.getId(), fieldType).stream()
+                                .map(ReviewEvaluationOptionDTO::of)
                                 .toList()
                         )
                     ).toList();

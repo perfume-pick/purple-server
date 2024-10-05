@@ -15,11 +15,9 @@ public class ReviewEvaluationDomainServiceImpl implements ReviewEvaluationDomain
 
     @Override
     public void create(
-        Long reviewId,
         ReviewEvaluation reviewEvaluation
     ) {
         reviewEvaluationRepository.create(
-            reviewId,
             reviewEvaluation
         );
     }
@@ -36,11 +34,9 @@ public class ReviewEvaluationDomainServiceImpl implements ReviewEvaluationDomain
 
     @Override
     public void update(
-        Long reviewId,
         ReviewEvaluation reviewEvaluation
     ) {
        reviewEvaluationRepository.update(
-           reviewId,
            reviewEvaluation
        );
     }

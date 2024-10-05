@@ -2,6 +2,8 @@ package com.pikachu.purple.application.statistic.service.domain.impl;
 
 import com.pikachu.purple.application.statistic.port.out.EvaluationStatisticRepository;
 import com.pikachu.purple.application.statistic.service.domain.EvaluationStatisticDomainService;
+import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
+import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 import com.pikachu.purple.domain.statistic.EvaluationStatistic;
 import com.pikachu.purple.infrastructure.redis.annotation.DistributedLock;
 import java.util.List;
@@ -22,34 +24,34 @@ public class EvaluationStatisticDomainServiceImpl implements EvaluationStatistic
     @Override
     @DistributedLock(
         name = "EvaluationStatistic",
-        key = "T(String).valueOf(#perfumeId).concat('-').concat(#fieldCode).concat('-').concat(#optionCode)"
+        key = "T(String).valueOf(#perfumeId).concat('-').concat(#field.code).concat('-').concat(#option.code)"
     )
     public void increaseVotes(
         Long perfumeId,
-        String fieldCode,
-        String optionCode
+        EvaluationFieldType field,
+        EvaluationOptionType option
     ) {
         evaluationStatisticRepository.increaseVotes(
             perfumeId,
-            fieldCode,
-            optionCode
+            field,
+            option
         );
     }
 
     @Override
     @DistributedLock(
         name = "EvaluationStatistic",
-        key = "T(String).valueOf(#perfumeId).concat('-').concat(#fieldCode).concat('-').concat(#optionCode)"
+        key = "T(String).valueOf(#perfumeId).concat('-').concat(#field.code).concat('-').concat(#option.code)"
     )
     public void decreaseVotes(
         Long perfumeId,
-        String fieldCode,
-        String optionCode
+        EvaluationFieldType field,
+        EvaluationOptionType option
     ) {
         evaluationStatisticRepository.decreaseVotes(
             perfumeId,
-            fieldCode,
-            optionCode
+            field,
+            option
         );
     }
 

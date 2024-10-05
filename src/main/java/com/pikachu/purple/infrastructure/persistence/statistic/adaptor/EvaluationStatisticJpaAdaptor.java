@@ -3,6 +3,8 @@ package com.pikachu.purple.infrastructure.persistence.statistic.adaptor;
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.PerfumeNotFoundException;
 
 import com.pikachu.purple.application.statistic.port.out.EvaluationStatisticRepository;
+import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
+import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 import com.pikachu.purple.domain.statistic.EvaluationStatistic;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeJpaRepository;
@@ -84,14 +86,14 @@ public class EvaluationStatisticJpaAdaptor implements EvaluationStatisticReposit
     @Override
     public void increaseVotes(
         Long perfumeId,
-        String fieldCode,
-        String optionCode
+        EvaluationFieldType field,
+        EvaluationOptionType option
     ) {
 
         EvaluationStatisticJpaEntity evaluationStatisticJpaEntity = findEntityByToday(
             perfumeId,
-            fieldCode,
-            optionCode
+            field.getCode(),
+            option.getCode()
         );
 
         evaluationStatisticJpaEntity.increase();
@@ -99,11 +101,15 @@ public class EvaluationStatisticJpaAdaptor implements EvaluationStatisticReposit
     }
 
     @Override
-    public void decreaseVotes(Long perfumeId, String fieldCode, String optionCode) {
+    public void decreaseVotes(
+        Long perfumeId,
+        EvaluationFieldType field,
+        EvaluationOptionType option
+    ) {
         EvaluationStatisticJpaEntity evaluationStatisticJpaEntity = findEntityByToday(
             perfumeId,
-            fieldCode,
-            optionCode
+            field.getCode(),
+            option.getCode()
         );
 
         evaluationStatisticJpaEntity.decrease();

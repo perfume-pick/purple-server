@@ -1,5 +1,7 @@
 package com.pikachu.purple.application.statistic.port.out;
 
+import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
+import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 import com.pikachu.purple.domain.statistic.EvaluationStatistic;
 import java.util.List;
 
@@ -9,14 +11,14 @@ public interface EvaluationStatisticRepository {
 
     void increaseVotes(
         Long perfumeId,
-        String fieldCode,
-        String optionCode
+        EvaluationFieldType field,
+        EvaluationOptionType option
     );
 
     void decreaseVotes(
         Long perfumeId,
-        String fieldCode,
-        String optionCode
+        EvaluationFieldType field,
+        EvaluationOptionType option
     );
 
     List<EvaluationStatistic> findAll(String statisticsDate);
