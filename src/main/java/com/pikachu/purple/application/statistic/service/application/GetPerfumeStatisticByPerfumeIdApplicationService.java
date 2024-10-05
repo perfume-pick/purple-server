@@ -4,10 +4,10 @@ import com.pikachu.purple.application.statistic.common.dto.StarRatingStatisticDT
 import com.pikachu.purple.application.statistic.port.in.GetPerfumeStatisticByPerfumeIdUseCase;
 import com.pikachu.purple.application.statistic.service.domain.EvaluationStatisticDomainService;
 import com.pikachu.purple.application.statistic.service.domain.StarRatingStatisticDomainService;
-import com.pikachu.purple.domain.evaluation.EvaluationField;
-import com.pikachu.purple.domain.evaluation.EvaluationOptionStatistic;
 import com.pikachu.purple.domain.evaluation.dto.EvaluationFieldDTO;
 import com.pikachu.purple.domain.evaluation.dto.EvaluationOptionStatisticDTO;
+import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
+import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 import com.pikachu.purple.domain.statistic.EvaluationStatistic;
 import com.pikachu.purple.domain.statistic.StarRatingStatistic;
 import java.util.ArrayList;
@@ -29,25 +29,47 @@ public class GetPerfumeStatisticByPerfumeIdApplicationService implements
             command.perfumeId());
 
         List<EvaluationFieldDTO<EvaluationOptionStatisticDTO>> evaluationFieldDTOs = new ArrayList<>();
-        for (EvaluationField<EvaluationOptionStatistic> evaluationField : evaluationStatistic.getFields()) {
-            int totalVotesByField = evaluationField.getOptions().stream()
-                .mapToInt(EvaluationOptionStatistic::getVotes).sum();
+        for (EvaluationFieldType evaluationField : evaluationStatistic.getFields(
+            command.perfumeId())) {
+            int totalVotesByField = evaluationStatistic.getOptions(
+                    command.perfumeId(),
+                    evaluationField
+                ).stream()
+                .mapToInt(
+                    evaluationOption -> evaluationStatistic.getVotes(
+                        command.perfumeId(),
+                        evaluationField,
+                        evaluationOption
+                    )
+                ).sum();
 
             List<EvaluationOptionStatisticDTO> evaluationOptionStatisticDTOs = new ArrayList<>();
-            List<EvaluationOptionStatistic> evaluationOptionStatistics = evaluationField.getOptions();
-            for (int i = 0; i < evaluationOptionStatistics.size(); i++) {
+            List<EvaluationOptionType> evaluationOptions =
+                evaluationStatistic.getOptions(
+                    command.perfumeId(),
+                    evaluationField
+                );
+            for (int i = 0; i < evaluationOptions.size(); i++) {
                 int order = i + 1;
+
+                EvaluationOptionType evaluationOption = evaluationOptions.get(i);
+                int votes = evaluationStatistic.getVotes(
+                    command.perfumeId(),
+                    evaluationField,
+                    evaluationOption
+                );
                 evaluationOptionStatisticDTOs.add(
                     EvaluationOptionStatisticDTO.of(
                         order,
-                        evaluationOptionStatistics.get(i),
+                        evaluationOption,
+                        votes,
                         totalVotesByField
                     )
                 );
             }
 
             EvaluationFieldDTO<EvaluationOptionStatisticDTO> evaluationFieldDTO = EvaluationFieldDTO.of(
-                evaluationField.getType(),
+                evaluationField,
                 evaluationOptionStatisticDTOs
             );
 

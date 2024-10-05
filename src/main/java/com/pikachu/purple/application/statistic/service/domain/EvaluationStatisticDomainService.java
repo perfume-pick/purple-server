@@ -3,7 +3,6 @@ package com.pikachu.purple.application.statistic.service.domain;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 import com.pikachu.purple.domain.statistic.EvaluationStatistic;
-import java.util.List;
 
 public interface EvaluationStatisticDomainService {
 
@@ -21,11 +20,11 @@ public interface EvaluationStatisticDomainService {
         EvaluationOptionType option
     );
 
-    List<EvaluationStatistic> findAll(String statisticsDate);
+    EvaluationStatistic find(String statisticsDate);
 
-    void updateAll(
+    void update(
         String statisticsDate,
-        List<EvaluationStatistic> evaluationStatistics
+        EvaluationStatistic evaluationStatistics
     );
 
 }

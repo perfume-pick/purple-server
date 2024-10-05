@@ -6,7 +6,6 @@ import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 import com.pikachu.purple.domain.statistic.EvaluationStatistic;
 import com.pikachu.purple.infrastructure.redis.annotation.DistributedLock;
-import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -56,16 +55,16 @@ public class EvaluationStatisticDomainServiceImpl implements EvaluationStatistic
     }
 
     @Override
-    public List<EvaluationStatistic> findAll(String statisticsDate) {
-        return evaluationStatisticRepository.findAll(statisticsDate);
+    public EvaluationStatistic find(String statisticsDate) {
+        return evaluationStatisticRepository.find(statisticsDate);
     }
 
     @Override
-    public void updateAll(
+    public void update(
         String statisticsDate,
-        List<EvaluationStatistic> evaluationStatistics
+        EvaluationStatistic evaluationStatistics
     ) {
-        evaluationStatisticRepository.updateAll(
+        evaluationStatisticRepository.update(
             statisticsDate,
             evaluationStatistics
         );

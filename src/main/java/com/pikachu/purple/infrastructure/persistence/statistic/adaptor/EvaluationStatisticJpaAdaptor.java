@@ -78,7 +78,6 @@ public class EvaluationStatisticJpaAdaptor implements EvaluationStatisticReposit
             );
 
         return EvaluationStatisticJpaEntity.toDomain(
-            perfumeId,
             evaluationStatisticJpaEntities
         );
     }
@@ -117,31 +116,32 @@ public class EvaluationStatisticJpaAdaptor implements EvaluationStatisticReposit
     }
 
     @Override
-    public List<EvaluationStatistic> findAll(String statisticsDate) {
+    public EvaluationStatistic find(String statisticsDate) {
         List<EvaluationStatisticJpaEntity> evaluationStatisticJpaEntities =
             evaluationStatisticJpaRepository.findAllByStatisticsDate(statisticsDate);
-        return EvaluationStatisticJpaEntity.toDomainList(evaluationStatisticJpaEntities);
+        return EvaluationStatisticJpaEntity.toDomain(evaluationStatisticJpaEntities);
     }
 
     @Override
-    public void updateAll(
+    public void update(
         String statisticsDate,
-        List<EvaluationStatistic> evaluationStatistics
+        EvaluationStatistic evaluationStatistic
     ) {
         List<EvaluationStatisticJpaEntity> evaluationStatisticJpaEntities = new ArrayList<>();
-        for (EvaluationStatistic evaluationStatistic : evaluationStatistics) {
-            Long perfumeId = evaluationStatistic.getPerfume().getId();
-            PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository.findById(perfumeId)
-                .orElseThrow(() -> PerfumeNotFoundException);
+        evaluationStatistic.getPerfumeIdSet().forEach(
+            perfumeId -> {
+                PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository.findById(perfumeId)
+                    .orElseThrow(() -> PerfumeNotFoundException);
 
-            evaluationStatisticJpaEntities.addAll(
-                EvaluationStatisticJpaEntity.toJpaEntityList(
-                    statisticsDate,
-                    perfumeJpaEntity,
-                    evaluationStatistic
-                )
-            );
-        }
+                evaluationStatisticJpaEntities.addAll(
+                    EvaluationStatisticJpaEntity.toJpaEntityList(
+                        statisticsDate,
+                        perfumeJpaEntity,
+                        evaluationStatistic
+                    )
+                );
+            }
+        );
 
         evaluationStatisticJpaRepository.saveAll(evaluationStatisticJpaEntities);
     }
