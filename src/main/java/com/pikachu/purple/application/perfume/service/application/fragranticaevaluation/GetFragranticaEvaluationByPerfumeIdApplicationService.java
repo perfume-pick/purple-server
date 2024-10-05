@@ -6,8 +6,8 @@ import com.pikachu.purple.application.perfume.common.dto.FragranticaEvaluationFi
 import com.pikachu.purple.application.perfume.common.dto.FragranticaEvaluationOptionDTO;
 import com.pikachu.purple.application.perfume.port.in.fragranticaevaluation.GetFragranticaEvaluationByPerfumeIdUseCase;
 import com.pikachu.purple.application.perfume.service.domain.FragranticaEvaluationDomainService;
-import com.pikachu.purple.domain.evaluation.EvaluationField;
-import com.pikachu.purple.domain.evaluation.EvaluationOptionStatistic;
+import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
+import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 import com.pikachu.purple.domain.perfume.FragranticaEvaluation;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,24 +28,35 @@ public class GetFragranticaEvaluationByPerfumeIdApplicationService implements
             command.perfumeId());
 
         List<FragranticaEvaluationFieldDTO> fragranticaEvaluationFieldDTOs = new ArrayList<>();
-        for (EvaluationField<EvaluationOptionStatistic> evaluationField : fragranticaEvaluation.getFields()) {
-            int totalVotesByField = evaluationField.getOptions().stream()
-                .mapToInt(EvaluationOptionStatistic::getVotes).sum();
+        for (EvaluationFieldType evaluationField : fragranticaEvaluation.getFieldSet()) {
+            int totalVotesByField = fragranticaEvaluation.getOptions(evaluationField).stream()
+                .mapToInt(
+                    evaluationOption -> fragranticaEvaluation.getVotes(
+                        evaluationField,
+                        evaluationOption
+                    )
+                ).sum();
 
-            int maxSize = evaluationField.getType().is(SEASON_TIME) ? 3 : 1;
+            int maxSize = evaluationField.is(SEASON_TIME) ? 3 : 1;
 
             List<FragranticaEvaluationOptionDTO> fragranticaMostVotedOptionDTOs = new ArrayList<>();
+            List<EvaluationOptionType> evaluationOptions = fragranticaEvaluation.getOptions(evaluationField);
             for (int i=0; i < maxSize; i++) {
-                List<EvaluationOptionStatistic> optionStatistics = evaluationField.getOptions();
+                EvaluationOptionType evaluationOption = evaluationOptions.get(i);
+                int votes = fragranticaEvaluation.getVotes(
+                    evaluationField,
+                    evaluationOption
+                );
                 fragranticaMostVotedOptionDTOs.add(
                     FragranticaEvaluationOptionDTO.of(
-                        optionStatistics.get(i),
+                        evaluationOption,
+                        votes,
                         totalVotesByField
                     )
                 );
             }
             FragranticaEvaluationFieldDTO fragranticaEvaluationFieldDTO = FragranticaEvaluationFieldDTO.of(
-                evaluationField.getType(),
+                evaluationField,
                 fragranticaMostVotedOptionDTOs
             );
 

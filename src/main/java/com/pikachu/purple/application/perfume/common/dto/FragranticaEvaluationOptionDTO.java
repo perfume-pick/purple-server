@@ -1,7 +1,7 @@
 package com.pikachu.purple.application.perfume.common.dto;
 
 import com.pikachu.purple.application.util.MathUtil;
-import com.pikachu.purple.domain.evaluation.EvaluationOptionStatistic;
+import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 
 public record FragranticaEvaluationOptionDTO(
     String optionCode,
@@ -10,15 +10,16 @@ public record FragranticaEvaluationOptionDTO(
 ) {
 
     public static FragranticaEvaluationOptionDTO of(
-        EvaluationOptionStatistic evaluationOptionStatistic,
+        EvaluationOptionType option,
+        int votes,
         int totalVotesByField
     ) {
 
         return new FragranticaEvaluationOptionDTO(
-            evaluationOptionStatistic.getType().getCode(),
-            evaluationOptionStatistic.getType().getName(),
+            option.getCode(),
+            option.getName(),
             MathUtil.getPercentage(
-                evaluationOptionStatistic.getVotes(),
+                votes,
                 totalVotesByField
             )
         );
