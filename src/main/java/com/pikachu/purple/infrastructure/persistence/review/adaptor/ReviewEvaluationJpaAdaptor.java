@@ -8,6 +8,7 @@ import com.pikachu.purple.infrastructure.persistence.review.entity.ReviewEvaluat
 import com.pikachu.purple.infrastructure.persistence.review.entity.ReviewJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.review.repository.ReviewEvaluationJpaRepository;
 import com.pikachu.purple.infrastructure.persistence.review.repository.ReviewJpaRepository;
+import java.util.ArrayList;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -21,21 +22,18 @@ public class ReviewEvaluationJpaAdaptor implements ReviewEvaluationRepository {
 
     @Override
     public void create(
-        Long reviewId,
         ReviewEvaluation reviewEvaluation
     ) {
-        ReviewJpaEntity reviewJpaEntity = reviewJpaRepository.findById(reviewId)
-            .orElseThrow(() -> new BusinessException(ErrorCode.REVIEW_NOT_FOUND));
+        List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities = new ArrayList<>();
 
-        List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities =
-            reviewEvaluation.getFields().stream()
-                .flatMap(field -> field.getOptions().stream()
-                    .map(option -> ReviewEvaluationJpaEntity.builder()
-                        .reviewJpaEntity(reviewJpaEntity)
-                        .fieldCode(field.getType().getCode())
-                        .optionCode(option.getType().getCode())
-                        .build()))
-                .toList();
+        reviewEvaluation.getReviewIdSet().forEach(
+            reviewId -> {
+                ReviewJpaEntity reviewJpaEntity = reviewJpaRepository.findById(reviewId)
+                    .orElseThrow(() -> new BusinessException(ErrorCode.REVIEW_NOT_FOUND));
+
+                reviewEvaluationJpaEntities.addAll(
+                    ReviewEvaluationJpaEntity.toJpaEntityList(reviewJpaEntity, reviewEvaluation));
+            });
 
         reviewEvaluationJpaRepository.saveAll(reviewEvaluationJpaEntities);
     }
@@ -58,14 +56,10 @@ public class ReviewEvaluationJpaAdaptor implements ReviewEvaluationRepository {
 
     @Override
     public void update(
-        Long reviewId,
         ReviewEvaluation reviewEvaluation
     ) {
-        deleteAll(reviewId);
-        create(
-            reviewId,
-            reviewEvaluation
-        );
+        reviewEvaluation.getReviewIdSet().forEach(this::deleteAll);
+        create(reviewEvaluation);
     }
 
 }

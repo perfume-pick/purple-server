@@ -1,7 +1,5 @@
 package com.pikachu.purple.infrastructure.persistence.review.entity;
 
-import com.pikachu.purple.domain.evaluation.EvaluationField;
-import com.pikachu.purple.domain.evaluation.EvaluationOption;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 import com.pikachu.purple.domain.review.ReviewEvaluation;
@@ -15,9 +13,8 @@ import jakarta.persistence.IdClass;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -52,33 +49,38 @@ public class ReviewEvaluationJpaEntity extends BaseEntity {
     )
     private String optionCode;
 
+    public static List<ReviewEvaluationJpaEntity> toJpaEntityList(
+        ReviewJpaEntity reviewJpaEntity,
+        ReviewEvaluation reviewEvaluation
+    ) {
+        List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities = new ArrayList<>();
+
+        Long reviewId = reviewJpaEntity.getId();
+        reviewEvaluation.getFields(reviewId).forEach(
+            field -> reviewEvaluation.getOptions(reviewId, field).forEach(
+                option -> reviewEvaluationJpaEntities.add(
+                    ReviewEvaluationJpaEntity.builder()
+                        .reviewJpaEntity(reviewJpaEntity)
+                        .fieldCode(field.getCode())
+                        .optionCode(option.getCode())
+                        .build()
+                )
+            )
+        );
+        return reviewEvaluationJpaEntities;
+    }
+
     public static ReviewEvaluation toDomain(List<ReviewEvaluationJpaEntity> jpaEntities) {
-        Map<EvaluationFieldType, List<ReviewEvaluationJpaEntity>> groupedByFieldType =
-            jpaEntities.stream()
-                .collect(Collectors.groupingBy(
-                    jpaEntity -> EvaluationFieldType.of(jpaEntity.getFieldCode())
-                ));
+        ReviewEvaluation domain = new ReviewEvaluation();
+        for (ReviewEvaluationJpaEntity jpaEntity : jpaEntities) {
+            domain.add(
+                jpaEntity.getReviewJpaEntity().getId(),
+                EvaluationFieldType.of(jpaEntity.getFieldCode()),
+                EvaluationOptionType.of(jpaEntity.getOptionCode())
+            );
+        }
 
-        List<EvaluationField<EvaluationOption>> fields =
-            groupedByFieldType.entrySet().stream()
-                .map(entry -> {
-                    EvaluationFieldType fieldType = entry.getKey();
-                    List<EvaluationOption> options = entry.getValue().stream()
-                        .map(jpaEntity -> EvaluationOption.builder()
-                            .type(EvaluationOptionType.of(jpaEntity.getOptionCode()))
-                            .build())
-                        .collect(Collectors.toList());
-
-                    return EvaluationField.<EvaluationOption>builder()
-                        .type(fieldType)
-                        .options(options)
-                        .build();
-                })
-                .toList();
-
-        return ReviewEvaluation.builder()
-            .fields(fields)
-            .build();
+        return domain;
     }
 
 }

@@ -1,54 +1,126 @@
 package com.pikachu.purple.domain.review;
 
-import com.pikachu.purple.bootstrap.review.vo.EvaluationFieldVO;
-import com.pikachu.purple.domain.evaluation.EvaluationField;
-import com.pikachu.purple.domain.evaluation.EvaluationOption;
+import static com.pikachu.purple.util.StringUtil.DELIMITER;
+
 import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import java.util.Map;
+import java.util.Set;
 
-@Getter
-@Builder
-@AllArgsConstructor(access = AccessLevel.PROTECTED)
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class ReviewEvaluation {
 
-    private List<EvaluationField<EvaluationOption>> fields;
+    private final Map<Long, List<EvaluationFieldType>> reviewFieldsMap;
+    private final Map<String, List<EvaluationOptionType>> fieldOptionsMap;
 
-    public static ReviewEvaluation from(List<EvaluationFieldVO> evaluationFieldVOs) {
-        List<EvaluationField<EvaluationOption>> evaluationFields = evaluationFieldVOs.stream()
-            .map(ReviewEvaluation::convertToEvaluationField)
-            .toList();
-
-        return ReviewEvaluation.builder()
-            .fields(evaluationFields)
-            .build();
+    public ReviewEvaluation() {
+        this.reviewFieldsMap = new HashMap<>();
+        this.fieldOptionsMap = new HashMap<>();
     }
 
-    private static EvaluationField<EvaluationOption> convertToEvaluationField(EvaluationFieldVO evaluationFieldVO) {
-        EvaluationFieldType fieldType = EvaluationFieldType.of(evaluationFieldVO.fieldCode());
-
-        List<EvaluationOption> options = evaluationFieldVO.optionCodes().stream()
-            .map(ReviewEvaluation::convertToEvaluationOption)
-            .toList();
-
-        return EvaluationField.<EvaluationOption>builder()
-            .type(fieldType)
-            .options(options)
-            .build();
+    private String buildFieldOptionsKey(
+        Long reviewId,
+        EvaluationFieldType field
+    ) {
+        return reviewId + DELIMITER + field.getCode();
     }
 
-    private static EvaluationOption convertToEvaluationOption(String optionCode) {
-        EvaluationOptionType optionType = EvaluationOptionType.of(optionCode);
+    private boolean containsKey(Long reviewId) {
+        return this.reviewFieldsMap.containsKey(reviewId);
+    }
 
-        return EvaluationOption.builder()
-            .type(optionType)
-            .build();
+    private boolean containsKey(
+        Long reviewId,
+        EvaluationFieldType field
+    ) {
+        String fieldOptionsKey = buildFieldOptionsKey(
+            reviewId,
+            field
+        );
+        return this.fieldOptionsMap.containsKey(fieldOptionsKey);
+    }
+
+    private void add(Long reviewId) {
+        this.reviewFieldsMap.put(
+            reviewId,
+            new ArrayList<>()
+        );
+    }
+
+    private void add(
+        Long reviewId,
+        EvaluationFieldType field
+    ) {
+        if (!containsKey(reviewId)) {
+            add(reviewId);
+        }
+        this.reviewFieldsMap.get(reviewId).add(field);
+
+        String fieldOptionsKey = buildFieldOptionsKey(
+            reviewId,
+            field
+        );
+        this.fieldOptionsMap.put(
+            fieldOptionsKey,
+            new ArrayList<>()
+        );
+    }
+
+    public void add(
+        Long reviewId,
+        EvaluationFieldType field,
+        EvaluationOptionType option
+    ) {
+        if (!containsKey(reviewId, field)) {
+            add(reviewId, field);
+        }
+        String fieldOptionsKey = buildFieldOptionsKey(
+            reviewId,
+            field
+        );
+        this.fieldOptionsMap.get(fieldOptionsKey).add(option);
+    }
+
+    public void add(
+        Long reviewId,
+        EvaluationFieldType field,
+        List<EvaluationOptionType> options
+    ) {
+        if (!containsKey(reviewId, field)) {
+            add(reviewId, field);
+        }
+        String fieldOptionsKey = buildFieldOptionsKey(
+            reviewId,
+            field
+        );
+        this.fieldOptionsMap.get(fieldOptionsKey).addAll(options);
+    }
+
+    public Set<Long> getReviewIdSet() {
+        return this.reviewFieldsMap.keySet();
+    }
+
+    public List<EvaluationFieldType> getFields(Long reviewId) {
+        return this.reviewFieldsMap.getOrDefault(
+            reviewId,
+            new ArrayList<>()
+        );
+    }
+
+    public List<EvaluationOptionType> getOptions(
+        Long reviewId,
+        EvaluationFieldType field
+    ) {
+        String fieldOptionsKey = buildFieldOptionsKey(
+            reviewId,
+            field
+        );
+        return this.fieldOptionsMap.getOrDefault(
+            fieldOptionsKey,
+            new ArrayList<>()
+        );
     }
 
 }

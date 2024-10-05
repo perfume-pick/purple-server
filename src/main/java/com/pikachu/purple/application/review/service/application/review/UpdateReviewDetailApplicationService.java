@@ -5,6 +5,7 @@ import com.pikachu.purple.application.review.port.in.review.UpdateReviewUseCase;
 import com.pikachu.purple.application.review.port.in.reviewevaluation.CreateReviewEvaluationUseCase;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
 import com.pikachu.purple.application.review.service.domain.ReviewEvaluationDomainService;
+import com.pikachu.purple.application.review.util.ReviewEvaluationConverter;
 import com.pikachu.purple.application.statistic.port.in.evaluationstatistic.DecreaseEvaluationStatisticUseCase;
 import com.pikachu.purple.application.statistic.port.in.evaluationstatistic.IncreaseEvaluationStatisticUseCase;
 import com.pikachu.purple.domain.review.Review;
@@ -56,9 +57,11 @@ public class UpdateReviewDetailApplicationService implements UpdateReviewDetailU
                 )
             );
 
-            ReviewEvaluation afterReviewEvaluation = ReviewEvaluation.from(command.evaluationFieldVOs());
-            reviewEvaluationDomainService.update(
+            ReviewEvaluation afterReviewEvaluation = ReviewEvaluationConverter.of(
                 command.reviewId(),
+                command.evaluationFieldVOs()
+            );
+            reviewEvaluationDomainService.update(
                 afterReviewEvaluation
             );
 

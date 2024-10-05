@@ -5,7 +5,6 @@ import com.pikachu.purple.domain.review.ReviewEvaluation;
 public interface ReviewEvaluationDomainService {
 
     void create(
-        Long reviewId,
         ReviewEvaluation reviewEvaluation
     );
 
@@ -14,7 +13,6 @@ public interface ReviewEvaluationDomainService {
     void deleteAll(Long reviewId);
 
     void update(
-        Long reviewId,
         ReviewEvaluation reviewEvaluation
     );
 

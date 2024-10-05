@@ -2,8 +2,7 @@ package com.pikachu.purple.application.statistic.service.application.evaluations
 
 import com.pikachu.purple.application.statistic.port.in.evaluationstatistic.DecreaseEvaluationStatisticUseCase;
 import com.pikachu.purple.application.statistic.service.domain.EvaluationStatisticDomainService;
-import com.pikachu.purple.domain.evaluation.EvaluationField;
-import com.pikachu.purple.domain.evaluation.EvaluationOption;
+import com.pikachu.purple.domain.review.ReviewEvaluation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,15 +15,19 @@ public class DecreaseEvaluationStatisticApplicationService implements
 
     @Override
     public void invoke(Command command) {
-        for (EvaluationField<EvaluationOption> field : command.reviewEvaluation().getFields()) {
-            for (EvaluationOption option : field.getOptions()) {
-                evaluationStatisticDomainService.decreaseVotes(
-                    command.perfumeId(),
-                    field.getType().getCode(),
-                    option.getType().getCode()
-                );
-            }
-        }
+        ReviewEvaluation reviewEvaluation = command.reviewEvaluation();
+        reviewEvaluation.getReviewIdSet().forEach(
+            reviewId -> reviewEvaluation.getFields(reviewId).forEach(
+                field -> reviewEvaluation.getOptions(reviewId, field).forEach(
+                    option -> evaluationStatisticDomainService.decreaseVotes(
+                        command.perfumeId(),
+                        field,
+                        option
+                    )
+                )
+            )
+        );
+
     }
 
 }

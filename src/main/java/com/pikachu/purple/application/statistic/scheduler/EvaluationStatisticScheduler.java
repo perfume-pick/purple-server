@@ -3,19 +3,16 @@ package com.pikachu.purple.application.statistic.scheduler;
 import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumeIdsUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetReviewsDetailWithEvaluationByUpdatedDateUseCase;
 import com.pikachu.purple.application.statistic.service.domain.EvaluationStatisticDomainService;
-import com.pikachu.purple.domain.evaluation.EvaluationField;
-import com.pikachu.purple.domain.evaluation.EvaluationOption;
-import com.pikachu.purple.domain.evaluation.EvaluationOptionStatistic;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
-import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.statistic.EvaluationStatistic;
 import com.pikachu.purple.util.DateUtil;
 import java.util.Arrays;
+import java.util.EnumMap;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -34,12 +31,8 @@ public class EvaluationStatisticScheduler {
         List<Long> perfumeIds = getPerfumeIdsUseCase.invoke().perfumeIds();
 
         String theDayBeforeYesterday = DateUtil.theDayBeforeYesterday();
-        List<EvaluationStatistic> evaluationStatisticsFound = evaluationStatisticDomainService
-            .findAll(theDayBeforeYesterday);
-
-        Map<Long, Map<EvaluationFieldType, Map<EvaluationOptionType, Integer>>>
-            evaluationStatisticsMap = convertToMap(evaluationStatisticsFound);
-
+        EvaluationStatistic evaluationStatisticFound = evaluationStatisticDomainService
+            .find(theDayBeforeYesterday);
 
         String yesterday = DateUtil.yesterday();
         List<Review> reviews =
@@ -50,104 +43,99 @@ public class EvaluationStatisticScheduler {
             reviewEvaluationCountMap = sumToMap(reviews);
 
 
-        List<EvaluationStatistic> evaluationStatistics = calculateVotes(perfumeIds,
-            evaluationStatisticsMap, reviewEvaluationCountMap);
+        EvaluationStatistic evaluationStatistic = calculateVotes(
+            perfumeIds,
+            evaluationStatisticFound,
+            reviewEvaluationCountMap
+        );
 
-        evaluationStatisticDomainService.updateAll(
+        evaluationStatisticDomainService.update(
             yesterday,
-            evaluationStatistics
+            evaluationStatistic
         );
 
     }
 
     private Map<Long, Map<EvaluationFieldType, Map<EvaluationOptionType, Integer>>>
-    convertToMap(List<EvaluationStatistic> evaluationStatistics) {
-        return evaluationStatistics.stream()
-            .collect(Collectors.groupingBy(
-                evaluationStatistic -> evaluationStatistic.getPerfume().getId(),
-                Collectors.flatMapping(
-                    evaluationStatistic -> evaluationStatistic.getFields().stream(),
-                    Collectors.groupingBy(
-                        EvaluationField::getType,
-                        Collectors.flatMapping(
-                            field -> field.getOptions().stream(),
-                            Collectors.toMap(
-                                EvaluationOptionStatistic::getType,
-                                EvaluationOptionStatistic::getVotes
-                            )
-                        )
-                    )
-                )
-            ));
-    }
-
-    private Map<Long, Map<EvaluationFieldType, Map<EvaluationOptionType, Integer>>>
     sumToMap(List<Review> reviews) {
-        return reviews.stream()
-            .collect(Collectors.groupingBy(
-                review -> review.getPerfume().getId(),
-                Collectors.flatMapping(
-                    review -> review.getEvaluation().getFields().stream(),
-                    Collectors.groupingBy(
-                        EvaluationField::getType,
-                        Collectors.flatMapping(
-                            field -> field.getOptions().stream(),
-                            Collectors.groupingBy(
-                                EvaluationOption::getType,
-                                Collectors.summingInt(option -> 1)
-                            )
-                        )
+        Map<Long, Map<EvaluationFieldType, Map<EvaluationOptionType, Integer>>>
+            reviewEvaluationCountMap = new HashMap<>();
+
+        reviews.forEach(
+            review -> review.getEvaluation().getFields(review.getId()).forEach(
+                fieldType -> review.getEvaluation().getOptions(review.getId(), fieldType).forEach(
+                    optionType -> add(
+                        reviewEvaluationCountMap,
+                        review.getPerfume().getId(),
+                        fieldType,
+                        optionType
                     )
                 )
-            ));
+            )
+        );
+
+        return reviewEvaluationCountMap;
     }
 
-    private List<EvaluationStatistic> calculateVotes(
+    private void add(
+        Map<Long, Map<EvaluationFieldType, Map<EvaluationOptionType, Integer>>> reviewEvaluationCountMap,
+        Long perfumeId,
+        EvaluationFieldType fieldType,
+        EvaluationOptionType optionType
+    ) {
+        int votes = reviewEvaluationCountMap
+            .getOrDefault(
+                perfumeId,
+                new EnumMap<>(EvaluationFieldType.class)
+            ).getOrDefault(
+                fieldType,
+                new EnumMap<>(EvaluationOptionType.class)
+            ).getOrDefault(
+                optionType,
+                0
+            );
+
+        reviewEvaluationCountMap
+            .get(perfumeId)
+            .get(fieldType)
+            .put(optionType, votes + 1);
+
+    }
+
+    private EvaluationStatistic calculateVotes(
         List<Long> perfumeIds,
-        Map<Long, Map<EvaluationFieldType, Map<EvaluationOptionType, Integer>>> evaluationStatisticsMap,
+        EvaluationStatistic evaluationStatisticFound,
         Map<Long, Map<EvaluationFieldType, Map<EvaluationOptionType, Integer>>> reviewEvaluationCountMap
     ) {
-        return perfumeIds.stream()
-            .map(perfumeId -> {
-                List<EvaluationField<EvaluationOptionStatistic>> evaluationFields = Arrays.stream(
-                        EvaluationFieldType.values())
-                    .map(fieldType -> {
-                        List<EvaluationOptionStatistic> evaluationOptionStatistics =
-                            fieldType.getEvaluationOptionTypes().stream()
-                                .map(optionType -> {
-                                    int previousVotes = getMapValue(
-                                        evaluationStatisticsMap,
-                                        perfumeId,
-                                        fieldType,
-                                        optionType
-                                    );
-                                    int yesterdayCounts = getMapValue(
-                                        reviewEvaluationCountMap,
-                                        perfumeId,
-                                        fieldType,
-                                        optionType
-                                    );
+        EvaluationStatistic evaluationStatistic = new EvaluationStatistic();
+        perfumeIds.forEach(
+            perfumeId -> Arrays.stream(EvaluationFieldType.values()).forEach(
+                field -> field.getEvaluationOptionTypes().forEach(
+                    option -> {
+                        int previousVotes = evaluationStatisticFound.getVotes(
+                            perfumeId,
+                            field,
+                            option
+                        );
+                        int yesterdayCounts = getMapValue(
+                            reviewEvaluationCountMap,
+                            perfumeId,
+                            field,
+                            option
+                        );
 
-                                    return EvaluationOptionStatistic.builder()
-                                        .type(optionType)
-                                        .votes(previousVotes + yesterdayCounts)
-                                        .build();
-                                })
-                                .collect(Collectors.toList());
+                        evaluationStatistic.add(
+                            perfumeId,
+                            field,
+                            option,
+                            previousVotes + yesterdayCounts
+                        );
+                    }
+                )
+            )
+        );
 
-                        return EvaluationField.<EvaluationOptionStatistic>builder()
-                            .type(fieldType)
-                            .options(evaluationOptionStatistics)
-                            .build();
-                    })
-                    .toList();
-
-                return EvaluationStatistic.builder()
-                    .perfume(Perfume.builder().id(perfumeId).build())
-                    .fields(evaluationFields)
-                    .build();
-            })
-            .toList();
+        return evaluationStatistic;
     }
 
     private int getMapValue(Map<Long, Map<EvaluationFieldType, Map<EvaluationOptionType, Integer>>> map, Long perfumeId, EvaluationFieldType fieldType, EvaluationOptionType optionType) {
