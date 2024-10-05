@@ -1,5 +1,7 @@
 package com.pikachu.purple.domain.review;
 
+import static com.pikachu.purple.util.StringUtil.DELIMITER;
+
 import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 import java.util.ArrayList;
@@ -10,30 +12,41 @@ import java.util.Set;
 
 public class ReviewEvaluation {
 
-    private final String DELIMITER = ":";
-    private final Map<String, List<EvaluationOptionType>> optionData;
-    private final Map<Long, List<EvaluationFieldType>> fieldData;
+    private final Map<String, List<EvaluationOptionType>> fieldOptionsMap;
+    private final Map<Long, List<EvaluationFieldType>> reviewFieldsMap;
 
     public ReviewEvaluation() {
-        this.fieldData = new HashMap<>();
-        this.optionData = new HashMap<>();
+        this.reviewFieldsMap = new HashMap<>();
+        this.fieldOptionsMap = new HashMap<>();
     }
 
-    private String buildOptionKey(Long reviewId, EvaluationFieldType field) {
+    private String buildFieldOptionsKey(
+        Long reviewId,
+        EvaluationFieldType field
+    ) {
         return reviewId + DELIMITER + field.getCode();
     }
 
     private boolean containsKey(Long reviewId) {
-        return this.fieldData.containsKey(reviewId);
+        return this.reviewFieldsMap.containsKey(reviewId);
     }
 
-    private boolean containsKey(Long reviewId, EvaluationFieldType field) {
-        String optionKey = buildOptionKey(reviewId, field);
-        return this.optionData.containsKey(optionKey);
+    private boolean containsKey(
+        Long reviewId,
+        EvaluationFieldType field
+    ) {
+        String fieldOptionsKey = buildFieldOptionsKey(
+            reviewId,
+            field
+        );
+        return this.fieldOptionsMap.containsKey(fieldOptionsKey);
     }
 
     private void add(Long reviewId) {
-        this.fieldData.put(reviewId, new ArrayList<>());
+        this.reviewFieldsMap.put(
+            reviewId,
+            new ArrayList<>()
+        );
     }
 
     private void add(
@@ -43,10 +56,16 @@ public class ReviewEvaluation {
         if (!containsKey(reviewId)) {
             add(reviewId);
         }
-        this.fieldData.get(reviewId).add(field);
+        this.reviewFieldsMap.get(reviewId).add(field);
 
-        String optionKey = buildOptionKey(reviewId, field);
-        this.optionData.put(optionKey, new ArrayList<>());
+        String fieldOptionsKey = buildFieldOptionsKey(
+            reviewId,
+            field
+        );
+        this.fieldOptionsMap.put(
+            fieldOptionsKey,
+            new ArrayList<>()
+        );
     }
 
     public void add(
@@ -57,8 +76,11 @@ public class ReviewEvaluation {
         if (!containsKey(reviewId, field)) {
             add(reviewId, field);
         }
-        String optionKey = buildOptionKey(reviewId, field);
-        this.optionData.get(optionKey).add(option);
+        String fieldOptionsKey = buildFieldOptionsKey(
+            reviewId,
+            field
+        );
+        this.fieldOptionsMap.get(fieldOptionsKey).add(option);
     }
 
     public void add(
@@ -69,21 +91,36 @@ public class ReviewEvaluation {
         if (!containsKey(reviewId, field)) {
             add(reviewId, field);
         }
-        String optionKey = buildOptionKey(reviewId, field);
-        this.optionData.get(optionKey).addAll(options);
+        String fieldOptionsKey = buildFieldOptionsKey(
+            reviewId,
+            field
+        );
+        this.fieldOptionsMap.get(fieldOptionsKey).addAll(options);
     }
 
     public Set<Long> getReviewIdSet() {
-        return this.fieldData.keySet();
+        return this.reviewFieldsMap.keySet();
     }
 
     public List<EvaluationFieldType> getFields(Long reviewId) {
-        return this.fieldData.get(reviewId);
+        return this.reviewFieldsMap.getOrDefault(
+            reviewId,
+            new ArrayList<>()
+        );
     }
 
-    public List<EvaluationOptionType> getOptions(Long reviewId, EvaluationFieldType field) {
-        String optionKey = buildOptionKey(reviewId, field);
-        return this.optionData.get(optionKey);
+    public List<EvaluationOptionType> getOptions(
+        Long reviewId,
+        EvaluationFieldType field
+    ) {
+        String fieldOptionsKey = buildFieldOptionsKey(
+            reviewId,
+            field
+        );
+        return this.fieldOptionsMap.getOrDefault(
+            fieldOptionsKey,
+            new ArrayList<>()
+        );
     }
 
 }
