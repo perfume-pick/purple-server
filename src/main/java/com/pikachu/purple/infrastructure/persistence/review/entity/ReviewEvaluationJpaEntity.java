@@ -57,17 +57,15 @@ public class ReviewEvaluationJpaEntity extends BaseEntity {
 
         Long reviewId = reviewJpaEntity.getId();
         reviewEvaluation.getFields(reviewId).forEach(
-            field -> {
-                reviewEvaluation.getOptions(reviewId, field).forEach(
-                    option -> reviewEvaluationJpaEntities.add(
-                        ReviewEvaluationJpaEntity.builder()
-                            .reviewJpaEntity(reviewJpaEntity)
-                            .fieldCode(field.getCode())
-                            .optionCode(option.getCode())
-                            .build()
-                    )
-                );
-            }
+            field -> reviewEvaluation.getOptions(reviewId, field).forEach(
+                option -> reviewEvaluationJpaEntities.add(
+                    ReviewEvaluationJpaEntity.builder()
+                        .reviewJpaEntity(reviewJpaEntity)
+                        .fieldCode(field.getCode())
+                        .optionCode(option.getCode())
+                        .build()
+                )
+            )
         );
         return reviewEvaluationJpaEntities;
     }
