@@ -20,7 +20,7 @@ public class ReviewEvaluation {
     }
 
     private String buildOptionKey(Long reviewId, EvaluationFieldType field) {
-        return String.valueOf(reviewId) + DELIMITER + field.getCode();
+        return reviewId + DELIMITER + field.getCode();
     }
 
     private boolean containsKey(Long reviewId) {
