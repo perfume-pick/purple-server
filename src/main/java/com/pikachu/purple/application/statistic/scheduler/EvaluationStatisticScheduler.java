@@ -10,7 +10,6 @@ import com.pikachu.purple.domain.statistic.EvaluationStatistic;
 import com.pikachu.purple.util.DateUtil;
 import java.util.Arrays;
 import java.util.EnumMap;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import lombok.RequiredArgsConstructor;
@@ -31,7 +30,7 @@ public class EvaluationStatisticScheduler {
         List<Long> perfumeIds = getPerfumeIdsUseCase.invoke().perfumeIds();
 
         String theDayBeforeYesterday = DateUtil.theDayBeforeYesterday();
-        EvaluationStatistic evaluationStatisticFound = evaluationStatisticDomainService
+        EvaluationStatistic theDayBeforeYesterdayEvaluationStatistic = evaluationStatisticDomainService
             .find(theDayBeforeYesterday);
 
         String yesterday = DateUtil.yesterday();
@@ -39,14 +38,12 @@ public class EvaluationStatisticScheduler {
             getReviewsDetailWithEvaluationByUpdatedDateUseCase.invoke(
                 new GetReviewsDetailWithEvaluationByUpdatedDateUseCase.Command(yesterday)
             ).reviews();
-        Map<Long, Map<EvaluationFieldType, Map<EvaluationOptionType, Integer>>>
-            reviewEvaluationCountMap = sumToMap(reviews);
-
+        EvaluationStatistic yesterdayEvaluationStatistic = sum(reviews);
 
         EvaluationStatistic evaluationStatistic = calculateVotes(
             perfumeIds,
-            evaluationStatisticFound,
-            reviewEvaluationCountMap
+            theDayBeforeYesterdayEvaluationStatistic,
+            yesterdayEvaluationStatistic
         );
 
         evaluationStatisticDomainService.update(
@@ -56,16 +53,13 @@ public class EvaluationStatisticScheduler {
 
     }
 
-    private Map<Long, Map<EvaluationFieldType, Map<EvaluationOptionType, Integer>>>
-    sumToMap(List<Review> reviews) {
-        Map<Long, Map<EvaluationFieldType, Map<EvaluationOptionType, Integer>>>
-            reviewEvaluationCountMap = new HashMap<>();
+    private EvaluationStatistic sum(List<Review> reviews) {
+        EvaluationStatistic evaluationStatistic = new EvaluationStatistic();
 
         reviews.forEach(
             review -> review.getEvaluation().getFields(review.getId()).forEach(
                 fieldType -> review.getEvaluation().getOptions(review.getId(), fieldType).forEach(
-                    optionType -> add(
-                        reviewEvaluationCountMap,
+                    optionType -> evaluationStatistic.increase(
                         review.getPerfume().getId(),
                         fieldType,
                         optionType
@@ -74,7 +68,7 @@ public class EvaluationStatisticScheduler {
             )
         );
 
-        return reviewEvaluationCountMap;
+        return evaluationStatistic;
     }
 
     private void add(
@@ -104,31 +98,30 @@ public class EvaluationStatisticScheduler {
 
     private EvaluationStatistic calculateVotes(
         List<Long> perfumeIds,
-        EvaluationStatistic evaluationStatisticFound,
-        Map<Long, Map<EvaluationFieldType, Map<EvaluationOptionType, Integer>>> reviewEvaluationCountMap
+        EvaluationStatistic theDayBeforeYesterdayEvaluationStatistic,
+        EvaluationStatistic yesterdayEvaluationStatistic
     ) {
         EvaluationStatistic evaluationStatistic = new EvaluationStatistic();
         perfumeIds.forEach(
             perfumeId -> Arrays.stream(EvaluationFieldType.values()).forEach(
                 field -> field.getEvaluationOptionTypes().forEach(
                     option -> {
-                        int previousVotes = evaluationStatisticFound.getVotes(
+                        int theDayBeforeYesterdayVotes = theDayBeforeYesterdayEvaluationStatistic.getVotes(
                             perfumeId,
                             field,
                             option
                         );
-                        int yesterdayCounts = getMapValue(
-                            reviewEvaluationCountMap,
+                        int yesterdayVotes = yesterdayEvaluationStatistic.getVotes(
                             perfumeId,
                             field,
                             option
                         );
 
-                        evaluationStatistic.add(
+                        evaluationStatistic.set(
                             perfumeId,
                             field,
                             option,
-                            previousVotes + yesterdayCounts
+                            theDayBeforeYesterdayVotes + yesterdayVotes
                         );
                     }
                 )
@@ -138,14 +131,4 @@ public class EvaluationStatisticScheduler {
         return evaluationStatistic;
     }
 
-    private int getMapValue(Map<Long, Map<EvaluationFieldType, Map<EvaluationOptionType, Integer>>> map, Long perfumeId, EvaluationFieldType fieldType, EvaluationOptionType optionType) {
-        if (map.get(perfumeId) != null
-            && map.get(perfumeId).get(fieldType) != null
-            && map.get(perfumeId).get(fieldType).get(optionType) != null)
-        {
-            return map.get(perfumeId).get(fieldType).get(optionType);
-        }
-        return 0;
-    }
-    
 }
