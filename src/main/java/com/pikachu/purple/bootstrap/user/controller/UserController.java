@@ -5,9 +5,11 @@ import com.pikachu.purple.application.history.port.in.visithistory.DeleteVisitHi
 import com.pikachu.purple.application.history.port.in.visithistory.GetVisitHistoriesUseCase;
 import com.pikachu.purple.application.history.port.in.searchhistory.DeleteSearchHistoriesUseCase;
 import com.pikachu.purple.application.history.port.in.searchhistory.GetSearchHistoriesUseCase;
+import com.pikachu.purple.application.review.port.in.review.GetReviewByPerfumeIdAndUserUseCase;
 import com.pikachu.purple.application.user.port.in.user.UpdateProfileUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.user.api.UserApi;
+import com.pikachu.purple.bootstrap.user.dto.response.GetReviewByPerfumeIdAndUserResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetVisitHistoriesResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetSearchHistoriesResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetUserProfileResponse;
@@ -26,6 +28,7 @@ public class UserController implements UserApi {
     private final CreateVisitHistoryUseCase createVisitHistoryUseCase;
     private final GetVisitHistoriesUseCase getVisitHistoriesUseCase;
     private final DeleteVisitHistoriesUseCase deleteVisitHistoriesUseCase;
+    private final GetReviewByPerfumeIdAndUserUseCase getReviewByPerfumeIdAndUserUseCase;
 
     @Override
     public SuccessResponse<GetUserProfileResponse> updateProfile(
@@ -82,6 +85,15 @@ public class UserController implements UserApi {
     @Override
     public void deleteAllVisitHistory() {
         deleteVisitHistoriesUseCase.invoke();
+    }
+
+    @Override
+    public SuccessResponse<GetReviewByPerfumeIdAndUserResponse> findReviewByPerfumeIdAndUser(
+        Long perfumeId) {
+        GetReviewByPerfumeIdAndUserUseCase.Result result = getReviewByPerfumeIdAndUserUseCase.invoke(
+            new GetReviewByPerfumeIdAndUserUseCase.Command(perfumeId));
+
+        return SuccessResponse.of(new GetReviewByPerfumeIdAndUserResponse(result.reviewByUserDTO()));
     }
 
 }

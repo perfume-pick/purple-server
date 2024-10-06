@@ -64,6 +64,17 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
     }
 
     @Override
+    public Review findWithPerfumeAndReviewEvaluationAndMood(
+        Long userId,
+        Long perfumeId
+    ) {
+        return reviewRepository.findWithPerfumeAndReviewEvaluationAndMood(
+            userId,
+            perfumeId
+        );
+    }
+
+    @Override
     public Review find(Long reviewId) {
         return reviewRepository.find(reviewId);
     }

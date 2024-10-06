@@ -30,4 +30,6 @@ public interface ReviewRepository {
 
     void deleteById(Long id);
 
+    Review findWithPerfumeAndReviewEvaluationAndMood(Long userId, Long perfumeId);
+
 }
