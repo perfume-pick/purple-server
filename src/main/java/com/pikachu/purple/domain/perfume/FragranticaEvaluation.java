@@ -32,6 +32,17 @@ public class FragranticaEvaluation {
         return this.fieldOptionsMap.containsKey(field);
     }
 
+    private boolean containsKey(
+        EvaluationFieldType field,
+        EvaluationOptionType option
+    ) {
+        String optionVotesKey = buildOptionVotesKey(
+            field,
+            option
+        );
+        return this.optionVotesMap.containsKey(optionVotesKey);
+    }
+
     private void add(EvaluationFieldType field) {
         this.fieldOptionsMap.put(
             field,
@@ -39,15 +50,30 @@ public class FragranticaEvaluation {
         );
     }
 
-    public void add(
+    private void add(
         EvaluationFieldType field,
-        EvaluationOptionType option,
-        int votes
+        EvaluationOptionType option
     ) {
         if (!containsKey(field)) {
             add(field);
         }
         this.fieldOptionsMap.get(field).add(option);
+
+        String optionVotesKey = buildOptionVotesKey(
+            field,
+            option
+        );
+        this.optionVotesMap.put(optionVotesKey, 0);
+    }
+
+    public void set(
+        EvaluationFieldType field,
+        EvaluationOptionType option,
+        int votes
+    ) {
+        if (!containsKey(field, option)) {
+            add(field, option);
+        }
 
         String optionVotesKey = buildOptionVotesKey(
             field,
