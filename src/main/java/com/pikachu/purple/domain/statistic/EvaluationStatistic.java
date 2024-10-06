@@ -5,15 +5,22 @@ import static com.pikachu.purple.util.StringUtil.DELIMITER;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 public class EvaluationStatistic {
 
-    private Map<Long, List<EvaluationFieldType>> perfumeFieldsMap;
-    private Map<String, List<EvaluationOptionType>> fieldOptionsMap;
-    private Map<String, Integer> optionVotesMap;
+    private final Map<Long, List<EvaluationFieldType>> perfumeFieldsMap;
+    private final Map<String, List<EvaluationOptionType>> fieldOptionsMap;
+    private final Map<String, Integer> optionVotesMap;
+
+    public EvaluationStatistic() {
+        this.perfumeFieldsMap = new HashMap<>();
+        this.fieldOptionsMap = new HashMap<>();
+        this.optionVotesMap = new HashMap<>();
+    }
 
     private String buildFieldOptionsKey(
         Long perfumeId,
