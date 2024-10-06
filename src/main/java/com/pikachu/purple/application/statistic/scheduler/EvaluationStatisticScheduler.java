@@ -4,14 +4,11 @@ import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumeIdsUseCa
 import com.pikachu.purple.application.review.port.in.review.GetReviewsDetailWithEvaluationByUpdatedDateUseCase;
 import com.pikachu.purple.application.statistic.service.domain.EvaluationStatisticDomainService;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
-import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.statistic.EvaluationStatistic;
 import com.pikachu.purple.util.DateUtil;
 import java.util.Arrays;
-import java.util.EnumMap;
 import java.util.List;
-import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -34,11 +31,11 @@ public class EvaluationStatisticScheduler {
             .find(theDayBeforeYesterday);
 
         String yesterday = DateUtil.yesterday();
-        List<Review> reviews =
+        List<Review> yesterdayReviews =
             getReviewsDetailWithEvaluationByUpdatedDateUseCase.invoke(
                 new GetReviewsDetailWithEvaluationByUpdatedDateUseCase.Command(yesterday)
             ).reviews();
-        EvaluationStatistic yesterdayEvaluationStatistic = sum(reviews);
+        EvaluationStatistic yesterdayEvaluationStatistic = sum(yesterdayReviews);
 
         EvaluationStatistic evaluationStatistic = calculateVotes(
             perfumeIds,
@@ -69,31 +66,6 @@ public class EvaluationStatisticScheduler {
         );
 
         return evaluationStatistic;
-    }
-
-    private void add(
-        Map<Long, Map<EvaluationFieldType, Map<EvaluationOptionType, Integer>>> reviewEvaluationCountMap,
-        Long perfumeId,
-        EvaluationFieldType fieldType,
-        EvaluationOptionType optionType
-    ) {
-        int votes = reviewEvaluationCountMap
-            .getOrDefault(
-                perfumeId,
-                new EnumMap<>(EvaluationFieldType.class)
-            ).getOrDefault(
-                fieldType,
-                new EnumMap<>(EvaluationOptionType.class)
-            ).getOrDefault(
-                optionType,
-                0
-            );
-
-        reviewEvaluationCountMap
-            .get(perfumeId)
-            .get(fieldType)
-            .put(optionType, votes + 1);
-
     }
 
     private EvaluationStatistic calculateVotes(
