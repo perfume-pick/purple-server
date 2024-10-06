@@ -6,7 +6,10 @@ import java.util.List;
 
 public interface StarRatingStatisticRepository {
 
-    List<StarRatingStatistic> findAllByPerfumeId(Long perfumeId);
+    List<StarRatingStatistic> findAll(
+        String statisticsDate,
+        Long perfumeId
+    );
 
     void increaseVotes(
         Long perfumeId,

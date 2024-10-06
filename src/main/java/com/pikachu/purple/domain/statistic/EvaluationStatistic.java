@@ -5,15 +5,22 @@ import static com.pikachu.purple.util.StringUtil.DELIMITER;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 public class EvaluationStatistic {
 
-    private Map<Long, List<EvaluationFieldType>> perfumeFieldsMap;
-    private Map<String, List<EvaluationOptionType>> fieldOptionsMap;
-    private Map<String, Integer> optionVotesMap;
+    private final Map<Long, List<EvaluationFieldType>> perfumeFieldsMap;
+    private final Map<String, List<EvaluationOptionType>> fieldOptionsMap;
+    private final Map<String, Integer> optionVotesMap;
+
+    public EvaluationStatistic() {
+        this.perfumeFieldsMap = new HashMap<>();
+        this.fieldOptionsMap = new HashMap<>();
+        this.optionVotesMap = new HashMap<>();
+    }
 
     private String buildFieldOptionsKey(
         Long perfumeId,
@@ -48,6 +55,19 @@ public class EvaluationStatistic {
         return this.fieldOptionsMap.containsKey(fieldOptionsKey);
     }
 
+    private boolean containsKey(
+        Long perfumeId,
+        EvaluationFieldType field,
+        EvaluationOptionType option
+    ) {
+        String optionVotesKey = buildOptionVotesKey(
+            perfumeId,
+            field,
+            option
+        );
+        return this.optionVotesMap.containsKey(optionVotesKey);
+    }
+
     private void add(Long perfumeId) {
         this.perfumeFieldsMap.put(
             perfumeId,
@@ -74,11 +94,10 @@ public class EvaluationStatistic {
         );
     }
 
-    public void add(
+    private void add(
         Long perfumeId,
         EvaluationFieldType field,
-        EvaluationOptionType option,
-        int votes
+        EvaluationOptionType option
     ) {
         if (!containsKey(perfumeId, field)) {
             add(perfumeId, field);
@@ -94,7 +113,43 @@ public class EvaluationStatistic {
             field,
             option
         );
+        this.optionVotesMap.put(optionVotesKey, 0);
+    }
+
+    public void set(
+        Long perfumeId,
+        EvaluationFieldType field,
+        EvaluationOptionType option,
+        int votes
+    ) {
+        if (!containsKey(perfumeId, field, option)) {
+            add(perfumeId, field, option);
+        }
+
+        String optionVotesKey = buildOptionVotesKey(
+            perfumeId,
+            field,
+            option
+        );
         this.optionVotesMap.put(optionVotesKey, votes);
+    }
+
+    public void increase(
+        Long perfumeId,
+        EvaluationFieldType field,
+        EvaluationOptionType option
+    ) {
+        if (!containsKey(perfumeId, field, option)) {
+            add(perfumeId, field, option);
+        }
+
+        String optionVotesKey = buildOptionVotesKey(
+            perfumeId,
+            field,
+            option
+        );
+        this.optionVotesMap.computeIfPresent(optionVotesKey,
+            (k, previousVotes) -> previousVotes + 1);
     }
 
     public Set<Long> getPerfumeIdSet() {

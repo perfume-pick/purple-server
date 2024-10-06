@@ -10,6 +10,7 @@ import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 import com.pikachu.purple.domain.statistic.EvaluationStatistic;
 import com.pikachu.purple.domain.statistic.StarRatingStatistic;
+import com.pikachu.purple.util.DateUtil;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -25,8 +26,11 @@ public class GetPerfumeStatisticByPerfumeIdApplicationService implements
 
     @Override
     public Result invoke(Command command) {
-        EvaluationStatistic evaluationStatistic = evaluationStatisticDomainService.findByPerfumeIdOrderByVotesDesc(
-            command.perfumeId());
+        String yesterday = DateUtil.yesterday();
+        EvaluationStatistic evaluationStatistic = evaluationStatisticDomainService.findOrderByVotesDesc(
+            yesterday,
+            command.perfumeId()
+        );
 
         List<EvaluationFieldDTO<EvaluationOptionStatisticDTO>> evaluationFieldDTOs = new ArrayList<>();
         for (EvaluationFieldType evaluationField : evaluationStatistic.getFields(
@@ -76,8 +80,10 @@ public class GetPerfumeStatisticByPerfumeIdApplicationService implements
             evaluationFieldDTOs.add(evaluationFieldDTO);
         }
 
-        List<StarRatingStatistic> starRatingStatistics = starRatingStatisticDomainService.findAllByPerfumeId(
-            command.perfumeId());
+        List<StarRatingStatistic> starRatingStatistics = starRatingStatisticDomainService.findAll(
+            yesterday,
+            command.perfumeId()
+        );
         int totalVotes = starRatingStatistics.stream().mapToInt(StarRatingStatistic::getVotes)
             .sum();
 

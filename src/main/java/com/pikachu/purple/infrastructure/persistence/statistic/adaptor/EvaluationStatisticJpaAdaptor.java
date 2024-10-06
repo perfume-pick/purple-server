@@ -68,12 +68,13 @@ public class EvaluationStatisticJpaAdaptor implements EvaluationStatisticReposit
     }
 
     @Override
-    public EvaluationStatistic findByPerfumeIdOrderByVotesDesc(Long perfumeId) {
-        String today = DateUtil.today();
-
+    public EvaluationStatistic findOrderByVotesDesc(
+        String statisticsDate,
+        Long perfumeId
+    ) {
         List<EvaluationStatisticJpaEntity> evaluationStatisticJpaEntities =
-            evaluationStatisticJpaRepository.findAllByTodayAndPerfumeIdOrderByVotesDesc(
-                today,
+            evaluationStatisticJpaRepository.findAllByStatisticsDateAndPerfumeIdOrderByVotesDesc(
+                statisticsDate,
                 perfumeId
             );
 

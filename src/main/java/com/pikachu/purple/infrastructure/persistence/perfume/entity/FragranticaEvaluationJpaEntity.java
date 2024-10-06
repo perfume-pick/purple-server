@@ -43,7 +43,7 @@ public class FragranticaEvaluationJpaEntity {
     public static FragranticaEvaluation toDomain(List<FragranticaEvaluationJpaEntity> jpaEntities) {
         FragranticaEvaluation domain = new FragranticaEvaluation();
         for (FragranticaEvaluationJpaEntity jpaEntity : jpaEntities) {
-            domain.add(
+            domain.set(
                 EvaluationFieldType.of(jpaEntity.getFieldCode()),
                 EvaluationOptionType.of(jpaEntity.getOptionCode()),
                 jpaEntity.getVotes()

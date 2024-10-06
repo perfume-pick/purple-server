@@ -68,7 +68,7 @@ public class EvaluationStatisticJpaEntity extends BaseEntity {
     ) {
         EvaluationStatistic domain = new EvaluationStatistic();
         for (EvaluationStatisticJpaEntity jpaEntity : jpaEntities) {
-            domain.add(
+            domain.set(
                 jpaEntity.getPerfumeJpaEntity().getId(),
                 EvaluationFieldType.of(jpaEntity.getFieldCode()),
                 EvaluationOptionType.of(jpaEntity.getOptionCode()),
