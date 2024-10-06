@@ -16,8 +16,14 @@ public class EvaluationStatisticDomainServiceImpl implements EvaluationStatistic
     private final EvaluationStatisticRepository evaluationStatisticRepository;
 
     @Override
-    public EvaluationStatistic findByPerfumeIdOrderByVotesDesc(Long perfumeId) {
-        return evaluationStatisticRepository.findByPerfumeIdOrderByVotesDesc(perfumeId);
+    public EvaluationStatistic findOrderByVotesDesc(
+        String statisticsDate,
+        Long perfumeId
+    ) {
+        return evaluationStatisticRepository.findOrderByVotesDesc(
+            statisticsDate,
+            perfumeId
+        );
     }
 
     @Override
