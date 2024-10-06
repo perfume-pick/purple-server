@@ -18,8 +18,19 @@ public class StarRatingStatisticDomainServiceImpl implements StarRatingStatistic
     private final StarRatingStatisticRepository starRatingStatisticRepository;
 
     @Override
-    public List<StarRatingStatistic> findAllByPerfumeId(Long perfumeId) {
-        return starRatingStatisticRepository.findAllByPerfumeId(perfumeId);
+    public List<StarRatingStatistic> findAll(String statisticsDate) {
+        return starRatingStatisticRepository.findAll(statisticsDate);
+    }
+
+    @Override
+    public List<StarRatingStatistic> findAll(
+        String statisticsDate,
+        Long perfumeId
+    ) {
+        return starRatingStatisticRepository.findAll(
+            statisticsDate,
+            perfumeId
+        );
     }
 
     @Override
@@ -58,11 +69,6 @@ public class StarRatingStatisticDomainServiceImpl implements StarRatingStatistic
             perfumeId,
             score
         );
-    }
-
-    @Override
-    public List<StarRatingStatistic> findAll(String statisticsDate) {
-       return starRatingStatisticRepository.findAll(statisticsDate);
     }
 
     @Override

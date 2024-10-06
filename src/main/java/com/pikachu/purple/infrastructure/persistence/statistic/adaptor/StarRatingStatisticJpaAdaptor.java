@@ -61,12 +61,14 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
     }
 
     @Override
-    public List<StarRatingStatistic> findAllByPerfumeId(Long perfumeId) {
-        String today = DateUtil.today();
+    public List<StarRatingStatistic> findAll(
+        String statisticsDate,
+        Long perfumeId
+    ) {
 
         List<StarRatingStatisticJpaEntity> starRatingStatisticJpaEntities =
             starRatingStatisticJpaRepository.findAllByTodayAndPerfumeId(
-                today,
+                statisticsDate,
                 perfumeId
             );
 
