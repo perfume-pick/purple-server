@@ -1,5 +1,7 @@
 package com.pikachu.purple.application.statistic.scheduler;
 
+import static com.pikachu.purple.util.StringUtil.DELIMITER;
+
 import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumeIdsUseCase;
 import com.pikachu.purple.application.review.common.dto.PerfumeStarRatingStatisticDTO;
 import com.pikachu.purple.application.review.port.in.starrating.GetStarRatingsByUpdatedDateUseCase;
@@ -30,44 +32,51 @@ public class StarRatingStatisticScheduler {
         List<Long> perfumeIds = getPerfumeIdsUseCase.invoke().perfumeIds();
 
         String theDayBeforeYesterday = DateUtil.theDayBeforeYesterday();
-        List<StarRatingStatistic> starRatingStatisticsFound = starRatingStatisticDomainService
+        List<StarRatingStatistic> theDayBeforeYesterdayStarRatingStatistic = starRatingStatisticDomainService
             .findAll(theDayBeforeYesterday);
-        Map<Long, Map<Integer, Integer>> starRatingStatisticMap = starRatingStatisticsFound.stream()
-            .collect(Collectors.groupingBy(
-                starRatingStatistic -> starRatingStatistic.getPerfume().getId(),
-                Collectors.toMap(
-                    StarRatingStatistic::getScore,
+        Map<String, Integer> theDayBeforeYesterdayStarRatingStatisticMap =
+            theDayBeforeYesterdayStarRatingStatistic.stream()
+                .collect(Collectors.toMap(
+                    starRatingStatistic -> buildMapKey(
+                        starRatingStatistic.getPerfume().getId(),
+                        starRatingStatistic.getScore()
+                    ),
                     StarRatingStatistic::getVotes
-                )
-            ));
+                ));
 
         String yesterday = DateUtil.yesterday();
-        List<StarRating> starRatings = getStarRatingsByUpdateDateUseCase.invoke(
+        List<StarRating> yesterdayStarRatings = getStarRatingsByUpdateDateUseCase.invoke(
             new GetStarRatingsByUpdatedDateUseCase.Command(yesterday)
         ).starRatings();
-        Map<Long, Map<Integer, Integer>> starRatingsCountsMap = starRatings.stream()
-            .collect(Collectors.groupingBy(
-                starRating -> starRating.getPerfume().getId(),
-                Collectors.groupingBy(
-                    StarRating::getScore,
+        Map<String, Integer> yesterdayStarRatingStatisticMap =
+            yesterdayStarRatings.stream()
+                .collect(Collectors.groupingBy(
+                    starRating -> buildMapKey(
+                        starRating.getPerfume().getId(),
+                        starRating.getScore()
+                    ),
                     Collectors.summingInt(starRating -> 1)
-                )
-            ));
+                ));
 
         List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs = new ArrayList<>();
         int[] scores = {1, 2, 3, 4, 5};
         for (Long perfumeId : perfumeIds) {
             List<StarRatingStatistic> starRatingStatistics = new ArrayList<>();
             for (int score : scores) {
-                int previousVotes = getMapValue(starRatingStatisticMap, perfumeId, score);
-                int yesterdayCounts = getMapValue(starRatingsCountsMap, perfumeId, score);
+                String key = buildMapKey(
+                    perfumeId,
+                    score
+                );
+                int theDayBeforeYesterdayVotes = theDayBeforeYesterdayStarRatingStatisticMap.get(key);
+                int yesterdayVotes = yesterdayStarRatingStatisticMap.get(key);
 
                 StarRatingStatistic starRatingStatistic = StarRatingStatistic.builder()
                     .score(score)
-                    .votes(previousVotes + yesterdayCounts)
+                    .votes(theDayBeforeYesterdayVotes + yesterdayVotes)
                     .build();
                 starRatingStatistics.add(starRatingStatistic);
             }
+
             perfumeStarRatingStatisticDTOs.add(
                 PerfumeStarRatingStatisticDTO.builder()
                     .perfumeId(perfumeId)
@@ -83,12 +92,8 @@ public class StarRatingStatisticScheduler {
 
     }
 
-    private int getMapValue(Map<Long, Map<Integer, Integer>> map, Long perfumeId, int score) {
-        if (map.get(perfumeId) != null
-            && map.get(perfumeId).get(score) != null) {
-            return map.get(perfumeId).get(score);
-        }
-        return 0;
+    private String buildMapKey(Long perfumeId, int score) {
+        return perfumeId + DELIMITER + score;
     }
 
 }
