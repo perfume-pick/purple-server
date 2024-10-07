@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .container {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+    }
+    .header {
+      background-color: #f4f4f4;
+      padding: 10px;
+      text-align: center;
+      font-size: 1.5em;
+      color: #333;
+    }
+    .content {
+      margin: 20px 0;
+    }
+    .button {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .button a {
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .button a:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    [Perpicks] 신고 내역입니다.
+  </div>
+  <div class="content">
+    <p>신고가 접수되었습니다.</p>
+    <ul>
+      <li><strong>신고 일자:</strong> <span th:text="${reportDate}"></span></li>
+      <li><strong>신고한 유저 ID:</strong> <span th:text="${reporterId}"></span></li>
+      <li><strong>신고된 유저 ID:</strong> <span th:text="${reportedId}"></span></li>
+      <li><strong>신고된 향수 ID:</strong> <span th:text="${reportedPerfumeId}"></span></li>
+      <li><strong>신고된 향수 이름:</strong> <span th:text="${reportedPerfumeName}"></span></li>
+      <li><strong>신고된 코멘트 내용:</strong> <span th:text="${reportedComment}"></span></li>
+    </ul>
+  </div>
+  <div class="button">
+    <a th:href="${adminLink}">신고 처리</a>
+  </div>
+</div>
+</body>
+</html>

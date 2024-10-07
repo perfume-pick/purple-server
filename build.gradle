@@ -70,6 +70,9 @@ dependencies {
     // flyway
     implementation "org.flywaydb:flyway-core:10.18.0"
     implementation "org.flywaydb:flyway-mysql:10.18.0"
+
+    //thymeleaf
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 }
 
 tasks.named('test') {
