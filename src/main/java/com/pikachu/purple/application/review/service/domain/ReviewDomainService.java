@@ -26,6 +26,11 @@ public interface ReviewDomainService {
 
     List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreAsc(Long perfumeId);
 
+    Review findWithPerfumeAndReviewEvaluationAndMood(
+        Long userId,
+        Long perfumeId
+    );
+
     Review find(Long reviewId);
 
     List<Review> findAllWithEvaluation(

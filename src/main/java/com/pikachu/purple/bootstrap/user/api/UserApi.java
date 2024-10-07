@@ -2,6 +2,7 @@ package com.pikachu.purple.bootstrap.user.api;
 
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.common.security.Secured;
+import com.pikachu.purple.bootstrap.user.dto.response.GetReviewByPerfumeIdAndUserResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetVisitHistoriesResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetSearchHistoriesResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetUserProfileResponse;
@@ -90,5 +91,14 @@ public interface UserApi {
     @DeleteMapping("/my/visit-histories")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void deleteAllVisitHistory();
+
+    @Secured
+    @Operation(
+        summary = "리뷰 조회",
+        description = "향수 상세 페이지 별점 조회"
+    )
+    @GetMapping("/my/perfumes/{perfume-id}/reviews")
+    @ResponseStatus(HttpStatus.OK)
+    SuccessResponse<GetReviewByPerfumeIdAndUserResponse> findReviewByPerfumeIdAndUser(@PathVariable("perfume-id") Long perfumeId);
 
 }

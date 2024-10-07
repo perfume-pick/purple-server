@@ -3,42 +3,40 @@ package com.pikachu.purple.application.review.common.dto;
 import com.pikachu.purple.application.util.IdUtil;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.enums.ReviewType;
-import java.time.Instant;
 import java.util.List;
 
-public record ReviewDTO(
+public record ReviewByUserDTO(
     String reviewId,
-    String nickname,
-    String imageUrl,
-    Instant date,
     ReviewType reviewType,
     int score,
     String content,
     List<ReviewEvaluationFieldDTO> perfumeEvaluation,
-    List<String> moodNames,
-    boolean isComplained,
-    boolean isLiked,
-    int likeCount
+    List<String> moodNames
 ) {
 
-    public static ReviewDTO of(
+    public static ReviewByUserDTO from(Review review) {
+        return new ReviewByUserDTO(
+            IdUtil.toString(review.getId()),
+            review.getType(),
+            review.getStarRating().getScore(),
+            review.getContent(),
+            null,
+            null
+        );
+    }
+
+    public static ReviewByUserDTO of(
         Review review,
         List<ReviewEvaluationFieldDTO> perfumeEvaluation,
         List<String> moodNames
     ) {
-        return new ReviewDTO(
+        return new ReviewByUserDTO(
             IdUtil.toString(review.getId()),
-            review.getUser().getNickname(),
-            review.getUser().getImageUrl(),
-            review.getUpdatedAt(),
             review.getType(),
             review.getStarRating().getScore(),
             review.getContent(),
             perfumeEvaluation,
-            moodNames,
-            false, //TODO
-            false, //TODO
-            review.getLikeCount()
+            moodNames
         );
     }
 

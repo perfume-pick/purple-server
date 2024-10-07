@@ -184,4 +184,17 @@ public class ReviewJpaAdaptor implements ReviewRepository {
         reviewJpaRepository.deleteById(reviewId);
     }
 
+    @Override
+    public Review findWithPerfumeAndReviewEvaluationAndMood(
+        Long userId,
+        Long perfumeId
+    ) {
+        ReviewJpaEntity reviewJpaEntity = reviewJpaRepository.findByUserIdAndPerfumeId(
+            userId,
+            perfumeId
+        ).orElseThrow(() -> ReviewNotFoundException);
+
+        return ReviewJpaEntity.toFullDomain(reviewJpaEntity);
+    }
+
 }
