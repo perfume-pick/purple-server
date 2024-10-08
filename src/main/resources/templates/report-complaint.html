@@ -3,40 +3,98 @@
 <head>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
+
     .container {
       width: 100%;
       max-width: 600px;
-      margin: 0 auto;
       padding: 20px;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-    }
-    .header {
-      background-color: #f4f4f4;
-      padding: 10px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       text-align: center;
-      font-size: 1.5em;
-      color: #333;
     }
+
+    .header {
+      background-color: #6c63ff;
+      padding: 15px;
+      font-size: 1.8em;
+      color: #fff;
+      border-radius: 8px 8px 0 0;
+    }
+
     .content {
       margin: 20px 0;
+      font-size: 1em;
+      line-height: 1.6;
+      color: #333;
+      text-align: left;
     }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 150px auto;
+      column-gap: 10px;
+    }
+
+    .grid-container div {
+      padding: 8px 0;
+      border-bottom: 1px solid #e9e9e9;
+    }
+
+    .grid-container div:nth-child(odd) {
+      font-weight: bold;
+      color: #555;
+    }
+
     .button {
-      text-align: center;
-      margin-top: 20px;
+      margin-top: 30px;
     }
+
     .button a {
-      padding: 10px 20px;
-      background-color: #28a745;
+      padding: 12px 30px;
+      background-color: #6c63ff;
       color: white;
+      font-size: 1em;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 8px rgba(108, 99, 255, 0.2);
     }
+
     .button a:hover {
-      background-color: #218838;
+      background-color: #5751d9;
+      box-shadow: 0 6px 12px rgba(108, 99, 255, 0.3);
+    }
+
+    .footer {
+      font-size: 0.9em;
+      color: #777;
+      margin-top: 30px;
+    }
+
+    /* Responsive design for mobile */
+    @media (max-width: 600px) {
+      .container {
+        padding: 15px;
+      }
+
+      .header {
+        font-size: 1.5em;
+      }
+
+      .button a {
+        padding: 10px 25px;
+        font-size: 0.9em;
+      }
     }
   </style>
 </head>
@@ -47,18 +105,57 @@
   </div>
   <div class="content">
     <p>신고가 접수되었습니다.</p>
-    <ul>
-      <li><strong>신고 일자:</strong> <span th:text="${reportDate}"></span></li>
-      <li><strong>신고한 유저 ID:</strong> <span th:text="${reporterId}"></span></li>
-      <li><strong>신고된 유저 ID:</strong> <span th:text="${reportedId}"></span></li>
-      <li><strong>신고된 향수 ID:</strong> <span th:text="${reportedPerfumeId}"></span></li>
-      <li><strong>신고된 향수 이름:</strong> <span th:text="${reportedPerfumeName}"></span></li>
-      <li><strong>신고된 코멘트 내용:</strong> <span th:text="${reportedComment}"></span></li>
-    </ul>
+    <div class="grid-container">
+      <div>신고 일자:</div>
+      <div th:text="${reportDate}"></div>
+      <div>신고한 유저 ID:</div>
+      <div th:text="${reporterId}"></div>
+      <div>신고된 유저 ID:</div>
+      <div th:text="${reportedId}"></div>
+      <div>신고된 향수 ID:</div>
+      <div th:text="${reportedPerfumeId}"></div>
+      <div>신고된 향수 이름:</div>
+      <div th:text="${reportedPerfumeName}"></div>
+      <div>신고된 코멘트 내용:</div>
+      <div th:text="${reportedComment}"></div>
+    </div>
   </div>
   <div class="button">
-    <a th:href="${adminLink}">신고 처리</a>
+    <a href="#"
+       onclick="sendRequest(this, /*[[${link}]]*/ '${link}'); return false;"
+       style="padding: 12px 30px; background-color: #6c63ff;
+       color: white; font-size: 1em; text-decoration: none; border-radius: 30px;
+       transition: background-color 0.3s ease; box-shadow: 0 4px 8px rgba(108, 99, 255, 0.2);">신고 처리</a>
+  </div>
+
+  <div class="footer">
+    2024 &copy; Perpicks
   </div>
 </div>
+
+<script>
+  function sendRequest(button, url) {
+    console.log("Requesting URL: " + url);
+    fetch(url, {
+      method: 'DELETE'
+    }).then(response => {
+      if (response.ok) {
+        changeButton(button);
+      } else {
+        alert('신고 처리에 실패했습니다.');
+      }
+    }).catch(error => {
+      alert('오류가 발생했습니다: ' + error.message);
+    });
+  }
+
+  function changeButton(button) {
+    button.style.backgroundColor = "#ccc";
+    button.style.color = "#000";
+    button.innerHTML = "처리 완료";
+    button.style.pointerEvents = "none";
+  }
+</script>
+
 </body>
 </html>

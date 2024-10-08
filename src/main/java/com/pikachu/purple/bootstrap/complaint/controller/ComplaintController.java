@@ -2,12 +2,11 @@ package com.pikachu.purple.bootstrap.complaint.controller;
 
 import com.pikachu.purple.application.review.port.in.complaint.GetComplaintFormUseCase;
 import com.pikachu.purple.bootstrap.complaint.api.ComplaintApi;
-import java.time.Instant;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 @RequiredArgsConstructor
 public class ComplaintController implements ComplaintApi {
 
@@ -30,7 +29,7 @@ public class ComplaintController implements ComplaintApi {
         model.addAttribute("reportedPerfumeId", result.complaintFormDTO().perfumeId());
         model.addAttribute("reportedPerfumeName", result.complaintFormDTO().perfumeName());
         model.addAttribute("reportedComment", result.complaintFormDTO().comment());
-        model.addAttribute("adminLink", result.complaintFormDTO().link());
+        model.addAttribute("link", result.complaintFormDTO().link());
 
         return "report-complaint";
     }

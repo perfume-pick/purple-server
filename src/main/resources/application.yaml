@@ -39,6 +39,13 @@ spring:
             required: true
           auth: true
 
+  thymeleaf:
+    cache: false
+    check-template-location: true
+    prefix: classpath:/templates/
+    suffix: .html
+    enabled: true
+
   cloud:
     aws:
       credentials:
@@ -81,10 +88,8 @@ auth:
 uri:
   server: ${SERVER_URI:http://localhost:8080}
   client: ${CLIENT_URI:http://localhost:3000}
-  server-complaint: ${SERVER-COMPLAINT-URI:http://localhost:8080/perpicks/complaints}
-
-email:
-  address: ${EMAIL_ADDRESS}
+  server-review: ${SERVER_REVIEW_URI:http://localhost:8080/perpicks/reviews}
+  server-complaint: ${SERVER_COMPLAINT_URI:http://localhost:8080/perpicks/complaints}
 
 ---
 spring:

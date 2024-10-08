@@ -16,7 +16,8 @@ public record ComplaintFormDTO(
 
     public static ComplaintFormDTO from(
         Review reportedReview,
-        Complaint complaint
+        Complaint complaint,
+        String reviewUri
     ) {
         return new ComplaintFormDTO(
             complaint.getReportedAt(),
@@ -25,7 +26,7 @@ public record ComplaintFormDTO(
             reportedReview.getPerfume().getId(),
             reportedReview.getPerfume().getName(),
             reportedReview.getContent(),
-            ""
+            reviewUri + "/" + reportedReview.getId()
         );
     }
 

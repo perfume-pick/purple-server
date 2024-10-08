@@ -14,7 +14,7 @@ public class MailSenderAdaptor implements MailSender {
 
     private final JavaMailSender javaMailSender;
 
-    @Value(value = "${email.address}")
+    @Value(value = "${mail.username}")
     private String emailAddress;
 
     @Value(value = "${uri.server-complaint}")
