@@ -76,7 +76,7 @@ public interface UserApi {
 
     @Secured
     @Operation(summary = "최근 본 상품 기록 저장")
-    @PostMapping("/my/visit-history/{perfume-id}")
+    @PostMapping("/my/visit-histories/{perfume-id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void createVisitHistory(@PathVariable("perfume-id") Long perfumeId);
 
