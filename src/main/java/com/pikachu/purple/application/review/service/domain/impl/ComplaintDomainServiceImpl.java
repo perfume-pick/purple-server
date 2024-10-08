@@ -6,7 +6,6 @@ import com.pikachu.purple.application.review.util.TokenGenerator;
 import com.pikachu.purple.application.util.IdUtil;
 import com.pikachu.purple.domain.review.Complaint;
 import lombok.RequiredArgsConstructor;
-import org.redisson.api.IdGenerator;
 import org.springframework.stereotype.Service;
 
 @Service
