@@ -67,8 +67,8 @@ public class StarRatingStatisticScheduler {
                     perfumeId,
                     score
                 );
-                int theDayBeforeYesterdayVotes = theDayBeforeYesterdayStarRatingStatisticMap.get(key);
-                int yesterdayVotes = yesterdayStarRatingStatisticMap.get(key);
+                int theDayBeforeYesterdayVotes = theDayBeforeYesterdayStarRatingStatisticMap.getOrDefault(key, 0);
+                int yesterdayVotes = yesterdayStarRatingStatisticMap.getOrDefault(key, 0);
 
                 StarRatingStatistic starRatingStatistic = StarRatingStatistic.builder()
                     .score(score)
