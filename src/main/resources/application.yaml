@@ -88,7 +88,6 @@ auth:
 uri:
   server: ${SERVER_URI:http://localhost:8080}
   client: ${CLIENT_URI:http://localhost:3000}
-  server-review: ${SERVER_REVIEW_URI:http://localhost:8080/perpicks/reviews}
   server-complaint: ${SERVER_COMPLAINT_URI:http://localhost:8080/perpicks/complaints}
 
 ---
