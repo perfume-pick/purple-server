@@ -180,7 +180,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
 
 
     @Override
-    public void deleteById(Long reviewId) {
+    public void delete(Long reviewId) {
         reviewJpaRepository.deleteById(reviewId);
     }
 

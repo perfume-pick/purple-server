@@ -28,7 +28,7 @@ public interface ReviewRepository {
 
     void deleteReviewMoods(Long reviewId);
 
-    void deleteById(Long id);
+    void delete(Long id);
 
     Review findWithPerfumeAndReviewEvaluationAndMood(Long userId, Long perfumeId);
 
