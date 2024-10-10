@@ -65,6 +65,9 @@ public class BusinessException extends RuntimeException {
     public static final BusinessException UserAccordNotFoundException = new BusinessException(
         ErrorCode.USER_ACCORD_NOT_FOUND
     );
+    public static final BusinessException ComplaintNotFoundException = new BusinessException(
+        ErrorCode.COMPLAINT_NOT_FOUND
+    );
 
     private final ErrorCode errorCode;
 

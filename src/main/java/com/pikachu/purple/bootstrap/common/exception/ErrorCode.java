@@ -154,7 +154,14 @@ public enum ErrorCode {
     USER_ACCORD_NOT_FOUND(
         404,
         "UAC001",
-        "사용자 선호 어코드가 존재하지 않습니다."
+        "해당하는 사용자 선호 어코드가 존재하지 않습니다."
+    ),
+
+    // Complaint
+    COMPLAINT_NOT_FOUND(
+        404,
+    "CP001",
+    "해당하는 신고 내역이 존재하지 않습니다."
     );
 
     private final int status;

@@ -134,4 +134,10 @@ public class ReviewJpaEntity extends BaseEntity {
         return domain;
     }
 
+    public static Review toDummy(ReviewJpaEntity jpaEntity) {
+        return Review.builder()
+            .id(jpaEntity.getId())
+            .build();
+    }
+
 }

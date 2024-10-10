@@ -13,7 +13,7 @@ public interface ReviewDomainService {
         ReviewType reviewType
     );
 
-    void deleteById(Long id);
+    void delete(Long id);
 
     void createReviewMoods(
         Long reviewId,

@@ -45,7 +45,7 @@ public class DeleteReviewApplicationService implements DeleteReviewUseCase {
             reviewDomainService.deleteReviewMoods(command.reviewId());
         }
 
-        reviewDomainService.deleteById(command.reviewId());
+        reviewDomainService.delete(command.reviewId());
     }
 
 }

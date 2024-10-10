@@ -26,6 +26,26 @@ spring:
       port: ${REDIS_PORT:6379}
       password: ${REDIS_PASSWORD:secret}
 
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
+            required: true
+          auth: true
+
+  thymeleaf:
+    cache: false
+    check-template-location: true
+    prefix: classpath:/templates/
+    suffix: .html
+    enabled: true
+
   cloud:
     aws:
       credentials:
@@ -68,6 +88,8 @@ auth:
 uri:
   server: ${SERVER_URI:http://localhost:8080}
   client: ${CLIENT_URI:http://localhost:3000}
+  server-complaint: ${SERVER_COMPLAINT_URI:http://localhost:8080/perpicks/complaints}
+
 ---
 spring:
   config:

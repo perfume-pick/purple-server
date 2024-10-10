@@ -33,8 +33,8 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
         return reviewRepository.create(userId, perfumeId, review);
     }
 
-    public void deleteById(Long id) {
-        reviewRepository.deleteById(id);
+    public void delete(Long id) {
+        reviewRepository.delete(id);
     }
 
     @Override

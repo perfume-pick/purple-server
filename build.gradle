@@ -5,6 +5,7 @@ plugins {
     id("jacoco")
     id("org.sonarqube") version '4.4.1.3373'
     id("com.palantir.docker") version '0.36.0'
+    id("org.flywaydb.flyway") version "10.19.0"
 }
 
 group = 'com.pikachu'
@@ -70,6 +71,9 @@ dependencies {
     // flyway
     implementation "org.flywaydb:flyway-core:10.18.0"
     implementation "org.flywaydb:flyway-mysql:10.18.0"
+
+    //thymeleaf
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 }
 
 tasks.named('test') {
