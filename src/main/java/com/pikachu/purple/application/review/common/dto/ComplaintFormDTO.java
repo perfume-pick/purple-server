@@ -26,7 +26,7 @@ public record ComplaintFormDTO(
             reportedReview.getPerfume().getId(),
             reportedReview.getPerfume().getName(),
             reportedReview.getContent(),
-            reviewUri + "/" + reportedReview.getId()
+            reviewUri + "/" + complaint.getId() + "?token=" + complaint.getToken()
         );
     }
 

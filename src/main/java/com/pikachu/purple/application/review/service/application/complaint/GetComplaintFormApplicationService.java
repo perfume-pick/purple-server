@@ -18,8 +18,8 @@ public class GetComplaintFormApplicationService implements GetComplaintFormUseCa
     private final ComplaintDomainService complaintDomainService;
     private final ReviewDomainService reviewDomainService;
 
-    @Value(value = "${uri.server-review}")
-    private String reviewUri;
+    @Value(value = "${uri.server-complaint}")
+    private String complaintUri;
 
     @Transactional
     @Override
@@ -34,7 +34,7 @@ public class GetComplaintFormApplicationService implements GetComplaintFormUseCa
         ComplaintFormDTO complaintFormDTO = ComplaintFormDTO.from(
             review,
             complaint,
-            reviewUri
+            complaintUri
         );
 
         return new Result(complaintFormDTO);
