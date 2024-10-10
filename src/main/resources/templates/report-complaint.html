@@ -59,20 +59,27 @@
       margin-top: 30px;
     }
 
-    .button a {
+    .button button {
       padding: 12px 30px;
       background-color: #6c63ff;
       color: white;
       font-size: 1em;
-      text-decoration: none;
+      border: none;
       border-radius: 30px;
       transition: background-color 0.3s ease;
       box-shadow: 0 4px 8px rgba(108, 99, 255, 0.2);
+      cursor: pointer;
     }
 
-    .button a:hover {
+    .button button:hover {
       background-color: #5751d9;
       box-shadow: 0 6px 12px rgba(108, 99, 255, 0.3);
+    }
+
+    .button button:disabled {
+      background-color: #ccc;
+      color: #000;
+      cursor: not-allowed;
     }
 
     .footer {
@@ -81,7 +88,6 @@
       margin-top: 30px;
     }
 
-    /* Responsive design for mobile */
     @media (max-width: 600px) {
       .container {
         padding: 15px;
@@ -91,7 +97,7 @@
         font-size: 1.5em;
       }
 
-      .button a {
+      .button button {
         padding: 10px 25px;
         font-size: 0.9em;
       }
@@ -121,11 +127,7 @@
     </div>
   </div>
   <div class="button">
-    <a href="#"
-       onclick="sendRequest(this, /*[[${link}]]*/ '${link}'); return false;"
-       style="padding: 12px 30px; background-color: #6c63ff;
-       color: white; font-size: 1em; text-decoration: none; border-radius: 30px;
-       transition: background-color 0.3s ease; box-shadow: 0 4px 8px rgba(108, 99, 255, 0.2);">신고 처리</a>
+    <button id="reportButton" onclick="sendRequest()">신고 처리</button>
   </div>
 
   <div class="footer">
@@ -133,25 +135,31 @@
   </div>
 </div>
 
-<script>
-  function sendRequest(button, url) {
-    console.log("Requesting URL: " + url);
-    fetch(url, {
-      method: 'DELETE'
-    }).then(response => {
-      if (response.ok) {
+<script th:inline="javascript">
+  var apiUrl = /*[[${link}]]*/ '';
+
+  function sendRequest() {
+    var button = document.getElementById('reportButton');
+    button.disabled = true;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('DELETE', apiUrl, true);
+    xhr.onload = function () {
+      if (xhr.status === 204) {
         changeButton(button);
       } else {
         alert('신고 처리에 실패했습니다.');
+        button.disabled = false;
       }
-    }).catch(error => {
-      alert('오류가 발생했습니다: ' + error.message);
-    });
+    };
+    xhr.onerror = function () {
+      alert('오류가 발생했습니다.');
+      button.disabled = false;
+    };
+    xhr.send();
   }
 
   function changeButton(button) {
-    button.style.backgroundColor = "#ccc";
-    button.style.color = "#000";
     button.innerHTML = "처리 완료";
     button.style.pointerEvents = "none";
   }
