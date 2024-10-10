@@ -1,5 +1,6 @@
 package com.pikachu.purple.bootstrap.complaint.controller;
 
+import com.pikachu.purple.application.review.port.in.complaint.DeleteComplaintUseCase;
 import com.pikachu.purple.application.review.port.in.complaint.GetComplaintFormUseCase;
 import com.pikachu.purple.bootstrap.complaint.api.ComplaintApi;
 import lombok.RequiredArgsConstructor;
@@ -11,9 +12,10 @@ import org.springframework.ui.Model;
 public class ComplaintController implements ComplaintApi {
 
     private final GetComplaintFormUseCase getComplaintFormUseCase;
+    private final DeleteComplaintUseCase deleteComplaintUseCase;
 
     @Override
-    public String findComplaint(
+    public String find(
         Long complaintId,
         String token,
         Model model
@@ -32,6 +34,17 @@ public class ComplaintController implements ComplaintApi {
         model.addAttribute("link", result.complaintFormDTO().link());
 
         return "report-complaint";
+    }
+
+    @Override
+    public void delete(
+        Long complaintId,
+        String token
+    ) {
+       deleteComplaintUseCase.invoke(new DeleteComplaintUseCase.Command(
+           complaintId,
+           token
+       ));
     }
 
 }

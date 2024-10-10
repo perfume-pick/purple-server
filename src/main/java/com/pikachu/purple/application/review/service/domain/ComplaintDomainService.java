@@ -14,4 +14,6 @@ public interface ComplaintDomainService {
         String token
     );
 
+    void delete(Long complaintId);
+
 }

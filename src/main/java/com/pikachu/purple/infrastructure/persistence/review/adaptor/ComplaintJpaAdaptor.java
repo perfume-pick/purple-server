@@ -55,13 +55,17 @@ public class ComplaintJpaAdaptor implements ComplaintRepository {
         Long complaintId,
         String token
     ) {
-        log.info("complaintId = {}, token = {}", complaintId, token);
         ComplaintJpaEntity complaintJpaEntity = complaintJpaRepository.findByIdAndToken(
             complaintId,
             token
         ).orElseThrow(() -> ComplaintNotFoundException);
 
         return ComplaintJpaEntity.toDomain(complaintJpaEntity);
+    }
+
+    @Override
+    public void delete(Long complaintId) {
+        complaintJpaRepository.deleteById(complaintId);
     }
 
 }

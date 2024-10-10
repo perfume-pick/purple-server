@@ -41,4 +41,9 @@ public class ComplaintDomainServiceImpl implements ComplaintDomainService {
         );
     }
 
+    @Override
+    public void delete(Long complaintId) {
+        complaintRepository.delete(complaintId);
+    }
+
 }
