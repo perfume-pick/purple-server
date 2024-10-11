@@ -30,11 +30,13 @@ sonar {
     }
 }
 
-flyway {
-    url = project.DB_URL
-    user = project.DB_USERNAME
-    password = project.DB_PASSWORD
-    driver = 'com.mysql.cj.jdbc.Driver'
+if (project.hasProperty('DB_URL')) {
+    flyway {
+        url = project.DB_URL
+        user = project.DB_USERNAME
+        password = project.DB_PASSWORD
+        driver = 'com.mysql.cj.jdbc.Driver'
+    }
 }
 
 configurations {
