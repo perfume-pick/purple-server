@@ -1,3 +1,9 @@
+buildscript {
+    dependencies {
+        classpath 'org.flywaydb:flyway-mysql:10.18.0'
+    }
+}
+
 plugins {
     id("java")
     id("org.springframework.boot") version '3.2.3'
@@ -21,6 +27,15 @@ sonar {
         property("sonar.organization", "pikachu-perfume")
         property("sonar.host.url", "https://sonarcloud.io")
         property("sonar.java.coveragePlugin", "jacoco")
+    }
+}
+
+if (project.hasProperty('DB_URL')) {
+    flyway {
+        url = project.DB_URL
+        user = project.DB_USERNAME
+        password = project.DB_PASSWORD
+        driver = 'com.mysql.cj.jdbc.Driver'
     }
 }
 

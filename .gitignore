@@ -36,3 +36,5 @@ out/
 ### VS Code ###
 .vscode/
 init_data-checkpoint.ipynb
+
+gradle.properties
