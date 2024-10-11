@@ -11,12 +11,10 @@ import com.pikachu.purple.domain.review.enums.SortType;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-@Slf4j
 @RequiredArgsConstructor
 public class GetReviewsByPerfumeIdAndSortTypeApplicationService implements
     GetReviewsByPerfumeIdAndSortTypeUseCase {
