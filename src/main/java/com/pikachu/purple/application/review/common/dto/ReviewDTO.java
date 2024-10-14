@@ -16,12 +16,14 @@ public record ReviewDTO(
     String content,
     List<ReviewEvaluationFieldDTO> perfumeEvaluation,
     List<String> moodNames,
+    boolean isCurrentUserReview,
     boolean isComplained,
     boolean isLiked,
     int likeCount
 ) {
 
     public static ReviewDTO of(
+        Long currentUserId,
         Review review,
         List<ReviewEvaluationFieldDTO> perfumeEvaluation,
         List<String> moodNames
@@ -36,7 +38,8 @@ public record ReviewDTO(
             review.getContent(),
             perfumeEvaluation,
             moodNames,
-            false, //TODO
+            currentUserId.equals(review.getUser().getId()),
+            review.isComplained(),
             false, //TODO
             review.getLikeCount()
         );
