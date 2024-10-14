@@ -1,5 +1,7 @@
 package com.pikachu.purple.application.review.service.application.review;
 
+import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
+
 import com.pikachu.purple.application.review.common.dto.ReviewDTO;
 import com.pikachu.purple.application.review.common.dto.ReviewEvaluationFieldDTO;
 import com.pikachu.purple.application.review.common.dto.ReviewEvaluationOptionDTO;
@@ -24,6 +26,7 @@ public class GetReviewsByPerfumeIdAndSortTypeApplicationService implements
     @Transactional
     @Override
     public Result invoke(Command command) {
+        Long userId = getCurrentUserAuthentication().userId();
         SortType sortType = SortType.transByStr(command.sortType());
 
         List<Review> reviews = new ArrayList<>();
@@ -65,6 +68,7 @@ public class GetReviewsByPerfumeIdAndSortTypeApplicationService implements
                     .toList();
 
                 return ReviewDTO.of(
+                    userId,
                     review,
                     reviewEvaluation,
                     moodNames
