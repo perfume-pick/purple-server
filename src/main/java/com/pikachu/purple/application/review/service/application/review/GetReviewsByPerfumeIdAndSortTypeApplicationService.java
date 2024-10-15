@@ -35,16 +35,22 @@ public class GetReviewsByPerfumeIdAndSortTypeApplicationService implements
             case LIKED:
                 break;
             case LATEST:
-                reviews = reviewDomainService.findAllWithPerfumeAndReviewEvaluationAndMoodOrderByCreatedAtDesc(
-                    command.perfumeId());
+                reviews = reviewDomainService.findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByCreatedAtDesc(
+                    userId,
+                    command.perfumeId()
+                );
                 break;
             case STAR_RATING_HIGH:
-                reviews = reviewDomainService.findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreDesc(
-                    command.perfumeId());
+                reviews = reviewDomainService.findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByScoreDesc(
+                    userId,
+                    command.perfumeId()
+                );
                 break;
             case STAR_RATING_LOW:
-                reviews = reviewDomainService.findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreAsc(
-                    command.perfumeId());
+                reviews = reviewDomainService.findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByScoreAsc(
+                    userId,
+                    command.perfumeId()
+                );
                 break;
             default:
                 break;

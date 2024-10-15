@@ -7,10 +7,8 @@ import com.pikachu.purple.domain.statistic.StarRatingStatistic;
 import com.pikachu.purple.infrastructure.redis.annotation.DistributedLock;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-@Slf4j
 @Service
 @RequiredArgsConstructor
 public class StarRatingStatisticDomainServiceImpl implements StarRatingStatisticDomainService {

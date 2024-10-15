@@ -49,18 +49,36 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
     }
 
     @Override
-    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodOrderByCreatedAtDesc(Long perfumeId) {
-        return reviewRepository.findAllWithPerfumeAndReviewEvaluationAndMoodOrderByCreatedAtDesc(perfumeId);
+    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByCreatedAtDesc(
+        Long userId,
+        Long perfumeId
+    ) {
+        return reviewRepository.findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByCreatedAtDesc(
+            userId,
+            perfumeId
+        );
     }
 
     @Override
-    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreDesc(Long perfumeId) {
-        return reviewRepository.findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreDesc(perfumeId);
+    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByScoreDesc(
+        Long userId,
+        Long perfumeId
+    ) {
+        return reviewRepository.findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByScoreDesc(
+            userId,
+            perfumeId
+        );
     }
 
     @Override
-    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreAsc(Long perfumeId) {
-        return reviewRepository.findAllWithPerfumeAndReviewEvaluationAndMoodOrderByScoreAsc(perfumeId);
+    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByScoreAsc(
+        Long userId,
+        Long perfumeId
+    ) {
+        return reviewRepository.findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByScoreAsc(
+            userId,
+            perfumeId
+        );
     }
 
     @Override
