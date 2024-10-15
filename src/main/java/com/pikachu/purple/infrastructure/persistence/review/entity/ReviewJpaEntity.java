@@ -1,7 +1,6 @@
 package com.pikachu.purple.infrastructure.persistence.review.entity;
 
 import com.pikachu.purple.domain.review.Review;
-import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.domain.review.enums.ReviewType;
 import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
 import com.pikachu.purple.infrastructure.persistence.mood.entity.MoodJpaEntity;
@@ -84,6 +83,9 @@ public class ReviewJpaEntity extends BaseEntity {
     @OneToMany(mappedBy = "reviewJpaEntity")
     private List<ReviewMoodJpaEntity> reviewMoodJpaEntities = new ArrayList<>();
 
+    @OneToMany(mappedBy = "reviewJpaEntity")
+    private List<ComplaintJpaEntity> complaintJpaEntities = new ArrayList<>();
+
     public void update(
         String content,
         ReviewType reviewType
@@ -121,7 +123,19 @@ public class ReviewJpaEntity extends BaseEntity {
         return domain;
     }
 
-    public static Review toFullDomain(ReviewJpaEntity jpaEntity) {
+    public static Review toDomainWithEvaluationAndMoods(ReviewJpaEntity jpaEntity) {
+        Review domain = toDomain(jpaEntity);
+        domain.setEvaluation(ReviewEvaluationJpaEntity.toDomain(jpaEntity.reviewEvaluationJpaEntities));
+        domain.setMoods(jpaEntity.getReviewMoodJpaEntities().stream()
+            .map(reviewMoodJpaEntity ->
+                MoodJpaEntity.toDomain(reviewMoodJpaEntity.getMoodJpaEntity())
+            )
+            .toList());
+
+        return domain;
+    }
+
+    public static Review toFullDomain(ReviewJpaEntity jpaEntity, Long currentUserId) {
         Review domain = toDomain(jpaEntity);
         domain.setPerfume(PerfumeJpaEntity.toDomain(jpaEntity.getPerfumeJpaEntity()));
         domain.setEvaluation(ReviewEvaluationJpaEntity.toDomain(jpaEntity.getReviewEvaluationJpaEntities()));
@@ -130,6 +144,16 @@ public class ReviewJpaEntity extends BaseEntity {
                 MoodJpaEntity.toDomain(reviewMoodJpaEntity.getMoodJpaEntity())
             )
             .toList());
+
+        boolean isComplained = jpaEntity.getComplaintJpaEntities().stream()
+            .anyMatch(complaintJpaEntity -> complaintJpaEntity
+                .getUserJpaEntity()
+                .getId()
+                .equals(currentUserId));
+        domain.setComplained(isComplained);
+
+        // TODO: 구현 필요
+        domain.setLiked(false);
 
         return domain;
     }

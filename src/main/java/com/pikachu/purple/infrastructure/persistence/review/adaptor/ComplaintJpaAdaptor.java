@@ -13,12 +13,10 @@ import com.pikachu.purple.infrastructure.persistence.review.repository.ReviewJpa
 import com.pikachu.purple.infrastructure.persistence.user.entity.UserJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.user.repository.UserJpaRepository;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-@Slf4j
 public class ComplaintJpaAdaptor implements ComplaintRepository {
 
     private final ComplaintJpaRepository complaintJpaRepository;
