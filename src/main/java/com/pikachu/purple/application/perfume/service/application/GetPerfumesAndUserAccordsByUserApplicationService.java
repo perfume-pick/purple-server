@@ -24,7 +24,7 @@ public class GetPerfumesAndUserAccordsByUserApplicationService implements
 
     private final PerfumeDomainService perfumeDomainService;
     private final GetTopThreeUserAccordsUseCase getTopThreeUserAccordsUseCase;
-    private final static int MAX_SIZE = 30;
+    private static final int MAX_SIZE = 30;
 
     @Transactional
     @Override
