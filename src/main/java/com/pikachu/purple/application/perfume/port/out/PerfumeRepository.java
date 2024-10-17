@@ -12,7 +12,7 @@ public interface PerfumeRepository {
 
     List<Perfume> findAllByBrandNames(List<String> brandNames);
 
-    List<Perfume> findAllWithPerfumeAccordsByAccords(List<Accord> accords);
+    List<Perfume> findAllWithPerfumeAccordsByAccords(List<Accord> accords, int maxSize);
 
     List<Perfume> findAllHavingReviewCountNotZeroOrderByReviewCount(int maxSize);
 

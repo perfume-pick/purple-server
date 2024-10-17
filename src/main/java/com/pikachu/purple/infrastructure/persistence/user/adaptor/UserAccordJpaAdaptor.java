@@ -14,6 +14,7 @@ import com.pikachu.purple.infrastructure.persistence.user.repository.UserAccordJ
 import com.pikachu.purple.infrastructure.persistence.user.repository.UserJpaRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Limit;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -45,9 +46,14 @@ public class UserAccordJpaAdaptor implements UserAccordRepository {
     }
 
     @Override
-    public List<UserAccord> findAllByUserId(Long userId) {
-        List<UserAccordJpaEntity> userAccordJpaEntities = userAccordJpaRepository.findAllByUserId(
-            userId);
+    public List<UserAccord> findAllOrderByScoreDesc(
+        Long userId,
+        int maxSize
+    ) {
+        List<UserAccordJpaEntity> userAccordJpaEntities = userAccordJpaRepository.findAllByUserIdOrderByScoreDesc(
+            userId,
+            Limit.of(maxSize)
+        );
 
         return userAccordJpaEntities.stream()
             .map(UserAccordJpaEntity::toDomain)

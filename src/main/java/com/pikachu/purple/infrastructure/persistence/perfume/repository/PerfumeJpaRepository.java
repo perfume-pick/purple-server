@@ -20,8 +20,10 @@ public interface PerfumeJpaRepository extends JpaRepository<PerfumeJpaEntity, Lo
     @Query("select p "
         + "from PerfumeJpaEntity p "
         + "left join PerfumeAccordJpaEntity pa on p = pa.perfumeJpaEntity "
-        + "where pa.accordJpaEntity in :accordJpaEntities")
-    List<PerfumeJpaEntity> findAllByAccords(List<AccordJpaEntity> accordJpaEntities);
+        + "where pa.accordJpaEntity in :accordJpaEntities "
+        + "group by p "
+        + "order by count(pa) desc")
+    List<PerfumeJpaEntity> findAllByAccords(List<AccordJpaEntity> accordJpaEntities, Limit limit);
 
 
     @Query("select p "

@@ -47,12 +47,17 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
     }
 
     @Override
-    public List<Perfume> findAllWithPerfumeAccordsByAccords(List<Accord> accords) {
+    public List<Perfume> findAllWithPerfumeAccordsByAccords(
+        List<Accord> accords,
+        int maxSize
+    ) {
         List<AccordJpaEntity> accordJpaEntities = accords.stream()
             .map(AccordJpaEntity::toJpaEntity).toList();
 
         List<PerfumeJpaEntity> perfumeJpaEntities = perfumeJpaRepository.findAllByAccords(
-            accordJpaEntities);
+            accordJpaEntities,
+            Limit.of(maxSize)
+        );
 
         return perfumeJpaEntities.stream()
             .map(PerfumeJpaEntity::toDomainWithPerfumeAccord)

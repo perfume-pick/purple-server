@@ -16,7 +16,7 @@ public class RecommendUserAccordsProvider {
     private static final double[] weights = {-0.9, -0.7, 0.0, 0.8, 1.0};
     private static final Map<String, Double> perfumeAccordScoreMap = new HashMap<>();
 
-    public List<UserAccord> getTopThreeUserAccords(
+    public List<UserAccord> get(
         User user,
         List<StarRating> starRatings
     ) {
@@ -39,7 +39,6 @@ public class RecommendUserAccordsProvider {
 
         return perfumeAccordScoreMap.entrySet().stream()
             .sorted(Map.Entry.<String, Double>comparingByValue().reversed())
-            .limit(3)
             .map(entry -> UserAccord.builder()
                     .user(user)
                     .name(entry.getKey())
@@ -50,7 +49,7 @@ public class RecommendUserAccordsProvider {
     }
 
     private double convert(int score){
-        return score * weights[score-1];
+        return weights[score-1];
     }
 
 }

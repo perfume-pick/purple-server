@@ -7,6 +7,6 @@ public interface UserAccordRepository {
 
     void createAll(Long userId, List<UserAccord> userAccords);
 
-    List<UserAccord> findAllByUserId(Long userId);
+    List<UserAccord> findAllOrderByScoreDesc(Long userId, int maxSize);
 
 }

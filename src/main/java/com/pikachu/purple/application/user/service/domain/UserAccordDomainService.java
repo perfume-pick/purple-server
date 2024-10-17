@@ -5,7 +5,10 @@ import java.util.List;
 
 public interface UserAccordDomainService {
 
-    List<UserAccord> findAllByUserId(Long userId);
+    List<UserAccord> findAllOrderByScoreDesc(
+        Long userId,
+        int maxSize
+    );
 
     void createAll(Long userId, List<UserAccord> userAccords);
 
