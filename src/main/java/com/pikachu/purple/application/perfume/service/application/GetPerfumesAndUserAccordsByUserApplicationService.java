@@ -7,7 +7,7 @@ import com.pikachu.purple.application.perfume.common.dto.UserAccordDTO;
 import com.pikachu.purple.application.perfume.common.vo.PerfumeAccordMatchVO;
 import com.pikachu.purple.application.perfume.port.in.GetPerfumesAndUserAccordsByUserUseCase;
 import com.pikachu.purple.application.perfume.service.domain.PerfumeDomainService;
-import com.pikachu.purple.application.user.port.in.useraccord.GetUserAccordsUseCase;
+import com.pikachu.purple.application.user.port.in.useraccord.GetTopThreeUserAccordsUseCase;
 import com.pikachu.purple.domain.accord.Accord;
 import com.pikachu.purple.domain.perfume.Perfume;
 import java.util.ArrayList;
@@ -23,12 +23,13 @@ public class GetPerfumesAndUserAccordsByUserApplicationService implements
     GetPerfumesAndUserAccordsByUserUseCase {
 
     private final PerfumeDomainService perfumeDomainService;
-    private final GetUserAccordsUseCase getUserAccordsUseCase;
+    private final GetTopThreeUserAccordsUseCase getTopThreeUserAccordsUseCase;
+    private final static int MAX_SIZE = 30;
 
     @Transactional
     @Override
     public Result invoke() {
-        GetUserAccordsUseCase.Result result = getUserAccordsUseCase.invoke();
+        GetTopThreeUserAccordsUseCase.Result result = getTopThreeUserAccordsUseCase.invoke();
 
         if (result.userAccords().isEmpty()) {
             throw UserAccordNotFoundException;
@@ -50,11 +51,9 @@ public class GetPerfumesAndUserAccordsByUserApplicationService implements
 
         List<Accord> accords = new ArrayList<>(result.userAccords());
         List<Perfume> perfumes = perfumeDomainService.findAllWithPerfumeAccordsByAccords(
-            accords.stream()
-                .filter(accord -> topThreeUserAccordNames.contains(accord.getName()))
-                .toList()
+            accords,
+            MAX_SIZE
         );
-
 
         List<RecommendedPerfumeDTO> recommendedPerfumeDTOs = perfumes.stream()
             .map(perfume -> {
