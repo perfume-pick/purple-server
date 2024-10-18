@@ -19,8 +19,14 @@ public class UserAccordDomainServiceImpl implements UserAccordDomainService {
     }
 
     @Override
-    public List<UserAccord> findAllByUserId(Long userId) {
-        return userAccordRepository.findAllByUserId(userId);
+    public List<UserAccord> findAllOrderByScoreDesc(
+        Long userId,
+        int maxSize
+    ) {
+        return userAccordRepository.findAllOrderByScoreDesc(
+            userId,
+            maxSize
+        );
     }
 
 }
