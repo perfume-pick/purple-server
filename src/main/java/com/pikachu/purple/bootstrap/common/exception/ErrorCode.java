@@ -162,6 +162,18 @@ public enum ErrorCode {
         404,
     "CP001",
     "해당하는 신고 내역이 존재하지 않습니다."
+    ),
+
+    //Like
+    LIKE_NOT_FOUND(
+        404,
+        "L001",
+        "해당하는 좋아요가 존재하지 않습니다."
+    ),
+    Like_ALREADY_EXISTED(
+        409,
+        "L002",
+        "이미 좋아요가 존재합니다."
     );
 
     private final int status;

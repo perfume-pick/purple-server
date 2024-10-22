@@ -214,4 +214,18 @@ public class ReviewJpaAdaptor implements ReviewRepository {
         return ReviewJpaEntity.toDomainWithEvaluationAndMoods(reviewJpaEntity);
     }
 
+    @Override
+    public void increaseLikeCount(Long reviewId) {
+        ReviewJpaEntity reviewJpaEntity = findEntityById(reviewId);
+        reviewJpaEntity.increase();
+        reviewJpaRepository.save(reviewJpaEntity);
+    }
+
+    @Override
+    public void decreaseLikeCount(Long reviewId) {
+        ReviewJpaEntity reviewJpaEntity = findEntityById(reviewId);
+        reviewJpaEntity.decrease();
+        reviewJpaRepository.save(reviewJpaEntity);
+    }
+
 }

@@ -62,4 +62,8 @@ public interface ReviewDomainService {
         ReviewType reviewType
     );
 
+    void increaseLikeCount(Long reviewId);
+
+    void decreaseLikeCount(Long reviewId);
+
 }

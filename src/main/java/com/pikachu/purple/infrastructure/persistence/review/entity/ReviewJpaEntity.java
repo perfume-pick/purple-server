@@ -164,4 +164,12 @@ public class ReviewJpaEntity extends BaseEntity {
             .build();
     }
 
+    public void increase() {
+        this.likeCount++;
+    }
+
+    public void decrease() {
+        this.likeCount--;
+    }
+
 }

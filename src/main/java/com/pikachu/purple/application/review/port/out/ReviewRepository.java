@@ -41,4 +41,8 @@ public interface ReviewRepository {
 
     Review findWithPerfumeAndReviewEvaluationAndMood(Long userId, Long perfumeId);
 
+    void increaseLikeCount(Long reviewId);
+
+    void decreaseLikeCount(Long reviewId);
+
 }

@@ -3,6 +3,8 @@ package com.pikachu.purple.bootstrap.review.controller;
 import com.pikachu.purple.application.review.port.in.GetEvaluationFormFieldUseCase;
 import com.pikachu.purple.application.review.port.in.GetEvaluationFormFieldUseCase.Result;
 import com.pikachu.purple.application.review.port.in.complaint.CreateComplaintUseCase;
+import com.pikachu.purple.application.review.port.in.like.CreateLikeUseCase;
+import com.pikachu.purple.application.review.port.in.like.DeleteLikeUseCase;
 import com.pikachu.purple.application.review.port.in.review.CreateReviewDetailUseCase;
 import com.pikachu.purple.application.review.port.in.review.CreateReviewSimpleUseCase;
 import com.pikachu.purple.application.review.port.in.review.DeleteReviewUseCase;
@@ -29,6 +31,8 @@ public class ReviewController implements ReviewApi {
     private final UpdateReviewDetailUseCase updateReviewDetailUseCase;
     private final DeleteReviewUseCase deleteReviewUseCase;
     private final CreateComplaintUseCase createComplaintUseCase;
+    private final CreateLikeUseCase createLikeUseCase;
+    private final DeleteLikeUseCase deleteLikeUseCase;
 
     @Override
     public void createSimple(CreateReviewSimpleRequest request) {
@@ -101,6 +105,16 @@ public class ReviewController implements ReviewApi {
     @Override
     public void complain(Long reviewId) {
         createComplaintUseCase.invoke(new CreateComplaintUseCase.Command(reviewId));
+    }
+
+    @Override
+    public void like(Long reviewId) {
+        createLikeUseCase.invoke(new CreateLikeUseCase.Command(reviewId));
+    }
+
+    @Override
+    public void unLike(Long reviewId) {
+        deleteLikeUseCase.invoke(new DeleteLikeUseCase.Command(reviewId));
     }
 
 }
