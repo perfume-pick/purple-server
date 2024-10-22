@@ -68,6 +68,12 @@ public class BusinessException extends RuntimeException {
     public static final BusinessException ComplaintNotFoundException = new BusinessException(
         ErrorCode.COMPLAINT_NOT_FOUND
     );
+    public static final BusinessException LikeNotFoundException = new BusinessException(
+        ErrorCode.LIKE_NOT_FOUND
+    );
+    public static final BusinessException LikeAlreadyExistedException = new BusinessException(
+        ErrorCode.LIKE_ALREADY_EXISTED
+    );
 
     private final ErrorCode errorCode;
 

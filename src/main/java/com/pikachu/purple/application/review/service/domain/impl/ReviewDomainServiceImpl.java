@@ -5,6 +5,7 @@ import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
 import com.pikachu.purple.application.util.IdUtil;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.enums.ReviewType;
+import com.pikachu.purple.infrastructure.redis.annotation.DistributedLock;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -140,6 +141,24 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
             content,
             reviewType
         );
+    }
+
+    @DistributedLock(
+        name = "Review",
+        key = "T(String).valueOf(#reviewId).concat('-likeCount')"
+    )
+    @Override
+    public void increaseLikeCount(Long reviewId) {
+        reviewRepository.increaseLikeCount(reviewId);
+    }
+
+    @DistributedLock(
+        name = "Review",
+        key = "T(String).valueOf(#reviewId).concat('-likeCount')"
+    )
+    @Override
+    public void decreaseLikeCount(Long reviewId) {
+        reviewRepository.decreaseLikeCount(reviewId);
     }
 
 }

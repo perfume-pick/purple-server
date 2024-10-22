@@ -40,7 +40,7 @@ public record ReviewDTO(
             moodNames,
             currentUserId.equals(review.getUser().getId()),
             review.isComplained(),
-            false, //TODO
+            review.isLiked(),
             review.getLikeCount()
         );
     }

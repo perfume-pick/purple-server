@@ -76,4 +76,16 @@ public interface ReviewApi {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void complain(@PathVariable("review-id") Long reviewId);
 
+    @Secured
+    @Operation(summary = "리뷰 좋아요")
+    @PostMapping("/{review-id}/like")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    void like(@PathVariable("review-id") Long reviewId);
+
+    @Secured
+    @Operation(summary = "리뷰 좋아요 취소")
+    @DeleteMapping("/{review-id}/like")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    void unLike(@PathVariable("review-id") Long reviewId);
+
 }
