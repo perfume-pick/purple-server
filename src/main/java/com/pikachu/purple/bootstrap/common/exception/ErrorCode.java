@@ -170,7 +170,7 @@ public enum ErrorCode {
         "L001",
         "해당하는 좋아요가 존재하지 않습니다."
     ),
-    Like_ALREADY_EXISTED(
+    LIKE_ALREADY_EXISTED(
         409,
         "L002",
         "이미 좋아요가 존재합니다."

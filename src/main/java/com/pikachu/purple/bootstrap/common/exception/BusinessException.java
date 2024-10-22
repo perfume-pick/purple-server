@@ -72,7 +72,7 @@ public class BusinessException extends RuntimeException {
         ErrorCode.LIKE_NOT_FOUND
     );
     public static final BusinessException LikeAlreadyExistedException = new BusinessException(
-        ErrorCode.Like_ALREADY_EXISTED
+        ErrorCode.LIKE_ALREADY_EXISTED
     );
 
     private final ErrorCode errorCode;
