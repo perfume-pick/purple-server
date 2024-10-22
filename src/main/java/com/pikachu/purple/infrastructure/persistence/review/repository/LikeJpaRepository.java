@@ -12,7 +12,7 @@ public interface LikeJpaRepository extends JpaRepository<LikeJpaEntity, LikeId> 
 
     @Query("select l "
         + "from LikeJpaEntity l "
-        + "where l.userJpaEntity.id = :userId and l.reviewJpaEntity.id = : reviewId")
+        + "where l.userJpaEntity.id = :userId and l.reviewJpaEntity.id = :reviewId")
     Optional<LikeJpaEntity> findByUserIdAndReviewId(Long userId, Long reviewId);
 
 }

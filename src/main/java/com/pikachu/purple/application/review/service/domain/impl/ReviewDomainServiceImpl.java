@@ -145,7 +145,7 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
 
     @DistributedLock(
         name = "Review",
-        key = ""
+        key = "T(String).valueOf(#reviewId).concat('-likeCount')"
     )
     @Override
     public void increaseLikeCount(Long reviewId) {
@@ -154,7 +154,7 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
 
     @DistributedLock(
         name = "Review",
-        key = ""
+        key = "T(String).valueOf(#reviewId).concat('-likeCount')"
     )
     @Override
     public void decreaseLikeCount(Long reviewId) {

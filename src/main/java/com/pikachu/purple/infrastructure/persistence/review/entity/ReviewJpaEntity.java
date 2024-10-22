@@ -86,6 +86,9 @@ public class ReviewJpaEntity extends BaseEntity {
     @OneToMany(mappedBy = "reviewJpaEntity")
     private List<ComplaintJpaEntity> complaintJpaEntities = new ArrayList<>();
 
+    @OneToMany(mappedBy = "reviewJpaEntity")
+    private List<LikeJpaEntity> likeJpaEntities = new ArrayList<>();
+
     public void update(
         String content,
         ReviewType reviewType
@@ -152,8 +155,12 @@ public class ReviewJpaEntity extends BaseEntity {
                 .equals(currentUserId));
         domain.setComplained(isComplained);
 
-        // TODO: 구현 필요
-        domain.setLiked(false);
+        boolean isLiked = jpaEntity.getLikeJpaEntities().stream()
+            .anyMatch(likeJpaEntity ->
+                likeJpaEntity.getReviewJpaEntity().getId().equals(jpaEntity.getId()) &&
+                    likeJpaEntity.getUserJpaEntity().getId().equals(currentUserId)
+            );
+        domain.setLiked(isLiked);
 
         return domain;
     }
