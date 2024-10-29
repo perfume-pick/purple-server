@@ -25,7 +25,7 @@ public interface UserDomainService {
         SocialLoginProvider socialLoginProvider
     );
 
-    int countAll();
+    int count();
 
     User findById(Long userId);
 

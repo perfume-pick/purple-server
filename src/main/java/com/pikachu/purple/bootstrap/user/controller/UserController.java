@@ -1,20 +1,22 @@
 package com.pikachu.purple.bootstrap.user.controller;
 
+import com.pikachu.purple.application.history.port.in.searchhistory.DeleteSearchHistoriesUseCase;
+import com.pikachu.purple.application.history.port.in.searchhistory.GetSearchHistoriesUseCase;
 import com.pikachu.purple.application.history.port.in.visithistory.CreateVisitHistoryUseCase;
 import com.pikachu.purple.application.history.port.in.visithistory.DeleteVisitHistoriesUseCase;
 import com.pikachu.purple.application.history.port.in.visithistory.GetVisitHistoriesUseCase;
-import com.pikachu.purple.application.history.port.in.searchhistory.DeleteSearchHistoriesUseCase;
-import com.pikachu.purple.application.history.port.in.searchhistory.GetSearchHistoriesUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetReviewByPerfumeIdAndUserUseCase;
+import com.pikachu.purple.application.review.port.in.review.GetUserReviewCountsUseCase;
 import com.pikachu.purple.application.user.port.in.user.UpdateProfileUseCase;
 import com.pikachu.purple.application.user.port.in.useraccord.GetPolarizedUserAccordsByUserUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.user.api.UserApi;
 import com.pikachu.purple.bootstrap.user.dto.response.GetPolarizedUserAccordsByUserResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetReviewByPerfumeIdAndUserResponse;
-import com.pikachu.purple.bootstrap.user.dto.response.GetVisitHistoriesResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetSearchHistoriesResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetUserProfileResponse;
+import com.pikachu.purple.bootstrap.user.dto.response.GetUserReviewCountsResponse;
+import com.pikachu.purple.bootstrap.user.dto.response.GetVisitHistoriesResponse;
 import java.time.Instant;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,6 +31,7 @@ public class UserController implements UserApi {
     private final DeleteSearchHistoriesUseCase deleteSearchHistoriesUseCase;
     private final CreateVisitHistoryUseCase createVisitHistoryUseCase;
     private final GetVisitHistoriesUseCase getVisitHistoriesUseCase;
+    private final GetUserReviewCountsUseCase getUserReviewCountsUseCase;
     private final DeleteVisitHistoriesUseCase deleteVisitHistoriesUseCase;
     private final GetReviewByPerfumeIdAndUserUseCase getReviewByPerfumeIdAndUserUseCase;
     private final GetPolarizedUserAccordsByUserUseCase getPolarizedUserAccordsByUserUseCase;
@@ -53,6 +56,13 @@ public class UserController implements UserApi {
                 result.user().getImageUrl()
             )
         );
+    }
+
+    @Override
+    public SuccessResponse<GetUserReviewCountsResponse> findCurrentUserReviewCounts() {
+        GetUserReviewCountsUseCase.Result result = getUserReviewCountsUseCase.invoke();
+
+        return SuccessResponse.of(new GetUserReviewCountsResponse(result.userReviewCountsDTO()));
     }
 
     @Override
