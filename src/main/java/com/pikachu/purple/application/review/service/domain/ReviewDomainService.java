@@ -70,4 +70,6 @@ public interface ReviewDomainService {
 
     int count(Long userId);
 
+    List<Review> findAllWithPerfume(Long userId);
+
 }

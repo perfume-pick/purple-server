@@ -6,6 +6,7 @@ import com.pikachu.purple.application.history.port.in.visithistory.CreateVisitHi
 import com.pikachu.purple.application.history.port.in.visithistory.DeleteVisitHistoriesUseCase;
 import com.pikachu.purple.application.history.port.in.visithistory.GetVisitHistoriesUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetReviewByPerfumeIdAndUserUseCase;
+import com.pikachu.purple.application.review.port.in.review.GetTopThreeReviewedBrandsUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetUserReviewCountsUseCase;
 import com.pikachu.purple.application.user.port.in.user.UpdateProfileUseCase;
 import com.pikachu.purple.application.user.port.in.useraccord.GetPolarizedUserAccordsByUserUseCase;
@@ -14,6 +15,7 @@ import com.pikachu.purple.bootstrap.user.api.UserApi;
 import com.pikachu.purple.bootstrap.user.dto.response.GetPolarizedUserAccordsByUserResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetReviewByPerfumeIdAndUserResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetSearchHistoriesResponse;
+import com.pikachu.purple.bootstrap.user.dto.response.GetTopThreeReviewedBrandsResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetUserProfileResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetUserReviewCountsResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetVisitHistoriesResponse;
@@ -33,6 +35,7 @@ public class UserController implements UserApi {
     private final GetVisitHistoriesUseCase getVisitHistoriesUseCase;
     private final GetUserReviewCountsUseCase getUserReviewCountsUseCase;
     private final DeleteVisitHistoriesUseCase deleteVisitHistoriesUseCase;
+    private final GetTopThreeReviewedBrandsUseCase getTopThreeReviewedBrandsUseCase;
     private final GetReviewByPerfumeIdAndUserUseCase getReviewByPerfumeIdAndUserUseCase;
     private final GetPolarizedUserAccordsByUserUseCase getPolarizedUserAccordsByUserUseCase;
 
@@ -68,6 +71,13 @@ public class UserController implements UserApi {
         ));
     }
 
+    @Override
+    public SuccessResponse<GetTopThreeReviewedBrandsResponse> findTopThreeReviewedBrands() {
+        GetTopThreeReviewedBrandsUseCase.Result result = getTopThreeReviewedBrandsUseCase.invoke();
+
+        return SuccessResponse.of(
+            new GetTopThreeReviewedBrandsResponse(result.reviewedBrandDTOs()));
+    }
 
     @Override
     public SuccessResponse<GetSearchHistoriesResponse> findAllSearchHistory() {

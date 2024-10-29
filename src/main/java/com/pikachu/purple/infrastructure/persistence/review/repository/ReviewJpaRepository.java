@@ -46,4 +46,9 @@ public interface ReviewJpaRepository extends JpaRepository<ReviewJpaEntity, Long
         + "where r.userJpaEntity.id = :userId")
     int countByUserId(Long userId);
 
+    @Query("select r "
+        + "from ReviewJpaEntity r "
+        + "where r.userJpaEntity.id = :userId")
+    List<ReviewJpaEntity> findAllByUserId(Long userId);
+
 }

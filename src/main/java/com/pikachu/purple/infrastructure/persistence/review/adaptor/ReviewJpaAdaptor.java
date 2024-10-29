@@ -238,4 +238,13 @@ public class ReviewJpaAdaptor implements ReviewRepository {
         return reviewJpaRepository.countByUserId(userId);
     }
 
+    @Override
+    public List<Review> findAllWithPerfume(Long userId) {
+        List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository.findAllByUserId(userId);
+
+        return reviewJpaEntities.stream()
+            .map(ReviewJpaEntity::toDomainWithPerfume)
+            .toList();
+    }
+
 }
