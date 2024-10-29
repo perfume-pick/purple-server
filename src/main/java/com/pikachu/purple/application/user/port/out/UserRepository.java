@@ -16,7 +16,7 @@ public interface UserRepository {
 
     void validateNotExistedNickname(String nickname);
 
-    int countAll();
+    int count();
 
     User findById(Long userId);
 
