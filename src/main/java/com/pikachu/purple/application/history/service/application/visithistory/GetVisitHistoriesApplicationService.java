@@ -8,7 +8,9 @@ import com.pikachu.purple.application.history.service.domain.VisitHistoryDomainS
 import com.pikachu.purple.application.perfume.common.dto.PerfumeDTO;
 import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesByIdsUseCase;
 import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesByIdsUseCase.Command;
+import com.pikachu.purple.application.review.port.in.starrating.GetAverageScoreByPerfumeIdUseCase;
 import com.pikachu.purple.domain.history.VisitHistory;
+import com.pikachu.purple.domain.perfume.Perfume;
 import java.util.List;
 import java.util.stream.IntStream;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +23,7 @@ public class GetVisitHistoriesApplicationService implements GetVisitHistoriesUse
 
     private final GetPerfumesByIdsUseCase getPerfumesByIdsUseCase;
     private final VisitHistoryDomainService visitHistoryDomainService;
+    private final GetAverageScoreByPerfumeIdUseCase getAverageScoreByPerfumeIdUseCase;
 
     @Transactional
     @Override
@@ -34,6 +37,12 @@ public class GetVisitHistoriesApplicationService implements GetVisitHistoriesUse
             .toList();
 
         GetPerfumesByIdsUseCase.Result result = getPerfumesByIdsUseCase.invoke(new Command(perfumeIds));
+        for (Perfume perfume : result.perfumes()) {
+            double averageScore = getAverageScoreByPerfumeIdUseCase.invoke(
+                new GetAverageScoreByPerfumeIdUseCase.Command(perfume.getId())).averageScore();
+
+            perfume.setAverageScore(averageScore);
+        }
 
         List<PerfumeDTO> perfumeDTOs = result.perfumes().stream()
             .map(PerfumeDTO::from)
