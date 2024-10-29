@@ -47,10 +47,19 @@ public class GetPolarizedUserAccordsByUserApplicationService implements
             new GetStarRatingsByUserIdUseCase.Command(userId)
         );
 
-        List<AccordInfo> preferredAccord = mapToAccordInfo(accordsByDesc, result.starRatings());
-        List<AccordInfo> dislikedAccord = mapToAccordInfo(accordsByAsc, result.starRatings());
+        List<AccordInfo> preferredAccord = mapToAccordInfo(
+            accordsByDesc,
+            result.starRatings()
+        );
+        List<AccordInfo> dislikedAccord = mapToAccordInfo(
+            accordsByAsc,
+            result.starRatings()
+        );
 
-        return new Result(new PolarizedUserAccordDTO(preferredAccord, dislikedAccord));
+        return new Result(new PolarizedUserAccordDTO(
+            preferredAccord,
+            dislikedAccord)
+        );
     }
 
     private List<AccordInfo> mapToAccordInfo(
@@ -66,8 +75,14 @@ public class GetPolarizedUserAccordsByUserApplicationService implements
                 for (Accord perfumeAccord : perfume.getAccords()) {
                     String accordName = perfumeAccord.getName();
 
-                    if (containsAccord(accords, accordName)) {
-                        accordCountMap.put(accordName, accordCountMap.getOrDefault(accordName, 0) + 1);
+                    if (containsAccord(
+                        accords,
+                        accordName
+                    )) {
+                        accordCountMap.put(
+                            accordName,
+                            accordCountMap.getOrDefault(accordName, 0) + 1
+                        );
                     }
                 }
             }
@@ -79,8 +94,15 @@ public class GetPolarizedUserAccordsByUserApplicationService implements
         for(UserAccord userAccord : accords) {
             String accordName = userAccord.getName();
 
-            percentMap.put(accordName, MathUtil.getPercentage(userAccord.getScore(), totalScore));
+            percentMap.put(
+                accordName,
+                MathUtil.getPercentage(
+                    userAccord.getScore(),
+                    totalScore
+                )
+            );
         }
+
         return accordCountMap.keySet().stream()
             .filter(percentMap::containsKey)
             .map(accordName -> AccordInfo.of(
@@ -91,7 +113,10 @@ public class GetPolarizedUserAccordsByUserApplicationService implements
             .toList();
     }
 
-    private boolean containsAccord(List<UserAccord> accords, String accordName) {
+    private boolean containsAccord(
+        List<UserAccord> accords,
+        String accordName
+    ) {
         return accords.stream()
             .anyMatch(userAccord -> userAccord.getName().equals(accordName));
     }
