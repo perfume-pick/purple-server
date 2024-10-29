@@ -49,4 +49,6 @@ public interface ReviewRepository {
 
     int count(Long userId);
 
+    List<Review> findAllWithPerfume(Long userId);
+
 }

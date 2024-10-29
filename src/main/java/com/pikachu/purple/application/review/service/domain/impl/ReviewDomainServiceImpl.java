@@ -171,4 +171,9 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
         return reviewRepository.count(userId);
     }
 
+    @Override
+    public List<Review> findAllWithPerfume(Long userId) {
+        return reviewRepository.findAllWithPerfume(userId);
+    }
+
 }
