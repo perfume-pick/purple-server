@@ -3,6 +3,7 @@ package com.pikachu.purple.bootstrap.user.api;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.common.security.Secured;
 import com.pikachu.purple.bootstrap.user.dto.response.GetPolarizedUserAccordsByUserResponse;
+import com.pikachu.purple.bootstrap.user.dto.response.GetUserReviewCountsResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetReviewByPerfumeIdAndUserResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetVisitHistoriesResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetSearchHistoriesResponse;
@@ -62,6 +63,12 @@ public interface UserApi {
         @RequestParam boolean isChanged,
         @RequestPart(required = false) MultipartFile picture
     );
+
+    @Secured
+    @Operation(summary = "평가한 향수 갯수 & 사용자들이 평가한 향수 수의 평균")
+    @GetMapping("/my/review-counts")
+    @ResponseStatus(HttpStatus.OK)
+    SuccessResponse<GetUserReviewCountsResponse> findCurrentUserReviewCounts();
 
     @Secured
     @Operation(summary = "최근 검색 기록 전체 조회")
