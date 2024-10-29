@@ -95,4 +95,9 @@ public class StarRatingDomainServiceImpl implements StarRatingDomainService {
         return starRatingRepository.findAllByUpdatedDate(updatedDate);
     }
 
+    @Override
+    public List<StarRating> findAll(Long perfumeId) {
+        return starRatingRepository.findAll(perfumeId);
+    }
+
 }

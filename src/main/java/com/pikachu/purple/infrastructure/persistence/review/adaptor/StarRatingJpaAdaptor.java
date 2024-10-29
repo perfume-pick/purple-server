@@ -147,4 +147,10 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
             .toList();
     }
 
+    @Override
+    public List<StarRating> findAll(Long perfumeId) {
+        List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAllByPerfumeId(perfumeId);
+        return starRatingJpaEntities.stream().map(StarRatingJpaEntity::toDomain).toList();
+    }
+
 }
