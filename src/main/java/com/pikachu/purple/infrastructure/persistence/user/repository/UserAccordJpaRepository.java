@@ -13,7 +13,15 @@ public interface UserAccordJpaRepository extends JpaRepository<UserAccordJpaEnti
     @Query("select ua "
         + "from UserAccordJpaEntity ua "
         + "where ua.userJpaEntity.id = :userId "
+        + "and ua.score >= 0 "
         + "order by ua.score desc")
     List<UserAccordJpaEntity> findAllByUserIdOrderByScoreDesc(Long userId, Limit limit);
+
+    @Query("select ua "
+        + "from UserAccordJpaEntity ua "
+        + "where ua.userJpaEntity.id = :userId "
+        + "and ua.score < 0 "
+        + "order by ua.score asc")
+    List<UserAccordJpaEntity> findAllByUserIdOrderByScoreAsc(Long userId, Limit limit);
 
 }

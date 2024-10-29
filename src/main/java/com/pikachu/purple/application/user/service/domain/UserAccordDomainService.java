@@ -5,11 +5,19 @@ import java.util.List;
 
 public interface UserAccordDomainService {
 
+    void createAll(
+        Long userId,
+        List<UserAccord> userAccords
+    );
+
     List<UserAccord> findAllOrderByScoreDesc(
         Long userId,
         int maxSize
     );
 
-    void createAll(Long userId, List<UserAccord> userAccords);
+    List<UserAccord> findAllOrderByScoreAsc(
+        Long userId,
+        int maxSize
+    );
 
 }

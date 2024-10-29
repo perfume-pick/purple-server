@@ -29,4 +29,15 @@ public class UserAccordDomainServiceImpl implements UserAccordDomainService {
         );
     }
 
+    @Override
+    public List<UserAccord> findAllOrderByScoreAsc(
+        Long userId,
+        int maxSize
+    ) {
+        return userAccordRepository.findAllOrderByScoreAsc(
+            userId,
+            maxSize
+        );
+    }
+
 }
