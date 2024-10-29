@@ -24,6 +24,7 @@ public record PolarizedUserAccordDTO(
                 percentage
             );
         }
+
     }
 
 }
