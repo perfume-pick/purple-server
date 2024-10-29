@@ -53,10 +53,6 @@ public class GetPolarizedUserAccordsByUserApplicationService implements
         return new Result(new PolarizedUserAccordDTO(preferredAccord, dislikedAccord));
     }
 
-    private boolean containsAccord(List<UserAccord> accords, String accordName) {
-        return accords.stream().anyMatch(userAccord -> userAccord.getName().equals(accordName));
-    }
-
     private List<AccordInfo> mapToAccordInfo(
         List<UserAccord> accords,
         List<StarRating> starRatings
@@ -93,6 +89,11 @@ public class GetPolarizedUserAccordsByUserApplicationService implements
                 percentMap.get(accordName)
             ))
             .toList();
+    }
+
+    private boolean containsAccord(List<UserAccord> accords, String accordName) {
+        return accords.stream()
+            .anyMatch(userAccord -> userAccord.getName().equals(accordName));
     }
 
 }
