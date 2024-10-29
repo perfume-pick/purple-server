@@ -59,4 +59,16 @@ public class UserAccordJpaAdaptor implements UserAccordRepository {
             .map(UserAccordJpaEntity::toDomain)
             .toList();
     }
+
+    @Override
+    public List<UserAccord> findAllOrderByScoreAsc(Long userId, int maxSize) {
+        List<UserAccordJpaEntity> userAccordJpaEntities = userAccordJpaRepository.findAllByUserIdOrderByScoreAsc(
+            userId,
+            Limit.of(maxSize)
+        );
+
+        return userAccordJpaEntities.stream()
+            .map(UserAccordJpaEntity::toDomain)
+            .toList();
+    }
 }

@@ -2,6 +2,7 @@ package com.pikachu.purple.bootstrap.user.api;
 
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.common.security.Secured;
+import com.pikachu.purple.bootstrap.user.dto.response.GetPolarizedUserAccordsByUserResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetReviewByPerfumeIdAndUserResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetVisitHistoriesResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetSearchHistoriesResponse;
@@ -100,5 +101,14 @@ public interface UserApi {
     @GetMapping("/my/perfumes/{perfume-id}/reviews")
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<GetReviewByPerfumeIdAndUserResponse> findReviewByPerfumeIdAndUser(@PathVariable("perfume-id") Long perfumeId);
+
+    @Secured
+    @Operation(
+        summary = "선호 불호 어코드 조회",
+        description = "마이페이지 선호/불호 어코드 조회"
+    )
+    @GetMapping("/my/user-accords")
+    @ResponseStatus(HttpStatus.OK)
+    SuccessResponse<GetPolarizedUserAccordsByUserResponse> findPolarizedUserAccordsByUser();
 
 }

@@ -9,4 +9,8 @@ public class MathUtil {
         return (int) Math.round(((double) part / (double) whole) * 100);
     }
 
+    public static int getPercentage(double part, double whole) {
+        return (int) Math.round((part/whole) * 100);
+    }
+
 }
