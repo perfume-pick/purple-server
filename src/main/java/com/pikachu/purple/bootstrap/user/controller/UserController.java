@@ -62,8 +62,12 @@ public class UserController implements UserApi {
     public SuccessResponse<GetUserReviewCountsResponse> findCurrentUserReviewCounts() {
         GetUserReviewCountsUseCase.Result result = getUserReviewCountsUseCase.invoke();
 
-        return SuccessResponse.of(new GetUserReviewCountsResponse(result.userReviewCountsDTO()));
+        return SuccessResponse.of(new GetUserReviewCountsResponse(
+            result.currentUserReviewCounts(),
+            result.averageUserReviewCounts()
+        ));
     }
+
 
     @Override
     public SuccessResponse<GetSearchHistoriesResponse> findAllSearchHistory() {
