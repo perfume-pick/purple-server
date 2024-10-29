@@ -3,6 +3,7 @@ package com.pikachu.purple.bootstrap.user.api;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.common.security.Secured;
 import com.pikachu.purple.bootstrap.user.dto.response.GetPolarizedUserAccordsByUserResponse;
+import com.pikachu.purple.bootstrap.user.dto.response.GetTopThreeReviewedBrandsResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetUserReviewCountsResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetReviewByPerfumeIdAndUserResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetVisitHistoriesResponse;
@@ -69,6 +70,12 @@ public interface UserApi {
     @GetMapping("/my/review-counts")
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<GetUserReviewCountsResponse> findCurrentUserReviewCounts();
+
+    @Secured
+    @Operation(summary = "브랜드 평가 개수 순위 TOP3")
+    @GetMapping("/my/top3-reviewed-brands")
+    @ResponseStatus(HttpStatus.OK)
+    SuccessResponse<GetTopThreeReviewedBrandsResponse> findTopThreeReviewedBrands();
 
     @Secured
     @Operation(summary = "최근 검색 기록 전체 조회")
