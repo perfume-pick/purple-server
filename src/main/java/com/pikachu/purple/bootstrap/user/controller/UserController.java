@@ -6,6 +6,7 @@ import com.pikachu.purple.application.history.port.in.visithistory.GetVisitHisto
 import com.pikachu.purple.application.history.port.in.searchhistory.DeleteSearchHistoriesUseCase;
 import com.pikachu.purple.application.history.port.in.searchhistory.GetSearchHistoriesUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetReviewByPerfumeIdAndUserUseCase;
+import com.pikachu.purple.application.user.port.in.user.GetUserProfileByUserUseCase;
 import com.pikachu.purple.application.user.port.in.user.UpdateProfileUseCase;
 import com.pikachu.purple.application.user.port.in.useraccord.GetPolarizedUserAccordsByUserUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
@@ -32,6 +33,7 @@ public class UserController implements UserApi {
     private final DeleteVisitHistoriesUseCase deleteVisitHistoriesUseCase;
     private final GetReviewByPerfumeIdAndUserUseCase getReviewByPerfumeIdAndUserUseCase;
     private final GetPolarizedUserAccordsByUserUseCase getPolarizedUserAccordsByUserUseCase;
+    private final GetUserProfileByUserUseCase getUserProfileByUserUseCase;
 
     @Override
     public SuccessResponse<GetUserProfileResponse> updateProfile(
@@ -50,7 +52,8 @@ public class UserController implements UserApi {
         return SuccessResponse.of(
             new GetUserProfileResponse(
                 result.user().getNickname(),
-                result.user().getImageUrl()
+                result.user().getImageUrl(),
+                null
             )
         );
     }
@@ -104,6 +107,18 @@ public class UserController implements UserApi {
         GetPolarizedUserAccordsByUserUseCase.Result result = getPolarizedUserAccordsByUserUseCase.invoke();
 
         return SuccessResponse.of(new GetPolarizedUserAccordsByUserResponse(result.polarizedUserAccordDTO()));
+    }
+
+    @Override
+    public SuccessResponse<GetUserProfileResponse> findUserProfileByUser() {
+        GetUserProfileByUserUseCase.Result result = getUserProfileByUserUseCase.invoke();
+
+        return SuccessResponse.of(
+            new GetUserProfileResponse(
+                result.nickname(),
+                result.imageUrl(),
+                result.email()
+        ));
     }
 
 }
