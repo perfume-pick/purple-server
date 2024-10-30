@@ -125,4 +125,13 @@ public interface UserApi {
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<GetPolarizedUserAccordsByUserResponse> findPolarizedUserAccordsByUser();
 
+    @Secured
+    @Operation(
+        summary = "사용자 정보 반환",
+        description = "닉네임, 프로필 사진, 이메일"
+    )
+    @GetMapping("/my/profile")
+    @ResponseStatus(HttpStatus.OK)
+    SuccessResponse<GetUserProfileResponse> findUserProfileByUser();
+
 }
