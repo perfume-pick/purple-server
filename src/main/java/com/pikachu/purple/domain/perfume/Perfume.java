@@ -15,6 +15,8 @@ public class Perfume {
     private Long id;
     private String name;
     private String imageUrl;
+    // TODO: averageScore 관련 로직 리팩토링 후 제거
+    @Setter
     private double averageScore;
     private Brand brand;
 

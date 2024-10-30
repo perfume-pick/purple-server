@@ -45,4 +45,10 @@ public interface ReviewRepository {
 
     void decreaseLikeCount(Long reviewId);
 
+    int count();
+
+    int count(Long userId);
+
+    List<Review> findAllWithPerfume(Long userId);
+
 }

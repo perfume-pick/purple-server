@@ -111,8 +111,8 @@ public class UserDomainServiceImpl implements UserDomainService {
     }
 
     @Override
-    public int countAll() {
-        return userRepository.countAll();
+    public int count() {
+        return userRepository.count();
     }
 
     @Override

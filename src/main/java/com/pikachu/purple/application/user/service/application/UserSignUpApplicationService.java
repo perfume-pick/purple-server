@@ -25,7 +25,7 @@ public class UserSignUpApplicationService implements UserSignUpUseCase {
         if(user == null) {
             userDomainService.create(
                 command.email(),
-                new Nickname(userDomainService.countAll()).getValue(),
+                new Nickname(userDomainService.count()).getValue(),
                 command.socialLoginProvider()
             );
         }

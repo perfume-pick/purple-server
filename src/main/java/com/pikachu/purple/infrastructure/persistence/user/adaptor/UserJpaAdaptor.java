@@ -57,7 +57,7 @@ public class UserJpaAdaptor implements UserRepository {
     }
 
     @Override
-    public int countAll() {
+    public int count() {
         return userJpaRepository.countAll();
     }
 

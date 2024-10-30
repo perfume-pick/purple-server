@@ -161,4 +161,19 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
         reviewRepository.decreaseLikeCount(reviewId);
     }
 
+    @Override
+    public int count() {
+        return reviewRepository.count();
+    }
+
+    @Override
+    public int count(Long userId) {
+        return reviewRepository.count(userId);
+    }
+
+    @Override
+    public List<Review> findAllWithPerfume(Long userId) {
+        return reviewRepository.findAllWithPerfume(userId);
+    }
+
 }

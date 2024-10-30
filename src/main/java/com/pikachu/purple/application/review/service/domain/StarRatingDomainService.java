@@ -34,4 +34,6 @@ public interface StarRatingDomainService {
 
     List<StarRating> findAllByUpdatedDate(String updatedDate);
 
+    List<StarRating> findAll(Long perfumeId);
+
 }
