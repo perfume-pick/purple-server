@@ -50,7 +50,9 @@ public class AuthController implements AuthApi {
         return SuccessResponse.of(
             new SocialLoginResponse(
                 result.jwtToken(),
-                result.isSignUp()
+                result.isSignUp(),
+                result.nickname(),
+                result.imageUrl()
             )
         );
     }

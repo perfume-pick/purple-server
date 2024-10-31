@@ -73,7 +73,9 @@ public class SocialLoginApplicationService implements SocialLoginUseCase {
 
         return new SocialLoginUseCase.Result(
             jwtToken,
-            isSignUp
+            isSignUp,
+            user.getNickname(),
+            user.getImageUrl()
         );
     }
 
