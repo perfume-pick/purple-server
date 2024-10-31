@@ -15,7 +15,9 @@ public interface SocialLoginUseCase {
 
     record Result(
         String jwtToken,
-        boolean isSignUp
+        boolean isSignUp,
+        String nickname,
+        String imageUrl
     ) {
 
     }
