@@ -33,6 +33,10 @@ public class GetReviewsByPerfumeIdAndSortTypeApplicationService implements
 
         switch (sortType) {
             case LIKED:
+                reviews = reviewDomainService.findAllOrderByLikeCountDesc(
+                    userId,
+                    command.perfumeId()
+                );
                 break;
             case LATEST:
                 reviews = reviewDomainService.findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByCreatedAtDesc(

@@ -14,20 +14,13 @@ public interface ReviewRepository {
 
     Review findWithPerfume(Long reviewId);
 
-    List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByCreatedAtDesc(
-        Long userId,
-        Long perfumeId
-    );
+    List<Review> findAllOrderByLikeCountDesc(Long userId, Long perfumeId);
 
-    List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByScoreDesc(
-        Long userId,
-        Long perfumeId
-    );
+    List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByCreatedAtDesc(Long userId, Long perfumeId);
 
-    List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByScoreAsc(
-        Long userId,
-        Long perfumeId
-    );
+    List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByScoreDesc(Long userId, Long perfumeId);
+
+    List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByScoreAsc(Long userId, Long perfumeId);
 
     List<Review> findAllWithEvaluation(ReviewType reviewType, String updatedDate);
 

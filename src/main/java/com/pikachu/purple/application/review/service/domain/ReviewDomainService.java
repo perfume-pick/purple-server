@@ -20,6 +20,11 @@ public interface ReviewDomainService {
         List<String> moodNames
     );
 
+    List<Review> findAllOrderByLikeCountDesc(
+        Long userId,
+        Long perfumeId
+    );
+
     List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByCreatedAtDesc(
         Long userId,
         Long perfumeId
