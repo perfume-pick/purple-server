@@ -86,6 +86,20 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
+    public List<Review> findAllOrderByLikeCountDesc(
+        Long userId,
+        Long perfumeId
+    ) {
+        List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository.findAllByPerfumeIdOrderByLikeCountDesc(perfumeId);
+
+        return reviewJpaEntities.stream()
+            .map(reviewJpaEntity -> ReviewJpaEntity.toFullDomain(
+                reviewJpaEntity, userId
+            ))
+            .toList();
+    }
+
+    @Override
     public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByCreatedAtDesc(
         Long userId,
         Long perfumeId

@@ -11,22 +11,28 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ReviewJpaRepository extends JpaRepository<ReviewJpaEntity, Long> {
 
-    @Query("SELECT re "
-        + "FROM ReviewJpaEntity re "
-        + "WHERE re.perfumeJpaEntity.id = :perfumeId "
-        + "ORDER BY re.createdAt DESC")
+    @Query("select re "
+        + "from ReviewJpaEntity re "
+        + "where re.perfumeJpaEntity.id = :perfumeId "
+        + "order by re.likeCount desc")
+    List<ReviewJpaEntity> findAllByPerfumeIdOrderByLikeCountDesc(Long perfumeId);
+
+    @Query("select re "
+        + "from ReviewJpaEntity re "
+        + "where re.perfumeJpaEntity.id = :perfumeId "
+        + "order by re.createdAt desc")
     List<ReviewJpaEntity> findAllByPerfumeIdOrderByCreateAtDesc(Long perfumeId);
 
-    @Query("SELECT re "
-        + "FROM ReviewJpaEntity re "
-        + "WHERE re.starRatingJpaEntity.perfumeJpaEntity.id = :perfumeId "
-        + "ORDER BY re.starRatingJpaEntity.score DESC")
+    @Query("select re "
+        + "from ReviewJpaEntity re "
+        + "where re.starRatingJpaEntity.perfumeJpaEntity.id = :perfumeId "
+        + "order by re.starRatingJpaEntity.score desc")
     List<ReviewJpaEntity> findAllByPerfumeIdOrderByScoreDesc(Long perfumeId);
 
-    @Query("SELECT re "
-        + "FROM ReviewJpaEntity re "
-        + "WHERE re.starRatingJpaEntity.perfumeJpaEntity.id = :perfumeId "
-        + "ORDER BY re.starRatingJpaEntity.score")
+    @Query("select re "
+        + "from ReviewJpaEntity re "
+        + "where re.starRatingJpaEntity.perfumeJpaEntity.id = :perfumeId "
+        + "order by re.starRatingJpaEntity.score")
     List<ReviewJpaEntity> findAllByPerfumeIdOrderByScoreAsc(Long perfumeId);
 
     @Query("select r "

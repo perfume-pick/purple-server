@@ -50,6 +50,14 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
     }
 
     @Override
+    public List<Review> findAllOrderByLikeCountDesc(Long userId, Long perfumeId) {
+        return reviewRepository.findAllOrderByLikeCountDesc(
+            userId,
+            perfumeId
+        );
+    }
+
+    @Override
     public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByCreatedAtDesc(
         Long userId,
         Long perfumeId
