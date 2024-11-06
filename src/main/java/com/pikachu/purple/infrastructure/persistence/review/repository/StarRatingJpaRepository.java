@@ -26,4 +26,28 @@ public interface StarRatingJpaRepository extends JpaRepository<StarRatingJpaEnti
         + "from StarRatingJpaEntity sr "
         + "where sr.perfumeJpaEntity.id = :perfumeId")
     List<StarRatingJpaEntity> findAllByPerfumeId(Long perfumeId);
+
+    @Query("select sr "
+        + "from StarRatingJpaEntity sr "
+        + "where sr.userJpaEntity.id = :userId")
+    List<StarRatingJpaEntity> findAllByUserId(Long userId);
+
+    @Query("select sr "
+        + "from StarRatingJpaEntity sr "
+        + "left join ReviewJpaEntity re on sr = re.starRatingJpaEntity "
+        + "where sr.userJpaEntity.id = :userId "
+        + "order by re.likeCount desc")
+    List<StarRatingJpaEntity> findAllOrderByLikeCountDesc(Long userId);
+
+    @Query("select sr "
+        + "from StarRatingJpaEntity sr "
+        + "where sr.userJpaEntity.id = :userId "
+        + "order by sr.score desc")
+    List<StarRatingJpaEntity> findAllOrderByScoreDesc(Long userId);
+
+    @Query("select sr "
+        + "from StarRatingJpaEntity sr "
+        + "where sr.userJpaEntity.id = :userId "
+        + "order by sr.score asc")
+    List<StarRatingJpaEntity> findAllOrderByScoreAsc(Long userId);
 }

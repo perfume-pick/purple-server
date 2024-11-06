@@ -100,4 +100,24 @@ public class StarRatingDomainServiceImpl implements StarRatingDomainService {
         return starRatingRepository.findAll(perfumeId);
     }
 
+    @Override
+    public List<StarRating> findAllOrderByLikeCountDesc(Long userId) {
+        return starRatingRepository.findAllOrderByLikeCountDesc(userId);
+    }
+
+    @Override
+    public List<StarRating> findAllByUserId(Long userId) {
+        return starRatingRepository.findAllByUserId(userId);
+    }
+
+    @Override
+    public List<StarRating> findAllOrderByScoreDesc(Long userId) {
+        return starRatingRepository.findAllOrderByScoreDesc(userId);
+    }
+
+    @Override
+    public List<StarRating> findAllOrderByScoreAsc(Long userId) {
+        return starRatingRepository.findALlOrderByScoreAsc(userId);
+    }
+
 }

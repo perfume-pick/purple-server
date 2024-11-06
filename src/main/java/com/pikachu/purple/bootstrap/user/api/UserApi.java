@@ -3,6 +3,7 @@ package com.pikachu.purple.bootstrap.user.api;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.common.security.Secured;
 import com.pikachu.purple.bootstrap.user.dto.response.GetPolarizedUserAccordsByUserResponse;
+import com.pikachu.purple.bootstrap.user.dto.response.GetReviewsByUserAndSortTypeResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetTopThreeReviewedBrandsResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetUserReviewCountsResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetReviewByPerfumeIdAndUserResponse;
@@ -133,5 +134,11 @@ public interface UserApi {
     @GetMapping("/my/profile")
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<GetUserProfileResponse> findUserProfileByUser();
+
+    @Secured
+    @Operation(summary = "작성한 리뷰 전체 조회")
+    @GetMapping("/my/reviews")
+    SuccessResponse<GetReviewsByUserAndSortTypeResponse> findAllReviewByUser(@RequestParam("sort-type") String sortType);
+
 
 }
