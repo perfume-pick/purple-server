@@ -6,6 +6,7 @@ import com.pikachu.purple.application.history.port.in.visithistory.CreateVisitHi
 import com.pikachu.purple.application.history.port.in.visithistory.DeleteVisitHistoriesUseCase;
 import com.pikachu.purple.application.history.port.in.visithistory.GetVisitHistoriesUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetReviewByPerfumeIdAndUserUseCase;
+import com.pikachu.purple.application.review.port.in.starrating.GetReviewsByUserAndSortTypeUseCase;
 import com.pikachu.purple.application.user.port.in.user.GetUserProfileByUserUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetTopThreeReviewedBrandsUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetUserReviewCountsUseCase;
@@ -15,6 +16,7 @@ import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.user.api.UserApi;
 import com.pikachu.purple.bootstrap.user.dto.response.GetPolarizedUserAccordsByUserResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetReviewByPerfumeIdAndUserResponse;
+import com.pikachu.purple.bootstrap.user.dto.response.GetReviewsByUserAndSortTypeResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetSearchHistoriesResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetTopThreeReviewedBrandsResponse;
 import com.pikachu.purple.bootstrap.user.dto.response.GetUserProfileResponse;
@@ -40,6 +42,7 @@ public class UserController implements UserApi {
     private final GetReviewByPerfumeIdAndUserUseCase getReviewByPerfumeIdAndUserUseCase;
     private final GetPolarizedUserAccordsByUserUseCase getPolarizedUserAccordsByUserUseCase;
     private final GetUserProfileByUserUseCase getUserProfileByUserUseCase;
+    private final GetReviewsByUserAndSortTypeUseCase getReviewsByUserAndSortTypeUseCase;
 
     @Override
     public SuccessResponse<GetUserProfileResponse> updateProfile(
@@ -143,6 +146,15 @@ public class UserController implements UserApi {
                 result.imageUrl(),
                 result.email()
         ));
+    }
+
+    @Override
+    public SuccessResponse<GetReviewsByUserAndSortTypeResponse> findAllReviewByUserAndSortType(String sortType) {
+        GetReviewsByUserAndSortTypeUseCase.Result result = getReviewsByUserAndSortTypeUseCase.invoke(new GetReviewsByUserAndSortTypeUseCase.Command(sortType));
+
+        return SuccessResponse.of(
+            new GetReviewsByUserAndSortTypeResponse(result.reviewWithPerfumeDTOs())
+        );
     }
 
 }

@@ -36,4 +36,12 @@ public interface StarRatingDomainService {
 
     List<StarRating> findAll(Long perfumeId);
 
+    List<StarRating> findAllOrderByLikeCountDesc(Long userId);
+
+    List<StarRating> findAllByUserId(Long userId);
+
+    List<StarRating> findAllOrderByScoreDesc(Long userId);
+
+    List<StarRating> findAllOrderByScoreAsc(Long userId);
+
 }

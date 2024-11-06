@@ -1,16 +1,16 @@
 package com.pikachu.purple.application.review.common.dto;
 
+import com.pikachu.purple.application.util.DateUtil;
 import com.pikachu.purple.application.util.IdUtil;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.enums.ReviewType;
-import java.time.Instant;
 import java.util.List;
 
 public record ReviewDTO(
     String reviewId,
     String nickname,
     String imageUrl,
-    Instant date,
+    String date,
     ReviewType reviewType,
     int score,
     String content,
@@ -32,7 +32,7 @@ public record ReviewDTO(
             IdUtil.toString(review.getId()),
             review.getUser().getNickname(),
             review.getUser().getImageUrl(),
-            review.getUpdatedAt(),
+            DateUtil.toString(review.getUpdatedAt()),
             review.getType(),
             review.getStarRating().getScore(),
             review.getContent(),

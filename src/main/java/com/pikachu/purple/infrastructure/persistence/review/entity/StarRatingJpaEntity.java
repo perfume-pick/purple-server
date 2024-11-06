@@ -10,6 +10,7 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -40,6 +41,13 @@ public class StarRatingJpaEntity extends BaseEntity {
     @Column(name = "score")
     private int score;
 
+    @OneToOne(
+        mappedBy = "starRatingJpaEntity",
+        fetch = FetchType.LAZY
+    )
+    private ReviewJpaEntity reviewJpaEntity;
+
+
     public void updateScore(int score) {
         this.score = score;
     }
@@ -47,7 +55,8 @@ public class StarRatingJpaEntity extends BaseEntity {
     public static StarRating toDomain(StarRatingJpaEntity jpaEntity) {
         StarRating domain = new StarRating(
             jpaEntity.getId(),
-            jpaEntity.getScore()
+            jpaEntity.getScore(),
+            jpaEntity.getUpdatedAt()
         );
         domain.setUser(UserJpaEntity.toDummy(jpaEntity.getUserJpaEntity()));
         domain.setPerfume(PerfumeJpaEntity.toDummy(jpaEntity.getPerfumeJpaEntity()));
@@ -59,6 +68,19 @@ public class StarRatingJpaEntity extends BaseEntity {
         StarRating domain = toDomain(jpaEntity);
         domain.setPerfume(PerfumeJpaEntity.toDomainWithPerfumeAccord(jpaEntity.getPerfumeJpaEntity()));
 
+        return domain;
+    }
+
+    public static StarRating toDomainWithPerfume(StarRatingJpaEntity jpaEntity) {
+        StarRating domain = toDomain(jpaEntity);
+        domain.setPerfume(PerfumeJpaEntity.toDomain(jpaEntity.getPerfumeJpaEntity()));
+
+        return domain;
+    }
+
+    public static StarRating toFullDomain(StarRatingJpaEntity jpaEntity, Long userId) {
+        StarRating domain = toDomain(jpaEntity);
+        domain.setReview(ReviewJpaEntity.toFullDomain(jpaEntity.getReviewJpaEntity(), userId));
         return domain;
     }
 

@@ -28,4 +28,12 @@ public interface StarRatingRepository {
 
     List<StarRating> findAll(Long perfumeId);
 
+    List<StarRating> findAllOrderByLikeCountDesc(Long userId);
+
+    List<StarRating> findAllByUserId(Long userId);
+
+    List<StarRating> findAllOrderByScoreDesc(Long userId);
+
+    List<StarRating> findALlOrderByScoreAsc(Long userId);
+
 }
