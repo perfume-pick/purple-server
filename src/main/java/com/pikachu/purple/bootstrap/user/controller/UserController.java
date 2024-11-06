@@ -149,7 +149,7 @@ public class UserController implements UserApi {
     }
 
     @Override
-    public SuccessResponse<GetReviewsByUserAndSortTypeResponse> findAllReviewByUser(String sortType) {
+    public SuccessResponse<GetReviewsByUserAndSortTypeResponse> findAllReviewByUserAndSortType(String sortType) {
         GetReviewsByUserAndSortTypeUseCase.Result result = getReviewsByUserAndSortTypeUseCase.invoke(new GetReviewsByUserAndSortTypeUseCase.Command(sortType));
 
         return SuccessResponse.of(
