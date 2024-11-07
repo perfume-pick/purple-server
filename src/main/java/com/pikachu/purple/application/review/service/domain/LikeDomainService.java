@@ -24,4 +24,6 @@ public interface LikeDomainService {
         Long reviewId
     );
 
+    void deleteAll(Long reviewId);
+
 }
