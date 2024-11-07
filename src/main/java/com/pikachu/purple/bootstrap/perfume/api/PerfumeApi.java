@@ -2,7 +2,7 @@ package com.pikachu.purple.bootstrap.perfume.api;
 
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.common.security.Secured;
-import com.pikachu.purple.bootstrap.perfume.dto.response.GetAccordsAndNotesResponse;
+import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeDetailResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetFragranticaEvaluationResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeStatisticResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetReviewsResponse;
@@ -24,9 +24,9 @@ public interface PerfumeApi {
         summary = "향수 상세 정보 조회",
         description = "향수 기본 정보, 메인 어코드, Top/Middle/Base 노트 정보를 제공합니다."
     )
-    @GetMapping("/{perfume-id}/accords-notes")
+    @GetMapping("/{perfume-id}/detail")
     @ResponseStatus(HttpStatus.OK)
-    SuccessResponse<GetAccordsAndNotesResponse> findAccordsAndNotesByPerfumeId(
+    SuccessResponse<GetPerfumeDetailResponse> findAccordsAndNotesByPerfumeId(
         @PathVariable("perfume-id") Long perfumeId);
 
     @Secured
