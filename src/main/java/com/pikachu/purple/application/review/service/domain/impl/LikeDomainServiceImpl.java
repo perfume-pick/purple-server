@@ -53,4 +53,9 @@ public class LikeDomainServiceImpl implements LikeDomainService {
         );
     }
 
+    @Override
+    public void deleteAll(Long reviewId) {
+        likeRepository.deleteAll(reviewId);
+    }
+
 }

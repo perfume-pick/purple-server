@@ -12,4 +12,6 @@ public interface LikeRepository {
 
     void delete(Long userId, Long reviewId);
 
+    void deleteAll(Long reviewId);
+
 }

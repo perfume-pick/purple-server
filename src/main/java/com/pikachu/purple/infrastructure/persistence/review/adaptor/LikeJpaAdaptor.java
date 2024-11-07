@@ -13,6 +13,7 @@ import com.pikachu.purple.infrastructure.persistence.review.repository.LikeJpaRe
 import com.pikachu.purple.infrastructure.persistence.review.repository.ReviewJpaRepository;
 import com.pikachu.purple.infrastructure.persistence.user.entity.UserJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.user.repository.UserJpaRepository;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -78,6 +79,13 @@ public class LikeJpaAdaptor implements LikeRepository {
         ).orElseThrow(() -> LikeNotFoundException);
 
         likeJpaRepository.delete(likeJpaEntity);
+    }
+
+    @Override
+    public void deleteAll(Long reviewId) {
+        List<LikeJpaEntity> likeJpaEntities = likeJpaRepository.findAllByReviewId(reviewId);
+
+        likeJpaRepository.deleteAll(likeJpaEntities);
     }
 
 }
