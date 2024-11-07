@@ -1,10 +1,13 @@
-package com.pikachu.purple.application.perfume.service.application;
+package com.pikachu.purple.application.perfume.service.application.perfume;
 
 import com.pikachu.purple.application.perfume.common.dto.PerfumeAccordDTO;
-import com.pikachu.purple.application.perfume.port.in.GetAccordsAndNotesByPerfumeIdUseCase;
+import com.pikachu.purple.application.perfume.common.dto.PerfumeDetailDTO;
+import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumeDetailByPerfumeIdUseCase;
 import com.pikachu.purple.application.perfume.service.domain.NoteDomainService;
 import com.pikachu.purple.application.perfume.service.domain.PerfumeAccordDomainService;
+import com.pikachu.purple.application.perfume.service.domain.PerfumeDomainService;
 import com.pikachu.purple.domain.perfume.Note;
+import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.perfume.PerfumeAccord;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,9 +16,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class GetAccordsAndNotesByPerfumeIdApplicationService implements
-    GetAccordsAndNotesByPerfumeIdUseCase {
+public class GetPerfumeDetailByPerfumeIdApplicationService implements
+    GetPerfumeDetailByPerfumeIdUseCase {
 
+    private final PerfumeDomainService perfumeDomainService;
     private final NoteDomainService noteDomainService;
     private final PerfumeAccordDomainService perfumeAccordDomainService;
 
@@ -24,9 +28,11 @@ public class GetAccordsAndNotesByPerfumeIdApplicationService implements
     @Override
     public Result invoke(Command command) {
 
+        Perfume perfume = perfumeDomainService.findById(command.perfumeId());
+
         List<PerfumeAccord> perfumeAccords = perfumeAccordDomainService
             .findAllByPerfumeIdOrderByValueDesc(
-                command.perfumeId(),
+                perfume.getId(),
                 MAX_SIZE
             );
         List<PerfumeAccordDTO> perfumeAccordDTOs = new ArrayList<>();
@@ -40,14 +46,14 @@ public class GetAccordsAndNotesByPerfumeIdApplicationService implements
             );
         }
 
-
         List<Note> notes = noteDomainService.findAllByPerfumeId(
-            command.perfumeId());
+            perfume.getId());
 
-        return new Result(
+        return new Result(PerfumeDetailDTO.of(
+            perfume,
             perfumeAccordDTOs,
             notes
-        );
+        ));
     }
 
 }
