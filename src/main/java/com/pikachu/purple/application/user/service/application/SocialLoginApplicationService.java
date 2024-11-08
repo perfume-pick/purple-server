@@ -8,6 +8,7 @@ import com.pikachu.purple.application.user.service.util.SocialLoginService;
 import com.pikachu.purple.application.user.service.util.UserTokenService;
 import com.pikachu.purple.application.user.vo.tokens.IdToken;
 import com.pikachu.purple.domain.user.User;
+import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import com.pikachu.purple.domain.user.vo.SocialLoginToken;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -29,20 +30,20 @@ public class SocialLoginApplicationService implements SocialLoginUseCase {
     @Override
     public Result invoke(Command command) {
         SocialLoginToken socialLoginToken = socialLoginService.getToken(
-            command.socialLoginProvider(),
+            SocialLoginProvider.KAKAO,
             command.authorizationCode()
         );
 
         IdToken idTokenClaims = userTokenService.resolveIdToken(
             socialLoginToken.idToken(),
-            command.socialLoginProvider()
+            SocialLoginProvider.KAKAO
         );
 
         String email = idTokenClaims.getEmail().replace("\"", "");
 
         User user = userDomainService.findByEmailAndSocialLoginProvider(
             email,
-            command.socialLoginProvider()
+            SocialLoginProvider.KAKAO
         );
 
         boolean isSignUp = false;
@@ -52,13 +53,13 @@ public class SocialLoginApplicationService implements SocialLoginUseCase {
             userSignUpUseCase.invoke(
                 new UserSignUpUseCase.Command(
                     email,
-                    command.socialLoginProvider()
+                    SocialLoginProvider.KAKAO
                 )
             );
 
             user = userDomainService.findByEmailAndSocialLoginProvider(
                 email,
-                command.socialLoginProvider()
+                SocialLoginProvider.KAKAO
             );
         }
 
