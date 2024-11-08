@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public interface AuthApi {
 
     @Operation(summary = "소셜 로그인 URI 발급")
-    @PostMapping("/login-try")
+    @PostMapping("/login")
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<SocialLoginTryResponse> socialLoginTry() throws URISyntaxException;
 
