@@ -4,9 +4,6 @@ public interface DeleteComplaintUseCase {
 
     void invoke(Command command);
 
-    record Command(
-        Long complaintId,
-        String token
-    ) {}
+    record Command(Long complaintId) {}
 
 }

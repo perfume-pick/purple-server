@@ -143,7 +143,7 @@
     button.disabled = true;
 
     var xhr = new XMLHttpRequest();
-    xhr.open('DELETE', apiUrl, true);
+    xhr.open('POST', apiUrl, true);
     xhr.onload = function () {
       if (xhr.status === 204) {
         changeButton(button);
