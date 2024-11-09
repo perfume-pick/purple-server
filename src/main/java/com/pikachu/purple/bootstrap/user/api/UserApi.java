@@ -138,6 +138,7 @@ public interface UserApi {
     @Secured
     @Operation(summary = "작성한 리뷰 전체 조회")
     @GetMapping("/my/reviews")
+    @ResponseStatus(HttpStatus.OK)
     SuccessResponse<GetReviewsByUserAndSortTypeResponse> findAllReviewByUserAndSortType(@RequestParam("sort-type") String sortType);
 
 
