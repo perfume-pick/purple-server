@@ -62,6 +62,17 @@ public class ComplaintJpaAdaptor implements ComplaintRepository {
     }
 
     @Override
+    public void find(
+        Long userId,
+        Long complaintId
+    ) {
+        complaintJpaRepository.findByIdAndUserId(
+            complaintId,
+            userId
+        ).orElseThrow(() -> ComplaintNotFoundException);
+    }
+
+    @Override
     public void delete(Long complaintId) {
         complaintJpaRepository.deleteById(complaintId);
     }

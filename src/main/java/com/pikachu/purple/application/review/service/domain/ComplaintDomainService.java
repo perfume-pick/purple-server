@@ -14,6 +14,11 @@ public interface ComplaintDomainService {
         String token
     );
 
+    void find(
+        Long userId,
+        Long complaintId
+    );
+
     void delete(Long complaintId);
 
 }

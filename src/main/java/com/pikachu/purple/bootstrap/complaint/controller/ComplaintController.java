@@ -1,6 +1,7 @@
 package com.pikachu.purple.bootstrap.complaint.controller;
 
 import com.pikachu.purple.application.review.port.in.complaint.DeleteComplaintUseCase;
+import com.pikachu.purple.application.review.port.in.complaint.DeleteComplaintWithReviewUseCase;
 import com.pikachu.purple.application.review.port.in.complaint.GetComplaintFormUseCase;
 import com.pikachu.purple.bootstrap.complaint.api.ComplaintApi;
 import lombok.RequiredArgsConstructor;
@@ -13,6 +14,7 @@ public class ComplaintController implements ComplaintApi {
 
     private final GetComplaintFormUseCase getComplaintFormUseCase;
     private final DeleteComplaintUseCase deleteComplaintUseCase;
+    private final DeleteComplaintWithReviewUseCase deleteComplaintWithReviewUseCase;
 
     @Override
     public String find(
@@ -37,11 +39,16 @@ public class ComplaintController implements ComplaintApi {
     }
 
     @Override
+    public void delete(Long complaintId) {
+        deleteComplaintUseCase.invoke(new DeleteComplaintUseCase.Command(complaintId));
+    }
+
+    @Override
     public void delete(
         Long complaintId,
         String token
     ) {
-       deleteComplaintUseCase.invoke(new DeleteComplaintUseCase.Command(
+       deleteComplaintWithReviewUseCase.invoke(new DeleteComplaintWithReviewUseCase.Command(
            complaintId,
            token
        ));
