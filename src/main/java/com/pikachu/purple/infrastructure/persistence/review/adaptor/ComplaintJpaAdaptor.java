@@ -69,7 +69,10 @@ public class ComplaintJpaAdaptor implements ComplaintRepository {
         complaintJpaRepository.findByIdAndUserId(
             complaintId,
             userId
-        ).orElseThrow(() -> ComplaintNotFoundException);
+        ).ifPresentOrElse(
+            complaint -> {},
+            () -> {throw ComplaintNotFoundException;}
+        );
     }
 
     @Override
