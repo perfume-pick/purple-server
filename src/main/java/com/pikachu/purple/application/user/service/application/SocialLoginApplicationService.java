@@ -30,20 +30,20 @@ public class SocialLoginApplicationService implements SocialLoginUseCase {
     @Override
     public Result invoke(Command command) {
         SocialLoginToken socialLoginToken = socialLoginService.getToken(
-            SocialLoginProvider.KAKAO,
+            command.socialLoginProvider(),
             command.authorizationCode()
         );
 
         IdToken idTokenClaims = userTokenService.resolveIdToken(
             socialLoginToken.idToken(),
-            SocialLoginProvider.KAKAO
+            command.socialLoginProvider()
         );
 
         String email = idTokenClaims.getEmail().replace("\"", "");
 
         User user = userDomainService.findByEmailAndSocialLoginProvider(
             email,
-            SocialLoginProvider.KAKAO
+            command.socialLoginProvider()
         );
 
         boolean isSignUp = false;
@@ -53,13 +53,13 @@ public class SocialLoginApplicationService implements SocialLoginUseCase {
             userSignUpUseCase.invoke(
                 new UserSignUpUseCase.Command(
                     email,
-                    SocialLoginProvider.KAKAO
+                    command.socialLoginProvider()
                 )
             );
 
             user = userDomainService.findByEmailAndSocialLoginProvider(
                 email,
-                SocialLoginProvider.KAKAO
+                command.socialLoginProvider()
             );
         }
 

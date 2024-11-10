@@ -23,10 +23,11 @@ public class AuthController implements AuthApi {
     private final RefreshJwtTokenUseCase refreshJwtTokenUseCase;
 
     @Override
-    public SuccessResponse<SocialLoginTryResponse> socialLoginTry()
+    public SuccessResponse<SocialLoginTryResponse> socialLoginTry(
+        SocialLoginProvider socialLoginProvider)
         throws URISyntaxException {
         SocialLoginTryUseCase.Result result = socialLoginTryUseCase.invoke(
-            new SocialLoginTryUseCase.Command(SocialLoginProvider.KAKAO)
+            new SocialLoginTryUseCase.Command(socialLoginProvider)
         );
 
         return SuccessResponse.of(
@@ -36,10 +37,14 @@ public class AuthController implements AuthApi {
 
     @Override
     public SuccessResponse<SocialLoginResponse> socialLogin(
+        SocialLoginProvider socialLoginProvider,
         String code
     ) {
         SocialLoginUseCase.Result result = socialLoginUseCase.invoke(
-            new SocialLoginUseCase.Command(code)
+            new SocialLoginUseCase.Command(
+                socialLoginProvider,
+                code
+            )
         );
 
         return SuccessResponse.of(
