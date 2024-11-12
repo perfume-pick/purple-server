@@ -30,31 +30,39 @@ public class KakaoSocialLoginStrategy implements SocialLoginStrategy {
     private final SocialLoginPort socialLoginPort;
 
     @Override
-    public URI getUrl() throws URISyntaxException {
-        return generateUrl(kakaoSocialLoginProperties.getAuthorizeUri());
+    public URI getUrl(String frontUrl) throws URISyntaxException {
+        return generateUrl(
+            frontUrl,
+            kakaoSocialLoginProperties.getAuthorizeUri()
+        );
     }
 
     @Override
-    public SocialLoginToken getToken(String authorizationCode) {
+    public SocialLoginToken getToken(
+        String authorizationCode,
+        String frontUrl
+    ) {
         return socialLoginPort.getToken(
             new SocialLoginTokenRequest(
                 GRANT_TYPE,
                 kakaoSocialLoginProperties.getClientId(),
-                kakaoSocialLoginProperties.getRedirectUri(),
+                frontUrl + kakaoSocialLoginProperties.getRedirectUri(),
                 authorizationCode
             )
         );
     }
 
-    private URI generateUrl(String socialLoginPath) throws URISyntaxException {
+    private URI generateUrl(
+        String frontUrl,
+        String socialLoginPath
+    ) throws URISyntaxException {
         return new URI(
             socialLoginPath +
                 QUERY_PARAMETER_PREFIX + "client_id=" + kakaoSocialLoginProperties.getClientId()
                 +
-                ENCODED_QUERY_PARAMETER_DELIMETER + "redirect_uri="
-                + kakaoSocialLoginProperties.getRedirectUri() +
-                ENCODED_QUERY_PARAMETER_DELIMETER + "response_type="
-                + kakaoSocialLoginProperties.getResponseType()
+                ENCODED_QUERY_PARAMETER_DELIMETER + "redirect_uri=" + frontUrl + kakaoSocialLoginProperties.getRedirectUri()
+                +
+                ENCODED_QUERY_PARAMETER_DELIMETER + "response_type=" + kakaoSocialLoginProperties.getResponseType()
         );
     }
 

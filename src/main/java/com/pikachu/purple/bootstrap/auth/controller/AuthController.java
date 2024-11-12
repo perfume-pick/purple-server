@@ -5,6 +5,7 @@ import com.pikachu.purple.application.user.port.in.SocialLoginTryUseCase;
 import com.pikachu.purple.application.user.port.in.SocialLoginUseCase;
 import com.pikachu.purple.bootstrap.auth.api.AuthApi;
 import com.pikachu.purple.bootstrap.auth.dto.request.RefreshJwtTokenRequest;
+import com.pikachu.purple.bootstrap.auth.dto.request.SocialLoginRequest;
 import com.pikachu.purple.bootstrap.auth.dto.response.RefreshJwtTokenResponse;
 import com.pikachu.purple.bootstrap.auth.dto.response.SocialLoginResponse;
 import com.pikachu.purple.bootstrap.auth.dto.response.SocialLoginTryResponse;
@@ -24,10 +25,14 @@ public class AuthController implements AuthApi {
 
     @Override
     public SuccessResponse<SocialLoginTryResponse> socialLoginTry(
-        SocialLoginProvider socialLoginProvider)
-        throws URISyntaxException {
+        SocialLoginProvider socialLoginProvider,
+        SocialLoginRequest request
+    ) throws URISyntaxException {
         SocialLoginTryUseCase.Result result = socialLoginTryUseCase.invoke(
-            new SocialLoginTryUseCase.Command(socialLoginProvider)
+            new SocialLoginTryUseCase.Command(
+                socialLoginProvider,
+                request.frontUrl()
+            )
         );
 
         return SuccessResponse.of(
@@ -38,12 +43,14 @@ public class AuthController implements AuthApi {
     @Override
     public SuccessResponse<SocialLoginResponse> socialLogin(
         SocialLoginProvider socialLoginProvider,
-        String code
+        String code,
+        SocialLoginRequest request
     ) {
         SocialLoginUseCase.Result result = socialLoginUseCase.invoke(
             new SocialLoginUseCase.Command(
                 socialLoginProvider,
-                code
+                code,
+                request.frontUrl()
             )
         );
 

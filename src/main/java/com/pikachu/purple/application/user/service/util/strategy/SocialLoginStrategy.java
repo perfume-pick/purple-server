@@ -7,9 +7,9 @@ import java.net.URISyntaxException;
 
 public interface SocialLoginStrategy {
 
-    URI getUrl() throws URISyntaxException;
+    URI getUrl(String frontUrl) throws URISyntaxException;
 
-    SocialLoginToken getToken(String authorizationCode);
+    SocialLoginToken getToken(String authorizationCode, String frontUrl);
 
     IdToken resolveIdToken(String idToken);
 

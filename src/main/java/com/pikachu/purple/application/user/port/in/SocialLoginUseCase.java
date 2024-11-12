@@ -8,7 +8,8 @@ public interface SocialLoginUseCase {
 
     record Command(
         SocialLoginProvider socialLoginProvider,
-        String authorizationCode
+        String authorizationCode,
+        String frontUrl
     ) {}
 
     record Result(

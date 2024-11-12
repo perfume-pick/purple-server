@@ -31,7 +31,8 @@ public class SocialLoginApplicationService implements SocialLoginUseCase {
     public Result invoke(Command command) {
         SocialLoginToken socialLoginToken = socialLoginService.getToken(
             command.socialLoginProvider(),
-            command.authorizationCode()
+            command.authorizationCode(),
+            command.frontUrl()
         );
 
         IdToken idTokenClaims = userTokenService.resolveIdToken(
