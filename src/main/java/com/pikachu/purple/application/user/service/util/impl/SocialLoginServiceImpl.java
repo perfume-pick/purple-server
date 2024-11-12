@@ -19,11 +19,14 @@ public class SocialLoginServiceImpl implements SocialLoginService {
     private final SocialLoginStrategyFactory socialLoginStrategyFactory;
 
     @Override
-    public URI createUri(SocialLoginProvider socialLoginProvider) throws URISyntaxException {
+    public URI createUri(
+        SocialLoginProvider socialLoginProvider,
+        String frontUrl
+    ) throws URISyntaxException {
         SocialLoginStrategy socialLoginUriStrategy = socialLoginStrategyFactory.getStrategy(
             socialLoginProvider);
 
-        URI uri = socialLoginUriStrategy.getUrl();
+        URI uri = socialLoginUriStrategy.getUrl(frontUrl);
 
         UUID stateCode = generateState();
 
@@ -33,12 +36,16 @@ public class SocialLoginServiceImpl implements SocialLoginService {
     @Override
     public SocialLoginToken getToken(
         SocialLoginProvider socialLoginProvider,
-        String authorizationCode
+        String authorizationCode,
+        String frontUrl
     ) {
         SocialLoginStrategy socialLoginUriStrategy = socialLoginStrategyFactory.getStrategy(
             socialLoginProvider);
 
-        return socialLoginUriStrategy.getToken(authorizationCode);
+        return socialLoginUriStrategy.getToken(
+            authorizationCode,
+            frontUrl
+        );
     }
 
     private UUID generateState() {

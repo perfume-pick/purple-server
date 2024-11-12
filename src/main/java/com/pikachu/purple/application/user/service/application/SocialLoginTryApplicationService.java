@@ -14,9 +14,12 @@ public class SocialLoginTryApplicationService implements SocialLoginTryUseCase {
     private final SocialLoginService socialLoginService;
 
     @Override
-    public SocialLoginTryUseCase.Result invoke(SocialLoginTryUseCase.Command command)
+    public SocialLoginTryUseCase.Result invoke(Command command)
         throws URISyntaxException {
-        URI socialLoginUri = socialLoginService.createUri(command.socialLoginProvider());
+        URI socialLoginUri = socialLoginService.createUri(
+            command.socialLoginProvider(),
+            command.frontUrl()
+        );
 
         return new SocialLoginTryUseCase.Result(socialLoginUri.toString());
     }

@@ -8,7 +8,6 @@ import com.pikachu.purple.application.user.service.util.SocialLoginService;
 import com.pikachu.purple.application.user.service.util.UserTokenService;
 import com.pikachu.purple.application.user.vo.tokens.IdToken;
 import com.pikachu.purple.domain.user.User;
-import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import com.pikachu.purple.domain.user.vo.SocialLoginToken;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -31,7 +30,8 @@ public class SocialLoginApplicationService implements SocialLoginUseCase {
     public Result invoke(Command command) {
         SocialLoginToken socialLoginToken = socialLoginService.getToken(
             command.socialLoginProvider(),
-            command.authorizationCode()
+            command.authorizationCode(),
+            command.frontUrl()
         );
 
         IdToken idTokenClaims = userTokenService.resolveIdToken(

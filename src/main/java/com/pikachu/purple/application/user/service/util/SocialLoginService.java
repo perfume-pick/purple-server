@@ -7,11 +7,15 @@ import java.net.URISyntaxException;
 
 public interface SocialLoginService {
 
-    URI createUri(SocialLoginProvider socialLoginProvider) throws URISyntaxException;
+    URI createUri(
+        SocialLoginProvider socialLoginProvider,
+        String frontUrl
+    ) throws URISyntaxException;
 
     SocialLoginToken getToken(
         SocialLoginProvider socialLoginProvider,
-        String authorizationCode
+        String authorizationCode,
+        String frontUrl
     );
 
 }
