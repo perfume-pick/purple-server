@@ -6,6 +6,7 @@ import com.pikachu.purple.bootstrap.auth.dto.response.RefreshJwtTokenResponse;
 import com.pikachu.purple.bootstrap.auth.dto.response.SocialLoginResponse;
 import com.pikachu.purple.bootstrap.auth.dto.response.SocialLoginTryResponse;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
+import com.pikachu.purple.bootstrap.common.security.Secured;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -45,5 +46,11 @@ public interface AuthApi {
     SuccessResponse<RefreshJwtTokenResponse> refreshJwtToken(
         @RequestBody RefreshJwtTokenRequest request
     );
+
+    @Secured
+    @Operation(summary = "소셜 로그아웃")
+    @PostMapping("/logout")
+    @ResponseStatus(HttpStatus.OK)
+    SuccessResponse<String> socialLogout() throws URISyntaxException;
 
 }

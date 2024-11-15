@@ -18,4 +18,9 @@ public interface SocialLoginService {
         String frontUrl
     );
 
+    Long logout(
+        String accessToken,
+        String refreshToken
+    );
+
 }

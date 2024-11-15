@@ -198,4 +198,9 @@ public class UserTokenServiceImpl implements UserTokenService {
         );
     }
 
+    @Override
+    public void deleteAllToken(Long userId) {
+        userTokenRepository.deleteAllToken(userId);
+    }
+
 }

@@ -30,4 +30,6 @@ public interface UserTokenService {
         String refreshToken
     );
 
+    void deleteAllToken(Long userId);
+
 }

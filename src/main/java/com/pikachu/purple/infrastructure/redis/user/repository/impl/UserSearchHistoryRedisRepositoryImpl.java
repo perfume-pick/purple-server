@@ -15,7 +15,7 @@ public class UserSearchHistoryRedisRepositoryImpl implements
     UserSearchHistoryRedisRepository {
 
     private static final int MAX_SIZE = 9;
-    private static final String KEY = "searchHistory:";
+    private static final String KEY = "search_history:";
 
     private final RedisTemplate<String, Object> redisTemplate;
     private final ObjectMapper objectMapper;

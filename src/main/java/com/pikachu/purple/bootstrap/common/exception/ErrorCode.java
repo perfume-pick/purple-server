@@ -55,6 +55,12 @@ public enum ErrorCode {
         "인증되지 않은 사용자입니다."
     ),
 
+    ALREADY_LOGOUT_EXCEPTION(
+        404,
+        "U007",
+        "이미 로그아웃 되었습니다."
+    ),
+
     // Jwt
     ACCESS_TOKEN_EXPIRED_EXCEPTION(
         400,

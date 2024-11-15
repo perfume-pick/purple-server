@@ -4,6 +4,7 @@ import com.pikachu.purple.application.common.properties.KakaoSocialLoginProperti
 import com.pikachu.purple.application.user.port.in.SocialLoginUseCase;
 import com.pikachu.purple.application.user.port.in.UserSignUpUseCase;
 import com.pikachu.purple.application.user.service.domain.UserDomainService;
+import com.pikachu.purple.application.user.service.util.OAuthTokenService;
 import com.pikachu.purple.application.user.service.util.SocialLoginService;
 import com.pikachu.purple.application.user.service.util.UserTokenService;
 import com.pikachu.purple.application.user.vo.tokens.IdToken;
@@ -25,6 +26,7 @@ public class SocialLoginApplicationService implements SocialLoginUseCase {
     private final UserDomainService userDomainService;
     private final UserTokenService userTokenService;
     private final UserSignUpUseCase userSignUpUseCase;
+    private final OAuthTokenService oAuthTokenService;
 
     @Override
     public Result invoke(Command command) {
@@ -62,6 +64,13 @@ public class SocialLoginApplicationService implements SocialLoginUseCase {
                 command.socialLoginProvider()
             );
         }
+
+        oAuthTokenService.create(
+            user.getId(),
+            socialLoginToken.accessToken(),
+            socialLoginToken.refreshToken(),
+            socialLoginToken.refreshTokenExpiresIn()
+        );
 
         String accessToken = userTokenService.generateAccessToken(user);
         String refreshToken = userTokenService.generateRefreshToken(user);
