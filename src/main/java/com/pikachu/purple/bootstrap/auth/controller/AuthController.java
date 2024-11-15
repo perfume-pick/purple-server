@@ -3,6 +3,7 @@ package com.pikachu.purple.bootstrap.auth.controller;
 import com.pikachu.purple.application.user.port.in.RefreshJwtTokenUseCase;
 import com.pikachu.purple.application.user.port.in.SocialLoginTryUseCase;
 import com.pikachu.purple.application.user.port.in.SocialLoginUseCase;
+import com.pikachu.purple.application.user.port.in.SocialLogoutUseCase;
 import com.pikachu.purple.bootstrap.auth.api.AuthApi;
 import com.pikachu.purple.bootstrap.auth.dto.request.RefreshJwtTokenRequest;
 import com.pikachu.purple.bootstrap.auth.dto.request.SocialLoginRequest;
@@ -22,6 +23,7 @@ public class AuthController implements AuthApi {
     private final SocialLoginTryUseCase socialLoginTryUseCase;
     private final SocialLoginUseCase socialLoginUseCase;
     private final RefreshJwtTokenUseCase refreshJwtTokenUseCase;
+    private final SocialLogoutUseCase socialLogoutUseCase;
 
     @Override
     public SuccessResponse<SocialLoginTryResponse> socialLoginTry(
@@ -77,4 +79,12 @@ public class AuthController implements AuthApi {
             new RefreshJwtTokenResponse(result.jwtToken())
         );
     }
+
+    @Override
+    public SuccessResponse<String> socialLogout() {
+        String clientUrl = socialLogoutUseCase.invoke();
+
+        return SuccessResponse.of(clientUrl);
+    }
+
 }

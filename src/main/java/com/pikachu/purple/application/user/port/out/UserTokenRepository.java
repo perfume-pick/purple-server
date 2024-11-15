@@ -24,4 +24,6 @@ public interface UserTokenRepository {
         Long userId
     );
 
+    void deleteAllToken(Long userId);
+
 }

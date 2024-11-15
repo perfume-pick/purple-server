@@ -48,6 +48,21 @@ public class SocialLoginServiceImpl implements SocialLoginService {
         );
     }
 
+    @Override
+    public Long logout(
+        String accessToken,
+        String refreshToken
+    ) {
+        SocialLoginStrategy socialLoginStrategy = socialLoginStrategyFactory.getStrategy(
+            SocialLoginProvider.KAKAO
+        );
+
+        return socialLoginStrategy.logout(
+            accessToken,
+            refreshToken
+        );
+    }
+
     private UUID generateState() {
         return UUID.randomUUID();
     }

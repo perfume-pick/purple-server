@@ -13,4 +13,6 @@ public interface SocialLoginStrategy {
 
     IdToken resolveIdToken(String idToken);
 
+    Long logout(String accessToken, String refreshToken);
+
 }

@@ -74,6 +74,9 @@ public class BusinessException extends RuntimeException {
     public static final BusinessException LikeAlreadyExistedException = new BusinessException(
         ErrorCode.LIKE_ALREADY_EXISTED
     );
+    public static final BusinessException AlreadyLogoutException = new BusinessException(
+        ErrorCode.ALREADY_LOGOUT_EXCEPTION
+    );
 
     private final ErrorCode errorCode;
 

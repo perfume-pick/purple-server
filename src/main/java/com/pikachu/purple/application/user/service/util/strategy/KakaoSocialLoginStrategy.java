@@ -3,6 +3,7 @@ package com.pikachu.purple.application.user.service.util.strategy;
 import com.pikachu.purple.application.common.properties.KakaoSocialLoginProperties;
 import com.pikachu.purple.application.user.port.out.SocialLoginPort;
 import com.pikachu.purple.application.user.vo.SocialLoginTokenRequest;
+import com.pikachu.purple.application.user.vo.SocialRefreshTokenRequest;
 import com.pikachu.purple.application.user.vo.tokens.IdToken;
 import com.pikachu.purple.domain.user.vo.SocialLoginToken;
 import com.pikachu.purple.support.security.auth.util.JwtTokenProvider;
@@ -78,5 +79,17 @@ public class KakaoSocialLoginStrategy implements SocialLoginStrategy {
         } catch (MalformedURLException e) {
             throw new IllegalArgumentException("jwksUri 설정이 올바르지 않습니다.");
         }
+    }
+
+    @Override
+    public Long logout(String accessToken, String refreshToken) {
+        return socialLoginPort.logout(
+            accessToken,
+            new SocialRefreshTokenRequest(
+                GRANT_TYPE,
+                kakaoSocialLoginProperties.getClientId(),
+                refreshToken
+            )
+        );
     }
 }

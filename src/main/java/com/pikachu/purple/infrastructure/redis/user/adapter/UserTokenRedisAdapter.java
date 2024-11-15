@@ -65,4 +65,10 @@ public class UserTokenRedisAdapter implements UserTokenRepository {
 
         return Optional.of(refreshToken);
     }
+
+    @Override
+    public void deleteAllToken(Long userId) {
+        userAccessTokenRedisRepository.deleteById(userId);
+        userRefreshTokenRedisRepository.deleteById(userId);
+    }
 }
