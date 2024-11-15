@@ -28,9 +28,13 @@ public class OAuthTokenRedisRepositoryImpl implements OAuthTokenRedisRepository 
         String key = KEY + userId;
 
         Object data = redisTemplate.opsForValue().get(key);
-        return (data instanceof LinkedHashMap)
-            ? objectMapper.convertValue(data, OAuthTokenRedisHash.class)
-            : (data instanceof OAuthTokenRedisHash ? (OAuthTokenRedisHash) data : null);
+        if (data instanceof LinkedHashMap) {
+            return objectMapper.convertValue(data, OAuthTokenRedisHash.class);
+        } else if (data instanceof OAuthTokenRedisHash redisHash) {
+            return redisHash;
+        } else {
+            return null;
+        }
     }
 
 }
