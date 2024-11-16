@@ -157,4 +157,9 @@ public class UserController implements UserApi {
         );
     }
 
+    @Override
+    public void withdraw() {
+
+    }
+
 }

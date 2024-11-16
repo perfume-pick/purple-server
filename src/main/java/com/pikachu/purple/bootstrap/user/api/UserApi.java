@@ -141,5 +141,11 @@ public interface UserApi {
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<GetReviewsByUserAndSortTypeResponse> findAllReviewByUserAndSortType(@RequestParam("sort-type") String sortType);
 
+    @Secured
+    @Operation(summary = "계정삭제")
+    @PostMapping("/my/withdraw")
+    @ResponseStatus(HttpStatus.OK)
+    void withdraw();
+
 
 }
