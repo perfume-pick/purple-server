@@ -1,7 +1,5 @@
 package com.pikachu.purple.application.perfume.service.application;
 
-import static com.pikachu.purple.bootstrap.common.exception.BusinessException.UserAccordNotFoundException;
-
 import com.pikachu.purple.application.perfume.common.dto.RecommendedPerfumeDTO;
 import com.pikachu.purple.application.perfume.common.dto.UserAccordDTO;
 import com.pikachu.purple.application.perfume.common.vo.PerfumeAccordMatchVO;
