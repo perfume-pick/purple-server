@@ -1,7 +1,5 @@
 package com.pikachu.purple.application.perfume.service.application;
 
-import static com.pikachu.purple.bootstrap.common.exception.BusinessException.UserAccordNotFoundException;
-
 import com.pikachu.purple.application.perfume.common.dto.RecommendedPerfumeDTO;
 import com.pikachu.purple.application.perfume.common.dto.UserAccordDTO;
 import com.pikachu.purple.application.perfume.common.vo.PerfumeAccordMatchVO;
@@ -12,6 +10,7 @@ import com.pikachu.purple.application.user.port.in.useraccord.GetTopThreeUserAcc
 import com.pikachu.purple.domain.accord.Accord;
 import com.pikachu.purple.domain.perfume.Perfume;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.IntStream;
 import lombok.RequiredArgsConstructor;
@@ -35,7 +34,10 @@ public class GetPerfumesAndUserAccordsByUserApplicationService implements
         GetTopThreeUserAccordsUseCase.Result result = getTopThreeUserAccordsUseCase.invoke();
 
         if (result.userAccords().isEmpty()) {
-            throw UserAccordNotFoundException;
+            return new Result(
+                Collections.emptyList(),
+                Collections.emptyList()
+            );
         }
 
         List<UserAccordDTO> userAccordDTOs = IntStream.range(0, 3)
