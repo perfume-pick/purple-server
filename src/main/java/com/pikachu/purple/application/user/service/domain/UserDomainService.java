@@ -29,4 +29,6 @@ public interface UserDomainService {
 
     User findById(Long userId);
 
+    void delete(Long userId);
+
 }

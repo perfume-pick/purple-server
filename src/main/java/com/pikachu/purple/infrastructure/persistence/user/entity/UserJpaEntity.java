@@ -41,6 +41,7 @@ public class UserJpaEntity extends BaseEntity {
     private SocialLoginProvider socialLoginProvider;
 
     public void update(User user) {
+        this.email = user.getEmail();
         this.nickname = user.getNickname();
         this.imageUrl = user.getImageUrl();
     }

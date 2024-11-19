@@ -35,6 +35,10 @@ public class User {
         this.imageUrl = imageUrl;
     }
 
+    public void updateEmail(String email) {
+        this.email = email;
+    }
+
     public User(Long id, String nickname, String email, String imageUrl,
         SocialLoginProvider socialLoginProvider) {
         this.id = id;

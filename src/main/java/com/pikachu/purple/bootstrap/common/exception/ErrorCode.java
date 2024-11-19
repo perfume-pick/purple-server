@@ -87,7 +87,6 @@ public enum ErrorCode {
         "J005",
         "리프레시 토큰을 찾을 수 없습니다."
     ),
-
     NOT_VALID_LOGIN_ID_TOKEN(
         400,
         "J006",

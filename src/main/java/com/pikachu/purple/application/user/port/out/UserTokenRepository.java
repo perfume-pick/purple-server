@@ -16,7 +16,7 @@ public interface UserTokenRepository {
         Long expirationSeconds
     );
 
-    Optional<String> findAccessTokenByUserId(
+    void findAccessTokenByUserId(
         Long userId
     );
 

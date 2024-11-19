@@ -1,5 +1,7 @@
 package com.pikachu.purple.infrastructure.redis.user.adapter;
 
+import static com.pikachu.purple.bootstrap.common.exception.BusinessException.AccessTokenExpiredException;
+
 import com.pikachu.purple.application.user.port.out.UserTokenRepository;
 import com.pikachu.purple.infrastructure.redis.user.entity.UserAccessTokenRedisHash;
 import com.pikachu.purple.infrastructure.redis.user.entity.UserRefreshTokenRedisHash;
@@ -47,13 +49,10 @@ public class UserTokenRedisAdapter implements UserTokenRepository {
     }
 
     @Override
-    public Optional<String> findAccessTokenByUserId(Long userId) {
-        Optional<UserAccessTokenRedisHash> userAccessTokenRedisHash = userAccessTokenRedisRepository.findById(
-            userId);
-
-        String accessToken = userAccessTokenRedisHash.get().getAccessToken();
-
-        return Optional.of(accessToken);
+    public void findAccessTokenByUserId(Long userId) {
+        if(userAccessTokenRedisRepository.findById(userId).isEmpty()) {
+            throw AccessTokenExpiredException;
+        }
     }
 
     @Override
