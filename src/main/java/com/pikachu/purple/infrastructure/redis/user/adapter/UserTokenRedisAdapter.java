@@ -50,7 +50,9 @@ public class UserTokenRedisAdapter implements UserTokenRepository {
 
     @Override
     public void findAccessTokenByUserId(Long userId) {
-        userAccessTokenRedisRepository.findById(userId).orElseThrow(() -> AccessTokenExpiredException);
+        if(userAccessTokenRedisRepository.findById(userId).isEmpty()) {
+            throw AccessTokenExpiredException;
+        }
     }
 
     @Override
