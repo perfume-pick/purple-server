@@ -141,5 +141,10 @@ public interface UserApi {
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<GetReviewsByUserAndSortTypeResponse> findAllReviewByUserAndSortType(@RequestParam("sort-type") String sortType);
 
+    @Secured
+    @Operation(summary = "회원 탈퇴")
+    @DeleteMapping("/my/withdraw")
+    @ResponseStatus(HttpStatus.OK)
+    SuccessResponse<String> withdraw();
 
 }

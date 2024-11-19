@@ -7,6 +7,7 @@ import com.pikachu.purple.application.history.port.in.visithistory.DeleteVisitHi
 import com.pikachu.purple.application.history.port.in.visithistory.GetVisitHistoriesUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetReviewByPerfumeIdAndUserUseCase;
 import com.pikachu.purple.application.review.port.in.starrating.GetReviewsByUserAndSortTypeUseCase;
+import com.pikachu.purple.application.user.port.in.user.DeleteUserUseCase;
 import com.pikachu.purple.application.user.port.in.user.GetUserProfileByUserUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetTopThreeReviewedBrandsUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetUserReviewCountsUseCase;
@@ -43,6 +44,7 @@ public class UserController implements UserApi {
     private final GetPolarizedUserAccordsByUserUseCase getPolarizedUserAccordsByUserUseCase;
     private final GetUserProfileByUserUseCase getUserProfileByUserUseCase;
     private final GetReviewsByUserAndSortTypeUseCase getReviewsByUserAndSortTypeUseCase;
+    private final DeleteUserUseCase deleteUserUseCase;
 
     @Override
     public SuccessResponse<GetUserProfileResponse> updateProfile(
@@ -155,6 +157,13 @@ public class UserController implements UserApi {
         return SuccessResponse.of(
             new GetReviewsByUserAndSortTypeResponse(result.reviewWithPerfumeDTOs())
         );
+    }
+
+    @Override
+    public SuccessResponse<String> withdraw() {
+        DeleteUserUseCase.Result result = deleteUserUseCase.invoke();
+
+        return SuccessResponse.of(result.clientUrl());
     }
 
 }

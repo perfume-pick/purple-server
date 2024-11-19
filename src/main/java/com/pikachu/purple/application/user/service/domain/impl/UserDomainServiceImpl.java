@@ -14,7 +14,8 @@ import org.springframework.web.multipart.MultipartFile;
 @RequiredArgsConstructor
 public class UserDomainServiceImpl implements UserDomainService {
 
-    private static final String IMAGE_DEFAULT = "";
+    private static final String NICKNAME_ANONYMIZATION = "익명의 사용자";
+    private static final String STRING_DEFAULT = "";
     private final UserRepository userRepository;
     private final ImageUrlS3Uploader imageUrlS3Uploader;
 
@@ -91,7 +92,7 @@ public class UserDomainServiceImpl implements UserDomainService {
     }
 
     private String changeImage(Long userId, MultipartFile picture) {
-        if (picture == null || picture.isEmpty()) return IMAGE_DEFAULT;
+        if (picture == null || picture.isEmpty()) return STRING_DEFAULT;
         return imageUrlS3Uploader.upload(
             userId,
             picture
@@ -118,6 +119,19 @@ public class UserDomainServiceImpl implements UserDomainService {
     @Override
     public User findById(Long userId) {
         return userRepository.findById(userId);
+    }
+
+    @Override
+    public void delete(Long userId) {
+        User user = userRepository.findById(userId);
+
+        deleteExistingImage(user);
+
+        user.updateEmail(STRING_DEFAULT);
+        user.updateNickname(NICKNAME_ANONYMIZATION);
+        user.updateImageUrl(STRING_DEFAULT);
+
+        userRepository.update(user);
     }
 
 }

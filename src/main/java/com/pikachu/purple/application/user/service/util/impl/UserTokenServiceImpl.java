@@ -1,7 +1,5 @@
 package com.pikachu.purple.application.user.service.util.impl;
 
-import static com.pikachu.purple.bootstrap.common.exception.BusinessException.AccessTokenExpiredException;
-
 import com.pikachu.purple.application.common.properties.JwtTokenProperties;
 import com.pikachu.purple.application.user.port.out.UserTokenRepository;
 import com.pikachu.purple.application.user.service.util.UserTokenService;
@@ -56,7 +54,7 @@ public class UserTokenServiceImpl implements UserTokenService {
         );
         String email = jwtClaims.getCustomClaims().get("email").toString().replace("\"", "");
 
-        userTokenRepository.findAccessTokenByUserId(userId).orElseThrow(() -> AccessTokenExpiredException);
+        userTokenRepository.findAccessTokenByUserId(userId);
 
         return new AccessToken(
             userId,
