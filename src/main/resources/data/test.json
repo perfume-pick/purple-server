@@ -1,0 +1,49 @@
+{
+	"perfume_name": "",
+	"brand_name": "",
+	"image_src": "",
+	"main_accords": {},
+	"notes": {
+		"Top Notes": [],
+		"Middle Notes": [],
+		"Base Notes": [],
+		"UNDEFINED": []
+	},
+	"season_data": {
+		"winter": 0,
+		"spring": 0,
+		"summer": 0,
+		"fall": 0,
+		"day": 0,
+		"night": 0
+	},
+	"perfume_properties": {
+		"LONGEVITY": {
+			"very weak": 0,
+			"weak": 0,
+			"moderate": 0,
+			"long lasting": 0,
+			"eternal": 0
+		},
+		"SILLAGE": {
+			"intimate": 0,
+			"moderate": 0,
+			"strong": 0,
+			"enormous": 0
+		},
+		"GENDER": {
+			"female": 0,
+			"more female": 0,
+			"unisex": 0,
+			"more male": 0,
+			"male": 0
+		},
+		"PRICE VALUE": {
+			"way overpriced": 0,
+			"overpriced": 0,
+			"ok": 0,
+			"good value": 0,
+			"great value": 0
+		}
+	}
+}
