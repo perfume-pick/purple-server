@@ -39,6 +39,9 @@ jobs:
           target: "~/app/docker"
           overwrite: true
 
+      - name: Install sshpass
+        run: sudo apt-get install -y sshpass
+
       - name: Copy Docker Compose File to Backend via Frontend
         uses: appleboy/ssh-action@master
         with:
@@ -47,8 +50,7 @@ jobs:
           key: ${{ secrets.DEV_INSTANCE_PEM_KEY }}
           script: |
             echo "Connecting to Backend EC2 from Frontend EC2..."
-            ssh -o StrictHostKeyChecking=no ${{ secrets.DEV_INSTANCE_USERNAME }}@${{ secrets.DEV_BACKEND_INSTANCE_PRIVATE_IP }} << 'EOF'
-              echo "${{ secrets.DEV_BACKEND_PASSWORD }}" | sudo -S true
+            sshpass -p "${{ secrets.DEV_BACKEND_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.DEV_INSTANCE_USERNAME }}@${{ secrets.DEV_BACKEND_INSTANCE_PRIVATE_IP }} << 'EOF'
               echo "Copying file to ~/app/docker directory..."
               cat << 'FILE_CONTENT' > ~/app/docker/compose-dev.yaml
               $(cat compose-dev.yaml)
@@ -56,47 +58,47 @@ jobs:
               echo "File copied successfully to Backend EC2."
             EOF
 
-      - name: Install Docker if not present
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.DEV_FRONT_INSTANCE_HOST }}
-          username: ${{ secrets.DEV_INSTANCE_USERNAME }}
-          key: ${{ secrets.DEV_INSTANCE_PEM_KEY }}
-          script: |
-            echo "Connecting to Backend EC2..."
-            ssh -o StrictHostKeyChecking=no ${{ secrets.DEV_INSTANCE_USERNAME }}@${{ secrets.DEV_BACKEND_INSTANCE_PRIVATE_IP }} << 'EOF'
-            echo "${{ secrets.DEV_BACKEND_PASSWORD }}" | sudo -S true
-            
-            if ! command -v docker >/dev/null 2>&1; then
-              echo "Installing Docker..."
-              sudo apt-get update
-              sudo apt-get install -y docker.io
-            else
-              echo "Docker already installed."
-            fi
-            if ! command -v docker-compose >/dev/null 2>&1; then
-              echo "Installing Docker Compose..."
-              sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-              sudo chmod +x /usr/local/bin/docker-compose
-            else
-              echo "Docker Compose already installed."
-            fi
-
-      - name: Run Docker Compose up
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.DEV_FRONT_INSTANCE_HOST }}
-          username: ${{ secrets.DEV_INSTANCE_USERNAME }}
-          key: ${{ secrets.DEV_INSTANCE_PEM_KEY }}
-          script: |
-            echo "Connecting to Backend EC2..."
-            ssh -o StrictHostKeyChecking=no ${{ secrets.DEV_INSTANCE_USERNAME }}@${{ secrets.DEV_BACKEND_INSTANCE_PRIVATE_IP }} << 'EOF'
-            echo "${{ secrets.DEV_BACKEND_PASSWORD }}" | sudo -S true
-            
-            echo "${{ secrets.DOCKER_PASSWORD }}" | sudo docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
-            sudo docker-compose -f ~/app/docker/compose-dev.yaml down --rmi all
-            sudo docker-compose -f ~/app/docker/compose-dev.yaml pull
-            sudo docker-compose -f ~/app/docker/compose-dev.yaml up -d --force-recreate
+      #      - name: Install Docker if not present
+      #        uses: appleboy/ssh-action@v1.0.3
+      #        with:
+      #          host: ${{ secrets.DEV_FRONT_INSTANCE_HOST }}
+      #          username: ${{ secrets.DEV_INSTANCE_USERNAME }}
+      #          key: ${{ secrets.DEV_INSTANCE_PEM_KEY }}
+      #          script: |
+      #            echo "Connecting to Backend EC2..."
+      #            ssh -o StrictHostKeyChecking=no ${{ secrets.DEV_INSTANCE_USERNAME }}@${{ secrets.DEV_BACKEND_INSTANCE_PRIVATE_IP }} << 'EOF'
+      #            echo "${{ secrets.DEV_BACKEND_PASSWORD }}" | sudo -S true
+      #
+      #            if ! command -v docker >/dev/null 2>&1; then
+      #              echo "Installing Docker..."
+      #              sudo apt-get update
+      #              sudo apt-get install -y docker.io
+      #            else
+      #              echo "Docker already installed."
+      #            fi
+      #            if ! command -v docker-compose >/dev/null 2>&1; then
+      #              echo "Installing Docker Compose..."
+      #              sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+      #              sudo chmod +x /usr/local/bin/docker-compose
+      #            else
+      #              echo "Docker Compose already installed."
+      #            fi
+      #
+      #      - name: Run Docker Compose up
+      #        uses: appleboy/ssh-action@master
+      #        with:
+      #          host: ${{ secrets.DEV_FRONT_INSTANCE_HOST }}
+      #          username: ${{ secrets.DEV_INSTANCE_USERNAME }}
+      #          key: ${{ secrets.DEV_INSTANCE_PEM_KEY }}
+      #          script: |
+      #            echo "Connecting to Backend EC2..."
+      #            ssh -o StrictHostKeyChecking=no ${{ secrets.DEV_INSTANCE_USERNAME }}@${{ secrets.DEV_BACKEND_INSTANCE_PRIVATE_IP }} << 'EOF'
+      #            echo "${{ secrets.DEV_BACKEND_PASSWORD }}" | sudo -S true
+      #
+      #            echo "${{ secrets.DOCKER_PASSWORD }}" | sudo docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+      #            sudo docker-compose -f ~/app/docker/compose-dev.yaml down --rmi all
+      #            sudo docker-compose -f ~/app/docker/compose-dev.yaml pull
+      #            sudo docker-compose -f ~/app/docker/compose-dev.yaml up -d --force-recreate
 
       - name: Remove GitHub Actions IP
         run: |
