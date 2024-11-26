@@ -29,35 +29,6 @@ jobs:
             --port 22 \
             --cidr ${{ steps.publicip.outputs.ip }}/32
 
-      - name: Copy Docker Compose file to server
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.DEV_FRONT_INSTANCE_HOST }}
-          username: ${{ secrets.DEV_INSTANCE_USERNAME }}
-          key: ${{ secrets.DEV_INSTANCE_PEM_KEY }}
-          source: "./compose-dev.yaml"
-          target: "~/app/docker"
-          overwrite: true
-
-      - name: Install sshpass
-        run: sudo apt-get install -y sshpass
-
-      - name: Copy Docker Compose File to Backend via Frontend
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.DEV_FRONT_INSTANCE_HOST }}
-          username: ${{ secrets.DEV_INSTANCE_USERNAME }}
-          key: ${{ secrets.DEV_INSTANCE_PEM_KEY }}
-          script: |
-            echo "Connecting to Backend EC2 from Frontend EC2..."
-            sshpass -p "${{ secrets.DEV_BACKEND_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.DEV_INSTANCE_USERNAME }}@${{ secrets.DEV_BACKEND_INSTANCE_PRIVATE_IP }} << 'EOF'
-              echo "Copying file to ~/app/docker directory..."
-              cat << 'FILE_CONTENT' > ~/app/docker/compose-dev.yaml
-              $(cat compose-dev.yaml)
-              FILE_CONTENT
-              echo "File copied successfully to Backend EC2."
-            EOF
-
       - name: Install Docker if not present
         uses: appleboy/ssh-action@v1.0.3
         with:
