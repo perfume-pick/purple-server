@@ -31,7 +31,7 @@ public class SwaggerConfig {
             .info(new Info().title("PERPICKS")
                 .description("Perpicks의 API 문서입니다.")
                 .version("v1"))
-            .addServersItem(new Server().url(serverUrl).description("dev-server"));
+            .addServersItem(new Server().url(serverUrl).description("domain"));
     }
 
     private Components securityComponents() {
