@@ -23,7 +23,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
             .addMapping("/**")
             .allowedHeaders("*")
             .allowedOrigins("*")
-            .allowedMethods("*");
+            .allowedMethods("*")
+            .allowCredentials(true);
     }
 
     @Override
