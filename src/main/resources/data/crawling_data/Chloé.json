@@ -1,0 +1,752 @@
+[
+    {
+        "perfume_name": "Chloe Eau de Parfum",
+        "brand_name": "Chloé",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.1733.jpg",
+        "main_accords": {
+            "floral": 100.0,
+            "rose": 87.5105,
+            "fresh": 69.5133,
+            "fruity": 45.1198,
+            "white floral": 44.2948
+        },
+        "notes": {
+            "Top Notes": [
+                "Peony",
+                "Litchi",
+                "Freesia"
+            ],
+            "Middle Notes": [
+                "Rose",
+                "Lily-of-the-Valley",
+                "Magnolia"
+            ],
+            "Base Notes": [
+                "Virginia Cedar",
+                "Amber"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 91.4874,
+            "summer": 55.2313,
+            "fall": 50.7531,
+            "winter": 35.0592,
+            "day": 100.0,
+            "night": 30.7827
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 226,
+                "weak": 565,
+                "moderate": 2832,
+                "long lasting": 2793,
+                "eternal": 1019
+            },
+            "SILLAGE": {
+                "intimate": 871,
+                "moderate": 3755,
+                "strong": 2191,
+                "enormous": 810
+            },
+            "GENDER": {
+                "female": 3846,
+                "more female": 314,
+                "unisex": 87,
+                "more male": 7,
+                "male": 8
+            },
+            "PRICE VALUE": {
+                "way overpriced": 167,
+                "overpriced": 731,
+                "ok": 2120,
+                "good value": 721,
+                "great value": 118
+            }
+        }
+    },
+    {
+        "perfume_name": "Nomade",
+        "brand_name": "Chloé",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.48434.jpg",
+        "main_accords": {
+            "woody": 100.0,
+            "citrus": 91.8928,
+            "fruity": 86.2708,
+            "mossy": 85.2848,
+            "earthy": 78.2747,
+            "floral": 74.1344,
+            "sweet": 66.4375,
+            "powdery": 57.416,
+            "warm spicy": 56.1578,
+            "patchouli": 53.9383
+        },
+        "notes": {
+            "Top Notes": [
+                "Mirabelle",
+                "Bergamot",
+                "Lemon",
+                "Orange"
+            ],
+            "Middle Notes": [
+                "Freesia",
+                "Peach",
+                "Jasmine",
+                "Rose"
+            ],
+            "Base Notes": [
+                "Oakmoss",
+                "Patchouli",
+                "Amberwood",
+                "White Musk",
+                "Sandalwood"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 91.9908,
+            "summer": 58.0255,
+            "fall": 90.0294,
+            "winter": 42.9552,
+            "day": 100.0,
+            "night": 41.4841
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 104,
+                "weak": 272,
+                "moderate": 1537,
+                "long lasting": 1527,
+                "eternal": 469
+            },
+            "SILLAGE": {
+                "intimate": 430,
+                "moderate": 2259,
+                "strong": 1191,
+                "enormous": 507
+            },
+            "GENDER": {
+                "female": 1562,
+                "more female": 932,
+                "unisex": 491,
+                "more male": 29,
+                "male": 27
+            },
+            "PRICE VALUE": {
+                "way overpriced": 65,
+                "overpriced": 349,
+                "ok": 1556,
+                "good value": 504,
+                "great value": 92
+            }
+        }
+    },
+    {
+        "perfume_name": "Chloé L'Eau Eau de Toilette",
+        "brand_name": "Chloé",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.56051.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "rose": 89.9334,
+            "floral": 74.7467,
+            "mossy": 69.2766,
+            "woody": 65.9312,
+            "earthy": 57.494,
+            "fruity": 54.6571,
+            "musky": 54.4388,
+            "tropical": 49.9873,
+            "powdery": 48.2272
+        },
+        "notes": {
+            "Top Notes": [
+                "Rose",
+                "Grapefruit",
+                "Litchi"
+            ],
+            "Middle Notes": [
+                "Damask Rose",
+                "Magnolia"
+            ],
+            "Base Notes": [
+                "Oakmoss",
+                "Musk",
+                "Cedar",
+                "Amber"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 78.626,
+            "fall": 33.5878,
+            "winter": 17.9389,
+            "day": 95.9924,
+            "night": 13.9313
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 39,
+                "weak": 81,
+                "moderate": 303,
+                "long lasting": 136,
+                "eternal": 47
+            },
+            "SILLAGE": {
+                "intimate": 147,
+                "moderate": 350,
+                "strong": 126,
+                "enormous": 101
+            },
+            "GENDER": {
+                "female": 396,
+                "more female": 54,
+                "unisex": 22,
+                "more male": 1,
+                "male": 1
+            },
+            "PRICE VALUE": {
+                "way overpriced": 24,
+                "overpriced": 77,
+                "ok": 246,
+                "good value": 50,
+                "great value": 11
+            }
+        }
+    },
+    {
+        "perfume_name": "Chloé Roses de Chloé",
+        "brand_name": "Chloé",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.18702.jpg",
+        "main_accords": {
+            "rose": 100.0,
+            "floral": 71.3504,
+            "citrus": 61.6238,
+            "fruity": 57.1202,
+            "musky": 51.8559,
+            "aromatic": 46.3702,
+            "powdery": 45.7044
+        },
+        "notes": {
+            "Top Notes": [
+                "Litchi",
+                "Bergamot",
+                "Tarragon",
+                "Lemon"
+            ],
+            "Middle Notes": [
+                "Damask Rose",
+                "Magnolia",
+                "Cedar",
+                "Apple",
+                "Black Currant",
+                "Peach"
+            ],
+            "Base Notes": [
+                "White Musk",
+                "Amber",
+                "Woody Notes"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 97.8955,
+            "summer": 65.0943,
+            "fall": 31.3498,
+            "winter": 17.6343,
+            "day": 100.0,
+            "night": 17.2714
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 121,
+                "weak": 253,
+                "moderate": 641,
+                "long lasting": 222,
+                "eternal": 72
+            },
+            "SILLAGE": {
+                "intimate": 405,
+                "moderate": 749,
+                "strong": 199,
+                "enormous": 151
+            },
+            "GENDER": {
+                "female": 545,
+                "more female": 41,
+                "unisex": 10,
+                "more male": 0,
+                "male": 2
+            },
+            "PRICE VALUE": {
+                "way overpriced": 27,
+                "overpriced": 111,
+                "ok": 286,
+                "good value": 99,
+                "great value": 14
+            }
+        }
+    },
+    {
+        "perfume_name": "Chloé Rose Tangerine",
+        "brand_name": "Chloé",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.62372.jpg",
+        "main_accords": {
+            "rose": 100.0,
+            "citrus": 83.7761,
+            "woody": 68.6932,
+            "fruity": 67.7071,
+            "floral": 56.656,
+            "amber": 49.7236,
+            "sweet": 45.0828
+        },
+        "notes": {
+            "Top Notes": [
+                "Tangerine",
+                "Black Currant"
+            ],
+            "Middle Notes": [
+                "Rose"
+            ],
+            "Base Notes": [
+                "Cedar",
+                "White Amber"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 93.9959,
+            "fall": 30.0207,
+            "winter": 14.0787,
+            "day": 99.793,
+            "night": 12.2153
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 56,
+                "weak": 116,
+                "moderate": 251,
+                "long lasting": 62,
+                "eternal": 6
+            },
+            "SILLAGE": {
+                "intimate": 148,
+                "moderate": 272,
+                "strong": 57,
+                "enormous": 28
+            },
+            "GENDER": {
+                "female": 389,
+                "more female": 46,
+                "unisex": 17,
+                "more male": 2,
+                "male": 2
+            },
+            "PRICE VALUE": {
+                "way overpriced": 36,
+                "overpriced": 105,
+                "ok": 204,
+                "good value": 50,
+                "great value": 2
+            }
+        }
+    },
+    {
+        "perfume_name": "Chloé Eau de Parfum Naturelle",
+        "brand_name": "Chloé",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.68777.jpg",
+        "main_accords": {
+            "rose": 100.0,
+            "citrus": 93.4719,
+            "floral": 87.1994,
+            "yellow floral": 80.4353,
+            "woody": 72.4248,
+            "powdery": 69.9943,
+            "fruity": 63.427,
+            "green": 49.1813,
+            "sweet": 49.132,
+            "fresh": 47.4214
+        },
+        "notes": {
+            "Top Notes": [
+                "Citron",
+                "Black Currant"
+            ],
+            "Middle Notes": [
+                "Rose",
+                "Neroli"
+            ],
+            "Base Notes": [
+                "Mimosa",
+                "Cedar"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 76.1976,
+            "fall": 27.2455,
+            "winter": 15.4192,
+            "day": 92.3653,
+            "night": 12.4251
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 38,
+                "weak": 146,
+                "moderate": 369,
+                "long lasting": 124,
+                "eternal": 21
+            },
+            "SILLAGE": {
+                "intimate": 210,
+                "moderate": 395,
+                "strong": 66,
+                "enormous": 12
+            },
+            "GENDER": {
+                "female": 534,
+                "more female": 151,
+                "unisex": 54,
+                "more male": 0,
+                "male": 3
+            },
+            "PRICE VALUE": {
+                "way overpriced": 54,
+                "overpriced": 209,
+                "ok": 275,
+                "good value": 79,
+                "great value": 15
+            }
+        }
+    },
+    {
+        "perfume_name": "Love Story",
+        "brand_name": "Chloé",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.26227.jpg",
+        "main_accords": {
+            "white floral": 100.0,
+            "citrus": 91.9731,
+            "musky": 53.1199,
+            "fruity": 51.5499,
+            "sweet": 50.3729,
+            "fresh spicy": 50.2801,
+            "woody": 49.2341,
+            "rose": 47.0032,
+            "fresh": 45.1967,
+            "powdery": 44.8348
+        },
+        "notes": {
+            "Top Notes": [
+                "Neroli",
+                "Pear",
+                "Bergamot",
+                "Grapefruit",
+                "Lemon"
+            ],
+            "Middle Notes": [
+                "Orange Blossom",
+                "Stephanotis",
+                "Rose",
+                "Peach",
+                "Black Currant"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Cedar",
+                "Cashmirwood",
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 98.1595,
+            "summer": 62.8067,
+            "fall": 38.5736,
+            "winter": 16.4877,
+            "day": 100.0,
+            "night": 21.6258
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 94,
+                "weak": 197,
+                "moderate": 719,
+                "long lasting": 274,
+                "eternal": 72
+            },
+            "SILLAGE": {
+                "intimate": 347,
+                "moderate": 822,
+                "strong": 274,
+                "enormous": 152
+            },
+            "GENDER": {
+                "female": 649,
+                "more female": 72,
+                "unisex": 11,
+                "more male": 1,
+                "male": 3
+            },
+            "PRICE VALUE": {
+                "way overpriced": 37,
+                "overpriced": 147,
+                "ok": 376,
+                "good value": 98,
+                "great value": 11
+            }
+        }
+    },
+    {
+        "perfume_name": "Chloé Rose Naturelle Intense Chloé",
+        "brand_name": "Chloé",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.76287.jpg",
+        "main_accords": {
+            "woody": 100.0,
+            "rose": 56.5594,
+            "citrus": 52.241,
+            "powdery": 49.5327,
+            "aromatic": 45.2247
+        },
+        "notes": {
+            "Top Notes": [
+                "Neroli",
+                "Bergamot"
+            ],
+            "Middle Notes": [
+                "Rose",
+                "Oak Tree"
+            ],
+            "Base Notes": [
+                "Sandalwood",
+                "Cedar"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 65.8683,
+            "fall": 68.8623,
+            "winter": 35.9281,
+            "day": 95.2096,
+            "night": 33.5329
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 19,
+                "weak": 53,
+                "moderate": 92,
+                "long lasting": 32,
+                "eternal": 6
+            },
+            "SILLAGE": {
+                "intimate": 69,
+                "moderate": 104,
+                "strong": 20,
+                "enormous": 2
+            },
+            "GENDER": {
+                "female": 120,
+                "more female": 60,
+                "unisex": 37,
+                "more male": 1,
+                "male": 2
+            },
+            "PRICE VALUE": {
+                "way overpriced": 24,
+                "overpriced": 66,
+                "ok": 84,
+                "good value": 18,
+                "great value": 2
+            }
+        }
+    },
+    {
+        "perfume_name": "Jasminum Sambac",
+        "brand_name": "Chloé",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.57248.jpg",
+        "main_accords": {
+            "white floral": 100.0
+        },
+        "notes": {
+            "Top Notes": [],
+            "Middle Notes": [],
+            "Base Notes": [],
+            "Undefineded": [
+                "Jasmine Sambac"
+            ]
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 81.0811,
+            "fall": 28.3784,
+            "winter": 12.1622,
+            "day": 98.6486,
+            "night": 20.2703
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 11,
+                "weak": 15,
+                "moderate": 38,
+                "long lasting": 9,
+                "eternal": 1
+            },
+            "SILLAGE": {
+                "intimate": 20,
+                "moderate": 49,
+                "strong": 4,
+                "enormous": 3
+            },
+            "GENDER": {
+                "female": 64,
+                "more female": 15,
+                "unisex": 5,
+                "more male": 0,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 11,
+                "overpriced": 26,
+                "ok": 32,
+                "good value": 4,
+                "great value": 2
+            }
+        }
+    },
+    {
+        "perfume_name": "Nomade Naturelle Eau de Parfum",
+        "brand_name": "Chloé",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.71597.jpg",
+        "main_accords": {
+            "sweet": 100.0,
+            "fruity": 77.5191,
+            "vanilla": 74.7849,
+            "woody": 64.8669,
+            "white floral": 63.1081,
+            "powdery": 59.0287,
+            "floral": 55.8361
+        },
+        "notes": {
+            "Top Notes": [
+                "Dates",
+                "Mirabelle"
+            ],
+            "Middle Notes": [
+                "Egyptian Jasmine",
+                "Freesia"
+            ],
+            "Base Notes": [
+                "Vanilla",
+                "Sandalwood",
+                "Oakmoss"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 83.6852,
+            "summer": 78.3109,
+            "fall": 90.595,
+            "winter": 47.4088,
+            "day": 100.0,
+            "night": 47.9846
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 15,
+                "weak": 77,
+                "moderate": 372,
+                "long lasting": 174,
+                "eternal": 26
+            },
+            "SILLAGE": {
+                "intimate": 95,
+                "moderate": 427,
+                "strong": 111,
+                "enormous": 11
+            },
+            "GENDER": {
+                "female": 515,
+                "more female": 117,
+                "unisex": 43,
+                "more male": 2,
+                "male": 1
+            },
+            "PRICE VALUE": {
+                "way overpriced": 34,
+                "overpriced": 128,
+                "ok": 348,
+                "good value": 78,
+                "great value": 10
+            }
+        }
+    },
+    {
+        "perfume_name": "Nomade Absolu de Parfum",
+        "brand_name": "Chloé",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.58424.jpg",
+        "main_accords": {
+            "mossy": 100.0,
+            "woody": 91.3033,
+            "earthy": 79.0,
+            "fruity": 77.6293,
+            "aromatic": 76.471,
+            "green": 67.725,
+            "powdery": 66.7132,
+            "musky": 63.1237,
+            "sweet": 60.5293,
+            "balsamic": 56.9232
+        },
+        "notes": {
+            "Top Notes": [
+                "Mirabelle"
+            ],
+            "Middle Notes": [
+                "Oakmoss",
+                "Davana"
+            ],
+            "Base Notes": [
+                "Sandalwood",
+                "Musk"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 65.6992,
+            "summer": 34.4327,
+            "fall": 100.0,
+            "winter": 55.1451,
+            "day": 84.9604,
+            "night": 46.9657
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 35,
+                "weak": 77,
+                "moderate": 355,
+                "long lasting": 328,
+                "eternal": 85
+            },
+            "SILLAGE": {
+                "intimate": 120,
+                "moderate": 481,
+                "strong": 265,
+                "enormous": 111
+            },
+            "GENDER": {
+                "female": 321,
+                "more female": 219,
+                "unisex": 252,
+                "more male": 21,
+                "male": 6
+            },
+            "PRICE VALUE": {
+                "way overpriced": 15,
+                "overpriced": 78,
+                "ok": 416,
+                "good value": 127,
+                "great value": 25
+            }
+        }
+    }
+]

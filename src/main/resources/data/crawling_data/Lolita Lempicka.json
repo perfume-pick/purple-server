@@ -1,0 +1,795 @@
+[
+    {
+        "perfume_name": "Lolita Lempicka",
+        "brand_name": "Lolita Lempicka",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.456.jpg",
+        "main_accords": {
+            "soft spicy": 100.0,
+            "sweet": 87.8747,
+            "powdery": 84.2527,
+            "anis": 76.1684,
+            "violet": 65.294,
+            "vanilla": 64.618,
+            "floral": 56.0783,
+            "iris": 52.6541,
+            "cherry": 52.2818,
+            "woody": 45.3143
+        },
+        "notes": {
+            "Top Notes": [
+                "Star Anise",
+                "Violet",
+                "Ivy"
+            ],
+            "Middle Notes": [
+                "Licorice",
+                "Cherry",
+                "Iris",
+                "Orris Root",
+                "Amaryllis"
+            ],
+            "Base Notes": [
+                "Vanilla",
+                "Praline",
+                "Tonka Bean",
+                "White Musk",
+                "Vetiver"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 52.3157,
+            "summer": 28.6862,
+            "fall": 89.8866,
+            "winter": 100.0,
+            "day": 90.5246,
+            "night": 89.9575
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 175,
+                "weak": 316,
+                "moderate": 1532,
+                "long lasting": 1794,
+                "eternal": 672
+            },
+            "SILLAGE": {
+                "intimate": 492,
+                "moderate": 2193,
+                "strong": 1486,
+                "enormous": 658
+            },
+            "GENDER": {
+                "female": 1367,
+                "more female": 250,
+                "unisex": 92,
+                "more male": 2,
+                "male": 10
+            },
+            "PRICE VALUE": {
+                "way overpriced": 43,
+                "overpriced": 174,
+                "ok": 739,
+                "good value": 443,
+                "great value": 136
+            }
+        }
+    },
+    {
+        "perfume_name": "Lolita Lempicka Le Parfum 2021",
+        "brand_name": "Lolita Lempicka",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.69011.jpg",
+        "main_accords": {
+            "soft spicy": 100.0,
+            "sweet": 91.2107,
+            "powdery": 84.8806,
+            "anis": 84.619,
+            "musky": 67.3541,
+            "violet": 67.1451,
+            "cherry": 65.5754,
+            "iris": 57.205,
+            "floral": 52.0257,
+            "vanilla": 47.9446
+        },
+        "notes": {
+            "Top Notes": [
+                "Anise",
+                "Cherry"
+            ],
+            "Middle Notes": [
+                "Violet",
+                "Orris Root"
+            ],
+            "Base Notes": [
+                "Licorice",
+                "Tonka Bean",
+                "White Musk"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 65.625,
+            "summer": 34.375,
+            "fall": 100.0,
+            "winter": 78.125,
+            "day": 83.5938,
+            "night": 76.5625
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 7,
+                "weak": 25,
+                "moderate": 83,
+                "long lasting": 35,
+                "eternal": 10
+            },
+            "SILLAGE": {
+                "intimate": 25,
+                "moderate": 99,
+                "strong": 28,
+                "enormous": 3
+            },
+            "GENDER": {
+                "female": 123,
+                "more female": 32,
+                "unisex": 15,
+                "more male": 2,
+                "male": 1
+            },
+            "PRICE VALUE": {
+                "way overpriced": 4,
+                "overpriced": 19,
+                "ok": 88,
+                "good value": 29,
+                "great value": 2
+            }
+        }
+    },
+    {
+        "perfume_name": "Lolita Lempicka Le Parfum 2023",
+        "brand_name": "Lolita Lempicka",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.82245.jpg",
+        "main_accords": {
+            "sweet": 100.0,
+            "soft spicy": 73.8492,
+            "anis": 67.5094,
+            "powdery": 66.0564,
+            "violet": 57.0756,
+            "musky": 56.283,
+            "cherry": 53.7734,
+            "vanilla": 52.9813,
+            "patchouli": 51.132,
+            "iris": 49.8113
+        },
+        "notes": {
+            "Top Notes": [
+                "Anise",
+                "Cherry",
+                "Violet"
+            ],
+            "Middle Notes": [
+                "Licorice",
+                "Iris",
+                "Tonka Bean"
+            ],
+            "Base Notes": [
+                "Praline",
+                "Patchouli",
+                "Musk",
+                "Vanilla"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 75.0,
+            "summer": 44.4444,
+            "fall": 100.0,
+            "winter": 88.8889,
+            "day": 88.8889,
+            "night": 97.2222
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 1,
+                "weak": 8,
+                "moderate": 22,
+                "long lasting": 9,
+                "eternal": 4
+            },
+            "SILLAGE": {
+                "intimate": 11,
+                "moderate": 22,
+                "strong": 7,
+                "enormous": 1
+            },
+            "GENDER": {
+                "female": 31,
+                "more female": 8,
+                "unisex": 7,
+                "more male": 0,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 2,
+                "overpriced": 4,
+                "ok": 20,
+                "good value": 11,
+                "great value": 3
+            }
+        }
+    },
+    {
+        "perfume_name": "Sweet",
+        "brand_name": "Lolita Lempicka",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.28177.jpg",
+        "main_accords": {
+            "sweet": 100.0,
+            "cherry": 72.6658,
+            "musky": 60.0073,
+            "powdery": 52.5585,
+            "cacao": 52.3936,
+            "nutty": 51.3327,
+            "almond": 47.0662,
+            "iris": 45.6518,
+            "vanilla": 45.1238
+        },
+        "notes": {
+            "Top Notes": [
+                "Sour Cherry",
+                "Sugar"
+            ],
+            "Middle Notes": [
+                "Cacao",
+                "Iris",
+                "Angelica"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Cashmere Wood"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 76.5324,
+            "summer": 52.8897,
+            "fall": 83.5377,
+            "winter": 71.1033,
+            "day": 100.0,
+            "night": 47.8109
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 97,
+                "weak": 152,
+                "moderate": 378,
+                "long lasting": 92,
+                "eternal": 36
+            },
+            "SILLAGE": {
+                "intimate": 228,
+                "moderate": 435,
+                "strong": 143,
+                "enormous": 119
+            },
+            "GENDER": {
+                "female": 410,
+                "more female": 41,
+                "unisex": 10,
+                "more male": 2,
+                "male": 4
+            },
+            "PRICE VALUE": {
+                "way overpriced": 13,
+                "overpriced": 51,
+                "ok": 164,
+                "good value": 153,
+                "great value": 39
+            }
+        }
+    },
+    {
+        "perfume_name": "Green Lover",
+        "brand_name": "Lolita Lempicka",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.55323.jpg",
+        "main_accords": {
+            "aromatic": 100.0,
+            "vanilla": 79.0828,
+            "fresh spicy": 69.5042,
+            "woody": 62.0063,
+            "green": 61.2923,
+            "citrus": 51.1937,
+            "powdery": 50.3137
+        },
+        "notes": {
+            "Top Notes": [
+                "Green Mandarin",
+                "Pepper"
+            ],
+            "Middle Notes": [
+                "Gin",
+                "Mint",
+                "Juniper Berries"
+            ],
+            "Base Notes": [
+                "Madagascar Vanilla",
+                "Musk"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 97.4834,
+            "summer": 80.0,
+            "fall": 69.0066,
+            "winter": 52.053,
+            "day": 100.0,
+            "night": 36.5563
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 34,
+                "weak": 102,
+                "moderate": 476,
+                "long lasting": 286,
+                "eternal": 61
+            },
+            "SILLAGE": {
+                "intimate": 124,
+                "moderate": 615,
+                "strong": 247,
+                "enormous": 99
+            },
+            "GENDER": {
+                "female": 69,
+                "more female": 123,
+                "unisex": 657,
+                "more male": 108,
+                "male": 42
+            },
+            "PRICE VALUE": {
+                "way overpriced": 21,
+                "overpriced": 41,
+                "ok": 241,
+                "good value": 364,
+                "great value": 151
+            }
+        }
+    },
+    {
+        "perfume_name": "Lolita Lempicka Eau de Toilette",
+        "brand_name": "Lolita Lempicka",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.457.jpg",
+        "main_accords": {
+            "powdery": 100.0,
+            "violet": 92.4158,
+            "iris": 68.4594,
+            "musky": 57.0717,
+            "cherry": 51.4854,
+            "floral": 48.0478,
+            "woody": 45.6309,
+            "sweet": 45.5557,
+            "earthy": 45.3838
+        },
+        "notes": {
+            "Top Notes": [
+                "Cherry",
+                "Apricot",
+                "Lemon"
+            ],
+            "Middle Notes": [
+                "Iris",
+                "Jasmine Sambac"
+            ],
+            "Base Notes": [
+                "Violet",
+                "Musk",
+                "Incense"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 75.9434,
+            "summer": 50.0,
+            "fall": 53.3019,
+            "winter": 36.3208,
+            "day": 100.0,
+            "night": 37.2642
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 17,
+                "weak": 25,
+                "moderate": 68,
+                "long lasting": 25,
+                "eternal": 13
+            },
+            "SILLAGE": {
+                "intimate": 34,
+                "moderate": 90,
+                "strong": 29,
+                "enormous": 28
+            },
+            "GENDER": {
+                "female": 34,
+                "more female": 5,
+                "unisex": 4,
+                "more male": 0,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 1,
+                "overpriced": 6,
+                "ok": 19,
+                "good value": 6,
+                "great value": 1
+            }
+        }
+    },
+    {
+        "perfume_name": "Mon Eau",
+        "brand_name": "Lolita Lempicka",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.48837.jpg",
+        "main_accords": {
+            "fruity": 100.0,
+            "sweet": 74.7184,
+            "powdery": 68.8737,
+            "citrus": 65.1625,
+            "violet": 65.0,
+            "floral": 62.9074,
+            "anis": 60.7804,
+            "soft spicy": 56.6306,
+            "musky": 56.5165,
+            "woody": 52.3074
+        },
+        "notes": {
+            "Top Notes": [
+                "Anise",
+                "Raspberry Leaf",
+                "Blackberry",
+                "Lime",
+                "Lemon",
+                "Mandarin Orange"
+            ],
+            "Middle Notes": [
+                "Chamomile",
+                "Iris",
+                "Black Currant",
+                "Jasmine Sambac",
+                "Rose",
+                "Lily-of-the-Valley"
+            ],
+            "Base Notes": [
+                "Violet",
+                "White Musk",
+                "Sandalwood"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 93.6842,
+            "summer": 63.1579,
+            "fall": 40.0,
+            "winter": 25.2632,
+            "day": 100.0,
+            "night": 21.0526
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 24,
+                "weak": 36,
+                "moderate": 47,
+                "long lasting": 10,
+                "eternal": 2
+            },
+            "SILLAGE": {
+                "intimate": 57,
+                "moderate": 74,
+                "strong": 25,
+                "enormous": 32
+            },
+            "GENDER": {
+                "female": 80,
+                "more female": 13,
+                "unisex": 5,
+                "more male": 1,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 3,
+                "overpriced": 11,
+                "ok": 42,
+                "good value": 25,
+                "great value": 5
+            }
+        }
+    },
+    {
+        "perfume_name": "Elle L'aime",
+        "brand_name": "Lolita Lempicka",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.18761.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "sweet": 91.134,
+            "coconut": 85.8881,
+            "vanilla": 84.212,
+            "woody": 71.3333,
+            "yellow floral": 63.5205,
+            "white floral": 62.056,
+            "powdery": 54.1496,
+            "fresh spicy": 50.4641,
+            "amber": 50.2994
+        },
+        "notes": {
+            "Top Notes": [
+                "Lime",
+                "Bergamot",
+                "Neroli"
+            ],
+            "Middle Notes": [
+                "Coconut",
+                "Ylang-Ylang",
+                "Jasmine"
+            ],
+            "Base Notes": [
+                "Vanilla",
+                "Myrrh",
+                "Sandalwood"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 59.0106,
+            "summer": 98.5866,
+            "fall": 39.3993,
+            "winter": 21.0247,
+            "day": 100.0,
+            "night": 34.4523
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 54,
+                "weak": 93,
+                "moderate": 277,
+                "long lasting": 118,
+                "eternal": 38
+            },
+            "SILLAGE": {
+                "intimate": 159,
+                "moderate": 343,
+                "strong": 162,
+                "enormous": 112
+            },
+            "GENDER": {
+                "female": 127,
+                "more female": 29,
+                "unisex": 8,
+                "more male": 1,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 3,
+                "overpriced": 14,
+                "ok": 63,
+                "good value": 48,
+                "great value": 7
+            }
+        }
+    },
+    {
+        "perfume_name": "So Sweet",
+        "brand_name": "Lolita Lempicka",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.39303.jpg",
+        "main_accords": {
+            "sweet": 100.0,
+            "fruity": 99.3163,
+            "musky": 92.797,
+            "powdery": 91.3868,
+            "woody": 71.936,
+            "rose": 69.7557,
+            "cherry": 69.5423,
+            "iris": 66.1223,
+            "amber": 65.4381,
+            "citrus": 56.8997
+        },
+        "notes": {
+            "Top Notes": [
+                "Raspberry Leaf",
+                "Sour Cherry",
+                "Mandarin Orange"
+            ],
+            "Middle Notes": [
+                "Iris",
+                "Rose",
+                "Angelica"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Cashmeran",
+                "Amberwood"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 91.1392,
+            "summer": 65.8228,
+            "fall": 55.0633,
+            "winter": 39.2405,
+            "day": 100.0,
+            "night": 40.5063
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 43,
+                "weak": 40,
+                "moderate": 80,
+                "long lasting": 21,
+                "eternal": 10
+            },
+            "SILLAGE": {
+                "intimate": 65,
+                "moderate": 90,
+                "strong": 68,
+                "enormous": 41
+            },
+            "GENDER": {
+                "female": 103,
+                "more female": 11,
+                "unisex": 6,
+                "more male": 0,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 6,
+                "overpriced": 9,
+                "ok": 46,
+                "good value": 37,
+                "great value": 13
+            }
+        }
+    },
+    {
+        "perfume_name": "Oh Ma Biche",
+        "brand_name": "Lolita Lempicka",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.56905.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "fruity": 90.9228,
+            "aldehydic": 61.0334,
+            "sweet": 59.6476,
+            "Champagne": 58.656,
+            "vanilla": 53.7996,
+            "fresh spicy": 44.0102
+        },
+        "notes": {
+            "Top Notes": [
+                "Tangerine",
+                "Grapefruit",
+                "Sicilian Mandarin",
+                "Pepper"
+            ],
+            "Middle Notes": [
+                "Champagne",
+                "Bellini",
+                "White Peach"
+            ],
+            "Base Notes": [
+                "White Musk"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 85.0746,
+            "summer": 95.5224,
+            "fall": 24.6269,
+            "winter": 20.1493,
+            "day": 100.0,
+            "night": 16.4179
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 20,
+                "weak": 30,
+                "moderate": 71,
+                "long lasting": 15,
+                "eternal": 13
+            },
+            "SILLAGE": {
+                "intimate": 55,
+                "moderate": 94,
+                "strong": 43,
+                "enormous": 56
+            },
+            "GENDER": {
+                "female": 89,
+                "more female": 28,
+                "unisex": 9,
+                "more male": 0,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 3,
+                "overpriced": 11,
+                "ok": 49,
+                "good value": 43,
+                "great value": 7
+            }
+        }
+    },
+    {
+        "perfume_name": "LolitaLand",
+        "brand_name": "Lolita Lempicka",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.51385.jpg",
+        "main_accords": {
+            "fruity": 100.0,
+            "vanilla": 99.9391,
+            "sweet": 76.9544,
+            "citrus": 73.5489,
+            "powdery": 54.3914,
+            "soft spicy": 51.6617
+        },
+        "notes": {
+            "Top Notes": [
+                "Bellini",
+                "Orange",
+                "Italian Mandarin",
+                "Pepper",
+                "Lemon",
+                "Grapefruit",
+                "Lime"
+            ],
+            "Middle Notes": [
+                "White Peach",
+                "Plum",
+                "Black Currant",
+                "Jasmine Sambac",
+                "Jasmine",
+                "Magnolia",
+                "Rose"
+            ],
+            "Base Notes": [
+                "Madagascar Vanilla",
+                "Licorice",
+                "Benzoin",
+                "White Musk",
+                "Sandalwood"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 67.7036,
+            "summer": 35.8646,
+            "fall": 100.0,
+            "winter": 92.3147,
+            "day": 99.817,
+            "night": 57.548
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 37,
+                "weak": 95,
+                "moderate": 552,
+                "long lasting": 593,
+                "eternal": 158
+            },
+            "SILLAGE": {
+                "intimate": 154,
+                "moderate": 810,
+                "strong": 505,
+                "enormous": 192
+            },
+            "GENDER": {
+                "female": 1036,
+                "more female": 121,
+                "unisex": 40,
+                "more male": 2,
+                "male": 4
+            },
+            "PRICE VALUE": {
+                "way overpriced": 20,
+                "overpriced": 100,
+                "ok": 428,
+                "good value": 476,
+                "great value": 154
+            }
+        }
+    }
+]

@@ -1,0 +1,636 @@
+[
+    {
+        "perfume_name": "Éclat d'Arpège",
+        "brand_name": "Lanvin",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.988.jpg",
+        "main_accords": {
+            "floral": 100.0,
+            "fresh": 70.162,
+            "green": 52.2764
+        },
+        "notes": {
+            "Top Notes": [],
+            "Middle Notes": [],
+            "Base Notes": [],
+            "Undefineded": [
+                "Green Lilac",
+                "Tea Leaf",
+                "Peony",
+                "Peach Blossom",
+                "Musk",
+                "Wisteria",
+                "Petitgrain",
+                "Chinese Osmanthus",
+                "Cedar",
+                "Amber"
+            ]
+        },
+        "season_data": {
+            "spring": 96.7801,
+            "summer": 71.6805,
+            "fall": 23.7657,
+            "winter": 16.6973,
+            "day": 100.0,
+            "night": 14.6887
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 609,
+                "weak": 1338,
+                "moderate": 2600,
+                "long lasting": 791,
+                "eternal": 310
+            },
+            "SILLAGE": {
+                "intimate": 1715,
+                "moderate": 2828,
+                "strong": 849,
+                "enormous": 357
+            },
+            "GENDER": {
+                "female": 2196,
+                "more female": 283,
+                "unisex": 92,
+                "more male": 5,
+                "male": 14
+            },
+            "PRICE VALUE": {
+                "way overpriced": 51,
+                "overpriced": 169,
+                "ok": 843,
+                "good value": 926,
+                "great value": 387
+            }
+        }
+    },
+    {
+        "perfume_name": "Jeanne Lanvin",
+        "brand_name": "Lanvin",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.3779.jpg",
+        "main_accords": {
+            "fruity": 100.0,
+            "sweet": 70.7856,
+            "rose": 58.7839,
+            "floral": 58.3352,
+            "fresh": 49.7042
+        },
+        "notes": {
+            "Top Notes": [
+                "Blackberry",
+                "Pear",
+                "Lemon"
+            ],
+            "Middle Notes": [
+                "Raspberry",
+                "Peony",
+                "Rose",
+                "Freesia"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Sandalwood",
+                "Amber"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 88.8232,
+            "summer": 69.6629,
+            "fall": 19.5742,
+            "winter": 15.3164,
+            "day": 100.0,
+            "night": 12.0047
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 236,
+                "weak": 356,
+                "moderate": 555,
+                "long lasting": 148,
+                "eternal": 81
+            },
+            "SILLAGE": {
+                "intimate": 584,
+                "moderate": 628,
+                "strong": 148,
+                "enormous": 106
+            },
+            "GENDER": {
+                "female": 475,
+                "more female": 28,
+                "unisex": 11,
+                "more male": 3,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 10,
+                "overpriced": 27,
+                "ok": 179,
+                "good value": 185,
+                "great value": 64
+            }
+        }
+    },
+    {
+        "perfume_name": "Marry Me",
+        "brand_name": "Lanvin",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.9405.jpg",
+        "main_accords": {
+            "floral": 100.0,
+            "citrus": 82.1985,
+            "white floral": 79.5256,
+            "fruity": 57.0852,
+            "rose": 47.8752,
+            "fresh": 47.5349,
+            "powdery": 47.424,
+            "musky": 45.0052
+        },
+        "notes": {
+            "Top Notes": [
+                "Bitter Orange",
+                "Peach",
+                "Freesia"
+            ],
+            "Middle Notes": [
+                "Jasmine",
+                "Magnolia",
+                "Rose"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Virginia Cedar",
+                "Amber"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 91.2581,
+            "summer": 62.0201,
+            "fall": 26.6391,
+            "winter": 18.0154,
+            "day": 100.0,
+            "night": 17.8382
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 63,
+                "weak": 229,
+                "moderate": 671,
+                "long lasting": 303,
+                "eternal": 96
+            },
+            "SILLAGE": {
+                "intimate": 264,
+                "moderate": 758,
+                "strong": 274,
+                "enormous": 148
+            },
+            "GENDER": {
+                "female": 437,
+                "more female": 22,
+                "unisex": 8,
+                "more male": 1,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 8,
+                "overpriced": 28,
+                "ok": 180,
+                "good value": 161,
+                "great value": 54
+            }
+        }
+    },
+    {
+        "perfume_name": "Lanvin Me L'Eau",
+        "brand_name": "Lanvin",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.23637.jpg",
+        "main_accords": {
+            "floral": 100.0,
+            "citrus": 73.3355,
+            "musky": 62.8353,
+            "ozonic": 59.9803,
+            "fresh": 59.6577,
+            "aquatic": 52.957,
+            "fruity": 51.7021,
+            "rose": 50.6545,
+            "powdery": 49.411,
+            "sweet": 46.9703
+        },
+        "notes": {
+            "Top Notes": [
+                "Italian Mandarin",
+                "Violet Leaf",
+                "Pink Pepper"
+            ],
+            "Middle Notes": [
+                "Peony",
+                "Magnolia"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Red Peach",
+                "Cedar"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 91.7647,
+            "summer": 70.5882,
+            "fall": 24.7059,
+            "winter": 10.5882,
+            "day": 100.0,
+            "night": 12.9412
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 8,
+                "weak": 28,
+                "moderate": 70,
+                "long lasting": 28,
+                "eternal": 8
+            },
+            "SILLAGE": {
+                "intimate": 42,
+                "moderate": 82,
+                "strong": 41,
+                "enormous": 33
+            },
+            "GENDER": {
+                "female": 44,
+                "more female": 2,
+                "unisex": 1,
+                "more male": 0,
+                "male": 1
+            },
+            "PRICE VALUE": {
+                "way overpriced": 0,
+                "overpriced": 3,
+                "ok": 23,
+                "good value": 9,
+                "great value": 2
+            }
+        }
+    },
+    {
+        "perfume_name": "Rumeur",
+        "brand_name": "Lanvin",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.364.jpg",
+        "main_accords": {
+            "white floral": 100.0,
+            "floral": 80.3255,
+            "musky": 63.0041,
+            "rose": 57.8778,
+            "citrus": 52.8657,
+            "fresh": 51.5777,
+            "powdery": 48.0927,
+            "patchouli": 47.2172
+        },
+        "notes": {
+            "Top Notes": [
+                "Magnolia"
+            ],
+            "Middle Notes": [
+                "Lily-of-the-Valley",
+                "Rose",
+                "Jasmine",
+                "Orange Blossom",
+                "Plum"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Patchouli",
+                "Amber"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 84.4051,
+            "summer": 39.5498,
+            "fall": 70.0965,
+            "winter": 46.7846,
+            "day": 100.0,
+            "night": 46.9453
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 18,
+                "weak": 29,
+                "moderate": 213,
+                "long lasting": 283,
+                "eternal": 98
+            },
+            "SILLAGE": {
+                "intimate": 63,
+                "moderate": 317,
+                "strong": 241,
+                "enormous": 154
+            },
+            "GENDER": {
+                "female": 180,
+                "more female": 36,
+                "unisex": 19,
+                "more male": 2,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 3,
+                "overpriced": 9,
+                "ok": 59,
+                "good value": 101,
+                "great value": 55
+            }
+        }
+    },
+    {
+        "perfume_name": "Modern Princess",
+        "brand_name": "Lanvin",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.38890.jpg",
+        "main_accords": {
+            "fruity": 100.0,
+            "sweet": 67.8201,
+            "floral": 64.5016,
+            "fresh": 61.2336,
+            "soft spicy": 55.0014,
+            "sour": 45.9263,
+            "musky": 44.7184
+        },
+        "notes": {
+            "Top Notes": [
+                "Red Apple",
+                "Red Currant"
+            ],
+            "Middle Notes": [
+                "Freesia",
+                "Jasmine"
+            ],
+            "Base Notes": [
+                "Vanilla Orchid",
+                "White Musk",
+                "White Woods"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 96.2287,
+            "summer": 86.253,
+            "fall": 31.8735,
+            "winter": 19.4647,
+            "day": 100.0,
+            "night": 16.7883
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 132,
+                "weak": 238,
+                "moderate": 446,
+                "long lasting": 109,
+                "eternal": 35
+            },
+            "SILLAGE": {
+                "intimate": 314,
+                "moderate": 517,
+                "strong": 144,
+                "enormous": 110
+            },
+            "GENDER": {
+                "female": 611,
+                "more female": 34,
+                "unisex": 14,
+                "more male": 0,
+                "male": 5
+            },
+            "PRICE VALUE": {
+                "way overpriced": 12,
+                "overpriced": 45,
+                "ok": 270,
+                "good value": 217,
+                "great value": 69
+            }
+        }
+    },
+    {
+        "perfume_name": "Arpège",
+        "brand_name": "Lanvin",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.6.jpg",
+        "main_accords": {
+            "white floral": 100.0,
+            "woody": 77.0588,
+            "aldehydic": 72.9598,
+            "fresh": 70.7475,
+            "powdery": 68.2483,
+            "aromatic": 65.3921,
+            "amber": 58.6205,
+            "yellow floral": 57.5934,
+            "floral": 55.5947,
+            "warm spicy": 50.7642
+        },
+        "notes": {
+            "Top Notes": [
+                "Aldehydes",
+                "Lily-of-the-Valley",
+                "Peach",
+                "Honeysuckle",
+                "Neroli",
+                "Bergamot"
+            ],
+            "Middle Notes": [
+                "Jasmine",
+                "Ylang-Ylang",
+                "Lily-of-the-Valley",
+                "Iris",
+                "Coriander",
+                "Rose",
+                "Lily",
+                "Geranium",
+                "Camellia"
+            ],
+            "Base Notes": [
+                "Sandalwood",
+                "Amber",
+                "Vetiver",
+                "Musk",
+                "Benzoin",
+                "Vanilla",
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 54.6093,
+            "summer": 26.6901,
+            "fall": 97.8929,
+            "winter": 94.2054,
+            "day": 76.5584,
+            "night": 100.0
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 41,
+                "weak": 68,
+                "moderate": 394,
+                "long lasting": 586,
+                "eternal": 225
+            },
+            "SILLAGE": {
+                "intimate": 127,
+                "moderate": 585,
+                "strong": 562,
+                "enormous": 264
+            },
+            "GENDER": {
+                "female": 375,
+                "more female": 123,
+                "unisex": 119,
+                "more male": 3,
+                "male": 3
+            },
+            "PRICE VALUE": {
+                "way overpriced": 14,
+                "overpriced": 15,
+                "ok": 152,
+                "good value": 213,
+                "great value": 180
+            }
+        }
+    },
+    {
+        "perfume_name": "Eclat de Fleurs",
+        "brand_name": "Lanvin",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.32019.jpg",
+        "main_accords": {
+            "floral": 100.0,
+            "white floral": 72.9602,
+            "musky": 67.2324,
+            "fruity": 66.8952,
+            "rose": 59.4827,
+            "sweet": 58.3201,
+            "powdery": 56.7027,
+            "aquatic": 49.6773,
+            "fresh": 49.0541,
+            "woody": 46.1733
+        },
+        "notes": {
+            "Top Notes": [
+                "Pear"
+            ],
+            "Middle Notes": [
+                "Freesia",
+                "Jasmine",
+                "Rose"
+            ],
+            "Base Notes": [
+                "White Musk",
+                "Sandalwood"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 97.7642,
+            "summer": 74.187,
+            "fall": 26.626,
+            "winter": 13.4146,
+            "day": 100.0,
+            "night": 12.8049
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 47,
+                "weak": 107,
+                "moderate": 258,
+                "long lasting": 81,
+                "eternal": 31
+            },
+            "SILLAGE": {
+                "intimate": 150,
+                "moderate": 311,
+                "strong": 115,
+                "enormous": 117
+            },
+            "GENDER": {
+                "female": 240,
+                "more female": 16,
+                "unisex": 3,
+                "more male": 1,
+                "male": 2
+            },
+            "PRICE VALUE": {
+                "way overpriced": 4,
+                "overpriced": 11,
+                "ok": 97,
+                "good value": 92,
+                "great value": 34
+            }
+        }
+    },
+    {
+        "perfume_name": "Jeanne Lanvin Couture",
+        "brand_name": "Lanvin",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.14704.jpg",
+        "main_accords": {
+            "fruity": 100.0,
+            "aquatic": 91.1991,
+            "floral": 90.9029,
+            "sweet": 80.7968,
+            "ozonic": 78.292,
+            "fresh": 71.0831,
+            "rose": 61.6276,
+            "woody": 58.2047,
+            "musky": 56.7705,
+            "powdery": 49.0261
+        },
+        "notes": {
+            "Top Notes": [
+                "Raspberry",
+                "Violet Leaf",
+                "Water Notes"
+            ],
+            "Middle Notes": [
+                "Peony",
+                "Magnolia"
+            ],
+            "Base Notes": [
+                "Cedar",
+                "Musk"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 79.6545,
+            "summer": 58.7332,
+            "fall": 53.9347,
+            "winter": 38.9635,
+            "day": 100.0,
+            "night": 38.7716
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 38,
+                "weak": 65,
+                "moderate": 247,
+                "long lasting": 116,
+                "eternal": 83
+            },
+            "SILLAGE": {
+                "intimate": 123,
+                "moderate": 287,
+                "strong": 129,
+                "enormous": 84
+            },
+            "GENDER": {
+                "female": 80,
+                "more female": 9,
+                "unisex": 4,
+                "more male": 1,
+                "male": 2
+            },
+            "PRICE VALUE": {
+                "way overpriced": 2,
+                "overpriced": 15,
+                "ok": 35,
+                "good value": 16,
+                "great value": 11
+            }
+        }
+    }
+]

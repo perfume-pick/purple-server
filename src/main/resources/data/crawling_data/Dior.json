@@ -1,0 +1,424 @@
+[
+    {
+        "perfume_name": "Forever and Ever Dior",
+        "brand_name": "Dior",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.1245.jpg",
+        "main_accords": {
+            "floral": 100.0,
+            "rose": 78.6373,
+            "white floral": 48.136,
+            "fresh spicy": 48.136,
+            "green": 47.4527,
+            "vanilla": 46.7227,
+            "fruity": 45.8278,
+            "aromatic": 44.5086
+        },
+        "notes": {
+            "Top Notes": [
+                "Freesia",
+                "Ivy",
+                "Jasmine"
+            ],
+            "Middle Notes": [
+                "Rose Hip",
+                "Almond Blossom",
+                "Geranium"
+            ],
+            "Base Notes": [
+                "Vanilla",
+                "Musk",
+                "Amber"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 82.5112,
+            "summer": 76.2332,
+            "fall": 25.1121,
+            "winter": 10.7623,
+            "day": 100.0,
+            "night": 19.2825
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 18,
+                "weak": 16,
+                "moderate": 75,
+                "long lasting": 44,
+                "eternal": 10
+            },
+            "SILLAGE": {
+                "intimate": 35,
+                "moderate": 99,
+                "strong": 52,
+                "enormous": 49
+            },
+            "GENDER": {
+                "female": 50,
+                "more female": 4,
+                "unisex": 1,
+                "more male": 1,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 3,
+                "overpriced": 10,
+                "ok": 20,
+                "good value": 11,
+                "great value": 0
+            }
+        }
+    },
+    {
+        "perfume_name": "J'Adore Infinissime",
+        "brand_name": "Dior",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.62638.jpg",
+        "main_accords": {
+            "white floral": 100.0,
+            "tuberose": 69.6228,
+            "woody": 61.6862,
+            "yellow floral": 57.6759,
+            "citrus": 51.7156,
+            "sweet": 47.32
+        },
+        "notes": {
+            "Top Notes": [
+                "Blood Orange",
+                "Pink Pepper",
+                "Bergamot"
+            ],
+            "Middle Notes": [
+                "Tuberose",
+                "Jasmine Sambac",
+                "Ylang-Ylang",
+                "Lily-of-the-Valley",
+                "Rose"
+            ],
+            "Base Notes": [
+                "Sandalwood"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 85.6305,
+            "summer": 44.2815,
+            "fall": 100.0,
+            "winter": 70.6745,
+            "day": 95.8944,
+            "night": 75.9531
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 48,
+                "weak": 101,
+                "moderate": 436,
+                "long lasting": 250,
+                "eternal": 59
+            },
+            "SILLAGE": {
+                "intimate": 125,
+                "moderate": 533,
+                "strong": 228,
+                "enormous": 74
+            },
+            "GENDER": {
+                "female": 742,
+                "more female": 84,
+                "unisex": 32,
+                "more male": 4,
+                "male": 5
+            },
+            "PRICE VALUE": {
+                "way overpriced": 94,
+                "overpriced": 273,
+                "ok": 323,
+                "good value": 64,
+                "great value": 12
+            }
+        }
+    },
+    {
+        "perfume_name": "Sauvage Eau de Parfum",
+        "brand_name": "Dior",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.48100.jpg",
+        "main_accords": {
+            "fresh spicy": 100.0,
+            "citrus": 81.8128,
+            "amber": 74.1564,
+            "lavender": 56.494,
+            "musky": 56.494,
+            "herbal": 50.9494,
+            "aromatic": 50.9175,
+            "anis": 49.5619,
+            "soft spicy": 49.4385,
+            "floral": 48.3356
+        },
+        "notes": {
+            "Top Notes": [
+                "Bergamot"
+            ],
+            "Middle Notes": [
+                "Sichuan Pepper",
+                "Lavender",
+                "Star Anise",
+                "Nutmeg"
+            ],
+            "Base Notes": [
+                "Ambroxan",
+                "Vanilla"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 97.9531,
+            "summer": 80.0376,
+            "fall": 100.0,
+            "winter": 91.1174,
+            "day": 93.1455,
+            "night": 98.4038
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 134,
+                "weak": 216,
+                "moderate": 1742,
+                "long lasting": 4441,
+                "eternal": 871
+            },
+            "SILLAGE": {
+                "intimate": 383,
+                "moderate": 2550,
+                "strong": 3855,
+                "enormous": 694
+            },
+            "GENDER": {
+                "female": 34,
+                "more female": 11,
+                "unisex": 169,
+                "more male": 920,
+                "male": 4940
+            },
+            "PRICE VALUE": {
+                "way overpriced": 342,
+                "overpriced": 1574,
+                "ok": 2987,
+                "good value": 689,
+                "great value": 132
+            }
+        }
+    },
+    {
+        "perfume_name": "Sauvage Elixir",
+        "brand_name": "Dior",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.68415.jpg",
+        "main_accords": {
+            "warm spicy": 100.0,
+            "fresh spicy": 81.0217,
+            "woody": 78.5274,
+            "aromatic": 77.4633,
+            "lavender": 75.4974,
+            "soft spicy": 67.9314,
+            "cinnamon": 61.8581,
+            "amber": 54.2832,
+            "powdery": 50.3362,
+            "balsamic": 48.3547
+        },
+        "notes": {
+            "Top Notes": [
+                "Nutmeg",
+                "Cinnamon",
+                "Cardamom",
+                "Grapefruit"
+            ],
+            "Middle Notes": [
+                "Lavender"
+            ],
+            "Base Notes": [
+                "Licorice",
+                "Sandalwood",
+                "Amber",
+                "Patchouli",
+                "Haitian Vetiver"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 53.1475,
+            "summer": 22.6574,
+            "fall": 89.4522,
+            "winter": 100.0,
+            "day": 49.2311,
+            "night": 91.074
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 83,
+                "weak": 80,
+                "moderate": 779,
+                "long lasting": 3303,
+                "eternal": 6398
+            },
+            "SILLAGE": {
+                "intimate": 178,
+                "moderate": 1466,
+                "strong": 5301,
+                "enormous": 3211
+            },
+            "GENDER": {
+                "female": 77,
+                "more female": 19,
+                "unisex": 299,
+                "more male": 1158,
+                "male": 8665
+            },
+            "PRICE VALUE": {
+                "way overpriced": 1696,
+                "overpriced": 3976,
+                "ok": 3115,
+                "good value": 745,
+                "great value": 262
+            }
+        }
+    },
+    {
+        "perfume_name": "Sauvage",
+        "brand_name": "Dior",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.31861.jpg",
+        "main_accords": {
+            "fresh spicy": 100.0,
+            "amber": 72.3762,
+            "citrus": 69.7587,
+            "aromatic": 63.2257,
+            "musky": 58.2297,
+            "woody": 53.5403,
+            "lavender": 45.875,
+            "herbal": 45.7449,
+            "warm spicy": 45.122
+        },
+        "notes": {
+            "Top Notes": [
+                "Calabrian bergamot",
+                "Pepper"
+            ],
+            "Middle Notes": [
+                "Sichuan Pepper",
+                "Lavender",
+                "Pink Pepper",
+                "Vetiver",
+                "Patchouli",
+                "Geranium",
+                "elemi"
+            ],
+            "Base Notes": [
+                "Ambroxan",
+                "Cedar",
+                "Labdanum"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 91.7906,
+            "fall": 92.1043,
+            "winter": 64.8503,
+            "day": 99.6236,
+            "night": 88.6808
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 450,
+                "weak": 680,
+                "moderate": 4822,
+                "long lasting": 8279,
+                "eternal": 1569
+            },
+            "SILLAGE": {
+                "intimate": 1060,
+                "moderate": 6342,
+                "strong": 6922,
+                "enormous": 1469
+            },
+            "GENDER": {
+                "female": 108,
+                "more female": 27,
+                "unisex": 424,
+                "more male": 1944,
+                "male": 9504
+            },
+            "PRICE VALUE": {
+                "way overpriced": 831,
+                "overpriced": 3084,
+                "ok": 5434,
+                "good value": 1457,
+                "great value": 300
+            }
+        }
+    },
+    {
+        "perfume_name": "Dior Homme 2020",
+        "brand_name": "Dior",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.58714.jpg",
+        "main_accords": {
+            "woody": 100.0,
+            "musky": 72.9144,
+            "aromatic": 54.0207,
+            "amber": 52.5929,
+            "citrus": 46.7637
+        },
+        "notes": {
+            "Top Notes": [
+                "Bergamot",
+                "Pink Pepper",
+                "elemi"
+            ],
+            "Middle Notes": [
+                "Atlas Cedar",
+                "Cashmere Wood",
+                "Patchouli"
+            ],
+            "Base Notes": [
+                "Iso E Super",
+                "Haitian Vetiver",
+                "White Musk"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 82.2265,
+            "fall": 99.5591,
+            "winter": 72.4442,
+            "day": 97.7129,
+            "night": 77.9002
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 193,
+                "weak": 274,
+                "moderate": 1713,
+                "long lasting": 2048,
+                "eternal": 204
+            },
+            "SILLAGE": {
+                "intimate": 560,
+                "moderate": 2964,
+                "strong": 770,
+                "enormous": 198
+            },
+            "GENDER": {
+                "female": 42,
+                "more female": 7,
+                "unisex": 209,
+                "more male": 907,
+                "male": 2865
+            },
+            "PRICE VALUE": {
+                "way overpriced": 181,
+                "overpriced": 722,
+                "ok": 2198,
+                "good value": 558,
+                "great value": 88
+            }
+        }
+    }
+]

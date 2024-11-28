@@ -1,0 +1,503 @@
+[
+    {
+        "perfume_name": "Soleil Blanc",
+        "brand_name": "Tom Ford",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.34893.jpg",
+        "main_accords": {
+            "white floral": 100.0,
+            "coconut": 98.5292,
+            "sweet": 90.5807,
+            "tuberose": 78.2839,
+            "amber": 77.6959,
+            "yellow floral": 75.049,
+            "vanilla": 70.2208,
+            "woody": 65.333,
+            "warm spicy": 63.5394,
+            "citrus": 55.8331
+        },
+        "notes": {
+            "Top Notes": [
+                "Pistachio",
+                "Bergamot",
+                "Cardamom",
+                "Pink Pepper"
+            ],
+            "Middle Notes": [
+                "Tuberose",
+                "Ylang-Ylang",
+                "Jasmine"
+            ],
+            "Base Notes": [
+                "Coconut",
+                "Amber",
+                "Tonka Bean",
+                "Benzoin"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 45.1228,
+            "summer": 100.0,
+            "fall": 18.9474,
+            "winter": 12.2105,
+            "day": 87.8596,
+            "night": 25.5088
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 185,
+                "weak": 452,
+                "moderate": 1373,
+                "long lasting": 632,
+                "eternal": 188
+            },
+            "SILLAGE": {
+                "intimate": 629,
+                "moderate": 1632,
+                "strong": 524,
+                "enormous": 302
+            },
+            "GENDER": {
+                "female": 912,
+                "more female": 722,
+                "unisex": 818,
+                "more male": 64,
+                "male": 40
+            },
+            "PRICE VALUE": {
+                "way overpriced": 759,
+                "overpriced": 891,
+                "ok": 472,
+                "good value": 71,
+                "great value": 37
+            }
+        }
+    },
+    {
+        "perfume_name": "Rose Prick",
+        "brand_name": "Tom Ford",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.58781.jpg",
+        "main_accords": {
+            "rose": 100.0,
+            "warm spicy": 94.7085,
+            "patchouli": 73.2038,
+            "fresh spicy": 68.8834,
+            "earthy": 58.4077,
+            "woody": 55.9221,
+            "citrus": 55.1019,
+            "vanilla": 51.0681,
+            "floral": 51.0,
+            "herbal": 47.2817
+        },
+        "notes": {
+            "Top Notes": [
+                "Sichuan Pepper",
+                "Turmeric"
+            ],
+            "Middle Notes": [
+                "May Rose",
+                "Bulgarian Rose",
+                "Turkish Rose"
+            ],
+            "Base Notes": [
+                "Patchouli",
+                "Tonka Bean"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 93.0295,
+            "summer": 44.6381,
+            "fall": 100.0,
+            "winter": 80.429,
+            "day": 90.4826,
+            "night": 83.6461
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 52,
+                "weak": 82,
+                "moderate": 441,
+                "long lasting": 416,
+                "eternal": 150
+            },
+            "SILLAGE": {
+                "intimate": 155,
+                "moderate": 600,
+                "strong": 368,
+                "enormous": 185
+            },
+            "GENDER": {
+                "female": 412,
+                "more female": 313,
+                "unisex": 364,
+                "more male": 24,
+                "male": 15
+            },
+            "PRICE VALUE": {
+                "way overpriced": 417,
+                "overpriced": 334,
+                "ok": 164,
+                "good value": 19,
+                "great value": 13
+            }
+        }
+    },
+    {
+        "perfume_name": "Noir de Noir",
+        "brand_name": "Tom Ford",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.1822.jpg",
+        "main_accords": {
+            "earthy": 100.0,
+            "rose": 91.5094,
+            "patchouli": 75.783,
+            "warm spicy": 74.4209,
+            "vanilla": 64.5148,
+            "woody": 62.5771,
+            "oud": 60.0322,
+            "floral": 55.4586,
+            "balsamic": 48.912,
+            "mossy": 47.0246
+        },
+        "notes": {
+            "Top Notes": [
+                "Saffron"
+            ],
+            "Middle Notes": [
+                "Black Rose",
+                "Truffle",
+                "Floral Notes"
+            ],
+            "Base Notes": [
+                "Patchouli",
+                "Vanilla",
+                "Agarwood (Oud)",
+                "Oakmoss"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 30.2419,
+            "summer": 15.7625,
+            "fall": 91.2757,
+            "winter": 95.5645,
+            "day": 38.0499,
+            "night": 100.0
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 126,
+                "weak": 204,
+                "moderate": 840,
+                "long lasting": 1426,
+                "eternal": 488
+            },
+            "SILLAGE": {
+                "intimate": 358,
+                "moderate": 1389,
+                "strong": 1385,
+                "enormous": 596
+            },
+            "GENDER": {
+                "female": 183,
+                "more female": 333,
+                "unisex": 1144,
+                "more male": 186,
+                "male": 123
+            },
+            "PRICE VALUE": {
+                "way overpriced": 411,
+                "overpriced": 689,
+                "ok": 445,
+                "good value": 69,
+                "great value": 39
+            }
+        }
+    },
+    {
+        "perfume_name": "Bitter Peach",
+        "brand_name": "Tom Ford",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.62707.jpg",
+        "main_accords": {
+            "woody": 100.0,
+            "warm spicy": 83.6969,
+            "vanilla": 75.5914,
+            "fruity": 75.2409,
+            "amber": 75.0942,
+            "powdery": 69.7985,
+            "sweet": 69.2935,
+            "aromatic": 56.8908,
+            "balsamic": 55.7212,
+            "citrus": 54.8075
+        },
+        "notes": {
+            "Top Notes": [
+                "Peach",
+                "Blood Orange",
+                "Cardamom",
+                "Heliotrope"
+            ],
+            "Middle Notes": [
+                "Rum",
+                "Cognac",
+                "Davana",
+                "Jasmine"
+            ],
+            "Base Notes": [
+                "Vanilla",
+                "Indonesian Patchouli Leaf",
+                "Tonka Bean",
+                "Sandalwood",
+                "Benzoin",
+                "Cashmeran",
+                "Styrax",
+                "Labdanum",
+                "Vetiver"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 81.1055,
+            "summer": 75.4089,
+            "fall": 100.0,
+            "winter": 58.2064,
+            "day": 98.6464,
+            "night": 60.5753
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 73,
+                "weak": 235,
+                "moderate": 1042,
+                "long lasting": 918,
+                "eternal": 292
+            },
+            "SILLAGE": {
+                "intimate": 272,
+                "moderate": 1366,
+                "strong": 692,
+                "enormous": 191
+            },
+            "GENDER": {
+                "female": 767,
+                "more female": 742,
+                "unisex": 1089,
+                "more male": 70,
+                "male": 48
+            },
+            "PRICE VALUE": {
+                "way overpriced": 1208,
+                "overpriced": 727,
+                "ok": 384,
+                "good value": 63,
+                "great value": 44
+            }
+        }
+    },
+    {
+        "perfume_name": "Soleil Neige",
+        "brand_name": "Tom Ford",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.56737.jpg",
+        "main_accords": {
+            "white floral": 100.0,
+            "amber": 73.7791,
+            "citrus": 70.9134,
+            "vanilla": 63.4956,
+            "powdery": 56.8707,
+            "warm spicy": 44.8121,
+            "musky": 44.2089,
+            "fresh spicy": 44.1935
+        },
+        "notes": {
+            "Top Notes": [
+                "Bergamot",
+                "Carrot Seeds"
+            ],
+            "Middle Notes": [
+                "White Flowers",
+                "Orange Blossom",
+                "Jasmine",
+                "Rose",
+                "Turkish Rose"
+            ],
+            "Base Notes": [
+                "Benzoin",
+                "Vanilla",
+                "Labdanum"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 86.1361,
+            "summer": 66.8806,
+            "fall": 66.6239,
+            "winter": 80.1027,
+            "day": 100.0,
+            "night": 39.4095
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 53,
+                "weak": 139,
+                "moderate": 430,
+                "long lasting": 322,
+                "eternal": 77
+            },
+            "SILLAGE": {
+                "intimate": 192,
+                "moderate": 587,
+                "strong": 244,
+                "enormous": 136
+            },
+            "GENDER": {
+                "female": 343,
+                "more female": 267,
+                "unisex": 335,
+                "more male": 13,
+                "male": 11
+            },
+            "PRICE VALUE": {
+                "way overpriced": 235,
+                "overpriced": 350,
+                "ok": 215,
+                "good value": 26,
+                "great value": 14
+            }
+        }
+    },
+    {
+        "perfume_name": "Electric Cherry",
+        "brand_name": "Tom Ford",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.78583.jpg",
+        "main_accords": {
+            "musky": 100.0,
+            "cherry": 78.9109,
+            "sweet": 66.0694,
+            "soft spicy": 53.9802,
+            "amber": 52.7327,
+            "white floral": 49.2079,
+            "powdery": 45.2474
+        },
+        "notes": {
+            "Top Notes": [
+                "Cherry",
+                "Ginger"
+            ],
+            "Middle Notes": [
+                "Jasmine Sambac"
+            ],
+            "Base Notes": [
+                "Pink Pepper",
+                "Ambrettolide",
+                "Musk"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 94.9296,
+            "fall": 65.9155,
+            "winter": 52.1127,
+            "day": 100.0,
+            "night": 60.5634
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 61,
+                "weak": 89,
+                "moderate": 224,
+                "long lasting": 89,
+                "eternal": 25
+            },
+            "SILLAGE": {
+                "intimate": 145,
+                "moderate": 246,
+                "strong": 72,
+                "enormous": 13
+            },
+            "GENDER": {
+                "female": 259,
+                "more female": 147,
+                "unisex": 126,
+                "more male": 11,
+                "male": 13
+            },
+            "PRICE VALUE": {
+                "way overpriced": 327,
+                "overpriced": 106,
+                "ok": 63,
+                "good value": 10,
+                "great value": 7
+            }
+        }
+    },
+    {
+        "perfume_name": "Myrrhe Mystère",
+        "brand_name": "Tom Ford",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.83981.jpg",
+        "main_accords": {
+            "amber": 100.0,
+            "warm spicy": 79.8063,
+            "woody": 76.738,
+            "powdery": 76.0598,
+            "balsamic": 72.2959,
+            "vanilla": 68.1753,
+            "sweet": 63.216,
+            "aromatic": 61.0752,
+            "musky": 52.4771,
+            "leather": 47.1254
+        },
+        "notes": {
+            "Top Notes": [],
+            "Middle Notes": [],
+            "Base Notes": [],
+            "Undefineded": [
+                "Myrrh",
+                "Myrhh",
+                "Sandalwood",
+                "Vanilla",
+                "Musk",
+                "Leather",
+                "Absinthe",
+                "Jasmine"
+            ]
+        },
+        "season_data": {
+            "spring": 27.7567,
+            "summer": 16.73,
+            "fall": 95.8175,
+            "winter": 100.0,
+            "day": 50.9506,
+            "night": 88.2129
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 39,
+                "weak": 16,
+                "moderate": 99,
+                "long lasting": 129,
+                "eternal": 28
+            },
+            "SILLAGE": {
+                "intimate": 60,
+                "moderate": 141,
+                "strong": 92,
+                "enormous": 7
+            },
+            "GENDER": {
+                "female": 22,
+                "more female": 8,
+                "unisex": 142,
+                "more male": 121,
+                "male": 64
+            },
+            "PRICE VALUE": {
+                "way overpriced": 173,
+                "overpriced": 85,
+                "ok": 46,
+                "good value": 7,
+                "great value": 8
+            }
+        }
+    }
+]

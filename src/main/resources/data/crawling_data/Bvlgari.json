@@ -1,0 +1,710 @@
+[
+    {
+        "perfume_name": "Pour Homme Eau De Parfum Bvlgari",
+        "brand_name": "Bvlgari",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.92563.jpg",
+        "main_accords": {
+            "warm spicy": 100.0,
+            "green": 97.4075,
+            "musky": 93.951,
+            "woody": 90.4942,
+            "fresh": 87.0373,
+            "powdery": 57.6545,
+            "ozonic": 52.469,
+            "citrus": 45.5557,
+            "floral": 45.5557
+        },
+        "notes": {
+            "Top Notes": [
+                "Darjeeling Tea",
+                "Ginger"
+            ],
+            "Middle Notes": [
+                "Black Tea",
+                "Guaiac Wood"
+            ],
+            "Base Notes": [
+                "White Musk",
+                "Ambrette (Musk Mallow)"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 95.5882,
+            "summer": 100.0,
+            "fall": 83.8235,
+            "winter": 41.1765,
+            "day": 94.1176,
+            "night": 55.8824
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 1,
+                "weak": 10,
+                "moderate": 34,
+                "long lasting": 26,
+                "eternal": 3
+            },
+            "SILLAGE": {
+                "intimate": 8,
+                "moderate": 49,
+                "strong": 14,
+                "enormous": 2
+            },
+            "GENDER": {
+                "female": 0,
+                "more female": 1,
+                "unisex": 18,
+                "more male": 32,
+                "male": 27
+            },
+            "PRICE VALUE": {
+                "way overpriced": 15,
+                "overpriced": 18,
+                "ok": 30,
+                "good value": 7,
+                "great value": 0
+            }
+        }
+    },
+    {
+        "perfume_name": "Omnia Amethyste",
+        "brand_name": "Bvlgari",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.780.jpg",
+        "main_accords": {
+            "powdery": 100.0,
+            "iris": 76.3934,
+            "vanilla": 66.8935,
+            "woody": 63.239,
+            "almond": 56.3525,
+            "floral": 55.5525,
+            "violet": 53.1967,
+            "green": 52.7544,
+            "earthy": 48.5574,
+            "citrus": 47.8779
+        },
+        "notes": {
+            "Top Notes": [
+                "Green Notes",
+                "Pink Grapefruit"
+            ],
+            "Middle Notes": [
+                "Iris",
+                "Bulgarian Rose"
+            ],
+            "Base Notes": [
+                "Heliotrope",
+                "Woodsy Notes"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 91.8323,
+            "summer": 52.1762,
+            "fall": 37.9903,
+            "winter": 23.2133,
+            "day": 100.0,
+            "night": 25.6314
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 173,
+                "weak": 349,
+                "moderate": 813,
+                "long lasting": 250,
+                "eternal": 88
+            },
+            "SILLAGE": {
+                "intimate": 575,
+                "moderate": 834,
+                "strong": 226,
+                "enormous": 138
+            },
+            "GENDER": {
+                "female": 624,
+                "more female": 122,
+                "unisex": 53,
+                "more male": 2,
+                "male": 3
+            },
+            "PRICE VALUE": {
+                "way overpriced": 42,
+                "overpriced": 144,
+                "ok": 356,
+                "good value": 134,
+                "great value": 34
+            }
+        }
+    },
+    {
+        "perfume_name": "Omnia Crystalline Eau de Parfum",
+        "brand_name": "Bvlgari",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.18894.jpg",
+        "main_accords": {
+            "powdery": 100.0,
+            "floral": 73.8996,
+            "musky": 66.5383,
+            "vanilla": 62.046,
+            "woody": 56.8162,
+            "amber": 54.4656,
+            "iris": 52.9701,
+            "citrus": 52.9381,
+            "warm spicy": 51.1217,
+            "aquatic": 49.7115
+        },
+        "notes": {
+            "Top Notes": [
+                "Lotus",
+                "Mandarin Orange"
+            ],
+            "Middle Notes": [
+                "Heliotrope",
+                "Orris Root"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Siam Benzoin",
+                "Sandalwood"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 84.5124,
+            "summer": 52.3901,
+            "fall": 56.0229,
+            "winter": 35.9465,
+            "day": 100.0,
+            "night": 28.4895
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 45,
+                "weak": 96,
+                "moderate": 228,
+                "long lasting": 115,
+                "eternal": 41
+            },
+            "SILLAGE": {
+                "intimate": 173,
+                "moderate": 262,
+                "strong": 112,
+                "enormous": 99
+            },
+            "GENDER": {
+                "female": 154,
+                "more female": 29,
+                "unisex": 12,
+                "more male": 1,
+                "male": 1
+            },
+            "PRICE VALUE": {
+                "way overpriced": 6,
+                "overpriced": 32,
+                "ok": 87,
+                "good value": 25,
+                "great value": 8
+            }
+        }
+    },
+    {
+        "perfume_name": "Bvlgari Man In Black",
+        "brand_name": "Bvlgari",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.26358.jpg",
+        "main_accords": {
+            "warm spicy": 100.0,
+            "woody": 75.1379,
+            "leather": 73.0907,
+            "rum": 72.4121,
+            "amber": 69.4371,
+            "sweet": 65.8017,
+            "tobacco": 65.6283,
+            "vanilla": 60.4538,
+            "animalic": 55.6498,
+            "iris": 50.237
+        },
+        "notes": {
+            "Top Notes": [
+                "Spices",
+                "Rum",
+                "Tobacco"
+            ],
+            "Middle Notes": [
+                "Leather",
+                "Iris",
+                "Tuberose"
+            ],
+            "Base Notes": [
+                "Tonka Bean",
+                "Guaiac Wood",
+                "Benzoin"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 25.4346,
+            "summer": 9.12213,
+            "fall": 90.0622,
+            "winter": 100.0,
+            "day": 34.6856,
+            "night": 95.1921
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 198,
+                "weak": 427,
+                "moderate": 2075,
+                "long lasting": 2364,
+                "eternal": 333
+            },
+            "SILLAGE": {
+                "intimate": 667,
+                "moderate": 3285,
+                "strong": 1345,
+                "enormous": 377
+            },
+            "GENDER": {
+                "female": 31,
+                "more female": 10,
+                "unisex": 179,
+                "more male": 547,
+                "male": 2856
+            },
+            "PRICE VALUE": {
+                "way overpriced": 130,
+                "overpriced": 608,
+                "ok": 1766,
+                "good value": 636,
+                "great value": 124
+            }
+        }
+    },
+    {
+        "perfume_name": "Omnia Pink Sapphire",
+        "brand_name": "Bvlgari",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.48709.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "floral": 55.54,
+            "powdery": 54.25,
+            "musky": 51.3048,
+            "sweet": 51.0964,
+            "fresh spicy": 49.0768,
+            "tropical": 46.0537,
+            "fruity": 44.3075,
+            "woody": 44.1382
+        },
+        "notes": {
+            "Top Notes": [
+                "Pomelo",
+                "Pink Grapefruit",
+                "Pink Pepper"
+            ],
+            "Middle Notes": [
+                "Frangipani",
+                "Tiare Flower",
+                "Peach",
+                "Rose"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Violet",
+                "Vanilla",
+                "Woody Notes",
+                "Sandalwood",
+                "Orris Root"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 85.4054,
+            "summer": 91.8919,
+            "fall": 19.4595,
+            "winter": 10.0,
+            "day": 100.0,
+            "night": 18.3784
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 65,
+                "weak": 89,
+                "moderate": 150,
+                "long lasting": 40,
+                "eternal": 15
+            },
+            "SILLAGE": {
+                "intimate": 143,
+                "moderate": 189,
+                "strong": 64,
+                "enormous": 86
+            },
+            "GENDER": {
+                "female": 202,
+                "more female": 23,
+                "unisex": 4,
+                "more male": 1,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 8,
+                "overpriced": 57,
+                "ok": 93,
+                "good value": 27,
+                "great value": 7
+            }
+        }
+    },
+    {
+        "perfume_name": "Petits et Mamans",
+        "brand_name": "Bvlgari",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.155.jpg",
+        "main_accords": {
+            "powdery": 100.0,
+            "herbal": 68.666,
+            "floral": 63.9044,
+            "vanilla": 54.8215,
+            "sweet": 51.0856,
+            "iris": 49.582
+        },
+        "notes": {
+            "Top Notes": [
+                "Brazilian Rosewood",
+                "Sicilian Orange",
+                "Bergamot"
+            ],
+            "Middle Notes": [
+                "Chamomile",
+                "Sunflower",
+                "Rose"
+            ],
+            "Base Notes": [
+                "Powdery Notes",
+                "Vanilla",
+                "Iris",
+                "White Peach"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 77.4709,
+            "summer": 57.1221,
+            "fall": 52.1802,
+            "winter": 46.2209,
+            "day": 100.0,
+            "night": 30.0872
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 93,
+                "weak": 184,
+                "moderate": 270,
+                "long lasting": 75,
+                "eternal": 15
+            },
+            "SILLAGE": {
+                "intimate": 354,
+                "moderate": 269,
+                "strong": 77,
+                "enormous": 79
+            },
+            "GENDER": {
+                "female": 178,
+                "more female": 87,
+                "unisex": 138,
+                "more male": 1,
+                "male": 4
+            },
+            "PRICE VALUE": {
+                "way overpriced": 21,
+                "overpriced": 56,
+                "ok": 157,
+                "good value": 92,
+                "great value": 30
+            }
+        }
+    },
+    {
+        "perfume_name": "Rose Goldea",
+        "brand_name": "Bvlgari",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.39834.jpg",
+        "main_accords": {
+            "rose": 100.0,
+            "floral": 79.3873,
+            "woody": 58.7923,
+            "musky": 56.4329,
+            "powdery": 53.9963,
+            "fresh": 53.8932,
+            "fresh spicy": 46.4712,
+            "white floral": 45.7565
+        },
+        "notes": {
+            "Top Notes": [
+                "Rose",
+                "Musk",
+                "Pomegranate",
+                "Bergamot"
+            ],
+            "Middle Notes": [
+                "Damask Rose",
+                "Peony",
+                "Jasmine",
+                "Peach"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Sandalwood",
+                "Olibanum",
+                "Vanilla"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 94.6515,
+            "summer": 63.5332,
+            "fall": 42.7877,
+            "winter": 24.9595,
+            "day": 100.0,
+            "night": 26.2561
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 70,
+                "weak": 122,
+                "moderate": 313,
+                "long lasting": 122,
+                "eternal": 34
+            },
+            "SILLAGE": {
+                "intimate": 180,
+                "moderate": 361,
+                "strong": 119,
+                "enormous": 97
+            },
+            "GENDER": {
+                "female": 388,
+                "more female": 25,
+                "unisex": 6,
+                "more male": 2,
+                "male": 1
+            },
+            "PRICE VALUE": {
+                "way overpriced": 37,
+                "overpriced": 116,
+                "ok": 176,
+                "good value": 40,
+                "great value": 9
+            }
+        }
+    },
+    {
+        "perfume_name": "Bvlgari Man Wood Neroli",
+        "brand_name": "Bvlgari",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.55688.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "white floral": 85.671,
+            "woody": 81.7829,
+            "fresh spicy": 54.7277,
+            "amber": 52.6556,
+            "animalic": 51.9294,
+            "aromatic": 47.7952,
+            "musky": 46.4593,
+            "powdery": 45.5102,
+            "fresh": 44.5808
+        },
+        "notes": {
+            "Top Notes": [
+                "Neroli",
+                "Bergamot"
+            ],
+            "Middle Notes": [
+                "Orange Blossom",
+                "Virginia Cedar",
+                "Cypriol Oil or Nagarmotha"
+            ],
+            "Base Notes": [
+                "Woody Notes",
+                "White Musk",
+                "Ambergris",
+                "Amber",
+                "Leather"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 97.0103,
+            "summer": 100.0,
+            "fall": 38.2474,
+            "winter": 10.8247,
+            "day": 95.3608,
+            "night": 22.7835
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 40,
+                "weak": 129,
+                "moderate": 660,
+                "long lasting": 255,
+                "eternal": 51
+            },
+            "SILLAGE": {
+                "intimate": 158,
+                "moderate": 762,
+                "strong": 251,
+                "enormous": 101
+            },
+            "GENDER": {
+                "female": 6,
+                "more female": 6,
+                "unisex": 203,
+                "more male": 411,
+                "male": 322
+            },
+            "PRICE VALUE": {
+                "way overpriced": 18,
+                "overpriced": 114,
+                "ok": 471,
+                "good value": 240,
+                "great value": 32
+            }
+        }
+    },
+    {
+        "perfume_name": "Splendida Jasmin Noir",
+        "brand_name": "Bvlgari",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.43948.jpg",
+        "main_accords": {
+            "white floral": 100.0,
+            "woody": 86.5359,
+            "powdery": 57.8996,
+            "warm spicy": 55.622,
+            "amber": 54.1819,
+            "vanilla": 51.1006,
+            "green": 47.0813,
+            "patchouli": 46.4113,
+            "musky": 45.9427,
+            "lactonic": 44.7367
+        },
+        "notes": {
+            "Top Notes": [
+                "Gardenia",
+                "Green Notes"
+            ],
+            "Middle Notes": [
+                "Jasmine",
+                "Sandalwood"
+            ],
+            "Base Notes": [
+                "Tonka Bean",
+                "Cashmeran",
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 49.8141,
+            "summer": 24.5353,
+            "fall": 100.0,
+            "winter": 88.1041,
+            "day": 72.4907,
+            "night": 98.8848
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 28,
+                "weak": 47,
+                "moderate": 183,
+                "long lasting": 96,
+                "eternal": 28
+            },
+            "SILLAGE": {
+                "intimate": 88,
+                "moderate": 227,
+                "strong": 96,
+                "enormous": 52
+            },
+            "GENDER": {
+                "female": 155,
+                "more female": 58,
+                "unisex": 27,
+                "more male": 1,
+                "male": 5
+            },
+            "PRICE VALUE": {
+                "way overpriced": 19,
+                "overpriced": 52,
+                "ok": 111,
+                "good value": 19,
+                "great value": 6
+            }
+        }
+    },
+    {
+        "perfume_name": "Splendida Patchouli Tentation",
+        "brand_name": "Bvlgari",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.60779.jpg",
+        "main_accords": {
+            "patchouli": 100.0,
+            "powdery": 95.2705,
+            "iris": 91.4864,
+            "woody": 84.2975,
+            "earthy": 82.5948,
+            "musky": 71.6218,
+            "warm spicy": 65.0002,
+            "fruity": 56.4867,
+            "balsamic": 51.0,
+            "sweet": 45.5137
+        },
+        "notes": {
+            "Top Notes": [
+                "Patchouli",
+                "White Peach"
+            ],
+            "Middle Notes": [
+                "Patchouli",
+                "Orris"
+            ],
+            "Base Notes": [
+                "Indonesian Patchouli Leaf",
+                "White Musk"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 59.8513,
+            "summer": 25.2788,
+            "fall": 100.0,
+            "winter": 83.2714,
+            "day": 83.6431,
+            "night": 69.8885
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 11,
+                "weak": 20,
+                "moderate": 148,
+                "long lasting": 123,
+                "eternal": 32
+            },
+            "SILLAGE": {
+                "intimate": 40,
+                "moderate": 192,
+                "strong": 91,
+                "enormous": 35
+            },
+            "GENDER": {
+                "female": 180,
+                "more female": 90,
+                "unisex": 87,
+                "more male": 3,
+                "male": 4
+            },
+            "PRICE VALUE": {
+                "way overpriced": 12,
+                "overpriced": 54,
+                "ok": 164,
+                "good value": 45,
+                "great value": 16
+            }
+        }
+    }
+]

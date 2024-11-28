@@ -1,0 +1,706 @@
+[
+    {
+        "perfume_name": "Colonia Essenza Special Edition 2015",
+        "brand_name": "Acqua di Parma",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.31663.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "aromatic": 70.1205,
+            "white floral": 62.8986,
+            "fresh spicy": 56.8806,
+            "woody": 54.1724,
+            "green": 47.4523,
+            "warm spicy": 47.0511,
+            "earthy": 46.5497
+        },
+        "notes": {
+            "Top Notes": [
+                "Mandarin Orange",
+                "Orange",
+                "Petitgrain",
+                "Bergamot",
+                "Grapefruit"
+            ],
+            "Middle Notes": [
+                "Neroli",
+                "Sage",
+                "Jasmine",
+                "Rosemary",
+                "Rose",
+                "Lily-of-the-Valley"
+            ],
+            "Base Notes": [
+                "Cloves",
+                "Moss",
+                "Patchouli",
+                "Vetiver",
+                "Amber",
+                "Musk"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 90.0,
+            "summer": 90.0,
+            "fall": 45.0,
+            "winter": 10.0,
+            "day": 100.0,
+            "night": 30.0
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 3,
+                "weak": 4,
+                "moderate": 5,
+                "long lasting": 13,
+                "eternal": 5
+            },
+            "SILLAGE": {
+                "intimate": 5,
+                "moderate": 14,
+                "strong": 15,
+                "enormous": 12
+            },
+            "GENDER": {
+                "female": 3,
+                "more female": 0,
+                "unisex": 2,
+                "more male": 3,
+                "male": 6
+            },
+            "PRICE VALUE": {
+                "way overpriced": 1,
+                "overpriced": 3,
+                "ok": 3,
+                "good value": 5,
+                "great value": 1
+            }
+        }
+    },
+    {
+        "perfume_name": "Colonia Club",
+        "brand_name": "Acqua di Parma",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.31424.jpg",
+        "main_accords": {
+            "aromatic": 100.0,
+            "citrus": 84.9658,
+            "green": 83.9126,
+            "fresh spicy": 80.058,
+            "lavender": 51.064
+        },
+        "notes": {
+            "Top Notes": [
+                "Mint",
+                "Bergamot",
+                "Neroli",
+                "Lemon",
+                "Petitgrain",
+                "Mandarin Orange"
+            ],
+            "Middle Notes": [
+                "Lavender",
+                "Geranium",
+                "Galbanum"
+            ],
+            "Base Notes": [
+                "Haitian Vetiver",
+                "Ambergris",
+                "Musk"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 97.8654,
+            "fall": 47.1264,
+            "winter": 13.7931,
+            "day": 99.5074,
+            "night": 25.1232
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 38,
+                "weak": 76,
+                "moderate": 445,
+                "long lasting": 148,
+                "eternal": 25
+            },
+            "SILLAGE": {
+                "intimate": 132,
+                "moderate": 503,
+                "strong": 130,
+                "enormous": 71
+            },
+            "GENDER": {
+                "female": 6,
+                "more female": 1,
+                "unisex": 53,
+                "more male": 168,
+                "male": 287
+            },
+            "PRICE VALUE": {
+                "way overpriced": 33,
+                "overpriced": 95,
+                "ok": 239,
+                "good value": 84,
+                "great value": 15
+            }
+        }
+    },
+    {
+        "perfume_name": "Colonia Quercia",
+        "brand_name": "Acqua di Parma",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.38674.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "aromatic": 99.7085,
+            "woody": 81.7708,
+            "fresh spicy": 80.4098,
+            "warm spicy": 73.8353,
+            "mossy": 67.9165,
+            "earthy": 62.8614,
+            "rose": 47.9616,
+            "herbal": 47.7672,
+            "patchouli": 45.7988
+        },
+        "notes": {
+            "Top Notes": [
+                "Bergamot",
+                "Lemon",
+                "Petitgrain",
+                "Pink Pepper"
+            ],
+            "Middle Notes": [
+                "Geranium",
+                "Cedar",
+                "Cardamom"
+            ],
+            "Base Notes": [
+                "Oakmoss",
+                "Tonka Bean",
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 99.4505,
+            "summer": 66.4835,
+            "fall": 97.8022,
+            "winter": 55.4945,
+            "day": 100.0,
+            "night": 58.7912
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 9,
+                "weak": 24,
+                "moderate": 106,
+                "long lasting": 99,
+                "eternal": 31
+            },
+            "SILLAGE": {
+                "intimate": 43,
+                "moderate": 171,
+                "strong": 83,
+                "enormous": 42
+            },
+            "GENDER": {
+                "female": 2,
+                "more female": 1,
+                "unisex": 23,
+                "more male": 40,
+                "male": 74
+            },
+            "PRICE VALUE": {
+                "way overpriced": 11,
+                "overpriced": 33,
+                "ok": 56,
+                "good value": 14,
+                "great value": 3
+            }
+        }
+    },
+    {
+        "perfume_name": "Acqua di Parma Blu Mediterraneo - Fico di Amalfi",
+        "brand_name": "Acqua di Parma",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.1687.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "woody": 74.8484,
+            "fruity": 60.3559,
+            "sweet": 51.4032,
+            "fresh spicy": 45.0609,
+            "aromatic": 44.9748
+        },
+        "notes": {
+            "Top Notes": [
+                "Grapefruit",
+                "Bergamot",
+                "Citron",
+                "Lemon"
+            ],
+            "Middle Notes": [
+                "Fig Nectar",
+                "Jasmine",
+                "Pink Pepper"
+            ],
+            "Base Notes": [
+                "Fig Tree",
+                "Cedar",
+                "Benzoin"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 63.6111,
+            "summer": 100.0,
+            "fall": 13.8056,
+            "winter": 4.55556,
+            "day": 86.3056,
+            "night": 14.1667
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 293,
+                "weak": 952,
+                "moderate": 1887,
+                "long lasting": 253,
+                "eternal": 78
+            },
+            "SILLAGE": {
+                "intimate": 1117,
+                "moderate": 2010,
+                "strong": 264,
+                "enormous": 175
+            },
+            "GENDER": {
+                "female": 131,
+                "more female": 296,
+                "unisex": 1792,
+                "more male": 439,
+                "male": 124
+            },
+            "PRICE VALUE": {
+                "way overpriced": 146,
+                "overpriced": 525,
+                "ok": 1237,
+                "good value": 439,
+                "great value": 69
+            }
+        }
+    },
+    {
+        "perfume_name": "Mirto di Panarea Limited Edition",
+        "brand_name": "Acqua di Parma",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.64668.jpg",
+        "main_accords": {
+            "aromatic": 100.0,
+            "fresh spicy": 69.8516,
+            "citrus": 68.6387,
+            "herbal": 56.6831,
+            "marine": 54.2576,
+            "woody": 51.8318
+        },
+        "notes": {
+            "Top Notes": [
+                "Myrtle",
+                "Italian Lemon",
+                "Bergamot",
+                "Basil"
+            ],
+            "Middle Notes": [
+                "Sea Notes",
+                "Jasmine",
+                "Damask Rose"
+            ],
+            "Base Notes": [
+                "Juniper",
+                "Virginian Cedar",
+                "Amber",
+                "Mastic or Lentisque"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 42.8571,
+            "summer": 100.0,
+            "fall": 9.52381,
+            "winter": 0.0,
+            "day": 71.4286,
+            "night": 9.52381
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 3,
+                "weak": 10,
+                "moderate": 9,
+                "long lasting": 2,
+                "eternal": 0
+            },
+            "SILLAGE": {
+                "intimate": 8,
+                "moderate": 12,
+                "strong": 2,
+                "enormous": 0
+            },
+            "GENDER": {
+                "female": 1,
+                "more female": 3,
+                "unisex": 14,
+                "more male": 3,
+                "male": 2
+            },
+            "PRICE VALUE": {
+                "way overpriced": 3,
+                "overpriced": 4,
+                "ok": 8,
+                "good value": 4,
+                "great value": 0
+            }
+        }
+    },
+    {
+        "perfume_name": "Acqua di Parma Blu Mediterraneo Arancia di Capri",
+        "brand_name": "Acqua di Parma",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.1685.jpg",
+        "main_accords": {
+            "citrus": 100.0
+        },
+        "notes": {
+            "Top Notes": [
+                "Orange",
+                "Sicilian Mandarin",
+                "Bergamot",
+                "Lemon"
+            ],
+            "Middle Notes": [
+                "Petitgrain",
+                "Cardamom"
+            ],
+            "Base Notes": [
+                "Caramel",
+                "Musk"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 48.3509,
+            "summer": 100.0,
+            "fall": 10.8839,
+            "winter": 5.40897,
+            "day": 87.4011,
+            "night": 10.5541
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 265,
+                "weak": 479,
+                "moderate": 583,
+                "long lasting": 92,
+                "eternal": 27
+            },
+            "SILLAGE": {
+                "intimate": 697,
+                "moderate": 629,
+                "strong": 115,
+                "enormous": 112
+            },
+            "GENDER": {
+                "female": 50,
+                "more female": 107,
+                "unisex": 724,
+                "more male": 150,
+                "male": 50
+            },
+            "PRICE VALUE": {
+                "way overpriced": 81,
+                "overpriced": 275,
+                "ok": 420,
+                "good value": 109,
+                "great value": 16
+            }
+        }
+    },
+    {
+        "perfume_name": "Mandarino di Sicilia",
+        "brand_name": "Acqua di Parma",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.92455.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "green": 59.6378,
+            "fresh spicy": 49.2302
+        },
+        "notes": {
+            "Top Notes": [
+                "Green Mandarin",
+                "Blood Orange",
+                "Bergamot",
+                "Lemon"
+            ],
+            "Middle Notes": [
+                "Spearmint",
+                "Petitgrain"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Cedar",
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 71.9745,
+            "summer": 100.0,
+            "fall": 10.828,
+            "winter": 4.4586,
+            "day": 82.1656,
+            "night": 12.1019
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 2,
+                "weak": 13,
+                "moderate": 106,
+                "long lasting": 21,
+                "eternal": 3
+            },
+            "SILLAGE": {
+                "intimate": 21,
+                "moderate": 98,
+                "strong": 19,
+                "enormous": 3
+            },
+            "GENDER": {
+                "female": 6,
+                "more female": 4,
+                "unisex": 98,
+                "more male": 35,
+                "male": 8
+            },
+            "PRICE VALUE": {
+                "way overpriced": 5,
+                "overpriced": 51,
+                "ok": 60,
+                "good value": 13,
+                "great value": 1
+            }
+        }
+    },
+    {
+        "perfume_name": "Essenza di Colonia",
+        "brand_name": "Acqua di Parma",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.9829.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "aromatic": 63.4642,
+            "white floral": 62.4465,
+            "fresh spicy": 58.5193,
+            "woody": 48.3532,
+            "green": 46.2804
+        },
+        "notes": {
+            "Top Notes": [],
+            "Middle Notes": [],
+            "Base Notes": [],
+            "Undefineded": [
+                "Neroli",
+                "Bergamot",
+                "Grapefruit",
+                "Jasmine",
+                "Petitgrain",
+                "Orange",
+                "Mandarin Orange",
+                "Musk",
+                "Vetyver",
+                "Rosemary",
+                "Oakmoss",
+                "Rose",
+                "Lily-of-the-Valley",
+                "Cloves",
+                "Sage",
+                "Patchouli",
+                "Amber"
+            ]
+        },
+        "season_data": {
+            "spring": 91.5235,
+            "summer": 100.0,
+            "fall": 43.1579,
+            "winter": 16.5651,
+            "day": 95.5125,
+            "night": 38.4488
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 89,
+                "weak": 182,
+                "moderate": 897,
+                "long lasting": 724,
+                "eternal": 85
+            },
+            "SILLAGE": {
+                "intimate": 274,
+                "moderate": 1362,
+                "strong": 350,
+                "enormous": 158
+            },
+            "GENDER": {
+                "female": 20,
+                "more female": 5,
+                "unisex": 217,
+                "more male": 518,
+                "male": 652
+            },
+            "PRICE VALUE": {
+                "way overpriced": 75,
+                "overpriced": 241,
+                "ok": 634,
+                "good value": 269,
+                "great value": 51
+            }
+        }
+    },
+    {
+        "perfume_name": "Peonia Nobile",
+        "brand_name": "Acqua di Parma",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.40154.jpg",
+        "main_accords": {
+            "rose": 100.0,
+            "floral": 94.2313,
+            "fresh spicy": 63.5917,
+            "fresh": 62.7156,
+            "fruity": 56.6022,
+            "sweet": 49.9776,
+            "warm spicy": 49.0179,
+            "patchouli": 46.4828,
+            "aromatic": 45.7734
+        },
+        "notes": {
+            "Top Notes": [],
+            "Middle Notes": [],
+            "Base Notes": [],
+            "Undefineded": [
+                "Peony",
+                "Turkish Rose",
+                "Raspberry",
+                "Geranium",
+                "Patchouli",
+                "Black Pepper",
+                "Musk",
+                "Freesia",
+                "Amber"
+            ]
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 63.8814,
+            "fall": 32.6146,
+            "winter": 18.5984,
+            "day": 92.1833,
+            "night": 20.7547
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 23,
+                "weak": 53,
+                "moderate": 168,
+                "long lasting": 134,
+                "eternal": 28
+            },
+            "SILLAGE": {
+                "intimate": 67,
+                "moderate": 236,
+                "strong": 128,
+                "enormous": 75
+            },
+            "GENDER": {
+                "female": 232,
+                "more female": 39,
+                "unisex": 14,
+                "more male": 0,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 36,
+                "overpriced": 85,
+                "ok": 97,
+                "good value": 20,
+                "great value": 5
+            }
+        }
+    },
+    {
+        "perfume_name": "Magnolia Nobile Special Edition 2016",
+        "brand_name": "Acqua di Parma",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.35351.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "woody": 90.1357,
+            "floral": 80.0679,
+            "white floral": 78.435,
+            "aromatic": 61.8366,
+            "rose": 53.1291,
+            "tuberose": 53.1291,
+            "powdery": 51.3606,
+            "vanilla": 47.687,
+            "earthy": 45.7824
+        },
+        "notes": {
+            "Top Notes": [
+                "Bergamot",
+                "Lemon",
+                "Cedar"
+            ],
+            "Middle Notes": [
+                "Magnolia",
+                "Jasmine",
+                "Rose",
+                "Tuberose"
+            ],
+            "Base Notes": [
+                "Sandalwood",
+                "Vanilla",
+                "Vetiver",
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 85.7143,
+            "summer": 64.2857,
+            "fall": 50.0,
+            "winter": 21.4286,
+            "day": 100.0,
+            "night": 57.1429
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 2,
+                "weak": 5,
+                "moderate": 6,
+                "long lasting": 3,
+                "eternal": 1
+            },
+            "SILLAGE": {
+                "intimate": 2,
+                "moderate": 13,
+                "strong": 3,
+                "enormous": 4
+            },
+            "GENDER": {
+                "female": 12,
+                "more female": 3,
+                "unisex": 3,
+                "more male": 0,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 2,
+                "overpriced": 1,
+                "ok": 5,
+                "good value": 1,
+                "great value": 0
+            }
+        }
+    }
+]

@@ -1,0 +1,753 @@
+[
+    {
+        "perfume_name": "Artisan",
+        "brand_name": "John Varvatos",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.5534.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "white floral": 65.6682,
+            "sweet": 58.4864,
+            "aromatic": 47.9524,
+            "herbal": 46.4888,
+            "fresh spicy": 45.6326,
+            "fruity": 44.8885
+        },
+        "notes": {
+            "Top Notes": [
+                "Clementine",
+                "Tangerine",
+                "Marjoram",
+                "Thyme"
+            ],
+            "Middle Notes": [
+                "Orange Blossom",
+                "Ginger",
+                "Lavender",
+                "Jasmine"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Woodsy Notes",
+                "Amber"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 79.2254,
+            "summer": 100.0,
+            "fall": 26.2324,
+            "winter": 8.01056,
+            "day": 96.831,
+            "night": 17.6056
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 209,
+                "weak": 436,
+                "moderate": 520,
+                "long lasting": 82,
+                "eternal": 31
+            },
+            "SILLAGE": {
+                "intimate": 557,
+                "moderate": 604,
+                "strong": 114,
+                "enormous": 96
+            },
+            "GENDER": {
+                "female": 8,
+                "more female": 4,
+                "unisex": 186,
+                "more male": 331,
+                "male": 238
+            },
+            "PRICE VALUE": {
+                "way overpriced": 19,
+                "overpriced": 55,
+                "ok": 260,
+                "good value": 275,
+                "great value": 89
+            }
+        }
+    },
+    {
+        "perfume_name": "Artisan Blu",
+        "brand_name": "John Varvatos",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.35456.jpg",
+        "main_accords": {
+            "aromatic": 100.0,
+            "fresh spicy": 91.6457,
+            "citrus": 78.7722,
+            "woody": 75.8697,
+            "green": 72.2503,
+            "fresh": 54.6536,
+            "herbal": 51.3929,
+            "lavender": 47.1869
+        },
+        "notes": {
+            "Top Notes": [
+                "Basil",
+                "Bergamot",
+                "Chayote",
+                "Lavender",
+                "Bitter Orange"
+            ],
+            "Middle Notes": [
+                "Palmarosa",
+                "Geranium",
+                "Orange Blossom",
+                "Clary Sage",
+                "Iris"
+            ],
+            "Base Notes": [
+                "Pine",
+                "Cedar",
+                "Pistachio",
+                "Tamarisk",
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 83.5616,
+            "summer": 100.0,
+            "fall": 22.2222,
+            "winter": 6.39269,
+            "day": 95.7382,
+            "night": 21.0046
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 47,
+                "weak": 143,
+                "moderate": 414,
+                "long lasting": 71,
+                "eternal": 21
+            },
+            "SILLAGE": {
+                "intimate": 184,
+                "moderate": 436,
+                "strong": 92,
+                "enormous": 68
+            },
+            "GENDER": {
+                "female": 3,
+                "more female": 1,
+                "unisex": 38,
+                "more male": 161,
+                "male": 266
+            },
+            "PRICE VALUE": {
+                "way overpriced": 4,
+                "overpriced": 24,
+                "ok": 132,
+                "good value": 180,
+                "great value": 96
+            }
+        }
+    },
+    {
+        "perfume_name": "Artisan Acqua",
+        "brand_name": "John Varvatos",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.22068.jpg",
+        "main_accords": {
+            "aromatic": 100.0,
+            "fresh spicy": 82.7311,
+            "citrus": 73.9994,
+            "green": 65.952,
+            "woody": 54.8266,
+            "soft spicy": 50.6093,
+            "herbal": 50.3356,
+            "lavender": 46.1865,
+            "balsamic": 45.9128,
+            "musky": 45.7303
+        },
+        "notes": {
+            "Top Notes": [
+                "Pomelo",
+                "Mandarin Orange",
+                "Galbanum",
+                "Mastic or Lentisque",
+                "Angelica"
+            ],
+            "Middle Notes": [
+                "Lavender",
+                "Palmarosa",
+                "Toscanol",
+                "Clary Sage",
+                "Geranium",
+                "Basil",
+                "Coriander",
+                "Jasmine Sambac"
+            ],
+            "Base Notes": [
+                "Fir Resin",
+                "Musk",
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 80.1303,
+            "summer": 100.0,
+            "fall": 19.544,
+            "winter": 4.23453,
+            "day": 97.3941,
+            "night": 20.5212
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 32,
+                "weak": 78,
+                "moderate": 156,
+                "long lasting": 37,
+                "eternal": 18
+            },
+            "SILLAGE": {
+                "intimate": 109,
+                "moderate": 175,
+                "strong": 46,
+                "enormous": 45
+            },
+            "GENDER": {
+                "female": 0,
+                "more female": 0,
+                "unisex": 12,
+                "more male": 32,
+                "male": 72
+            },
+            "PRICE VALUE": {
+                "way overpriced": 0,
+                "overpriced": 10,
+                "ok": 39,
+                "good value": 42,
+                "great value": 15
+            }
+        }
+    },
+    {
+        "perfume_name": "Artisan Pure",
+        "brand_name": "John Varvatos",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.46623.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "aromatic": 58.2652,
+            "fresh spicy": 50.0952,
+            "herbal": 45.1847
+        },
+        "notes": {
+            "Top Notes": [
+                "Clementine",
+                "Lemon",
+                "Mandarin Orange",
+                "Bergamot",
+                "Thyme",
+                "Marjoram"
+            ],
+            "Middle Notes": [
+                "Petitgrain",
+                "Ginger"
+            ],
+            "Base Notes": [
+                "Woody Notes",
+                "Musk",
+                "Orris Root",
+                "Amber"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 77.1744,
+            "summer": 100.0,
+            "fall": 14.8224,
+            "winter": 3.87913,
+            "day": 91.0167,
+            "night": 13.8832
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 174,
+                "weak": 516,
+                "moderate": 1416,
+                "long lasting": 298,
+                "eternal": 56
+            },
+            "SILLAGE": {
+                "intimate": 560,
+                "moderate": 1599,
+                "strong": 274,
+                "enormous": 124
+            },
+            "GENDER": {
+                "female": 12,
+                "more female": 6,
+                "unisex": 375,
+                "more male": 855,
+                "male": 589
+            },
+            "PRICE VALUE": {
+                "way overpriced": 25,
+                "overpriced": 86,
+                "ok": 487,
+                "good value": 813,
+                "great value": 314
+            }
+        }
+    },
+    {
+        "perfume_name": "Vintage",
+        "brand_name": "John Varvatos",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.2356.jpg",
+        "main_accords": {
+            "aromatic": 100.0,
+            "fresh spicy": 90.9383,
+            "woody": 86.9631,
+            "sweet": 83.7935,
+            "tobacco": 71.3398,
+            "green": 65.8015,
+            "fruity": 64.8413,
+            "warm spicy": 60.8024,
+            "fresh": 55.5416,
+            "leather": 52.8283
+        },
+        "notes": {
+            "Top Notes": [
+                "Rhubarb",
+                "Quince",
+                "Pepper",
+                "Wormwood",
+                "Basil",
+                "Fennel"
+            ],
+            "Middle Notes": [
+                "Cinnamon",
+                "Juniper Berries",
+                "Lavender",
+                "Green Leaves",
+                "Orris Root",
+                "Jasmine"
+            ],
+            "Base Notes": [
+                "Tobacco",
+                "Suede",
+                "Balsam Fir",
+                "Tonka Bean",
+                "Woody Notes",
+                "Oakmoss",
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 52.8974,
+            "summer": 16.2252,
+            "fall": 100.0,
+            "winter": 83.0298,
+            "day": 73.1788,
+            "night": 85.8444
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 67,
+                "weak": 214,
+                "moderate": 804,
+                "long lasting": 171,
+                "eternal": 40
+            },
+            "SILLAGE": {
+                "intimate": 283,
+                "moderate": 853,
+                "strong": 179,
+                "enormous": 99
+            },
+            "GENDER": {
+                "female": 2,
+                "more female": 2,
+                "unisex": 23,
+                "more male": 114,
+                "male": 619
+            },
+            "PRICE VALUE": {
+                "way overpriced": 7,
+                "overpriced": 34,
+                "ok": 181,
+                "good value": 315,
+                "great value": 155
+            }
+        }
+    },
+    {
+        "perfume_name": "JV x NJ Silver",
+        "brand_name": "John Varvatos",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.57533.jpg",
+        "main_accords": {
+            "mineral": 100.0,
+            "aromatic": 84.4445,
+            "woody": 82.4221,
+            "citrus": 81.333,
+            "powdery": 64.8443,
+            "herbal": 63.522,
+            "musky": 62.6665,
+            "fresh spicy": 54.733,
+            "soft spicy": 51.3112,
+            "green": 50.0665
+        },
+        "notes": {
+            "Top Notes": [
+                "Mineral notes",
+                "Citruses",
+                "Italian Lemon",
+                "Green Leaves",
+                "Calabrian bergamot"
+            ],
+            "Middle Notes": [
+                "Pebbles",
+                "Sage",
+                "Orris",
+                "Geranium"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Woody Notes",
+                "Amber",
+                "Patchouli",
+                "Sandalwood"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 97.4359,
+            "summer": 83.3333,
+            "fall": 87.1795,
+            "winter": 24.359,
+            "day": 100.0,
+            "night": 58.9744
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 11,
+                "weak": 18,
+                "moderate": 58,
+                "long lasting": 11,
+                "eternal": 1
+            },
+            "SILLAGE": {
+                "intimate": 31,
+                "moderate": 63,
+                "strong": 16,
+                "enormous": 9
+            },
+            "GENDER": {
+                "female": 1,
+                "more female": 1,
+                "unisex": 4,
+                "more male": 30,
+                "male": 46
+            },
+            "PRICE VALUE": {
+                "way overpriced": 1,
+                "overpriced": 3,
+                "ok": 14,
+                "good value": 39,
+                "great value": 17
+            }
+        }
+    },
+    {
+        "perfume_name": "JV x NJ",
+        "brand_name": "John Varvatos",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.51057.jpg",
+        "main_accords": {
+            "aromatic": 100.0,
+            "woody": 86.5488,
+            "citrus": 72.5487,
+            "fresh spicy": 70.4216,
+            "green": 66.6929,
+            "aquatic": 61.5229,
+            "lavender": 59.2811,
+            "fresh": 55.4835,
+            "soft spicy": 54.0194,
+            "herbal": 50.9086
+        },
+        "notes": {
+            "Top Notes": [
+                "Cascalone",
+                "Mandarin Orange",
+                "Lime",
+                "Pink Pepper"
+            ],
+            "Middle Notes": [
+                "Lavender",
+                "Mint",
+                "Sage",
+                "Rosemary",
+                "Hedione"
+            ],
+            "Base Notes": [
+                "Clearwood",
+                "Sandalwood"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 94.0397,
+            "fall": 54.3046,
+            "winter": 24.5033,
+            "day": 96.6887,
+            "night": 52.9801
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 19,
+                "weak": 40,
+                "moderate": 114,
+                "long lasting": 24,
+                "eternal": 6
+            },
+            "SILLAGE": {
+                "intimate": 54,
+                "moderate": 126,
+                "strong": 37,
+                "enormous": 22
+            },
+            "GENDER": {
+                "female": 3,
+                "more female": 0,
+                "unisex": 8,
+                "more male": 51,
+                "male": 94
+            },
+            "PRICE VALUE": {
+                "way overpriced": 2,
+                "overpriced": 2,
+                "ok": 41,
+                "good value": 70,
+                "great value": 30
+            }
+        }
+    },
+    {
+        "perfume_name": "Dark Rebel Rider",
+        "brand_name": "John Varvatos",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.39982.jpg",
+        "main_accords": {
+            "amber": 100.0,
+            "woody": 85.6761,
+            "leather": 82.1862,
+            "warm spicy": 69.3419,
+            "powdery": 60.7841,
+            "balsamic": 57.9457,
+            "animalic": 54.6411,
+            "cacao": 51.3601,
+            "fresh spicy": 49.2663,
+            "smoky": 47.4514
+        },
+        "notes": {
+            "Top Notes": [
+                "Aldehydes",
+                "Bitter Orange",
+                "Saffron",
+                "Marjoram",
+                "Hyssop"
+            ],
+            "Middle Notes": [
+                "Resin",
+                "Olibanum",
+                "Tolu Balsam",
+                "Orris",
+                "Rock rose",
+                "Black Violet",
+                "Osmanthus"
+            ],
+            "Base Notes": [
+                "Russian Leather",
+                "Cacao",
+                "Woody Notes",
+                "Vanila",
+                "Atlas Cedar",
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 28.9641,
+            "summer": 6.76533,
+            "fall": 100.0,
+            "winter": 97.463,
+            "day": 32.3467,
+            "night": 97.463
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 42,
+                "weak": 99,
+                "moderate": 302,
+                "long lasting": 108,
+                "eternal": 19
+            },
+            "SILLAGE": {
+                "intimate": 132,
+                "moderate": 338,
+                "strong": 119,
+                "enormous": 72
+            },
+            "GENDER": {
+                "female": 3,
+                "more female": 0,
+                "unisex": 10,
+                "more male": 47,
+                "male": 268
+            },
+            "PRICE VALUE": {
+                "way overpriced": 7,
+                "overpriced": 14,
+                "ok": 126,
+                "good value": 115,
+                "great value": 35
+            }
+        }
+    },
+    {
+        "perfume_name": "John Varvatos XX",
+        "brand_name": "John Varvatos",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.62838.jpg",
+        "main_accords": {
+            "woody": 100.0,
+            "warm spicy": 92.8449,
+            "fruity": 89.092,
+            "powdery": 68.2771,
+            "coffee": 63.524,
+            "aromatic": 62.7734,
+            "violet": 53.0163,
+            "sweet": 47.2625,
+            "white floral": 46.0114,
+            "fresh": 44.9856
+        },
+        "notes": {
+            "Top Notes": [
+                "Red Apple",
+                "Black Currant",
+                "Cardamom"
+            ],
+            "Middle Notes": [
+                "White Violet",
+                "Orange Blossom",
+                "Geranium"
+            ],
+            "Base Notes": [
+                "Sandalwood",
+                "Coffee",
+                "Cedar"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 60.3015,
+            "summer": 25.6281,
+            "fall": 100.0,
+            "winter": 93.4673,
+            "day": 59.799,
+            "night": 91.9598
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 11,
+                "weak": 23,
+                "moderate": 156,
+                "long lasting": 47,
+                "eternal": 6
+            },
+            "SILLAGE": {
+                "intimate": 28,
+                "moderate": 172,
+                "strong": 51,
+                "enormous": 3
+            },
+            "GENDER": {
+                "female": 1,
+                "more female": 1,
+                "unisex": 19,
+                "more male": 101,
+                "male": 126
+            },
+            "PRICE VALUE": {
+                "way overpriced": 0,
+                "overpriced": 15,
+                "ok": 91,
+                "good value": 91,
+                "great value": 15
+            }
+        }
+    },
+    {
+        "perfume_name": "Star USA",
+        "brand_name": "John Varvatos",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.12965.jpg",
+        "main_accords": {
+            "woody": 100.0,
+            "aromatic": 92.3939,
+            "warm spicy": 81.46,
+            "citrus": 77.6571,
+            "fresh": 51.7785,
+            "fresh spicy": 47.4702,
+            "green": 46.2223
+        },
+        "notes": {
+            "Top Notes": [
+                "Citron",
+                "Ginger",
+                "Juniper Berries"
+            ],
+            "Middle Notes": [
+                "Woodsy Notes",
+                "Spruce",
+                "Cardamom",
+                "Osmanthus"
+            ],
+            "Base Notes": [
+                "Vetiver",
+                "Tonka Bean",
+                "Amber"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 82.8829,
+            "summer": 70.2703,
+            "fall": 60.3604,
+            "winter": 19.8198,
+            "day": 100.0,
+            "night": 25.2252
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 27,
+                "weak": 44,
+                "moderate": 44,
+                "long lasting": 8,
+                "eternal": 6
+            },
+            "SILLAGE": {
+                "intimate": 67,
+                "moderate": 61,
+                "strong": 14,
+                "enormous": 18
+            },
+            "GENDER": {
+                "female": 0,
+                "more female": 0,
+                "unisex": 4,
+                "more male": 10,
+                "male": 25
+            },
+            "PRICE VALUE": {
+                "way overpriced": 2,
+                "overpriced": 4,
+                "ok": 12,
+                "good value": 13,
+                "great value": 4
+            }
+        }
+    }
+]

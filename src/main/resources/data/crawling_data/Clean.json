@@ -1,0 +1,1129 @@
+[
+    {
+        "perfume_name": "Air & Coconut Water Eau Fraiche",
+        "brand_name": "Clean",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.60100.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "floral": 100.0,
+            "aromatic": 65.8538,
+            "rose": 64.1462,
+            "musky": 64.1462,
+            "vanilla": 53.9027,
+            "sweet": 52.1951,
+            "soft spicy": 50.488,
+            "fruity": 50.488,
+            "powdery": 50.488
+        },
+        "notes": {
+            "Top Notes": [
+                "Bergamot",
+                "Lemon",
+                "Black Currant Blossom"
+            ],
+            "Middle Notes": [
+                "Freesia",
+                "Coconut Water",
+                "Rose"
+            ],
+            "Base Notes": [
+                "Solar Notes",
+                "Tonka Bean",
+                "Musk"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 47.619,
+            "summer": 100.0,
+            "fall": 9.52381,
+            "winter": 9.52381,
+            "day": 95.2381,
+            "night": 14.2857
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 2,
+                "weak": 9,
+                "moderate": 3,
+                "long lasting": 5,
+                "eternal": 0
+            },
+            "SILLAGE": {
+                "intimate": 7,
+                "moderate": 8,
+                "strong": 4,
+                "enormous": 0
+            },
+            "GENDER": {
+                "female": 1,
+                "more female": 8,
+                "unisex": 9,
+                "more male": 0,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 0,
+                "overpriced": 0,
+                "ok": 4,
+                "good value": 6,
+                "great value": 8
+            }
+        }
+    },
+    {
+        "perfume_name": "Clean Warm Cotton",
+        "brand_name": "Clean",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.3024.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "aromatic": 83.1041,
+            "marine": 77.5741,
+            "musky": 59.2176,
+            "fresh spicy": 51.6149,
+            "salty": 49.0295,
+            "fresh": 48.739,
+            "white floral": 46.8268,
+            "powdery": 45.6413,
+            "sweet": 44.8077
+        },
+        "notes": {
+            "Top Notes": [
+                "Citruses",
+                "Lemon Verbena"
+            ],
+            "Middle Notes": [
+                "Sea Notes",
+                "Orange Blossom",
+                "Fruits"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Fern",
+                "Amber"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 68.7598,
+            "summer": 75.1962,
+            "fall": 32.6531,
+            "winter": 32.4961,
+            "day": 100.0,
+            "night": 11.46
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 30,
+                "weak": 110,
+                "moderate": 293,
+                "long lasting": 98,
+                "eternal": 36
+            },
+            "SILLAGE": {
+                "intimate": 130,
+                "moderate": 302,
+                "strong": 129,
+                "enormous": 62
+            },
+            "GENDER": {
+                "female": 37,
+                "more female": 55,
+                "unisex": 282,
+                "more male": 8,
+                "male": 2
+            },
+            "PRICE VALUE": {
+                "way overpriced": 9,
+                "overpriced": 31,
+                "ok": 128,
+                "good value": 112,
+                "great value": 28
+            }
+        }
+    },
+    {
+        "perfume_name": "Cool Cotton",
+        "brand_name": "Clean",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.23032.jpg",
+        "main_accords": {
+            "powdery": 100.0,
+            "citrus": 90.0933,
+            "green": 67.4764,
+            "aromatic": 65.1093,
+            "floral": 60.32,
+            "musky": 59.1362,
+            "fresh spicy": 58.9176,
+            "fruity": 54.7293,
+            "fresh": 51.8521
+        },
+        "notes": {
+            "Top Notes": [
+                "Lemon Peel",
+                "Bergamot",
+                "Green Apple"
+            ],
+            "Middle Notes": [
+                "Cotton Flower",
+                "Mint",
+                "Mimosa"
+            ],
+            "Base Notes": [
+                "White Musk",
+                "Peach",
+                "Amber"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 84.4828,
+            "summer": 98.8506,
+            "fall": 31.6092,
+            "winter": 25.8621,
+            "day": 100.0,
+            "night": 21.8391
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 26,
+                "weak": 55,
+                "moderate": 80,
+                "long lasting": 16,
+                "eternal": 5
+            },
+            "SILLAGE": {
+                "intimate": 81,
+                "moderate": 100,
+                "strong": 22,
+                "enormous": 26
+            },
+            "GENDER": {
+                "female": 12,
+                "more female": 20,
+                "unisex": 102,
+                "more male": 8,
+                "male": 2
+            },
+            "PRICE VALUE": {
+                "way overpriced": 9,
+                "overpriced": 16,
+                "ok": 36,
+                "good value": 42,
+                "great value": 12
+            }
+        }
+    },
+    {
+        "perfume_name": "Clean Classic Warm Cotton",
+        "brand_name": "Clean",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.71221.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "powdery": 77.3857,
+            "marine": 57.1688,
+            "aromatic": 53.9727,
+            "musky": 53.9727,
+            "white floral": 52.3745,
+            "fresh": 51.9748,
+            "floral": 47.5798
+        },
+        "notes": {
+            "Top Notes": [
+                "Citruses",
+                "Verbena"
+            ],
+            "Middle Notes": [
+                "Cotton Flower",
+                "Sea Notes",
+                "Orange Blossom",
+                "Fruits"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Amber"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 82.7586,
+            "summer": 79.3103,
+            "fall": 37.3563,
+            "winter": 36.2069,
+            "day": 100.0,
+            "night": 16.6667
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 10,
+                "weak": 39,
+                "moderate": 108,
+                "long lasting": 26,
+                "eternal": 3
+            },
+            "SILLAGE": {
+                "intimate": 59,
+                "moderate": 98,
+                "strong": 19,
+                "enormous": 4
+            },
+            "GENDER": {
+                "female": 26,
+                "more female": 32,
+                "unisex": 140,
+                "more male": 5,
+                "male": 2
+            },
+            "PRICE VALUE": {
+                "way overpriced": 4,
+                "overpriced": 17,
+                "ok": 66,
+                "good value": 73,
+                "great value": 18
+            }
+        }
+    },
+    {
+        "perfume_name": "Clean Shower Fresh",
+        "brand_name": "Clean",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.3021.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "white floral": 81.4442,
+            "musky": 52.5585,
+            "fresh": 46.8638,
+            "sweet": 44.7456
+        },
+        "notes": {
+            "Top Notes": [
+                "Lemon",
+                "Mandarin Orange",
+                "Orange"
+            ],
+            "Middle Notes": [
+                "Orange Blossom",
+                "Lily-of-the-Valley",
+                "Jasmine"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Woody Notes"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 64.8305,
+            "summer": 81.3559,
+            "fall": 18.2203,
+            "winter": 16.1017,
+            "day": 100.0,
+            "night": 8.89831
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 14,
+                "weak": 35,
+                "moderate": 70,
+                "long lasting": 19,
+                "eternal": 9
+            },
+            "SILLAGE": {
+                "intimate": 56,
+                "moderate": 76,
+                "strong": 27,
+                "enormous": 24
+            },
+            "GENDER": {
+                "female": 15,
+                "more female": 18,
+                "unisex": 41,
+                "more male": 2,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 6,
+                "overpriced": 9,
+                "ok": 23,
+                "good value": 20,
+                "great value": 6
+            }
+        }
+    },
+    {
+        "perfume_name": "Pure Soap",
+        "brand_name": "Clean",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.68416.jpg",
+        "main_accords": {
+            "white floral": 100.0,
+            "aldehydic": 90.4072,
+            "citrus": 85.0925,
+            "fresh": 76.6668,
+            "musky": 74.0739,
+            "powdery": 61.7594,
+            "lavender": 61.1114,
+            "green": 60.5928,
+            "soapy": 57.8058,
+            "floral": 54.111
+        },
+        "notes": {
+            "Top Notes": [
+                "Aldehydes",
+                "Mandarin Orange",
+                "Herbal Notes"
+            ],
+            "Middle Notes": [
+                "Lavender",
+                "Jasmine",
+                "Cyclamen"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Orange Blossom",
+                "Sandalwood"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 91.4894,
+            "summer": 94.6809,
+            "fall": 61.7021,
+            "winter": 56.383,
+            "day": 100.0,
+            "night": 32.9787
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 10,
+                "weak": 19,
+                "moderate": 55,
+                "long lasting": 15,
+                "eternal": 3
+            },
+            "SILLAGE": {
+                "intimate": 34,
+                "moderate": 53,
+                "strong": 13,
+                "enormous": 0
+            },
+            "GENDER": {
+                "female": 12,
+                "more female": 25,
+                "unisex": 79,
+                "more male": 4,
+                "male": 4
+            },
+            "PRICE VALUE": {
+                "way overpriced": 4,
+                "overpriced": 10,
+                "ok": 44,
+                "good value": 37,
+                "great value": 6
+            }
+        }
+    },
+    {
+        "perfume_name": "Fresh Linens",
+        "brand_name": "Clean",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.53402.jpg",
+        "main_accords": {
+            "musky": 100.0,
+            "citrus": 81.7917,
+            "woody": 79.3641,
+            "powdery": 77.0981,
+            "sweet": 71.1098,
+            "white floral": 69.6532,
+            "fruity": 55.6936,
+            "floral": 53.387,
+            "animalic": 46.8727,
+            "soft spicy": 46.8727
+        },
+        "notes": {
+            "Top Notes": [
+                "Clementine",
+                "Linen",
+                "Pear"
+            ],
+            "Middle Notes": [
+                "Lily",
+                "White Woods",
+                "Orchid"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Skin",
+                "Sandalwood",
+                "Amber"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 83.3333,
+            "summer": 100.0,
+            "fall": 28.5714,
+            "winter": 17.8571,
+            "day": 92.8571,
+            "night": 11.9048
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 15,
+                "weak": 22,
+                "moderate": 39,
+                "long lasting": 10,
+                "eternal": 5
+            },
+            "SILLAGE": {
+                "intimate": 40,
+                "moderate": 42,
+                "strong": 13,
+                "enormous": 8
+            },
+            "GENDER": {
+                "female": 10,
+                "more female": 24,
+                "unisex": 32,
+                "more male": 0,
+                "male": 1
+            },
+            "PRICE VALUE": {
+                "way overpriced": 2,
+                "overpriced": 7,
+                "ok": 21,
+                "good value": 21,
+                "great value": 6
+            }
+        }
+    },
+    {
+        "perfume_name": "Rain",
+        "brand_name": "Clean",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.35234.jpg",
+        "main_accords": {
+            "white floral": 100.0,
+            "citrus": 86.5598,
+            "patchouli": 72.5601,
+            "woody": 61.1921,
+            "fresh spicy": 58.2801,
+            "warm spicy": 51.28,
+            "earthy": 47.024,
+            "aromatic": 46.968,
+            "animalic": 44.0001
+        },
+        "notes": {
+            "Top Notes": [
+                "Bergamot"
+            ],
+            "Middle Notes": [
+                "White Flowers"
+            ],
+            "Base Notes": [
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 99.3671,
+            "summer": 85.443,
+            "fall": 37.9747,
+            "winter": 17.4051,
+            "day": 100.0,
+            "night": 17.0886
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 23,
+                "weak": 65,
+                "moderate": 177,
+                "long lasting": 42,
+                "eternal": 11
+            },
+            "SILLAGE": {
+                "intimate": 106,
+                "moderate": 173,
+                "strong": 27,
+                "enormous": 20
+            },
+            "GENDER": {
+                "female": 27,
+                "more female": 69,
+                "unisex": 212,
+                "more male": 38,
+                "male": 4
+            },
+            "PRICE VALUE": {
+                "way overpriced": 7,
+                "overpriced": 24,
+                "ok": 142,
+                "good value": 66,
+                "great value": 8
+            }
+        }
+    },
+    {
+        "perfume_name": "Warm Cotton [Reserve Blend]",
+        "brand_name": "Clean",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.35233.jpg",
+        "main_accords": {
+            "fresh": 100.0,
+            "aldehydic": 96.5905,
+            "ozonic": 90.1722,
+            "green": 83.032,
+            "aquatic": 80.9457,
+            "musky": 65.3009,
+            "floral": 59.284,
+            "aromatic": 51.9829,
+            "warm spicy": 49.9772,
+            "soapy": 49.9772
+        },
+        "notes": {
+            "Top Notes": [
+                "Aldehydes",
+                "Ozonic notes",
+                "Watery Notes",
+                "Ginger"
+            ],
+            "Middle Notes": [
+                "Green Notes",
+                "Floral Notes",
+                "Mint",
+                "Pepper"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Vetiver",
+                "Incense"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 86.8502,
+            "summer": 85.0153,
+            "fall": 41.896,
+            "winter": 36.0856,
+            "day": 100.0,
+            "night": 19.8777
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 14,
+                "weak": 43,
+                "moderate": 177,
+                "long lasting": 44,
+                "eternal": 19
+            },
+            "SILLAGE": {
+                "intimate": 70,
+                "moderate": 170,
+                "strong": 51,
+                "enormous": 28
+            },
+            "GENDER": {
+                "female": 19,
+                "more female": 44,
+                "unisex": 241,
+                "more male": 5,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 11,
+                "overpriced": 44,
+                "ok": 120,
+                "good value": 51,
+                "great value": 12
+            }
+        }
+    },
+    {
+        "perfume_name": "Acqua Neroli",
+        "brand_name": "Clean",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.50623.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "white floral": 75.7216,
+            "musky": 50.5923,
+            "fresh spicy": 46.8886,
+            "floral": 45.4444
+        },
+        "notes": {
+            "Top Notes": [
+                "Bergamot",
+                "Sicilian Orange",
+                "Mandarin Orange"
+            ],
+            "Middle Notes": [
+                "Neroli",
+                "Orange Blossom",
+                "Jasmine"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Ambrette (Musk Mallow)",
+                "Sandalwood",
+                "Amber"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 78.1879,
+            "summer": 100.0,
+            "fall": 18.4564,
+            "winter": 7.71812,
+            "day": 88.255,
+            "night": 11.0738
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 12,
+                "weak": 51,
+                "moderate": 154,
+                "long lasting": 41,
+                "eternal": 7
+            },
+            "SILLAGE": {
+                "intimate": 76,
+                "moderate": 160,
+                "strong": 27,
+                "enormous": 17
+            },
+            "GENDER": {
+                "female": 34,
+                "more female": 79,
+                "unisex": 167,
+                "more male": 9,
+                "male": 1
+            },
+            "PRICE VALUE": {
+                "way overpriced": 7,
+                "overpriced": 28,
+                "ok": 125,
+                "good value": 58,
+                "great value": 6
+            }
+        }
+    },
+    {
+        "perfume_name": "Citron Fig",
+        "brand_name": "Clean",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.42893.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "warm spicy": 77.5597,
+            "aromatic": 68.684,
+            "woody": 60.1433,
+            "green": 50.8214,
+            "fresh": 46.4115
+        },
+        "notes": {
+            "Top Notes": [
+                "Lemon",
+                "Ginger"
+            ],
+            "Middle Notes": [
+                "Mint",
+                "Mandarin Orange",
+                "Cardamom",
+                "Copaiba balm"
+            ],
+            "Base Notes": [
+                "Sandalwood",
+                "Cedar",
+                "Musk"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 80.4124,
+            "summer": 100.0,
+            "fall": 24.7423,
+            "winter": 6.18557,
+            "day": 90.7216,
+            "night": 6.18557
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 7,
+                "weak": 18,
+                "moderate": 53,
+                "long lasting": 8,
+                "eternal": 1
+            },
+            "SILLAGE": {
+                "intimate": 31,
+                "moderate": 57,
+                "strong": 9,
+                "enormous": 8
+            },
+            "GENDER": {
+                "female": 8,
+                "more female": 27,
+                "unisex": 44,
+                "more male": 3,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 5,
+                "overpriced": 7,
+                "ok": 20,
+                "good value": 25,
+                "great value": 0
+            }
+        }
+    },
+    {
+        "perfume_name": "Sueded Oud",
+        "brand_name": "Clean",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.35236.jpg",
+        "main_accords": {
+            "amber": 100.0,
+            "musky": 97.9081,
+            "woody": 96.3974,
+            "leather": 87.5257,
+            "fresh spicy": 73.7354,
+            "sweet": 72.922,
+            "oud": 71.8375,
+            "powdery": 69.5516,
+            "smoky": 69.3966,
+            "warm spicy": 67.8469
+        },
+        "notes": {
+            "Top Notes": [
+                "Cypress",
+                "Incense",
+                "Birch",
+                "Pimento"
+            ],
+            "Middle Notes": [
+                "Agarwood (Oud)",
+                "Balsam Fir",
+                "Night Blooming Jasmine",
+                "Cactus",
+                "Honeysuckle",
+                "White Magnolia"
+            ],
+            "Base Notes": [
+                "Suede",
+                "Musk",
+                "Praline",
+                "Amber",
+                "Olibanum",
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 56.2162,
+            "summer": 29.1892,
+            "fall": 100.0,
+            "winter": 66.4865,
+            "day": 90.8108,
+            "night": 62.1622
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 18,
+                "weak": 40,
+                "moderate": 109,
+                "long lasting": 30,
+                "eternal": 10
+            },
+            "SILLAGE": {
+                "intimate": 100,
+                "moderate": 101,
+                "strong": 18,
+                "enormous": 15
+            },
+            "GENDER": {
+                "female": 7,
+                "more female": 25,
+                "unisex": 111,
+                "more male": 16,
+                "male": 5
+            },
+            "PRICE VALUE": {
+                "way overpriced": 3,
+                "overpriced": 17,
+                "ok": 69,
+                "good value": 34,
+                "great value": 11
+            }
+        }
+    },
+    {
+        "perfume_name": "Skin",
+        "brand_name": "Clean",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.35244.jpg",
+        "main_accords": {
+            "sweet": 100.0,
+            "musky": 75.439,
+            "salty": 58.8248,
+            "powdery": 52.7195,
+            "lactonic": 51.6185,
+            "vanilla": 49.9672,
+            "amber": 49.667,
+            "leather": 46.414,
+            "nutty": 46.2138,
+            "animalic": 45.0228
+        },
+        "notes": {
+            "Top Notes": [],
+            "Middle Notes": [],
+            "Base Notes": [],
+            "Undefineded": [
+                "Praline",
+                "Musk",
+                "Salt",
+                "Tonka Bean",
+                "Leather"
+            ]
+        },
+        "season_data": {
+            "spring": 89.3725,
+            "summer": 78.2389,
+            "fall": 80.0607,
+            "winter": 72.0648,
+            "day": 100.0,
+            "night": 42.3077
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 89,
+                "weak": 272,
+                "moderate": 581,
+                "long lasting": 113,
+                "eternal": 38
+            },
+            "SILLAGE": {
+                "intimate": 669,
+                "moderate": 354,
+                "strong": 43,
+                "enormous": 16
+            },
+            "GENDER": {
+                "female": 287,
+                "more female": 492,
+                "unisex": 323,
+                "more male": 8,
+                "male": 3
+            },
+            "PRICE VALUE": {
+                "way overpriced": 20,
+                "overpriced": 111,
+                "ok": 456,
+                "good value": 267,
+                "great value": 47
+            }
+        }
+    },
+    {
+        "perfume_name": "Radiant Nectar",
+        "brand_name": "Clean",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.59860.jpg",
+        "main_accords": {
+            "musky": 100.0,
+            "powdery": 65.2854,
+            "fruity": 64.7648,
+            "sweet": 56.1827,
+            "amber": 49.146,
+            "aquatic": 48.5412,
+            "floral": 48.0038,
+            "white floral": 45.7199
+        },
+        "notes": {
+            "Top Notes": [
+                "Pear",
+                "Ambrette (Musk Mallow)"
+            ],
+            "Middle Notes": [
+                "Tobacco Blossom",
+                "Carrot Seeds",
+                "Orris"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Ambroxan",
+                "White Cedar Extract"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 99.2674,
+            "summer": 93.0403,
+            "fall": 40.8425,
+            "winter": 19.4139,
+            "day": 100.0,
+            "night": 17.5824
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 38,
+                "weak": 134,
+                "moderate": 316,
+                "long lasting": 77,
+                "eternal": 15
+            },
+            "SILLAGE": {
+                "intimate": 198,
+                "moderate": 332,
+                "strong": 37,
+                "enormous": 15
+            },
+            "GENDER": {
+                "female": 289,
+                "more female": 236,
+                "unisex": 77,
+                "more male": 3,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 13,
+                "overpriced": 65,
+                "ok": 262,
+                "good value": 144,
+                "great value": 25
+            }
+        }
+    },
+    {
+        "perfume_name": "Clean Classic Flower Fresh",
+        "brand_name": "Clean",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.60823.jpg",
+        "main_accords": {
+            "fresh": 100.0,
+            "citrus": 99.2652,
+            "white floral": 88.7705,
+            "floral": 84.153,
+            "aquatic": 64.0027,
+            "musky": 63.5831,
+            "ozonic": 61.4842,
+            "amber": 49.7302,
+            "powdery": 48.366,
+            "animalic": 45.0073
+        },
+        "notes": {
+            "Top Notes": [
+                "Mountain Air",
+                "Lemon Zest",
+                "Bergamot"
+            ],
+            "Middle Notes": [
+                "Water Lily",
+                "Gardenia",
+                "Jasmine"
+            ],
+            "Base Notes": [
+                "Solar Notes",
+                "Musk",
+                "White Amber",
+                "Cashmere Wood"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 95.7447,
+            "fall": 23.4043,
+            "winter": 19.1489,
+            "day": 100.0,
+            "night": 17.0213
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 7,
+                "weak": 14,
+                "moderate": 26,
+                "long lasting": 3,
+                "eternal": 0
+            },
+            "SILLAGE": {
+                "intimate": 22,
+                "moderate": 21,
+                "strong": 2,
+                "enormous": 2
+            },
+            "GENDER": {
+                "female": 37,
+                "more female": 13,
+                "unisex": 3,
+                "more male": 0,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 3,
+                "overpriced": 7,
+                "ok": 9,
+                "good value": 18,
+                "great value": 5
+            }
+        }
+    },
+    {
+        "perfume_name": "Clean Air",
+        "brand_name": "Clean",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.30822.jpg",
+        "main_accords": {
+            "fresh": 100.0,
+            "floral": 79.5494,
+            "powdery": 68.1532,
+            "aldehydic": 61.9821,
+            "green": 61.1036,
+            "musky": 59.5044,
+            "ozonic": 54.8648,
+            "citrus": 47.8379
+        },
+        "notes": {
+            "Top Notes": [
+                "Mountain Air",
+                "Bergamot Blossom"
+            ],
+            "Middle Notes": [
+                "Green Accord",
+                "Freesia",
+                "Peony"
+            ],
+            "Base Notes": [
+                "Aldehydes",
+                "Powdery Notes",
+                "Musk",
+                "Cashmere Wood",
+                "White Amber"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 85.7143,
+            "summer": 90.0,
+            "fall": 30.0,
+            "winter": 29.2857,
+            "day": 100.0,
+            "night": 15.7143
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 43,
+                "weak": 47,
+                "moderate": 35,
+                "long lasting": 5,
+                "eternal": 8
+            },
+            "SILLAGE": {
+                "intimate": 87,
+                "moderate": 41,
+                "strong": 11,
+                "enormous": 22
+            },
+            "GENDER": {
+                "female": 10,
+                "more female": 17,
+                "unisex": 61,
+                "more male": 1,
+                "male": 1
+            },
+            "PRICE VALUE": {
+                "way overpriced": 5,
+                "overpriced": 14,
+                "ok": 24,
+                "good value": 25,
+                "great value": 7
+            }
+        }
+    }
+]

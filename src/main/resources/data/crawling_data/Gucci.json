@@ -1,0 +1,1183 @@
+[
+    {
+        "perfume_name": "Flora Gorgeous Gardenia Eau de Parfum",
+        "brand_name": "Gucci",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.68578.jpg",
+        "main_accords": {
+            "white floral": 100.0,
+            "floral": 80.7543,
+            "sweet": 77.987,
+            "fruity": 66.4379,
+            "patchouli": 53.6045,
+            "lactonic": 52.5014,
+            "fresh": 49.1822,
+            "citrus": 48.9834,
+            "woody": 44.1626
+        },
+        "notes": {
+            "Top Notes": [
+                "Pear Blossom",
+                "Red Berries",
+                "Italian Mandarin"
+            ],
+            "Middle Notes": [
+                "Gardenia",
+                "Jasmine",
+                "Frangipani"
+            ],
+            "Base Notes": [
+                "Brown sugar",
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 77.6302,
+            "fall": 33.9632,
+            "winter": 18.1818,
+            "day": 93.4116,
+            "night": 22.1655
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 293,
+                "weak": 622,
+                "moderate": 1135,
+                "long lasting": 255,
+                "eternal": 29
+            },
+            "SILLAGE": {
+                "intimate": 768,
+                "moderate": 1139,
+                "strong": 200,
+                "enormous": 17
+            },
+            "GENDER": {
+                "female": 1925,
+                "more female": 250,
+                "unisex": 81,
+                "more male": 7,
+                "male": 6
+            },
+            "PRICE VALUE": {
+                "way overpriced": 232,
+                "overpriced": 742,
+                "ok": 937,
+                "good value": 161,
+                "great value": 27
+            }
+        }
+    },
+    {
+        "perfume_name": "Flora Gorgeous Jasmine",
+        "brand_name": "Gucci",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.75190.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "white floral": 91.0461,
+            "floral": 84.0685,
+            "woody": 53.3492,
+            "fresh spicy": 52.8077,
+            "warm spicy": 52.4289,
+            "amber": 45.566
+        },
+        "notes": {
+            "Top Notes": [
+                "Italian Mandarin",
+                "Bergamot",
+                "Black Pepper"
+            ],
+            "Middle Notes": [
+                "Jasmine",
+                "Jasmine Sambac",
+                "Magnolia",
+                "Damask Rose"
+            ],
+            "Base Notes": [
+                "Benzoin",
+                "Australian Sandalwood",
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 74.8932,
+            "fall": 30.8761,
+            "winter": 16.1325,
+            "day": 91.2393,
+            "night": 21.688
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 51,
+                "weak": 190,
+                "moderate": 527,
+                "long lasting": 139,
+                "eternal": 18
+            },
+            "SILLAGE": {
+                "intimate": 188,
+                "moderate": 537,
+                "strong": 115,
+                "enormous": 13
+            },
+            "GENDER": {
+                "female": 712,
+                "more female": 200,
+                "unisex": 62,
+                "more male": 4,
+                "male": 6
+            },
+            "PRICE VALUE": {
+                "way overpriced": 110,
+                "overpriced": 310,
+                "ok": 353,
+                "good value": 79,
+                "great value": 11
+            }
+        }
+    },
+    {
+        "perfume_name": "A Song For The Rose Eau de Parfum",
+        "brand_name": "Gucci",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.53087.jpg",
+        "main_accords": {
+            "rose": 100.0,
+            "musky": 65.8824,
+            "woody": 54.1176,
+            "floral": 51.0001,
+            "powdery": 47.9411
+        },
+        "notes": {
+            "Top Notes": [],
+            "Middle Notes": [],
+            "Base Notes": [],
+            "Undefineded": [
+                "Bulgarian Rose",
+                "Musk",
+                "Woody Notes"
+            ]
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 70.0,
+            "fall": 80.0,
+            "winter": 52.0,
+            "day": 93.0,
+            "night": 58.0
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 13,
+                "weak": 32,
+                "moderate": 63,
+                "long lasting": 35,
+                "eternal": 7
+            },
+            "SILLAGE": {
+                "intimate": 22,
+                "moderate": 96,
+                "strong": 35,
+                "enormous": 11
+            },
+            "GENDER": {
+                "female": 59,
+                "more female": 32,
+                "unisex": 40,
+                "more male": 5,
+                "male": 2
+            },
+            "PRICE VALUE": {
+                "way overpriced": 53,
+                "overpriced": 31,
+                "ok": 22,
+                "good value": 3,
+                "great value": 1
+            }
+        }
+    },
+    {
+        "perfume_name": "Guilty Pour Homme Eau de Parfum",
+        "brand_name": "Gucci",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.59987.jpg",
+        "main_accords": {
+            "rose": 100.0,
+            "warm spicy": 93.3278,
+            "white floral": 82.0622,
+            "woody": 81.9487,
+            "lavender": 75.7187,
+            "citrus": 66.8591,
+            "floral": 61.4344,
+            "aromatic": 60.2311,
+            "patchouli": 56.9064,
+            "fresh": 55.5936
+        },
+        "notes": {
+            "Top Notes": [
+                "Rose",
+                "Red Chilli Pepper",
+                "Balsamic Vinegar",
+                "Salt"
+            ],
+            "Middle Notes": [
+                "Lavender",
+                "Orange Blossom",
+                "Neroli"
+            ],
+            "Base Notes": [
+                "Cedar",
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 60.625,
+            "fall": 100.0,
+            "winter": 75.0,
+            "day": 83.2812,
+            "night": 92.3438
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 30,
+                "weak": 89,
+                "moderate": 481,
+                "long lasting": 220,
+                "eternal": 33
+            },
+            "SILLAGE": {
+                "intimate": 125,
+                "moderate": 567,
+                "strong": 136,
+                "enormous": 59
+            },
+            "GENDER": {
+                "female": 17,
+                "more female": 10,
+                "unisex": 133,
+                "more male": 361,
+                "male": 304
+            },
+            "PRICE VALUE": {
+                "way overpriced": 48,
+                "overpriced": 152,
+                "ok": 420,
+                "good value": 104,
+                "great value": 13
+            }
+        }
+    },
+    {
+        "perfume_name": "Gucci Guilty Absolute pour Femme",
+        "brand_name": "Gucci",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.48090.jpg",
+        "main_accords": {
+            "woody": 100.0,
+            "fruity": 69.1449,
+            "rose": 63.8017,
+            "aromatic": 60.8122,
+            "patchouli": 52.2596,
+            "sweet": 49.8336,
+            "fresh spicy": 47.206,
+            "earthy": 44.5467
+        },
+        "notes": {
+            "Top Notes": [
+                "Blackberry",
+                "Pink Pepper",
+                "Bergamot"
+            ],
+            "Middle Notes": [
+                "Cypress",
+                "Bulgarian Rose",
+                "Woody Notes",
+                "Vetiver"
+            ],
+            "Base Notes": [
+                "Indian Patchouli",
+                "Amber"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 61.3372,
+            "summer": 30.1357,
+            "fall": 100.0,
+            "winter": 75.969,
+            "day": 72.9651,
+            "night": 78.9729
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 68,
+                "weak": 131,
+                "moderate": 571,
+                "long lasting": 378,
+                "eternal": 145
+            },
+            "SILLAGE": {
+                "intimate": 188,
+                "moderate": 804,
+                "strong": 399,
+                "enormous": 198
+            },
+            "GENDER": {
+                "female": 375,
+                "more female": 261,
+                "unisex": 265,
+                "more male": 17,
+                "male": 7
+            },
+            "PRICE VALUE": {
+                "way overpriced": 23,
+                "overpriced": 126,
+                "ok": 474,
+                "good value": 114,
+                "great value": 18
+            }
+        }
+    },
+    {
+        "perfume_name": "Gucci Bloom Intense",
+        "brand_name": "Gucci",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.79602.jpg",
+        "main_accords": {
+            "white floral": 100.0,
+            "tuberose": 55.6439,
+            "fruity": 53.8208,
+            "sweet": 51.537,
+            "warm spicy": 46.6485,
+            "earthy": 46.3479,
+            "patchouli": 45.6268,
+            "mossy": 44.4247,
+            "citrus": 44.1842
+        },
+        "notes": {
+            "Top Notes": [
+                "Pear",
+                "Ginger",
+                "Mandarin Orange"
+            ],
+            "Middle Notes": [
+                "Tuberose",
+                "Night Blooming Jasmine",
+                "Jasmine Sambac",
+                "Orange Blossom"
+            ],
+            "Base Notes": [
+                "Patchouli",
+                "Moss",
+                "Coconut"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 64.6707,
+            "fall": 97.6048,
+            "winter": 60.479,
+            "day": 92.8144,
+            "night": 92.8144
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 13,
+                "weak": 29,
+                "moderate": 100,
+                "long lasting": 42,
+                "eternal": 16
+            },
+            "SILLAGE": {
+                "intimate": 35,
+                "moderate": 117,
+                "strong": 40,
+                "enormous": 8
+            },
+            "GENDER": {
+                "female": 159,
+                "more female": 43,
+                "unisex": 24,
+                "more male": 0,
+                "male": 3
+            },
+            "PRICE VALUE": {
+                "way overpriced": 21,
+                "overpriced": 66,
+                "ok": 80,
+                "good value": 13,
+                "great value": 3
+            }
+        }
+    },
+    {
+        "perfume_name": "Gucci Guilty Love Edition Pour Homme",
+        "brand_name": "Gucci",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.58768.jpg",
+        "main_accords": {
+            "aromatic": 100.0,
+            "citrus": 88.5793,
+            "fresh spicy": 74.2926,
+            "warm spicy": 70.7969,
+            "woody": 62.0037,
+            "lavender": 55.1859,
+            "earthy": 46.4142,
+            "herbal": 45.9151,
+            "fresh": 44.0262
+        },
+        "notes": {
+            "Top Notes": [
+                "Kumquat",
+                "Ginger",
+                "Mandarin Orange",
+                "Pink Pepper"
+            ],
+            "Middle Notes": [
+                "Lavender",
+                "Rosemary",
+                "Geranium"
+            ],
+            "Base Notes": [
+                "Vetiver",
+                "Patchouli",
+                "Benzoin"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 95.092,
+            "fall": 32.5153,
+            "winter": 9.81595,
+            "day": 79.1411,
+            "night": 19.6319
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 18,
+                "weak": 38,
+                "moderate": 109,
+                "long lasting": 31,
+                "eternal": 10
+            },
+            "SILLAGE": {
+                "intimate": 52,
+                "moderate": 126,
+                "strong": 31,
+                "enormous": 35
+            },
+            "GENDER": {
+                "female": 1,
+                "more female": 0,
+                "unisex": 41,
+                "more male": 52,
+                "male": 45
+            },
+            "PRICE VALUE": {
+                "way overpriced": 10,
+                "overpriced": 21,
+                "ok": 58,
+                "good value": 28,
+                "great value": 5
+            }
+        }
+    },
+    {
+        "perfume_name": "Gucci Guilty Eau de Parfum Intense Pour Femme",
+        "brand_name": "Gucci",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.71377.jpg",
+        "main_accords": {
+            "woody": 100.0,
+            "fruity": 96.8172,
+            "sweet": 89.9426,
+            "violet": 84.1955,
+            "patchouli": 82.7408,
+            "powdery": 77.6486,
+            "tuberose": 68.9194,
+            "earthy": 66.1551,
+            "vanilla": 62.3718,
+            "yellow floral": 61.6448
+        },
+        "notes": {
+            "Top Notes": [
+                "Violet",
+                "Mandora",
+                "Litchi"
+            ],
+            "Middle Notes": [
+                "Plum",
+                "Tuberose",
+                "Ylang-Ylang"
+            ],
+            "Base Notes": [
+                "Patchouli",
+                "Vanilla",
+                "Vetiver"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 49.3506,
+            "summer": 24.6753,
+            "fall": 100.0,
+            "winter": 93.0736,
+            "day": 57.5758,
+            "night": 95.2381
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 5,
+                "weak": 13,
+                "moderate": 91,
+                "long lasting": 139,
+                "eternal": 56
+            },
+            "SILLAGE": {
+                "intimate": 17,
+                "moderate": 119,
+                "strong": 129,
+                "enormous": 29
+            },
+            "GENDER": {
+                "female": 172,
+                "more female": 85,
+                "unisex": 41,
+                "more male": 2,
+                "male": 6
+            },
+            "PRICE VALUE": {
+                "way overpriced": 22,
+                "overpriced": 57,
+                "ok": 158,
+                "good value": 39,
+                "great value": 12
+            }
+        }
+    },
+    {
+        "perfume_name": "Gucci Bloom Nettare Di Fiori",
+        "brand_name": "Gucci",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.50572.jpg",
+        "main_accords": {
+            "white floral": 100.0,
+            "tuberose": 58.729,
+            "fruity": 54.9118,
+            "floral": 54.4596,
+            "warm spicy": 45.9405,
+            "musky": 45.8941,
+            "animalic": 44.4242
+        },
+        "notes": {
+            "Top Notes": [
+                "Ginger",
+                "Rose"
+            ],
+            "Middle Notes": [
+                "Tuberose",
+                "Jasmine",
+                "Honeysuckle",
+                "Rangoon Creeper"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Osmanthus",
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 59.5825,
+            "fall": 64.3264,
+            "winter": 34.9146,
+            "day": 96.9639,
+            "night": 44.9715
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 42,
+                "weak": 83,
+                "moderate": 319,
+                "long lasting": 169,
+                "eternal": 46
+            },
+            "SILLAGE": {
+                "intimate": 117,
+                "moderate": 395,
+                "strong": 194,
+                "enormous": 115
+            },
+            "GENDER": {
+                "female": 371,
+                "more female": 68,
+                "unisex": 26,
+                "more male": 4,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 20,
+                "overpriced": 96,
+                "ok": 241,
+                "good value": 47,
+                "great value": 2
+            }
+        }
+    },
+    {
+        "perfume_name": "Gucci Bloom Profumo Di Fiori",
+        "brand_name": "Gucci",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.62281.jpg",
+        "main_accords": {
+            "white floral": 100.0,
+            "tuberose": 72.7764,
+            "woody": 67.3897,
+            "yellow floral": 65.3829,
+            "floral": 59.3758,
+            "powdery": 49.9358,
+            "sweet": 49.5001,
+            "musky": 48.0875,
+            "animalic": 47.335,
+            "fruity": 44.2588
+        },
+        "notes": {
+            "Top Notes": [
+                "Jasmine Sambac",
+                "Rangoon Creeper"
+            ],
+            "Middle Notes": [
+                "Tuberose",
+                "Jasmine",
+                "Ylang-Ylang"
+            ],
+            "Base Notes": [
+                "Solar Notes",
+                "Musk",
+                "Benzoin",
+                "Sandalwood",
+                "Woodsy Notes",
+                "Orris"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 98.4526,
+            "summer": 83.9458,
+            "fall": 55.5126,
+            "winter": 19.9226,
+            "day": 100.0,
+            "night": 37.3308
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 39,
+                "weak": 116,
+                "moderate": 331,
+                "long lasting": 137,
+                "eternal": 27
+            },
+            "SILLAGE": {
+                "intimate": 113,
+                "moderate": 365,
+                "strong": 175,
+                "enormous": 61
+            },
+            "GENDER": {
+                "female": 426,
+                "more female": 119,
+                "unisex": 48,
+                "more male": 3,
+                "male": 1
+            },
+            "PRICE VALUE": {
+                "way overpriced": 30,
+                "overpriced": 135,
+                "ok": 286,
+                "good value": 61,
+                "great value": 8
+            }
+        }
+    },
+    {
+        "perfume_name": "A Reason To Love",
+        "brand_name": "Gucci",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.76692.jpg",
+        "main_accords": {
+            "rose": 100.0,
+            "floral": 79.4723,
+            "oud": 60.9203,
+            "fresh": 56.7975,
+            "amber": 52.3312,
+            "warm spicy": 47.1779,
+            "powdery": 45.6319
+        },
+        "notes": {
+            "Top Notes": [
+                "Damask Rose",
+                "Peony",
+                "Cardamom"
+            ],
+            "Middle Notes": [
+                "Damask Rose",
+                "Agarwood (Oud)"
+            ],
+            "Base Notes": [
+                "Tolu Balsam"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 55.5556,
+            "summer": 25.9259,
+            "fall": 100.0,
+            "winter": 100.0,
+            "day": 42.5926,
+            "night": 87.037
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 0,
+                "weak": 1,
+                "moderate": 23,
+                "long lasting": 31,
+                "eternal": 6
+            },
+            "SILLAGE": {
+                "intimate": 1,
+                "moderate": 37,
+                "strong": 20,
+                "enormous": 4
+            },
+            "GENDER": {
+                "female": 13,
+                "more female": 13,
+                "unisex": 45,
+                "more male": 0,
+                "male": 1
+            },
+            "PRICE VALUE": {
+                "way overpriced": 30,
+                "overpriced": 13,
+                "ok": 18,
+                "good value": 2,
+                "great value": 1
+            }
+        }
+    },
+    {
+        "perfume_name": "Flora Gorgeous Magnolia",
+        "brand_name": "Gucci",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.83621.jpg",
+        "main_accords": {
+            "floral": 100.0,
+            "coconut": 90.7,
+            "fruity": 81.2888,
+            "musky": 74.5503,
+            "sweet": 65.6126,
+            "white floral": 65.362,
+            "lactonic": 55.6498,
+            "citrus": 55.1711,
+            "patchouli": 53.6674,
+            "powdery": 52.2754
+        },
+        "notes": {
+            "Top Notes": [
+                "Dewberry",
+                "Coconut"
+            ],
+            "Middle Notes": [
+                "Magnolia",
+                "Jasmine Sambac",
+                "Clary Sage"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Patchouli",
+                "Blonde Woods"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 76.3838,
+            "fall": 47.9705,
+            "winter": 27.1218,
+            "day": 94.6494,
+            "night": 29.7048
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 48,
+                "weak": 116,
+                "moderate": 320,
+                "long lasting": 87,
+                "eternal": 11
+            },
+            "SILLAGE": {
+                "intimate": 153,
+                "moderate": 351,
+                "strong": 53,
+                "enormous": 7
+            },
+            "GENDER": {
+                "female": 495,
+                "more female": 108,
+                "unisex": 25,
+                "more male": 2,
+                "male": 1
+            },
+            "PRICE VALUE": {
+                "way overpriced": 67,
+                "overpriced": 184,
+                "ok": 267,
+                "good value": 38,
+                "great value": 6
+            }
+        }
+    },
+    {
+        "perfume_name": "Bloom Eau de Toilette",
+        "brand_name": "Gucci",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.72562.jpg",
+        "main_accords": {
+            "white floral": 100.0,
+            "citrus": 70.8422,
+            "tuberose": 58.0211,
+            "floral": 49.3902,
+            "animalic": 44.592
+        },
+        "notes": {
+            "Top Notes": [
+                "Neroli",
+                "Bergamot",
+                "Mandarin Orange",
+                "Lemon"
+            ],
+            "Middle Notes": [
+                "Tuberose",
+                "Jasmine",
+                "Orange Blossom",
+                "Rangoon Creeper"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Sandalwood"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 75.1678,
+            "fall": 31.5436,
+            "winter": 14.094,
+            "day": 89.2617,
+            "night": 20.8054
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 9,
+                "weak": 28,
+                "moderate": 88,
+                "long lasting": 25,
+                "eternal": 3
+            },
+            "SILLAGE": {
+                "intimate": 23,
+                "moderate": 103,
+                "strong": 17,
+                "enormous": 2
+            },
+            "GENDER": {
+                "female": 129,
+                "more female": 19,
+                "unisex": 10,
+                "more male": 0,
+                "male": 1
+            },
+            "PRICE VALUE": {
+                "way overpriced": 8,
+                "overpriced": 29,
+                "ok": 83,
+                "good value": 13,
+                "great value": 3
+            }
+        }
+    },
+    {
+        "perfume_name": "Gucci Bamboo Eau de Toilette",
+        "brand_name": "Gucci",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.38345.jpg",
+        "main_accords": {
+            "white floral": 100.0,
+            "citrus": 79.0264,
+            "sweet": 54.356,
+            "animalic": 49.6236,
+            "musky": 47.8276,
+            "yellow floral": 47.0411,
+            "fresh spicy": 45.075,
+            "powdery": 44.7078
+        },
+        "notes": {
+            "Top Notes": [
+                "Sicilian Bergamot",
+                "Orange Blossom",
+                "Pear",
+                "Italian Mandarin"
+            ],
+            "Middle Notes": [
+                "Casablanca Lily",
+                "Jasmine",
+                "Ylang-Ylang"
+            ],
+            "Base Notes": [
+                "White Musk",
+                "Ambergris",
+                "Tahitian Vanilla",
+                "Sandalwood"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 97.9167,
+            "summer": 79.6875,
+            "fall": 37.5,
+            "winter": 18.75,
+            "day": 100.0,
+            "night": 23.9583
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 42,
+                "weak": 57,
+                "moderate": 100,
+                "long lasting": 42,
+                "eternal": 9
+            },
+            "SILLAGE": {
+                "intimate": 89,
+                "moderate": 109,
+                "strong": 62,
+                "enormous": 40
+            },
+            "GENDER": {
+                "female": 97,
+                "more female": 20,
+                "unisex": 15,
+                "more male": 1,
+                "male": 1
+            },
+            "PRICE VALUE": {
+                "way overpriced": 7,
+                "overpriced": 29,
+                "ok": 58,
+                "good value": 13,
+                "great value": 0
+            }
+        }
+    },
+    {
+        "perfume_name": "Gucci Guilty Eau de Parfum",
+        "brand_name": "Gucci",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.52481.jpg",
+        "main_accords": {
+            "floral": 100.0,
+            "violet": 72.0874,
+            "citrus": 66.7574,
+            "fresh": 63.7838,
+            "powdery": 63.6223,
+            "fresh spicy": 61.9215,
+            "rose": 59.86,
+            "soft spicy": 59.1288,
+            "aromatic": 54.1126,
+            "patchouli": 52.9911
+        },
+        "notes": {
+            "Top Notes": [
+                "Pink Pepper",
+                "Mandarin Orange",
+                "Bergamot"
+            ],
+            "Middle Notes": [
+                "Lilac",
+                "Violet",
+                "Geranium",
+                "Rose"
+            ],
+            "Base Notes": [
+                "Patchouli",
+                "Amber"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 99.4126,
+            "summer": 51.5419,
+            "fall": 84.8752,
+            "winter": 49.7797,
+            "day": 100.0,
+            "night": 57.7093
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 38,
+                "weak": 105,
+                "moderate": 443,
+                "long lasting": 252,
+                "eternal": 76
+            },
+            "SILLAGE": {
+                "intimate": 154,
+                "moderate": 556,
+                "strong": 244,
+                "enormous": 117
+            },
+            "GENDER": {
+                "female": 579,
+                "more female": 128,
+                "unisex": 50,
+                "more male": 4,
+                "male": 4
+            },
+            "PRICE VALUE": {
+                "way overpriced": 23,
+                "overpriced": 129,
+                "ok": 391,
+                "good value": 93,
+                "great value": 19
+            }
+        }
+    },
+    {
+        "perfume_name": "Mémoire d’une Odeur",
+        "brand_name": "Gucci",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.56096.jpg",
+        "main_accords": {
+            "herbal": 100.0,
+            "woody": 83.1667,
+            "floral": 77.8338,
+            "musky": 76.9424,
+            "powdery": 76.6693,
+            "almond": 63.7713,
+            "aromatic": 61.5669,
+            "white floral": 60.398,
+            "nutty": 50.2625,
+            "sweet": 49.2047
+        },
+        "notes": {
+            "Top Notes": [
+                "Chamomile",
+                "Bitter Almond"
+            ],
+            "Middle Notes": [
+                "Musk",
+                "Indian Jasmine",
+                "Jasmine"
+            ],
+            "Base Notes": [
+                "Sandalwood",
+                "Cedar",
+                "Vanilla"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 97.3402,
+            "summer": 82.1358,
+            "fall": 54.7042,
+            "winter": 21.5959,
+            "day": 100.0,
+            "night": 25.2481
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 334,
+                "weak": 765,
+                "moderate": 1485,
+                "long lasting": 422,
+                "eternal": 102
+            },
+            "SILLAGE": {
+                "intimate": 1543,
+                "moderate": 1350,
+                "strong": 315,
+                "enormous": 277
+            },
+            "GENDER": {
+                "female": 388,
+                "more female": 630,
+                "unisex": 1774,
+                "more male": 46,
+                "male": 9
+            },
+            "PRICE VALUE": {
+                "way overpriced": 127,
+                "overpriced": 436,
+                "ok": 1267,
+                "good value": 469,
+                "great value": 97
+            }
+        }
+    },
+    {
+        "perfume_name": "Gucci Bloom Ambrosia di Fiori",
+        "brand_name": "Gucci",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.57355.jpg",
+        "main_accords": {
+            "white floral": 100.0,
+            "tuberose": 64.7444,
+            "rose": 45.818
+        },
+        "notes": {
+            "Top Notes": [
+                "Jasmine",
+                "Honeysuckle"
+            ],
+            "Middle Notes": [
+                "Tuberose"
+            ],
+            "Base Notes": [
+                "Damask Rose",
+                "Orris"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 60.9756,
+            "fall": 75.1663,
+            "winter": 50.5543,
+            "day": 96.4523,
+            "night": 58.7583
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 40,
+                "weak": 58,
+                "moderate": 277,
+                "long lasting": 189,
+                "eternal": 55
+            },
+            "SILLAGE": {
+                "intimate": 82,
+                "moderate": 353,
+                "strong": 223,
+                "enormous": 121
+            },
+            "GENDER": {
+                "female": 385,
+                "more female": 86,
+                "unisex": 38,
+                "more male": 3,
+                "male": 2
+            },
+            "PRICE VALUE": {
+                "way overpriced": 26,
+                "overpriced": 93,
+                "ok": 287,
+                "good value": 52,
+                "great value": 5
+            }
+        }
+    }
+]
