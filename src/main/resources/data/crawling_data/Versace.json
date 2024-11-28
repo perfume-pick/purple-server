@@ -1,0 +1,938 @@
+[
+    {
+        "perfume_name": "Bright Crystal Absolu",
+        "brand_name": "Versace",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.21547.jpg",
+        "main_accords": {
+            "floral": 100.0,
+            "fruity": 73.3174,
+            "fresh": 64.1701,
+            "sweet": 63.2079,
+            "citrus": 60.7526,
+            "woody": 60.7373,
+            "aquatic": 56.217,
+            "rose": 52.5413,
+            "fresh spicy": 48.9076,
+            "musky": 46.293
+        },
+        "notes": {
+            "Top Notes": [
+                "Pomegranate",
+                "Yuzu",
+                "Water Notes"
+            ],
+            "Middle Notes": [
+                "Peony",
+                "Raspberry",
+                "Lotus",
+                "Magnolia"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Mahogany",
+                "Amber"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 91.6071,
+            "summer": 87.381,
+            "fall": 24.4048,
+            "winter": 17.1429,
+            "day": 100.0,
+            "night": 24.9405
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 111,
+                "weak": 230,
+                "moderate": 886,
+                "long lasting": 550,
+                "eternal": 172
+            },
+            "SILLAGE": {
+                "intimate": 308,
+                "moderate": 1103,
+                "strong": 446,
+                "enormous": 187
+            },
+            "GENDER": {
+                "female": 1128,
+                "more female": 94,
+                "unisex": 19,
+                "more male": 3,
+                "male": 2
+            },
+            "PRICE VALUE": {
+                "way overpriced": 42,
+                "overpriced": 191,
+                "ok": 615,
+                "good value": 251,
+                "great value": 58
+            }
+        }
+    },
+    {
+        "perfume_name": "Bright Crystal",
+        "brand_name": "Versace",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.632.jpg",
+        "main_accords": {
+            "floral": 100.0,
+            "citrus": 60.7996,
+            "fresh": 58.8499,
+            "woody": 51.5996,
+            "fresh spicy": 45.9751,
+            "rose": 45.6911
+        },
+        "notes": {
+            "Top Notes": [
+                "Yuzu",
+                "Pomegranate",
+                "Ice"
+            ],
+            "Middle Notes": [
+                "Peony",
+                "Lotus",
+                "Magnolia"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Mahogany",
+                "Amber"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 88.444,
+            "summer": 79.3215,
+            "fall": 17.9693,
+            "winter": 14.9485,
+            "day": 100.0,
+            "night": 15.2481
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 534,
+                "weak": 1476,
+                "moderate": 3672,
+                "long lasting": 1106,
+                "eternal": 341
+            },
+            "SILLAGE": {
+                "intimate": 1757,
+                "moderate": 3787,
+                "strong": 1069,
+                "enormous": 416
+            },
+            "GENDER": {
+                "female": 3694,
+                "more female": 319,
+                "unisex": 90,
+                "more male": 4,
+                "male": 10
+            },
+            "PRICE VALUE": {
+                "way overpriced": 133,
+                "overpriced": 650,
+                "ok": 1877,
+                "good value": 798,
+                "great value": 148
+            }
+        }
+    },
+    {
+        "perfume_name": "Eros",
+        "brand_name": "Versace",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.16657.jpg",
+        "main_accords": {
+            "vanilla": 100.0,
+            "aromatic": 91.6291,
+            "green": 87.3509,
+            "fresh spicy": 65.2768,
+            "amber": 61.7978,
+            "fruity": 54.508,
+            "citrus": 53.9692,
+            "sweet": 52.1523,
+            "woody": 51.6409,
+            "fresh": 50.1113
+        },
+        "notes": {
+            "Top Notes": [
+                "Mint",
+                "Green Apple",
+                "Lemon"
+            ],
+            "Middle Notes": [
+                "Tonka Bean",
+                "Ambroxan",
+                "Geranium"
+            ],
+            "Base Notes": [
+                "Madagascar Vanilla",
+                "Virginian Cedar",
+                "Atlas Cedar",
+                "Vetiver",
+                "Oakmoss"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 87.5644,
+            "summer": 66.2371,
+            "fall": 85.9444,
+            "winter": 84.1219,
+            "day": 73.9046,
+            "night": 100.0
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 262,
+                "weak": 823,
+                "moderate": 5741,
+                "long lasting": 6776,
+                "eternal": 1336
+            },
+            "SILLAGE": {
+                "intimate": 1059,
+                "moderate": 6293,
+                "strong": 6436,
+                "enormous": 1056
+            },
+            "GENDER": {
+                "female": 64,
+                "more female": 47,
+                "unisex": 1019,
+                "more male": 4349,
+                "male": 6235
+            },
+            "PRICE VALUE": {
+                "way overpriced": 223,
+                "overpriced": 902,
+                "ok": 4900,
+                "good value": 4107,
+                "great value": 771
+            }
+        }
+    },
+    {
+        "perfume_name": "Versace Pour Homme",
+        "brand_name": "Versace",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.2318.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "aromatic": 70.2534,
+            "fresh spicy": 61.987,
+            "floral": 49.7842,
+            "rose": 46.955,
+            "green": 44.5697
+        },
+        "notes": {
+            "Top Notes": [
+                "Lemon",
+                "Bergamot",
+                "Neroli",
+                "Rose de Mai"
+            ],
+            "Middle Notes": [
+                "Hyacinth",
+                "Cedar",
+                "Clary Sage",
+                "Geranium"
+            ],
+            "Base Notes": [
+                "Tonka Bean",
+                "Musk",
+                "Amber"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 78.2432,
+            "summer": 100.0,
+            "fall": 24.3003,
+            "winter": 10.1078,
+            "day": 93.8162,
+            "night": 22.1634
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 411,
+                "weak": 1400,
+                "moderate": 6857,
+                "long lasting": 1900,
+                "eternal": 341
+            },
+            "SILLAGE": {
+                "intimate": 1745,
+                "moderate": 7204,
+                "strong": 1500,
+                "enormous": 417
+            },
+            "GENDER": {
+                "female": 48,
+                "more female": 17,
+                "unisex": 635,
+                "more male": 2794,
+                "male": 4027
+            },
+            "PRICE VALUE": {
+                "way overpriced": 87,
+                "overpriced": 432,
+                "ok": 2159,
+                "good value": 3360,
+                "great value": 1146
+            }
+        }
+    },
+    {
+        "perfume_name": "Red Jeans",
+        "brand_name": "Versace",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.638.jpg",
+        "main_accords": {
+            "floral": 100.0,
+            "fruity": 99.7808,
+            "powdery": 97.3452,
+            "rose": 71.9014,
+            "sweet": 64.3189,
+            "violet": 62.7518,
+            "woody": 58.7152,
+            "fresh": 56.803,
+            "white floral": 49.6066,
+            "musky": 49.4581
+        },
+        "notes": {
+            "Top Notes": [
+                "Peach",
+                "Apricot",
+                "Freesia",
+                "Black Currant"
+            ],
+            "Middle Notes": [
+                "Rose",
+                "Violet",
+                "Lily-of-the-Valley",
+                "Water Lily",
+                "Ylang-Ylang"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Vanilla",
+                "Sandalwood"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 76.6823,
+            "summer": 74.4914,
+            "fall": 41.471,
+            "winter": 19.7183,
+            "day": 100.0,
+            "night": 22.457
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 107,
+                "weak": 256,
+                "moderate": 662,
+                "long lasting": 259,
+                "eternal": 82
+            },
+            "SILLAGE": {
+                "intimate": 309,
+                "moderate": 753,
+                "strong": 267,
+                "enormous": 132
+            },
+            "GENDER": {
+                "female": 649,
+                "more female": 157,
+                "unisex": 67,
+                "more male": 4,
+                "male": 5
+            },
+            "PRICE VALUE": {
+                "way overpriced": 18,
+                "overpriced": 32,
+                "ok": 167,
+                "good value": 303,
+                "great value": 313
+            }
+        }
+    },
+    {
+        "perfume_name": "The Dreamer",
+        "brand_name": "Versace",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.59417.jpg",
+        "main_accords": {
+            "white floral": 100.0,
+            "aromatic": 84.7517,
+            "iris": 74.794,
+            "powdery": 61.3246,
+            "fresh spicy": 60.2163,
+            "amber": 59.6543,
+            "herbal": 59.1393,
+            "woody": 56.1895,
+            "violet": 52.397,
+            "soft spicy": 50.0828
+        },
+        "notes": {
+            "Top Notes": [
+                "Juniper",
+                "Tarragon",
+                "Artemisia"
+            ],
+            "Middle Notes": [
+                "Iris",
+                "Lily",
+                "Flax"
+            ],
+            "Base Notes": [
+                "Tobacco Blossom",
+                "Amber"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 63.7199,
+            "fall": 90.5473,
+            "winter": 51.5499,
+            "day": 93.6471,
+            "night": 67.9679
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 93,
+                "weak": 390,
+                "moderate": 2030,
+                "long lasting": 712,
+                "eternal": 77
+            },
+            "SILLAGE": {
+                "intimate": 527,
+                "moderate": 2291,
+                "strong": 388,
+                "enormous": 70
+            },
+            "GENDER": {
+                "female": 24,
+                "more female": 52,
+                "unisex": 964,
+                "more male": 1363,
+                "male": 849
+            },
+            "PRICE VALUE": {
+                "way overpriced": 23,
+                "overpriced": 51,
+                "ok": 415,
+                "good value": 1217,
+                "great value": 1380
+            }
+        }
+    },
+    {
+        "perfume_name": "Versace Pour Homme Dylan Blue",
+        "brand_name": "Versace",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.40031.jpg",
+        "main_accords": {
+            "amber": 100.0,
+            "citrus": 89.9676,
+            "fresh spicy": 72.82,
+            "musky": 69.9383,
+            "aquatic": 68.1969,
+            "warm spicy": 63.5695,
+            "woody": 53.9764,
+            "fresh": 51.6107,
+            "aromatic": 50.7292,
+            "smoky": 49.7193
+        },
+        "notes": {
+            "Top Notes": [
+                "Calabrian bergamot",
+                "Water Notes",
+                "Grapefruit",
+                "Fig Leaf"
+            ],
+            "Middle Notes": [
+                "Ambroxan",
+                "Black Pepper",
+                "Patchouli",
+                "Violet Leaf",
+                "Papyrus"
+            ],
+            "Base Notes": [
+                "Incense",
+                "Musk",
+                "Tonka Bean",
+                "Saffron"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 99.9406,
+            "fall": 82.3564,
+            "winter": 44.6238,
+            "day": 98.4752,
+            "night": 78.7129
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 225,
+                "weak": 710,
+                "moderate": 5845,
+                "long lasting": 5226,
+                "eternal": 410
+            },
+            "SILLAGE": {
+                "intimate": 1036,
+                "moderate": 8191,
+                "strong": 2726,
+                "enormous": 434
+            },
+            "GENDER": {
+                "female": 40,
+                "more female": 25,
+                "unisex": 322,
+                "more male": 2352,
+                "male": 7788
+            },
+            "PRICE VALUE": {
+                "way overpriced": 124,
+                "overpriced": 507,
+                "ok": 3058,
+                "good value": 4966,
+                "great value": 1414
+            }
+        }
+    },
+    {
+        "perfume_name": "Santal Boisé",
+        "brand_name": "Versace",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.57700.jpg",
+        "main_accords": {
+            "woody": 100.0,
+            "warm spicy": 92.9657,
+            "metallic": 55.7352,
+            "earthy": 54.3628,
+            "powdery": 54.0195,
+            "leather": 50.5883,
+            "tobacco": 45.4412
+        },
+        "notes": {
+            "Top Notes": [],
+            "Middle Notes": [],
+            "Base Notes": [],
+            "Undefineded": [
+                "Saffron",
+                "Sandalwood",
+                "Cypriol Oil or Nagarmotha"
+            ]
+        },
+        "season_data": {
+            "spring": 50.7692,
+            "summer": 32.3077,
+            "fall": 100.0,
+            "winter": 93.8462,
+            "day": 69.2308,
+            "night": 95.3846
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 2,
+                "weak": 4,
+                "moderate": 21,
+                "long lasting": 43,
+                "eternal": 12
+            },
+            "SILLAGE": {
+                "intimate": 6,
+                "moderate": 30,
+                "strong": 42,
+                "enormous": 15
+            },
+            "GENDER": {
+                "female": 8,
+                "more female": 5,
+                "unisex": 41,
+                "more male": 22,
+                "male": 15
+            },
+            "PRICE VALUE": {
+                "way overpriced": 28,
+                "overpriced": 29,
+                "ok": 15,
+                "good value": 3,
+                "great value": 7
+            }
+        }
+    },
+    {
+        "perfume_name": "Crystal Noir Eau de Toilette",
+        "brand_name": "Versace",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.67502.jpg",
+        "main_accords": {
+            "warm spicy": 100.0,
+            "woody": 85.6587,
+            "powdery": 69.105,
+            "white floral": 64.5679,
+            "fresh spicy": 53.6625,
+            "aromatic": 49.1977,
+            "musky": 48.4158
+        },
+        "notes": {
+            "Top Notes": [
+                "Pepper",
+                "Cardamom",
+                "Ginger"
+            ],
+            "Middle Notes": [
+                "Gardenia",
+                "Orange Blossom",
+                "Peony"
+            ],
+            "Base Notes": [
+                "Sandalwood",
+                "Musk",
+                "Amber"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 62.2702,
+            "summer": 49.3205,
+            "fall": 100.0,
+            "winter": 94.1647,
+            "day": 66.8265,
+            "night": 98.3213
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 20,
+                "weak": 86,
+                "moderate": 613,
+                "long lasting": 687,
+                "eternal": 163
+            },
+            "SILLAGE": {
+                "intimate": 97,
+                "moderate": 782,
+                "strong": 561,
+                "enormous": 88
+            },
+            "GENDER": {
+                "female": 981,
+                "more female": 416,
+                "unisex": 180,
+                "more male": 10,
+                "male": 17
+            },
+            "PRICE VALUE": {
+                "way overpriced": 29,
+                "overpriced": 116,
+                "ok": 710,
+                "good value": 455,
+                "great value": 109
+            }
+        }
+    },
+    {
+        "perfume_name": "Eros Pour Femme",
+        "brand_name": "Versace",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.28958.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "white floral": 84.557,
+            "woody": 79.5919,
+            "musky": 61.2817,
+            "floral": 59.1582,
+            "fresh": 55.5805,
+            "fresh spicy": 52.0279,
+            "powdery": 48.8343,
+            "aromatic": 47.9002,
+            "amber": 46.704
+        },
+        "notes": {
+            "Top Notes": [
+                "Sicilian Lemon",
+                "Pomegranate",
+                "Calabrian bergamot"
+            ],
+            "Middle Notes": [
+                "Lemon Blossom",
+                "Jasmine Sambac",
+                "Jasmine",
+                "Peony"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Ambroxan",
+                "Woodsy Notes",
+                "Sandalwood"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 90.2375,
+            "summer": 81.0686,
+            "fall": 46.372,
+            "winter": 28.0343,
+            "day": 100.0,
+            "night": 42.0185
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 102,
+                "weak": 238,
+                "moderate": 801,
+                "long lasting": 510,
+                "eternal": 149
+            },
+            "SILLAGE": {
+                "intimate": 377,
+                "moderate": 972,
+                "strong": 455,
+                "enormous": 251
+            },
+            "GENDER": {
+                "female": 817,
+                "more female": 223,
+                "unisex": 107,
+                "more male": 5,
+                "male": 6
+            },
+            "PRICE VALUE": {
+                "way overpriced": 55,
+                "overpriced": 209,
+                "ok": 548,
+                "good value": 159,
+                "great value": 40
+            }
+        }
+    },
+    {
+        "perfume_name": "Eros Flame",
+        "brand_name": "Versace",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.52180.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "vanilla": 72.3439,
+            "fresh spicy": 71.7416,
+            "aromatic": 71.0936,
+            "woody": 62.8199,
+            "warm spicy": 53.2436,
+            "sweet": 46.9365,
+            "powdery": 46.3726
+        },
+        "notes": {
+            "Top Notes": [
+                "Mandarin Orange",
+                "Madagascar Pepper",
+                "Lemon",
+                "Chinotto",
+                "Rosemary"
+            ],
+            "Middle Notes": [
+                "Geranium",
+                "Rose",
+                "Pepperwood™"
+            ],
+            "Base Notes": [
+                "Vanilla",
+                "Tonka Bean",
+                "Sandalwood",
+                "Texas Cedar",
+                "Patchouli",
+                "Oakmoss"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 80.8002,
+            "summer": 50.3285,
+            "fall": 100.0,
+            "winter": 96.3273,
+            "day": 80.3076,
+            "night": 94.6701
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 109,
+                "weak": 233,
+                "moderate": 2413,
+                "long lasting": 4954,
+                "eternal": 857
+            },
+            "SILLAGE": {
+                "intimate": 371,
+                "moderate": 3646,
+                "strong": 3978,
+                "enormous": 532
+            },
+            "GENDER": {
+                "female": 32,
+                "more female": 25,
+                "unisex": 615,
+                "more male": 2778,
+                "male": 4569
+            },
+            "PRICE VALUE": {
+                "way overpriced": 102,
+                "overpriced": 487,
+                "ok": 3497,
+                "good value": 2993,
+                "great value": 571
+            }
+        }
+    },
+    {
+        "perfume_name": "Versace Pour Femme Dylan Blue",
+        "brand_name": "Versace",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.47459.jpg",
+        "main_accords": {
+            "fruity": 100.0,
+            "floral": 80.183,
+            "green": 66.2282,
+            "rose": 64.914,
+            "fresh": 63.2011,
+            "woody": 48.0628,
+            "sweet": 45.3531
+        },
+        "notes": {
+            "Top Notes": [
+                "Granny Smith apple",
+                "Black Currant",
+                "Clover",
+                "Forget me not",
+                "Shiso"
+            ],
+            "Middle Notes": [
+                "Peach",
+                "Petalia",
+                "Rose Hip",
+                "Rose",
+                "Jasmine"
+            ],
+            "Base Notes": [
+                "Musk",
+                "White Woods",
+                "Styrax",
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 93.4109,
+            "summer": 88.4275,
+            "fall": 42.9125,
+            "winter": 28.4607,
+            "day": 100.0,
+            "night": 37.7076
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 124,
+                "weak": 365,
+                "moderate": 1161,
+                "long lasting": 438,
+                "eternal": 134
+            },
+            "SILLAGE": {
+                "intimate": 504,
+                "moderate": 1289,
+                "strong": 421,
+                "enormous": 222
+            },
+            "GENDER": {
+                "female": 1203,
+                "more female": 396,
+                "unisex": 203,
+                "more male": 12,
+                "male": 10
+            },
+            "PRICE VALUE": {
+                "way overpriced": 76,
+                "overpriced": 334,
+                "ok": 845,
+                "good value": 281,
+                "great value": 55
+            }
+        }
+    },
+    {
+        "perfume_name": "Eros Eau de Parfum",
+        "brand_name": "Versace",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.62762.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "aromatic": 99.6055,
+            "green": 85.038,
+            "vanilla": 78.3245,
+            "woody": 75.4731,
+            "fresh spicy": 69.6971,
+            "fruity": 60.3353,
+            "powdery": 57.1462,
+            "amber": 57.0268,
+            "sweet": 53.0002
+        },
+        "notes": {
+            "Top Notes": [
+                "Mint",
+                "Candy Apple",
+                "Lemon",
+                "Mandarin Orange"
+            ],
+            "Middle Notes": [
+                "Ambroxan",
+                "Geranium",
+                "Clary Sage"
+            ],
+            "Base Notes": [
+                "Vanilla",
+                "Cedar",
+                "Sandalwood",
+                "Bitter Orange",
+                "Patchouli",
+                "Leather"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 75.8546,
+            "fall": 95.5959,
+            "winter": 87.2498,
+            "day": 86.5414,
+            "night": 99.9692
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 54,
+                "weak": 150,
+                "moderate": 1313,
+                "long lasting": 2490,
+                "eternal": 356
+            },
+            "SILLAGE": {
+                "intimate": 209,
+                "moderate": 1846,
+                "strong": 1981,
+                "enormous": 225
+            },
+            "GENDER": {
+                "female": 20,
+                "more female": 8,
+                "unisex": 221,
+                "more male": 1309,
+                "male": 2637
+            },
+            "PRICE VALUE": {
+                "way overpriced": 62,
+                "overpriced": 370,
+                "ok": 2060,
+                "good value": 1265,
+                "great value": 209
+            }
+        }
+    }
+]

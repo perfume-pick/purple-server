@@ -1,0 +1,762 @@
+[
+    {
+        "perfume_name": "Incanto Charms",
+        "brand_name": "Salvatore Ferragamo",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.653.jpg",
+        "main_accords": {
+            "white floral": 100.0,
+            "fruity": 98.7872,
+            "tropical": 83.9103,
+            "sweet": 70.4801,
+            "fresh": 63.2902,
+            "rose": 57.3278,
+            "musky": 49.7285,
+            "woody": 47.829
+        },
+        "notes": {
+            "Top Notes": [
+                "Passionfruit",
+                "Honeysuckle"
+            ],
+            "Middle Notes": [
+                "Rose",
+                "Jasmine"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Woodsy Notes"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 65.9731,
+            "summer": 91.0649,
+            "fall": 11.9951,
+            "winter": 7.58874,
+            "day": 100.0,
+            "night": 9.91432
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 87,
+                "weak": 196,
+                "moderate": 204,
+                "long lasting": 36,
+                "eternal": 12
+            },
+            "SILLAGE": {
+                "intimate": 183,
+                "moderate": 307,
+                "strong": 71,
+                "enormous": 53
+            },
+            "GENDER": {
+                "female": 212,
+                "more female": 25,
+                "unisex": 4,
+                "more male": 1,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 7,
+                "overpriced": 10,
+                "ok": 65,
+                "good value": 99,
+                "great value": 52
+            }
+        }
+    },
+    {
+        "perfume_name": "Signorina Ribelle",
+        "brand_name": "Salvatore Ferragamo",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.56481.jpg",
+        "main_accords": {
+            "sweet": 100.0,
+            "vanilla": 96.6823,
+            "coconut": 64.6147,
+            "tropical": 59.194,
+            "floral": 55.6932,
+            "citrus": 53.2505,
+            "yellow floral": 51.8139,
+            "lactonic": 51.52,
+            "soft spicy": 45.3609,
+            "fresh": 44.0288
+        },
+        "notes": {
+            "Top Notes": [
+                "Pink Pepper",
+                "Mandarin Orange"
+            ],
+            "Middle Notes": [
+                "Frangipani",
+                "Ylang-Ylang"
+            ],
+            "Base Notes": [
+                "Ice cream",
+                "Coconut Milk",
+                "Vanilla"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 85.1393,
+            "summer": 64.0867,
+            "fall": 78.0186,
+            "winter": 49.8452,
+            "day": 100.0,
+            "night": 45.5108
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 50,
+                "weak": 94,
+                "moderate": 186,
+                "long lasting": 45,
+                "eternal": 15
+            },
+            "SILLAGE": {
+                "intimate": 137,
+                "moderate": 225,
+                "strong": 65,
+                "enormous": 73
+            },
+            "GENDER": {
+                "female": 279,
+                "more female": 23,
+                "unisex": 4,
+                "more male": 1,
+                "male": 3
+            },
+            "PRICE VALUE": {
+                "way overpriced": 20,
+                "overpriced": 55,
+                "ok": 129,
+                "good value": 57,
+                "great value": 17
+            }
+        }
+    },
+    {
+        "perfume_name": "Ferragamo",
+        "brand_name": "Salvatore Ferragamo",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.59019.jpg",
+        "main_accords": {
+            "aromatic": 100.0,
+            "citrus": 96.8136,
+            "woody": 85.5747,
+            "ozonic": 76.6592,
+            "musky": 67.7874,
+            "aquatic": 64.3806,
+            "earthy": 64.1148,
+            "mossy": 63.1856,
+            "herbal": 61.9025,
+            "leather": 54.3362
+        },
+        "notes": {
+            "Top Notes": [
+                "Sage",
+                "Bergamot",
+                "Lemon"
+            ],
+            "Middle Notes": [
+                "Violet Leaf",
+                "Cedar",
+                "Leather"
+            ],
+            "Base Notes": [
+                "Oakmoss",
+                "Musk",
+                "Vetiver"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 80.0781,
+            "fall": 77.3438,
+            "winter": 32.4219,
+            "day": 93.75,
+            "night": 50.3906
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 14,
+                "weak": 26,
+                "moderate": 158,
+                "long lasting": 102,
+                "eternal": 26
+            },
+            "SILLAGE": {
+                "intimate": 59,
+                "moderate": 208,
+                "strong": 64,
+                "enormous": 32
+            },
+            "GENDER": {
+                "female": 3,
+                "more female": 0,
+                "unisex": 22,
+                "more male": 87,
+                "male": 185
+            },
+            "PRICE VALUE": {
+                "way overpriced": 9,
+                "overpriced": 36,
+                "ok": 97,
+                "good value": 97,
+                "great value": 25
+            }
+        }
+    },
+    {
+        "perfume_name": "Giardini di Seta",
+        "brand_name": "Salvatore Ferragamo",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.66362.jpg",
+        "main_accords": {
+            "floral": 100.0,
+            "aromatic": 98.7167,
+            "fruity": 92.3,
+            "green": 87.9834,
+            "fresh": 65.0,
+            "woody": 64.3003,
+            "earthy": 59.4,
+            "sweet": 50.6498,
+            "cherry": 44.0001
+        },
+        "notes": {
+            "Top Notes": [
+                "Rhubarb"
+            ],
+            "Middle Notes": [
+                "Cherry Blossom"
+            ],
+            "Base Notes": [
+                "Madagascar Vetiver"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 92.8571,
+            "summer": 96.4286,
+            "fall": 36.9048,
+            "winter": 16.6667,
+            "day": 100.0,
+            "night": 14.2857
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 15,
+                "weak": 29,
+                "moderate": 48,
+                "long lasting": 13,
+                "eternal": 1
+            },
+            "SILLAGE": {
+                "intimate": 26,
+                "moderate": 62,
+                "strong": 9,
+                "enormous": 1
+            },
+            "GENDER": {
+                "female": 69,
+                "more female": 26,
+                "unisex": 18,
+                "more male": 3,
+                "male": 2
+            },
+            "PRICE VALUE": {
+                "way overpriced": 9,
+                "overpriced": 28,
+                "ok": 44,
+                "good value": 14,
+                "great value": 2
+            }
+        }
+    },
+    {
+        "perfume_name": "Oceani di Seta",
+        "brand_name": "Salvatore Ferragamo",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.66365.jpg",
+        "main_accords": {
+            "floral": 100.0,
+            "salty": 66.6897,
+            "citrus": 55.7472,
+            "powdery": 55.7472,
+            "vanilla": 52.5288,
+            "marine": 48.3449,
+            "almond": 46.092
+        },
+        "notes": {
+            "Top Notes": [
+                "Sea Salt"
+            ],
+            "Middle Notes": [
+                "Magnolia Petals"
+            ],
+            "Base Notes": [
+                "Heliotrope"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 51.2195,
+            "summer": 100.0,
+            "fall": 13.8211,
+            "winter": 8.13008,
+            "day": 78.8618,
+            "night": 11.3821
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 10,
+                "weak": 31,
+                "moderate": 65,
+                "long lasting": 12,
+                "eternal": 4
+            },
+            "SILLAGE": {
+                "intimate": 37,
+                "moderate": 67,
+                "strong": 9,
+                "enormous": 0
+            },
+            "GENDER": {
+                "female": 46,
+                "more female": 36,
+                "unisex": 64,
+                "more male": 2,
+                "male": 1
+            },
+            "PRICE VALUE": {
+                "way overpriced": 10,
+                "overpriced": 38,
+                "ok": 49,
+                "good value": 18,
+                "great value": 3
+            }
+        }
+    },
+    {
+        "perfume_name": "Signorina Misteriosa",
+        "brand_name": "Salvatore Ferragamo",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.32646.jpg",
+        "main_accords": {
+            "vanilla": 100.0,
+            "fruity": 85.2423,
+            "sweet": 81.304,
+            "lactonic": 72.4936,
+            "white floral": 58.1191,
+            "patchouli": 47.1366,
+            "tuberose": 46.5639
+        },
+        "notes": {
+            "Top Notes": [
+                "Blackberry",
+                "Neroli"
+            ],
+            "Middle Notes": [
+                "Tuberose",
+                "Orange Blossom"
+            ],
+            "Base Notes": [
+                "Milk Mousse",
+                "Black Vanilla Husk",
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 51.3978,
+            "summer": 23.6559,
+            "fall": 99.1398,
+            "winter": 100.0,
+            "day": 73.1183,
+            "night": 96.129
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 70,
+                "weak": 150,
+                "moderate": 609,
+                "long lasting": 358,
+                "eternal": 93
+            },
+            "SILLAGE": {
+                "intimate": 249,
+                "moderate": 717,
+                "strong": 340,
+                "enormous": 212
+            },
+            "GENDER": {
+                "female": 676,
+                "more female": 72,
+                "unisex": 17,
+                "more male": 1,
+                "male": 2
+            },
+            "PRICE VALUE": {
+                "way overpriced": 14,
+                "overpriced": 70,
+                "ok": 336,
+                "good value": 213,
+                "great value": 61
+            }
+        }
+    },
+    {
+        "perfume_name": "Acqua Essenziale Blu",
+        "brand_name": "Salvatore Ferragamo",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.24788.jpg",
+        "main_accords": {
+            "amber": 100.0,
+            "citrus": 84.6983,
+            "woody": 84.2412,
+            "aromatic": 83.7427,
+            "warm spicy": 73.3015,
+            "lavender": 70.7123,
+            "vanilla": 61.6972,
+            "earthy": 58.4708,
+            "fresh spicy": 54.8842,
+            "musky": 48.9438
+        },
+        "notes": {
+            "Top Notes": [
+                "Lemon",
+                "Calabrian bergamot",
+                "Cardamom"
+            ],
+            "Middle Notes": [
+                "Lavender",
+                "Cypriol Oil or Nagarmotha",
+                "Atlas Cedar"
+            ],
+            "Base Notes": [
+                "Tonka Bean",
+                "Ambroxan",
+                "Benzoin",
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 97.2253,
+            "summer": 97.5583,
+            "fall": 72.364,
+            "winter": 32.0755,
+            "day": 100.0,
+            "night": 60.1554
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 29,
+                "weak": 75,
+                "moderate": 566,
+                "long lasting": 388,
+                "eternal": 44
+            },
+            "SILLAGE": {
+                "intimate": 121,
+                "moderate": 731,
+                "strong": 257,
+                "enormous": 70
+            },
+            "GENDER": {
+                "female": 8,
+                "more female": 3,
+                "unisex": 33,
+                "more male": 216,
+                "male": 564
+            },
+            "PRICE VALUE": {
+                "way overpriced": 9,
+                "overpriced": 16,
+                "ok": 151,
+                "good value": 358,
+                "great value": 261
+            }
+        }
+    },
+    {
+        "perfume_name": "F by Ferragamo Black",
+        "brand_name": "Salvatore Ferragamo",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.5002.jpg",
+        "main_accords": {
+            "fresh spicy": 100.0,
+            "lavender": 87.8935,
+            "aromatic": 87.3442,
+            "amber": 67.9403,
+            "vanilla": 60.1961,
+            "warm spicy": 58.1228,
+            "sweet": 52.8101,
+            "fruity": 50.7662,
+            "herbal": 47.7182
+        },
+        "notes": {
+            "Top Notes": [
+                "Lavender",
+                "Apple"
+            ],
+            "Middle Notes": [
+                "Black Pepper",
+                "Coriander"
+            ],
+            "Base Notes": [
+                "Tonka Bean",
+                "Labdanum"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 75.8621,
+            "summer": 27.4445,
+            "fall": 100.0,
+            "winter": 94.0954,
+            "day": 77.8932,
+            "night": 94.2371
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 97,
+                "weak": 163,
+                "moderate": 1086,
+                "long lasting": 1303,
+                "eternal": 133
+            },
+            "SILLAGE": {
+                "intimate": 306,
+                "moderate": 1709,
+                "strong": 757,
+                "enormous": 193
+            },
+            "GENDER": {
+                "female": 15,
+                "more female": 3,
+                "unisex": 63,
+                "more male": 335,
+                "male": 1116
+            },
+            "PRICE VALUE": {
+                "way overpriced": 12,
+                "overpriced": 24,
+                "ok": 162,
+                "good value": 512,
+                "great value": 766
+            }
+        }
+    },
+    {
+        "perfume_name": "Rinascimento",
+        "brand_name": "Salvatore Ferragamo",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.51509.jpg",
+        "main_accords": {
+            "white floral": 100.0,
+            "fresh spicy": 69.1928,
+            "tuberose": 67.3698,
+            "woody": 63.3594,
+            "green": 61.3541,
+            "aromatic": 60.3517,
+            "citrus": 57.3437,
+            "powdery": 49.3227,
+            "animalic": 49.2318,
+            "iris": 45.4946
+        },
+        "notes": {
+            "Top Notes": [
+                "Mandarin Orange",
+                "Basil",
+                "Pepper"
+            ],
+            "Middle Notes": [
+                "Lily",
+                "Tuberose",
+                "Iris"
+            ],
+            "Base Notes": [
+                "Sandalwood",
+                "Vetiver",
+                "Ambroxan"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 75.0,
+            "fall": 75.0,
+            "winter": 32.1429,
+            "day": 96.4286,
+            "night": 67.8571
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 4,
+                "weak": 2,
+                "moderate": 6,
+                "long lasting": 12,
+                "eternal": 7
+            },
+            "SILLAGE": {
+                "intimate": 3,
+                "moderate": 8,
+                "strong": 16,
+                "enormous": 7
+            },
+            "GENDER": {
+                "female": 12,
+                "more female": 10,
+                "unisex": 8,
+                "more male": 0,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 5,
+                "overpriced": 7,
+                "ok": 6,
+                "good value": 2,
+                "great value": 1
+            }
+        }
+    },
+    {
+        "perfume_name": "Signorina",
+        "brand_name": "Salvatore Ferragamo",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.13639.jpg",
+        "main_accords": {
+            "sweet": 100.0,
+            "rose": 81.4631,
+            "floral": 73.3825,
+            "lactonic": 66.9787,
+            "musky": 60.276,
+            "fresh": 55.7356,
+            "soft spicy": 55.4204,
+            "coffee": 44.7914
+        },
+        "notes": {
+            "Top Notes": [
+                "Pink Pepper",
+                "Black Currant"
+            ],
+            "Middle Notes": [
+                "Rose",
+                "Peony",
+                "Jasmine"
+            ],
+            "Base Notes": [
+                "Panacotta",
+                "Musk",
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 88.295,
+            "summer": 52.7064,
+            "fall": 41.4073,
+            "winter": 28.2815,
+            "day": 100.0,
+            "night": 25.2368
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 111,
+                "weak": 302,
+                "moderate": 673,
+                "long lasting": 271,
+                "eternal": 92
+            },
+            "SILLAGE": {
+                "intimate": 470,
+                "moderate": 800,
+                "strong": 281,
+                "enormous": 155
+            },
+            "GENDER": {
+                "female": 533,
+                "more female": 28,
+                "unisex": 10,
+                "more male": 1,
+                "male": 3
+            },
+            "PRICE VALUE": {
+                "way overpriced": 14,
+                "overpriced": 63,
+                "ok": 238,
+                "good value": 147,
+                "great value": 41
+            }
+        }
+    },
+    {
+        "perfume_name": "Subtil Pour Homme",
+        "brand_name": "Salvatore Ferragamo",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.657.jpg",
+        "main_accords": {
+            "warm spicy": 100.0,
+            "citrus": 81.2641,
+            "aromatic": 77.6208,
+            "floral": 65.0,
+            "herbal": 63.4384,
+            "soft spicy": 63.1786,
+            "powdery": 58.0062,
+            "violet": 54.7211,
+            "musky": 53.5501,
+            "fresh": 48.4107
+        },
+        "notes": {
+            "Top Notes": [
+                "Ginger",
+                "Mandarin Orange",
+                "Lotus Leaf",
+                "Cardamom"
+            ],
+            "Middle Notes": [
+                "Coriander",
+                "Violet",
+                "Pink Pepper",
+                "Artemisia"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Amber",
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 78.0374,
+            "summer": 89.7196,
+            "fall": 38.3178,
+            "winter": 18.2243,
+            "day": 100.0,
+            "night": 36.4486
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 36,
+                "weak": 55,
+                "moderate": 110,
+                "long lasting": 18,
+                "eternal": 7
+            },
+            "SILLAGE": {
+                "intimate": 91,
+                "moderate": 123,
+                "strong": 23,
+                "enormous": 27
+            },
+            "GENDER": {
+                "female": 1,
+                "more female": 0,
+                "unisex": 6,
+                "more male": 55,
+                "male": 61
+            },
+            "PRICE VALUE": {
+                "way overpriced": 5,
+                "overpriced": 4,
+                "ok": 31,
+                "good value": 54,
+                "great value": 21
+            }
+        }
+    }
+]

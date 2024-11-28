@@ -1,0 +1,732 @@
+[
+    {
+        "perfume_name": "Fleur de Peau Eau de Parfum",
+        "brand_name": "Diptyque",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.48681.jpg",
+        "main_accords": {
+            "musky": 100.0,
+            "powdery": 91.3923,
+            "iris": 64.0979,
+            "aldehydic": 57.2784,
+            "soft spicy": 52.666,
+            "amber": 52.4566,
+            "woody": 51.5973,
+            "floral": 51.1569,
+            "fresh": 49.385,
+            "earthy": 47.4114
+        },
+        "notes": {
+            "Top Notes": [
+                "Aldehydes",
+                "Pink Pepper",
+                "Angelica",
+                "Bergamot"
+            ],
+            "Middle Notes": [
+                "Iris",
+                "Turkish Rose"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Ambrette (Musk Mallow)",
+                "Carrot",
+                "Ambergris",
+                "Sandalwood",
+                "Leather",
+                "Amberwood"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 93.1034,
+            "summer": 61.1848,
+            "fall": 91.6004,
+            "winter": 77.1883,
+            "day": 100.0,
+            "night": 57.206
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 65,
+                "weak": 150,
+                "moderate": 668,
+                "long lasting": 556,
+                "eternal": 154
+            },
+            "SILLAGE": {
+                "intimate": 434,
+                "moderate": 886,
+                "strong": 262,
+                "enormous": 85
+            },
+            "GENDER": {
+                "female": 327,
+                "more female": 547,
+                "unisex": 622,
+                "more male": 15,
+                "male": 11
+            },
+            "PRICE VALUE": {
+                "way overpriced": 84,
+                "overpriced": 389,
+                "ok": 687,
+                "good value": 100,
+                "great value": 34
+            }
+        }
+    },
+    {
+        "perfume_name": "Tam Dao Eau de Parfum",
+        "brand_name": "Diptyque",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.49104.jpg",
+        "main_accords": {
+            "woody": 100.0,
+            "powdery": 58.3184,
+            "warm spicy": 54.3323,
+            "aromatic": 46.2436
+        },
+        "notes": {
+            "Top Notes": [],
+            "Middle Notes": [],
+            "Base Notes": [],
+            "Undefineded": [
+                "Sandalwood",
+                "Cedar",
+                "Amberwood",
+                "Coriander",
+                "Musk",
+                "Lime",
+                "Ginger",
+                "Vanilla"
+            ]
+        },
+        "season_data": {
+            "spring": 68.2984,
+            "summer": 38.6946,
+            "fall": 100.0,
+            "winter": 72.028,
+            "day": 83.4499,
+            "night": 63.6364
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 69,
+                "weak": 164,
+                "moderate": 533,
+                "long lasting": 261,
+                "eternal": 44
+            },
+            "SILLAGE": {
+                "intimate": 286,
+                "moderate": 667,
+                "strong": 138,
+                "enormous": 65
+            },
+            "GENDER": {
+                "female": 18,
+                "more female": 36,
+                "unisex": 578,
+                "more male": 246,
+                "male": 63
+            },
+            "PRICE VALUE": {
+                "way overpriced": 67,
+                "overpriced": 256,
+                "ok": 402,
+                "good value": 51,
+                "great value": 13
+            }
+        }
+    },
+    {
+        "perfume_name": "Tam Dao Eau de Toilette",
+        "brand_name": "Diptyque",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.3956.jpg",
+        "main_accords": {
+            "woody": 100.0,
+            "aromatic": 52.4525,
+            "powdery": 51.6425,
+            "warm spicy": 48.5825
+        },
+        "notes": {
+            "Top Notes": [
+                "Italian Cypress",
+                "Myrtle",
+                "Rose"
+            ],
+            "Middle Notes": [
+                "Sandalwood",
+                "Cedar"
+            ],
+            "Base Notes": [
+                "Brazilian Rosewood",
+                "Spices",
+                "Amber",
+                "White Musk"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 65.5897,
+            "summer": 40.0646,
+            "fall": 100.0,
+            "winter": 66.0743,
+            "day": 92.1648,
+            "night": 47.8191
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 131,
+                "weak": 295,
+                "moderate": 753,
+                "long lasting": 203,
+                "eternal": 73
+            },
+            "SILLAGE": {
+                "intimate": 529,
+                "moderate": 763,
+                "strong": 201,
+                "enormous": 164
+            },
+            "GENDER": {
+                "female": 21,
+                "more female": 46,
+                "unisex": 661,
+                "more male": 203,
+                "male": 48
+            },
+            "PRICE VALUE": {
+                "way overpriced": 66,
+                "overpriced": 234,
+                "ok": 377,
+                "good value": 62,
+                "great value": 12
+            }
+        }
+    },
+    {
+        "perfume_name": "Do Son Eau de Parfum",
+        "brand_name": "Diptyque",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.49098.jpg",
+        "main_accords": {
+            "tuberose": 100.0,
+            "white floral": 91.0123,
+            "musky": 57.5823,
+            "animalic": 54.5217,
+            "green": 54.0247
+        },
+        "notes": {
+            "Top Notes": [],
+            "Middle Notes": [],
+            "Base Notes": [],
+            "Undefineded": [
+                "Tuberose",
+                "Orange Leaf",
+                "Musk",
+                "Pink Pepper"
+            ]
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 73.4838,
+            "fall": 50.4937,
+            "winter": 31.4528,
+            "day": 92.1016,
+            "night": 44.0056
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 22,
+                "weak": 73,
+                "moderate": 461,
+                "long lasting": 244,
+                "eternal": 36
+            },
+            "SILLAGE": {
+                "intimate": 114,
+                "moderate": 497,
+                "strong": 204,
+                "enormous": 62
+            },
+            "GENDER": {
+                "female": 340,
+                "more female": 241,
+                "unisex": 203,
+                "more male": 11,
+                "male": 10
+            },
+            "PRICE VALUE": {
+                "way overpriced": 50,
+                "overpriced": 219,
+                "ok": 352,
+                "good value": 48,
+                "great value": 5
+            }
+        }
+    },
+    {
+        "perfume_name": "Do Son Eau de Toilette",
+        "brand_name": "Diptyque",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.6501.jpg",
+        "main_accords": {
+            "white floral": 100.0,
+            "tuberose": 83.7562,
+            "animalic": 53.3749,
+            "musky": 44.5624
+        },
+        "notes": {
+            "Top Notes": [
+                "African Orange Flower",
+                "Iris",
+                "Rose"
+            ],
+            "Middle Notes": [
+                "Tuberose",
+                "Pink Pepper"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Benzoin"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 73.1392,
+            "fall": 38.5922,
+            "winter": 22.411,
+            "day": 94.9838,
+            "night": 35.0324
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 61,
+                "weak": 187,
+                "moderate": 691,
+                "long lasting": 290,
+                "eternal": 88
+            },
+            "SILLAGE": {
+                "intimate": 196,
+                "moderate": 786,
+                "strong": 344,
+                "enormous": 153
+            },
+            "GENDER": {
+                "female": 498,
+                "more female": 325,
+                "unisex": 212,
+                "more male": 7,
+                "male": 5
+            },
+            "PRICE VALUE": {
+                "way overpriced": 41,
+                "overpriced": 258,
+                "ok": 464,
+                "good value": 84,
+                "great value": 15
+            }
+        }
+    },
+    {
+        "perfume_name": "Eau des Sens Eau de Toilette",
+        "brand_name": "Diptyque",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.35678.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "white floral": 85.6848,
+            "woody": 53.5386,
+            "musky": 53.5341,
+            "aromatic": 51.9591,
+            "fresh spicy": 49.5869,
+            "amber": 48.8273,
+            "patchouli": 47.4189,
+            "sweet": 46.7056,
+            "powdery": 44.1205
+        },
+        "notes": {
+            "Top Notes": [
+                "Orange Blossom",
+                "Bitter Orange"
+            ],
+            "Middle Notes": [
+                "Juniper Berries"
+            ],
+            "Base Notes": [
+                "Angelica",
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 95.053,
+            "summer": 100.0,
+            "fall": 34.5112,
+            "winter": 15.7833,
+            "day": 99.2933,
+            "night": 16.7256
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 32,
+                "weak": 120,
+                "moderate": 461,
+                "long lasting": 302,
+                "eternal": 79
+            },
+            "SILLAGE": {
+                "intimate": 161,
+                "moderate": 620,
+                "strong": 198,
+                "enormous": 76
+            },
+            "GENDER": {
+                "female": 93,
+                "more female": 227,
+                "unisex": 535,
+                "more male": 36,
+                "male": 8
+            },
+            "PRICE VALUE": {
+                "way overpriced": 53,
+                "overpriced": 184,
+                "ok": 384,
+                "good value": 77,
+                "great value": 10
+            }
+        }
+    },
+    {
+        "perfume_name": "Philosykos Eau de Parfum",
+        "brand_name": "Diptyque",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.3865.jpg",
+        "main_accords": {
+            "green": 100.0,
+            "woody": 83.4294,
+            "sweet": 62.4673,
+            "fresh": 58.2025,
+            "fruity": 54.8893,
+            "lactonic": 52.7166,
+            "coconut": 52.1344
+        },
+        "notes": {
+            "Top Notes": [
+                "Fig Leaf",
+                "Fig"
+            ],
+            "Middle Notes": [
+                "Green Notes",
+                "Coconut"
+            ],
+            "Base Notes": [
+                "Fig Tree",
+                "Woody Notes",
+                "Cedar"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 91.51,
+            "summer": 97.0188,
+            "fall": 35.1588,
+            "winter": 14.6468,
+            "day": 100.0,
+            "night": 19.7343
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 301,
+                "weak": 815,
+                "moderate": 1677,
+                "long lasting": 361,
+                "eternal": 81
+            },
+            "SILLAGE": {
+                "intimate": 1177,
+                "moderate": 1769,
+                "strong": 392,
+                "enormous": 227
+            },
+            "GENDER": {
+                "female": 211,
+                "more female": 538,
+                "unisex": 1675,
+                "more male": 60,
+                "male": 25
+            },
+            "PRICE VALUE": {
+                "way overpriced": 180,
+                "overpriced": 678,
+                "ok": 973,
+                "good value": 131,
+                "great value": 28
+            }
+        }
+    },
+    {
+        "perfume_name": "Philosykos Eau de Toilette",
+        "brand_name": "Diptyque",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.72040.jpg",
+        "main_accords": {
+            "green": 100.0,
+            "woody": 92.6646,
+            "fresh": 72.8291,
+            "sweet": 62.4125,
+            "fruity": 62.2806,
+            "lactonic": 54.9671
+        },
+        "notes": {
+            "Top Notes": [
+                "Fig"
+            ],
+            "Middle Notes": [
+                "Fig Leaf"
+            ],
+            "Base Notes": [
+                "Fig Tree"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 98.0535,
+            "summer": 100.0,
+            "fall": 34.9148,
+            "winter": 11.5572,
+            "day": 89.781,
+            "night": 13.6253
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 78,
+                "weak": 313,
+                "moderate": 443,
+                "long lasting": 44,
+                "eternal": 5
+            },
+            "SILLAGE": {
+                "intimate": 350,
+                "moderate": 448,
+                "strong": 25,
+                "enormous": 2
+            },
+            "GENDER": {
+                "female": 46,
+                "more female": 217,
+                "unisex": 656,
+                "more male": 18,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 67,
+                "overpriced": 222,
+                "ok": 407,
+                "good value": 60,
+                "great value": 8
+            }
+        }
+    },
+    {
+        "perfume_name": "Orphéon Eau de Parfum",
+        "brand_name": "Diptyque",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.65738.jpg",
+        "main_accords": {
+            "powdery": 100.0,
+            "woody": 96.3453,
+            "aromatic": 93.0283,
+            "fresh spicy": 66.7993,
+            "white floral": 63.7351,
+            "vanilla": 45.0541
+        },
+        "notes": {
+            "Top Notes": [
+                "Juniper Berries"
+            ],
+            "Middle Notes": [
+                "Jasmine"
+            ],
+            "Base Notes": [
+                "Powdery Notes",
+                "Cedar",
+                "Tonka Bean"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 88.3287,
+            "summer": 56.2092,
+            "fall": 100.0,
+            "winter": 71.5219,
+            "day": 88.9823,
+            "night": 68.5341
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 27,
+                "weak": 105,
+                "moderate": 655,
+                "long lasting": 533,
+                "eternal": 95
+            },
+            "SILLAGE": {
+                "intimate": 185,
+                "moderate": 904,
+                "strong": 251,
+                "enormous": 29
+            },
+            "GENDER": {
+                "female": 126,
+                "more female": 285,
+                "unisex": 1009,
+                "more male": 147,
+                "male": 25
+            },
+            "PRICE VALUE": {
+                "way overpriced": 72,
+                "overpriced": 356,
+                "ok": 718,
+                "good value": 117,
+                "great value": 19
+            }
+        }
+    },
+    {
+        "perfume_name": "L'Ombre Dans L'Eau Eau de Toilette",
+        "brand_name": "Diptyque",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.3962.jpg",
+        "main_accords": {
+            "fruity": 100.0,
+            "green": 80.6603,
+            "aromatic": 77.1754,
+            "soft spicy": 61.3361,
+            "rose": 59.4768,
+            "fresh spicy": 50.0963,
+            "woody": 49.9128,
+            "citrus": 47.3229,
+            "floral": 46.8073
+        },
+        "notes": {
+            "Top Notes": [],
+            "Middle Notes": [],
+            "Base Notes": [],
+            "Undefineded": [
+                "Cassis",
+                "Rose",
+                "Black currant leaf",
+                "Black Currant",
+                "Bergamot",
+                "Ambergris",
+                "Musk",
+                "Mandarin Orange"
+            ]
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 86.5385,
+            "fall": 43.5619,
+            "winter": 21.9064,
+            "day": 95.7358,
+            "night": 26.6722
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 62,
+                "weak": 150,
+                "moderate": 656,
+                "long lasting": 387,
+                "eternal": 95
+            },
+            "SILLAGE": {
+                "intimate": 210,
+                "moderate": 802,
+                "strong": 344,
+                "enormous": 152
+            },
+            "GENDER": {
+                "female": 154,
+                "more female": 268,
+                "unisex": 445,
+                "more male": 33,
+                "male": 9
+            },
+            "PRICE VALUE": {
+                "way overpriced": 48,
+                "overpriced": 187,
+                "ok": 412,
+                "good value": 62,
+                "great value": 12
+            }
+        }
+    },
+    {
+        "perfume_name": "Eau Rose",
+        "brand_name": "Diptyque",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.14214.jpg",
+        "main_accords": {
+            "rose": 100.0,
+            "fruity": 71.078,
+            "floral": 61.065,
+            "fresh spicy": 54.9507,
+            "aromatic": 51.8909,
+            "musky": 49.9103,
+            "citrus": 49.1611,
+            "woody": 48.4538,
+            "tropical": 47.6047,
+            "powdery": 44.2202
+        },
+        "notes": {
+            "Top Notes": [
+                "Litchi",
+                "Black Currant",
+                "Bergamot"
+            ],
+            "Middle Notes": [
+                "Rose",
+                "Geranium",
+                "Jasmine"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Virginia Cedar",
+                "White Honey"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 75.8398,
+            "fall": 28.0362,
+            "winter": 14.8579,
+            "day": 96.124,
+            "night": 16.1499
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 60,
+                "weak": 220,
+                "moderate": 392,
+                "long lasting": 76,
+                "eternal": 10
+            },
+            "SILLAGE": {
+                "intimate": 249,
+                "moderate": 463,
+                "strong": 52,
+                "enormous": 43
+            },
+            "GENDER": {
+                "female": 410,
+                "more female": 180,
+                "unisex": 72,
+                "more male": 2,
+                "male": 1
+            },
+            "PRICE VALUE": {
+                "way overpriced": 43,
+                "overpriced": 198,
+                "ok": 282,
+                "good value": 36,
+                "great value": 6
+            }
+        }
+    }
+]

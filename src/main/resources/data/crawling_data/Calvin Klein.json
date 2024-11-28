@@ -1,0 +1,873 @@
+[
+    {
+        "perfume_name": "CK be",
+        "brand_name": "Calvin Klein",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.275.jpg",
+        "main_accords": {
+            "green": 100.0,
+            "aromatic": 84.9447,
+            "woody": 81.2962,
+            "powdery": 76.3885,
+            "fresh spicy": 74.5727,
+            "lavender": 74.442,
+            "musky": 69.4798,
+            "floral": 66.4778,
+            "citrus": 66.186,
+            "sweet": 51.166
+        },
+        "notes": {
+            "Top Notes": [
+                "Lavender",
+                "Green Notes",
+                "Bergamot",
+                "Mint",
+                "Juniper",
+                "Mandarin Orange"
+            ],
+            "Middle Notes": [
+                "Green Grass",
+                "Jasmine",
+                "Peach",
+                "Freesia",
+                "Magnolia",
+                "Orchid"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Sandalwood",
+                "Cedar",
+                "Vanilla",
+                "Amber",
+                "Opoponax"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 84.3811,
+            "summer": 86.9582,
+            "fall": 46.8176,
+            "winter": 27.2159,
+            "day": 100.0,
+            "night": 35.7282
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 506,
+                "weak": 898,
+                "moderate": 1190,
+                "long lasting": 203,
+                "eternal": 61
+            },
+            "SILLAGE": {
+                "intimate": 1645,
+                "moderate": 1012,
+                "strong": 178,
+                "enormous": 119
+            },
+            "GENDER": {
+                "female": 18,
+                "more female": 35,
+                "unisex": 1093,
+                "more male": 574,
+                "male": 242
+            },
+            "PRICE VALUE": {
+                "way overpriced": 55,
+                "overpriced": 114,
+                "ok": 463,
+                "good value": 764,
+                "great value": 370
+            }
+        }
+    },
+    {
+        "perfume_name": "CK One",
+        "brand_name": "Calvin Klein",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.276.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "green": 71.4471,
+            "woody": 56.7823,
+            "powdery": 56.3956,
+            "white floral": 53.7157,
+            "fresh": 53.2058,
+            "aromatic": 53.0537,
+            "fresh spicy": 48.0285,
+            "floral": 47.029,
+            "musky": 46.7966
+        },
+        "notes": {
+            "Top Notes": [
+                "Lemon",
+                "Green Notes",
+                "Bergamot",
+                "Mandarin Orange",
+                "Pineapple",
+                "Cardamom",
+                "Papaya"
+            ],
+            "Middle Notes": [
+                "Lily-of-the-Valley",
+                "Jasmine",
+                "Violet",
+                "Rose",
+                "Nutmeg",
+                "Orris Root",
+                "Freesia"
+            ],
+            "Base Notes": [
+                "Green Accord",
+                "Musk",
+                "Cedar",
+                "Sandalwood",
+                "Green Tea",
+                "Oakmoss",
+                "Amber"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 70.9979,
+            "summer": 96.8486,
+            "fall": 20.7467,
+            "winter": 12.5714,
+            "day": 100.0,
+            "night": 14.6951
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 869,
+                "weak": 2375,
+                "moderate": 4199,
+                "long lasting": 753,
+                "eternal": 164
+            },
+            "SILLAGE": {
+                "intimate": 2911,
+                "moderate": 4416,
+                "strong": 720,
+                "enormous": 245
+            },
+            "GENDER": {
+                "female": 134,
+                "more female": 271,
+                "unisex": 4415,
+                "more male": 1080,
+                "male": 474
+            },
+            "PRICE VALUE": {
+                "way overpriced": 107,
+                "overpriced": 273,
+                "ok": 1411,
+                "good value": 2485,
+                "great value": 1329
+            }
+        }
+    },
+    {
+        "perfume_name": "CK All",
+        "brand_name": "Calvin Klein",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.42944.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "white floral": 80.6094,
+            "aromatic": 54.1279,
+            "floral": 53.4217,
+            "green": 51.2048,
+            "fruity": 45.2906,
+            "fresh spicy": 44.653,
+            "musky": 44.425
+        },
+        "notes": {
+            "Top Notes": [
+                "Bergamot",
+                "Mandarin Orange",
+                "Grapefruit blossom"
+            ],
+            "Middle Notes": [
+                "Jasmine",
+                "Rhubarb",
+                "Freesia",
+                "Lily"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Amber",
+                "Vetiver"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 81.2574,
+            "summer": 100.0,
+            "fall": 28.3511,
+            "winter": 15.6584,
+            "day": 99.5255,
+            "night": 20.0474
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 86,
+                "weak": 215,
+                "moderate": 488,
+                "long lasting": 118,
+                "eternal": 56
+            },
+            "SILLAGE": {
+                "intimate": 283,
+                "moderate": 561,
+                "strong": 162,
+                "enormous": 104
+            },
+            "GENDER": {
+                "female": 26,
+                "more female": 84,
+                "unisex": 523,
+                "more male": 86,
+                "male": 27
+            },
+            "PRICE VALUE": {
+                "way overpriced": 10,
+                "overpriced": 37,
+                "ok": 139,
+                "good value": 272,
+                "great value": 176
+            }
+        }
+    },
+    {
+        "perfume_name": "CK One Gold",
+        "brand_name": "Calvin Klein",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.39123.jpg",
+        "main_accords": {
+            "woody": 100.0,
+            "aromatic": 89.1448,
+            "citrus": 81.6581,
+            "fruity": 66.1607,
+            "white floral": 65.4276,
+            "herbal": 56.117,
+            "fresh spicy": 54.5202,
+            "sweet": 52.6006,
+            "floral": 51.1429,
+            "earthy": 50.6283
+        },
+        "notes": {
+            "Top Notes": [
+                "Fig",
+                "Bergamot",
+                "Sage"
+            ],
+            "Middle Notes": [
+                "Neroli",
+                "Jasmine",
+                "Violet"
+            ],
+            "Base Notes": [
+                "Vetiver",
+                "Guaiac Wood",
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 77.0732,
+            "summer": 83.1707,
+            "fall": 56.0976,
+            "winter": 25.122,
+            "day": 100.0,
+            "night": 36.3415
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 148,
+                "weak": 168,
+                "moderate": 188,
+                "long lasting": 29,
+                "eternal": 18
+            },
+            "SILLAGE": {
+                "intimate": 297,
+                "moderate": 215,
+                "strong": 62,
+                "enormous": 61
+            },
+            "GENDER": {
+                "female": 30,
+                "more female": 78,
+                "unisex": 239,
+                "more male": 35,
+                "male": 15
+            },
+            "PRICE VALUE": {
+                "way overpriced": 10,
+                "overpriced": 23,
+                "ok": 114,
+                "good value": 152,
+                "great value": 46
+            }
+        }
+    },
+    {
+        "perfume_name": "Eternity for Women Reflections",
+        "brand_name": "Calvin Klein",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.79843.jpg",
+        "main_accords": {
+            "white floral": 100.0,
+            "fruity": 91.8335,
+            "citrus": 76.6668,
+            "woody": 72.778,
+            "sweet": 69.6666,
+            "aquatic": 58.0002,
+            "fresh": 58.0002,
+            "powdery": 51.3888,
+            "warm spicy": 47.1111,
+            "floral": 44.0001
+        },
+        "notes": {
+            "Top Notes": [
+                "Pear",
+                "Blood Orange"
+            ],
+            "Middle Notes": [
+                "Jasmine"
+            ],
+            "Base Notes": [
+                "Sandalwood"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 86.6667,
+            "summer": 100.0,
+            "fall": 46.6667,
+            "winter": 40.0,
+            "day": 86.6667,
+            "night": 30.0
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 5,
+                "weak": 4,
+                "moderate": 12,
+                "long lasting": 3,
+                "eternal": 4
+            },
+            "SILLAGE": {
+                "intimate": 8,
+                "moderate": 13,
+                "strong": 2,
+                "enormous": 3
+            },
+            "GENDER": {
+                "female": 23,
+                "more female": 10,
+                "unisex": 3,
+                "more male": 0,
+                "male": 3
+            },
+            "PRICE VALUE": {
+                "way overpriced": 8,
+                "overpriced": 4,
+                "ok": 7,
+                "good value": 8,
+                "great value": 3
+            }
+        }
+    },
+    {
+        "perfume_name": "Eternity for Men Eau de Parfum",
+        "brand_name": "Calvin Klein",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.56669.jpg",
+        "main_accords": {
+            "aromatic": 100.0,
+            "fresh spicy": 85.7644,
+            "woody": 71.0942,
+            "herbal": 61.3191,
+            "lavender": 60.1347,
+            "fruity": 50.5098,
+            "ozonic": 47.0914,
+            "amber": 46.4918,
+            "musky": 45.0373
+        },
+        "notes": {
+            "Top Notes": [
+                "Apple",
+                "Sage",
+                "Ozonic notes"
+            ],
+            "Middle Notes": [
+                "Cypress",
+                "Lavender",
+                "Geranium",
+                "Nutmeg"
+            ],
+            "Base Notes": [
+                "Suede",
+                "Ambergris",
+                "Cypriol Oil or Nagarmotha",
+                "Orris Root"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 77.9089,
+            "fall": 79.258,
+            "winter": 34.2327,
+            "day": 94.0978,
+            "night": 40.9781
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 34,
+                "weak": 70,
+                "moderate": 363,
+                "long lasting": 219,
+                "eternal": 35
+            },
+            "SILLAGE": {
+                "intimate": 91,
+                "moderate": 454,
+                "strong": 173,
+                "enormous": 76
+            },
+            "GENDER": {
+                "female": 6,
+                "more female": 2,
+                "unisex": 46,
+                "more male": 147,
+                "male": 420
+            },
+            "PRICE VALUE": {
+                "way overpriced": 11,
+                "overpriced": 46,
+                "ok": 179,
+                "good value": 265,
+                "great value": 75
+            }
+        }
+    },
+    {
+        "perfume_name": "Ck One Summer Daze",
+        "brand_name": "Calvin Klein",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.72868.jpg",
+        "main_accords": {
+            "green": 100.0,
+            "citrus": 97.9581,
+            "aromatic": 92.5441,
+            "fresh": 59.2062,
+            "musky": 56.1195,
+            "fresh spicy": 53.6974
+        },
+        "notes": {
+            "Top Notes": [
+                "Kumquat"
+            ],
+            "Middle Notes": [
+                "Tea",
+                "Mint"
+            ],
+            "Base Notes": [
+                "White Musk",
+                "Vetiver"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 51.8634,
+            "summer": 100.0,
+            "fall": 12.4224,
+            "winter": 6.52174,
+            "day": 87.2671,
+            "night": 12.4224
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 50,
+                "weak": 117,
+                "moderate": 128,
+                "long lasting": 12,
+                "eternal": 3
+            },
+            "SILLAGE": {
+                "intimate": 127,
+                "moderate": 154,
+                "strong": 11,
+                "enormous": 4
+            },
+            "GENDER": {
+                "female": 22,
+                "more female": 36,
+                "unisex": 237,
+                "more male": 31,
+                "male": 16
+            },
+            "PRICE VALUE": {
+                "way overpriced": 10,
+                "overpriced": 27,
+                "ok": 94,
+                "good value": 116,
+                "great value": 56
+            }
+        }
+    },
+    {
+        "perfume_name": "CK Free",
+        "brand_name": "Calvin Klein",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.6281.jpg",
+        "main_accords": {
+            "woody": 100.0,
+            "aromatic": 80.738,
+            "fresh spicy": 58.176,
+            "anis": 51.8808,
+            "soft spicy": 49.6926,
+            "powdery": 48.4192,
+            "leather": 47.7017
+        },
+        "notes": {
+            "Top Notes": [
+                "Juniper Berries",
+                "Star Anise",
+                "Wormwood",
+                "Jackfruit"
+            ],
+            "Middle Notes": [
+                "Suede",
+                "Tobacco",
+                "Coffee",
+                "Buchu or Agathosma"
+            ],
+            "Base Notes": [
+                "Virginia Cedar",
+                "Oak",
+                "Patchouli",
+                "Woody Notes"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 74.7396,
+            "summer": 99.6094,
+            "fall": 26.5625,
+            "winter": 10.1562,
+            "day": 100.0,
+            "night": 16.1458
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 287,
+                "weak": 363,
+                "moderate": 211,
+                "long lasting": 32,
+                "eternal": 17
+            },
+            "SILLAGE": {
+                "intimate": 589,
+                "moderate": 255,
+                "strong": 52,
+                "enormous": 35
+            },
+            "GENDER": {
+                "female": 5,
+                "more female": 2,
+                "unisex": 63,
+                "more male": 222,
+                "male": 286
+            },
+            "PRICE VALUE": {
+                "way overpriced": 18,
+                "overpriced": 52,
+                "ok": 192,
+                "good value": 176,
+                "great value": 104
+            }
+        }
+    },
+    {
+        "perfume_name": "CK Everyone Eau de Toilette",
+        "brand_name": "Calvin Klein",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.59021.jpg",
+        "main_accords": {
+            "aquatic": 100.0,
+            "citrus": 99.0197,
+            "fresh": 87.7848,
+            "musky": 65.1748,
+            "warm spicy": 61.9025,
+            "woody": 58.2798,
+            "green": 56.985,
+            "powdery": 54.0889,
+            "sweet": 52.3652,
+            "fresh spicy": 47.0626
+        },
+        "notes": {
+            "Top Notes": [
+                "Orange Oil",
+                "Ginger"
+            ],
+            "Middle Notes": [
+                "Watery Notes",
+                "Tea"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Cedar",
+                "Amber",
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 76.6667,
+            "summer": 100.0,
+            "fall": 24.1111,
+            "winter": 12.7778,
+            "day": 95.4444,
+            "night": 14.5556
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 121,
+                "weak": 334,
+                "moderate": 484,
+                "long lasting": 76,
+                "eternal": 28
+            },
+            "SILLAGE": {
+                "intimate": 389,
+                "moderate": 556,
+                "strong": 82,
+                "enormous": 46
+            },
+            "GENDER": {
+                "female": 11,
+                "more female": 32,
+                "unisex": 595,
+                "more male": 295,
+                "male": 85
+            },
+            "PRICE VALUE": {
+                "way overpriced": 22,
+                "overpriced": 58,
+                "ok": 273,
+                "good value": 378,
+                "great value": 134
+            }
+        }
+    },
+    {
+        "perfume_name": "Euphoria Intense",
+        "brand_name": "Calvin Klein",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.68751.jpg",
+        "main_accords": {
+            "patchouli": 100.0,
+            "fruity": 95.7577,
+            "woody": 91.7272,
+            "floral": 70.1969,
+            "warm spicy": 64.9998,
+            "earthy": 58.0,
+            "soft spicy": 56.4092,
+            "balsamic": 50.9998
+        },
+        "notes": {
+            "Top Notes": [
+                "Black Currant"
+            ],
+            "Middle Notes": [
+                "Orchid"
+            ],
+            "Base Notes": [
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 40.9524,
+            "summer": 19.0476,
+            "fall": 100.0,
+            "winter": 89.5238,
+            "day": 60.9524,
+            "night": 85.7143
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 2,
+                "weak": 5,
+                "moderate": 57,
+                "long lasting": 45,
+                "eternal": 9
+            },
+            "SILLAGE": {
+                "intimate": 12,
+                "moderate": 59,
+                "strong": 37,
+                "enormous": 4
+            },
+            "GENDER": {
+                "female": 85,
+                "more female": 23,
+                "unisex": 9,
+                "more male": 2,
+                "male": 2
+            },
+            "PRICE VALUE": {
+                "way overpriced": 3,
+                "overpriced": 3,
+                "ok": 49,
+                "good value": 41,
+                "great value": 5
+            }
+        }
+    },
+    {
+        "perfume_name": "CK IN2U for Him",
+        "brand_name": "Calvin Klein",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.933.jpg",
+        "main_accords": {
+            "aromatic": 100.0,
+            "citrus": 80.3953,
+            "cacao": 74.5018,
+            "woody": 71.7594,
+            "green": 56.8694,
+            "warm spicy": 56.701,
+            "fresh spicy": 56.6889,
+            "musky": 53.8144,
+            "powdery": 47.4637
+        },
+        "notes": {
+            "Top Notes": [
+                "Lemon",
+                "Tomato Leaf"
+            ],
+            "Middle Notes": [
+                "Cacao Pod"
+            ],
+            "Base Notes": [
+                "Cedar",
+                "White Musk",
+                "Vetiver"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 76.4888,
+            "summer": 90.1779,
+            "fall": 30.0077,
+            "winter": 14.3078,
+            "day": 100.0,
+            "night": 21.8097
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 198,
+                "weak": 535,
+                "moderate": 674,
+                "long lasting": 67,
+                "eternal": 23
+            },
+            "SILLAGE": {
+                "intimate": 677,
+                "moderate": 711,
+                "strong": 111,
+                "enormous": 56
+            },
+            "GENDER": {
+                "female": 3,
+                "more female": 6,
+                "unisex": 163,
+                "more male": 485,
+                "male": 391
+            },
+            "PRICE VALUE": {
+                "way overpriced": 18,
+                "overpriced": 37,
+                "ok": 262,
+                "good value": 414,
+                "great value": 252
+            }
+        }
+    },
+    {
+        "perfume_name": "Obsession",
+        "brand_name": "Calvin Klein",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.248.jpg",
+        "main_accords": {
+            "amber": 100.0,
+            "warm spicy": 82.4072,
+            "woody": 80.1114,
+            "powdery": 74.9839,
+            "aromatic": 65.7288,
+            "musky": 63.8146,
+            "animalic": 58.5519,
+            "vanilla": 57.3986,
+            "smoky": 56.4549,
+            "balsamic": 55.1658
+        },
+        "notes": {
+            "Top Notes": [
+                "Vanilla",
+                "Basil",
+                "Bergamot",
+                "Mandarin Orange",
+                "Green Notes",
+                "Peach",
+                "Lemon"
+            ],
+            "Middle Notes": [
+                "Spices",
+                "Sandalwood",
+                "Coriander",
+                "Oakmoss",
+                "Cedar",
+                "Orange Blossom",
+                "Jasmine",
+                "Rose"
+            ],
+            "Base Notes": [
+                "Amber",
+                "Incense",
+                "Vanilla",
+                "Civet",
+                "Musk",
+                "Vetiver"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 20.5765,
+            "summer": 16.0702,
+            "fall": 93.5719,
+            "winter": 100.0,
+            "day": 49.0391,
+            "night": 97.0842
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 52,
+                "weak": 114,
+                "moderate": 683,
+                "long lasting": 1426,
+                "eternal": 958
+            },
+            "SILLAGE": {
+                "intimate": 161,
+                "moderate": 929,
+                "strong": 1702,
+                "enormous": 650
+            },
+            "GENDER": {
+                "female": 457,
+                "more female": 412,
+                "unisex": 898,
+                "more male": 77,
+                "male": 67
+            },
+            "PRICE VALUE": {
+                "way overpriced": 23,
+                "overpriced": 55,
+                "ok": 391,
+                "good value": 622,
+                "great value": 543
+            }
+        }
+    }
+]

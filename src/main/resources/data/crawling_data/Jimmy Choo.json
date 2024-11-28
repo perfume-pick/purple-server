@@ -1,0 +1,977 @@
+[
+    {
+        "perfume_name": "I Want Choo",
+        "brand_name": "Jimmy Choo",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.64015.jpg",
+        "main_accords": {
+            "white floral": 100.0,
+            "vanilla": 79.4297,
+            "fruity": 68.8069,
+            "sweet": 56.8538,
+            "powdery": 54.5716,
+            "citrus": 53.538,
+            "soft spicy": 45.4378
+        },
+        "notes": {
+            "Top Notes": [
+                "Peach",
+                "Mandarin Orange"
+            ],
+            "Middle Notes": [
+                "Jasmine",
+                "Red Lily"
+            ],
+            "Base Notes": [
+                "Vanilla"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 94.535,
+            "summer": 77.373,
+            "fall": 82.0709,
+            "winter": 59.2522,
+            "day": 100.0,
+            "night": 68.5523
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 22,
+                "weak": 118,
+                "moderate": 749,
+                "long lasting": 543,
+                "eternal": 107
+            },
+            "SILLAGE": {
+                "intimate": 120,
+                "moderate": 873,
+                "strong": 400,
+                "enormous": 55
+            },
+            "GENDER": {
+                "female": 1326,
+                "more female": 166,
+                "unisex": 40,
+                "more male": 4,
+                "male": 4
+            },
+            "PRICE VALUE": {
+                "way overpriced": 39,
+                "overpriced": 158,
+                "ok": 737,
+                "good value": 432,
+                "great value": 86
+            }
+        }
+    },
+    {
+        "perfume_name": "Jimmy Choo",
+        "brand_name": "Jimmy Choo",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.10573.jpg",
+        "main_accords": {
+            "sweet": 100.0,
+            "patchouli": 75.3992,
+            "fruity": 62.4306,
+            "woody": 57.2394,
+            "warm spicy": 52.6994,
+            "caramel": 49.767,
+            "earthy": 48.1597,
+            "green": 47.0059,
+            "floral": 46.2282,
+            "aquatic": 45.927
+        },
+        "notes": {
+            "Top Notes": [
+                "Pear",
+                "Mandarin Orange",
+                "Green Notes"
+            ],
+            "Middle Notes": [
+                "Orchid"
+            ],
+            "Base Notes": [
+                "Toffee",
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 67.4969,
+            "summer": 36.5864,
+            "fall": 100.0,
+            "winter": 85.5451,
+            "day": 91.9967,
+            "night": 87.4643
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 139,
+                "weak": 285,
+                "moderate": 1245,
+                "long lasting": 1184,
+                "eternal": 385
+            },
+            "SILLAGE": {
+                "intimate": 387,
+                "moderate": 1559,
+                "strong": 1170,
+                "enormous": 378
+            },
+            "GENDER": {
+                "female": 1196,
+                "more female": 275,
+                "unisex": 126,
+                "more male": 3,
+                "male": 7
+            },
+            "PRICE VALUE": {
+                "way overpriced": 36,
+                "overpriced": 132,
+                "ok": 638,
+                "good value": 528,
+                "great value": 156
+            }
+        }
+    },
+    {
+        "perfume_name": "Jimmy Choo Eau de Toilette",
+        "brand_name": "Jimmy Choo",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.14109.jpg",
+        "main_accords": {
+            "fruity": 100.0,
+            "woody": 98.5588,
+            "green": 95.5827,
+            "sweet": 95.0532,
+            "rose": 84.6914,
+            "fresh": 68.7044,
+            "floral": 67.6449,
+            "aquatic": 67.3332,
+            "warm spicy": 62.1134,
+            "powdery": 60.9606
+        },
+        "notes": {
+            "Top Notes": [
+                "Pear",
+                "Green Notes",
+                "Ginger"
+            ],
+            "Middle Notes": [
+                "Taif Rose",
+                "Orchid"
+            ],
+            "Base Notes": [
+                "Woodsy Notes",
+                "Virginia Cedar"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 84.2382,
+            "summer": 67.7758,
+            "fall": 40.4553,
+            "winter": 26.0946,
+            "day": 100.0,
+            "night": 23.1173
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 62,
+                "weak": 155,
+                "moderate": 226,
+                "long lasting": 76,
+                "eternal": 27
+            },
+            "SILLAGE": {
+                "intimate": 176,
+                "moderate": 281,
+                "strong": 107,
+                "enormous": 68
+            },
+            "GENDER": {
+                "female": 168,
+                "more female": 22,
+                "unisex": 17,
+                "more male": 2,
+                "male": 1
+            },
+            "PRICE VALUE": {
+                "way overpriced": 8,
+                "overpriced": 22,
+                "ok": 89,
+                "good value": 55,
+                "great value": 8
+            }
+        }
+    },
+    {
+        "perfume_name": "Jimmy Choo L'Eau",
+        "brand_name": "Jimmy Choo",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.42129.jpg",
+        "main_accords": {
+            "floral": 100.0,
+            "fresh": 76.6598,
+            "musky": 54.8799,
+            "powdery": 54.3462,
+            "citrus": 52.1701,
+            "rose": 51.349,
+            "fresh spicy": 50.0764,
+            "sweet": 49.7477,
+            "fruity": 47.8593
+        },
+        "notes": {
+            "Top Notes": [
+                "Hibiscus",
+                "Bergamot"
+            ],
+            "Middle Notes": [
+                "Peony",
+                "Nectarine"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Cedar"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 95.7447,
+            "summer": 83.2827,
+            "fall": 18.845,
+            "winter": 13.6778,
+            "day": 100.0,
+            "night": 14.2857
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 61,
+                "weak": 123,
+                "moderate": 153,
+                "long lasting": 32,
+                "eternal": 18
+            },
+            "SILLAGE": {
+                "intimate": 159,
+                "moderate": 178,
+                "strong": 58,
+                "enormous": 35
+            },
+            "GENDER": {
+                "female": 241,
+                "more female": 22,
+                "unisex": 3,
+                "more male": 0,
+                "male": 2
+            },
+            "PRICE VALUE": {
+                "way overpriced": 10,
+                "overpriced": 20,
+                "ok": 126,
+                "good value": 62,
+                "great value": 14
+            }
+        }
+    },
+    {
+        "perfume_name": "Jimmy Choo Blossom",
+        "brand_name": "Jimmy Choo",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.29165.jpg",
+        "main_accords": {
+            "fruity": 100.0,
+            "sweet": 85.0039,
+            "rose": 52.5177,
+            "fresh": 51.2408,
+            "floral": 51.0801,
+            "citrus": 48.4527
+        },
+        "notes": {
+            "Top Notes": [
+                "Raspberry",
+                "Red Berries",
+                "Citruses"
+            ],
+            "Middle Notes": [
+                "Sweet Pea",
+                "Rose"
+            ],
+            "Base Notes": [
+                "White Musk",
+                "Sandalwood"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 87.9795,
+            "summer": 86.1893,
+            "fall": 22.5064,
+            "winter": 13.9386,
+            "day": 100.0,
+            "night": 17.0077
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 69,
+                "weak": 186,
+                "moderate": 408,
+                "long lasting": 142,
+                "eternal": 48
+            },
+            "SILLAGE": {
+                "intimate": 201,
+                "moderate": 520,
+                "strong": 135,
+                "enormous": 89
+            },
+            "GENDER": {
+                "female": 551,
+                "more female": 24,
+                "unisex": 4,
+                "more male": 2,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 17,
+                "overpriced": 43,
+                "ok": 214,
+                "good value": 193,
+                "great value": 65
+            }
+        }
+    },
+    {
+        "perfume_name": "Jimmy Choo Man Intense",
+        "brand_name": "Jimmy Choo",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.39467.jpg",
+        "main_accords": {
+            "fresh spicy": 100.0,
+            "aromatic": 95.4353,
+            "amber": 76.2465,
+            "warm spicy": 73.5288,
+            "lavender": 72.3422,
+            "sweet": 68.4532,
+            "ozonic": 67.8378,
+            "herbal": 65.7958,
+            "vanilla": 65.7354,
+            "patchouli": 63.9341
+        },
+        "notes": {
+            "Top Notes": [
+                "Melon",
+                "Lavender",
+                "Mandarin Orange"
+            ],
+            "Middle Notes": [
+                "Geranium",
+                "Black Pepper",
+                "Artemisia"
+            ],
+            "Base Notes": [
+                "Tonka Bean",
+                "Patchouli",
+                "Labdanum"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 65.5773,
+            "fall": 99.3464,
+            "winter": 57.9521,
+            "day": 93.2462,
+            "night": 89.7603
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 33,
+                "weak": 97,
+                "moderate": 390,
+                "long lasting": 165,
+                "eternal": 17
+            },
+            "SILLAGE": {
+                "intimate": 118,
+                "moderate": 455,
+                "strong": 121,
+                "enormous": 61
+            },
+            "GENDER": {
+                "female": 3,
+                "more female": 0,
+                "unisex": 12,
+                "more male": 109,
+                "male": 402
+            },
+            "PRICE VALUE": {
+                "way overpriced": 8,
+                "overpriced": 37,
+                "ok": 168,
+                "good value": 195,
+                "great value": 78
+            }
+        }
+    },
+    {
+        "perfume_name": "Illicit Flower",
+        "brand_name": "Jimmy Choo",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.35221.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "white floral": 95.45,
+            "floral": 87.0696,
+            "fruity": 84.3559,
+            "rose": 73.1014,
+            "woody": 72.6226,
+            "musky": 70.7071,
+            "powdery": 68.3123,
+            "sweet": 62.0865,
+            "fresh": 58.0558
+        },
+        "notes": {
+            "Top Notes": [
+                "Mandarin Orange",
+                "Apricot"
+            ],
+            "Middle Notes": [
+                "Grapefruit blossom",
+                "Rose",
+                "Freesia",
+                "Pear",
+                "Jasmine"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Cashmere Wood",
+                "Sandalwood",
+                "Vanilla",
+                "Benzoin"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 99.061,
+            "summer": 73.2394,
+            "fall": 24.8826,
+            "winter": 16.4319,
+            "day": 100.0,
+            "night": 19.2488
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 31,
+                "weak": 53,
+                "moderate": 103,
+                "long lasting": 43,
+                "eternal": 12
+            },
+            "SILLAGE": {
+                "intimate": 87,
+                "moderate": 119,
+                "strong": 61,
+                "enormous": 39
+            },
+            "GENDER": {
+                "female": 124,
+                "more female": 12,
+                "unisex": 6,
+                "more male": 0,
+                "male": 1
+            },
+            "PRICE VALUE": {
+                "way overpriced": 7,
+                "overpriced": 5,
+                "ok": 50,
+                "good value": 39,
+                "great value": 16
+            }
+        }
+    },
+    {
+        "perfume_name": "Jimmy Choo Man Ice",
+        "brand_name": "Jimmy Choo",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.43304.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "woody": 51.8992,
+            "musky": 49.7121,
+            "aromatic": 44.2661
+        },
+        "notes": {
+            "Top Notes": [
+                "Citron",
+                "Bergamot",
+                "Mandarin Orange"
+            ],
+            "Middle Notes": [
+                "Apple",
+                "Cedar",
+                "Vetiver",
+                "Patchouli"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Ambroxan",
+                "Moss"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 70.4721,
+            "summer": 100.0,
+            "fall": 15.8798,
+            "winter": 7.72532,
+            "day": 89.3562,
+            "night": 15.279
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 155,
+                "weak": 305,
+                "moderate": 675,
+                "long lasting": 98,
+                "eternal": 29
+            },
+            "SILLAGE": {
+                "intimate": 394,
+                "moderate": 704,
+                "strong": 116,
+                "enormous": 81
+            },
+            "GENDER": {
+                "female": 9,
+                "more female": 5,
+                "unisex": 198,
+                "more male": 449,
+                "male": 332
+            },
+            "PRICE VALUE": {
+                "way overpriced": 18,
+                "overpriced": 37,
+                "ok": 237,
+                "good value": 466,
+                "great value": 179
+            }
+        }
+    },
+    {
+        "perfume_name": "Jimmy Choo Fever",
+        "brand_name": "Jimmy Choo",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.49615.jpg",
+        "main_accords": {
+            "vanilla": 100.0,
+            "sweet": 74.9364,
+            "fruity": 72.9982,
+            "amber": 68.5368,
+            "warm spicy": 63.6589,
+            "powdery": 61.4603,
+            "woody": 50.5763,
+            "coffee": 48.7478,
+            "white floral": 46.0861,
+            "floral": 44.9691
+        },
+        "notes": {
+            "Top Notes": [
+                "Plum",
+                "Litchi",
+                "Grapefruit"
+            ],
+            "Middle Notes": [
+                "Heliotrope",
+                "Vanilla Orchid",
+                "Jasmine",
+                "Orange Blossom"
+            ],
+            "Base Notes": [
+                "Tonka Bean",
+                "Vanilla",
+                "Benzoin",
+                "Coffee",
+                "Hazelnut",
+                "Sandalwood"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 38.3333,
+            "summer": 21.4583,
+            "fall": 100.0,
+            "winter": 99.1667,
+            "day": 65.8333,
+            "night": 91.875
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 65,
+                "weak": 179,
+                "moderate": 640,
+                "long lasting": 259,
+                "eternal": 63
+            },
+            "SILLAGE": {
+                "intimate": 240,
+                "moderate": 696,
+                "strong": 296,
+                "enormous": 134
+            },
+            "GENDER": {
+                "female": 834,
+                "more female": 102,
+                "unisex": 23,
+                "more male": 2,
+                "male": 8
+            },
+            "PRICE VALUE": {
+                "way overpriced": 24,
+                "overpriced": 96,
+                "ok": 447,
+                "good value": 270,
+                "great value": 79
+            }
+        }
+    },
+    {
+        "perfume_name": "Tempting Rose",
+        "brand_name": "Jimmy Choo",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.60130.jpg",
+        "main_accords": {
+            "rose": 100.0,
+            "fruity": 77.3529,
+            "sweet": 55.1175,
+            "woody": 54.7059,
+            "musky": 54.7059,
+            "powdery": 50.9999,
+            "floral": 49.7646
+        },
+        "notes": {
+            "Top Notes": [
+                "Litchi",
+                "Raspberry",
+                "Pear"
+            ],
+            "Middle Notes": [
+                "Rose",
+                "Cedar",
+                "White Blossom"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Sandalwood"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 54.1667,
+            "fall": 54.1667,
+            "winter": 54.1667,
+            "day": 91.6667,
+            "night": 37.5
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 2,
+                "weak": 2,
+                "moderate": 15,
+                "long lasting": 4,
+                "eternal": 5
+            },
+            "SILLAGE": {
+                "intimate": 2,
+                "moderate": 14,
+                "strong": 4,
+                "enormous": 8
+            },
+            "GENDER": {
+                "female": 24,
+                "more female": 4,
+                "unisex": 0,
+                "more male": 0,
+                "male": 1
+            },
+            "PRICE VALUE": {
+                "way overpriced": 4,
+                "overpriced": 3,
+                "ok": 15,
+                "good value": 2,
+                "great value": 2
+            }
+        }
+    },
+    {
+        "perfume_name": "I Want Choo Forever",
+        "brand_name": "Jimmy Choo",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.75969.jpg",
+        "main_accords": {
+            "vanilla": 100.0,
+            "sweet": 88.6458,
+            "almond": 76.9663,
+            "cherry": 73.4009,
+            "amber": 67.5106,
+            "nutty": 65.1239,
+            "rose": 61.1558,
+            "fruity": 58.9084,
+            "earthy": 54.9403,
+            "aromatic": 53.9171
+        },
+        "notes": {
+            "Top Notes": [
+                "Bitter Almond",
+                "Rose"
+            ],
+            "Middle Notes": [
+                "Cherry",
+                "Jasmine",
+                "Vetiver"
+            ],
+            "Base Notes": [
+                "Vanilla",
+                "Tonka Bean",
+                "Amber",
+                "Oakmoss"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 48.4375,
+            "summer": 29.5139,
+            "fall": 100.0,
+            "winter": 94.4444,
+            "day": 61.8056,
+            "night": 99.6528
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 17,
+                "weak": 64,
+                "moderate": 395,
+                "long lasting": 251,
+                "eternal": 52
+            },
+            "SILLAGE": {
+                "intimate": 64,
+                "moderate": 440,
+                "strong": 201,
+                "enormous": 34
+            },
+            "GENDER": {
+                "female": 597,
+                "more female": 139,
+                "unisex": 44,
+                "more male": 4,
+                "male": 2
+            },
+            "PRICE VALUE": {
+                "way overpriced": 29,
+                "overpriced": 83,
+                "ok": 362,
+                "good value": 207,
+                "great value": 48
+            }
+        }
+    },
+    {
+        "perfume_name": "Jimmy Choo Man Aqua",
+        "brand_name": "Jimmy Choo",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.73399.jpg",
+        "main_accords": {
+            "aromatic": 100.0,
+            "marine": 73.2608,
+            "warm spicy": 64.4025,
+            "citrus": 58.0164,
+            "earthy": 52.578,
+            "patchouli": 51.8365,
+            "mossy": 49.7762,
+            "woody": 49.0347,
+            "soft spicy": 48.9729,
+            "salty": 47.3043
+        },
+        "notes": {
+            "Top Notes": [
+                "Grapefruit",
+                "Cardamom"
+            ],
+            "Middle Notes": [
+                "Sea water",
+                "Clary Sage"
+            ],
+            "Base Notes": [
+                "Patchouli",
+                "Moss"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 80.0,
+            "summer": 100.0,
+            "fall": 24.6875,
+            "winter": 13.125,
+            "day": 86.875,
+            "night": 20.0
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 29,
+                "weak": 72,
+                "moderate": 204,
+                "long lasting": 30,
+                "eternal": 6
+            },
+            "SILLAGE": {
+                "intimate": 92,
+                "moderate": 195,
+                "strong": 30,
+                "enormous": 6
+            },
+            "GENDER": {
+                "female": 6,
+                "more female": 1,
+                "unisex": 20,
+                "more male": 122,
+                "male": 196
+            },
+            "PRICE VALUE": {
+                "way overpriced": 20,
+                "overpriced": 24,
+                "ok": 102,
+                "good value": 136,
+                "great value": 38
+            }
+        }
+    },
+    {
+        "perfume_name": "Urban Hero Gold Edition",
+        "brand_name": "Jimmy Choo",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.68360.jpg",
+        "main_accords": {
+            "sweet": 100.0,
+            "fruity": 88.4771,
+            "citrus": 75.6855,
+            "vanilla": 64.8221,
+            "lavender": 63.5026,
+            "aromatic": 60.6597,
+            "woody": 58.8326,
+            "tropical": 57.4111,
+            "amber": 54.873,
+            "warm spicy": 49.2892
+        },
+        "notes": {
+            "Top Notes": [
+                "Pineapple",
+                "Blood Orange"
+            ],
+            "Middle Notes": [
+                "Tonka Bean",
+                "Lavender"
+            ],
+            "Base Notes": [
+                "Sandalwood",
+                "Oakmoss"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 86.3248,
+            "summer": 60.6838,
+            "fall": 100.0,
+            "winter": 71.7949,
+            "day": 89.7436,
+            "night": 82.906
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 7,
+                "weak": 31,
+                "moderate": 93,
+                "long lasting": 28,
+                "eternal": 3
+            },
+            "SILLAGE": {
+                "intimate": 39,
+                "moderate": 85,
+                "strong": 19,
+                "enormous": 4
+            },
+            "GENDER": {
+                "female": 1,
+                "more female": 0,
+                "unisex": 21,
+                "more male": 52,
+                "male": 91
+            },
+            "PRICE VALUE": {
+                "way overpriced": 3,
+                "overpriced": 15,
+                "ok": 69,
+                "good value": 48,
+                "great value": 17
+            }
+        }
+    },
+    {
+        "perfume_name": "Jimmy Choo Rose Passion",
+        "brand_name": "Jimmy Choo",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.79659.jpg",
+        "main_accords": {
+            "floral": 100.0,
+            "tropical": 84.2308,
+            "vanilla": 75.5127,
+            "coconut": 74.8717,
+            "lactonic": 69.9359,
+            "sweet": 62.0511,
+            "white floral": 57.8844,
+            "powdery": 55.8011,
+            "woody": 50.8333,
+            "citrus": 45.2884
+        },
+        "notes": {
+            "Top Notes": [
+                "Frangipani",
+                "Jasmine"
+            ],
+            "Middle Notes": [
+                "Coconut Milk",
+                "Orchid"
+            ],
+            "Base Notes": [
+                "Vanilla",
+                "Sandalwood"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 76.8559,
+            "summer": 100.0,
+            "fall": 30.131,
+            "winter": 18.3406,
+            "day": 96.0699,
+            "night": 39.3013
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 10,
+                "weak": 51,
+                "moderate": 158,
+                "long lasting": 37,
+                "eternal": 2
+            },
+            "SILLAGE": {
+                "intimate": 45,
+                "moderate": 174,
+                "strong": 33,
+                "enormous": 2
+            },
+            "GENDER": {
+                "female": 238,
+                "more female": 28,
+                "unisex": 13,
+                "more male": 0,
+                "male": 2
+            },
+            "PRICE VALUE": {
+                "way overpriced": 9,
+                "overpriced": 29,
+                "ok": 134,
+                "good value": 67,
+                "great value": 12
+            }
+        }
+    }
+]

@@ -1,0 +1,694 @@
+[
+    {
+        "perfume_name": "Daisy Love",
+        "brand_name": "Marc Jacobs",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.49108.jpg",
+        "main_accords": {
+            "fruity": 100.0,
+            "musky": 90.7088,
+            "floral": 68.6425,
+            "aromatic": 65.0,
+            "woody": 63.7858,
+            "sweet": 61.8327,
+            "powdery": 60.3544,
+            "marine": 51.1162,
+            "herbal": 49.3215,
+            "green": 46.1011
+        },
+        "notes": {
+            "Top Notes": [
+                "Cloudberry"
+            ],
+            "Middle Notes": [
+                "Daisy"
+            ],
+            "Base Notes": [
+                "Cashmere Musk",
+                "Driftwood"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 93.279,
+            "summer": 80.0407,
+            "fall": 30.8554,
+            "winter": 15.6823,
+            "day": 100.0,
+            "night": 18.7373
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 100,
+                "weak": 290,
+                "moderate": 553,
+                "long lasting": 172,
+                "eternal": 40
+            },
+            "SILLAGE": {
+                "intimate": 373,
+                "moderate": 609,
+                "strong": 132,
+                "enormous": 79
+            },
+            "GENDER": {
+                "female": 838,
+                "more female": 69,
+                "unisex": 9,
+                "more male": 0,
+                "male": 4
+            },
+            "PRICE VALUE": {
+                "way overpriced": 38,
+                "overpriced": 162,
+                "ok": 453,
+                "good value": 162,
+                "great value": 28
+            }
+        }
+    },
+    {
+        "perfume_name": "Daisy Eau So Fresh",
+        "brand_name": "Marc Jacobs",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.10858.jpg",
+        "main_accords": {
+            "fruity": 100.0,
+            "sweet": 65.6754,
+            "green": 64.0367,
+            "floral": 54.6267,
+            "violet": 54.2163,
+            "powdery": 54.024,
+            "fresh": 53.3869,
+            "citrus": 47.5205,
+            "rose": 45.4728
+        },
+        "notes": {
+            "Top Notes": [
+                "Green Notes",
+                "Raspberry",
+                "Pear",
+                "Grapefruit"
+            ],
+            "Middle Notes": [
+                "Violet",
+                "Litchi",
+                "Apple Blossom",
+                "Rose",
+                "Jasmine"
+            ],
+            "Base Notes": [
+                "Musk",
+                "Plum",
+                "Virginia Cedar"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 90.7566,
+            "summer": 80.2087,
+            "fall": 11.8151,
+            "winter": 6.63436,
+            "day": 100.0,
+            "night": 8.64704
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 279,
+                "weak": 726,
+                "moderate": 951,
+                "long lasting": 248,
+                "eternal": 80
+            },
+            "SILLAGE": {
+                "intimate": 976,
+                "moderate": 997,
+                "strong": 230,
+                "enormous": 161
+            },
+            "GENDER": {
+                "female": 1065,
+                "more female": 111,
+                "unisex": 23,
+                "more male": 0,
+                "male": 2
+            },
+            "PRICE VALUE": {
+                "way overpriced": 49,
+                "overpriced": 199,
+                "ok": 574,
+                "good value": 213,
+                "great value": 36
+            }
+        }
+    },
+    {
+        "perfume_name": "Daisy Dream",
+        "brand_name": "Marc Jacobs",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.25289.jpg",
+        "main_accords": {
+            "fruity": 100.0,
+            "floral": 71.3155,
+            "fresh": 67.7034,
+            "sweet": 57.5473,
+            "musky": 48.0385,
+            "white floral": 47.8928,
+            "citrus": 47.5027,
+            "fresh spicy": 46.5721,
+            "tropical": 46.4187,
+            "aquatic": 44.571
+        },
+        "notes": {
+            "Top Notes": [
+                "Blackberry",
+                "Pear",
+                "Grapefruit"
+            ],
+            "Middle Notes": [
+                "Wisteria",
+                "Litchi",
+                "Jasmine"
+            ],
+            "Base Notes": [
+                "Musk",
+                "White Wood",
+                "Coconut Water"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 91.9837,
+            "summer": 80.5707,
+            "fall": 12.3641,
+            "winter": 9.23913,
+            "day": 100.0,
+            "night": 7.88043
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 339,
+                "weak": 467,
+                "moderate": 559,
+                "long lasting": 91,
+                "eternal": 34
+            },
+            "SILLAGE": {
+                "intimate": 752,
+                "moderate": 577,
+                "strong": 123,
+                "enormous": 105
+            },
+            "GENDER": {
+                "female": 737,
+                "more female": 125,
+                "unisex": 25,
+                "more male": 1,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 37,
+                "overpriced": 163,
+                "ok": 403,
+                "good value": 170,
+                "great value": 23
+            }
+        }
+    },
+    {
+        "perfume_name": "Perfect",
+        "brand_name": "Marc Jacobs",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.62021.jpg",
+        "main_accords": {
+            "green": 100.0,
+            "fruity": 98.8511,
+            "almond": 86.9949,
+            "aromatic": 74.5026,
+            "woody": 72.406,
+            "sweet": 70.125,
+            "yellow floral": 66.6732,
+            "nutty": 64.1971,
+            "powdery": 52.4189,
+            "musky": 52.1734
+        },
+        "notes": {
+            "Top Notes": [
+                "Rhubarb",
+                "Narcissus"
+            ],
+            "Middle Notes": [
+                "Almond Milk"
+            ],
+            "Base Notes": [
+                "Cashmeran",
+                "Cedar"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 82.3903,
+            "fall": 32.9943,
+            "winter": 19.0718,
+            "day": 99.1736,
+            "night": 17.9911
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 133,
+                "weak": 350,
+                "moderate": 1038,
+                "long lasting": 195,
+                "eternal": 44
+            },
+            "SILLAGE": {
+                "intimate": 458,
+                "moderate": 1023,
+                "strong": 193,
+                "enormous": 72
+            },
+            "GENDER": {
+                "female": 1410,
+                "more female": 253,
+                "unisex": 68,
+                "more male": 5,
+                "male": 7
+            },
+            "PRICE VALUE": {
+                "way overpriced": 82,
+                "overpriced": 410,
+                "ok": 795,
+                "good value": 203,
+                "great value": 27
+            }
+        }
+    },
+    {
+        "perfume_name": "Daisy",
+        "brand_name": "Marc Jacobs",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.1361.jpg",
+        "main_accords": {
+            "white floral": 100.0,
+            "ozonic": 97.1555,
+            "powdery": 84.1128,
+            "violet": 80.8057,
+            "citrus": 80.1562,
+            "aquatic": 79.4829,
+            "fruity": 69.4028,
+            "sweet": 63.1209,
+            "woody": 60.467,
+            "musky": 59.2581
+        },
+        "notes": {
+            "Top Notes": [
+                "Violet Leaf",
+                "Blood Grapefruit",
+                "Strawberry"
+            ],
+            "Middle Notes": [
+                "Violet",
+                "Gardenia",
+                "Jasmine"
+            ],
+            "Base Notes": [
+                "Musk",
+                "White Woods",
+                "Vanilla"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 89.8008,
+            "summer": 70.7157,
+            "fall": 17.4436,
+            "winter": 9.38936,
+            "day": 100.0,
+            "night": 11.0746
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 387,
+                "weak": 890,
+                "moderate": 1870,
+                "long lasting": 373,
+                "eternal": 111
+            },
+            "SILLAGE": {
+                "intimate": 1262,
+                "moderate": 1832,
+                "strong": 414,
+                "enormous": 196
+            },
+            "GENDER": {
+                "female": 1840,
+                "more female": 260,
+                "unisex": 65,
+                "more male": 5,
+                "male": 1
+            },
+            "PRICE VALUE": {
+                "way overpriced": 100,
+                "overpriced": 412,
+                "ok": 980,
+                "good value": 381,
+                "great value": 51
+            }
+        }
+    },
+    {
+        "perfume_name": "Daisy Love Pop",
+        "brand_name": "Marc Jacobs",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.88687.jpg",
+        "main_accords": {
+            "vanilla": 100.0,
+            "amber": 91.8043,
+            "sweet": 89.6548,
+            "fruity": 81.5932,
+            "woody": 71.3821,
+            "citrus": 67.6201,
+            "aromatic": 67.0825,
+            "lactonic": 62.2457,
+            "musky": 62.2457,
+            "warm spicy": 60.9021
+        },
+        "notes": {
+            "Top Notes": [
+                "Cloudberry",
+                "Bergamot"
+            ],
+            "Middle Notes": [
+                "Whipped Cream",
+                "Pistachio"
+            ],
+            "Base Notes": [
+                "Benzoin",
+                "Musk"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 83.6735,
+            "fall": 46.9388,
+            "winter": 26.5306,
+            "day": 95.9184,
+            "night": 28.5714
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 9,
+                "weak": 8,
+                "moderate": 26,
+                "long lasting": 4,
+                "eternal": 4
+            },
+            "SILLAGE": {
+                "intimate": 20,
+                "moderate": 23,
+                "strong": 4,
+                "enormous": 4
+            },
+            "GENDER": {
+                "female": 49,
+                "more female": 5,
+                "unisex": 1,
+                "more male": 0,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 10,
+                "overpriced": 13,
+                "ok": 23,
+                "good value": 2,
+                "great value": 1
+            }
+        }
+    },
+    {
+        "perfume_name": "Daisy Love Eau So Sweet Petals",
+        "brand_name": "Marc Jacobs",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.60025.jpg",
+        "main_accords": {
+            "sweet": 100.0,
+            "fruity": 87.5656,
+            "iris": 59.9341,
+            "violet": 50.4934,
+            "powdery": 50.2632
+        },
+        "notes": {
+            "Top Notes": [
+                "Raspberry",
+                "Blackberry",
+                "Bergamot"
+            ],
+            "Middle Notes": [
+                "Daisy",
+                "Jasmine"
+            ],
+            "Base Notes": [
+                "Sugar",
+                "White Iris",
+                "Musk",
+                "Woodsy Notes"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 92.3077,
+            "summer": 84.6154,
+            "fall": 53.8462,
+            "winter": 23.0769,
+            "day": 100.0,
+            "night": 23.0769
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 0,
+                "weak": 2,
+                "moderate": 12,
+                "long lasting": 3,
+                "eternal": 2
+            },
+            "SILLAGE": {
+                "intimate": 2,
+                "moderate": 17,
+                "strong": 1,
+                "enormous": 2
+            },
+            "GENDER": {
+                "female": 17,
+                "more female": 0,
+                "unisex": 0,
+                "more male": 0,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 0,
+                "overpriced": 2,
+                "ok": 11,
+                "good value": 4,
+                "great value": 0
+            }
+        }
+    },
+    {
+        "perfume_name": "Daisy Love Skies",
+        "brand_name": "Marc Jacobs",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.71203.jpg",
+        "main_accords": {
+            "sweet": 100.0,
+            "fruity": 96.4852,
+            "salty": 70.1722,
+            "mossy": 60.1294,
+            "vanilla": 59.5266,
+            "floral": 57.1162,
+            "woody": 54.1034,
+            "earthy": 51.0902,
+            "marine": 50.0861,
+            "lactonic": 49.6843
+        },
+        "notes": {
+            "Top Notes": [
+                "Salt",
+                "Cloudberry",
+                "Raspberry"
+            ],
+            "Middle Notes": [
+                "Whipped Cream",
+                "Ambrette (Musk Mallow)",
+                "Daisy"
+            ],
+            "Base Notes": [
+                "Moss",
+                "White Woods",
+                "Amber"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 94.2857,
+            "summer": 100.0,
+            "fall": 21.4286,
+            "winter": 12.8571,
+            "day": 97.1429,
+            "night": 20.0
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 7,
+                "weak": 10,
+                "moderate": 51,
+                "long lasting": 4,
+                "eternal": 0
+            },
+            "SILLAGE": {
+                "intimate": 18,
+                "moderate": 45,
+                "strong": 4,
+                "enormous": 0
+            },
+            "GENDER": {
+                "female": 60,
+                "more female": 12,
+                "unisex": 3,
+                "more male": 0,
+                "male": 1
+            },
+            "PRICE VALUE": {
+                "way overpriced": 3,
+                "overpriced": 22,
+                "ok": 24,
+                "good value": 11,
+                "great value": 2
+            }
+        }
+    },
+    {
+        "perfume_name": "Daisy Ever So Fresh",
+        "brand_name": "Marc Jacobs",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.75191.jpg",
+        "main_accords": {
+            "fruity": 100.0,
+            "sweet": 92.1566,
+            "tropical": 89.8037,
+            "citrus": 72.6191,
+            "white floral": 53.8096,
+            "woody": 48.9356
+        },
+        "notes": {
+            "Top Notes": [
+                "Mango",
+                "Pineapple",
+                "Mandarin Orange"
+            ],
+            "Middle Notes": [
+                "Orange Blossom",
+                "Rose Water"
+            ],
+            "Base Notes": [
+                "Cashmere Wood"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 76.7584,
+            "summer": 100.0,
+            "fall": 14.0673,
+            "winter": 5.8104,
+            "day": 90.2141,
+            "night": 14.0673
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 35,
+                "weak": 71,
+                "moderate": 150,
+                "long lasting": 22,
+                "eternal": 5
+            },
+            "SILLAGE": {
+                "intimate": 74,
+                "moderate": 166,
+                "strong": 31,
+                "enormous": 1
+            },
+            "GENDER": {
+                "female": 254,
+                "more female": 46,
+                "unisex": 12,
+                "more male": 2,
+                "male": 0
+            },
+            "PRICE VALUE": {
+                "way overpriced": 22,
+                "overpriced": 71,
+                "ok": 121,
+                "good value": 29,
+                "great value": 8
+            }
+        }
+    },
+    {
+        "perfume_name": "Perfect Intense",
+        "brand_name": "Marc Jacobs",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.68534.jpg",
+        "main_accords": {
+            "almond": 100.0,
+            "fruity": 85.9361,
+            "nutty": 72.0001,
+            "sweet": 68.4575,
+            "white floral": 64.8936,
+            "yellow floral": 63.3618,
+            "woody": 56.596,
+            "green": 50.8511,
+            "floral": 48.1701
+        },
+        "notes": {
+            "Top Notes": [
+                "Narcissus",
+                "Night Blooming Jasmine"
+            ],
+            "Middle Notes": [
+                "Almond"
+            ],
+            "Base Notes": [
+                "Sandalwood"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 74.6429,
+            "summer": 42.1429,
+            "fall": 100.0,
+            "winter": 71.4286,
+            "day": 93.2143,
+            "night": 62.8571
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 15,
+                "weak": 82,
+                "moderate": 400,
+                "long lasting": 192,
+                "eternal": 32
+            },
+            "SILLAGE": {
+                "intimate": 69,
+                "moderate": 446,
+                "strong": 150,
+                "enormous": 22
+            },
+            "GENDER": {
+                "female": 573,
+                "more female": 134,
+                "unisex": 37,
+                "more male": 2,
+                "male": 2
+            },
+            "PRICE VALUE": {
+                "way overpriced": 43,
+                "overpriced": 150,
+                "ok": 322,
+                "good value": 109,
+                "great value": 15
+            }
+        }
+    }
+]

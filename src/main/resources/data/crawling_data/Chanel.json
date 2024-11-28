@@ -1,0 +1,303 @@
+[
+    {
+        "perfume_name": "coco mademosielle",
+        "brand_name": "Chanel",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.607.jpg",
+        "main_accords": {
+            "citrus": 100.0,
+            "aromatic": 68.281,
+            "vanilla": 67.6239,
+            "aldehydic": 66.7681,
+            "marine": 62.7611,
+            "sweet": 57.9277,
+            "fresh spicy": 53.6118,
+            "fresh": 51.7753,
+            "amber": 49.236,
+            "powdery": 45.8741
+        },
+        "notes": {
+            "Top Notes": [
+                "Orange",
+                "Sea Notes",
+                "Aldehydes",
+                "Blood Mandarin"
+            ],
+            "Middle Notes": [
+                "Pepper",
+                "Neroli",
+                "Cedar"
+            ],
+            "Base Notes": [
+                "Vanilla",
+                "Tonka Bean",
+                "White Musk",
+                "Amber",
+                "Vetiver",
+                "Elemi resin"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 85.3775,
+            "summer": 98.1039,
+            "fall": 40.2631,
+            "winter": 18.8247,
+            "day": 100.0,
+            "night": 34.7113
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 238,
+                "weak": 562,
+                "moderate": 2835,
+                "long lasting": 2123,
+                "eternal": 360
+            },
+            "SILLAGE": {
+                "intimate": 704,
+                "moderate": 3738,
+                "strong": 1452,
+                "enormous": 430
+            },
+            "GENDER": {
+                "female": 25,
+                "more female": 9,
+                "unisex": 258,
+                "more male": 1104,
+                "male": 2056
+            },
+            "PRICE VALUE": {
+                "way overpriced": 368,
+                "overpriced": 1126,
+                "ok": 1352,
+                "good value": 281,
+                "great value": 68
+            }
+        }
+    },
+    {
+        "perfume_name": "Chanel No 5 Eau de Toilette",
+        "brand_name": "Chanel",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.10856.jpg",
+        "main_accords": {
+            "woody": 100.0,
+            "powdery": 96.9975,
+            "aldehydic": 83.8801,
+            "fresh": 80.808,
+            "iris": 78.1665,
+            "earthy": 76.1026,
+            "white floral": 74.3683,
+            "citrus": 72.5509,
+            "musky": 72.2681,
+            "yellow floral": 66.3137
+        },
+        "notes": {
+            "Top Notes": [
+                "Aldehydes",
+                "Ylang-Ylang",
+                "Neroli",
+                "Amalfi Lemon",
+                "Bergamot"
+            ],
+            "Middle Notes": [
+                "Iris",
+                "Jasmine",
+                "Rose",
+                "Orris Root",
+                "Lily-of-the-Valley"
+            ],
+            "Base Notes": [
+                "Civetta",
+                "Musk",
+                "Sandalwood",
+                "oak moss",
+                "Vetiver",
+                "Amber",
+                "Vanille",
+                "Patchouli"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 73.7945,
+            "summer": 47.659,
+            "fall": 100.0,
+            "winter": 93.9203,
+            "day": 97.6939,
+            "night": 90.2865
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 74,
+                "weak": 172,
+                "moderate": 687,
+                "long lasting": 415,
+                "eternal": 194
+            },
+            "SILLAGE": {
+                "intimate": 224,
+                "moderate": 884,
+                "strong": 398,
+                "enormous": 177
+            },
+            "GENDER": {
+                "female": 418,
+                "more female": 178,
+                "unisex": 193,
+                "more male": 6,
+                "male": 4
+            },
+            "PRICE VALUE": {
+                "way overpriced": 69,
+                "overpriced": 164,
+                "ok": 349,
+                "good value": 64,
+                "great value": 28
+            }
+        }
+    },
+    {
+        "perfume_name": "Gabrielle Parfum Chanel",
+        "brand_name": "Chanel",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.75185.jpg",
+        "main_accords": {
+            "white floral": 100.0,
+            "tuberose": 57.744,
+            "woody": 53.5609,
+            "yellow floral": 52.622,
+            "sweet": 52.3657,
+            "vanilla": 50.061,
+            "animalic": 44.2346
+        },
+        "notes": {
+            "Top Notes": [],
+            "Middle Notes": [],
+            "Base Notes": [],
+            "Undefineded": [
+                "Tuberose",
+                "Jasmine",
+                "Orange Blossom",
+                "Ylang-Ylang",
+                "Vanilla Absolute",
+                "Sandalwood"
+            ]
+        },
+        "season_data": {
+            "spring": 100.0,
+            "summer": 62.1118,
+            "fall": 100.0,
+            "winter": 75.7764,
+            "day": 93.1677,
+            "night": 83.2298
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 6,
+                "weak": 23,
+                "moderate": 126,
+                "long lasting": 85,
+                "eternal": 26
+            },
+            "SILLAGE": {
+                "intimate": 25,
+                "moderate": 150,
+                "strong": 57,
+                "enormous": 13
+            },
+            "GENDER": {
+                "female": 240,
+                "more female": 39,
+                "unisex": 12,
+                "more male": 3,
+                "male": 1
+            },
+            "PRICE VALUE": {
+                "way overpriced": 37,
+                "overpriced": 83,
+                "ok": 105,
+                "good value": 26,
+                "great value": 7
+            }
+        }
+    },
+    {
+        "perfume_name": "Coco Eau de Parfum",
+        "brand_name": "Chanel",
+        "image_src": "https://fimgs.net/mdimg/perfume/375x500.609.jpg",
+        "main_accords": {
+            "amber": 100.0,
+            "warm spicy": 76.9446,
+            "sweet": 69.1158,
+            "powdery": 66.879,
+            "woody": 58.1312,
+            "vanilla": 57.3696,
+            "white floral": 56.2659,
+            "rose": 55.7003,
+            "floral": 54.3009,
+            "animalic": 52.6413
+        },
+        "notes": {
+            "Top Notes": [
+                "Bulgarian Rose",
+                "Coriander",
+                "Peach",
+                "Jasmine",
+                "Mandarin Orange"
+            ],
+            "Middle Notes": [
+                "Cloves",
+                "Rose",
+                "Orange Blossom",
+                "Mimosa",
+                "Clover"
+            ],
+            "Base Notes": [
+                "Amber",
+                "Sandalwood",
+                "Tonka Bean",
+                "Opoponax",
+                "Civet",
+                "Vanilla",
+                "Labdanum"
+            ],
+            "Undefineded": []
+        },
+        "season_data": {
+            "spring": 29.2181,
+            "summer": 19.1872,
+            "fall": 89.4547,
+            "winter": 97.5823,
+            "day": 54.784,
+            "night": 100.0
+        },
+        "perfume_properties": {
+            "LONGEVITY": {
+                "very weak": 90,
+                "weak": 163,
+                "moderate": 592,
+                "long lasting": 1627,
+                "eternal": 1323
+            },
+            "SILLAGE": {
+                "intimate": 231,
+                "moderate": 1020,
+                "strong": 1957,
+                "enormous": 919
+            },
+            "GENDER": {
+                "female": 942,
+                "more female": 296,
+                "unisex": 225,
+                "more male": 13,
+                "male": 10
+            },
+            "PRICE VALUE": {
+                "way overpriced": 100,
+                "overpriced": 300,
+                "ok": 707,
+                "good value": 168,
+                "great value": 68
+            }
+        }
+    }
+]
