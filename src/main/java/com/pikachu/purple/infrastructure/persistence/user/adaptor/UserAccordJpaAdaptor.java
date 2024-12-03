@@ -1,10 +1,9 @@
 package com.pikachu.purple.infrastructure.persistence.user.adaptor;
 
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.AccordNotFountException;
+import static com.pikachu.purple.bootstrap.common.exception.BusinessException.UserNotFoundException;
 
 import com.pikachu.purple.application.user.port.out.UserAccordRepository;
-import com.pikachu.purple.bootstrap.common.exception.BusinessException;
-import com.pikachu.purple.bootstrap.common.exception.ErrorCode;
 import com.pikachu.purple.domain.user.UserAccord;
 import com.pikachu.purple.infrastructure.persistence.accord.entity.AccordJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.accord.repository.AccordJpaRepository;
@@ -28,21 +27,27 @@ public class UserAccordJpaAdaptor implements UserAccordRepository {
     @Override
     public void createAll(Long userId, List<UserAccord> userAccords) {
         UserJpaEntity userJpaEntity = userJpaRepository.findById(userId)
-            .orElseThrow(() -> new BusinessException(ErrorCode.USER_NOT_FOUND));
+            .orElseThrow(() -> UserNotFoundException);
 
-        List<UserAccordJpaEntity> userAccordJpaEntities = userAccords.stream()
-            .map(userAccord -> {
-                AccordJpaEntity accordJpaEntity = accordJpaRepository.findByName(userAccord.getName())
-                    .orElseThrow(() -> AccordNotFountException);
+        userAccords.forEach(userAccord -> {
+            AccordJpaEntity accordJpaEntity = accordJpaRepository.findByName(userAccord.getName())
+                .orElseThrow(() -> AccordNotFountException);
 
-                return UserAccordJpaEntity.builder()
+            UserAccordJpaEntity existingEntity = userAccordJpaRepository.findByUserIdAndAccord(
+                userId, accordJpaEntity
+            ).orElse(null);
+
+            if (existingEntity != null) {
+                existingEntity.addScore(userAccord.getScore());
+            } else {
+                UserAccordJpaEntity newEntity = UserAccordJpaEntity.builder()
                     .userJpaEntity(userJpaEntity)
                     .accordJpaEntity(accordJpaEntity)
                     .score(userAccord.getScore())
                     .build();
-            }).toList();
-
-        userAccordJpaRepository.saveAll(userAccordJpaEntities);
+                userAccordJpaRepository.save(newEntity);
+            }
+        });
     }
 
     @Override

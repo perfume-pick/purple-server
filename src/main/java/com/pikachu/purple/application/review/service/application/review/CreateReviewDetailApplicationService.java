@@ -4,6 +4,7 @@ import com.pikachu.purple.application.review.port.in.review.CreateReviewDetailUs
 import com.pikachu.purple.application.review.port.in.reviewevaluation.CreateReviewEvaluationUseCase;
 import com.pikachu.purple.application.review.port.in.starrating.CreateOrUpdateStarRatingUseCase;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
+import com.pikachu.purple.application.user.port.in.useraccord.CreateUserAccordUseCase;
 import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.StarRating;
@@ -20,11 +21,11 @@ public class CreateReviewDetailApplicationService implements CreateReviewDetailU
     private final ReviewDomainService reviewDomainService;
     private final CreateOrUpdateStarRatingUseCase createOrUpdateStarRatingUseCase;
     private final CreateReviewEvaluationUseCase createReviewEvaluationUseCase;
+    private final CreateUserAccordUseCase createUserAccordUseCase;
 
     @Transactional
     @Override
     public void invoke(Command command) {
-
         CreateOrUpdateStarRatingUseCase.Result starRatingResult = createOrUpdateStarRatingUseCase.invoke(
             new CreateOrUpdateStarRatingUseCase.Command(
                 command.perfumeId(),
@@ -55,6 +56,7 @@ public class CreateReviewDetailApplicationService implements CreateReviewDetailU
             )
         );
 
+        createUserAccordUseCase.invoke(new CreateUserAccordUseCase.Command(perfume.getId()));
     }
 
 }

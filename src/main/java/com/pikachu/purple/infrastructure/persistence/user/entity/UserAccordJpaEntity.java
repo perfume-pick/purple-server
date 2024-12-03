@@ -1,8 +1,5 @@
 package com.pikachu.purple.infrastructure.persistence.user.entity;
 
-import com.pikachu.purple.domain.perfume.Brand;
-import com.pikachu.purple.domain.perfume.Note;
-import com.pikachu.purple.domain.perfume.enums.NoteType;
 import com.pikachu.purple.domain.user.UserAccord;
 import com.pikachu.purple.infrastructure.persistence.accord.entity.AccordJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.user.entity.id.UserAccordId;
@@ -48,6 +45,10 @@ public class UserAccordJpaEntity {
         domain.setUser(UserJpaEntity.toDummy(jpaEntity.getUserJpaEntity()));
 
         return domain;
+    }
+
+    public void addScore(double newScore) {
+        this.score = this.score + newScore;
     }
 
 }

@@ -134,7 +134,7 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
             perfumeId
         );
 
-        return findResult.map(StarRatingJpaEntity::toDomain).orElse(null);
+        return findResult.map(StarRatingJpaEntity::toDomainWithPerfumeAccord).orElse(null);
     }
 
     @Override
