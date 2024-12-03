@@ -19,7 +19,6 @@ public class CreateStarRatingApplicationService implements CreateStarRatingUseCa
 
     @Transactional
     @Override
-
     public Result invoke(Command command) {
         Long userId = getCurrentUserAuthentication().userId();
 
@@ -37,7 +36,6 @@ public class CreateStarRatingApplicationService implements CreateStarRatingUseCa
         );
 
         return new Result(starRating);
-
     }
 
 }

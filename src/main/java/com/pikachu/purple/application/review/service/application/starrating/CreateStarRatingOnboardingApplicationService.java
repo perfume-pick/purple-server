@@ -5,7 +5,7 @@ import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUse
 import com.pikachu.purple.application.review.port.in.starrating.CreateStarRatingOnboardingUseCase;
 import com.pikachu.purple.application.review.service.domain.StarRatingDomainService;
 import com.pikachu.purple.application.statistic.port.in.starratingstatistic.IncreaseStarRatingStatisticsUseCase;
-import com.pikachu.purple.application.user.port.in.useraccord.CreateUserAccordUseCase;
+import com.pikachu.purple.application.user.port.in.useraccord.CreateUserAccordOnboardingUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class CreateStarRatingOnboardingApplicationService implements
     CreateStarRatingOnboardingUseCase {
 
-    private final CreateUserAccordUseCase createUserAccordUseCase;
+    private final CreateUserAccordOnboardingUseCase createUserAccordOnboardingUseCase;
     private final StarRatingDomainService starRatingDomainService;
     private final IncreaseStarRatingStatisticsUseCase increaseStarRatingStatisticsUseCase;
 
@@ -35,7 +35,7 @@ public class CreateStarRatingOnboardingApplicationService implements
             )
         );
 
-        createUserAccordUseCase.invoke();
+        createUserAccordOnboardingUseCase.invoke();
     }
 
 }
