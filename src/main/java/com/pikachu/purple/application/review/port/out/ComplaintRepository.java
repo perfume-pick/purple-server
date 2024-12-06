@@ -8,7 +8,7 @@ public interface ComplaintRepository {
 
     Complaint find(Long complaintId, String token);
 
-    void find(Long userId, Long complaintId);
+    Complaint find(Long userId, Long reviewId);
 
     void delete(Long complaintId);
 

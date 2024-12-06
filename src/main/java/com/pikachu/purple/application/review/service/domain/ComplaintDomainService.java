@@ -14,9 +14,9 @@ public interface ComplaintDomainService {
         String token
     );
 
-    void find(
+    Complaint find(
         Long userId,
-        Long complaintId
+        Long reviewId
     );
 
     void delete(Long complaintId);
