@@ -62,17 +62,16 @@ public class ComplaintJpaAdaptor implements ComplaintRepository {
     }
 
     @Override
-    public void find(
+    public Complaint find(
         Long userId,
-        Long complaintId
+        Long reviewId
     ) {
-        complaintJpaRepository.findByIdAndUserId(
-            complaintId,
+        ComplaintJpaEntity complaintJpaEntity = complaintJpaRepository.findByReviewIdAndUserId(
+            reviewId,
             userId
-        ).ifPresentOrElse(
-            complaint -> {},
-            () -> {throw ComplaintNotFoundException;}
-        );
+        ).orElseThrow(() -> ComplaintNotFoundException);
+
+        return ComplaintJpaEntity.toDomain(complaintJpaEntity);
     }
 
     @Override

@@ -42,13 +42,13 @@ public class ComplaintDomainServiceImpl implements ComplaintDomainService {
     }
 
     @Override
-    public void find(
+    public Complaint find(
         Long userId,
-        Long complaintId
+        Long reviewId
     ) {
-        complaintRepository.find(
+        return complaintRepository.find(
             userId,
-            complaintId
+            reviewId
         );
     }
 

@@ -4,6 +4,7 @@ import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUse
 
 import com.pikachu.purple.application.review.port.in.complaint.DeleteComplaintUseCase;
 import com.pikachu.purple.application.review.service.domain.ComplaintDomainService;
+import com.pikachu.purple.domain.review.Complaint;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -17,12 +18,12 @@ public class DeleteComplaintApplicationService implements DeleteComplaintUseCase
     public void invoke(Command command) {
         Long userId = getCurrentUserAuthentication().userId();
 
-        complaintDomainService.find(
+        Complaint complaint = complaintDomainService.find(
             userId,
-            command.complaintId()
+            command.reviewId()
         );
 
-        complaintDomainService.delete(command.complaintId());
+        complaintDomainService.delete(complaint.getId());
     }
 
 }

@@ -11,7 +11,7 @@ public interface ComplaintJpaRepository extends JpaRepository<ComplaintJpaEntity
 
     @Query("select cp "
         + "from ComplaintJpaEntity cp "
-        + "where cp.id = :complaintId and cp.userJpaEntity.id = :userId")
-    Optional<ComplaintJpaEntity> findByIdAndUserId(Long complaintId, Long userId);
+        + "where cp.reviewJpaEntity.id = :reviewId and cp.userJpaEntity.id = :userId")
+    Optional<ComplaintJpaEntity> findByReviewIdAndUserId(Long reviewId, Long userId);
 
 }
