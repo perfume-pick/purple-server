@@ -220,12 +220,12 @@ public class ReviewJpaAdaptor implements ReviewRepository {
         Long userId,
         Long perfumeId
     ) {
-        ReviewJpaEntity reviewJpaEntity = reviewJpaRepository.findByUserIdAndPerfumeId(
+        return reviewJpaRepository.findByUserIdAndPerfumeId(
             userId,
             perfumeId
-        ).orElseThrow(() -> ReviewNotFoundException);
-
-        return ReviewJpaEntity.toDomainWithEvaluationAndMoods(reviewJpaEntity);
+        )
+            .map(ReviewJpaEntity::toDomainWithEvaluationAndMoods)
+            .orElse(null);
     }
 
     @Override

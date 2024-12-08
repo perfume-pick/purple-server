@@ -33,31 +33,33 @@ public class GetReviewByPerfumeIdAndUserApplicationService implements
         );
 
         ReviewByUserDTO reviewByUserDTO;
-        if(review.getType() == ReviewType.SIMPLE) {
-            reviewByUserDTO = ReviewByUserDTO.from(review);
-        }
+        if (review != null) {
+            if (review.getType() == ReviewType.SIMPLE) {
+                reviewByUserDTO = ReviewByUserDTO.from(review);
+            } else {
+                List<ReviewEvaluationFieldDTO> reviewEvaluation = review.getEvaluation()
+                    .getFields(review.getId()).stream()
+                    .map(fieldType ->
+                        ReviewEvaluationFieldDTO.of(
+                            fieldType,
+                            review.getEvaluation().getOptions(review.getId(), fieldType).stream()
+                                .map(ReviewEvaluationOptionDTO::of)
+                                .toList()
+                        )
+                    ).toList();
 
-        else {
-            List<ReviewEvaluationFieldDTO> reviewEvaluation = review.getEvaluation()
-                .getFields(review.getId()).stream()
-                .map(fieldType ->
-                    ReviewEvaluationFieldDTO.of(
-                        fieldType,
-                        review.getEvaluation().getOptions(review.getId(), fieldType).stream()
-                            .map(ReviewEvaluationOptionDTO::of)
-                            .toList()
-                    )
-                ).toList();
+                List<String> moodNames = review.getMoods().stream()
+                    .map(Mood::getName)
+                    .toList();
 
-            List<String> moodNames = review.getMoods().stream()
-                .map(Mood::getName)
-                .toList();
-
-            reviewByUserDTO = ReviewByUserDTO.of(
-                review,
-                reviewEvaluation,
-                moodNames
-            );
+                reviewByUserDTO = ReviewByUserDTO.of(
+                    review,
+                    reviewEvaluation,
+                    moodNames
+                );
+            }
+        } else {
+            reviewByUserDTO = ReviewByUserDTO.empty();
         }
 
         return new Result(reviewByUserDTO);
