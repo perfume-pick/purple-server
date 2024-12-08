@@ -40,4 +40,15 @@ public record ReviewByUserDTO(
         );
     }
 
+    public static ReviewByUserDTO empty() {
+        return new ReviewByUserDTO(
+            null,
+            null,
+            0,
+            null,
+            List.of(),
+            List.of()
+        );
+    }
+
 }
