@@ -14,6 +14,7 @@ public class Perfume {
 
     private Long id;
     private String name;
+    private String koreanName;
     private String imageUrl;
     // TODO: averageScore 관련 로직 리팩토링 후 제거
     @Setter
@@ -26,12 +27,14 @@ public class Perfume {
     public Perfume(
         Long id,
         String name,
+        String koreanName,
         String imageUrl,
         double averageScore,
         Brand brand
     ) {
         this.id = id;
         this.name = name;
+        this.koreanName = koreanName;
         this.imageUrl = imageUrl;
         this.averageScore = averageScore;
         this.brand = brand;

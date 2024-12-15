@@ -23,9 +23,13 @@ public class AccordJpaEntity {
     @Column(name = "accord_name")
     private String name;
 
+    @Column(name = "accord_korean_name")
+    private String koreanName;
+
     public static AccordJpaEntity toJpaEntity(Accord domain) {
         return AccordJpaEntity.builder()
             .name(domain.getName())
+            .koreanName(domain.getKoreanName())
             .build();
     }
 

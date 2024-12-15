@@ -33,6 +33,9 @@ public class PerfumeJpaEntity {
     @Column(name = "perfume_name", nullable = false)
     private String name;
 
+    @Column(name = "perfume_korean_name", nullable = false)
+    private String koreanName;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "brand_name")
     private BrandJpaEntity brandJpaEntity;
@@ -51,6 +54,7 @@ public class PerfumeJpaEntity {
         return new Perfume(
             jpaEntity.getId(),
             jpaEntity.getName(),
+            jpaEntity.getKoreanName(),
             jpaEntity.getImageUrl(),
             jpaEntity.getAverageScore(),
             BrandJpaEntity.toDomain(jpaEntity.getBrandJpaEntity())

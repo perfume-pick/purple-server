@@ -16,9 +16,10 @@ public class UserAccord extends Accord {
 
     public UserAccord(
         String name,
+        String koreanName,
         double score
     ) {
-        super(name);
+        super(name, koreanName);
         this.score = score;
     }
 

@@ -19,6 +19,9 @@ public class BrandJpaEntity {
     @Column(name = "brand_name")
     private String name;
 
+    @Column(name = "brand_korean_name")
+    private String koreaName;
+
     @Column(name = "image_url")
     private String imageUrl;
 
@@ -28,6 +31,7 @@ public class BrandJpaEntity {
     public static Brand toDomain(BrandJpaEntity jpaEntity) {
         return new Brand(
             jpaEntity.getName(),
+            jpaEntity.getKoreaName(),
             jpaEntity.getImageUrl(),
             jpaEntity.getOrder()
         );
