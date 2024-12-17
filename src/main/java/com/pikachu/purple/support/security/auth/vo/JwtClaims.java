@@ -72,8 +72,8 @@ public class JwtClaims {
         public RegisteredClaims(String sub, Date exp, Date iat, Date nbf, String iss, List<String> aud, String jti) {
             this.sub = sub;
             this.exp = Date.from(Instant.now().plusSeconds(DEFAULT_EXPIRATION_TIME_SEC));
-            this.iat = Date.from(Instant.now());
-            this.nbf = Date.from(Instant.now());
+            this.iat = iat;
+            this.nbf = nbf;
             this.iss = iss;
             this.aud = aud;
             this.jti = jti;
