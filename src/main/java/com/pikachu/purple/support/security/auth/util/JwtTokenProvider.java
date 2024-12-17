@@ -17,9 +17,15 @@ import com.pikachu.purple.support.security.auth.vo.JwtClaims;
 import java.net.URL;
 import java.security.interfaces.ECPublicKey;
 import java.security.interfaces.RSAPublicKey;
+import java.time.Clock;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+@Slf4j
 @Component
 public class JwtTokenProvider {
 
@@ -98,6 +104,12 @@ public class JwtTokenProvider {
             DecodedJWT decodedJWT = JWT.require(algorithm).build().verify(token);
             return JwtClaims.from(decodedJWT);
         } catch (TokenExpiredException e) {
+            log.info("ERROR OCCURRED!! time: {}", Date.from(Instant.now()));
+            DecodedJWT decodedJWT = decodeToken(token);
+            log.info("userId>>> {}", decodedJWT.getClaim("userId").asString());
+            log.info("email>>> {}", decodedJWT.getClaim("email").asString());
+            log.info("exp>>> {}", decodedJWT.getClaim("exp").asInstant().toString());
+            log.info("now>>> {}", Clock.systemUTC().instant().truncatedTo(ChronoUnit.SECONDS));
             throw new BusinessException(ErrorCode.JWT_EXPIRED_EXCEPTION);
         } catch (Exception e) {
             throw new BusinessException(JWT_VERIFICATION_EXCEPTION);
