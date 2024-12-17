@@ -126,7 +126,7 @@ public class UserTokenServiceImpl implements UserTokenService {
             jwtTokenProperties.getAccess().expireSeconds()
         );
 
-        return jwtTokenProvider.createToken(jwtClaims, jwtTokenProperties.getAccess().secret());
+        return accessToken;
     }
 
     @Override
