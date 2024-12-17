@@ -40,6 +40,7 @@ public class UserAccordJpaEntity {
     public static UserAccord toDomain(UserAccordJpaEntity jpaEntity) {
         UserAccord domain = new UserAccord(
             jpaEntity.getAccordJpaEntity().getName(),
+            jpaEntity.getAccordJpaEntity().getKoreanName(),
             jpaEntity.getScore()
         );
         domain.setUser(UserJpaEntity.toDummy(jpaEntity.getUserJpaEntity()));

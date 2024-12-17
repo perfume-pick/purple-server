@@ -10,9 +10,10 @@ public class PerfumeAccord extends Accord {
 
     public PerfumeAccord(
         String name,
+        String koreanName,
         int value
     ) {
-        super(name);
+        super(name, koreanName);
         this.value = value;
     }
 

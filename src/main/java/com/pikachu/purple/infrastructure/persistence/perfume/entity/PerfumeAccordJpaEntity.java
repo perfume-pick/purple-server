@@ -38,6 +38,7 @@ public class PerfumeAccordJpaEntity {
     public static PerfumeAccord toDomain(PerfumeAccordJpaEntity jpaEntity) {
         return new PerfumeAccord(
             jpaEntity.getAccordJpaEntity().getName(),
+            jpaEntity.getAccordJpaEntity().getKoreanName(),
             jpaEntity.getValue()
         );
     }

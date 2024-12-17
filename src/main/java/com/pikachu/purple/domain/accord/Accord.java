@@ -8,9 +8,14 @@ import lombok.experimental.SuperBuilder;
 public class Accord {
 
     private final String name;
+    private final String koreanName;
 
-    public Accord(String name) {
+    public Accord(
+        String name,
+        String koreanName
+    ) {
         this.name = name;
+        this.koreanName = koreanName;
     }
 
 }

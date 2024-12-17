@@ -21,7 +21,7 @@ public class GetPerfumesByBrandsApplicationService implements GetPerfumesByBrand
         List<Perfume> perfumes = perfumeDomainService.findAllByBrandNames(command.brandNames());
 
         Map<String, List<Perfume>> perfumesByBrand = perfumes.stream()
-            .collect(Collectors.groupingBy(perfume -> perfume.getBrand().getName()));
+            .collect(Collectors.groupingBy(perfume -> perfume.getBrand().getKoreanName()));
 
         List<BrandPerfumesDTO> brandPerfumesDTOs = perfumesByBrand.entrySet().stream()
             .map(entry -> BrandPerfumesDTO.of(

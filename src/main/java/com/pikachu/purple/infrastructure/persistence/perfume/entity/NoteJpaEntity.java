@@ -33,6 +33,9 @@ public class NoteJpaEntity {
     @Column(name = "note_name", nullable = false)
     private String name;
 
+    @Column(name = "note_korean_name", nullable = false)
+    private String koreanName;
+
     @Enumerated(EnumType.STRING)
     @Column(
         name = "note_type",
@@ -44,6 +47,7 @@ public class NoteJpaEntity {
     public static Note toDomain(NoteJpaEntity jpaEntity) {
         return new Note(
             jpaEntity.getName(),
+            jpaEntity.getKoreanName(),
             jpaEntity.getType()
         );
     }
