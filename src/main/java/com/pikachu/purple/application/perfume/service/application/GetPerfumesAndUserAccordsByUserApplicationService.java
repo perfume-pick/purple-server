@@ -69,7 +69,7 @@ public class GetPerfumesAndUserAccordsByUserApplicationService implements
         List<RecommendedPerfumeDTO> recommendedPerfumeDTOs = perfumes.stream()
             .map(perfume -> {
                 List<String> matchAccords = perfume.getAccords().stream()
-                    .map(Accord::getName)
+                    .map(Accord::getKoreanName)
                     .filter(topThreeUserAccordNames::contains)
                     .toList();
 

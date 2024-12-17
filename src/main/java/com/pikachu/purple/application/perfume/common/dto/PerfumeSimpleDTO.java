@@ -13,9 +13,9 @@ public record PerfumeSimpleDTO(
     public static PerfumeSimpleDTO from(Perfume perfume) {
         return new PerfumeSimpleDTO(
             IdUtil.toString(perfume.getId()),
-            perfume.getName(),
+            perfume.getKoreanName(),
             perfume.getImageUrl(),
-            perfume.getBrand().getName()
+            perfume.getBrand().getKoreanName()
         );
     }
 

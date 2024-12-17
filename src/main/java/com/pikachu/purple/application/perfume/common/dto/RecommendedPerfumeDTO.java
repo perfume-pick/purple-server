@@ -19,8 +19,8 @@ public record RecommendedPerfumeDTO(
     ) {
         return new RecommendedPerfumeDTO(
             IdUtil.toString(perfume.getId()),
-            perfume.getName(),
-            perfume.getBrand().getName(),
+            perfume.getKoreanName(),
+            perfume.getBrand().getKoreanName(),
             perfume.getImageUrl(),
             perfume.getAverageScore(),
             accordNames

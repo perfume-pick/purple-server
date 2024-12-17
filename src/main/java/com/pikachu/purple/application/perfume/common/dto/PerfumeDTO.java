@@ -18,12 +18,12 @@ public record PerfumeDTO(
     public static PerfumeDTO from(Perfume perfume) {
         return new PerfumeDTO(
             IdUtil.toString(perfume.getId()),
-            perfume.getName(),
-            perfume.getBrand().getName(),
+            perfume.getKoreanName(),
+            perfume.getBrand().getKoreanName(),
             perfume.getImageUrl(),
             perfume.getAverageScore(),
             perfume.getAccords().stream()
-                .map(Accord::getName)
+                .map(Accord::getKoreanName)
                 .findFirst()
                 .orElseThrow(() -> PerfumeAccordNotFoundException)
         );

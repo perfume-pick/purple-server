@@ -22,8 +22,8 @@ public record PerfumeDetailDTO(
     ) {
         return new PerfumeDetailDTO(
             IdUtil.toString(perfume.getId()),
-            perfume.getName(),
-            perfume.getBrand().getName(),
+            perfume.getKoreanName(),
+            perfume.getBrand().getKoreanName(),
             perfume.getImageUrl(),
             perfume.getAverageScore(),
             accords,
