@@ -70,11 +70,11 @@ public class StarRatingStatisticDomainServiceImpl implements StarRatingStatistic
     }
 
     @Override
-    public void updateAll(
+    public void createAll(
         String statisticsDate,
         List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs
     ) {
-        starRatingStatisticRepository.updateAll(
+        starRatingStatisticRepository.createAll(
             statisticsDate,
             perfumeStarRatingStatisticDTOs
         );

@@ -23,9 +23,8 @@ public interface StarRatingStatisticDomainService {
         int score
     );
 
-    void updateAll(
+    void createAll(
         String statisticsDate,
         List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs
     );
-
 }

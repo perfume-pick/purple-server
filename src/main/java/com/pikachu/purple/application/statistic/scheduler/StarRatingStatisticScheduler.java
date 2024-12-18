@@ -1,12 +1,10 @@
 package com.pikachu.purple.application.statistic.scheduler;
 
-import static com.pikachu.purple.util.StringUtil.DELIMITER;
-
 import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumeIdsUseCase;
 import com.pikachu.purple.application.review.common.dto.PerfumeStarRatingStatisticDTO;
 import com.pikachu.purple.application.review.port.in.starrating.GetStarRatingsByUpdatedDateUseCase;
 import com.pikachu.purple.application.statistic.service.domain.StarRatingStatisticDomainService;
-import com.pikachu.purple.domain.review.StarRating;
+import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.statistic.StarRatingStatistic;
 import com.pikachu.purple.util.DateUtil;
 import java.util.ArrayList;
@@ -28,72 +26,34 @@ public class StarRatingStatisticScheduler {
 
     @Transactional
     @Scheduled(cron = "${scheduler.daily-cron}")
-    public void dailyRecountStarRatingStatistics() {
+    public void duplicatePreviousDayRows() {
         List<Long> perfumeIds = getPerfumeIdsUseCase.invoke().perfumeIds();
-
-        String theDayBeforeYesterday = DateUtil.theDayBeforeYesterday();
-        List<StarRatingStatistic> theDayBeforeYesterdayStarRatingStatistic = starRatingStatisticDomainService
-            .findAll(theDayBeforeYesterday);
-        Map<String, Integer> theDayBeforeYesterdayStarRatingStatisticMap =
-            theDayBeforeYesterdayStarRatingStatistic.stream()
-                .collect(Collectors.toMap(
-                    starRatingStatistic -> buildMapKey(
-                        starRatingStatistic.getPerfume().getId(),
-                        starRatingStatistic.getScore()
-                    ),
-                    StarRatingStatistic::getVotes
-                ));
-
         String yesterday = DateUtil.yesterday();
-        List<StarRating> yesterdayStarRatings = getStarRatingsByUpdateDateUseCase.invoke(
-            new GetStarRatingsByUpdatedDateUseCase.Command(yesterday)
-        ).starRatings();
-        Map<String, Integer> yesterdayStarRatingStatisticMap =
-            yesterdayStarRatings.stream()
-                .collect(Collectors.groupingBy(
-                    starRating -> buildMapKey(
-                        starRating.getPerfume().getId(),
-                        starRating.getScore()
-                    ),
-                    Collectors.summingInt(starRating -> 1)
-                ));
+        List<StarRatingStatistic> yesterdayStarRatingStatistic = starRatingStatisticDomainService
+            .findAll(yesterday);
+
+        Map<Perfume, List<StarRatingStatistic>> yesterdayStarRatingStatisticMap = yesterdayStarRatingStatistic.stream()
+            .collect(Collectors.groupingBy(StarRatingStatistic::getPerfume));
 
         List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs = new ArrayList<>();
-        int[] scores = {1, 2, 3, 4, 5};
-        for (Long perfumeId : perfumeIds) {
-            List<StarRatingStatistic> starRatingStatistics = new ArrayList<>();
-            for (int score : scores) {
-                String key = buildMapKey(
-                    perfumeId,
-                    score
-                );
-                int theDayBeforeYesterdayVotes = theDayBeforeYesterdayStarRatingStatisticMap.getOrDefault(key, 0);
-                int yesterdayVotes = yesterdayStarRatingStatisticMap.getOrDefault(key, 0);
-
-                StarRatingStatistic starRatingStatistic = StarRatingStatistic.builder()
-                    .score(score)
-                    .votes(theDayBeforeYesterdayVotes + yesterdayVotes)
-                    .build();
-                starRatingStatistics.add(starRatingStatistic);
-            }
+        for (Map.Entry<Perfume, List<StarRatingStatistic>> entry :
+            yesterdayStarRatingStatisticMap.entrySet()) {
+            Perfume perfume = entry.getKey();
+            List<StarRatingStatistic> starRatingStatistics = entry.getValue();
 
             perfumeStarRatingStatisticDTOs.add(
-                PerfumeStarRatingStatisticDTO.builder()
-                    .perfumeId(perfumeId)
+                PerfumeStarRatingStatisticDTO
+                    .builder()
+                    .perfumeId(perfume.getId())
                     .starRatingStatistics(starRatingStatistics)
                     .build()
             );
         }
 
-        starRatingStatisticDomainService.updateAll(
-            yesterday,
+        String today = DateUtil.today();
+        starRatingStatisticDomainService.createAll(
+            today,
             perfumeStarRatingStatisticDTOs
         );
-
     }
-
-    private String buildMapKey(Long perfumeId, int score) {
-        return perfumeId + DELIMITER + score;
-    }
-
 }

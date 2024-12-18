@@ -128,11 +128,10 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
     }
 
     @Override
-    public void updateAll(
+    public void createAll(
         String statisticsDate,
         List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs
     ) {
-
         List<StarRatingStatisticJpaEntity> starRatingStatisticJpaEntities = new ArrayList<>();
         for (PerfumeStarRatingStatisticDTO perfumeStarRatingStatisticDTO : perfumeStarRatingStatisticDTOs) {
             Long perfumeId = perfumeStarRatingStatisticDTO.perfumeId();

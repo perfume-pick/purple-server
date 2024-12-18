@@ -28,9 +28,8 @@ public interface StarRatingStatisticRepository {
 
     List<StarRatingStatistic> findAll(String statisticsDate);
 
-    void updateAll(
+    void createAll(
         String statisticsDate,
         List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs
     );
-
 }
