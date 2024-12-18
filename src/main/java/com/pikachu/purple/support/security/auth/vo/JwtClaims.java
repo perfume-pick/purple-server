@@ -2,7 +2,6 @@ package com.pikachu.purple.support.security.auth.vo;
 
 import com.auth0.jwt.interfaces.DecodedJWT;
 import java.lang.reflect.Field;
-import java.time.Instant;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -71,7 +70,7 @@ public class JwtClaims {
 
         public RegisteredClaims(String sub, Date exp, Date iat, Date nbf, String iss, List<String> aud, String jti) {
             this.sub = sub;
-            this.exp = Date.from(Instant.now().plusSeconds(DEFAULT_EXPIRATION_TIME_SEC));
+            this.exp = exp;
             this.iat = iat;
             this.nbf = nbf;
             this.iss = iss;
