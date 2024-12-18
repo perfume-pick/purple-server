@@ -27,7 +27,6 @@ public class StarRatingStatisticScheduler {
     @Transactional
     @Scheduled(cron = "${scheduler.daily-cron}")
     public void duplicatePreviousDayRows() {
-        List<Long> perfumeIds = getPerfumeIdsUseCase.invoke().perfumeIds();
         String yesterday = DateUtil.yesterday();
         List<StarRatingStatistic> yesterdayStarRatingStatistic = starRatingStatisticDomainService
             .findAll(yesterday);
