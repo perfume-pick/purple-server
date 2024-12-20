@@ -73,7 +73,7 @@ public class GetPolarizedUserAccordsByUserApplicationService implements
             Perfume perfume = starRating.getPerfume();
             if (perfume != null) {
                 for (Accord perfumeAccord : perfume.getAccords()) {
-                    String accordName = perfumeAccord.getName();
+                    String accordName = perfumeAccord.getKoreanName();
 
                     if (containsAccord(
                         accords,
@@ -92,7 +92,7 @@ public class GetPolarizedUserAccordsByUserApplicationService implements
             .mapToDouble(UserAccord::getScore).sum();
 
         for(UserAccord userAccord : accords) {
-            String accordName = userAccord.getName();
+            String accordName = userAccord.getKoreanName();
 
             percentMap.put(
                 accordName,
@@ -118,7 +118,7 @@ public class GetPolarizedUserAccordsByUserApplicationService implements
         String accordName
     ) {
         return accords.stream()
-            .anyMatch(userAccord -> userAccord.getName().equals(accordName));
+            .anyMatch(userAccord -> userAccord.getKoreanName().equals(accordName));
     }
 
 }

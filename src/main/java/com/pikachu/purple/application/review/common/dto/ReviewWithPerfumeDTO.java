@@ -29,9 +29,9 @@ public record ReviewWithPerfumeDTO(
     ) {
         return new ReviewWithPerfumeDTO(
             IdUtil.toString(starRating.getReview().getId()),
-            starRating.getReview().getPerfume().getBrand().getName(),
+            starRating.getReview().getPerfume().getBrand().getKoreanName(),
             IdUtil.toString(starRating.getPerfume().getId()),
-            starRating.getReview().getPerfume().getName(),
+            starRating.getReview().getPerfume().getKoreanName(),
             starRating.getReview().getPerfume().getImageUrl(),
             starRating.getReview().getType(),
             starRating.getScore(),
@@ -48,9 +48,9 @@ public record ReviewWithPerfumeDTO(
     public static ReviewWithPerfumeDTO from(StarRating starRating) {
         return new ReviewWithPerfumeDTO(
             null,
-            starRating.getPerfume().getBrand().getName(),
+            starRating.getPerfume().getBrand().getKoreanName(),
             IdUtil.toString(starRating.getPerfume().getId()),
-            starRating.getPerfume().getName(),
+            starRating.getPerfume().getKoreanName(),
             starRating.getPerfume().getImageUrl(),
             null,
             starRating.getScore(),

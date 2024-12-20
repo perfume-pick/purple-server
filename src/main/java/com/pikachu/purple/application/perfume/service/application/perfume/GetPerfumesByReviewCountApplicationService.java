@@ -5,6 +5,7 @@ import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesByRevie
 import com.pikachu.purple.application.perfume.service.domain.PerfumeDomainService;
 import com.pikachu.purple.application.review.port.in.starrating.GetAverageScoreByPerfumeIdUseCase;
 import com.pikachu.purple.domain.perfume.Perfume;
+import com.pikachu.purple.domain.perfume.PerfumeAccord;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -30,14 +31,19 @@ public class GetPerfumesByReviewCountApplicationService implements
             perfume.setAverageScore(averageScore);
         }
 
+
        List<RecommendedPerfumeDTO> recommendedPerfumeDTOs = perfumes.stream()
            .map(perfume -> RecommendedPerfumeDTO.from(
                perfume,
-               null
+               perfume.getAccords() == null ? List.of() : perfume.getAccords().stream()
+                   .map(PerfumeAccord::getKoreanName)
+                   .toList()
            ))
            .toList();
 
        return new Result(recommendedPerfumeDTOs);
     }
+
+
 
 }
