@@ -70,7 +70,7 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
             Limit.of(maxSize));
 
         return perfumeJpaEntities.stream()
-            .map(PerfumeJpaEntity::toDomain)
+            .map(PerfumeJpaEntity::toDomainWithPerfumeAccord)
             .toList();
     }
 

@@ -30,7 +30,7 @@ public class GetTopThreeReviewedBrandsApplicationService implements
 
         List<Map.Entry<String, Long>> reviewedBrands = reviews.stream()
             .collect(Collectors.groupingBy(
-                review -> review.getPerfume().getBrand().getName(),
+                review -> review.getPerfume().getBrand().getKoreanName(),
                 Collectors.counting()
             ))
             .entrySet().stream()
