@@ -79,6 +79,12 @@ public interface UserApi {
     SuccessResponse<GetTopThreeReviewedBrandsResponse> findTopThreeReviewedBrands();
 
     @Secured
+    @Operation(summary = "최근 검색 기록 저장")
+    @PostMapping("/my/search-histories")
+    @ResponseStatus(HttpStatus.OK)
+    void createSearchHistory(@RequestParam String keyword);
+
+    @Secured
     @Operation(summary = "최근 검색 기록 전체 조회")
     @GetMapping("/my/search-histories")
     @ResponseStatus(HttpStatus.OK)
