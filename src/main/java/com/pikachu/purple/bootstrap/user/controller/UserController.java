@@ -1,5 +1,6 @@
 package com.pikachu.purple.bootstrap.user.controller;
 
+import com.pikachu.purple.application.history.port.in.searchhistory.CreateSearchHistoryUseCase;
 import com.pikachu.purple.application.history.port.in.searchhistory.DeleteSearchHistoriesUseCase;
 import com.pikachu.purple.application.history.port.in.searchhistory.GetSearchHistoriesUseCase;
 import com.pikachu.purple.application.history.port.in.visithistory.CreateVisitHistoryUseCase;
@@ -37,6 +38,7 @@ public class UserController implements UserApi {
     private final DeleteSearchHistoriesUseCase deleteSearchHistoriesUseCase;
     private final CreateVisitHistoryUseCase createVisitHistoryUseCase;
     private final GetVisitHistoriesUseCase getVisitHistoriesUseCase;
+    private final CreateSearchHistoryUseCase createSearchHistoryUseCase;
     private final GetUserReviewCountsUseCase getUserReviewCountsUseCase;
     private final DeleteVisitHistoriesUseCase deleteVisitHistoriesUseCase;
     private final GetTopThreeReviewedBrandsUseCase getTopThreeReviewedBrandsUseCase;
@@ -85,6 +87,15 @@ public class UserController implements UserApi {
 
         return SuccessResponse.of(
             new GetTopThreeReviewedBrandsResponse(result.reviewedBrandDTOs()));
+    }
+
+    @Override
+    public void createSearchHistory(String keyword) {
+        Instant searchAt = Instant.now();
+        createSearchHistoryUseCase.invoke(
+            keyword,
+            searchAt
+        );
     }
 
     @Override
