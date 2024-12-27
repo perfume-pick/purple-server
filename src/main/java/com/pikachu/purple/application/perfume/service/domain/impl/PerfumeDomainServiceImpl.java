@@ -55,4 +55,25 @@ public class PerfumeDomainServiceImpl implements PerfumeDomainService {
         return perfumeRepository.findAllWithPerfumeAccordsByIds(perfumeIds);
     }
 
+    @Override
+    public void updateAverageScore(
+        Long perfumeId,
+        double averageScore
+    ) {
+        perfumeRepository.updateAverageScore(
+            perfumeId,
+            averageScore
+        );
+    }
+
+    @Override
+    public void updateAllAverageScore(List<Perfume> perfumes) {
+        for (Perfume perfume : perfumes) {
+            perfumeRepository.updateAverageScore(
+                perfume.getId(),
+                perfume.getAverageScore()
+            );
+        }
+    }
+
 }

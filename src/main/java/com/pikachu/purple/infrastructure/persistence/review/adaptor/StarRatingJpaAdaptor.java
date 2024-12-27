@@ -138,6 +138,18 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
     }
 
     @Override
+    public List<StarRating> findAll() {
+        List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAll();
+        return starRatingJpaEntities.stream().map(StarRatingJpaEntity::toDomain).toList();
+    }
+
+    @Override
+    public List<StarRating> findAll(Long perfumeId) {
+        List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAllByPerfumeId(perfumeId);
+        return starRatingJpaEntities.stream().map(StarRatingJpaEntity::toDomain).toList();
+    }
+
+    @Override
     public List<StarRating> findAllByUpdatedDate(String updatedDate) {
         List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAllByUpdatedDate(
             updatedDate);
@@ -145,12 +157,6 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
         return starRatingJpaEntities.stream()
             .map(StarRatingJpaEntity::toDomain)
             .toList();
-    }
-
-    @Override
-    public List<StarRating> findAll(Long perfumeId) {
-        List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAllByPerfumeId(perfumeId);
-        return starRatingJpaEntities.stream().map(StarRatingJpaEntity::toDomain).toList();
     }
 
     @Override

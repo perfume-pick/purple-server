@@ -6,12 +6,13 @@ import java.util.List;
 
 public interface StarRatingStatisticDomainService {
 
-    List<StarRatingStatistic> findAll(String statisticsDate);
+    List<StarRatingStatistic> findAll();
 
-    List<StarRatingStatistic> findAll(
-        String statisticsDate,
-        Long perfumeId
-    );
+    List<StarRatingStatistic> findAll(Long perfumeId);
+
+    List<StarRatingStatistic> findAll(List<Long> perfumeIds);
+
+    void updateAll(List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs);
 
     void increaseVotes(
         Long perfumeId,
@@ -21,11 +22,6 @@ public interface StarRatingStatisticDomainService {
     void decreaseVotes(
         Long perfumeId,
         int score
-    );
-
-    void updateAll(
-        String statisticsDate,
-        List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs
     );
 
 }

@@ -15,7 +15,6 @@ public class IncreaseStarRatingStatisticsApplicationService implements
 
     @Override
     public void invoke(Command command) {
-
         for (StarRatingVO starRatingVO : command.starRatingVOs()) {
             starRatingStatisticDomainService.increaseVotes(
                 starRatingVO.perfumeId(),

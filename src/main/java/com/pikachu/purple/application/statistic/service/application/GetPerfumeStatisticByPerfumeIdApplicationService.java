@@ -80,10 +80,8 @@ public class GetPerfumeStatisticByPerfumeIdApplicationService implements
             evaluationFieldDTOs.add(evaluationFieldDTO);
         }
 
-        List<StarRatingStatistic> starRatingStatistics = starRatingStatisticDomainService.findAll(
-            yesterday,
-            command.perfumeId()
-        );
+        List<StarRatingStatistic> starRatingStatistics = starRatingStatisticDomainService
+            .findAll(command.perfumeId());
         int totalVotes = starRatingStatistics.stream().mapToInt(StarRatingStatistic::getVotes)
             .sum();
 
