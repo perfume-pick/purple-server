@@ -9,7 +9,6 @@ import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeJ
 import com.pikachu.purple.infrastructure.persistence.statistic.entity.StarRatingStatisticJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.statistic.repository.StarRatingStatisticJpaRepository;
 import com.pikachu.purple.infrastructure.persistence.statistic.vo.StarRatingStatisticCompositeKey;
-import com.pikachu.purple.util.DateUtil;
 import java.util.List;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
@@ -23,13 +22,11 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
     private final PerfumeJpaRepository perfumeJpaRepository;
 
     private StarRatingStatisticJpaEntity findEntity(
-//        String statisticsDate,
         Long perfumeId,
         int score
     ) {
         StarRatingStatisticCompositeKey compositeKey =
             StarRatingStatisticCompositeKey.builder()
-//                .statisticsDate(statisticsDate)
                 .perfumeId(perfumeId)
                 .score(score)
                 .build();
@@ -42,7 +39,6 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
                 .orElseThrow(() -> PerfumeNotFoundException);
 
             return StarRatingStatisticJpaEntity.builder()
-//                .statisticsDate(statisticsDate)
                 .perfumeJpaEntity(perfumeJpaEntity)
                 .score(score)
                 .build();
@@ -52,26 +48,12 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
         }
     }
 
-    private StarRatingStatisticJpaEntity findEntityByToday(Long perfumeId, int score) {
-        String today = DateUtil.today();
-
-        return findEntity(
-//            today,
-            perfumeId,
-            score);
-    }
-
     @Override
     public List<StarRatingStatistic> findAll(
-//        String statisticsDate,
         Long perfumeId
     ) {
-
         List<StarRatingStatisticJpaEntity> starRatingStatisticJpaEntities =
-            starRatingStatisticJpaRepository.findAllByTodayAndPerfumeId(
-//                statisticsDate,
-                perfumeId
-            );
+            starRatingStatisticJpaRepository.findAllByPerfumeId(perfumeId);
 
         return starRatingStatisticJpaEntities.stream()
             .map(StarRatingStatisticJpaEntity::toDomain)
@@ -83,7 +65,7 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
         Long perfumeId,
         int score
     ) {
-        StarRatingStatisticJpaEntity starRatingStatisticJpaEntity = findEntityByToday(
+        StarRatingStatisticJpaEntity starRatingStatisticJpaEntity = findEntity(
             perfumeId,
             score
         );
@@ -97,7 +79,7 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
         Long perfumeId,
         int score
     ) {
-        StarRatingStatisticJpaEntity starRatingStatisticJpaEntity = findEntityByToday(
+        StarRatingStatisticJpaEntity starRatingStatisticJpaEntity = findEntity(
             perfumeId,
             score
         );
@@ -108,52 +90,12 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
 
     @Override
     public StarRatingStatistic findByPerfumeIdAndScore(Long perfumeId, int score) {
-        StarRatingStatisticJpaEntity starRatingStatistic = findEntityByToday(
+        StarRatingStatisticJpaEntity starRatingStatistic = findEntity(
             perfumeId,
             score
         );
 
         return StarRatingStatisticJpaEntity.toDomain(starRatingStatistic);
     }
-
-//    @Override
-//    public List<StarRatingStatistic> findAll(String statisticsDate) {
-//
-//        List<StarRatingStatisticJpaEntity> starRatingStatisticJpaEntities =
-//            starRatingStatisticJpaRepository.findAllByStatisticsDate(statisticsDate);
-//
-//        return starRatingStatisticJpaEntities.stream()
-//            .map(StarRatingStatisticJpaEntity::toDomain)
-//            .toList();
-//
-//    }
-
-//    @Override
-//    public void updateAll(
-////        String statisticsDate,
-//        List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs
-//    ) {
-//
-//        List<StarRatingStatisticJpaEntity> starRatingStatisticJpaEntities = new ArrayList<>();
-//        for (PerfumeStarRatingStatisticDTO perfumeStarRatingStatisticDTO : perfumeStarRatingStatisticDTOs) {
-//            Long perfumeId = perfumeStarRatingStatisticDTO.perfumeId();
-//            PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository.findById(perfumeId)
-//                .orElseThrow(() -> PerfumeNotFoundException);
-//
-//            for (StarRatingStatistic starRatingStatistic : perfumeStarRatingStatisticDTO.starRatingStatistics()) {
-//                StarRatingStatisticJpaEntity starRatingStatisticJpaEntity = StarRatingStatisticJpaEntity
-//                    .builder()
-////                    .statisticsDate(statisticsDate)
-//                    .perfumeJpaEntity(perfumeJpaEntity)
-//                    .score(starRatingStatistic.getScore())
-//                    .votes(starRatingStatistic.getVotes())
-//                    .build();
-//                starRatingStatisticJpaEntities.add(starRatingStatisticJpaEntity);
-//            }
-//        }
-//
-//        starRatingStatisticJpaRepository.saveAll(
-//            starRatingStatisticJpaEntities);
-//    }
 
 }

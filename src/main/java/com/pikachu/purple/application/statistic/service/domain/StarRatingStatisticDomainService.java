@@ -5,10 +5,7 @@ import java.util.List;
 
 public interface StarRatingStatisticDomainService {
 
-//    List<StarRatingStatistic> findAll(String statisticsDate);
-
     List<StarRatingStatistic> findAll(
-//        String statisticsDate,
         Long perfumeId
     );
 
@@ -21,10 +18,5 @@ public interface StarRatingStatisticDomainService {
         Long perfumeId,
         int score
     );
-
-//    void updateAll(
-//        String statisticsDate,
-//        List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs
-//    );
 
 }

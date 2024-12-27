@@ -6,7 +6,6 @@ import java.util.List;
 public interface StarRatingStatisticRepository {
 
     List<StarRatingStatistic> findAll(
-//        String statisticsDate,
         Long perfumeId
     );
 
@@ -24,12 +23,5 @@ public interface StarRatingStatisticRepository {
         Long perfumeId,
         int score
     );
-
-//    List<StarRatingStatistic> findAll(String statisticsDate);
-
-//    void updateAll(
-////        String statisticsDate,
-//        List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs
-//    );
 
 }
