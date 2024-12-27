@@ -5,7 +5,7 @@ import static com.pikachu.purple.util.StringUtil.DELIMITER;
 import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumeIdsUseCase;
 import com.pikachu.purple.application.review.common.dto.PerfumeStarRatingStatisticDTO;
 import com.pikachu.purple.application.review.port.in.starrating.GetStarRatingsUseCase;
-import com.pikachu.purple.application.statistic.port.in.starratingstatistic.CountStarRatingStatisticsUseCase;
+import com.pikachu.purple.application.statistic.port.in.starratingstatistic.RecountStarRatingStatisticsUseCase;
 import com.pikachu.purple.application.statistic.service.domain.StarRatingStatisticDomainService;
 import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.domain.statistic.StarRatingStatistic;
@@ -18,8 +18,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class CountStarRatingStatisticsApplicationService implements
-    CountStarRatingStatisticsUseCase {
+public class RecountStarRatingStatisticsApplicationService implements
+    RecountStarRatingStatisticsUseCase {
 
     private final StarRatingStatisticDomainService starRatingStatisticDomainService;
     private final GetStarRatingsUseCase starRatingsUseCase;

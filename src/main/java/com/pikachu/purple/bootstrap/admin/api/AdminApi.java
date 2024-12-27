@@ -17,7 +17,9 @@ public interface AdminApi {
     )
     @PostMapping("/star-rating-statistics")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void countStarRatingStatistics();
+    void updateStarRatingStatistics();
+
+
 
     @Operation(
         summary = "평가 집계",
