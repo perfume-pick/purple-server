@@ -2,6 +2,7 @@ package com.pikachu.purple.application.review.common.dto;
 
 import com.pikachu.purple.application.util.IdUtil;
 import com.pikachu.purple.domain.review.Review;
+import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.domain.review.enums.ReviewType;
 import java.util.List;
 
@@ -20,6 +21,17 @@ public record ReviewByUserDTO(
             review.getType(),
             review.getStarRating().getScore(),
             review.getContent(),
+            null,
+            null
+        );
+    }
+
+    public static ReviewByUserDTO from(StarRating starRating) {
+        return new ReviewByUserDTO(
+            null,
+            ReviewType.ONBOARDING,
+            starRating.getScore(),
+            null,
             null,
             null
         );
