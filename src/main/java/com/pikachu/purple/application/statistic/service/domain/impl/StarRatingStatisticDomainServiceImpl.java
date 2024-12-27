@@ -1,6 +1,5 @@
 package com.pikachu.purple.application.statistic.service.domain.impl;
 
-import com.pikachu.purple.application.review.common.dto.PerfumeStarRatingStatisticDTO;
 import com.pikachu.purple.application.statistic.port.out.StarRatingStatisticRepository;
 import com.pikachu.purple.application.statistic.service.domain.StarRatingStatisticDomainService;
 import com.pikachu.purple.domain.statistic.StarRatingStatistic;
@@ -15,18 +14,18 @@ public class StarRatingStatisticDomainServiceImpl implements StarRatingStatistic
 
     private final StarRatingStatisticRepository starRatingStatisticRepository;
 
-    @Override
-    public List<StarRatingStatistic> findAll(String statisticsDate) {
-        return starRatingStatisticRepository.findAll(statisticsDate);
-    }
+//    @Override
+//    public List<StarRatingStatistic> findAll(String statisticsDate) {
+//        return starRatingStatisticRepository.findAll(statisticsDate);
+//    }
 
     @Override
     public List<StarRatingStatistic> findAll(
-        String statisticsDate,
+//        String statisticsDate,
         Long perfumeId
     ) {
         return starRatingStatisticRepository.findAll(
-            statisticsDate,
+//            statisticsDate,
             perfumeId
         );
     }
@@ -69,16 +68,16 @@ public class StarRatingStatisticDomainServiceImpl implements StarRatingStatistic
         );
     }
 
-    @Override
-    public void updateAll(
-        String statisticsDate,
-        List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs
-    ) {
-        starRatingStatisticRepository.updateAll(
-            statisticsDate,
-            perfumeStarRatingStatisticDTOs
-        );
-    }
+//    @Override
+//    public void updateAll(
+//        String statisticsDate,
+//        List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs
+//    ) {
+//        starRatingStatisticRepository.updateAll(
+////            statisticsDate,
+//            perfumeStarRatingStatisticDTOs
+//        );
+//    }
 
     private StarRatingStatistic findByPerfumeIdAndScore(
         Long perfumeId,

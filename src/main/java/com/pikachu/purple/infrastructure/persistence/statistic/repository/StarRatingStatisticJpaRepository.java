@@ -13,20 +13,26 @@ public interface StarRatingStatisticJpaRepository extends
 
     @Query("select srs "
         + "from StarRatingStatisticJpaEntity srs "
-        + "where srs.statisticsDate = :#{#compositeKey.statisticsDate}"
+        + "where 1=1"
         + " and srs.perfumeJpaEntity.id = :#{#compositeKey.perfumeId}"
-        + " and srs.score = :#{#compositeKey.score}")
+        + " and srs.score = :#{#compositeKey.score}"
+//        + " and srs.statisticsDate = :#{#compositeKey.statisticsDate}"
+    )
     Optional<StarRatingStatisticJpaEntity> findByCompositeKey(
         StarRatingStatisticCompositeKey compositeKey);
 
     @Query("select srs "
         + "from StarRatingStatisticJpaEntity srs "
-        + "where srs.statisticsDate = :today and srs.perfumeJpaEntity.id = :perfumeId")
-    List<StarRatingStatisticJpaEntity> findAllByTodayAndPerfumeId(String today, Long perfumeId);
+        + "where srs.perfumeJpaEntity.id = :perfumeId "
+//        + "and srs.statisticsDate = :today "
+    )
+    List<StarRatingStatisticJpaEntity> findAllByTodayAndPerfumeId(
+//        String today,
+        Long perfumeId);
 
-    @Query("select srs "
-        + "from StarRatingStatisticJpaEntity srs "
-        + "where srs.statisticsDate = :statisticsDate "
-        + "order by srs.perfumeJpaEntity.id asc, srs.score asc ")
-    List<StarRatingStatisticJpaEntity> findAllByStatisticsDate(String statisticsDate);
+//    @Query("select srs "
+//        + "from StarRatingStatisticJpaEntity srs "
+////        + "where srs.statisticsDate = :statisticsDate "
+//        + "order by srs.perfumeJpaEntity.id asc, srs.score asc ")
+//    List<StarRatingStatisticJpaEntity> findAllByStatisticsDate(String statisticsDate);
 }

@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @RequestMapping(value = "/perpicks/batch", produces = "application/json")
 public interface BatchApi {
 
-    @Operation(
-        summary = "별점 집계",
-        description = "수동 별점 집계 API"
-    )
-    @GetMapping("/star-rating-statistics")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    void countStarRatingStatistics();
+//    @Operation(
+//        summary = "별점 집계",
+//        description = "수동 별점 집계 API"
+//    )
+//    @GetMapping("/star-rating-statistics")
+//    @ResponseStatus(HttpStatus.NO_CONTENT)
+//    void countStarRatingStatistics();
 
     @Operation(
         summary = "평가 집계",

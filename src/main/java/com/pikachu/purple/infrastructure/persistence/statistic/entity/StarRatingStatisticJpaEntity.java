@@ -27,13 +27,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 public class StarRatingStatisticJpaEntity extends BaseEntity {
 
-    @Id
-    @Column(
-        name = "statistics_date",
-        columnDefinition = "char(8)",
-        nullable = false
-    )
-    private String statisticsDate;
+//    @Id
+//    @Column(
+//        name = "statistics_date",
+//        columnDefinition = "char(8)",
+//        nullable = false
+//    )
+//    private String statisticsDate;
 
     @Id
     @ManyToOne(fetch = FetchType.LAZY)

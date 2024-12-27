@@ -81,7 +81,7 @@ public class GetPerfumeStatisticByPerfumeIdApplicationService implements
         }
 
         List<StarRatingStatistic> starRatingStatistics = starRatingStatisticDomainService.findAll(
-            yesterday,
+//            yesterday,
             command.perfumeId()
         );
         int totalVotes = starRatingStatistics.stream().mapToInt(StarRatingStatistic::getVotes)
