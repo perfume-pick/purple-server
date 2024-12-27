@@ -24,9 +24,11 @@ public interface StarRatingRepository {
         Long perfumeId
     );
 
-    List<StarRating> findAllByUpdatedDate(String updatedDate);
+    List<StarRating> findAll();
 
     List<StarRating> findAll(Long perfumeId);
+
+    List<StarRating> findAllByUpdatedDate(String updatedDate);
 
     List<StarRating> findAllOrderByLikeCountDesc(Long userId);
 

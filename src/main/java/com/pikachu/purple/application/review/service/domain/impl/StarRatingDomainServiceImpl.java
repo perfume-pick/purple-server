@@ -91,13 +91,18 @@ public class StarRatingDomainServiceImpl implements StarRatingDomainService {
     }
 
     @Override
-    public List<StarRating> findAllByUpdatedDate(String updatedDate) {
-        return starRatingRepository.findAllByUpdatedDate(updatedDate);
+    public List<StarRating> findAll() {
+        return starRatingRepository.findAll();
     }
 
     @Override
     public List<StarRating> findAll(Long perfumeId) {
         return starRatingRepository.findAll(perfumeId);
+    }
+
+    @Override
+    public List<StarRating> findAllByUpdatedDate(String updatedDate) {
+        return starRatingRepository.findAllByUpdatedDate(updatedDate);
     }
 
     @Override
