@@ -23,6 +23,11 @@ public interface PerfumeDomainService {
 
     List<Perfume> findAllWithPerfumeAccordsByIds(List<Long> longs);
 
+    void updateAverageScore(
+        Long perfumeId,
+        double averageScore
+    );
+
     void updateAllAverageScore(List<Perfume> perfumes);
 
 }

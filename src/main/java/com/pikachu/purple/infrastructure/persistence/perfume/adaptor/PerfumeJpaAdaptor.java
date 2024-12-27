@@ -89,6 +89,17 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
     }
 
     @Override
+    public void updateAverageScore(
+        Long perfumeId,
+        double averageScore
+    ) {
+        perfumeJpaRepository.updateAverageScoreByPerfumeId(
+            perfumeId,
+            averageScore
+        );
+    }
+
+    @Override
     public void updateAllAverageScore(List<Perfume> perfumes) {
         for (Perfume perfume : perfumes) {
             perfumeJpaRepository.updateAverageScoreByPerfumeId(

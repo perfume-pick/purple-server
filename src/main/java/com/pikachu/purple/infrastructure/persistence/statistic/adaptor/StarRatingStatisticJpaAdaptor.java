@@ -51,15 +51,47 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
     }
 
     @Override
-    public List<StarRatingStatistic> findAll(
-        Long perfumeId
-    ) {
+    public List<StarRatingStatistic> findAll() {
+        List<StarRatingStatisticJpaEntity> starRatingStatisticJpaEntities =
+            starRatingStatisticJpaRepository.findAll();
+
+        return starRatingStatisticJpaEntities.stream()
+            .map(StarRatingStatisticJpaEntity::toDomain)
+            .toList();
+    }
+
+    @Override
+    public List<StarRatingStatistic> findAll(Long perfumeId) {
         List<StarRatingStatisticJpaEntity> starRatingStatisticJpaEntities =
             starRatingStatisticJpaRepository.findAllByPerfumeId(perfumeId);
 
         return starRatingStatisticJpaEntities.stream()
             .map(StarRatingStatisticJpaEntity::toDomain)
             .toList();
+    }
+
+    @Override
+    public void updateAll(List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs) {
+        List<StarRatingStatisticJpaEntity> starRatingStatisticJpaEntities = new ArrayList<>();
+        for (PerfumeStarRatingStatisticDTO perfumeStarRatingStatisticDTO
+            : perfumeStarRatingStatisticDTOs) {
+            Long perfumeId = perfumeStarRatingStatisticDTO.perfumeId();
+            PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository.findById(perfumeId)
+                .orElseThrow(() -> PerfumeNotFoundException);
+
+            for (StarRatingStatistic starRatingStatistic :
+                perfumeStarRatingStatisticDTO.starRatingStatistics()) {
+                StarRatingStatisticJpaEntity starRatingStatisticJpaEntity = StarRatingStatisticJpaEntity
+                    .builder()
+                    .perfumeJpaEntity(perfumeJpaEntity)
+                    .score(starRatingStatistic.getScore())
+                    .votes(starRatingStatistic.getVotes())
+                    .build();
+                starRatingStatisticJpaEntities.add(starRatingStatisticJpaEntity);
+            }
+        }
+
+        starRatingStatisticJpaRepository.saveAll(starRatingStatisticJpaEntities);
     }
 
     @Override
@@ -98,40 +130,6 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
         );
 
         return StarRatingStatisticJpaEntity.toDomain(starRatingStatistic);
-    }
-
-    @Override
-    public void updateAll(List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs) {
-        List<StarRatingStatisticJpaEntity> starRatingStatisticJpaEntities = new ArrayList<>();
-        for (PerfumeStarRatingStatisticDTO perfumeStarRatingStatisticDTO
-            : perfumeStarRatingStatisticDTOs) {
-            Long perfumeId = perfumeStarRatingStatisticDTO.perfumeId();
-            PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository.findById(perfumeId)
-                .orElseThrow(() -> PerfumeNotFoundException);
-
-            for (StarRatingStatistic starRatingStatistic :
-                perfumeStarRatingStatisticDTO.starRatingStatistics()) {
-                StarRatingStatisticJpaEntity starRatingStatisticJpaEntity = StarRatingStatisticJpaEntity
-                    .builder()
-                    .perfumeJpaEntity(perfumeJpaEntity)
-                    .score(starRatingStatistic.getScore())
-                    .votes(starRatingStatistic.getVotes())
-                    .build();
-                starRatingStatisticJpaEntities.add(starRatingStatisticJpaEntity);
-            }
-        }
-
-        starRatingStatisticJpaRepository.saveAll(starRatingStatisticJpaEntities);
-    }
-
-    @Override
-    public List<StarRatingStatistic> findAll() {
-        List<StarRatingStatisticJpaEntity> starRatingStatisticJpaEntities =
-            starRatingStatisticJpaRepository.findAll();
-
-        return starRatingStatisticJpaEntities.stream()
-            .map(StarRatingStatisticJpaEntity::toDomain)
-            .toList();
     }
 
 }

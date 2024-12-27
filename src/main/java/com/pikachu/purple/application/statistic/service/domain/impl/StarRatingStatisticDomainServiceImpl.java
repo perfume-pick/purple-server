@@ -16,12 +16,20 @@ public class StarRatingStatisticDomainServiceImpl implements StarRatingStatistic
     private final StarRatingStatisticRepository starRatingStatisticRepository;
 
     @Override
-    public List<StarRatingStatistic> findAll(
-        Long perfumeId
-    ) {
+    public List<StarRatingStatistic> findAll() {
+        return starRatingStatisticRepository.findAll();
+    }
+
+    @Override
+    public List<StarRatingStatistic> findAll(Long perfumeId) {
         return starRatingStatisticRepository.findAll(
             perfumeId
         );
+    }
+
+    @Override
+    public void updateAll(List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs) {
+        starRatingStatisticRepository.updateAll(perfumeStarRatingStatisticDTOs);
     }
 
     @Override
@@ -60,16 +68,6 @@ public class StarRatingStatisticDomainServiceImpl implements StarRatingStatistic
             perfumeId,
             score
         );
-    }
-
-    @Override
-    public void updateAll(List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs) {
-        starRatingStatisticRepository.updateAll(perfumeStarRatingStatisticDTOs);
-    }
-
-    @Override
-    public List<StarRatingStatistic> findAll() {
-        return starRatingStatisticRepository.findAll();
     }
 
     private StarRatingStatistic findByPerfumeIdAndScore(
