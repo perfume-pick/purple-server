@@ -20,4 +20,6 @@ public interface PerfumeRepository {
 
     List<Perfume> findAllWithPerfumeAccordsByIds(List<Long> perfumeIds);
 
+    void updateAllAverageScore(List<Perfume> perfumes);
+
 }

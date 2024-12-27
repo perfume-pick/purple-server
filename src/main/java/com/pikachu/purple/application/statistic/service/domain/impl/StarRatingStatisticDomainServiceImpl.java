@@ -67,6 +67,11 @@ public class StarRatingStatisticDomainServiceImpl implements StarRatingStatistic
         starRatingStatisticRepository.updateAll(perfumeStarRatingStatisticDTOs);
     }
 
+    @Override
+    public List<StarRatingStatistic> findAll() {
+        return starRatingStatisticRepository.findAll();
+    }
+
     private StarRatingStatistic findByPerfumeIdAndScore(
         Long perfumeId,
         int score

@@ -5,6 +5,7 @@ import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEn
 import java.util.List;
 import org.springframework.data.domain.Limit;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -43,5 +44,11 @@ public interface PerfumeJpaRepository extends JpaRepository<PerfumeJpaEntity, Lo
     List<Long> findAllId();
 
     List<PerfumeJpaEntity> findAllByIdIn(List<Long> perfumeIds);
+
+    @Modifying
+    @Query("update PerfumeJpaEntity p "
+        + "set p.averageScore = :averageScore "
+        + "where p.id = :perfumeId")
+    void updateAverageScoreByPerfumeId(Long perfumeId, double averageScore);
 
 }

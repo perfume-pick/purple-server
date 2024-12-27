@@ -22,4 +22,6 @@ public interface StarRatingStatisticDomainService {
 
     void updateAll(List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs);
 
+    List<StarRatingStatistic> findAll();
+
 }

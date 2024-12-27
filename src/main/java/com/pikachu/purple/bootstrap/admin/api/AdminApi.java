@@ -19,7 +19,13 @@ public interface AdminApi {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void updateStarRatingStatistics();
 
-
+    @Operation(
+        summary = "향수 평점 전체 갱신",
+        description = "향수 평점 전체 수동 갱신 API"
+    )
+    @PostMapping("/perfume-average-scores")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    void updatePerfumeAverageScores();
 
     @Operation(
         summary = "평가 집계",

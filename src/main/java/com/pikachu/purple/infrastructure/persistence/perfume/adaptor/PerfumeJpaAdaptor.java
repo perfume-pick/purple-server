@@ -88,4 +88,14 @@ public class PerfumeJpaAdaptor implements PerfumeRepository {
             .toList();
     }
 
+    @Override
+    public void updateAllAverageScore(List<Perfume> perfumes) {
+        for (Perfume perfume : perfumes) {
+            perfumeJpaRepository.updateAverageScoreByPerfumeId(
+                perfume.getId(),
+                perfume.getAverageScore()
+            );
+        }
+    }
+
 }

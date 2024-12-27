@@ -124,4 +124,14 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
         starRatingStatisticJpaRepository.saveAll(starRatingStatisticJpaEntities);
     }
 
+    @Override
+    public List<StarRatingStatistic> findAll() {
+        List<StarRatingStatisticJpaEntity> starRatingStatisticJpaEntities =
+            starRatingStatisticJpaRepository.findAll();
+
+        return starRatingStatisticJpaEntities.stream()
+            .map(StarRatingStatisticJpaEntity::toDomain)
+            .toList();
+    }
+
 }

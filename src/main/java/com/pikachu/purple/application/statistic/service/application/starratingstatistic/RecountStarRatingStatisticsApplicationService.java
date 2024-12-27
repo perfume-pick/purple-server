@@ -22,14 +22,14 @@ public class RecountStarRatingStatisticsApplicationService implements
     RecountStarRatingStatisticsUseCase {
 
     private final StarRatingStatisticDomainService starRatingStatisticDomainService;
-    private final GetStarRatingsUseCase starRatingsUseCase;
+    private final GetStarRatingsUseCase getStarRatingsUseCase;
     private final GetPerfumeIdsUseCase getPerfumeIdsUseCase;
 
     @Override
     public void invoke() {
         List<Long> perfumeIds = getPerfumeIdsUseCase.invoke().perfumeIds();
         // 별점 다 가져오기
-        List<StarRating> starRatings = starRatingsUseCase.invoke().starRatings();
+        List<StarRating> starRatings = getStarRatingsUseCase.invoke().starRatings();
         // perfumeId, score 기준으로 그룹화
         Map<String, Integer> starRatingStatisticMap = starRatings.stream()
             .collect(Collectors.groupingBy(

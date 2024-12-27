@@ -27,4 +27,6 @@ public interface StarRatingStatisticRepository {
 
     void updateAll(List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs);
 
+    List<StarRatingStatistic> findAll();
+
 }
