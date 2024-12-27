@@ -8,9 +8,9 @@ public interface StarRatingStatisticRepository {
 
     List<StarRatingStatistic> findAll();
 
-    List<StarRatingStatistic> findAll(
-        Long perfumeId
-    );
+    List<StarRatingStatistic> findAll(Long perfumeId);
+
+    List<StarRatingStatistic> findAll(List<Long> perfumeIds);
 
     void updateAll(List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs);
 
@@ -28,5 +28,4 @@ public interface StarRatingStatisticRepository {
         Long perfumeId,
         int score
     );
-
 }

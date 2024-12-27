@@ -29,6 +29,21 @@ public class RecalculatePerfumeAverageScoresApplicationService implements
         List<StarRatingStatistic> starRatingStatistics = getStarRatingStatisticsUseCase.invoke()
             .starRatingStatistics();
 
+        this.recalculatePerfumeAverageScores(starRatingStatistics);
+    }
+
+
+    @Override
+    @Transactional
+    public void invoke(Command command) {
+        List<StarRatingStatistic> starRatingStatistics = getStarRatingStatisticsUseCase
+            .invoke(command.perfumeIds())
+            .starRatingStatistics();
+
+        this.recalculatePerfumeAverageScores(starRatingStatistics);
+    }
+
+    private void recalculatePerfumeAverageScores(List<StarRatingStatistic> starRatingStatistics) {
         Map<Long, List<StarRatingStatistic>> perfumeStatistics = starRatingStatistics.stream()
             .collect(Collectors.groupingBy(starRatingStatistic -> starRatingStatistic.getPerfume().getId()));
 

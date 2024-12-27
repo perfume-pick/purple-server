@@ -3,11 +3,11 @@ package com.pikachu.purple.application.perfume.service.application.perfume;
 import com.pikachu.purple.application.perfume.port.in.perfume.RecalculatePerfumeAverageScoreUseCase;
 import com.pikachu.purple.application.perfume.service.domain.PerfumeDomainService;
 import com.pikachu.purple.application.statistic.port.in.starratingstatistic.GetStarRatingStatisticsUseCase;
-import com.pikachu.purple.application.statistic.port.in.starratingstatistic.GetStarRatingStatisticsUseCase.Command;
 import com.pikachu.purple.domain.statistic.StarRatingStatistic;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -18,9 +18,10 @@ public class RecalculatePerfumeAverageScoreApplicationService implements
     private final GetStarRatingStatisticsUseCase getStarRatingStatisticsUseCase;
 
     @Override
+    @Transactional
     public void invoke(Command command) {
         List<StarRatingStatistic> starRatingStatistics = getStarRatingStatisticsUseCase
-            .invoke(new GetStarRatingStatisticsUseCase.Command(command.perfumeId()))
+            .invoke(command.perfumeId())
             .starRatingStatistics();
 
         double totalScore = starRatingStatistics.stream()

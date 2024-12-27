@@ -21,9 +21,17 @@ public class GetStarRatingStatisticsApplicationService implements GetStarRatingS
     }
 
     @Override
-    public Result invoke(Command command) {
+    public Result invoke(Long perfumeId) {
         List<StarRatingStatistic> starRatingStatistics = starRatingStatisticDomainService
-            .findAll(command.perfumeId());
+            .findAll(perfumeId);
+
+        return new Result(starRatingStatistics);
+    }
+
+    @Override
+    public Result invoke(List<Long> perfumeIds) {
+        List<StarRatingStatistic> starRatingStatistics = starRatingStatisticDomainService
+            .findAll(perfumeIds);
 
         return new Result(starRatingStatistics);
     }

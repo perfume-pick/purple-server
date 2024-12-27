@@ -71,6 +71,16 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
     }
 
     @Override
+    public List<StarRatingStatistic> findAll(List<Long> perfumeIds) {
+        List<StarRatingStatisticJpaEntity> starRatingStatisticJpaEntities =
+            starRatingStatisticJpaRepository.findAllByPerfumeIds(perfumeIds);
+
+        return starRatingStatisticJpaEntities.stream()
+            .map(StarRatingStatisticJpaEntity::toDomain)
+            .toList();
+    }
+
+    @Override
     public void updateAll(List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs) {
         List<StarRatingStatisticJpaEntity> starRatingStatisticJpaEntities = new ArrayList<>();
         for (PerfumeStarRatingStatisticDTO perfumeStarRatingStatisticDTO

@@ -7,9 +7,9 @@ public interface GetStarRatingStatisticsUseCase {
 
     Result invoke();
 
-    Result invoke(Command command);
+    Result invoke(Long perfumeId);
 
-    record Command(Long perfumeId) {};
+    Result invoke(List<Long> perfumeIds);
 
     record Result(List<StarRatingStatistic> starRatingStatistics) {};
 

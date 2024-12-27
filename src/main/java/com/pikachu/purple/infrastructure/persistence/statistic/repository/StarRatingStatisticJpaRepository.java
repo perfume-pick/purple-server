@@ -24,7 +24,11 @@ public interface StarRatingStatisticJpaRepository extends
         + "from StarRatingStatisticJpaEntity srs "
         + "where srs.perfumeJpaEntity.id = :perfumeId "
         + "order by srs.score asc")
-    List<StarRatingStatisticJpaEntity> findAllByPerfumeId(
-        Long perfumeId);
+    List<StarRatingStatisticJpaEntity> findAllByPerfumeId(Long perfumeId);
 
+    @Query("select srs "
+        + "from StarRatingStatisticJpaEntity srs "
+        + "where srs.perfumeJpaEntity.id in :perfumeIds "
+        + "order by srs.score asc")
+    List<StarRatingStatisticJpaEntity> findAllByPerfumeIds(List<Long> perfumeIds);
 }

@@ -2,6 +2,7 @@ package com.pikachu.purple.application.review.service.application.starrating;
 
 import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
 
+import com.pikachu.purple.application.perfume.service.application.perfume.RecalculatePerfumeAverageScoreApplicationService;
 import com.pikachu.purple.application.review.port.in.starrating.CreateStarRatingUseCase;
 import com.pikachu.purple.application.review.service.domain.StarRatingDomainService;
 import com.pikachu.purple.application.statistic.port.in.starratingstatistic.IncreaseStarRatingStatisticUseCase;
@@ -16,9 +17,10 @@ public class CreateStarRatingApplicationService implements CreateStarRatingUseCa
 
     private final StarRatingDomainService starRatingDomainService;
     private final IncreaseStarRatingStatisticUseCase increaseStarRatingStatisticUseCase;
+    private final RecalculatePerfumeAverageScoreApplicationService recalculatePerfumeAverageScoreApplicationService;
 
-    @Transactional
     @Override
+    @Transactional
     public Result invoke(Command command) {
         Long userId = getCurrentUserAuthentication().userId();
 
@@ -34,6 +36,9 @@ public class CreateStarRatingApplicationService implements CreateStarRatingUseCa
                 starRating.getScore()
             )
         );
+
+        recalculatePerfumeAverageScoreApplicationService.invoke(
+            new RecalculatePerfumeAverageScoreApplicationService.Command(command.perfumeId()));
 
         return new Result(starRating);
     }

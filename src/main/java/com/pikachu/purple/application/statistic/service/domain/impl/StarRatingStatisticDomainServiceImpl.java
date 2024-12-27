@@ -22,9 +22,12 @@ public class StarRatingStatisticDomainServiceImpl implements StarRatingStatistic
 
     @Override
     public List<StarRatingStatistic> findAll(Long perfumeId) {
-        return starRatingStatisticRepository.findAll(
-            perfumeId
-        );
+        return starRatingStatisticRepository.findAll(perfumeId);
+    }
+
+    @Override
+    public List<StarRatingStatistic> findAll(List<Long> perfumeIds) {
+        return starRatingStatisticRepository.findAll(perfumeIds);
     }
 
     @Override
