@@ -2,6 +2,7 @@ package com.pikachu.purple.infrastructure.persistence.statistic.adaptor;
 
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.PerfumeNotFoundException;
 
+import com.pikachu.purple.application.review.common.dto.PerfumeStarRatingStatisticDTO;
 import com.pikachu.purple.application.statistic.port.out.StarRatingStatisticRepository;
 import com.pikachu.purple.domain.statistic.StarRatingStatistic;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
@@ -9,6 +10,7 @@ import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeJ
 import com.pikachu.purple.infrastructure.persistence.statistic.entity.StarRatingStatisticJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.statistic.repository.StarRatingStatisticJpaRepository;
 import com.pikachu.purple.infrastructure.persistence.statistic.vo.StarRatingStatisticCompositeKey;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
@@ -96,6 +98,30 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
         );
 
         return StarRatingStatisticJpaEntity.toDomain(starRatingStatistic);
+    }
+
+    @Override
+    public void updateAll(List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs) {
+        List<StarRatingStatisticJpaEntity> starRatingStatisticJpaEntities = new ArrayList<>();
+        for (PerfumeStarRatingStatisticDTO perfumeStarRatingStatisticDTO
+            : perfumeStarRatingStatisticDTOs) {
+            Long perfumeId = perfumeStarRatingStatisticDTO.perfumeId();
+            PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository.findById(perfumeId)
+                .orElseThrow(() -> PerfumeNotFoundException);
+
+            for (StarRatingStatistic starRatingStatistic :
+                perfumeStarRatingStatisticDTO.starRatingStatistics()) {
+                StarRatingStatisticJpaEntity starRatingStatisticJpaEntity = StarRatingStatisticJpaEntity
+                    .builder()
+                    .perfumeJpaEntity(perfumeJpaEntity)
+                    .score(starRatingStatistic.getScore())
+                    .votes(starRatingStatistic.getVotes())
+                    .build();
+                starRatingStatisticJpaEntities.add(starRatingStatisticJpaEntity);
+            }
+        }
+
+        starRatingStatisticJpaRepository.saveAll(starRatingStatisticJpaEntities);
     }
 
 }

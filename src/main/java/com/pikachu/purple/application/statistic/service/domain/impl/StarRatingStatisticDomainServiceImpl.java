@@ -1,5 +1,6 @@
 package com.pikachu.purple.application.statistic.service.domain.impl;
 
+import com.pikachu.purple.application.review.common.dto.PerfumeStarRatingStatisticDTO;
 import com.pikachu.purple.application.statistic.port.out.StarRatingStatisticRepository;
 import com.pikachu.purple.application.statistic.service.domain.StarRatingStatisticDomainService;
 import com.pikachu.purple.domain.statistic.StarRatingStatistic;
@@ -59,6 +60,11 @@ public class StarRatingStatisticDomainServiceImpl implements StarRatingStatistic
             perfumeId,
             score
         );
+    }
+
+    @Override
+    public void updateAll(List<PerfumeStarRatingStatisticDTO> perfumeStarRatingStatisticDTOs) {
+        starRatingStatisticRepository.updateAll(perfumeStarRatingStatisticDTOs);
     }
 
     private StarRatingStatistic findByPerfumeIdAndScore(
