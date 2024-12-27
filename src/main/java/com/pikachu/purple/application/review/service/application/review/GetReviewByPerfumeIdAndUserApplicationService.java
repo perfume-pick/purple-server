@@ -7,8 +7,10 @@ import com.pikachu.purple.application.review.common.dto.ReviewEvaluationFieldDTO
 import com.pikachu.purple.application.review.common.dto.ReviewEvaluationOptionDTO;
 import com.pikachu.purple.application.review.port.in.review.GetReviewByPerfumeIdAndUserUseCase;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
+import com.pikachu.purple.application.review.service.domain.StarRatingDomainService;
 import com.pikachu.purple.domain.review.Mood;
 import com.pikachu.purple.domain.review.Review;
+import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.domain.review.enums.ReviewType;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +23,7 @@ public class GetReviewByPerfumeIdAndUserApplicationService implements
     GetReviewByPerfumeIdAndUserUseCase {
 
     private final ReviewDomainService reviewDomainService;
+    private final StarRatingDomainService starRatingDomainService;
 
     @Transactional
     @Override
@@ -32,8 +35,13 @@ public class GetReviewByPerfumeIdAndUserApplicationService implements
             command.perfumeId()
         );
 
-        ReviewByUserDTO reviewByUserDTO;
-        if (review != null) {
+        StarRating starRating = starRatingDomainService.findByUserIdAndPerfumeId(
+            userId,
+            command.perfumeId()
+        );
+
+        ReviewByUserDTO reviewByUserDTO = null;
+        if(review != null) {
             if (review.getType() == ReviewType.SIMPLE) {
                 reviewByUserDTO = ReviewByUserDTO.from(review);
             } else {
@@ -58,7 +66,13 @@ public class GetReviewByPerfumeIdAndUserApplicationService implements
                     moodNames
                 );
             }
-        } else {
+        }
+
+        if(review == null && starRating != null) {
+            reviewByUserDTO = ReviewByUserDTO.from(starRating);
+        }
+
+        if(review == null && starRating == null) {
             reviewByUserDTO = ReviewByUserDTO.empty();
         }
 
