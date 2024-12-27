@@ -1,3 +1,5 @@
+TRUNCATE TABLE star_rating_statistic;
+
 ALTER TABLE star_rating_statistic DROP PRIMARY KEY;
 
 ALTER TABLE star_rating_statistic
