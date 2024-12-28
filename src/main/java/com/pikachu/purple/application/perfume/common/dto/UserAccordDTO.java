@@ -4,6 +4,7 @@ import com.pikachu.purple.domain.user.UserAccord;
 
 public record UserAccordDTO(
     String accordName,
+    String accordKoreanName,
     int order
 ) {
 
@@ -12,6 +13,7 @@ public record UserAccordDTO(
         int order
     ){
         return new UserAccordDTO(
+            userAccord.getName(),
             userAccord.getKoreanName(),
             order
         );
