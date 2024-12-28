@@ -9,17 +9,20 @@ public record PolarizedUserAccordDTO(
 
     public record AccordInfo(
         String accordName,
+        String accordKoreanName,
         int count,
         int percentage
     ) {
 
         public static AccordInfo of(
             String accordName,
+            String accordKoreanName,
             int count,
             int percentage
         ) {
             return new AccordInfo(
                 accordName,
+                accordKoreanName,
                 count,
                 percentage
             );

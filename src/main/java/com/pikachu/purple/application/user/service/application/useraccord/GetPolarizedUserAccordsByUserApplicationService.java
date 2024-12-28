@@ -8,7 +8,6 @@ import com.pikachu.purple.application.user.common.dto.PolarizedUserAccordDTO.Acc
 import com.pikachu.purple.application.user.port.in.useraccord.GetPolarizedUserAccordsByUserUseCase;
 import com.pikachu.purple.application.user.service.domain.UserAccordDomainService;
 import com.pikachu.purple.application.util.MathUtil;
-import com.pikachu.purple.domain.accord.Accord;
 import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.domain.user.UserAccord;
@@ -67,49 +66,31 @@ public class GetPolarizedUserAccordsByUserApplicationService implements
         List<StarRating> starRatings
     ) {
         Map<String, Integer> accordCountMap = new HashMap<>();
-        Map<String, Integer> percentMap = new HashMap<>();
 
         for (StarRating starRating : starRatings) {
             Perfume perfume = starRating.getPerfume();
-            if (perfume != null) {
-                for (Accord perfumeAccord : perfume.getAccords()) {
-                    String accordName = perfumeAccord.getKoreanName();
-
-                    if (containsAccord(
-                        accords,
-                        accordName
-                    )) {
-                        accordCountMap.put(
-                            accordName,
-                            accordCountMap.getOrDefault(accordName, 0) + 1
-                        );
-                    }
-                }
+            if(perfume != null) {
+                perfume.getAccords().stream()
+                    .filter(perfumeAccord -> containsAccord(accords, perfumeAccord.getName()))
+                    .forEach(perfumeAccord -> accordCountMap.merge(perfumeAccord.getName(), 1, Integer::sum));
             }
         }
 
         double totalScore = accords.stream()
             .mapToDouble(UserAccord::getScore).sum();
 
-        for(UserAccord userAccord : accords) {
-            String accordName = userAccord.getKoreanName();
-
-            percentMap.put(
-                accordName,
-                MathUtil.getPercentage(
-                    userAccord.getScore(),
-                    totalScore
-                )
-            );
-        }
-
-        return accordCountMap.keySet().stream()
-            .filter(percentMap::containsKey)
-            .map(accordName -> AccordInfo.of(
-                accordName,
-                accordCountMap.get(accordName),
-                percentMap.get(accordName)
-            ))
+        return accords.stream()
+            .map(userAccord -> {
+                String accordName = userAccord.getName();
+                int count = accordCountMap.getOrDefault(accordName, 0);
+                int percentage = MathUtil.getPercentage(userAccord.getScore(), totalScore);
+                return AccordInfo.of(
+                    accordName,
+                    userAccord.getKoreanName(),
+                    count,
+                    percentage
+                );
+            })
             .toList();
     }
 
@@ -118,7 +99,7 @@ public class GetPolarizedUserAccordsByUserApplicationService implements
         String accordName
     ) {
         return accords.stream()
-            .anyMatch(userAccord -> userAccord.getKoreanName().equals(accordName));
+            .anyMatch(userAccord -> userAccord.getName().equals(accordName));
     }
 
 }
