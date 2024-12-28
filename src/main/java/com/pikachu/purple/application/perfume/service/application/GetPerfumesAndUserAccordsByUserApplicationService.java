@@ -51,7 +51,7 @@ public class GetPerfumesAndUserAccordsByUserApplicationService implements
             .toList();
 
         List<String> topThreeUserAccordNames = userAccordDTOs.stream()
-            .map(UserAccordDTO::accordName)
+            .map(UserAccordDTO::accordKoreanName)
             .toList();
 
         List<Accord> accords = new ArrayList<>(result.userAccords());
