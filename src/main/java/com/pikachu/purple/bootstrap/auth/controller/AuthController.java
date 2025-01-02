@@ -82,7 +82,7 @@ public class AuthController implements AuthApi {
 
     @Override
     public SuccessResponse<String> socialLogout() {
-        String clientUrl = socialLogoutUseCase.invoke();
+        socialLogoutUseCase.invoke();
 
         return SuccessResponse.of(null);
     }

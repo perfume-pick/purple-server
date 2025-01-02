@@ -17,18 +17,13 @@ public class DeleteUserApplicationService implements DeleteUserUseCase {
     private final UserTokenService userTokenService;
     private final UserDomainService userDomainService;
 
-    @Value("${uri.client}")
-    private String clientUrl;
-
     @Transactional
     @Override
-    public Result invoke() {
+    public void invoke() {
         Long userId = getCurrentUserAuthentication().userId();
 
         userTokenService.deleteAllToken(userId);
         userDomainService.delete(userId);
-
-        return new Result(clientUrl);
     }
 
 }

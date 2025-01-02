@@ -172,7 +172,7 @@ public class UserController implements UserApi {
 
     @Override
     public SuccessResponse<String> withdraw() {
-        DeleteUserUseCase.Result result = deleteUserUseCase.invoke();
+        deleteUserUseCase.invoke();
 
         return SuccessResponse.of(null);
     }

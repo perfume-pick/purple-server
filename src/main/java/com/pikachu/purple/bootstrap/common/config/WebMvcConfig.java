@@ -14,9 +14,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
     private final AuthorizationInterceptor authorizationInterceptor;
 
-    @Value("${uri.client}")
-    private String devClientUri;
-
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry
