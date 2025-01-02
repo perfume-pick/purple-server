@@ -84,7 +84,7 @@ public class AuthController implements AuthApi {
     public SuccessResponse<String> socialLogout() {
         String clientUrl = socialLogoutUseCase.invoke();
 
-        return SuccessResponse.of(clientUrl);
+        return SuccessResponse.of(null);
     }
 
 }
