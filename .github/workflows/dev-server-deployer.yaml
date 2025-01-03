@@ -29,16 +29,23 @@ jobs:
             --port 22 \
             --cidr ${{ steps.publicip.outputs.ip }}/32
 
+      - name: Copy Docker Compose file to server
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.DEV_BACK_INSTANCE_HOST }}
+          username: ${{ secrets.DEV_INSTANCE_USERNAME }}
+          key: ${{ secrets.DEV_INSTANCE_PEM_KEY }}
+          source: "./compose-dev.yaml"
+          target: "~/app/docker"
+          overwrite: true
+
       - name: Install Docker if not present
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.DEV_FRONT_INSTANCE_HOST }}
+          host: ${{ secrets.DEV_BACK_INSTANCE_HOST }}
           username: ${{ secrets.DEV_INSTANCE_USERNAME }}
           key: ${{ secrets.DEV_INSTANCE_PEM_KEY }}
           script: |
-            echo "Connecting to Backend EC2..."
-            sshpass -p "${{ secrets.DEV_BACKEND_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.DEV_INSTANCE_USERNAME }}@${{ secrets.DEV_BACKEND_INSTANCE_PRIVATE_IP }} << 'EOF'
-
             if ! command -v docker >/dev/null 2>&1; then
               echo "Installing Docker..."
               sudo apt-get update
@@ -57,13 +64,10 @@ jobs:
       - name: Run Docker Compose up
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.DEV_FRONT_INSTANCE_HOST }}
+          host: ${{ secrets.DEV_BACK_INSTANCE_HOST }}
           username: ${{ secrets.DEV_INSTANCE_USERNAME }}
           key: ${{ secrets.DEV_INSTANCE_PEM_KEY }}
           script: |
-            echo "Connecting to Backend EC2..."
-            sshpass -p "${{ secrets.DEV_BACKEND_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.DEV_INSTANCE_USERNAME }}@${{ secrets.DEV_BACKEND_INSTANCE_PRIVATE_IP }} << 'EOF'
-
             echo "${{ secrets.DOCKER_PASSWORD }}" | sudo docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
             sudo docker-compose -f ~/app/docker/compose-dev.yaml down --rmi all
             sudo docker-compose -f ~/app/docker/compose-dev.yaml pull
