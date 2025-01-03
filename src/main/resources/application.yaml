@@ -86,8 +86,6 @@ auth:
     jwks-uri: ${KAKAO_JWKS_URI:https://kauth.kakao.com/.well-known/jwks.json}
 
 uri:
-  server: ${SERVER_URI:http://localhost:8080}
-  client: ${CLIENT_URI:http://localhost:3000}
   server-complaint: ${SERVER_COMPLAINT_URI:http://localhost:8080/perpicks/complaints}
 
 ---

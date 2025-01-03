@@ -22,12 +22,9 @@ public class SocialLogoutApplicationService implements SocialLogoutUseCase {
     private final OAuthTokenService oAuthTokenService;
     private final SocialLoginService socialLoginService;
 
-    @Value("${uri.client}")
-    private String clientUrl;
-
     @Transactional
     @Override
-    public String invoke() {
+    public void invoke() {
         Long userId = getCurrentUserAuthentication().userId();
 
         userTokenService.deleteAllToken(userId);
@@ -40,8 +37,6 @@ public class SocialLogoutApplicationService implements SocialLogoutUseCase {
         );
 
         log.info("logoutId = {}", logoutId);
-
-        return clientUrl;
     }
 
 }

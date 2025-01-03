@@ -6,7 +6,6 @@ import com.pikachu.purple.application.user.port.in.user.DeleteUserUseCase;
 import com.pikachu.purple.application.user.service.domain.UserDomainService;
 import com.pikachu.purple.application.user.service.util.UserTokenService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,18 +16,13 @@ public class DeleteUserApplicationService implements DeleteUserUseCase {
     private final UserTokenService userTokenService;
     private final UserDomainService userDomainService;
 
-    @Value("${uri.client}")
-    private String clientUrl;
-
     @Transactional
     @Override
-    public Result invoke() {
+    public void invoke() {
         Long userId = getCurrentUserAuthentication().userId();
 
         userTokenService.deleteAllToken(userId);
         userDomainService.delete(userId);
-
-        return new Result(clientUrl);
     }
 
 }
