@@ -153,14 +153,8 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public List<Review> findAllWithEvaluation(
-        ReviewType reviewType,
-        String updatedDate
-    ) {
-        List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository.findAllByReviewTypeAndUpdateDate(
-            reviewType,
-            updatedDate
-        );
+    public List<Review> findAllWithEvaluation(ReviewType reviewType) {
+        List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository.findAllByReviewType(reviewType);
 
         return reviewJpaEntities.stream()
             .map(ReviewJpaEntity::toDomainWithEvaluation)

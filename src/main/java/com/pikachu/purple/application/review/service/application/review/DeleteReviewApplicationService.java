@@ -33,7 +33,7 @@ public class DeleteReviewApplicationService implements DeleteReviewUseCase {
         );
 
         if(review.getType() == ReviewType.DETAIL) {
-            ReviewEvaluation reviewEvaluation = reviewEvaluationDomainService.find(
+            ReviewEvaluation reviewEvaluation = reviewEvaluationDomainService.findAll(
                 command.reviewId());
 
             reviewEvaluationDomainService.deleteAll(command.reviewId());

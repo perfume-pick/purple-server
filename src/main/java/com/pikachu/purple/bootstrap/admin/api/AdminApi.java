@@ -33,7 +33,7 @@ public interface AdminApi {
     )
     @PostMapping("/evaluation-statistics")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void countEvaluationStatistics();
+    void updateEvaluationStatistics();
 
 
 }

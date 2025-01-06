@@ -5,9 +5,9 @@ import com.pikachu.purple.domain.review.ReviewEvaluation;
 
 public interface GetReviewEvaluationUseCase {
 
-    Result invoke(Command command);
+    Result invoke();
 
-    record Command(Long reviewId) {}
+    Result invoke(Long reviewId);
 
     record Result(ReviewEvaluation reviewEvaluation) {}
 

@@ -4,16 +4,14 @@ import com.pikachu.purple.domain.review.ReviewEvaluation;
 
 public interface ReviewEvaluationDomainService {
 
-    void create(
-        ReviewEvaluation reviewEvaluation
-    );
+    void createAll(ReviewEvaluation reviewEvaluation);
 
-    ReviewEvaluation find(Long reviewId);
+    ReviewEvaluation findAll();
+
+    ReviewEvaluation findAll(Long reviewId);
 
     void deleteAll(Long reviewId);
 
-    void update(
-        ReviewEvaluation reviewEvaluation
-    );
+    void updateAll(ReviewEvaluation reviewEvaluation);
 
 }

@@ -27,7 +27,7 @@ public class UpdateReviewSimpleApplicationService implements UpdateReviewSimpleU
         Review review = reviewDomainService.findWithPerfume(command.reviewId());
 
         if(review.getType() == ReviewType.DETAIL) {
-            ReviewEvaluation reviewEvaluation = reviewEvaluationDomainService.find(command.reviewId());
+            ReviewEvaluation reviewEvaluation = reviewEvaluationDomainService.findAll(command.reviewId());
             reviewEvaluationDomainService.deleteAll(command.reviewId());
             decreaseEvaluationStatisticUseCase.invoke(new DecreaseEvaluationStatisticUseCase.Command(
                     review.getPerfume().getId(),

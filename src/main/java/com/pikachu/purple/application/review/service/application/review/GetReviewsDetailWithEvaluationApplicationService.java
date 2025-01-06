@@ -1,6 +1,6 @@
 package com.pikachu.purple.application.review.service.application.review;
 
-import com.pikachu.purple.application.review.port.in.review.GetReviewsDetailWithEvaluationByUpdatedDateUseCase;
+import com.pikachu.purple.application.review.port.in.review.GetReviewsDetailWithEvaluationUseCase;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.enums.ReviewType;
@@ -11,19 +11,15 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class GetReviewsDetailWithEvaluationByUpdatedDateApplicationService implements
-    GetReviewsDetailWithEvaluationByUpdatedDateUseCase {
+public class GetReviewsDetailWithEvaluationApplicationService implements
+    GetReviewsDetailWithEvaluationUseCase {
 
     private final ReviewDomainService reviewDomainService;
 
     @Transactional
     @Override
-    public Result invoke(Command command) {
-
-        List<Review> reviews = reviewDomainService.findAllWithEvaluation(
-            ReviewType.DETAIL,
-            command.updatedDate()
-        );
+    public Result invoke() {
+        List<Review> reviews = reviewDomainService.findAllWithEvaluation(ReviewType.DETAIL);
 
         return new Result(reviews);
     }

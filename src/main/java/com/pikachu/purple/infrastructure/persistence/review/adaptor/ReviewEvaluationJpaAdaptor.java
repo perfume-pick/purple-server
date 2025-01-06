@@ -11,6 +11,7 @@ import com.pikachu.purple.infrastructure.persistence.review.repository.ReviewJpa
 import java.util.ArrayList;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -21,7 +22,7 @@ public class ReviewEvaluationJpaAdaptor implements ReviewEvaluationRepository {
     private final ReviewEvaluationJpaRepository reviewEvaluationJpaRepository;
 
     @Override
-    public void create(
+    public void createAll(
         ReviewEvaluation reviewEvaluation
     ) {
         List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities = new ArrayList<>();
@@ -39,7 +40,21 @@ public class ReviewEvaluationJpaAdaptor implements ReviewEvaluationRepository {
     }
 
     @Override
-    public ReviewEvaluation find(Long reviewId) {
+    public ReviewEvaluation findAll() {
+        List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities =
+            reviewEvaluationJpaRepository.findAll(
+                Sort.by(
+                    Sort.Order.asc("reviewJpaEntity.id"),
+                    Sort.Order.asc("fieldCode"),
+                    Sort.Order.asc("optionCode")
+                )
+            );
+
+        return ReviewEvaluationJpaEntity.toDomain(reviewEvaluationJpaEntities);
+    }
+
+    @Override
+    public ReviewEvaluation findAll(Long reviewId) {
         List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities =
             reviewEvaluationJpaRepository.findByReviewId(reviewId);
 
@@ -55,11 +70,11 @@ public class ReviewEvaluationJpaAdaptor implements ReviewEvaluationRepository {
     }
 
     @Override
-    public void update(
+    public void updateAll(
         ReviewEvaluation reviewEvaluation
     ) {
         reviewEvaluation.getReviewIdSet().forEach(this::deleteAll);
-        create(reviewEvaluation);
+        createAll(reviewEvaluation);
     }
 
 }

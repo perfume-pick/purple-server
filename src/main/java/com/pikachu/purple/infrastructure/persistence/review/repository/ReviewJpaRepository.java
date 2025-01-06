@@ -35,12 +35,12 @@ public interface ReviewJpaRepository extends JpaRepository<ReviewJpaEntity, Long
         + "order by re.starRatingJpaEntity.score")
     List<ReviewJpaEntity> findAllByPerfumeIdOrderByScoreAsc(Long perfumeId);
 
-    @Query("select r "
-        + "from ReviewJpaEntity r "
-        + "where r.reviewType = :reviewType "
-        + " and FUNCTION('DATE_FORMAT', r.updatedAt, '%Y%m%d') = :updatedDate "
-        + "order by r.id asc")
-    List<ReviewJpaEntity> findAllByReviewTypeAndUpdateDate(ReviewType reviewType, String updatedDate);
+//    @Query("select r "
+//        + "from ReviewJpaEntity r "
+//        + "where r.reviewType = :reviewType "
+//        + " and FUNCTION('DATE_FORMAT', r.updatedAt, '%Y%m%d') = :updatedDate "
+//        + "order by r.id asc")
+    List<ReviewJpaEntity> findAllByReviewType(ReviewType reviewType);
 
     @Query("select r "
         + "from ReviewJpaEntity r "
