@@ -11,11 +11,11 @@ import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeJ
 import com.pikachu.purple.infrastructure.persistence.statistic.entity.EvaluationStatisticJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.statistic.repository.EvaluationStatisticJpaRepository;
 import com.pikachu.purple.infrastructure.persistence.statistic.vo.EvaluationStatisticCompositeKey;
-import com.pikachu.purple.util.DateUtil;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -26,14 +26,12 @@ public class EvaluationStatisticJpaAdaptor implements EvaluationStatisticReposit
     private final PerfumeJpaRepository perfumeJpaRepository;
 
     private EvaluationStatisticJpaEntity findEntity(
-        String statisticDates,
         Long perfumeId,
         String fieldCode,
         String optionCode
     ) {
         EvaluationStatisticCompositeKey compositeKey =
             EvaluationStatisticCompositeKey.builder()
-                .statisticsDate(statisticDates)
                 .perfumeId(perfumeId)
                 .fieldCode(fieldCode)
                 .optionCode(optionCode)
@@ -47,7 +45,6 @@ public class EvaluationStatisticJpaAdaptor implements EvaluationStatisticReposit
                 .orElseThrow(() -> PerfumeNotFoundException);
 
             return EvaluationStatisticJpaEntity.builder()
-                .statisticsDate(statisticDates)
                 .perfumeJpaEntity(perfumeJpaEntity)
                 .fieldCode(fieldCode)
                 .optionCode(optionCode)
@@ -57,26 +54,11 @@ public class EvaluationStatisticJpaAdaptor implements EvaluationStatisticReposit
         }
     }
 
-    private EvaluationStatisticJpaEntity findEntityByToday(
-        Long perfumeId,
-        String fieldCode,
-        String optionCode
-    ) {
-        String today = DateUtil.today();
-
-        return findEntity(today, perfumeId, fieldCode, optionCode);
-    }
-
     @Override
-    public EvaluationStatistic findOrderByVotesDesc(
-        String statisticsDate,
-        Long perfumeId
-    ) {
+    public EvaluationStatistic findOrderByVotesDesc(Long perfumeId) {
         List<EvaluationStatisticJpaEntity> evaluationStatisticJpaEntities =
-            evaluationStatisticJpaRepository.findAllByStatisticsDateAndPerfumeIdOrderByVotesDesc(
-                statisticsDate,
-                perfumeId
-            );
+            evaluationStatisticJpaRepository.findAllByPerfumeIdOrderByVotesDesc(
+                perfumeId);
 
         return EvaluationStatisticJpaEntity.toDomain(
             evaluationStatisticJpaEntities
@@ -90,7 +72,7 @@ public class EvaluationStatisticJpaAdaptor implements EvaluationStatisticReposit
         EvaluationOptionType option
     ) {
 
-        EvaluationStatisticJpaEntity evaluationStatisticJpaEntity = findEntityByToday(
+        EvaluationStatisticJpaEntity evaluationStatisticJpaEntity = findEntity(
             perfumeId,
             field.getCode(),
             option.getCode()
@@ -106,7 +88,7 @@ public class EvaluationStatisticJpaAdaptor implements EvaluationStatisticReposit
         EvaluationFieldType field,
         EvaluationOptionType option
     ) {
-        EvaluationStatisticJpaEntity evaluationStatisticJpaEntity = findEntityByToday(
+        EvaluationStatisticJpaEntity evaluationStatisticJpaEntity = findEntity(
             perfumeId,
             field.getCode(),
             option.getCode()
@@ -117,17 +99,21 @@ public class EvaluationStatisticJpaAdaptor implements EvaluationStatisticReposit
     }
 
     @Override
-    public EvaluationStatistic find(String statisticsDate) {
+    public EvaluationStatistic findAll() {
         List<EvaluationStatisticJpaEntity> evaluationStatisticJpaEntities =
-            evaluationStatisticJpaRepository.findAllByStatisticsDate(statisticsDate);
+            evaluationStatisticJpaRepository.findAll(
+                Sort.by(
+                    Sort.Order.asc("perfumeJpaEntity.id"),
+                    Sort.Order.asc("fieldCode"),
+                    Sort.Order.asc("optionCode")
+                )
+            );
+
         return EvaluationStatisticJpaEntity.toDomain(evaluationStatisticJpaEntities);
     }
 
     @Override
-    public void update(
-        String statisticsDate,
-        EvaluationStatistic evaluationStatistic
-    ) {
+    public void updateAll(EvaluationStatistic evaluationStatistic) {
         List<EvaluationStatisticJpaEntity> evaluationStatisticJpaEntities = new ArrayList<>();
         evaluationStatistic.getPerfumeIdSet().forEach(
             perfumeId -> {
@@ -136,7 +122,6 @@ public class EvaluationStatisticJpaAdaptor implements EvaluationStatisticReposit
 
                 evaluationStatisticJpaEntities.addAll(
                     EvaluationStatisticJpaEntity.toJpaEntityList(
-                        statisticsDate,
                         perfumeJpaEntity,
                         evaluationStatistic
                     )

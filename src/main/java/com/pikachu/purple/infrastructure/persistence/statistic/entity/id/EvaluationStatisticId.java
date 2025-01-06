@@ -7,8 +7,6 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode
 @NoArgsConstructor
 public class EvaluationStatisticId implements Serializable {
-
-    private String statisticsDate;
     private Long perfumeJpaEntity;
     private String fieldCode;
     private String optionCode;

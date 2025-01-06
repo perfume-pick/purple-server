@@ -28,7 +28,7 @@ public class EvaluationStatisticScheduler {
 
         String theDayBeforeYesterday = DateUtil.theDayBeforeYesterday();
         EvaluationStatistic theDayBeforeYesterdayEvaluationStatistic = evaluationStatisticDomainService
-            .find(theDayBeforeYesterday);
+            .findAll();
 
         String yesterday = DateUtil.yesterday();
         List<Review> yesterdayReviews =
@@ -43,10 +43,7 @@ public class EvaluationStatisticScheduler {
             yesterdayEvaluationStatistic
         );
 
-        evaluationStatisticDomainService.update(
-            yesterday,
-            evaluationStatistic
-        );
+        evaluationStatisticDomainService.updateAll(evaluationStatistic);
 
     }
 

@@ -28,9 +28,7 @@ public class GetPerfumeStatisticByPerfumeIdApplicationService implements
     public Result invoke(Command command) {
         String yesterday = DateUtil.yesterday();
         EvaluationStatistic evaluationStatistic = evaluationStatisticDomainService.findOrderByVotesDesc(
-            yesterday,
-            command.perfumeId()
-        );
+            command.perfumeId());
 
         List<EvaluationFieldDTO<EvaluationOptionStatisticDTO>> evaluationFieldDTOs = new ArrayList<>();
         for (EvaluationFieldType evaluationField : evaluationStatistic.getFields(

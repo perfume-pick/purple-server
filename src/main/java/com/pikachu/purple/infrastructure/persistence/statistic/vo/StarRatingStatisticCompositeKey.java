@@ -4,7 +4,6 @@ import lombok.Builder;
 
 @Builder
 public record StarRatingStatisticCompositeKey(
-//    String statisticsDate,
     Long perfumeId,
     int score
 ) {}
