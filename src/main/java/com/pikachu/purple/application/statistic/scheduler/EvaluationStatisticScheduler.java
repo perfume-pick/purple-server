@@ -12,7 +12,7 @@ public class EvaluationStatisticScheduler {
     private final RecountEvaluationStatisticsUseCase recountEvaluationStatisticsUseCase;
 
     @Transactional
-    @Scheduled(cron = "${scheduler.daily-cron}")
+    @Scheduled(cron = "${scheduler.daily-evaluation-statistic-cron}")
     public void dailyRecountEvaluationStatistics() {
         recountEvaluationStatisticsUseCase.invoke();
     }

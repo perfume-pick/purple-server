@@ -13,7 +13,7 @@ public class StarRatingStatisticScheduler {
     private final RecountStarRatingStatisticsUseCase recountStarRatingStatisticsUseCase;
 
     @Transactional
-    @Scheduled(cron = "${scheduler.daily-cron}")
+    @Scheduled(cron = "${scheduler.daily-star-rating-statistic-cron}")
     public void dailyRecountStarRatingStatistics() {
         recountStarRatingStatisticsUseCase.invoke();
     }
