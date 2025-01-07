@@ -26,7 +26,6 @@ public class GetPerfumeStatisticByPerfumeIdApplicationService implements
 
     @Override
     public Result invoke(Command command) {
-        String yesterday = DateUtil.yesterday();
         EvaluationStatistic evaluationStatistic = evaluationStatisticDomainService.findOrderByVotesDesc(
             command.perfumeId());
 
