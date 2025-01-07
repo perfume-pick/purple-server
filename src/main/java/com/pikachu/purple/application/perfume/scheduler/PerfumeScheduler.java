@@ -13,7 +13,7 @@ public class PerfumeScheduler {
     private final RecalculatePerfumeAverageScoresUseCase recalculatePerfumeAverageScoresUseCase;
 
     @Transactional
-    @Scheduled(cron = "${scheduler.daily-cron}")
+    @Scheduled(cron = "${scheduler.daily-perfume-cron}")
     public void dailyRecalculatePerfumeAverageScores() {
         recalculatePerfumeAverageScoresUseCase.invoke();
     }
