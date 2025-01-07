@@ -130,4 +130,6 @@ spring:
       enabled: false
 
 scheduler:
-  daily-cron: 0 0 3 * * *
+  daily-star-rating-statistic-cron: 0 0 3 * * *
+  daily-perfume-cron: 0 5 3 * * *
+  daily-evaluation-statistic-cron: 0 0 3 * * *
