@@ -14,17 +14,18 @@ public class ReviewEvaluationDomainServiceImpl implements ReviewEvaluationDomain
 
 
     @Override
-    public void create(
-        ReviewEvaluation reviewEvaluation
-    ) {
-        reviewEvaluationRepository.create(
-            reviewEvaluation
-        );
+    public void createAll(ReviewEvaluation reviewEvaluation) {
+        reviewEvaluationRepository.createAll(reviewEvaluation);
     }
 
     @Override
-    public ReviewEvaluation find(Long reviewId) {
-        return reviewEvaluationRepository.find(reviewId);
+    public ReviewEvaluation findAll() {
+        return reviewEvaluationRepository.findAll();
+    }
+
+    @Override
+    public ReviewEvaluation findAll(Long reviewId) {
+        return reviewEvaluationRepository.findAll(reviewId);
     }
 
     @Override
@@ -33,12 +34,8 @@ public class ReviewEvaluationDomainServiceImpl implements ReviewEvaluationDomain
     }
 
     @Override
-    public void update(
-        ReviewEvaluation reviewEvaluation
-    ) {
-       reviewEvaluationRepository.update(
-           reviewEvaluation
-       );
+    public void updateAll(ReviewEvaluation reviewEvaluation) {
+       reviewEvaluationRepository.updateAll(reviewEvaluation);
     }
 
 }

@@ -6,10 +6,7 @@ import com.pikachu.purple.domain.statistic.EvaluationStatistic;
 
 public interface EvaluationStatisticDomainService {
 
-    EvaluationStatistic findOrderByVotesDesc(
-        String statisticsDate,
-        Long perfumeId
-    );
+    EvaluationStatistic findOrderByVotesDesc(Long perfumeId);
 
     void increaseVotes(
         Long perfumeId,
@@ -23,11 +20,8 @@ public interface EvaluationStatisticDomainService {
         EvaluationOptionType option
     );
 
-    EvaluationStatistic find(String statisticsDate);
+    EvaluationStatistic findAll();
 
-    void update(
-        String statisticsDate,
-        EvaluationStatistic evaluationStatistic
-    );
+    void updateAll(EvaluationStatistic evaluationStatistic);
 
 }

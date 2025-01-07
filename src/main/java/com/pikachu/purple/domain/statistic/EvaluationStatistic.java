@@ -134,6 +134,14 @@ public class EvaluationStatistic {
         this.optionVotesMap.put(optionVotesKey, votes);
     }
 
+    public void setDefault(Long perfumeId) {
+        for (EvaluationFieldType field : EvaluationFieldType.values()) {
+            for (EvaluationOptionType option : EvaluationOptionType.values()) {
+                set(perfumeId, field, option, 0);
+            }
+        }
+    }
+
     public void increase(
         Long perfumeId,
         EvaluationFieldType field,

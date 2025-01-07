@@ -32,14 +32,6 @@ import lombok.NoArgsConstructor;
 public class EvaluationStatisticJpaEntity extends BaseEntity {
 
     @Id
-    @Column(
-        name = "statistics_date",
-        columnDefinition = "char(8)",
-        nullable = false
-    )
-    private String statisticsDate;
-
-    @Id
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "perfume_id")
     private PerfumeJpaEntity perfumeJpaEntity;
@@ -80,7 +72,6 @@ public class EvaluationStatisticJpaEntity extends BaseEntity {
     }
 
     public static List<EvaluationStatisticJpaEntity> toJpaEntityList(
-        String statisticsDate,
         PerfumeJpaEntity perfumeJpaEntity,
         EvaluationStatistic evaluationStatistic
     ) {
@@ -99,7 +90,6 @@ public class EvaluationStatisticJpaEntity extends BaseEntity {
 
                     jpaEntities.add(
                         EvaluationStatisticJpaEntity.builder()
-                            .statisticsDate(statisticsDate)
                             .perfumeJpaEntity(perfumeJpaEntity)
                             .fieldCode(field.getCode())
                             .optionCode(option.getCode())

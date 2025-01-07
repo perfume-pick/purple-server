@@ -22,7 +22,7 @@ public interface ReviewRepository {
 
     List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByScoreAsc(Long userId, Long perfumeId);
 
-    List<Review> findAllWithEvaluation(ReviewType reviewType, String updatedDate);
+    List<Review> findAllWithEvaluation(ReviewType reviewType);
 
     void update(Long reviewId, String content, ReviewType reviewType);
 

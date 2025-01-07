@@ -47,10 +47,7 @@ public interface ReviewDomainService {
 
     Review find(Long reviewId);
 
-    List<Review> findAllWithEvaluation(
-        ReviewType reviewType,
-        String updatedDate
-    );
+    List<Review> findAllWithEvaluation(ReviewType reviewType);
 
     void deleteReviewMoods(Long reviewId);
 

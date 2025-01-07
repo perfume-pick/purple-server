@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class StarRatingStatisticId implements Serializable {
 
-//    private String statisticsDate;
     private Long perfumeJpaEntity;
     private int score;
 

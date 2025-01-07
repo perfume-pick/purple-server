@@ -25,7 +25,7 @@ public class CreateReviewEvaluationApplicationService implements CreateReviewEva
             command.evaluationFieldVOs()
         );
 
-        reviewEvaluationDomainService.create(reviewEvaluation);
+        reviewEvaluationDomainService.createAll(reviewEvaluation);
 
         increaseEvaluationStatisticUseCase.invoke(
             new IncreaseEvaluationStatisticUseCase.Command(

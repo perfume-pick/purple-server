@@ -107,14 +107,8 @@ public class ReviewDomainServiceImpl implements ReviewDomainService {
     }
 
     @Override
-    public List<Review> findAllWithEvaluation(
-        ReviewType reviewType,
-        String updatedDate
-    ) {
-        return reviewRepository.findAllWithEvaluation(
-            reviewType,
-            updatedDate
-        );
+    public List<Review> findAllWithEvaluation(ReviewType reviewType) {
+        return reviewRepository.findAllWithEvaluation(reviewType);
     }
 
     @Override

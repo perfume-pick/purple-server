@@ -46,7 +46,7 @@ public class UpdateReviewDetailApplicationService implements UpdateReviewDetailU
         }
 
         else{
-            ReviewEvaluation beforeReviewEvaluation = reviewEvaluationDomainService.find(
+            ReviewEvaluation beforeReviewEvaluation = reviewEvaluationDomainService.findAll(
                 command.reviewId());
 
             decreaseEvaluationStatisticUseCase.invoke(new DecreaseEvaluationStatisticUseCase.Command(
@@ -59,7 +59,7 @@ public class UpdateReviewDetailApplicationService implements UpdateReviewDetailU
                 command.reviewId(),
                 command.evaluationFieldVOs()
             );
-            reviewEvaluationDomainService.update(
+            reviewEvaluationDomainService.updateAll(
                 afterReviewEvaluation
             );
 

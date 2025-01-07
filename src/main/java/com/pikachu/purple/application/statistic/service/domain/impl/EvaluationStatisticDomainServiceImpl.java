@@ -16,14 +16,8 @@ public class EvaluationStatisticDomainServiceImpl implements EvaluationStatistic
     private final EvaluationStatisticRepository evaluationStatisticRepository;
 
     @Override
-    public EvaluationStatistic findOrderByVotesDesc(
-        String statisticsDate,
-        Long perfumeId
-    ) {
-        return evaluationStatisticRepository.findOrderByVotesDesc(
-            statisticsDate,
-            perfumeId
-        );
+    public EvaluationStatistic findOrderByVotesDesc(Long perfumeId) {
+        return evaluationStatisticRepository.findOrderByVotesDesc(perfumeId);
     }
 
     @Override
@@ -61,19 +55,13 @@ public class EvaluationStatisticDomainServiceImpl implements EvaluationStatistic
     }
 
     @Override
-    public EvaluationStatistic find(String statisticsDate) {
-        return evaluationStatisticRepository.find(statisticsDate);
+    public EvaluationStatistic findAll() {
+        return evaluationStatisticRepository.findAll();
     }
 
     @Override
-    public void update(
-        String statisticsDate,
-        EvaluationStatistic evaluationStatistic
-    ) {
-        evaluationStatisticRepository.update(
-            statisticsDate,
-            evaluationStatistic
-        );
+    public void updateAll(EvaluationStatistic evaluationStatistic) {
+        evaluationStatisticRepository.updateAll(evaluationStatistic);
     }
 
 }
