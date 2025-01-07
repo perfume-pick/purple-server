@@ -37,8 +37,9 @@ public class CreateStarRatingApplicationService implements CreateStarRatingUseCa
             )
         );
 
-        recalculatePerfumeAverageScoreApplicationService.invoke(
-            new RecalculatePerfumeAverageScoreApplicationService.Command(command.perfumeId()));
+        // TODO: 별점 갱신 후 콜백으로 처리
+//        recalculatePerfumeAverageScoreApplicationService.invoke(
+//            new RecalculatePerfumeAverageScoreApplicationService.Command(command.perfumeId()));
 
         return new Result(starRating);
     }
