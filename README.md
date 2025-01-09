@@ -1,6 +1,26 @@
-# 1. Overview
+# Perpick
+> [바로 가기: https://perpick.org](https://perpick.org)
 
-# 2. Tech Stack
+## Tech Stack
+### Develop
+* Java 17
+* SprinBoot 3.2.3
+* Mysql 8.0.33
+* Spring-Data-JPA
+### Configuration Management
+* Git
+* Flyway
+* Amazon ECR
 
-# 3. Architecture
+## Architecture
 ![perpick-infra-pick drawio-6](https://github.com/user-attachments/assets/72581877-f61c-4e98-9ce9-beb27f7aa6b0)
+
+## Configuration
+* env
+  > 루트 폴더 내에 .env 파일 생성
+  > application.yaml 내 정의된 환경 변수에 대해 값 설정
+  > Intellij - Run > Edit Configurations
+
+* profile (Intellij - **Run > Edit Configurations**)
+  > * 개발 환경   
+  > Active Profile: `local`
