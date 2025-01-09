@@ -1,6 +1,8 @@
 # Perpick
 > [바로 가기: https://perpick.org](https://perpick.org)
 
+<img src="https://github.com/user-attachments/assets/c68b3040-58c0-49b7-9bcf-2c0852025bf7" alt="홈 이미지" height="300"/>
+
 ## Tech Stack
 ### Develop
 * Java 17
