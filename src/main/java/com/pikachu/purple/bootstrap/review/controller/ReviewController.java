@@ -39,24 +39,20 @@ public class ReviewController implements ReviewApi {
     @Override
     public void createSimple(CreateReviewSimpleRequest request) {
         createReviewSimpleUseCase.invoke(
-            new CreateReviewSimpleUseCase.Command(
-                request.perfumeId(),
-                request.score(),
-                request.content()
-            )
+            request.perfumeId(),
+            request.score(),
+            request.content()
         );
     }
 
     @Override
     public void createDetail(CreateReviewDetailRequest request) {
         createReviewDetailUseCase.invoke(
-            new CreateReviewDetailUseCase.Command(
-                request.perfumeId(),
-                request.score(),
-                request.content(),
-                request.evaluationFieldVOs(),
-                request.moodNames()
-            )
+            request.perfumeId(),
+            request.score(),
+            request.content(),
+            request.evaluationFieldVOs(),
+            request.moodNames()
         );
     }
 
@@ -77,11 +73,9 @@ public class ReviewController implements ReviewApi {
         UpdateReviewSimpleRequest request
     ) {
         updateReviewSimpleUseCase.invoke(
-            new UpdateReviewSimpleUseCase.Command(
-                reviewId,
-                request.score(),
-                request.content()
-            )
+            reviewId,
+            request.score(),
+            request.content()
         );
     }
 
@@ -90,38 +84,38 @@ public class ReviewController implements ReviewApi {
         Long reviewId,
         UpdateReviewDetailRequest request
     ) {
-        updateReviewDetailUseCase.invoke(new UpdateReviewDetailUseCase.Command(
+        updateReviewDetailUseCase.invoke(
             reviewId,
             request.score(),
             request.content(),
             request.evaluationFieldVOs(),
             request.moodNames()
-        ));
+        );
     }
 
     @Override
     public void delete(Long reviewId) {
-        deleteReviewUseCase.invoke(new DeleteReviewUseCase.Command(reviewId));
+        deleteReviewUseCase.invoke(reviewId);
     }
 
     @Override
     public void complain(Long reviewId) {
-        createComplaintUseCase.invoke(new CreateComplaintUseCase.Command(reviewId));
+        createComplaintUseCase.invoke(reviewId);
     }
 
     @Override
     public void deleteComplain(Long reviewId) {
-        deleteComplaintUseCase.invoke(new DeleteComplaintUseCase.Command(reviewId));
+        deleteComplaintUseCase.invoke(reviewId);
     }
 
     @Override
     public void like(Long reviewId) {
-        createLikeUseCase.invoke(new CreateLikeUseCase.Command(reviewId));
+        createLikeUseCase.invoke(reviewId);
     }
 
     @Override
     public void unLike(Long reviewId) {
-        deleteLikeUseCase.invoke(new DeleteLikeUseCase.Command(reviewId));
+        deleteLikeUseCase.invoke(reviewId);
     }
 
 }

@@ -25,8 +25,8 @@ public class DeleteReviewApplicationService implements DeleteReviewUseCase {
 
     @Transactional
     @Override
-    public void invoke(Command command) {
-        Review review = reviewDomainService.find(command.reviewId());
+    public void invoke(Long reviewId) {
+        Review review = reviewDomainService.find(reviewId);
 
         deleteStarRatingUseCase.invoke(
             new DeleteStarRatingUseCase.Command(review.getStarRating().getId())
@@ -34,20 +34,20 @@ public class DeleteReviewApplicationService implements DeleteReviewUseCase {
 
         if(review.getType() == ReviewType.DETAIL) {
             ReviewEvaluation reviewEvaluation = reviewEvaluationDomainService.findAll(
-                command.reviewId());
+                reviewId);
 
-            reviewEvaluationDomainService.deleteAll(command.reviewId());
+            reviewEvaluationDomainService.deleteAll(reviewId);
 
             decreaseEvaluationStatisticUseCase.invoke(new DecreaseEvaluationStatisticUseCase.Command(
                 review.getPerfume().getId(),
                 reviewEvaluation
             ));
 
-            reviewDomainService.deleteReviewMoods(command.reviewId());
+            reviewDomainService.deleteReviewMoods(reviewId);
         }
 
-        deleteAllLikeUseCase.invoke(new DeleteAllLikeUseCase.Command(command.reviewId()));
-        reviewDomainService.delete(command.reviewId());
+        deleteAllLikeUseCase.invoke(new DeleteAllLikeUseCase.Command(reviewId));
+        reviewDomainService.delete(reviewId);
     }
 
 }
