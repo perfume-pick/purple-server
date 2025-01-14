@@ -18,12 +18,15 @@ public class DeleteComplaintWithReviewApplicationService implements
 
     @Transactional
     @Override
-    public void invoke(Command command) {
+    public void invoke(
+        Long complaintId,
+        String token
+    ) {
         Complaint complaint = complaintDomainService.find(
-            command.complaintId(),
-            command.token()
+            complaintId,
+            token
         );
-        complaintDomainService.delete(command.complaintId());
+        complaintDomainService.delete(complaintId);
         deleteReviewUseCase.invoke(new DeleteReviewUseCase.Command(complaint.getReview().getId()));
     }
 
