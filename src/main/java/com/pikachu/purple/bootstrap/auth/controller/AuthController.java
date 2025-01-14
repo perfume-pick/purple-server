@@ -31,10 +31,8 @@ public class AuthController implements AuthApi {
         SocialLoginRequest request
     ) throws URISyntaxException {
         SocialLoginTryUseCase.Result result = socialLoginTryUseCase.invoke(
-            new SocialLoginTryUseCase.Command(
-                socialLoginProvider,
-                request.frontUrl()
-            )
+            socialLoginProvider,
+            request.frontUrl()
         );
 
         return SuccessResponse.of(
@@ -49,11 +47,9 @@ public class AuthController implements AuthApi {
         SocialLoginRequest request
     ) {
         SocialLoginUseCase.Result result = socialLoginUseCase.invoke(
-            new SocialLoginUseCase.Command(
-                socialLoginProvider,
-                code,
-                request.frontUrl()
-            )
+            socialLoginProvider,
+            code,
+            request.frontUrl()
         );
 
         return SuccessResponse.of(
@@ -70,9 +66,7 @@ public class AuthController implements AuthApi {
     public SuccessResponse<RefreshJwtTokenResponse> refreshJwtToken(
         RefreshJwtTokenRequest request) {
         RefreshJwtTokenUseCase.Result result = refreshJwtTokenUseCase.invoke(
-            new RefreshJwtTokenUseCase.Command(
-                request.jwtToken()
-            )
+            request.jwtToken()
         );
 
         return SuccessResponse.of(

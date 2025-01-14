@@ -27,7 +27,7 @@ public interface AuthApi {
     @PostMapping("/login-try/{provider}")
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<SocialLoginTryResponse> socialLoginTry(
-        @PathVariable("provider")SocialLoginProvider provider,
+        @PathVariable("provider") SocialLoginProvider provider,
         @RequestBody SocialLoginRequest request
     ) throws URISyntaxException;
 
@@ -35,7 +35,7 @@ public interface AuthApi {
     @PostMapping("/login/{provider}")
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<SocialLoginResponse> socialLogin(
-        @PathVariable("provider")SocialLoginProvider provider,
+        @PathVariable("provider") SocialLoginProvider provider,
         @RequestParam String code,
         @RequestBody SocialLoginRequest request
     );

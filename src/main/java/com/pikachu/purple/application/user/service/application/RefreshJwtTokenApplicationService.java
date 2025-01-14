@@ -19,8 +19,7 @@ public class RefreshJwtTokenApplicationService implements RefreshJwtTokenUseCase
     private final UserTokenRepository userTokenRepository;
 
     @Override
-    public Result invoke(Command command) {
-        String jwtToken = command.jwtToken();
+    public Result invoke(String jwtToken) {
         String refreshToken = userTokenService.resolveJwtToken(jwtToken).getRefreshToken();
 
         Long userId = userTokenService.resolveRefreshToken(refreshToken).getUserId();
