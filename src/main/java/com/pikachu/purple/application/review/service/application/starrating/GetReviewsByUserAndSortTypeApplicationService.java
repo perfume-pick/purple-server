@@ -26,12 +26,12 @@ public class GetReviewsByUserAndSortTypeApplicationService implements
 
     @Transactional
     @Override
-    public Result invoke(Command command) {
+    public Result invoke(String sortType) {
         Long userId = getCurrentUserAuthentication().userId();
-        SortType sortType = SortType.transByStr(command.sortType());
+        SortType getSortType = SortType.transByStr(sortType);
 
         List<StarRating> starRatings = new ArrayList<>();
-        switch (sortType) {
+        switch (getSortType) {
             case LIKED:
                 starRatings = starRatingDomainService.findAllOrderByLikeCountDesc(userId);
                 break;
