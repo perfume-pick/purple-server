@@ -15,8 +15,7 @@ public class SearchController implements SearchApi {
 
     @Override
     public SuccessResponse<GetPerfumesResponse> findAllPerfumesByKeyword(String keyword) {
-        GetPerfumesByKeywordUseCase.Result result = getPerfumesByKeywordUseCase.invoke(
-            new GetPerfumesByKeywordUseCase.Command(keyword));
+        GetPerfumesByKeywordUseCase.Result result = getPerfumesByKeywordUseCase.invoke(keyword);
 
         return SuccessResponse.of(new GetPerfumesResponse(result.perfumeDTOs()));
     }
