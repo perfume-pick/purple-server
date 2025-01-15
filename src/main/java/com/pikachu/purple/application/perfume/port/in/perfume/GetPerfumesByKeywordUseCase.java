@@ -5,9 +5,7 @@ import java.util.List;
 
 public interface GetPerfumesByKeywordUseCase {
 
-    Result invoke(Command command);
-
-    record Command(String keyword){}
+    Result invoke(String keyword);
 
     record Result(List<PerfumeDTO> perfumeDTOs){}
 

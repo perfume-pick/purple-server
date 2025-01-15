@@ -26,9 +26,9 @@ public class GetPerfumeDetailByPerfumeIdApplicationService implements
     private static final int MAX_SIZE = 5;
 
     @Override
-    public Result invoke(Command command) {
+    public Result invoke(Long perfumeId) {
 
-        Perfume perfume = perfumeDomainService.findById(command.perfumeId());
+        Perfume perfume = perfumeDomainService.findById(perfumeId);
 
         List<PerfumeAccord> perfumeAccords = perfumeAccordDomainService
             .findAllByPerfumeIdOrderByValueDesc(

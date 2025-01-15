@@ -17,14 +17,12 @@ public class DeleteStarRatingApplicationService implements DeleteStarRatingUseCa
 
     @Transactional
     @Override
-    public void invoke(Command command) {
-        StarRating starRating = starRatingDomainService.deleteById(command.starRatingId());
+    public void invoke(Long starRatingId) {
+        StarRating starRating = starRatingDomainService.deleteById(starRatingId);
 
         decreaseStarRatingStatisticUseCase.invoke(
-            new DecreaseStarRatingStatisticUseCase.Command(
-                starRating.getPerfume().getId(),
-                starRating.getScore()
-            )
+            starRating.getPerfume().getId(),
+            starRating.getScore()
         );
     }
 

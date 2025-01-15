@@ -4,9 +4,7 @@ import com.pikachu.purple.domain.user.User;
 
 public interface GetUserByIdUseCase {
 
-    Result invoke(Command command);
-
-    record Command(Long userId) {}
+    Result invoke(Long userId);
 
     record Result(User user) {}
 

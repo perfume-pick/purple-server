@@ -5,9 +5,7 @@ import java.util.List;
 
 public interface GetPerfumesByIdsUseCase {
 
-    Result invoke(Command command);
-
-    record Command(List<Long> perfumeIds) {}
+    Result invoke(List<Long> perfumeIds);
 
     record Result(List<Perfume> perfumes) {}
 

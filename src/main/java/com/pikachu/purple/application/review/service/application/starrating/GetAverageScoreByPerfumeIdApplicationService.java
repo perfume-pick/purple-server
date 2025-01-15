@@ -15,10 +15,11 @@ public class GetAverageScoreByPerfumeIdApplicationService implements
     private final StarRatingDomainService starRatingDomainService;
 
     @Override
-    public Result invoke(Command command) {
-        List<StarRating> starRatings = starRatingDomainService.findAll(command.perfumeId());
+    public Result invoke(Long perfumeId) {
+        List<StarRating> starRatings = starRatingDomainService.findAll(perfumeId);
         double totalScore = starRatings.stream().mapToInt(StarRating::getScore).sum();
         double averageScore = Math.round(totalScore / starRatings.size() * 10) / 10.0;
         return new Result(averageScore);
     }
+
 }

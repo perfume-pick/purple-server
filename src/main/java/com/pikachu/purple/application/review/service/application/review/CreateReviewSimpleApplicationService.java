@@ -22,12 +22,14 @@ public class CreateReviewSimpleApplicationService implements CreateReviewSimpleU
 
     @Transactional
     @Override
-    public void invoke(Command command) {
+    public void invoke(
+        Long perfumeId,
+        int score,
+        String content
+    ) {
         CreateOrUpdateStarRatingUseCase.Result starRatingResult = createOrUpdateStarRatingUseCase.invoke(
-            new CreateOrUpdateStarRatingUseCase.Command(
-                command.perfumeId(),
-                command.score()
-            )
+            perfumeId,
+            score
         );
 
         StarRating starRating = starRatingResult.starRating();
@@ -37,11 +39,11 @@ public class CreateReviewSimpleApplicationService implements CreateReviewSimpleU
         reviewDomainService.create(
             user.getId(),
             perfume.getId(),
-            command.content(),
+            content,
             ReviewType.SIMPLE
         );
 
-        createUserAccordUseCase.invoke(new CreateUserAccordUseCase.Command(perfume.getId()));
+        createUserAccordUseCase.invoke(perfume.getId());
     }
 
 }

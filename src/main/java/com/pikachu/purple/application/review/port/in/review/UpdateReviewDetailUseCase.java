@@ -5,14 +5,12 @@ import java.util.List;
 
 public interface UpdateReviewDetailUseCase {
 
-    void invoke(Command command);
-
-    record Command(
+    void invoke(
         Long reviewId,
         int score,
         String content,
         List<EvaluationFieldVO> evaluationFieldVOs,
         List<String> moodNames
-    ) {}
+    );
 
 }

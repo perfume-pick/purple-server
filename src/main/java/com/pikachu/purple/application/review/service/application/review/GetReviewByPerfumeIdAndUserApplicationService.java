@@ -27,17 +27,17 @@ public class GetReviewByPerfumeIdAndUserApplicationService implements
 
     @Transactional
     @Override
-    public Result invoke(Command command) {
+    public Result invoke(Long perfumeId) {
         Long userId = getCurrentUserAuthentication().userId();
 
         Review review = reviewDomainService.findWithPerfumeAndReviewEvaluationAndMood(
             userId,
-            command.perfumeId()
+            perfumeId
         );
 
         StarRating starRating = starRatingDomainService.findByUserIdAndPerfumeId(
             userId,
-            command.perfumeId()
+            perfumeId
         );
 
         ReviewByUserDTO reviewByUserDTO = null;

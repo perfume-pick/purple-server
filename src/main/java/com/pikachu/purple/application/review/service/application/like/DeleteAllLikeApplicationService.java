@@ -14,10 +14,8 @@ public class DeleteAllLikeApplicationService implements DeleteAllLikeUseCase {
 
     @Transactional
     @Override
-    public void invoke(Command command) {
-
-        likeDomainService.deleteAll(command.reviewId());
-
+    public void invoke(Long reviewId) {
+        likeDomainService.deleteAll(reviewId);
     }
 
 }

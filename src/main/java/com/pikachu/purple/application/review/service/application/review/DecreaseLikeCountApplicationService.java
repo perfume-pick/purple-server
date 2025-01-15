@@ -12,8 +12,8 @@ public class DecreaseLikeCountApplicationService implements DecreaseLikeCountUse
     private final ReviewDomainService reviewDomainService;
 
     @Override
-    public void invoke(Command command) {
-        reviewDomainService.decreaseLikeCount(command.reviewId());
+    public void invoke(Long reviewId) {
+        reviewDomainService.decreaseLikeCount(reviewId);
     }
 
 }

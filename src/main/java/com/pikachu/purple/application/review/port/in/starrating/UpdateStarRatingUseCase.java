@@ -4,13 +4,11 @@ import com.pikachu.purple.domain.review.StarRating;
 
 public interface UpdateStarRatingUseCase {
 
-    Result invoke(Command command);
-
-    record Command(
+    Result invoke(
         Long perfumeId,
         int previousScore,
         int score
-    ) {}
+    );
 
     record Result(StarRating starRating){}
 

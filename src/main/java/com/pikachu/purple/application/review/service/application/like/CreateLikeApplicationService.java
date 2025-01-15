@@ -18,21 +18,21 @@ public class CreateLikeApplicationService implements CreateLikeUseCase {
 
     @Transactional
     @Override
-    public void invoke(Command command) {
+    public void invoke(Long reviewId) {
         Long userId = getCurrentUserAuthentication().userId();
 
         validateNotExist(
             userId,
-            command.reviewId()
+            reviewId
         );
 
 
         likeDomainService.create(
             userId,
-            command.reviewId()
+            reviewId
         );
 
-        increaseLikeCountUseCase.invoke(new IncreaseLikeCountUseCase.Command(command.reviewId()));
+        increaseLikeCountUseCase.invoke(reviewId);
     }
 
     private void validateNotExist(

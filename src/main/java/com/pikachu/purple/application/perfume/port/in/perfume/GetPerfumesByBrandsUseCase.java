@@ -5,9 +5,7 @@ import java.util.List;
 
 public interface GetPerfumesByBrandsUseCase {
 
-    Result invoke(Command command);
-
-    record Command(List<String> brandNames) {}
+    Result invoke(List<String> brandNames);
 
     record Result(List<BrandPerfumesDTO> brandPerfumesDTOs) {}
 

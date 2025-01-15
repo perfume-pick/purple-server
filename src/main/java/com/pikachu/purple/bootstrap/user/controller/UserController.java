@@ -55,11 +55,9 @@ public class UserController implements UserApi {
         MultipartFile picture
     ) {
         UpdateProfileUseCase.Result result = updateProfileUseCase.invoke(
-            new UpdateProfileUseCase.Command(
-                nickname,
-                isChanged,
-                picture
-            )
+            nickname,
+            isChanged,
+            picture
         );
 
         return SuccessResponse.of(
@@ -114,10 +112,9 @@ public class UserController implements UserApi {
     public void createVisitHistory(Long perfumeId) {
         Instant searchAt = Instant.now();
 
-        createVisitHistoryUseCase.invoke(new CreateVisitHistoryUseCase.Command(
+        createVisitHistoryUseCase.invoke(
             perfumeId,
             searchAt
-            )
         );
     }
 
@@ -136,8 +133,7 @@ public class UserController implements UserApi {
     @Override
     public SuccessResponse<GetReviewByPerfumeIdAndUserResponse> findReviewByPerfumeIdAndUser(
         Long perfumeId) {
-        GetReviewByPerfumeIdAndUserUseCase.Result result = getReviewByPerfumeIdAndUserUseCase.invoke(
-            new GetReviewByPerfumeIdAndUserUseCase.Command(perfumeId));
+        GetReviewByPerfumeIdAndUserUseCase.Result result = getReviewByPerfumeIdAndUserUseCase.invoke(perfumeId);
 
         return SuccessResponse.of(new GetReviewByPerfumeIdAndUserResponse(result.reviewByUserDTO()));
     }
@@ -163,7 +159,7 @@ public class UserController implements UserApi {
 
     @Override
     public SuccessResponse<GetReviewsByUserAndSortTypeResponse> findAllReviewByUserAndSortType(String sortType) {
-        GetReviewsByUserAndSortTypeUseCase.Result result = getReviewsByUserAndSortTypeUseCase.invoke(new GetReviewsByUserAndSortTypeUseCase.Command(sortType));
+        GetReviewsByUserAndSortTypeUseCase.Result result = getReviewsByUserAndSortTypeUseCase.invoke(sortType);
 
         return SuccessResponse.of(
             new GetReviewsByUserAndSortTypeResponse(result.reviewWithPerfumeDTOs())
@@ -171,10 +167,8 @@ public class UserController implements UserApi {
     }
 
     @Override
-    public SuccessResponse<String> withdraw() {
+    public void withdraw() {
         deleteUserUseCase.invoke();
-
-        return SuccessResponse.of(null);
     }
 
 }

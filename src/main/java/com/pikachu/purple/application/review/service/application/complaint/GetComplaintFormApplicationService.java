@@ -23,10 +23,13 @@ public class GetComplaintFormApplicationService implements GetComplaintFormUseCa
 
     @Transactional
     @Override
-    public Result invoke(Command command) {
+    public Result invoke(
+        Long complaintId,
+        String token
+    ) {
         Complaint complaint = complaintDomainService.find(
-            command.complaintId(),
-            command.token()
+            complaintId,
+            token
         );
 
         Review review = reviewDomainService.findWithPerfume(complaint.getReview().getId());

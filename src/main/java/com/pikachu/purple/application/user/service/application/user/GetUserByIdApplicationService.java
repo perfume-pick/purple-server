@@ -13,9 +13,10 @@ public class GetUserByIdApplicationService implements GetUserByIdUseCase {
     private final UserDomainService userDomainService;
 
     @Override
-    public Result invoke(Command command) {
-        User user = userDomainService.findById(command.userId());
+    public Result invoke(Long userId) {
+        User user = userDomainService.findById(userId);
 
         return new Result(user);
     }
+
 }

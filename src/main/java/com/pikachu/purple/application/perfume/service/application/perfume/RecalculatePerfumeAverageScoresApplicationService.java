@@ -35,9 +35,9 @@ public class RecalculatePerfumeAverageScoresApplicationService implements
 
     @Override
     @Transactional
-    public void invoke(Command command) {
+    public void invoke(List<Long> perfumeIds) {
         List<StarRatingStatistic> starRatingStatistics = getStarRatingStatisticsUseCase
-            .invoke(command.perfumeIds())
+            .invoke(perfumeIds)
             .starRatingStatistics();
 
         this.recalculatePerfumeAverageScores(starRatingStatistics);

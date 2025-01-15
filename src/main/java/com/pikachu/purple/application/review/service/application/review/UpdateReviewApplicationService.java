@@ -7,6 +7,7 @@ import com.pikachu.purple.application.review.port.in.starrating.GetStarRatingUse
 import com.pikachu.purple.application.review.port.in.starrating.UpdateStarRatingUseCase;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
 import com.pikachu.purple.domain.review.StarRating;
+import com.pikachu.purple.domain.review.enums.ReviewType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,30 +20,32 @@ public class UpdateReviewApplicationService implements UpdateReviewUseCase {
     private final UpdateStarRatingUseCase updateStarRatingUseCase;
 
     @Override
-    public void invoke(Command command) {
+    public void invoke(
+        Long reviewId,
+        Long perfumeId,
+        ReviewType reviewType,
+        String content,
+        int score
+    ) {
         Long userId = getCurrentUserAuthentication().userId();
 
         reviewDomainService.update(
-            command.reviewId(),
-            command.content(),
-            command.reviewType()
+            reviewId,
+            content,
+            reviewType
         );
 
         GetStarRatingUseCase.Result starRatingResult = getStarRatingUseCase.invoke(
-            new GetStarRatingUseCase.Command(
-                userId,
-                command.perfumeId()
-            )
+            userId,
+            perfumeId
         );
 
         StarRating previousStarRating = starRatingResult.starRating();
 
         updateStarRatingUseCase.invoke(
-            new UpdateStarRatingUseCase.Command(
-                previousStarRating.getPerfume().getId(),
-                previousStarRating.getScore(),
-                command.score()
-            )
+            previousStarRating.getPerfume().getId(),
+            previousStarRating.getScore(),
+            score
         );
     }
 

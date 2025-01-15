@@ -26,8 +26,8 @@ public interface ComplaintApi {
     @Operation(summary = "신고내역 처리")
     @PostMapping("/{complaint-id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void delete(@PathVariable
-        ("complaint-id") Long complaintId,
+    void delete(
+        @PathVariable("complaint-id") Long complaintId,
         @RequestParam String token
     );
 

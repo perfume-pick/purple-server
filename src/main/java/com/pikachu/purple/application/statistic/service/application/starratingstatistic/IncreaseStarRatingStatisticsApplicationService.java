@@ -3,6 +3,7 @@ package com.pikachu.purple.application.statistic.service.application.starratings
 import com.pikachu.purple.application.statistic.port.in.starratingstatistic.IncreaseStarRatingStatisticsUseCase;
 import com.pikachu.purple.application.statistic.service.domain.StarRatingStatisticDomainService;
 import com.pikachu.purple.bootstrap.onboarding.vo.StarRatingVO;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,14 +15,13 @@ public class IncreaseStarRatingStatisticsApplicationService implements
     private final StarRatingStatisticDomainService starRatingStatisticDomainService;
 
     @Override
-    public void invoke(Command command) {
-        for (StarRatingVO starRatingVO : command.starRatingVOs()) {
+    public void invoke(List<StarRatingVO> starRatingVOs) {
+        for (StarRatingVO starRatingVO : starRatingVOs) {
             starRatingStatisticDomainService.increaseVotes(
                 starRatingVO.perfumeId(),
                 starRatingVO.score()
             );
         }
-
     }
 
 }

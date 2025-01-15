@@ -18,15 +18,15 @@ public class DeleteLikeApplicationService implements DeleteLikeUseCase {
 
     @Transactional
     @Override
-    public void invoke(Command command) {
+    public void invoke(Long reviewId) {
         Long userId = getCurrentUserAuthentication().userId();
 
         likeDomainService.delete(
             userId,
-            command.reviewId()
+            reviewId
         );
 
-        decreaseLikeCountUseCase.invoke(new DecreaseLikeCountUseCase.Command(command.reviewId()));
+        decreaseLikeCountUseCase.invoke(reviewId);
     }
 
 }

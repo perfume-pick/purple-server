@@ -13,12 +13,16 @@ public class GetStarRatingApplicationService implements GetStarRatingUseCase {
     private final StarRatingDomainService starRatingDomainService;
 
     @Override
-    public Result invoke(Command command) {
+    public Result invoke(
+        Long userId,
+        Long perfumeId
+    ) {
         StarRating starRating = starRatingDomainService.findByUserIdAndPerfumeId(
-            command.userId(),
-            command.perfumeId()
+            userId,
+            perfumeId
         );
 
         return new Result(starRating);
     }
+
 }

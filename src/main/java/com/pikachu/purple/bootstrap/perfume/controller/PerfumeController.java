@@ -24,8 +24,7 @@ public class PerfumeController implements PerfumeApi {
 
     @Override
     public SuccessResponse<GetPerfumeDetailResponse> findAccordsAndNotesByPerfumeId(Long perfumeId) {
-        GetPerfumeDetailByPerfumeIdUseCase.Result result = getPerfumeDetailByPerfumeIdUseCase.invoke(
-            new GetPerfumeDetailByPerfumeIdUseCase.Command(perfumeId));
+        GetPerfumeDetailByPerfumeIdUseCase.Result result = getPerfumeDetailByPerfumeIdUseCase.invoke(perfumeId);
 
         return SuccessResponse.of(new GetPerfumeDetailResponse(result.perfumeDetail()));
     }
@@ -34,8 +33,7 @@ public class PerfumeController implements PerfumeApi {
     public SuccessResponse<GetFragranticaEvaluationResponse> findFragranticaEvaluationByPerfumeId(
         Long perfumeId) {
 
-        GetFragranticaEvaluationByPerfumeIdUseCase.Result result = getFragranticaEvaluationByPerfumeIdUseCase.invoke(
-            new GetFragranticaEvaluationByPerfumeIdUseCase.Command(perfumeId));
+        GetFragranticaEvaluationByPerfumeIdUseCase.Result result = getFragranticaEvaluationByPerfumeIdUseCase.invoke(perfumeId);
 
         return SuccessResponse.of(
             new GetFragranticaEvaluationResponse(result.fragranticaEvaluation()));
@@ -44,8 +42,7 @@ public class PerfumeController implements PerfumeApi {
     @Override
     public SuccessResponse<GetPerfumeStatisticResponse> findPerfumeStatisticResponse(
         Long perfumeId) {
-        GetPerfumeStatisticByPerfumeIdUseCase.Result result = getPerfumeStatisticByPerfumeIdUseCase. invoke(
-            new GetPerfumeStatisticByPerfumeIdUseCase.Command(perfumeId));
+        GetPerfumeStatisticByPerfumeIdUseCase.Result result = getPerfumeStatisticByPerfumeIdUseCase.invoke(perfumeId);
 
         return SuccessResponse.of(
             new GetPerfumeStatisticResponse(
@@ -61,10 +58,8 @@ public class PerfumeController implements PerfumeApi {
         String sortType
     ) {
         GetReviewsByPerfumeIdAndSortTypeUseCase.Result result = getReviewsByPerfumeIdAndSortTypeUseCase.invoke(
-            new GetReviewsByPerfumeIdAndSortTypeUseCase.Command(
-                perfumeId,
-                sortType
-            )
+            perfumeId,
+            sortType
         );
 
         return SuccessResponse.of(new GetReviewsResponse(result.reviewDTOs()));

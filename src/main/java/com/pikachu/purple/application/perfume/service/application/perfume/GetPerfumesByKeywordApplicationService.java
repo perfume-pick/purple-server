@@ -19,11 +19,11 @@ public class GetPerfumesByKeywordApplicationService implements GetPerfumesByKeyw
 
     @Override
     @Transactional
-    public Result invoke(Command command) {
-        List<Perfume> perfumes = perfumeDomainService.findAllWithPerfumeAccordsByKeyword(command.keyword());
+    public Result invoke(String keyword) {
+        List<Perfume> perfumes = perfumeDomainService.findAllWithPerfumeAccordsByKeyword(keyword);
         for (Perfume perfume : perfumes) {
             double averageScore = getAverageScoreByPerfumeIdUseCase.invoke(
-                new GetAverageScoreByPerfumeIdUseCase.Command(perfume.getId())).averageScore();
+                perfume.getId()).averageScore();
             perfume.setAverageScore(averageScore);
         }
 

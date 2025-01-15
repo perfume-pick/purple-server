@@ -4,8 +4,10 @@ import com.pikachu.purple.application.review.port.in.reviewevaluation.CreateRevi
 import com.pikachu.purple.application.review.service.domain.ReviewEvaluationDomainService;
 import com.pikachu.purple.application.review.util.ReviewEvaluationConverter;
 import com.pikachu.purple.application.statistic.port.in.evaluationstatistic.IncreaseEvaluationStatisticUseCase;
+import com.pikachu.purple.bootstrap.review.vo.EvaluationFieldVO;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.ReviewEvaluation;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -17,21 +19,20 @@ public class CreateReviewEvaluationApplicationService implements CreateReviewEva
     private final IncreaseEvaluationStatisticUseCase increaseEvaluationStatisticUseCase;
 
     @Override
-    public void invoke(Command command) {
-
-        Review review = command.review();
+    public void invoke(
+        Review review,
+        List<EvaluationFieldVO> evaluationFieldVOs
+    ) {
         ReviewEvaluation reviewEvaluation = ReviewEvaluationConverter.of(
             review.getId(),
-            command.evaluationFieldVOs()
+            evaluationFieldVOs
         );
 
         reviewEvaluationDomainService.createAll(reviewEvaluation);
 
         increaseEvaluationStatisticUseCase.invoke(
-            new IncreaseEvaluationStatisticUseCase.Command(
-                review.getPerfume().getId(),
-                reviewEvaluation
-            )
+            review.getPerfume().getId(),
+            reviewEvaluation
         );
     }
     

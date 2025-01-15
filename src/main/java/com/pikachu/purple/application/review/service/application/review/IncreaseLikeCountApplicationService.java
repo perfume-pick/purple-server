@@ -12,8 +12,8 @@ public class IncreaseLikeCountApplicationService implements IncreaseLikeCountUse
     private final ReviewDomainService reviewDomainService;
 
     @Override
-    public void invoke(Command command) {
-        reviewDomainService.increaseLikeCount(command.reviewId());
+    public void invoke(Long reviewId) {
+        reviewDomainService.increaseLikeCount(reviewId);
     }
 
 }

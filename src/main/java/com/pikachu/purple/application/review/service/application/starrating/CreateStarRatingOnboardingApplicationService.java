@@ -7,6 +7,8 @@ import com.pikachu.purple.application.review.port.in.starrating.CreateStarRating
 import com.pikachu.purple.application.review.service.domain.StarRatingDomainService;
 import com.pikachu.purple.application.statistic.port.in.starratingstatistic.IncreaseStarRatingStatisticsUseCase;
 import com.pikachu.purple.application.user.port.in.useraccord.CreateUserAccordOnboardingUseCase;
+import com.pikachu.purple.bootstrap.onboarding.vo.StarRatingVO;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,19 +25,15 @@ public class CreateStarRatingOnboardingApplicationService implements
 
     @Override
     @Transactional
-    public void invoke(Command command) {
+    public void invoke(List<StarRatingVO> starRatingVOs) {
         Long userId = getCurrentUserAuthentication().userId();
 
         starRatingDomainService.createOnboarding(
             userId,
-            command.starRatingVOs()
+            starRatingVOs
         );
 
-        increaseStarRatingStatisticsUseCase.invoke(
-            new IncreaseStarRatingStatisticsUseCase.Command(
-                command.starRatingVOs()
-            )
-        );
+        increaseStarRatingStatisticsUseCase.invoke(starRatingVOs);
 
         // TODO: 별점 갱신 후 콜백으로 처리
 //        List<Long> perfumeIds = command.starRatingVOs().stream()

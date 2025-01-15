@@ -27,7 +27,7 @@ public class GetPerfumesByReviewCountApplicationService implements
        List<Perfume> perfumes =  perfumeDomainService.findAllOrderByReviewCount(MAX_SIZE);
         for (Perfume perfume : perfumes) {
             double averageScore = getAverageScoreByPerfumeIdUseCase.invoke(
-                new GetAverageScoreByPerfumeIdUseCase.Command(perfume.getId())).averageScore();
+                perfume.getId()).averageScore();
             perfume.setAverageScore(averageScore);
         }
 

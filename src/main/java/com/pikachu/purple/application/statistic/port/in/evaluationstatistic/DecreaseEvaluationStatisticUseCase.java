@@ -4,11 +4,9 @@ import com.pikachu.purple.domain.review.ReviewEvaluation;
 
 public interface DecreaseEvaluationStatisticUseCase {
 
-    void invoke(Command command);
-
-    record Command(
+    void invoke(
         Long perfumeId,
         ReviewEvaluation reviewEvaluation
-    ) {}
+    );
 
 }

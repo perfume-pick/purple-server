@@ -62,7 +62,7 @@ public class GetPerfumesAndUserAccordsByUserApplicationService implements
 
         for (Perfume perfume : perfumes) {
             double averageScore = getAverageScoreByPerfumeIdUseCase.invoke(
-                new GetAverageScoreByPerfumeIdUseCase.Command(perfume.getId())).averageScore();
+                perfume.getId()).averageScore();
             perfume.setAverageScore(averageScore);
         }
 

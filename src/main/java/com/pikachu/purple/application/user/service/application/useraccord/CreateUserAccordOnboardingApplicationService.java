@@ -26,8 +26,8 @@ public class CreateUserAccordOnboardingApplicationService implements
     public void invoke() {
         Long userId = getCurrentUserAuthentication().userId();
 
-        GetUserByIdUseCase.Result user = getUserByIdUseCase.invoke(new GetUserByIdUseCase.Command(userId));
-        GetStarRatingsByUserIdUseCase.Result starRatings = getStarRatingsByUserIdUseCase.invoke(new GetStarRatingsByUserIdUseCase.Command(userId));
+        GetUserByIdUseCase.Result user = getUserByIdUseCase.invoke(userId);
+        GetStarRatingsByUserIdUseCase.Result starRatings = getStarRatingsByUserIdUseCase.invoke(userId);
 
         List<UserAccord> userAccords = userAccordRecommender.recommend(
             user.user(),
