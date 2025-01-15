@@ -51,6 +51,6 @@ public interface AuthApi {
     @Operation(summary = "소셜 로그아웃")
     @PostMapping("/logout")
     @ResponseStatus(HttpStatus.OK)
-    SuccessResponse<String> socialLogout() throws URISyntaxException;
+    void socialLogout() throws URISyntaxException;
 
 }

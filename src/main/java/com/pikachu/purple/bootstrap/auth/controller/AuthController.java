@@ -14,6 +14,7 @@ import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import java.net.URISyntaxException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -75,10 +76,8 @@ public class AuthController implements AuthApi {
     }
 
     @Override
-    public SuccessResponse<String> socialLogout() {
+    public void socialLogout() {
         socialLogoutUseCase.invoke();
-
-        return SuccessResponse.of(null);
     }
 
 }
