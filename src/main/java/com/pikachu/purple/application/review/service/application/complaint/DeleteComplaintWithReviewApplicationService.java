@@ -27,7 +27,7 @@ public class DeleteComplaintWithReviewApplicationService implements
             token
         );
         complaintDomainService.delete(complaintId);
-        deleteReviewUseCase.invoke(new DeleteReviewUseCase.Command(complaint.getReview().getId()));
+        deleteReviewUseCase.invoke(complaint.getReview().getId());
     }
 
 }
