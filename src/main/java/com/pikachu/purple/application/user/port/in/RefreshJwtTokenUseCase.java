@@ -2,18 +2,8 @@ package com.pikachu.purple.application.user.port.in;
 
 public interface RefreshJwtTokenUseCase {
 
-    RefreshJwtTokenUseCase.Result invoke(RefreshJwtTokenUseCase.Command command);
+    RefreshJwtTokenUseCase.Result invoke(String jwtToken);
 
-    record Command(
-        String jwtToken
-    ) {
-
-    }
-
-    record Result(
-        String jwtToken
-    ) {
-
-    }
+    record Result(String jwtToken) {}
 
 }

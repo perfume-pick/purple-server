@@ -20,10 +20,10 @@ public class ComplaintController implements ComplaintApi {
         String token,
         Model model
     ) {
-        GetComplaintFormUseCase.Result result = getComplaintFormUseCase.invoke(new GetComplaintFormUseCase.Command(
+        GetComplaintFormUseCase.Result result = getComplaintFormUseCase.invoke(
             complaintId,
             token
-        ));
+        );
 
         model.addAttribute("reportDate", result.complaintFormDTO().reportedAt());
         model.addAttribute("reporterId", result.complaintFormDTO().reporterId());
@@ -41,10 +41,10 @@ public class ComplaintController implements ComplaintApi {
         Long complaintId,
         String token
     ) {
-       deleteComplaintWithReviewUseCase.invoke(new DeleteComplaintWithReviewUseCase.Command(
+       deleteComplaintWithReviewUseCase.invoke(
            complaintId,
            token
-       ));
+       );
     }
 
 }

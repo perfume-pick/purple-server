@@ -7,9 +7,7 @@ import java.util.List;
 
 public interface GetPerfumeStatisticByPerfumeIdUseCase {
 
-    Result invoke(Command command);
-
-    record Command(Long perfumeId) {}
+    Result invoke(Long perfumeId);
 
     record Result(
         List<StarRatingStatisticDTO> starRatingStatistics,

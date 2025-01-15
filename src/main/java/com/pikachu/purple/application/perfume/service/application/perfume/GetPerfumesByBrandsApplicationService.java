@@ -17,8 +17,8 @@ public class GetPerfumesByBrandsApplicationService implements GetPerfumesByBrand
     private final PerfumeDomainService perfumeDomainService;
 
     @Override
-    public Result invoke(Command command) {
-        List<Perfume> perfumes = perfumeDomainService.findAllByBrandNames(command.brandNames());
+    public Result invoke(List<String> brandNames) {
+        List<Perfume> perfumes = perfumeDomainService.findAllByBrandNames(brandNames);
 
         Map<String, List<Perfume>> perfumesByBrand = perfumes.stream()
             .collect(Collectors.groupingBy(perfume -> perfume.getBrand().getKoreanName()));

@@ -4,10 +4,8 @@ import com.pikachu.purple.application.perfume.common.dto.PerfumeDetailDTO;
 
 public interface GetPerfumeDetailByPerfumeIdUseCase {
 
-    GetPerfumeDetailByPerfumeIdUseCase.Result invoke(
-        GetPerfumeDetailByPerfumeIdUseCase.Command command);
+    Result invoke(Long perfumeId);
 
-    record Command(Long perfumeId) {}
 
     record Result(PerfumeDetailDTO perfumeDetail) {}
 

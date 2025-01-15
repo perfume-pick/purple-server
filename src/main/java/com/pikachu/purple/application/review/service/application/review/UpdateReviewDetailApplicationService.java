@@ -8,9 +8,11 @@ import com.pikachu.purple.application.review.service.domain.ReviewEvaluationDoma
 import com.pikachu.purple.application.review.util.ReviewEvaluationConverter;
 import com.pikachu.purple.application.statistic.port.in.evaluationstatistic.DecreaseEvaluationStatisticUseCase;
 import com.pikachu.purple.application.statistic.port.in.evaluationstatistic.IncreaseEvaluationStatisticUseCase;
+import com.pikachu.purple.bootstrap.review.vo.EvaluationFieldVO;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.ReviewEvaluation;
 import com.pikachu.purple.domain.review.enums.ReviewType;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,26 +30,32 @@ public class UpdateReviewDetailApplicationService implements UpdateReviewDetailU
 
     @Transactional
     @Override
-    public void invoke(Command command) {
-        Review review = reviewDomainService.findWithPerfume(command.reviewId());
+    public void invoke(
+        Long reviewId,
+        int score,
+        String content,
+        List<EvaluationFieldVO> evaluationFieldVOs,
+        List<String> moodNames
+    ) {
+        Review review = reviewDomainService.findWithPerfume(reviewId);
 
         if(review.getType() == ReviewType.SIMPLE) {
             createReviewEvaluationUseCase.invoke(
                 new CreateReviewEvaluationUseCase.Command(
                     review,
-                    command.evaluationFieldVOs()
+                    evaluationFieldVOs
                 )
             );
 
             reviewDomainService.createReviewMoods(
                 review.getId(),
-                command.moodNames()
+                moodNames
             );
         }
 
         else{
             ReviewEvaluation beforeReviewEvaluation = reviewEvaluationDomainService.findAll(
-                command.reviewId());
+                reviewId);
 
             decreaseEvaluationStatisticUseCase.invoke(new DecreaseEvaluationStatisticUseCase.Command(
                     review.getPerfume().getId(),
@@ -56,8 +64,8 @@ public class UpdateReviewDetailApplicationService implements UpdateReviewDetailU
             );
 
             ReviewEvaluation afterReviewEvaluation = ReviewEvaluationConverter.of(
-                command.reviewId(),
-                command.evaluationFieldVOs()
+                reviewId,
+                evaluationFieldVOs
             );
             reviewEvaluationDomainService.updateAll(
                 afterReviewEvaluation
@@ -69,17 +77,17 @@ public class UpdateReviewDetailApplicationService implements UpdateReviewDetailU
             ));
 
             reviewDomainService.updateReviewMood(
-                command.reviewId(),
-                command.moodNames()
+                reviewId,
+                moodNames
             );
         }
 
         updateReviewUseCase.invoke(new UpdateReviewUseCase.Command(
-                command.reviewId(),
+                reviewId,
                 review.getPerfume().getId(),
                 ReviewType.DETAIL,
-                command.content(),
-                command.score()
+                content,
+                score
             )
         );
 

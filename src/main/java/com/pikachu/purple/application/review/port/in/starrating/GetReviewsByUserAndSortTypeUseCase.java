@@ -5,9 +5,7 @@ import java.util.List;
 
 public interface GetReviewsByUserAndSortTypeUseCase {
 
-    Result invoke(Command command);
-
-    record Command(String sortType) {}
+    Result invoke(String sortType);
 
     record Result(List<ReviewWithPerfumeDTO> reviewWithPerfumeDTOs) {}
 

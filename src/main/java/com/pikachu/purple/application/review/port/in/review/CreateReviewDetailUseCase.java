@@ -5,16 +5,12 @@ import java.util.List;
 
 public interface CreateReviewDetailUseCase {
 
-    void invoke(Command command);
-
-    record Command(
+    void invoke(
         Long perfumeId,
         int score,
         String content,
         List<EvaluationFieldVO> evaluationFieldVOs,
         List<String> moodNames
-    ) {
-
-    }
+    );
 
 }

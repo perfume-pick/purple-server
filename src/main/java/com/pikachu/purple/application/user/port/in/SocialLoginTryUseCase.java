@@ -5,15 +5,11 @@ import java.net.URISyntaxException;
 
 public interface SocialLoginTryUseCase {
 
-    Result invoke(Command command) throws URISyntaxException;
-
-    record Command(
+    Result invoke(
         SocialLoginProvider socialLoginProvider,
         String frontUrl
-    ) {}
+    ) throws URISyntaxException;
 
-    record Result(
-        String socialLoginUrl
-    ) {}
+    record Result(String socialLoginUrl) {}
 
 }

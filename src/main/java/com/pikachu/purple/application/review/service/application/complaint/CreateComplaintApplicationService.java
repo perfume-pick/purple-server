@@ -19,11 +19,11 @@ public class CreateComplaintApplicationService implements CreateComplaintUseCase
 
     @Transactional
     @Override
-    public void invoke(Command command) {
+    public void invoke(Long reviewId) {
         Long userId = getCurrentUserAuthentication().userId();
         Complaint complaint = complaintDomainService.create(
             userId,
-            command.reviewId()
+            reviewId
         );
 
         sendComplaintUseCase.invoke(new SendComplaintUseCase.Command(complaint));

@@ -4,11 +4,9 @@ import java.time.Instant;
 
 public interface CreateVisitHistoryUseCase {
 
-    void invoke(Command command);
-
-    record Command(
+    void invoke(
         Long perfumeId,
         Instant searchAt
-    ) {}
+    );
 
 }

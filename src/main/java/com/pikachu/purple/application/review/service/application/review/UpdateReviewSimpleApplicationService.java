@@ -23,26 +23,30 @@ public class UpdateReviewSimpleApplicationService implements UpdateReviewSimpleU
 
     @Transactional
     @Override
-    public void invoke(Command command) {
-        Review review = reviewDomainService.findWithPerfume(command.reviewId());
+    public void invoke(
+        Long reviewId,
+        int score,
+        String content
+    ) {
+        Review review = reviewDomainService.findWithPerfume(reviewId);
 
         if(review.getType() == ReviewType.DETAIL) {
-            ReviewEvaluation reviewEvaluation = reviewEvaluationDomainService.findAll(command.reviewId());
-            reviewEvaluationDomainService.deleteAll(command.reviewId());
+            ReviewEvaluation reviewEvaluation = reviewEvaluationDomainService.findAll(reviewId);
+            reviewEvaluationDomainService.deleteAll(reviewId);
             decreaseEvaluationStatisticUseCase.invoke(new DecreaseEvaluationStatisticUseCase.Command(
                     review.getPerfume().getId(),
                     reviewEvaluation
                 )
             );
-            reviewDomainService.deleteReviewMoods(command.reviewId());
+            reviewDomainService.deleteReviewMoods(reviewId);
         }
 
         updateReviewUseCase.invoke(new UpdateReviewUseCase.Command(
-            command.reviewId(),
+            reviewId,
             review.getPerfume().getId(),
             ReviewType.SIMPLE,
-            command.content(),
-            command.score()
+            content,
+            score
             )
         );
     }

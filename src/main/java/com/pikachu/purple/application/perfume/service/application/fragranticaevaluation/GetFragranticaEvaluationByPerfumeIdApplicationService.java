@@ -22,10 +22,10 @@ public class GetFragranticaEvaluationByPerfumeIdApplicationService implements
     private final FragranticaEvaluationDomainService fragranticaEvaluationDomainService;
 
     @Override
-    public Result invoke(Command command) {
+    public Result invoke(Long perfumeId) {
 
         FragranticaEvaluation fragranticaEvaluation = fragranticaEvaluationDomainService.findByPerfumeIdOrderByVotesDesc(
-            command.perfumeId());
+            perfumeId);
 
         List<FragranticaEvaluationFieldDTO> fragranticaEvaluationFieldDTOs = new ArrayList<>();
         for (EvaluationFieldType evaluationField : fragranticaEvaluation.getFieldSet()) {

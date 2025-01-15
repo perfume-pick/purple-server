@@ -24,20 +24,20 @@ public class GetPerfumeStatisticByPerfumeIdApplicationService implements
     private final StarRatingStatisticDomainService starRatingStatisticDomainService;
 
     @Override
-    public Result invoke(Command command) {
+    public Result invoke(Long perfumeId) {
         EvaluationStatistic evaluationStatistic = evaluationStatisticDomainService.findOrderByVotesDesc(
-            command.perfumeId());
+            perfumeId);
 
         List<EvaluationFieldDTO<EvaluationOptionStatisticDTO>> evaluationFieldDTOs = new ArrayList<>();
         for (EvaluationFieldType evaluationField : evaluationStatistic.getFields(
-            command.perfumeId())) {
+            perfumeId)) {
             int totalVotesByField = evaluationStatistic.getOptions(
-                    command.perfumeId(),
+                    perfumeId,
                     evaluationField
                 ).stream()
                 .mapToInt(
                     evaluationOption -> evaluationStatistic.getVotes(
-                        command.perfumeId(),
+                        perfumeId,
                         evaluationField,
                         evaluationOption
                     )
@@ -46,7 +46,7 @@ public class GetPerfumeStatisticByPerfumeIdApplicationService implements
             List<EvaluationOptionStatisticDTO> evaluationOptionStatisticDTOs = new ArrayList<>();
             List<EvaluationOptionType> evaluationOptions =
                 evaluationStatistic.getOptions(
-                    command.perfumeId(),
+                    perfumeId,
                     evaluationField
                 );
             for (int i = 0; i < evaluationOptions.size(); i++) {
@@ -54,7 +54,7 @@ public class GetPerfumeStatisticByPerfumeIdApplicationService implements
 
                 EvaluationOptionType evaluationOption = evaluationOptions.get(i);
                 int votes = evaluationStatistic.getVotes(
-                    command.perfumeId(),
+                    perfumeId,
                     evaluationField,
                     evaluationOption
                 );
@@ -77,7 +77,7 @@ public class GetPerfumeStatisticByPerfumeIdApplicationService implements
         }
 
         List<StarRatingStatistic> starRatingStatistics = starRatingStatisticDomainService
-            .findAll(command.perfumeId());
+            .findAll(perfumeId);
         int totalVotes = starRatingStatistics.stream().mapToInt(StarRatingStatistic::getVotes)
             .sum();
 

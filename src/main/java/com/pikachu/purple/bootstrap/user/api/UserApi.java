@@ -151,6 +151,6 @@ public interface UserApi {
     @Operation(summary = "회원 탈퇴")
     @DeleteMapping("/my/withdraw")
     @ResponseStatus(HttpStatus.OK)
-    SuccessResponse<String> withdraw();
+    void withdraw();
 
 }

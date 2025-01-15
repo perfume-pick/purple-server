@@ -4,12 +4,10 @@ import com.pikachu.purple.application.review.common.dto.ComplaintFormDTO;
 
 public interface GetComplaintFormUseCase {
 
-    Result invoke(Command command);
-
-    record Command(
+    Result invoke(
         Long complaintId,
         String token
-    ) {}
+    );
 
     record Result(ComplaintFormDTO complaintFormDTO) {}
 

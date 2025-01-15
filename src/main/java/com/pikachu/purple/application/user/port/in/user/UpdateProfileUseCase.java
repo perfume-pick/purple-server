@@ -5,18 +5,12 @@ import org.springframework.web.multipart.MultipartFile;
 
 public interface UpdateProfileUseCase {
 
-    Result invoke(Command command);
-
-    record Command(
+    Result invoke(
         String nickname,
         boolean isChanged,
         MultipartFile picture
-    ) {
+    );
 
-    }
-
-    record Result(User user) {
-
-    }
+    record Result(User user) {}
 
 }

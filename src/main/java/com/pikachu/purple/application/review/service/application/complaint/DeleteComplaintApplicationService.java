@@ -15,12 +15,12 @@ public class DeleteComplaintApplicationService implements DeleteComplaintUseCase
     private final ComplaintDomainService complaintDomainService;
 
     @Override
-    public void invoke(Command command) {
+    public void invoke(Long reviewId) {
         Long userId = getCurrentUserAuthentication().userId();
 
         Complaint complaint = complaintDomainService.find(
             userId,
-            command.reviewId()
+            reviewId
         );
 
         complaintDomainService.delete(complaint.getId());

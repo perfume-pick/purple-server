@@ -4,21 +4,17 @@ import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 
 public interface SocialLoginUseCase {
 
-    Result invoke(Command command);
-
-    record Command(
+    Result invoke(
         SocialLoginProvider socialLoginProvider,
         String authorizationCode,
         String frontUrl
-    ) {}
+    );
 
     record Result(
         String jwtToken,
         boolean isSignUp,
         String nickname,
         String imageUrl
-    ) {
-
-    }
+    ) {}
 
 }

@@ -4,6 +4,7 @@ import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUse
 
 import com.pikachu.purple.application.history.port.in.visithistory.CreateVisitHistoryUseCase;
 import com.pikachu.purple.application.history.service.domain.VisitHistoryDomainService;
+import java.time.Instant;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,12 +17,16 @@ public class CreateVisitHistoryApplicationService implements CreateVisitHistoryU
 
     @Transactional
     @Override
-    public void invoke(Command command) {
+    public void invoke(
+        Long perfumeId,
+        Instant searchAt
+    ) {
         Long userId = getCurrentUserAuthentication().userId();
+
         visitHistoryDomainService.create(
             userId,
-            command.perfumeId(),
-            command.searchAt()
+            perfumeId,
+            searchAt
         );
     }
 

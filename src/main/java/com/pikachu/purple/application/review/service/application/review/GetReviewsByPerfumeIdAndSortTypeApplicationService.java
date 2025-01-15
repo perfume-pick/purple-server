@@ -25,35 +25,38 @@ public class GetReviewsByPerfumeIdAndSortTypeApplicationService implements
 
     @Transactional
     @Override
-    public Result invoke(Command command) {
+    public Result invoke(
+        Long perfumeId,
+        String sortType
+    ) {
         Long userId = getCurrentUserAuthentication().userId();
-        SortType sortType = SortType.transByStr(command.sortType());
+        SortType getSortType = SortType.transByStr(sortType);
 
         List<Review> reviews = new ArrayList<>();
 
-        switch (sortType) {
+        switch (getSortType) {
             case LIKED:
                 reviews = reviewDomainService.findAllOrderByLikeCountDesc(
                     userId,
-                    command.perfumeId()
+                    perfumeId
                 );
                 break;
             case LATEST:
                 reviews = reviewDomainService.findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByCreatedAtDesc(
                     userId,
-                    command.perfumeId()
+                    perfumeId
                 );
                 break;
             case STAR_RATING_HIGH:
                 reviews = reviewDomainService.findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByScoreDesc(
                     userId,
-                    command.perfumeId()
+                    perfumeId
                 );
                 break;
             case STAR_RATING_LOW:
                 reviews = reviewDomainService.findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByScoreAsc(
                     userId,
-                    command.perfumeId()
+                    perfumeId
                 );
                 break;
             default:
