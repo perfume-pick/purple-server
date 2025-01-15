@@ -41,10 +41,8 @@ public class UpdateReviewDetailApplicationService implements UpdateReviewDetailU
 
         if(review.getType() == ReviewType.SIMPLE) {
             createReviewEvaluationUseCase.invoke(
-                new CreateReviewEvaluationUseCase.Command(
-                    review,
-                    evaluationFieldVOs
-                )
+                review,
+                evaluationFieldVOs
             );
 
             reviewDomainService.createReviewMoods(
@@ -57,10 +55,9 @@ public class UpdateReviewDetailApplicationService implements UpdateReviewDetailU
             ReviewEvaluation beforeReviewEvaluation = reviewEvaluationDomainService.findAll(
                 reviewId);
 
-            decreaseEvaluationStatisticUseCase.invoke(new DecreaseEvaluationStatisticUseCase.Command(
-                    review.getPerfume().getId(),
-                    beforeReviewEvaluation
-                )
+            decreaseEvaluationStatisticUseCase.invoke(
+                review.getPerfume().getId(),
+                beforeReviewEvaluation
             );
 
             ReviewEvaluation afterReviewEvaluation = ReviewEvaluationConverter.of(
@@ -71,10 +68,10 @@ public class UpdateReviewDetailApplicationService implements UpdateReviewDetailU
                 afterReviewEvaluation
             );
 
-            increaseEvaluationStatisticUseCase.invoke(new IncreaseEvaluationStatisticUseCase.Command(
+            increaseEvaluationStatisticUseCase.invoke(
                 review.getPerfume().getId(),
                 afterReviewEvaluation
-            ));
+            );
 
             reviewDomainService.updateReviewMood(
                 reviewId,
@@ -82,13 +79,12 @@ public class UpdateReviewDetailApplicationService implements UpdateReviewDetailU
             );
         }
 
-        updateReviewUseCase.invoke(new UpdateReviewUseCase.Command(
-                reviewId,
-                review.getPerfume().getId(),
-                ReviewType.DETAIL,
-                content,
-                score
-            )
+        updateReviewUseCase.invoke(
+            reviewId,
+            review.getPerfume().getId(),
+            ReviewType.DETAIL,
+            content,
+            score
         );
 
     }

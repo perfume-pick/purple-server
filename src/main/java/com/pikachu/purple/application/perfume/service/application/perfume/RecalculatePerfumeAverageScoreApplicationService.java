@@ -19,9 +19,9 @@ public class RecalculatePerfumeAverageScoreApplicationService implements
 
     @Override
     @Transactional
-    public void invoke(Command command) {
+    public void invoke(Long perfumeId) {
         List<StarRatingStatistic> starRatingStatistics = getStarRatingStatisticsUseCase
-            .invoke(command.perfumeId())
+            .invoke(perfumeId)
             .starRatingStatistics();
 
         double totalScore = starRatingStatistics.stream()
@@ -34,7 +34,7 @@ public class RecalculatePerfumeAverageScoreApplicationService implements
 
         double averageScore = totalVotes > 0 ? totalScore / totalVotes : 0.0;
         perfumeDomainService.updateAverageScore(
-            command.perfumeId(),
+            perfumeId,
             averageScore
         );
     }

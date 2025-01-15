@@ -23,27 +23,27 @@ public class UpdateStarRatingApplicationService implements UpdateStarRatingUseCa
 
     @Override
     @Transactional
-    public Result invoke(Command command) {
+    public Result invoke(
+        Long perfumeId,
+        int previousScore,
+        int score
+    ) {
         Long userId = getCurrentUserAuthentication().userId();
 
         decreaseStarRatingStatisticUseCase.invoke(
-            new DecreaseStarRatingStatisticUseCase.Command(
-                command.perfumeId(),
-                command.previousScore()
-            )
+            perfumeId,
+            previousScore
         );
 
         StarRating starRating = starRatingDomainService.updateScore(
             userId,
-            command.perfumeId(),
-            command.score()
+            perfumeId,
+            score
         );
 
         increaseStarRatingStatisticUseCase.invoke(
-            new IncreaseStarRatingStatisticUseCase.Command(
-                starRating.getPerfume().getId(),
-                starRating.getScore()
-            )
+            starRating.getPerfume().getId(),
+            starRating.getScore()
         );
 
         // TODO: 별점 갱신 후 콜백으로 처리

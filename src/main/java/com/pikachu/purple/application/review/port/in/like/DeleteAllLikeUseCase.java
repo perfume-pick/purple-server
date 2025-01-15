@@ -2,8 +2,7 @@ package com.pikachu.purple.application.review.port.in.like;
 
 public interface DeleteAllLikeUseCase {
 
-    void invoke(Command command);
+    void invoke(Long reviewId);
 
-    record Command(Long reviewId) {}
 
 }

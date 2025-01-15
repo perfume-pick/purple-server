@@ -23,33 +23,30 @@ public class CreateOrUpdateStarRatingOnboardingApplicationService implements
 
 
     @Override
-    public Result invoke(Command command) {
+    public Result invoke(
+        Long perfumeId,
+        int score
+    ) {
         Long userId = getCurrentUserAuthentication().userId();
 
         GetStarRatingUseCase.Result getStarRatingResult = getStarRatingUseCase.invoke(
-            new GetStarRatingUseCase.Command(
-                userId,
-                command.perfumeId()
-            )
+            userId,
+            perfumeId
         );
 
         StarRating starRating;
         if (getStarRatingResult.starRating() == null) {
             CreateStarRatingUseCase.Result createStarRatingResult = createStarRatingUseCase.invoke(
-                new CreateStarRatingUseCase.Command(
-                    command.perfumeId(),
-                    command.score()
-                )
+                perfumeId,
+                score
             );
             starRating = createStarRatingResult.starRating();
         } else {
             StarRating previousStarRating = getStarRatingResult.starRating();
             UpdateStarRatingUseCase.Result updateStarRatingResult = updateStarRatingUseCase.invoke(
-                new UpdateStarRatingUseCase.Command(
-                    previousStarRating.getPerfume().getId(),
-                    previousStarRating.getScore(),
-                    command.score()
-                )
+                previousStarRating.getPerfume().getId(),
+                previousStarRating.getScore(),
+                score
             );
             starRating = updateStarRatingResult.starRating();
         }

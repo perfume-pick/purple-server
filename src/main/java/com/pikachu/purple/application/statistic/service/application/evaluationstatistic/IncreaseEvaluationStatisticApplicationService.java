@@ -14,13 +14,15 @@ public class IncreaseEvaluationStatisticApplicationService implements
     private final EvaluationStatisticDomainService evaluationStatisticDomainService;
 
     @Override
-    public void invoke(Command command) {
-        ReviewEvaluation reviewEvaluation = command.reviewEvaluation();
+    public void invoke(
+        Long perfumeId,
+        ReviewEvaluation reviewEvaluation
+    ) {
         reviewEvaluation.getReviewIdSet().forEach(
             reviewId -> reviewEvaluation.getFields(reviewId).forEach(
                 field -> reviewEvaluation.getOptions(reviewId, field).forEach(
                     option -> evaluationStatisticDomainService.increaseVotes(
-                        command.perfumeId(),
+                        perfumeId,
                         field,
                         option
                     )

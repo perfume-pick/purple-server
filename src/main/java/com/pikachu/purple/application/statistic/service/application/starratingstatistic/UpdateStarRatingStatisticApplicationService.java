@@ -18,10 +18,8 @@ public class UpdateStarRatingStatisticApplicationService implements
     @Override
     public void invoke(Command command) {
         GetStarRatingUseCase.Result result = getStarRatingUseCase.invoke(
-            new GetStarRatingUseCase.Command(
-                command.userId(),
-                command.perfumeId()
-            )
+            command.userId(),
+            command.perfumeId()
         );
 
         StarRating previousStarRating = result.starRating();

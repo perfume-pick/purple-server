@@ -4,9 +4,7 @@ import com.pikachu.purple.domain.perfume.Perfume;
 
 public interface GetPerfumeByIdUseCase {
 
-    Result invoke(Command command);
-
-    record Command(Long perfumeId) {}
+    Result invoke(Long perfumeId);
 
     record Result(Perfume perfume) {}
 

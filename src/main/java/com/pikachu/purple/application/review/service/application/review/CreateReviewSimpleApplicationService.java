@@ -28,10 +28,8 @@ public class CreateReviewSimpleApplicationService implements CreateReviewSimpleU
         String content
     ) {
         CreateOrUpdateStarRatingUseCase.Result starRatingResult = createOrUpdateStarRatingUseCase.invoke(
-            new CreateOrUpdateStarRatingUseCase.Command(
-                perfumeId,
-                score
-            )
+            perfumeId,
+            score
         );
 
         StarRating starRating = starRatingResult.starRating();
@@ -45,7 +43,7 @@ public class CreateReviewSimpleApplicationService implements CreateReviewSimpleU
             ReviewType.SIMPLE
         );
 
-        createUserAccordUseCase.invoke(new CreateUserAccordUseCase.Command(perfume.getId()));
+        createUserAccordUseCase.invoke(perfume.getId());
     }
 
 }

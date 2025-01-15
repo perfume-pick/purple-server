@@ -42,9 +42,7 @@ public class GetPolarizedUserAccordsByUserApplicationService implements
             MAX_SIZE
         );
 
-        GetStarRatingsByUserIdUseCase.Result result = getStarRatingsByUserIdUseCase.invoke(
-            new GetStarRatingsByUserIdUseCase.Command(userId)
-        );
+        GetStarRatingsByUserIdUseCase.Result result = getStarRatingsByUserIdUseCase.invoke(userId);
 
         List<AccordInfo> preferredAccord = mapToAccordInfo(
             accordsByDesc,

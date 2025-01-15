@@ -4,8 +4,6 @@ import com.pikachu.purple.domain.review.Complaint;
 
 public interface SendComplaintUseCase {
 
-    void invoke(Command command);
-
-    record Command(Complaint complaint) {}
+    void invoke(Complaint complaint);
 
 }

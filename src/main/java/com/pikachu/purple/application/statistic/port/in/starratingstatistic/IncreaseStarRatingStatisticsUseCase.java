@@ -5,10 +5,6 @@ import java.util.List;
 
 public interface IncreaseStarRatingStatisticsUseCase {
 
-    void invoke(Command command);
-
-    record Command(
-        List<StarRatingVO> starRatingVOs
-    ) {}
+    void invoke(List<StarRatingVO> starRatingVOs);
 
 }

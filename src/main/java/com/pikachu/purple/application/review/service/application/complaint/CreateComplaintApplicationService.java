@@ -26,7 +26,7 @@ public class CreateComplaintApplicationService implements CreateComplaintUseCase
             reviewId
         );
 
-        sendComplaintUseCase.invoke(new SendComplaintUseCase.Command(complaint));
+        sendComplaintUseCase.invoke(complaint);
     }
 
 }

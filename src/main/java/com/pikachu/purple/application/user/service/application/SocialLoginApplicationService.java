@@ -52,10 +52,8 @@ public class SocialLoginApplicationService implements SocialLoginUseCase {
         if (user == null) {
             isSignUp = true;
             userSignUpUseCase.invoke(
-                new UserSignUpUseCase.Command(
-                    email,
-                    socialLoginProvider
-                )
+                email,
+                socialLoginProvider
             );
 
             user = userDomainService.findByEmailAndSocialLoginProvider(

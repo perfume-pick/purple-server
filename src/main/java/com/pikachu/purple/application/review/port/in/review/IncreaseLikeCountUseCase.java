@@ -2,8 +2,7 @@ package com.pikachu.purple.application.review.port.in.review;
 
 public interface IncreaseLikeCountUseCase {
 
-    void invoke(Command command);
+    void invoke(Long reviewId);
 
-    record Command(Long reviewId) {}
 
 }

@@ -13,10 +13,13 @@ public class DecreaseStarRatingStatisticApplicationService implements
     private final StarRatingStatisticDomainService starRatingStatisticDomainService;
 
     @Override
-    public void invoke(Command command) {
+    public void invoke(
+        Long perfumeId,
+        int score
+    ) {
         starRatingStatisticDomainService.decreaseVotes(
-            command.perfumeId(),
-            command.score()
+            perfumeId,
+            score
         );
 
     }

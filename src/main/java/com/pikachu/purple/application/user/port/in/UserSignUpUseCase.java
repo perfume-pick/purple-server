@@ -4,12 +4,9 @@ import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 
 public interface UserSignUpUseCase {
 
-    void invoke(Command command);
-
-    record Command(
+    void invoke(
         String email,
         SocialLoginProvider socialLoginProvider
-    ) {
-    }
+    );
 
 }

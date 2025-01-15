@@ -7,7 +7,6 @@ import com.pikachu.purple.application.history.port.in.visithistory.GetVisitHisto
 import com.pikachu.purple.application.history.service.domain.VisitHistoryDomainService;
 import com.pikachu.purple.application.perfume.common.dto.PerfumeDTO;
 import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesByIdsUseCase;
-import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesByIdsUseCase.Command;
 import com.pikachu.purple.application.review.port.in.starrating.GetAverageScoreByPerfumeIdUseCase;
 import com.pikachu.purple.domain.history.VisitHistory;
 import com.pikachu.purple.domain.perfume.Perfume;
@@ -36,10 +35,10 @@ public class GetVisitHistoriesApplicationService implements GetVisitHistoriesUse
             .map(VisitHistory::getPerfumeId)
             .toList();
 
-        GetPerfumesByIdsUseCase.Result result = getPerfumesByIdsUseCase.invoke(new Command(perfumeIds));
+        GetPerfumesByIdsUseCase.Result result = getPerfumesByIdsUseCase.invoke(perfumeIds);
         for (Perfume perfume : result.perfumes()) {
             double averageScore = getAverageScoreByPerfumeIdUseCase.invoke(
-                new GetAverageScoreByPerfumeIdUseCase.Command(perfume.getId())).averageScore();
+                perfume.getId()).averageScore();
 
             perfume.setAverageScore(averageScore);
         }

@@ -33,21 +33,19 @@ public class UpdateReviewSimpleApplicationService implements UpdateReviewSimpleU
         if(review.getType() == ReviewType.DETAIL) {
             ReviewEvaluation reviewEvaluation = reviewEvaluationDomainService.findAll(reviewId);
             reviewEvaluationDomainService.deleteAll(reviewId);
-            decreaseEvaluationStatisticUseCase.invoke(new DecreaseEvaluationStatisticUseCase.Command(
-                    review.getPerfume().getId(),
-                    reviewEvaluation
-                )
+            decreaseEvaluationStatisticUseCase.invoke(
+                review.getPerfume().getId(),
+                reviewEvaluation
             );
             reviewDomainService.deleteReviewMoods(reviewId);
         }
 
-        updateReviewUseCase.invoke(new UpdateReviewUseCase.Command(
+        updateReviewUseCase.invoke(
             reviewId,
             review.getPerfume().getId(),
             ReviewType.SIMPLE,
             content,
             score
-            )
         );
     }
 

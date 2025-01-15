@@ -5,9 +5,7 @@ import java.util.List;
 
 public interface GetStarRatingsByUserIdUseCase {
 
-    Result invoke(Command command);
-
-    record Command(Long userId) {}
+    Result invoke(Long userId);
 
     record Result(List<StarRating> starRatings) {}
 

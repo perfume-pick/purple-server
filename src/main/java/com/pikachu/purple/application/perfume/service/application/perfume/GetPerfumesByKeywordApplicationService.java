@@ -23,7 +23,7 @@ public class GetPerfumesByKeywordApplicationService implements GetPerfumesByKeyw
         List<Perfume> perfumes = perfumeDomainService.findAllWithPerfumeAccordsByKeyword(keyword);
         for (Perfume perfume : perfumes) {
             double averageScore = getAverageScoreByPerfumeIdUseCase.invoke(
-                new GetAverageScoreByPerfumeIdUseCase.Command(perfume.getId())).averageScore();
+                perfume.getId()).averageScore();
             perfume.setAverageScore(averageScore);
         }
 

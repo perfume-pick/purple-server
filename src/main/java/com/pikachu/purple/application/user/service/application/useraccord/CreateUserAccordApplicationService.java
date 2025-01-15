@@ -22,15 +22,13 @@ public class CreateUserAccordApplicationService implements CreateUserAccordUseCa
     private final GetStarRatingUseCase getStarRatingUseCase;
 
     @Override
-    public void invoke(Command command) {
+    public void invoke(Long perfumeId) {
         Long userId = getCurrentUserAuthentication().userId();
 
-        GetUserByIdUseCase.Result user = getUserByIdUseCase.invoke(new GetUserByIdUseCase.Command(userId));
+        GetUserByIdUseCase.Result user = getUserByIdUseCase.invoke(userId);
         GetStarRatingUseCase.Result starRating = getStarRatingUseCase.invoke(
-            new GetStarRatingUseCase.Command(
-                userId,
-                command.perfumeId()
-            )
+            userId,
+            perfumeId
         );
         List<UserAccord> userAccords = userAccordRecommender.recommend(
             user.user(),

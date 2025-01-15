@@ -6,7 +6,6 @@ public interface RecalculatePerfumeAverageScoresUseCase {
 
     void invoke();
 
-    void invoke(Command command);
+    void invoke(List<Long> perfumeIds);
 
-    record Command(List<Long> perfumeIds) {};
 }

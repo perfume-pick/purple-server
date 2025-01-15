@@ -26,7 +26,7 @@ public class DeleteLikeApplicationService implements DeleteLikeUseCase {
             reviewId
         );
 
-        decreaseLikeCountUseCase.invoke(new DecreaseLikeCountUseCase.Command(reviewId));
+        decreaseLikeCountUseCase.invoke(reviewId);
     }
 
 }

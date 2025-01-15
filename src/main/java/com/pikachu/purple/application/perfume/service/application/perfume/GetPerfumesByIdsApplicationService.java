@@ -14,8 +14,8 @@ public class GetPerfumesByIdsApplicationService implements GetPerfumesByIdsUseCa
     private final PerfumeDomainService perfumeDomainService;
 
     @Override
-    public Result invoke(Command command) {
-        List<Perfume> perfumes = perfumeDomainService.findAllWithPerfumeAccordsByIds(command.perfumeIds());
+    public Result invoke(List<Long> perfumeIds) {
+        List<Perfume> perfumes = perfumeDomainService.findAllWithPerfumeAccordsByIds(perfumeIds);
 
         return new Result(perfumes);
     }

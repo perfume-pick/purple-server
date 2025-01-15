@@ -21,20 +21,21 @@ public class CreateStarRatingApplicationService implements CreateStarRatingUseCa
 
     @Override
     @Transactional
-    public Result invoke(Command command) {
+    public Result invoke(
+        Long perfumeId,
+        int score
+    ) {
         Long userId = getCurrentUserAuthentication().userId();
 
         StarRating starRating = starRatingDomainService.create(
             userId,
-            command.perfumeId(),
-            command.score()
+            perfumeId,
+            score
         );
 
         increaseStarRatingStatisticUseCase.invoke(
-            new IncreaseStarRatingStatisticUseCase.Command(
-                starRating.getPerfume().getId(),
-                starRating.getScore()
-            )
+            starRating.getPerfume().getId(),
+            starRating.getScore()
         );
 
         // TODO: 별점 갱신 후 콜백으로 처리

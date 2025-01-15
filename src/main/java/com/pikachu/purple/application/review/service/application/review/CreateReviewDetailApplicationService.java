@@ -35,10 +35,8 @@ public class CreateReviewDetailApplicationService implements CreateReviewDetailU
         List<String> moodNames
     ) {
         CreateOrUpdateStarRatingUseCase.Result starRatingResult = createOrUpdateStarRatingUseCase.invoke(
-            new CreateOrUpdateStarRatingUseCase.Command(
-                perfumeId,
-                score
-            )
+            perfumeId,
+            score
         );
 
         StarRating starRating = starRatingResult.starRating();
@@ -58,13 +56,11 @@ public class CreateReviewDetailApplicationService implements CreateReviewDetailU
         );
 
         createReviewEvaluationUseCase.invoke(
-            new CreateReviewEvaluationUseCase.Command(
-                review,
-                evaluationFieldVOs
-            )
+            review,
+            evaluationFieldVOs
         );
 
-        createUserAccordUseCase.invoke(new CreateUserAccordUseCase.Command(perfume.getId()));
+        createUserAccordUseCase.invoke(perfume.getId());
     }
 
 }

@@ -13,8 +13,8 @@ public class GetPerfumeByIdApplicationService implements GetPerfumeByIdUseCase {
     private final PerfumeDomainService perfumeDomainService;
 
     @Override
-    public Result invoke(Command command) {
-        Perfume perfume = perfumeDomainService.findById(command.perfumeId());
+    public Result invoke(Long perfumeId) {
+        Perfume perfume = perfumeDomainService.findById(perfumeId);
 
         return new Result(perfume);
     }

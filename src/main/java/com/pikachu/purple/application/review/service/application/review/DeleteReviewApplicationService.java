@@ -28,9 +28,7 @@ public class DeleteReviewApplicationService implements DeleteReviewUseCase {
     public void invoke(Long reviewId) {
         Review review = reviewDomainService.find(reviewId);
 
-        deleteStarRatingUseCase.invoke(
-            new DeleteStarRatingUseCase.Command(review.getStarRating().getId())
-        );
+        deleteStarRatingUseCase.invoke(review.getStarRating().getId());
 
         if(review.getType() == ReviewType.DETAIL) {
             ReviewEvaluation reviewEvaluation = reviewEvaluationDomainService.findAll(
@@ -38,15 +36,15 @@ public class DeleteReviewApplicationService implements DeleteReviewUseCase {
 
             reviewEvaluationDomainService.deleteAll(reviewId);
 
-            decreaseEvaluationStatisticUseCase.invoke(new DecreaseEvaluationStatisticUseCase.Command(
+            decreaseEvaluationStatisticUseCase.invoke(
                 review.getPerfume().getId(),
                 reviewEvaluation
-            ));
+            );
 
             reviewDomainService.deleteReviewMoods(reviewId);
         }
 
-        deleteAllLikeUseCase.invoke(new DeleteAllLikeUseCase.Command(reviewId));
+        deleteAllLikeUseCase.invoke(reviewId);
         reviewDomainService.delete(reviewId);
     }
 

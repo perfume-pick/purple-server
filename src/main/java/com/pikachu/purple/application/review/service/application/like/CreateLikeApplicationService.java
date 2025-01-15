@@ -32,7 +32,7 @@ public class CreateLikeApplicationService implements CreateLikeUseCase {
             reviewId
         );
 
-        increaseLikeCountUseCase.invoke(new IncreaseLikeCountUseCase.Command(reviewId));
+        increaseLikeCountUseCase.invoke(reviewId);
     }
 
     private void validateNotExist(
