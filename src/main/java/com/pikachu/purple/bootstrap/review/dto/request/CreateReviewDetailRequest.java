@@ -2,11 +2,15 @@ package com.pikachu.purple.bootstrap.review.dto.request;
 
 import com.pikachu.purple.bootstrap.review.vo.EvaluationFieldVO;
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 import java.util.List;
 import org.hibernate.validator.constraints.Range;
 
 public record CreateReviewDetailRequest(
+    @NotNull
+    @Positive
     Long perfumeId,
     @Range(min = 1, max = 5)
     int score,
