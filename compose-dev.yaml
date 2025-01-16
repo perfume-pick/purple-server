@@ -13,6 +13,7 @@ services:
     environment:
       - VERSION=${VERSION:-latest}
       - SPRING_PROFILES_ACTIVE=dev
+      - TZ=Asia/Seoul
     pull_policy: always
     env_file:
       - .env
