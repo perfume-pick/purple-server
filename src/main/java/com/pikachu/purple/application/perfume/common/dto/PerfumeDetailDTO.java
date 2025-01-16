@@ -3,6 +3,7 @@ package com.pikachu.purple.application.perfume.common.dto;
 import com.pikachu.purple.application.util.IdUtil;
 import com.pikachu.purple.domain.perfume.Note;
 import com.pikachu.purple.domain.perfume.Perfume;
+import com.pikachu.purple.util.MathUtil;
 import java.util.List;
 
 public record PerfumeDetailDTO(
@@ -25,7 +26,7 @@ public record PerfumeDetailDTO(
             perfume.getKoreanName(),
             perfume.getBrand().getKoreanName(),
             perfume.getImageUrl(),
-            perfume.getAverageScore(),
+            MathUtil.round(perfume.getAverageScore(), 1),
             accords,
             notes
         );

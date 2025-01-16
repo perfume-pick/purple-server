@@ -5,7 +5,6 @@ import com.pikachu.purple.application.perfume.common.dto.UserAccordDTO;
 import com.pikachu.purple.application.perfume.common.vo.PerfumeAccordMatchVO;
 import com.pikachu.purple.application.perfume.port.in.GetPerfumesAndUserAccordsByUserUseCase;
 import com.pikachu.purple.application.perfume.service.domain.PerfumeDomainService;
-import com.pikachu.purple.application.review.port.in.starrating.GetAverageScoreByPerfumeIdUseCase;
 import com.pikachu.purple.application.user.port.in.useraccord.GetTopThreeUserAccordsUseCase;
 import com.pikachu.purple.domain.accord.Accord;
 import com.pikachu.purple.domain.perfume.Perfume;
@@ -24,7 +23,6 @@ public class GetPerfumesAndUserAccordsByUserApplicationService implements
 
     private final PerfumeDomainService perfumeDomainService;
     private final GetTopThreeUserAccordsUseCase getTopThreeUserAccordsUseCase;
-    private final GetAverageScoreByPerfumeIdUseCase getAverageScoreByPerfumeIdUseCase;
 
     private static final int MAX_SIZE = 30;
 
@@ -59,12 +57,6 @@ public class GetPerfumesAndUserAccordsByUserApplicationService implements
             accords,
             MAX_SIZE
         );
-
-        for (Perfume perfume : perfumes) {
-            double averageScore = getAverageScoreByPerfumeIdUseCase.invoke(
-                perfume.getId()).averageScore();
-            perfume.setAverageScore(averageScore);
-        }
 
         List<RecommendedPerfumeDTO> recommendedPerfumeDTOs = perfumes.stream()
             .map(perfume -> {
