@@ -27,7 +27,6 @@ public record PerfumeDetailDTO(
             perfume.getBrand().getKoreanName(),
             perfume.getImageUrl(),
             MathUtil.round(perfume.getAverageScore(), 1),
-//            perfume.getAverageScore(),
             accords,
             notes
         );
