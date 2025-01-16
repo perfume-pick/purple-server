@@ -14,6 +14,9 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -61,7 +64,7 @@ public interface UserApi {
     @PatchMapping(value = "/my/profile", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<GetUserProfileResponse> updateProfile(
-        @RequestParam String nickname,
+        @RequestParam @NotEmpty String nickname,
         @RequestParam boolean isChanged,
         @RequestPart(required = false) MultipartFile picture
     );
@@ -82,7 +85,7 @@ public interface UserApi {
     @Operation(summary = "최근 검색 기록 저장")
     @PostMapping("/my/search-histories")
     @ResponseStatus(HttpStatus.OK)
-    void createSearchHistory(@RequestParam String keyword);
+    void createSearchHistory(@RequestParam @NotEmpty String keyword);
 
     @Secured
     @Operation(summary = "최근 검색 기록 전체 조회")
@@ -100,7 +103,7 @@ public interface UserApi {
     @Operation(summary = "최근 본 상품 기록 저장")
     @PostMapping("/my/visit-histories/{perfume-id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void createVisitHistory(@PathVariable("perfume-id") Long perfumeId);
+    void createVisitHistory(@PathVariable("perfume-id") @NotNull @Positive Long perfumeId);
 
     @Secured
     @Operation(summary = "최근 본 상품 전체 조회")
@@ -121,7 +124,7 @@ public interface UserApi {
     )
     @GetMapping("/my/perfumes/{perfume-id}/reviews")
     @ResponseStatus(HttpStatus.OK)
-    SuccessResponse<GetReviewByPerfumeIdAndUserResponse> findReviewByPerfumeIdAndUser(@PathVariable("perfume-id") Long perfumeId);
+    SuccessResponse<GetReviewByPerfumeIdAndUserResponse> findReviewByPerfumeIdAndUser(@PathVariable("perfume-id") @NotNull @Positive Long perfumeId);
 
     @Secured
     @Operation(
@@ -145,7 +148,7 @@ public interface UserApi {
     @Operation(summary = "작성한 리뷰 전체 조회")
     @GetMapping("/my/reviews")
     @ResponseStatus(HttpStatus.OK)
-    SuccessResponse<GetReviewsByUserAndSortTypeResponse> findAllReviewByUserAndSortType(@RequestParam("sort-type") String sortType);
+    SuccessResponse<GetReviewsByUserAndSortTypeResponse> findAllReviewByUserAndSortType(@RequestParam("sort-type") @NotEmpty String sortType);
 
     @Secured
     @Operation(summary = "회원 탈퇴")
