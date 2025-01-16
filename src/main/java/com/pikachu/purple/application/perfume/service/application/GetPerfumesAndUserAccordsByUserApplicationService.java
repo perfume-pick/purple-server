@@ -60,11 +60,11 @@ public class GetPerfumesAndUserAccordsByUserApplicationService implements
             MAX_SIZE
         );
 
-        for (Perfume perfume : perfumes) {
-            double averageScore = getAverageScoreByPerfumeIdUseCase.invoke(
-                perfume.getId()).averageScore();
-            perfume.setAverageScore(averageScore);
-        }
+//        for (Perfume perfume : perfumes) {
+//            double averageScore = getAverageScoreByPerfumeIdUseCase.invoke(
+//                perfume.getId()).averageScore();
+//            perfume.setAverageScore(averageScore);
+//        }
 
         List<RecommendedPerfumeDTO> recommendedPerfumeDTOs = perfumes.stream()
             .map(perfume -> {
