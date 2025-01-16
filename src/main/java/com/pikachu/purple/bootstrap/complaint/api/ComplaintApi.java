@@ -3,6 +3,8 @@ package com.pikachu.purple.bootstrap.complaint.api;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import org.springframework.http.HttpStatus;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,8 +21,8 @@ public interface ComplaintApi {
     @Operation(summary = "신고내역 확인")
     @GetMapping("/{complaint-id}")
     String find(
-        @PathVariable("complaint-id") Long complaintId,
-        @NotBlank @RequestParam String token,
+        @PathVariable("complaint-id") @NotNull @Positive Long complaintId,
+        @RequestParam @NotBlank String token,
         Model model
     );
 
@@ -28,8 +30,8 @@ public interface ComplaintApi {
     @PostMapping("/{complaint-id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void delete(
-        @PathVariable("complaint-id") Long complaintId,
-        @NotBlank @RequestParam String token
+        @PathVariable("complaint-id") @NotNull @Positive Long complaintId,
+        @RequestParam @NotBlank String token
     );
 
 }
