@@ -9,6 +9,7 @@
 * SprinBoot 3.2.3
 * Mysql 8.0.33
 * Spring-Data-JPA
+
 ### Configuration Management
 * Git
 * Flyway
@@ -19,10 +20,13 @@
 
 ## Configuration
 * env
-  > 루트 폴더 내에 .env 파일 생성
-  > application.yaml 내 정의된 환경 변수에 대해 값 설정
-  > Intellij - Run > Edit Configurations
+  1. 루트 폴더 내에 .env 파일 생성   
+  2. application.yaml 내 정의된 환경 변수에 대해 값 설정   
+  3. Intellij - Run > Edit Configurations
+     - Environment variables 에 .env 파일 경로를 입력  
 
 * profile (Intellij - **Run > Edit Configurations**)
-  > * 개발 환경   
-  > Active Profile: `local`
+  * 개발 환경
+    * Active Profile: `local`
+  * 운영 환경
+    * Active Profile: `dev`
