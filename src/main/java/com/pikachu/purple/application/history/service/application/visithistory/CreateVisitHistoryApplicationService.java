@@ -23,6 +23,11 @@ public class CreateVisitHistoryApplicationService implements CreateVisitHistoryU
     ) {
         Long userId = getCurrentUserAuthentication().userId();
 
+        visitHistoryDomainService.validateNotExist(
+            userId,
+            perfumeId
+        );
+
         visitHistoryDomainService.create(
             userId,
             perfumeId,

@@ -39,5 +39,15 @@ public class VisitHistoryDomainServiceImpl implements VisitHistoryDomainService 
         visitHistoryRepository.deleteAllVisitHistoryByUserId(userId);
     }
 
+    @Override
+    public void validateNotExist(
+        Long userId,
+        Long perfumeId
+    ) {
+        visitHistoryRepository.validateNotExist(
+            userId,
+            perfumeId
+        );
+    }
 
 }

@@ -11,6 +11,8 @@ import com.pikachu.purple.application.review.port.in.starrating.GetAverageScoreB
 import com.pikachu.purple.domain.history.VisitHistory;
 import com.pikachu.purple.domain.perfume.Perfume;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -43,8 +45,14 @@ public class GetVisitHistoriesApplicationService implements GetVisitHistoriesUse
             perfume.setAverageScore(averageScore);
         }
 
-        List<PerfumeDTO> perfumeDTOs = result.perfumes().stream()
-            .map(PerfumeDTO::from)
+        Map<Long, PerfumeDTO> perfumeDTOMap = result.perfumes().stream()
+            .collect(Collectors.toMap(
+                Perfume::getId,
+                PerfumeDTO::from
+            ));
+
+        List<PerfumeDTO> perfumeDTOs = perfumeIds.stream()
+            .map(perfumeDTOMap::get)
             .toList();
 
         List<VisitHistoryDTO> visitHistoryDTOs = IntStream.range(0, perfumeDTOs.size())
