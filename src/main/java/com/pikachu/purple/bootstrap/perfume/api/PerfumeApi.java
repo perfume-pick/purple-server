@@ -8,6 +8,9 @@ import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeStatisticResp
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetReviewsResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,21 +30,21 @@ public interface PerfumeApi {
     @GetMapping("/{perfume-id}/detail")
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<GetPerfumeDetailResponse> findAccordsAndNotesByPerfumeId(
-        @PathVariable("perfume-id") Long perfumeId);
+        @PathVariable("perfume-id") @NotNull @Positive Long perfumeId);
 
     @Secured
     @Operation(summary = "프라그란티카 평가 정보 조회")
     @GetMapping("/{perfume-id}/fragrantica-evaluation")
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<GetFragranticaEvaluationResponse> findFragranticaEvaluationByPerfumeId(
-        @PathVariable("perfume-id") Long perfumeId);
+        @PathVariable("perfume-id") @NotNull @Positive Long perfumeId);
 
     @Secured
     @Operation(summary = "코멘트 토픽 조회")
     @GetMapping("/{perfume-id}/statistics")
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<GetPerfumeStatisticResponse> findPerfumeStatisticResponse(
-        @PathVariable("perfume-id") Long perfumeId);
+        @PathVariable("perfume-id") @NotNull @Positive Long perfumeId);
 
     @Secured
     @Operation(
@@ -50,8 +53,8 @@ public interface PerfumeApi {
     )
     @GetMapping("/{perfume-id}/reviews")
     SuccessResponse<GetReviewsResponse> findReviewsByPerfumeIdAndSortType(
-        @PathVariable("perfume-id") Long perfumeId,
-        @RequestParam("sort-type") String sortType
+        @PathVariable("perfume-id") @NotNull @Positive Long perfumeId,
+        @RequestParam("sort-type") @NotEmpty String sortType
     );
 
 }

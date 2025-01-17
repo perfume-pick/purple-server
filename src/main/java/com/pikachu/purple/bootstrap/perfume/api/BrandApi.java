@@ -5,6 +5,7 @@ import com.pikachu.purple.bootstrap.perfume.dto.response.GetBrandsResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumesByBrandNamesResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.constraints.NotEmpty;
 import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,6 +32,6 @@ public interface BrandApi {
     @GetMapping("/perfumes")
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<GetPerfumesByBrandNamesResponse> findAllPerfumesByBrandNames(
-        @RequestParam List<String> request);
+        @RequestParam @NotEmpty List<String> request);
 
 }

@@ -5,6 +5,7 @@ import com.pikachu.purple.bootstrap.common.security.Secured;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumesResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.constraints.NotEmpty;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +23,6 @@ public interface SearchApi {
     )
     @GetMapping("/perfumes")
     @ResponseStatus(HttpStatus.OK)
-    SuccessResponse<GetPerfumesResponse> findAllPerfumesByKeyword(@RequestParam String keyword);
+    SuccessResponse<GetPerfumesResponse> findAllPerfumesByKeyword(@RequestParam @NotEmpty String keyword);
 
 }

@@ -10,6 +10,8 @@ import com.pikachu.purple.bootstrap.common.security.Secured;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
 import java.net.URISyntaxException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,7 +30,7 @@ public interface AuthApi {
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<SocialLoginTryResponse> socialLoginTry(
         @PathVariable("provider") SocialLoginProvider provider,
-        @RequestBody SocialLoginRequest request
+        @RequestBody @Valid SocialLoginRequest request
     ) throws URISyntaxException;
 
     @Operation(summary = "소셜 로그인")
@@ -36,15 +38,15 @@ public interface AuthApi {
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<SocialLoginResponse> socialLogin(
         @PathVariable("provider") SocialLoginProvider provider,
-        @RequestParam String code,
-        @RequestBody SocialLoginRequest request
+        @RequestParam @NotBlank String code,
+        @RequestBody @Valid SocialLoginRequest request
     );
 
     @Operation(summary = "Jwt Token Refresh API")
     @PostMapping("/refresh")
     @ResponseStatus(HttpStatus.OK)
     SuccessResponse<RefreshJwtTokenResponse> refreshJwtToken(
-        @RequestBody RefreshJwtTokenRequest request
+        @RequestBody @Valid RefreshJwtTokenRequest request
     );
 
     @Secured

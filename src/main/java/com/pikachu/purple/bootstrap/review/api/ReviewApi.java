@@ -10,6 +10,8 @@ import com.pikachu.purple.bootstrap.review.dto.response.GetEvaluationFormFieldRe
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -52,7 +54,7 @@ public interface ReviewApi {
     @PatchMapping("/{review-id}/simple")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void updateSimple(
-        @PathVariable("review-id") Long reviewId,
+        @PathVariable("review-id") @NotNull @Positive Long reviewId,
         @RequestBody @Valid UpdateReviewSimpleRequest request
     );
 
@@ -60,7 +62,7 @@ public interface ReviewApi {
     @Operation(summary = "자세한 리뷰 수정")
     @PatchMapping("/{review-id}/detail")
     void updateDetail(
-        @PathVariable("review-id") Long reviewId,
+        @PathVariable("review-id") @NotNull @Positive Long reviewId,
         @RequestBody @Valid UpdateReviewDetailRequest request
     );
 
@@ -68,30 +70,30 @@ public interface ReviewApi {
     @Operation(summary = "리뷰 삭제")
     @DeleteMapping("/{review-id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void delete(@PathVariable("review-id") Long reviewId);
+    void delete(@PathVariable("review-id") @NotNull @Positive Long reviewId);
 
     @Secured
     @Operation(summary = "리뷰 신고")
     @PostMapping("/{review-id}/complain")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void complain(@PathVariable("review-id") Long reviewId);
+    void complain(@PathVariable("review-id") @NotNull @Positive Long reviewId);
 
     @Secured
     @Operation(summary = "리뷰 신고 취소")
     @DeleteMapping("/{review-id}/complain")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void deleteComplain(@PathVariable("review-id") Long reviewId);
+    void deleteComplain(@PathVariable("review-id") @NotNull @Positive Long reviewId);
 
     @Secured
     @Operation(summary = "리뷰 좋아요")
     @PostMapping("/{review-id}/like")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void like(@PathVariable("review-id") Long reviewId);
+    void like(@PathVariable("review-id") @NotNull @Positive Long reviewId);
 
     @Secured
     @Operation(summary = "리뷰 좋아요 취소")
     @DeleteMapping("/{review-id}/like")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void unLike(@PathVariable("review-id") Long reviewId);
+    void unLike(@PathVariable("review-id") @NotNull @Positive Long reviewId);
 
 }

@@ -1,10 +1,14 @@
 package com.pikachu.purple.bootstrap.review.dto.request;
 
 import com.pikachu.purple.application.util.IdUtil;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 import org.hibernate.validator.constraints.Range;
 
 public record CreateReviewSimpleRequest(
+    @NotNull
+    @Positive
     Long perfumeId,
     @Range(min = 1, max = 5)
     int score,
