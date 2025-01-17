@@ -11,4 +11,6 @@ public interface VisitHistoryRedisRepository {
 
     void deleteAllVisitHistory(Long userId);
 
+    void validateNotExist(Long userId, Long perfumeId);
+
 }

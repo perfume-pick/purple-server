@@ -61,4 +61,31 @@ public class VisitHistoryRedisRepositoryImpl implements VisitHistoryRedisReposit
         redisTemplate.delete(KEY + userId);
     }
 
+    @Override
+    public void validateNotExist(Long userId, Long perfumeId) {
+        List<Object> result = redisTemplate.opsForList().range(
+            KEY + userId,
+            0,
+            MAX_SIZE
+        );
+
+        if (result == null || result.isEmpty()) {
+            return;
+        }
+
+        List<Object> updatedList = result.stream()
+            .filter(object -> {
+                VisitHistoryRedisHash hash = objectMapper.convertValue(
+                    object,
+                    VisitHistoryRedisHash.class
+                );
+                return !hash.getPerfumeId().equals(perfumeId);
+            })
+            .toList();
+
+        redisTemplate.delete(KEY + userId);
+
+        redisTemplate.opsForList().rightPushAll(KEY + userId, updatedList);
+    }
+
 }

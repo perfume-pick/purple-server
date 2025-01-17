@@ -16,4 +16,9 @@ public interface VisitHistoryDomainService {
 
     void deleteAllVisitHistoryByUserId(Long userId);
 
+    void validateNotExist(
+        Long userId,
+        Long perfumeId
+    );
+
 }

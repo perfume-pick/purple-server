@@ -36,4 +36,15 @@ public class VisitHistoryRedisAdaptor implements VisitHistoryRepository {
         visitHistoryRedisRepository.deleteAllVisitHistory(userId);
     }
 
+    @Override
+    public void validateNotExist(
+        Long userId,
+        Long perfumeId
+    ) {
+        visitHistoryRedisRepository.validateNotExist(
+            userId,
+            perfumeId
+        );
+    }
+
 }
