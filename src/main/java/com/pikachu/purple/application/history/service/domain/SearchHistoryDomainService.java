@@ -16,4 +16,9 @@ public interface SearchHistoryDomainService {
 
     void deleteAllSearchHistoryByUserId(Long userId);
 
+    void validateNotExist(
+        Long userId,
+        String keyword
+    );
+
 }

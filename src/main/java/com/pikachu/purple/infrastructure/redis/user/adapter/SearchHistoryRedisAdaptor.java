@@ -42,4 +42,9 @@ public class SearchHistoryRedisAdaptor implements SearchHistoryRepository {
         userSearchHistoryRedisRepository.deleteAllSearchHistory(userId);
     }
 
+    @Override
+    public void validateNotExist(Long userId, String keyword) {
+
+    }
+
 }

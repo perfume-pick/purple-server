@@ -15,4 +15,6 @@ public interface SearchHistoryRepository {
 
     void deleteAllSearchHistoryByUserId(Long userId);
 
+    void validateNotExist(Long userId, String keyword);
+
 }
