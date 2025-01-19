@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class DeleteReviewApplicationService implements DeleteReviewUseCase {
+class DeleteReviewApplicationService implements DeleteReviewUseCase {
 
     private final ReviewDomainService reviewDomainService;
     private final ReviewEvaluationDomainService reviewEvaluationDomainService;

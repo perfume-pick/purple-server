@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class GetUserReviewCountsApplicationService implements GetUserReviewCountsUseCase {
+class GetUserReviewCountsApplicationService implements GetUserReviewCountsUseCase {
 
     private final ReviewDomainService reviewDomainService;
     private final GetUserCountsUseCase getUserCountsUseCase;

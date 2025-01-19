@@ -2,10 +2,8 @@ package com.pikachu.purple.application.review.service.application.starrating;
 
 import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
 
-import com.pikachu.purple.application.perfume.service.application.perfume.RecalculatePerfumeAverageScoreApplicationService;
 import com.pikachu.purple.application.review.port.in.starrating.CreateOrUpdateStarRatingUseCase;
 import com.pikachu.purple.application.review.port.in.starrating.CreateStarRatingUseCase;
-import com.pikachu.purple.application.review.port.in.starrating.DeleteStarRatingUseCase;
 import com.pikachu.purple.application.review.port.in.starrating.GetStarRatingUseCase;
 import com.pikachu.purple.application.review.port.in.starrating.UpdateStarRatingUseCase;
 import com.pikachu.purple.domain.review.StarRating;
@@ -14,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class CreateOrUpdateStarRatingOnboardingApplicationService implements
+class CreateOrUpdateStarRatingOnboardingApplicationService implements
     CreateOrUpdateStarRatingUseCase {
 
     private final GetStarRatingUseCase getStarRatingUseCase;

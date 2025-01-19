@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class SendComplaintApplicationService implements SendComplaintUseCase {
+class SendComplaintApplicationService implements SendComplaintUseCase {
 
     private final MailSender mailSender;
 

@@ -8,6 +8,7 @@ import com.pikachu.purple.application.perfume.service.domain.PerfumeDomainServic
 import com.pikachu.purple.application.user.port.in.useraccord.GetTopThreeUserAccordsUseCase;
 import com.pikachu.purple.domain.accord.Accord;
 import com.pikachu.purple.domain.perfume.Perfume;
+import com.pikachu.purple.infrastructure.persistence.perfume.adaptor.PerfumeAccordJpaAdaptor;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -18,7 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class GetPerfumesAndUserAccordsByUserApplicationService implements
+class GetPerfumesAndUserAccordsByUserApplicationService implements
     GetPerfumesAndUserAccordsByUserUseCase {
 
     private final PerfumeDomainService perfumeDomainService;

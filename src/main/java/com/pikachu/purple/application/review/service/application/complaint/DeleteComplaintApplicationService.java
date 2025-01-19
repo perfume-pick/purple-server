@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class DeleteComplaintApplicationService implements DeleteComplaintUseCase {
+class DeleteComplaintApplicationService implements DeleteComplaintUseCase {
 
     private final ComplaintDomainService complaintDomainService;
 

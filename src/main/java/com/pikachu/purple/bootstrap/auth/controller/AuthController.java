@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-public class AuthController implements AuthApi {
+class AuthController implements AuthApi {
 
     private final SocialLoginTryUseCase socialLoginTryUseCase;
     private final SocialLoginUseCase socialLoginUseCase;

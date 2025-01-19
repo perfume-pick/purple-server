@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class GetVisitHistoriesApplicationService implements GetVisitHistoriesUseCase {
+class GetVisitHistoriesApplicationService implements GetVisitHistoriesUseCase {
 
     private final GetPerfumesByIdsUseCase getPerfumesByIdsUseCase;
     private final VisitHistoryDomainService visitHistoryDomainService;

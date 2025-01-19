@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Service
 @RequiredArgsConstructor
-public class UserDomainServiceImpl implements UserDomainService {
+class UserDomainServiceImpl implements UserDomainService {
 
     private static final String NICKNAME_ANONYMIZATION = "익명의 사용자";
     private static final String STRING_DEFAULT = "";

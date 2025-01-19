@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class CreateUserAccordApplicationService implements CreateUserAccordUseCase {
+class CreateUserAccordApplicationService implements CreateUserAccordUseCase {
 
     private final GetUserByIdUseCase getUserByIdUseCase;
     private final UserAccordDomainService userAccordDomainService;

@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class SocialLoginApplicationService implements SocialLoginUseCase {
+class SocialLoginApplicationService implements SocialLoginUseCase {
 
     private final SocialLoginService socialLoginService;
     private final UserDomainService userDomainService;

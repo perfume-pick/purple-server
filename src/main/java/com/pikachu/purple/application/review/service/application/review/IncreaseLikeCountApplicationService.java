@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class IncreaseLikeCountApplicationService implements IncreaseLikeCountUseCase {
+class IncreaseLikeCountApplicationService implements IncreaseLikeCountUseCase {
 
     private final ReviewDomainService reviewDomainService;
 

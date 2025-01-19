@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class GetPerfumesByKeywordApplicationService implements GetPerfumesByKeywordUseCase {
+class GetPerfumesByKeywordApplicationService implements GetPerfumesByKeywordUseCase {
 
     private final PerfumeDomainService perfumeDomainService;
     private final GetAverageScoreByPerfumeIdUseCase getAverageScoreByPerfumeIdUseCase;

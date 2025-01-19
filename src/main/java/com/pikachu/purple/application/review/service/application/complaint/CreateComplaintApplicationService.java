@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class CreateComplaintApplicationService implements CreateComplaintUseCase {
+class CreateComplaintApplicationService implements CreateComplaintUseCase {
 
     private final ComplaintDomainService complaintDomainService;
     private final SendComplaintUseCase sendComplaintUseCase;

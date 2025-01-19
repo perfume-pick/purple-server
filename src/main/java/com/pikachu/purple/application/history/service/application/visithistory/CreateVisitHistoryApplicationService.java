@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class CreateVisitHistoryApplicationService implements CreateVisitHistoryUseCase {
+class CreateVisitHistoryApplicationService implements CreateVisitHistoryUseCase {
 
     private final VisitHistoryDomainService visitHistoryDomainService;
 

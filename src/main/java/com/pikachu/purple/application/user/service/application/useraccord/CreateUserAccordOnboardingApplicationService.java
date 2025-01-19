@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class CreateUserAccordOnboardingApplicationService implements
+class CreateUserAccordOnboardingApplicationService implements
     CreateUserAccordOnboardingUseCase {
 
     private final GetUserByIdUseCase getUserByIdUseCase;

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class PerfumeAccordDomainServiceImpl implements PerfumeAccordDomainService {
+class PerfumeAccordDomainServiceImpl implements PerfumeAccordDomainService {
 
     private final PerfumeAccordRepository perfumeAccordRepository;
 

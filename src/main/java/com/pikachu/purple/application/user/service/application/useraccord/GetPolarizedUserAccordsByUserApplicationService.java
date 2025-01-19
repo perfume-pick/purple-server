@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class GetPolarizedUserAccordsByUserApplicationService implements
+class GetPolarizedUserAccordsByUserApplicationService implements
     GetPolarizedUserAccordsByUserUseCase {
 
     private final UserAccordDomainService userAccordDomainService;

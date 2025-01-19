@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class ReviewEvaluationDomainServiceImpl implements ReviewEvaluationDomainService {
+class ReviewEvaluationDomainServiceImpl implements ReviewEvaluationDomainService {
 
     private final ReviewEvaluationRepository reviewEvaluationRepository;
 

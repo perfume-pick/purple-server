@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class DeleteStarRatingApplicationService implements DeleteStarRatingUseCase {
+class DeleteStarRatingApplicationService implements DeleteStarRatingUseCase {
 
     private final StarRatingDomainService starRatingDomainService;
     private final DecreaseStarRatingStatisticUseCase decreaseStarRatingStatisticUseCase;

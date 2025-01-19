@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class GetMoodsApplicationService implements GetMoodsUseCase {
+class GetMoodsApplicationService implements GetMoodsUseCase {
 
     private final MoodDomainService moodDomainService;
 

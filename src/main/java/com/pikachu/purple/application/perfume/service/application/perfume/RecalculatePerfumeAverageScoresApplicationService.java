@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class RecalculatePerfumeAverageScoresApplicationService implements
+class RecalculatePerfumeAverageScoresApplicationService implements
     RecalculatePerfumeAverageScoresUseCase {
 
     private final PerfumeDomainService perfumeDomainService;
@@ -45,7 +45,8 @@ public class RecalculatePerfumeAverageScoresApplicationService implements
 
     private void recalculatePerfumeAverageScores(List<StarRatingStatistic> starRatingStatistics) {
         Map<Long, List<StarRatingStatistic>> perfumeStatistics = starRatingStatistics.stream()
-            .collect(Collectors.groupingBy(starRatingStatistic -> starRatingStatistic.getPerfume().getId()));
+            .collect(Collectors.groupingBy(
+                starRatingStatistic -> starRatingStatistic.getPerfume().getId()));
 
         List<Perfume> perfumes = new ArrayList<>();
         for (Map.Entry<Long, List<StarRatingStatistic>> entry : perfumeStatistics.entrySet()) {

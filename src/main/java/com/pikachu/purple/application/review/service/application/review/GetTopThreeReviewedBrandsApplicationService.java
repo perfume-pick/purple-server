@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class GetTopThreeReviewedBrandsApplicationService implements
+class GetTopThreeReviewedBrandsApplicationService implements
     GetTopThreeReviewedBrandsUseCase {
 
     private final ReviewDomainService reviewDomainService;

@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class UpdateReviewDetailApplicationService implements UpdateReviewDetailUseCase {
+class UpdateReviewDetailApplicationService implements UpdateReviewDetailUseCase {
 
     private final ReviewDomainService reviewDomainService;
     private final ReviewEvaluationDomainService reviewEvaluationDomainService;

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class GetTopThreeUserAccordsApplicationService implements GetTopThreeUserAccordsUseCase {
+class GetTopThreeUserAccordsApplicationService implements GetTopThreeUserAccordsUseCase {
 
     private final UserAccordDomainService userAccordDomainService;
     private static final int MAX_SIZE = 3;

@@ -10,8 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class GetBrandsApplicationService implements
-    GetBrandsUseCase {
+class GetBrandsApplicationService implements GetBrandsUseCase {
 
     private final BrandDomainService brandDomainService;
 
