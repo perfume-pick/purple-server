@@ -11,4 +11,6 @@ public interface UserSearchHistoryRedisRepository {
 
     void deleteAllSearchHistory(Long userId);
 
+    void validateNotExist(Long userId, String keyword);
+
 }

@@ -43,8 +43,14 @@ public class SearchHistoryRedisAdaptor implements SearchHistoryRepository {
     }
 
     @Override
-    public void validateNotExist(Long userId, String keyword) {
-
+    public void validateNotExist(
+        Long userId,
+        String keyword
+    ) {
+        userSearchHistoryRedisRepository.validateNotExist(
+            userId,
+            keyword
+        );
     }
 
 }
