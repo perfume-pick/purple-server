@@ -59,4 +59,28 @@ class UserSearchHistoryRedisRepositoryImpl implements
         redisTemplate.delete(KEY + userId);
     }
 
+    @Override
+    public void validateNotExist(Long userId, String keyword) {
+        List<Object> result = redisTemplate.opsForList().range(
+            KEY + userId,
+            0,
+            MAX_SIZE
+        );
+
+        if (result == null || result.isEmpty()) {
+            return;
+        }
+
+        for(Object object : result) {
+            SearchHistoryRedisHash hash = objectMapper.convertValue(object, SearchHistoryRedisHash.class);
+            if(hash.getKeyword().equals(keyword)) {
+                redisTemplate.opsForList().remove(
+                    KEY + userId,
+                    0,
+                    hash
+                );
+            }
+        }
+    }
+
 }

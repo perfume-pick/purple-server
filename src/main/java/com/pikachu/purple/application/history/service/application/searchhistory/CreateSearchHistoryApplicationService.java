@@ -20,6 +20,12 @@ class CreateSearchHistoryApplicationService implements CreateSearchHistoryUseCas
         Instant searchAt
     ) {
         Long userId = getCurrentUserAuthentication().userId();
+
+        searchHistoryDomainService.validateNotExist(
+            userId,
+            keyword
+        );
+
         searchHistoryDomainService.createSearchHistory(
             userId,
             keyword,

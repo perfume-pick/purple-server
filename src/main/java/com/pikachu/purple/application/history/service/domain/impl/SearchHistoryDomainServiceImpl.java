@@ -41,4 +41,12 @@ class SearchHistoryDomainServiceImpl implements SearchHistoryDomainService {
         searchHistoryRepository.deleteAllSearchHistoryByUserId(userId);
     }
 
+    @Override
+    public void validateNotExist(Long userId, String keyword) {
+        searchHistoryRepository.validateNotExist(
+            userId,
+            keyword
+        );
+    }
+
 }
