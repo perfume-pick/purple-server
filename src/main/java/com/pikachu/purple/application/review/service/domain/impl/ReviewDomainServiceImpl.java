@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class ReviewDomainServiceImpl implements ReviewDomainService {
+class ReviewDomainServiceImpl implements ReviewDomainService {
 
     private final ReviewRepository reviewRepository;
 

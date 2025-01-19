@@ -9,14 +9,13 @@ import com.pikachu.purple.application.user.service.util.UserTokenService;
 import com.pikachu.purple.infrastructure.redis.user.entity.OAuthTokenRedisHash;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class SocialLogoutApplicationService implements SocialLogoutUseCase {
+class SocialLogoutApplicationService implements SocialLogoutUseCase {
 
     private final UserTokenService userTokenService;
     private final OAuthTokenService oAuthTokenService;

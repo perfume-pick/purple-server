@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class GetPerfumeIdsApplicationService implements GetPerfumeIdsUseCase {
+class GetPerfumeIdsApplicationService implements GetPerfumeIdsUseCase {
 
     private final PerfumeDomainService perfumeDomainService;
 

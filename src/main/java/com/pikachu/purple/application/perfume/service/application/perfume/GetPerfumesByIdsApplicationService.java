@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class GetPerfumesByIdsApplicationService implements GetPerfumesByIdsUseCase {
+class GetPerfumesByIdsApplicationService implements GetPerfumesByIdsUseCase {
 
     private final PerfumeDomainService perfumeDomainService;
 

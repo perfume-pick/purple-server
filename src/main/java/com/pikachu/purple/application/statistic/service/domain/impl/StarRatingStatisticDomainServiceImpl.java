@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class StarRatingStatisticDomainServiceImpl implements StarRatingStatisticDomainService {
+class StarRatingStatisticDomainServiceImpl implements StarRatingStatisticDomainService {
 
     private final StarRatingStatisticRepository starRatingStatisticRepository;
 

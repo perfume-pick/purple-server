@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class GetReviewByPerfumeIdAndUserApplicationService implements
+class GetReviewByPerfumeIdAndUserApplicationService implements
     GetReviewByPerfumeIdAndUserUseCase {
 
     private final ReviewDomainService reviewDomainService;

@@ -13,8 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class GetPerfumesByReviewCountApplicationService implements
-    GetPerfumesByReviewCountUseCase {
+class GetPerfumesByReviewCountApplicationService implements GetPerfumesByReviewCountUseCase {
 
     private final PerfumeDomainService perfumeDomainService;
     private final GetAverageScoreByPerfumeIdUseCase getAverageScoreByPerfumeIdUseCase;

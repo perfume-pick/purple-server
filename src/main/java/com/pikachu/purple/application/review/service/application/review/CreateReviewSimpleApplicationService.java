@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class CreateReviewSimpleApplicationService implements CreateReviewSimpleUseCase {
+class CreateReviewSimpleApplicationService implements CreateReviewSimpleUseCase {
 
     private final ReviewDomainService reviewDomainService;
     private final CreateOrUpdateStarRatingUseCase createOrUpdateStarRatingUseCase;

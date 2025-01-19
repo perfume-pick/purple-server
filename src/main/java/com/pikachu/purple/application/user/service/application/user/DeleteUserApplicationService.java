@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class DeleteUserApplicationService implements DeleteUserUseCase {
+class DeleteUserApplicationService implements DeleteUserUseCase {
 
     private final UserTokenService userTokenService;
     private final UserDomainService userDomainService;

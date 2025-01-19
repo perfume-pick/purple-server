@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class LikeDomainServiceImpl implements LikeDomainService {
+class LikeDomainServiceImpl implements LikeDomainService {
 
     private final LikeRepository likeRepository;
 

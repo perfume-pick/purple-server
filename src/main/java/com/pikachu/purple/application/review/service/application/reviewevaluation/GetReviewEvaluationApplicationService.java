@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class GetReviewEvaluationApplicationService implements GetReviewEvaluationUseCase {
+class GetReviewEvaluationApplicationService implements GetReviewEvaluationUseCase {
 
     private final ReviewEvaluationDomainService reviewEvaluationDomainService;
 

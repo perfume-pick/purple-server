@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class GetFragranticaEvaluationByPerfumeIdApplicationService implements
+class GetFragranticaEvaluationByPerfumeIdApplicationService implements
     GetFragranticaEvaluationByPerfumeIdUseCase {
 
     private final FragranticaEvaluationDomainService fragranticaEvaluationDomainService;
@@ -40,8 +40,9 @@ public class GetFragranticaEvaluationByPerfumeIdApplicationService implements
             int maxSize = evaluationField.is(SEASON_TIME) ? 3 : 1;
 
             List<FragranticaEvaluationOptionDTO> fragranticaMostVotedOptionDTOs = new ArrayList<>();
-            List<EvaluationOptionType> evaluationOptions = fragranticaEvaluation.getOptions(evaluationField);
-            for (int i=0; i < maxSize; i++) {
+            List<EvaluationOptionType> evaluationOptions = fragranticaEvaluation.getOptions(
+                evaluationField);
+            for (int i = 0; i < maxSize; i++) {
                 EvaluationOptionType evaluationOption = evaluationOptions.get(i);
                 int votes = fragranticaEvaluation.getVotes(
                     evaluationField,

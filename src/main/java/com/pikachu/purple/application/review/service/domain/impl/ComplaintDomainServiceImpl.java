@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class ComplaintDomainServiceImpl implements ComplaintDomainService {
+class ComplaintDomainServiceImpl implements ComplaintDomainService {
 
     private final ComplaintRepository complaintRepository;
 

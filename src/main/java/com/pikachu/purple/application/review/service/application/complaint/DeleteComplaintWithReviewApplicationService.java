@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class DeleteComplaintWithReviewApplicationService implements
+class DeleteComplaintWithReviewApplicationService implements
     DeleteComplaintWithReviewUseCase {
 
     private final DeleteReviewUseCase deleteReviewUseCase;

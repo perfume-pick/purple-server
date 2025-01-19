@@ -11,7 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Service
 @RequiredArgsConstructor
-public class UpdateProfileApplicationService implements UpdateProfileUseCase {
+class UpdateProfileApplicationService implements UpdateProfileUseCase {
 
     private final UserDomainService userDomainService;
 

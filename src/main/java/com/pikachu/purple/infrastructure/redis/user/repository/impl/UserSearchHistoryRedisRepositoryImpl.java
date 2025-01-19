@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 @RequiredArgsConstructor
-public class UserSearchHistoryRedisRepositoryImpl implements
+class UserSearchHistoryRedisRepositoryImpl implements
     UserSearchHistoryRedisRepository {
 
     private static final int MAX_SIZE = 9;

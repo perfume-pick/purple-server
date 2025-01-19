@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class SocialLoginTryApplicationService implements SocialLoginTryUseCase {
+class SocialLoginTryApplicationService implements SocialLoginTryUseCase {
 
     private final SocialLoginService socialLoginService;
 

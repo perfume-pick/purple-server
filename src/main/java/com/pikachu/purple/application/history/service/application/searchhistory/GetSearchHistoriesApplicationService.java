@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class GetSearchHistoriesApplicationService implements GetSearchHistoriesUseCase {
+class GetSearchHistoriesApplicationService implements GetSearchHistoriesUseCase {
 
     private final SearchHistoryDomainService searchHistoryDomainService;
 

@@ -18,7 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class GetReviewsByPerfumeIdAndSortTypeApplicationService implements
+class GetReviewsByPerfumeIdAndSortTypeApplicationService implements
     GetReviewsByPerfumeIdAndSortTypeUseCase {
 
     private final ReviewDomainService reviewDomainService;

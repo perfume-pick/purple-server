@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class VisitHistoryDomainServiceImpl implements VisitHistoryDomainService {
+class VisitHistoryDomainServiceImpl implements VisitHistoryDomainService {
 
     private final VisitHistoryRepository visitHistoryRepository;
 

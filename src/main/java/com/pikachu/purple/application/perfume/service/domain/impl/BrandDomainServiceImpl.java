@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class BrandDomainServiceImpl implements BrandDomainService {
+class BrandDomainServiceImpl implements BrandDomainService {
 
     private final BrandRepository brandRepository;
 

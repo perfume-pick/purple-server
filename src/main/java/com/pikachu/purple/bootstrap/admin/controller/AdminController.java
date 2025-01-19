@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-public class AdminController implements AdminApi {
+class AdminController implements AdminApi {
 
     private final RecountStarRatingStatisticsUseCase recountStarRatingStatisticsUseCase;
     private final RecalculatePerfumeAverageScoresUseCase recalculatePerfumeAverageScoresUseCase;

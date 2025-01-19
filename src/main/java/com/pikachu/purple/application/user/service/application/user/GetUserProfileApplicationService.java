@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class GetUserProfileApplicationService implements GetUserProfileByUserUseCase {
+class GetUserProfileApplicationService implements GetUserProfileByUserUseCase {
 
     private final UserDomainService userDomainService;
 

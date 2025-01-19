@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class NoteDomainServiceImpl implements NoteDomainService {
+class NoteDomainServiceImpl implements NoteDomainService {
 
     private final NoteRepository noteRepository;
 

@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class UpdateReviewApplicationService implements UpdateReviewUseCase {
+class UpdateReviewApplicationService implements UpdateReviewUseCase {
 
     private final ReviewDomainService reviewDomainService;
     private final GetStarRatingUseCase getStarRatingUseCase;

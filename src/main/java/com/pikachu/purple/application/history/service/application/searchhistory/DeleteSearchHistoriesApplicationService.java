@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class DeleteSearchHistoriesApplicationService implements
+class DeleteSearchHistoriesApplicationService implements
     DeleteSearchHistoriesUseCase {
 
     private final SearchHistoryDomainService searchHistoryDomainService;

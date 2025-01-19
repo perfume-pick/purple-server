@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class RecountStarRatingStatisticsApplicationService implements
+class RecountStarRatingStatisticsApplicationService implements
     RecountStarRatingStatisticsUseCase {
 
     private final StarRatingStatisticDomainService starRatingStatisticDomainService;

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class MoodDomainServiceImpl implements MoodDomainService {
+class MoodDomainServiceImpl implements MoodDomainService {
 
     private final MoodRepository moodRepository;
 

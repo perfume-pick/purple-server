@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class UpdateReviewSimpleApplicationService implements UpdateReviewSimpleUseCase {
+class UpdateReviewSimpleApplicationService implements UpdateReviewSimpleUseCase {
 
     private final ReviewDomainService reviewDomainService;
     private final ReviewEvaluationDomainService reviewEvaluationDomainService;

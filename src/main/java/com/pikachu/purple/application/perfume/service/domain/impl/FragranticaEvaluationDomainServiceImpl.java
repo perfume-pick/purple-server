@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class FragranticaEvaluationDomainServiceImpl implements FragranticaEvaluationDomainService {
+class FragranticaEvaluationDomainServiceImpl implements FragranticaEvaluationDomainService {
 
     private final FragranticaEvaluationRepository fragranticaEvaluationRepository;
 

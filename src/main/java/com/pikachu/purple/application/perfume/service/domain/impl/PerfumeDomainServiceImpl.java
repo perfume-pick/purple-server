@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class PerfumeDomainServiceImpl implements PerfumeDomainService {
+class PerfumeDomainServiceImpl implements PerfumeDomainService {
 
     private final PerfumeRepository perfumeRepository;
 

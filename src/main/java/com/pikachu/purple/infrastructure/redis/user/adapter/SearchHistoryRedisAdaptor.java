@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class SearchHistoryRedisAdaptor implements SearchHistoryRepository {
+class SearchHistoryRedisAdaptor implements SearchHistoryRepository {
 
     private final UserSearchHistoryRedisRepository userSearchHistoryRedisRepository;
 

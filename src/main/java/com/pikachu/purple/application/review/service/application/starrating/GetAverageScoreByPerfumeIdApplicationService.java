@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class GetAverageScoreByPerfumeIdApplicationService implements
+class GetAverageScoreByPerfumeIdApplicationService implements
     GetAverageScoreByPerfumeIdUseCase {
 
     private final StarRatingDomainService starRatingDomainService;

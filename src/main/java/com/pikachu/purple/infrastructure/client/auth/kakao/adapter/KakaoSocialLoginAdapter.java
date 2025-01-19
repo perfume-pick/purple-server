@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class KakaoSocialLoginAdapter implements SocialLoginPort {
+class KakaoSocialLoginAdapter implements SocialLoginPort {
 
     private static final String AUTHORIZATION_PREFIX = "Bearer ";
 
