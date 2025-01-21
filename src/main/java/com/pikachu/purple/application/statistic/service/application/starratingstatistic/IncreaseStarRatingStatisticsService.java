@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-class IncreaseStarRatingStatisticsApplicationService implements
+class IncreaseStarRatingStatisticsService implements
     IncreaseStarRatingStatisticsUseCase {
 
     private final StarRatingStatisticDomainService starRatingStatisticDomainService;

@@ -1,14 +1,14 @@
 package com.pikachu.purple.application.statistic.service.application.starratingstatistic;
 
-import com.pikachu.purple.application.statistic.port.in.starratingstatistic.IncreaseStarRatingStatisticUseCase;
+import com.pikachu.purple.application.statistic.port.in.starratingstatistic.DecreaseStarRatingStatisticUseCase;
 import com.pikachu.purple.application.statistic.service.domain.StarRatingStatisticDomainService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-class IncreaseStarRatingStatisticApplicationService implements
-    IncreaseStarRatingStatisticUseCase {
+class DecreaseStarRatingStatisticService implements
+    DecreaseStarRatingStatisticUseCase {
 
     private final StarRatingStatisticDomainService starRatingStatisticDomainService;
 
@@ -17,7 +17,7 @@ class IncreaseStarRatingStatisticApplicationService implements
         Long perfumeId,
         int score
     ) {
-        starRatingStatisticDomainService.increaseVotes(
+        starRatingStatisticDomainService.decreaseVotes(
             perfumeId,
             score
         );
