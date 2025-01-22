@@ -5,7 +5,7 @@ import com.pikachu.purple.domain.evaluation.dto.EvaluationFieldDTO;
 import com.pikachu.purple.domain.evaluation.dto.EvaluationOptionStatisticDTO;
 import java.util.List;
 
-public interface GetPerfumeStatisticByPerfumeIdUseCase {
+public interface GetPerfumeStatisticUseCase {
 
     Result invoke(Long perfumeId);
 
