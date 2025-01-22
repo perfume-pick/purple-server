@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-class RecountEvaluationStatisticsApplicationService implements
+class RecountEvaluationStatisticsService implements
     RecountEvaluationStatisticsUseCase {
 
     private final EvaluationStatisticDomainService evaluationStatisticDomainService;
