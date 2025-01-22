@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-class GetComplaintFormApplicationService implements GetComplaintFormUseCase {
+class GetComplaintFormService implements GetComplaintFormUseCase {
 
     private final ComplaintDomainService complaintDomainService;
     private final ReviewDomainService reviewDomainService;
