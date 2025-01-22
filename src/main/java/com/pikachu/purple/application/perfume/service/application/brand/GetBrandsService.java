@@ -10,19 +10,19 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-class GetBrandsApplicationService implements GetBrandsUseCase {
+class GetBrandsService implements GetBrandsUseCase {
 
     private final BrandDomainService brandDomainService;
 
     @Override
-    public GetBrandsUseCase.Result invoke() {
+    public Result invoke() {
         List<Brand> brands = brandDomainService.findAll();
 
         List<BrandDTO> brandDTOs = brands.stream()
             .map(BrandDTO::from)
             .toList();
 
-        return new GetBrandsUseCase.Result(brandDTOs);
+        return new Result(brandDTOs);
     }
 
 }
