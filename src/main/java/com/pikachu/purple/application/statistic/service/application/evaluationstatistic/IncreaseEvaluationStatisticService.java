@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-class IncreaseEvaluationStatisticApplicationService implements
+class IncreaseEvaluationStatisticService implements
     IncreaseEvaluationStatisticUseCase {
 
     private final EvaluationStatisticDomainService evaluationStatisticDomainService;
