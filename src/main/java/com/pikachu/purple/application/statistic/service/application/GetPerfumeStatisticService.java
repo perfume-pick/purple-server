@@ -1,7 +1,7 @@
 package com.pikachu.purple.application.statistic.service.application;
 
 import com.pikachu.purple.application.statistic.common.dto.StarRatingStatisticDTO;
-import com.pikachu.purple.application.statistic.port.in.GetPerfumeStatisticByPerfumeIdUseCase;
+import com.pikachu.purple.application.statistic.port.in.GetPerfumeStatisticUseCase;
 import com.pikachu.purple.application.statistic.service.domain.EvaluationStatisticDomainService;
 import com.pikachu.purple.application.statistic.service.domain.StarRatingStatisticDomainService;
 import com.pikachu.purple.domain.evaluation.dto.EvaluationFieldDTO;
@@ -17,8 +17,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-class GetPerfumeStatisticByPerfumeIdService implements
-    GetPerfumeStatisticByPerfumeIdUseCase {
+class GetPerfumeStatisticService implements
+    GetPerfumeStatisticUseCase {
 
     private final EvaluationStatisticDomainService evaluationStatisticDomainService;
     private final StarRatingStatisticDomainService starRatingStatisticDomainService;
