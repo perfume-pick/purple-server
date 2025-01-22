@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-class GetPerfumeStatisticByPerfumeIdApplicationService implements
+class GetPerfumeStatisticByPerfumeIdService implements
     GetPerfumeStatisticByPerfumeIdUseCase {
 
     private final EvaluationStatisticDomainService evaluationStatisticDomainService;
