@@ -3,7 +3,7 @@ package com.pikachu.purple.application.review.port.in.review;
 import com.pikachu.purple.bootstrap.review.vo.EvaluationFieldVO;
 import java.util.List;
 
-public interface CreateReviewDetailUseCase {
+public interface CreateDetailedReviewUseCase {
 
     void invoke(
         Long perfumeId,
