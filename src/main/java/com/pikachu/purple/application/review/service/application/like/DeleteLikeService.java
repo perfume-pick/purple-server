@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-class DeleteLikeApplicationService implements DeleteLikeUseCase {
+class DeleteLikeService implements DeleteLikeUseCase {
 
     private final LikeDomainService likeDomainService;
     private final DecreaseLikeCountUseCase decreaseLikeCountUseCase;
