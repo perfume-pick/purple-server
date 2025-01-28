@@ -1,6 +1,6 @@
 package com.pikachu.purple.application.review.service.application.review;
 
-import com.pikachu.purple.application.review.port.in.review.UpdateReviewDetailUseCase;
+import com.pikachu.purple.application.review.port.in.review.UpdateDetailedReviewUseCase;
 import com.pikachu.purple.application.review.port.in.review.UpdateReviewUseCase;
 import com.pikachu.purple.application.review.port.in.reviewevaluation.CreateReviewEvaluationUseCase;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-class UpdateReviewDetailApplicationService implements UpdateReviewDetailUseCase {
+class UpdateDetailedReviewService implements UpdateDetailedReviewUseCase {
 
     private final ReviewDomainService reviewDomainService;
     private final ReviewEvaluationDomainService reviewEvaluationDomainService;
