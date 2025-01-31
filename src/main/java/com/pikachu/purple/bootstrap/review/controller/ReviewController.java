@@ -6,11 +6,11 @@ import com.pikachu.purple.application.review.port.in.complaint.CreateComplaintUs
 import com.pikachu.purple.application.review.port.in.complaint.DeleteComplaintUseCase;
 import com.pikachu.purple.application.review.port.in.like.CreateLikeUseCase;
 import com.pikachu.purple.application.review.port.in.like.DeleteLikeUseCase;
-import com.pikachu.purple.application.review.port.in.review.CreateReviewDetailUseCase;
-import com.pikachu.purple.application.review.port.in.review.CreateReviewSimpleUseCase;
+import com.pikachu.purple.application.review.port.in.review.CreateDetailedReviewUseCase;
+import com.pikachu.purple.application.review.port.in.review.CreateSimpleReviewUseCase;
 import com.pikachu.purple.application.review.port.in.review.DeleteReviewUseCase;
-import com.pikachu.purple.application.review.port.in.review.UpdateReviewDetailUseCase;
-import com.pikachu.purple.application.review.port.in.review.UpdateReviewSimpleUseCase;
+import com.pikachu.purple.application.review.port.in.review.UpdateDetailedReviewUseCase;
+import com.pikachu.purple.application.review.port.in.review.UpdateSimpleReviewUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.review.api.ReviewApi;
 import com.pikachu.purple.bootstrap.review.dto.request.CreateReviewDetailRequest;
@@ -25,11 +25,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class ReviewController implements ReviewApi {
 
-    private final CreateReviewSimpleUseCase createReviewSimpleUseCase;
-    private final CreateReviewDetailUseCase createReviewDetailUseCase;
+    private final CreateSimpleReviewUseCase createSimpleReviewUseCase;
+    private final CreateDetailedReviewUseCase createDetailedReviewUseCase;
     private final GetEvaluationFormFieldUseCase getEvaluationFormFieldUseCase;
-    private final UpdateReviewSimpleUseCase updateReviewSimpleUseCase;
-    private final UpdateReviewDetailUseCase updateReviewDetailUseCase;
+    private final UpdateSimpleReviewUseCase updateSimpleReviewUseCase;
+    private final UpdateDetailedReviewUseCase updateDetailedReviewUseCase;
     private final DeleteReviewUseCase deleteReviewUseCase;
     private final CreateComplaintUseCase createComplaintUseCase;
     private final DeleteComplaintUseCase deleteComplaintUseCase;
@@ -38,7 +38,7 @@ public class ReviewController implements ReviewApi {
 
     @Override
     public void createSimple(CreateReviewSimpleRequest request) {
-        createReviewSimpleUseCase.invoke(
+        createSimpleReviewUseCase.invoke(
             request.perfumeId(),
             request.score(),
             request.content()
@@ -47,7 +47,7 @@ public class ReviewController implements ReviewApi {
 
     @Override
     public void createDetail(CreateReviewDetailRequest request) {
-        createReviewDetailUseCase.invoke(
+        createDetailedReviewUseCase.invoke(
             request.perfumeId(),
             request.score(),
             request.content(),
@@ -72,7 +72,7 @@ public class ReviewController implements ReviewApi {
         Long reviewId,
         UpdateReviewSimpleRequest request
     ) {
-        updateReviewSimpleUseCase.invoke(
+        updateSimpleReviewUseCase.invoke(
             reviewId,
             request.score(),
             request.content()
@@ -84,7 +84,7 @@ public class ReviewController implements ReviewApi {
         Long reviewId,
         UpdateReviewDetailRequest request
     ) {
-        updateReviewDetailUseCase.invoke(
+        updateDetailedReviewUseCase.invoke(
             reviewId,
             request.score(),
             request.content(),

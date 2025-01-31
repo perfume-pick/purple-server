@@ -6,7 +6,7 @@ import com.pikachu.purple.application.history.port.in.searchhistory.GetSearchHis
 import com.pikachu.purple.application.history.port.in.visithistory.CreateVisitHistoryUseCase;
 import com.pikachu.purple.application.history.port.in.visithistory.DeleteVisitHistoriesUseCase;
 import com.pikachu.purple.application.history.port.in.visithistory.GetVisitHistoriesUseCase;
-import com.pikachu.purple.application.review.port.in.review.GetReviewByPerfumeIdAndUserUseCase;
+import com.pikachu.purple.application.review.port.in.review.GetCurrentUserReviewUseCase;
 import com.pikachu.purple.application.review.port.in.starrating.GetReviewsByUserAndSortTypeUseCase;
 import com.pikachu.purple.application.user.port.in.user.DeleteUserUseCase;
 import com.pikachu.purple.application.user.port.in.user.GetUserProfileByUserUseCase;
@@ -42,7 +42,7 @@ public class UserController implements UserApi {
     private final GetUserReviewCountsUseCase getUserReviewCountsUseCase;
     private final DeleteVisitHistoriesUseCase deleteVisitHistoriesUseCase;
     private final GetTopThreeReviewedBrandsUseCase getTopThreeReviewedBrandsUseCase;
-    private final GetReviewByPerfumeIdAndUserUseCase getReviewByPerfumeIdAndUserUseCase;
+    private final GetCurrentUserReviewUseCase getCurrentUserReviewUseCase;
     private final GetPolarizedUserAccordsByUserUseCase getPolarizedUserAccordsByUserUseCase;
     private final GetUserProfileByUserUseCase getUserProfileByUserUseCase;
     private final GetReviewsByUserAndSortTypeUseCase getReviewsByUserAndSortTypeUseCase;
@@ -133,7 +133,7 @@ public class UserController implements UserApi {
     @Override
     public SuccessResponse<GetReviewByPerfumeIdAndUserResponse> findReviewByPerfumeIdAndUser(
         Long perfumeId) {
-        GetReviewByPerfumeIdAndUserUseCase.Result result = getReviewByPerfumeIdAndUserUseCase.invoke(perfumeId);
+        GetCurrentUserReviewUseCase.Result result = getCurrentUserReviewUseCase.invoke(perfumeId);
 
         return SuccessResponse.of(new GetReviewByPerfumeIdAndUserResponse(result.reviewByUserDTO()));
     }

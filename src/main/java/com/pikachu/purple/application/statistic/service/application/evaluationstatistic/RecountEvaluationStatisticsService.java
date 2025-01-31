@@ -1,7 +1,7 @@
 package com.pikachu.purple.application.statistic.service.application.evaluationstatistic;
 
 import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumeIdsUseCase;
-import com.pikachu.purple.application.review.port.in.review.GetReviewsDetailWithEvaluationUseCase;
+import com.pikachu.purple.application.review.port.in.review.GetDetailedReviewsUseCase;
 import com.pikachu.purple.application.statistic.port.in.evaluationstatistic.RecountEvaluationStatisticsUseCase;
 import com.pikachu.purple.application.statistic.service.domain.EvaluationStatisticDomainService;
 import com.pikachu.purple.domain.review.Review;
@@ -16,7 +16,7 @@ class RecountEvaluationStatisticsService implements
     RecountEvaluationStatisticsUseCase {
 
     private final EvaluationStatisticDomainService evaluationStatisticDomainService;
-    private final GetReviewsDetailWithEvaluationUseCase getReviewsDetailWithEvaluationUseCase;
+    private final GetDetailedReviewsUseCase getDetailedReviewsUseCase;
     private final GetPerfumeIdsUseCase getPerfumeIdsUseCase;
 
     @Override
@@ -26,7 +26,7 @@ class RecountEvaluationStatisticsService implements
         List<Long> perfumeIds = getPerfumeIdsUseCase.invoke().perfumeIds();
         perfumeIds.forEach(evaluationStatistic::setDefault);
 
-        List<Review> reviews = getReviewsDetailWithEvaluationUseCase.invoke()
+        List<Review> reviews = getDetailedReviewsUseCase.invoke()
             .reviews();
 
         reviews.forEach(

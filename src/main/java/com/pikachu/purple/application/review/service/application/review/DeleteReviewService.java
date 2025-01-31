@@ -1,6 +1,6 @@
 package com.pikachu.purple.application.review.service.application.review;
 
-import com.pikachu.purple.application.review.port.in.like.DeleteAllLikeUseCase;
+import com.pikachu.purple.application.review.port.in.like.DeleteLikesUseCase;
 import com.pikachu.purple.application.review.port.in.review.DeleteReviewUseCase;
 import com.pikachu.purple.application.review.port.in.starrating.DeleteStarRatingUseCase;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
@@ -21,7 +21,7 @@ class DeleteReviewService implements DeleteReviewUseCase {
     private final ReviewEvaluationDomainService reviewEvaluationDomainService;
     private final DeleteStarRatingUseCase deleteStarRatingUseCase;
     private final DecreaseEvaluationStatisticUseCase decreaseEvaluationStatisticUseCase;
-    private final DeleteAllLikeUseCase deleteAllLikeUseCase;
+    private final DeleteLikesUseCase deleteLikesUseCase;
 
     @Transactional
     @Override
@@ -44,7 +44,7 @@ class DeleteReviewService implements DeleteReviewUseCase {
             reviewDomainService.deleteReviewMoods(reviewId);
         }
 
-        deleteAllLikeUseCase.invoke(reviewId);
+        deleteLikesUseCase.invoke(reviewId);
         reviewDomainService.delete(reviewId);
     }
 
