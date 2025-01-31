@@ -2,7 +2,7 @@ package com.pikachu.purple.bootstrap.perfume.controller;
 
 import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumeDetailByPerfumeIdUseCase;
 import com.pikachu.purple.application.perfume.port.in.fragranticaevaluation.GetFragranticaEvaluationByPerfumeIdUseCase;
-import com.pikachu.purple.application.review.port.in.review.GetReviewsByPerfumeIdAndSortTypeUseCase;
+import com.pikachu.purple.application.review.port.in.review.GetReviewsUseCase;
 import com.pikachu.purple.application.statistic.port.in.GetPerfumeStatisticUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.perfume.api.PerfumeApi;
@@ -20,7 +20,7 @@ public class PerfumeController implements PerfumeApi {
     private final GetPerfumeDetailByPerfumeIdUseCase getPerfumeDetailByPerfumeIdUseCase;
     private final GetFragranticaEvaluationByPerfumeIdUseCase getFragranticaEvaluationByPerfumeIdUseCase;
     private final GetPerfumeStatisticUseCase getPerfumeStatisticUseCase;
-    private final GetReviewsByPerfumeIdAndSortTypeUseCase getReviewsByPerfumeIdAndSortTypeUseCase;
+    private final GetReviewsUseCase getReviewsUseCase;
 
     @Override
     public SuccessResponse<GetPerfumeDetailResponse> findAccordsAndNotesByPerfumeId(Long perfumeId) {
@@ -57,7 +57,7 @@ public class PerfumeController implements PerfumeApi {
         Long perfumeId,
         String sortType
     ) {
-        GetReviewsByPerfumeIdAndSortTypeUseCase.Result result = getReviewsByPerfumeIdAndSortTypeUseCase.invoke(
+        GetReviewsUseCase.Result result = getReviewsUseCase.invoke(
             perfumeId,
             sortType
         );
