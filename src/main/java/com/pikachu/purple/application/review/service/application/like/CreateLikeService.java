@@ -3,7 +3,7 @@ package com.pikachu.purple.application.review.service.application.like;
 import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
 
 import com.pikachu.purple.application.review.port.in.like.CreateLikeUseCase;
-import com.pikachu.purple.application.review.port.in.review.IncreaseLikeCountUseCase;
+import com.pikachu.purple.application.review.port.in.review.IncreaseReviewLikeCountUseCase;
 import com.pikachu.purple.application.review.service.domain.LikeDomainService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 class CreateLikeService implements CreateLikeUseCase {
 
     private final LikeDomainService likeDomainService;
-    private final IncreaseLikeCountUseCase increaseLikeCountUseCase;
+    private final IncreaseReviewLikeCountUseCase increaseReviewLikeCountUseCase;
 
     @Transactional
     @Override
@@ -32,7 +32,7 @@ class CreateLikeService implements CreateLikeUseCase {
             reviewId
         );
 
-        increaseLikeCountUseCase.invoke(reviewId);
+        increaseReviewLikeCountUseCase.invoke(reviewId);
     }
 
     private void validateNotExist(
