@@ -1,6 +1,6 @@
 package com.pikachu.purple.application.review.port.in.review;
 
-public interface UpdateReviewSimpleUseCase {
+public interface UpdateSimpleReviewUseCase {
 
     void invoke(
         Long reviewId,
