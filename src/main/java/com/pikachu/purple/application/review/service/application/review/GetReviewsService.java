@@ -5,7 +5,7 @@ import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUse
 import com.pikachu.purple.application.review.common.dto.ReviewDTO;
 import com.pikachu.purple.application.review.common.dto.ReviewEvaluationFieldDTO;
 import com.pikachu.purple.application.review.common.dto.ReviewEvaluationOptionDTO;
-import com.pikachu.purple.application.review.port.in.review.GetReviewsByPerfumeIdAndSortTypeUseCase;
+import com.pikachu.purple.application.review.port.in.review.GetReviewsUseCase;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
 import com.pikachu.purple.domain.review.Mood;
 import com.pikachu.purple.domain.review.Review;
@@ -18,8 +18,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-class GetReviewsByPerfumeIdAndSortTypeApplicationService implements
-    GetReviewsByPerfumeIdAndSortTypeUseCase {
+class GetReviewsService implements
+    GetReviewsUseCase {
 
     private final ReviewDomainService reviewDomainService;
 

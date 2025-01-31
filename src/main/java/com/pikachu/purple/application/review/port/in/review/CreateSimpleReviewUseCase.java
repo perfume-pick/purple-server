@@ -1,9 +1,9 @@
 package com.pikachu.purple.application.review.port.in.review;
 
-public interface UpdateReviewSimpleUseCase {
+public interface CreateSimpleReviewUseCase {
 
     void invoke(
-        Long reviewId,
+        Long perfumeId,
         int score,
         String content
     );

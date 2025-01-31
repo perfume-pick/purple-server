@@ -7,8 +7,6 @@ public interface GetMoodsUseCase {
 
     Result invoke();
 
-    record Result(List<Mood> moods) {
-
-    }
+    record Result(List<Mood> moods) {}
 
 }
