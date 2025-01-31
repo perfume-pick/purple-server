@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-class CreateLikeApplicationService implements CreateLikeUseCase {
+class CreateLikeService implements CreateLikeUseCase {
 
     private final LikeDomainService likeDomainService;
     private final IncreaseReviewLikeCountUseCase increaseReviewLikeCountUseCase;
