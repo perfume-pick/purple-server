@@ -1,6 +1,7 @@
 package com.pikachu.purple.bootstrap.search.controller;
 
-import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesByKeywordUseCase;
+import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesUseCase;
+import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesUseCase.Result;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumesResponse;
 import com.pikachu.purple.bootstrap.search.api.SearchApi;
@@ -11,13 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class SearchController implements SearchApi {
 
-    private final GetPerfumesByKeywordUseCase getPerfumesByKeywordUseCase;
+    private final GetPerfumesUseCase getPerfumesUseCase;
 
     @Override
     public SuccessResponse<GetPerfumesResponse> findAllPerfumesByKeyword(String keyword) {
-        GetPerfumesByKeywordUseCase.Result result = getPerfumesByKeywordUseCase.invoke(keyword);
+        Result result = getPerfumesUseCase.invoke(keyword);
 
-        return SuccessResponse.of(new GetPerfumesResponse(result.perfumeDTOs()));
+        //TODO -> List<PerfumeDTO>
+        return SuccessResponse.of(new GetPerfumesResponse(result.perfumes()));
     }
 
 }
