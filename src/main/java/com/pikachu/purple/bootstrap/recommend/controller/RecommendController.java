@@ -28,11 +28,10 @@ public class RecommendController implements RecommendApi {
 
     @Override
     public SuccessResponse<GetPerfumesByReviewCountsResponse> findAllPerfumeOrderByReviewCount() {
-        GetPerfumesUseCase.Result result = getPerfumesUseCase.invoke();
+        GetPerfumesUseCase.ResultRecommendedPerfumeDTO result = getPerfumesUseCase.findAllOrderByReviewCount();
 
-        //TODO -> List<RecommendedPerfumeDTO>
         return SuccessResponse.of(new GetPerfumesByReviewCountsResponse(
-            result.perfumes()
+            result.perfumeDTOs()
         ));
     }
 

@@ -1,7 +1,7 @@
 package com.pikachu.purple.bootstrap.search.controller;
 
 import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesUseCase;
-import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesUseCase.Result;
+import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesUseCase.ResultPerfumeDTO;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumesResponse;
 import com.pikachu.purple.bootstrap.search.api.SearchApi;
@@ -16,10 +16,9 @@ public class SearchController implements SearchApi {
 
     @Override
     public SuccessResponse<GetPerfumesResponse> findAllPerfumesByKeyword(String keyword) {
-        Result result = getPerfumesUseCase.invoke(keyword);
+        ResultPerfumeDTO result = getPerfumesUseCase.findAllWithPerfumeAccord(keyword);
 
-        //TODO -> List<PerfumeDTO>
-        return SuccessResponse.of(new GetPerfumesResponse(result.perfumes()));
+        return SuccessResponse.of(new GetPerfumesResponse(result.perfumeDTOs()));
     }
 
 }

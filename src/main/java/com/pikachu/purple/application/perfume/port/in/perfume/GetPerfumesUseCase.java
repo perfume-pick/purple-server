@@ -1,16 +1,22 @@
 package com.pikachu.purple.application.perfume.port.in.perfume;
 
+import com.pikachu.purple.application.perfume.common.dto.PerfumeDTO;
+import com.pikachu.purple.application.perfume.common.dto.RecommendedPerfumeDTO;
 import com.pikachu.purple.domain.perfume.Perfume;
 import java.util.List;
 
 public interface GetPerfumesUseCase {
 
-    Result invoke(List<Long> perfumeIds);
+    Result findAllWithPerfumeAccord(List<Long> perfumeIds);
 
-    Result invoke(String keyword);
+    ResultPerfumeDTO findAllWithPerfumeAccord(String keyword);
 
-    Result invoke();
+    ResultRecommendedPerfumeDTO findAllOrderByReviewCount();
 
     record Result(List<Perfume> perfumes) {}
+
+    record ResultPerfumeDTO(List<PerfumeDTO> perfumeDTOs) {}
+
+    record ResultRecommendedPerfumeDTO(List<RecommendedPerfumeDTO> perfumeDTOs) {}
 
 }

@@ -37,7 +37,7 @@ class GetVisitHistoriesApplicationService implements GetVisitHistoriesUseCase {
             .map(VisitHistory::getPerfumeId)
             .toList();
 
-        List<Perfume> perfumes = getPerfumesUseCase.invoke(perfumeIds).perfumes();
+        List<Perfume> perfumes = getPerfumesUseCase.findAllWithPerfumeAccord(perfumeIds).perfumes();
         for (Perfume perfume : perfumes) {
             double averageScore = getAverageScoreByPerfumeIdUseCase.invoke(
                 perfume.getId()).averageScore();
