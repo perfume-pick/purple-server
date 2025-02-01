@@ -1,7 +1,7 @@
 package com.pikachu.purple.application.perfume.service.application.perfume;
 
 import com.pikachu.purple.application.perfume.common.dto.BrandPerfumesDTO;
-import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesByBrandsUseCase;
+import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesWithBrandUseCase;
 import com.pikachu.purple.application.perfume.service.domain.PerfumeDomainService;
 import com.pikachu.purple.domain.perfume.Perfume;
 import java.util.List;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-class GetPerfumesByBrandsApplicationService implements GetPerfumesByBrandsUseCase {
+class GetPerfumesWithBrandService implements GetPerfumesWithBrandUseCase {
 
     private final PerfumeDomainService perfumeDomainService;
 
