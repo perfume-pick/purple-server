@@ -2,7 +2,7 @@ package com.pikachu.purple.application.perfume.service.application.perfume;
 
 import com.pikachu.purple.application.perfume.common.dto.PerfumeAccordDTO;
 import com.pikachu.purple.application.perfume.common.dto.PerfumeDetailDTO;
-import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumeWithPerfumeAccordAndNoteUseCase;
+import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumeDetailUseCase;
 import com.pikachu.purple.application.perfume.service.domain.NoteDomainService;
 import com.pikachu.purple.application.perfume.service.domain.PerfumeAccordDomainService;
 import com.pikachu.purple.application.perfume.service.domain.PerfumeDomainService;
@@ -16,8 +16,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-class GetPerfumeWithPerfumeAccordAndNoteService implements
-    GetPerfumeWithPerfumeAccordAndNoteUseCase {
+class GetPerfumeDetailService implements
+    GetPerfumeDetailUseCase {
 
     private final PerfumeDomainService perfumeDomainService;
     private final NoteDomainService noteDomainService;

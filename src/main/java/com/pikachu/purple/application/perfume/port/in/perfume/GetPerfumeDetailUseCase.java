@@ -2,7 +2,7 @@ package com.pikachu.purple.application.perfume.port.in.perfume;
 
 import com.pikachu.purple.application.perfume.common.dto.PerfumeDetailDTO;
 
-public interface GetPerfumeWithPerfumeAccordAndNoteUseCase {
+public interface GetPerfumeDetailUseCase {
 
     Result invoke(Long perfumeId);
 
