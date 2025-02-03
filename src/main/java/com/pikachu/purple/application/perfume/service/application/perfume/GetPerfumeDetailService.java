@@ -26,7 +26,7 @@ class GetPerfumeDetailService implements
     private static final int MAX_SIZE = 5;
 
     @Override
-    public Result findWithPerfumeAccordsAndNotes(Long perfumeId) {
+    public Result find(Long perfumeId) {
         Perfume perfume = perfumeDomainService.findById(perfumeId);
 
         List<PerfumeAccord> perfumeAccords = perfumeAccordDomainService
