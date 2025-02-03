@@ -6,7 +6,7 @@ import com.pikachu.purple.application.history.common.dto.VisitHistoryDTO;
 import com.pikachu.purple.application.history.port.in.visithistory.GetVisitHistoriesUseCase;
 import com.pikachu.purple.application.history.service.domain.VisitHistoryDomainService;
 import com.pikachu.purple.application.perfume.common.dto.PerfumeDTO;
-import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesByIdsUseCase;
+import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesUseCase;
 import com.pikachu.purple.application.review.port.in.starrating.GetAverageScoreByPerfumeIdUseCase;
 import com.pikachu.purple.domain.history.VisitHistory;
 import com.pikachu.purple.domain.perfume.Perfume;
@@ -22,7 +22,7 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 class GetVisitHistoriesApplicationService implements GetVisitHistoriesUseCase {
 
-    private final GetPerfumesByIdsUseCase getPerfumesByIdsUseCase;
+    private final GetPerfumesUseCase getPerfumesUseCase;
     private final VisitHistoryDomainService visitHistoryDomainService;
     private final GetAverageScoreByPerfumeIdUseCase getAverageScoreByPerfumeIdUseCase;
 
@@ -37,15 +37,15 @@ class GetVisitHistoriesApplicationService implements GetVisitHistoriesUseCase {
             .map(VisitHistory::getPerfumeId)
             .toList();
 
-        GetPerfumesByIdsUseCase.Result result = getPerfumesByIdsUseCase.invoke(perfumeIds);
-        for (Perfume perfume : result.perfumes()) {
+        List<Perfume> perfumes = getPerfumesUseCase.findAllWithPerfumeAccord(perfumeIds).perfumes();
+        for (Perfume perfume : perfumes) {
             double averageScore = getAverageScoreByPerfumeIdUseCase.invoke(
                 perfume.getId()).averageScore();
 
             perfume.setAverageScore(averageScore);
         }
 
-        Map<Long, PerfumeDTO> perfumeDTOMap = result.perfumes().stream()
+        Map<Long, PerfumeDTO> perfumeDTOMap = perfumes.stream()
             .collect(Collectors.toMap(
                 Perfume::getId,
                 PerfumeDTO::from

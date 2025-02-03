@@ -1,7 +1,7 @@
 package com.pikachu.purple.bootstrap.recommend.controller;
 
 import com.pikachu.purple.application.perfume.port.in.GetPerfumesAndUserAccordsByUserUseCase;
-import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesByReviewCountUseCase;
+import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.recommend.api.RecommendApi;
 import com.pikachu.purple.bootstrap.recommend.dto.response.GetPerfumesAndUserAccordsByUserResponse;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class RecommendController implements RecommendApi {
 
     private final GetPerfumesAndUserAccordsByUserUseCase getPerfumesAndUserAccordsByUserUseCase;
-    private final GetPerfumesByReviewCountUseCase getPerfumesByReviewCountUseCase;
+    private final GetPerfumesUseCase getPerfumesUseCase;
 
     @Override
     public SuccessResponse<GetPerfumesAndUserAccordsByUserResponse> findAllPerfumeWithUserAccordsByUser() {
@@ -28,7 +28,7 @@ public class RecommendController implements RecommendApi {
 
     @Override
     public SuccessResponse<GetPerfumesByReviewCountsResponse> findAllPerfumeOrderByReviewCount() {
-        GetPerfumesByReviewCountUseCase.Result result = getPerfumesByReviewCountUseCase.invoke();
+        GetPerfumesUseCase.ResultRecommendedPerfumeDTO result = getPerfumesUseCase.findAllOrderByReviewCount();
 
         return SuccessResponse.of(new GetPerfumesByReviewCountsResponse(
             result.perfumeDTOs()
