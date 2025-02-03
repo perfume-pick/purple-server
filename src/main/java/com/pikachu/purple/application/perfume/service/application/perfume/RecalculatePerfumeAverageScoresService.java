@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-class RecalculatePerfumeAverageScoresApplicationService implements
+class RecalculatePerfumeAverageScoresService implements
     RecalculatePerfumeAverageScoresUseCase {
 
     private final PerfumeDomainService perfumeDomainService;
