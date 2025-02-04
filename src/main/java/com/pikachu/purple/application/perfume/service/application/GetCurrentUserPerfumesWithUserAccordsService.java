@@ -3,7 +3,7 @@ package com.pikachu.purple.application.perfume.service.application;
 import com.pikachu.purple.application.perfume.common.dto.RecommendedPerfumeDTO;
 import com.pikachu.purple.application.perfume.common.dto.UserAccordDTO;
 import com.pikachu.purple.application.perfume.common.vo.PerfumeAccordMatchVO;
-import com.pikachu.purple.application.perfume.port.in.GetPerfumesAndUserAccordsByUserUseCase;
+import com.pikachu.purple.application.perfume.port.in.GetCurrentUserPerfumesWithUserAccordsUseCase;
 import com.pikachu.purple.application.perfume.service.domain.PerfumeDomainService;
 import com.pikachu.purple.application.user.port.in.useraccord.GetTopThreeUserAccordsUseCase;
 import com.pikachu.purple.domain.accord.Accord;
@@ -18,8 +18,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-class GetPerfumesAndUserAccordsByUserApplicationService implements
-    GetPerfumesAndUserAccordsByUserUseCase {
+class GetCurrentUserPerfumesWithUserAccordsService implements
+    GetCurrentUserPerfumesWithUserAccordsUseCase {
 
     private final PerfumeDomainService perfumeDomainService;
     private final GetTopThreeUserAccordsUseCase getTopThreeUserAccordsUseCase;
@@ -28,7 +28,7 @@ class GetPerfumesAndUserAccordsByUserApplicationService implements
 
     @Transactional
     @Override
-    public Result invoke() {
+    public Result findAll() {
         GetTopThreeUserAccordsUseCase.Result result = getTopThreeUserAccordsUseCase.invoke();
 
         if (result.userAccords().isEmpty()) {
