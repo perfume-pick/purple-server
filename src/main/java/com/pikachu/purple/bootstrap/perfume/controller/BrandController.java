@@ -21,14 +21,14 @@ public class BrandController implements BrandApi {
     public SuccessResponse<GetBrandsResponse> findAll(){
         Result result = getBrandsUseCase.findAll();
 
-        return SuccessResponse.of(new GetBrandsResponse(result.brandDTOs()));
+        return SuccessResponse.of(new GetBrandsResponse(result.data()));
     }
 
     @Override
     public SuccessResponse<GetPerfumesByBrandNamesResponse> findAllWithPerfumes(List<String> brandNames) {
         ResultBrandPerfumesDTO result = getBrandsUseCase.findAllWithPerfumes(brandNames);
 
-        return SuccessResponse.of(new GetPerfumesByBrandNamesResponse(result.brandPerfumesDTOs()));
+        return SuccessResponse.of(new GetPerfumesByBrandNamesResponse(result.data()));
     }
 
 }

@@ -10,8 +10,8 @@ public interface GetBrandsUseCase {
 
     ResultBrandPerfumesDTO findAllWithPerfumes(List<String> brandNames);
 
-    record Result(List<BrandDTO> brandDTOs) {}
+    record Result(List<BrandDTO> data) {}
 
-    record ResultBrandPerfumesDTO(List<BrandPerfumesDTO> brandPerfumesDTOs) {}
+    record ResultBrandPerfumesDTO(List<BrandPerfumesDTO> data) {}
 
 }
