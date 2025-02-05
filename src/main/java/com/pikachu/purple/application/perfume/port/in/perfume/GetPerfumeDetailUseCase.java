@@ -6,6 +6,6 @@ public interface GetPerfumeDetailUseCase {
 
     Result find(Long perfumeId);
 
-    record Result(PerfumeDetailDTO perfumeDetail) {}
+    record Result(PerfumeDetailDTO data) {}
 
 }

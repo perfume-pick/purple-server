@@ -26,7 +26,7 @@ public class PerfumeController implements PerfumeApi {
     public SuccessResponse<GetPerfumeDetailResponse> findAccordsAndNotesByPerfumeId(Long perfumeId) {
         GetPerfumeDetailUseCase.Result result = getPerfumeDetailUseCase.find(perfumeId);
 
-        return SuccessResponse.of(new GetPerfumeDetailResponse(result.perfumeDetail()));
+        return SuccessResponse.of(new GetPerfumeDetailResponse(result.data()));
     }
 
     @Override
