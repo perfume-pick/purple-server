@@ -2,7 +2,7 @@ package com.pikachu.purple.application.perfume.service.application.perfume;
 
 import com.pikachu.purple.application.perfume.common.dto.PerfumeAccordDTO;
 import com.pikachu.purple.application.perfume.common.dto.PerfumeDetailDTO;
-import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumeDetailByPerfumeIdUseCase;
+import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumeDetailUseCase;
 import com.pikachu.purple.application.perfume.service.domain.NoteDomainService;
 import com.pikachu.purple.application.perfume.service.domain.PerfumeAccordDomainService;
 import com.pikachu.purple.application.perfume.service.domain.PerfumeDomainService;
@@ -16,8 +16,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-class GetPerfumeDetailByPerfumeIdApplicationService implements
-    GetPerfumeDetailByPerfumeIdUseCase {
+class GetPerfumeDetailService implements
+    GetPerfumeDetailUseCase {
 
     private final PerfumeDomainService perfumeDomainService;
     private final NoteDomainService noteDomainService;
@@ -26,8 +26,7 @@ class GetPerfumeDetailByPerfumeIdApplicationService implements
     private static final int MAX_SIZE = 5;
 
     @Override
-    public Result invoke(Long perfumeId) {
-
+    public Result find(Long perfumeId) {
         Perfume perfume = perfumeDomainService.findById(perfumeId);
 
         List<PerfumeAccord> perfumeAccords = perfumeAccordDomainService
@@ -35,6 +34,7 @@ class GetPerfumeDetailByPerfumeIdApplicationService implements
                 perfume.getId(),
                 MAX_SIZE
             );
+
         List<PerfumeAccordDTO> perfumeAccordDTOs = new ArrayList<>();
         for (int i = 0; i < perfumeAccords.size(); i++) {
             int order = i + 1;

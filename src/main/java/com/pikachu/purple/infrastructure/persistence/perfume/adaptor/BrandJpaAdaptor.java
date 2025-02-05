@@ -22,4 +22,13 @@ public class BrandJpaAdaptor implements BrandRepository {
             .toList();
     }
 
+    @Override
+    public List<Brand> findAllWithPerfumes(List<String> brandNames) {
+        List<BrandJpaEntity> brandJpaEntities = brandJpaRepository.findByNameIn(brandNames);
+
+        return brandJpaEntities.stream()
+            .map(BrandJpaEntity::toDomainWithPerfume)
+            .toList();
+    }
+
 }

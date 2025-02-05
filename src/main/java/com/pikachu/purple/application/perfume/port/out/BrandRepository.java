@@ -7,4 +7,6 @@ public interface BrandRepository {
 
     List<Brand> findAll();
 
+    List<Brand> findAllWithPerfumes(List<String> brandNames);
+
 }
