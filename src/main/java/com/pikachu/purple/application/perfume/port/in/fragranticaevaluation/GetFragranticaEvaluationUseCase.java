@@ -5,8 +5,8 @@ import java.util.List;
 
 public interface GetFragranticaEvaluationUseCase {
 
-    Result findAll(Long perfumeId);
+    Result find(Long perfumeId);
 
-    record Result(List<FragranticaEvaluationFieldDTO> fragranticaEvaluation) {}
+    record Result(List<FragranticaEvaluationFieldDTO> data) {}
 
 }

@@ -32,11 +32,10 @@ public class PerfumeController implements PerfumeApi {
     @Override
     public SuccessResponse<GetFragranticaEvaluationResponse> findFragranticaEvaluationByPerfumeId(
         Long perfumeId) {
-
-        GetFragranticaEvaluationUseCase.Result result = getFragranticaEvaluationUseCase.findAll(perfumeId);
+        GetFragranticaEvaluationUseCase.Result result = getFragranticaEvaluationUseCase.find(perfumeId);
 
         return SuccessResponse.of(
-            new GetFragranticaEvaluationResponse(result.fragranticaEvaluation()));
+            new GetFragranticaEvaluationResponse(result.data()));
     }
 
     @Override

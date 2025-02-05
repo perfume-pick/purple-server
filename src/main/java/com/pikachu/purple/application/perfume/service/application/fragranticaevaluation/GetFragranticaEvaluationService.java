@@ -22,7 +22,7 @@ class GetFragranticaEvaluationService implements
     private final FragranticaEvaluationDomainService fragranticaEvaluationDomainService;
 
     @Override
-    public Result findAll(Long perfumeId) {
+    public Result find(Long perfumeId) {
 
         FragranticaEvaluation fragranticaEvaluation = fragranticaEvaluationDomainService.findByPerfumeIdOrderByVotesDesc(
             perfumeId);
