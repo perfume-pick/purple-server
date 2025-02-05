@@ -4,9 +4,9 @@ import com.pikachu.purple.application.perfume.common.dto.RecommendedPerfumeDTO;
 import com.pikachu.purple.application.perfume.common.dto.UserAccordDTO;
 import java.util.List;
 
-public interface GetPerfumesAndUserAccordsByUserUseCase {
+public interface GetRecommendedPerfumesByUserAccordsUseCase {
 
-    Result invoke();
+    Result findAll();
 
     record Result(
         List<UserAccordDTO> userAccords,
