@@ -1,6 +1,6 @@
 package com.pikachu.purple.bootstrap.recommend.controller;
 
-import com.pikachu.purple.application.perfume.port.in.GetCurrentUserPerfumesWithUserAccordsUseCase;
+import com.pikachu.purple.application.perfume.port.in.GetRecommendedPerfumesByUserAccordsUseCase;
 import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.recommend.api.RecommendApi;
@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class RecommendController implements RecommendApi {
 
-    private final GetCurrentUserPerfumesWithUserAccordsUseCase getCurrentUserPerfumesWithUserAccordsUseCase;
+    private final GetRecommendedPerfumesByUserAccordsUseCase getRecommendedPerfumesByUserAccordsUseCase;
     private final GetPerfumesUseCase getPerfumesUseCase;
 
     @Override
     public SuccessResponse<GetPerfumesAndUserAccordsByUserResponse> findAllPerfumeWithUserAccordsByUser() {
-        GetCurrentUserPerfumesWithUserAccordsUseCase.Result result = getCurrentUserPerfumesWithUserAccordsUseCase.findAll();
+        GetRecommendedPerfumesByUserAccordsUseCase.Result result = getRecommendedPerfumesByUserAccordsUseCase.findAll();
 
         return SuccessResponse.of(new GetPerfumesAndUserAccordsByUserResponse(
             result.userAccords(),
