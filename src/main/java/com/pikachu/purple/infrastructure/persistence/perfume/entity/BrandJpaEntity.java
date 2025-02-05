@@ -4,7 +4,10 @@ import com.pikachu.purple.domain.perfume.Brand;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import java.util.ArrayList;
+import java.util.List;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,6 +31,9 @@ public class BrandJpaEntity {
     @Column(name = "display_order")
     private int order;
 
+    @OneToMany(mappedBy = "brandJpaEntity")
+    private List<PerfumeJpaEntity> perfumes = new ArrayList<>();
+
     public static Brand toDomain(BrandJpaEntity jpaEntity) {
         return new Brand(
             jpaEntity.getName(),
@@ -35,6 +41,15 @@ public class BrandJpaEntity {
             jpaEntity.getImageUrl(),
             jpaEntity.getOrder()
         );
+    }
+
+    public static Brand toDomainWithPerfume(BrandJpaEntity jpaEntity) {
+        Brand domain = toDomain(jpaEntity);
+        domain.setPerfumes(jpaEntity.getPerfumes().stream()
+            .map(PerfumeJpaEntity::toDomain).toList()
+        );
+
+        return domain;
     }
 
 }

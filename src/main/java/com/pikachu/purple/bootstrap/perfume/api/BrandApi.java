@@ -31,7 +31,7 @@ public interface BrandApi {
     )
     @GetMapping("/perfumes")
     @ResponseStatus(HttpStatus.OK)
-    SuccessResponse<GetPerfumesByBrandNamesResponse> findAllPerfumesByBrandNames(
+    SuccessResponse<GetPerfumesByBrandNamesResponse> findAllWithPerfumes(
         @RequestParam @NotEmpty List<String> request);
 
 }
