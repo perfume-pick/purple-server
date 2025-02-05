@@ -4,7 +4,7 @@ import static com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType.SEA
 
 import com.pikachu.purple.application.perfume.common.dto.FragranticaEvaluationFieldDTO;
 import com.pikachu.purple.application.perfume.common.dto.FragranticaEvaluationOptionDTO;
-import com.pikachu.purple.application.perfume.port.in.fragranticaevaluation.GetFragranticaEvaluationByPerfumeIdUseCase;
+import com.pikachu.purple.application.perfume.port.in.fragranticaevaluation.GetFragranticaEvaluationUseCase;
 import com.pikachu.purple.application.perfume.service.domain.FragranticaEvaluationDomainService;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
@@ -16,13 +16,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-class GetFragranticaEvaluationByPerfumeIdApplicationService implements
-    GetFragranticaEvaluationByPerfumeIdUseCase {
+class GetFragranticaEvaluationService implements
+    GetFragranticaEvaluationUseCase {
 
     private final FragranticaEvaluationDomainService fragranticaEvaluationDomainService;
 
     @Override
-    public Result invoke(Long perfumeId) {
+    public Result find(Long perfumeId) {
 
         FragranticaEvaluation fragranticaEvaluation = fragranticaEvaluationDomainService.findByPerfumeIdOrderByVotesDesc(
             perfumeId);

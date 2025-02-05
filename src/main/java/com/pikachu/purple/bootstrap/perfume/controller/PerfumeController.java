@@ -1,7 +1,7 @@
 package com.pikachu.purple.bootstrap.perfume.controller;
 
+import com.pikachu.purple.application.perfume.port.in.fragranticaevaluation.GetFragranticaEvaluationUseCase;
 import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumeDetailUseCase;
-import com.pikachu.purple.application.perfume.port.in.fragranticaevaluation.GetFragranticaEvaluationByPerfumeIdUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetReviewsUseCase;
 import com.pikachu.purple.application.statistic.port.in.GetPerfumeStatisticUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class PerfumeController implements PerfumeApi {
 
+    private final GetFragranticaEvaluationUseCase getFragranticaEvaluationUseCase;
     private final GetPerfumeDetailUseCase getPerfumeDetailUseCase;
-    private final GetFragranticaEvaluationByPerfumeIdUseCase getFragranticaEvaluationByPerfumeIdUseCase;
     private final GetPerfumeStatisticUseCase getPerfumeStatisticUseCase;
     private final GetReviewsUseCase getReviewsUseCase;
 
@@ -32,11 +32,10 @@ public class PerfumeController implements PerfumeApi {
     @Override
     public SuccessResponse<GetFragranticaEvaluationResponse> findFragranticaEvaluationByPerfumeId(
         Long perfumeId) {
-
-        GetFragranticaEvaluationByPerfumeIdUseCase.Result result = getFragranticaEvaluationByPerfumeIdUseCase.invoke(perfumeId);
+        GetFragranticaEvaluationUseCase.Result result = getFragranticaEvaluationUseCase.find(perfumeId);
 
         return SuccessResponse.of(
-            new GetFragranticaEvaluationResponse(result.fragranticaEvaluation()));
+            new GetFragranticaEvaluationResponse(result.data()));
     }
 
     @Override
