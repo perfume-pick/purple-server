@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface GetSearchHistoriesUseCase {
 
-    Result invoke();
+    Result findAll(Long userId);
 
     record Result(List<SearchHistoryDTO> searchHistories){}
 

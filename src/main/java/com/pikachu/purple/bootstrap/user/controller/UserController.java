@@ -1,5 +1,7 @@
 package com.pikachu.purple.bootstrap.user.controller;
 
+import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
+
 import com.pikachu.purple.application.history.port.in.searchhistory.CreateSearchHistoryUseCase;
 import com.pikachu.purple.application.history.port.in.searchhistory.DeleteSearchHistoriesUseCase;
 import com.pikachu.purple.application.history.port.in.searchhistory.GetSearchHistoriesUseCase;
@@ -98,7 +100,8 @@ public class UserController implements UserApi {
 
     @Override
     public SuccessResponse<GetSearchHistoriesResponse> findAllSearchHistory() {
-        GetSearchHistoriesUseCase.Result result = getSearchHistoriesUseCase.invoke();
+        Long userId = getCurrentUserAuthentication().userId();
+        GetSearchHistoriesUseCase.Result result = getSearchHistoriesUseCase.findAll(userId);
 
         return SuccessResponse.of(new GetSearchHistoriesResponse(result.searchHistories()));
     }
