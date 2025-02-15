@@ -1,5 +1,7 @@
 package com.pikachu.purple.bootstrap.user.controller;
 
+import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
+
 import com.pikachu.purple.application.history.port.in.searchhistory.CreateSearchHistoryUseCase;
 import com.pikachu.purple.application.history.port.in.searchhistory.DeleteSearchHistoriesUseCase;
 import com.pikachu.purple.application.history.port.in.searchhistory.GetSearchHistoriesUseCase;
@@ -89,8 +91,11 @@ public class UserController implements UserApi {
 
     @Override
     public void createSearchHistory(String keyword) {
+        Long userId = getCurrentUserAuthentication().userId();
         Instant searchAt = Instant.now();
-        createSearchHistoryUseCase.invoke(
+
+        createSearchHistoryUseCase.create(
+            userId,
             keyword,
             searchAt
         );

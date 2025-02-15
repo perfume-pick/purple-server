@@ -4,7 +4,8 @@ import java.time.Instant;
 
 public interface CreateSearchHistoryUseCase {
 
-    void invoke(
+    void create(
+        Long userId,
         String keyword,
         Instant searchAt
     );

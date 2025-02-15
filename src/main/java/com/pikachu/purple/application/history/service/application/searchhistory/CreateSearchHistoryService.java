@@ -1,7 +1,5 @@
 package com.pikachu.purple.application.history.service.application.searchhistory;
 
-import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
-
 import com.pikachu.purple.application.history.port.in.searchhistory.CreateSearchHistoryUseCase;
 import com.pikachu.purple.application.history.service.domain.SearchHistoryDomainService;
 import java.time.Instant;
@@ -10,17 +8,16 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-class CreateSearchHistoryApplicationService implements CreateSearchHistoryUseCase {
+class CreateSearchHistoryService implements CreateSearchHistoryUseCase {
 
     private final SearchHistoryDomainService searchHistoryDomainService;
 
     @Override
-    public void invoke(
+    public void create(
+        Long userId,
         String keyword,
         Instant searchAt
     ) {
-        Long userId = getCurrentUserAuthentication().userId();
-
         searchHistoryDomainService.validateNotExist(
             userId,
             keyword
