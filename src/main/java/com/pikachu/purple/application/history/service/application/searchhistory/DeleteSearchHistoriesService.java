@@ -1,7 +1,5 @@
 package com.pikachu.purple.application.history.service.application.searchhistory;
 
-import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
-
 import com.pikachu.purple.application.history.port.in.searchhistory.DeleteSearchHistoriesUseCase;
 import com.pikachu.purple.application.history.service.domain.SearchHistoryDomainService;
 import lombok.RequiredArgsConstructor;
@@ -9,14 +7,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-class DeleteSearchHistoriesApplicationService implements
+class DeleteSearchHistoriesService implements
     DeleteSearchHistoriesUseCase {
 
     private final SearchHistoryDomainService searchHistoryDomainService;
 
     @Override
-    public void invoke() {
-        Long userId = getCurrentUserAuthentication().userId();
+    public void deleteAll(Long userId) {
         searchHistoryDomainService.deleteAllSearchHistoryByUserId(userId);
     }
 
