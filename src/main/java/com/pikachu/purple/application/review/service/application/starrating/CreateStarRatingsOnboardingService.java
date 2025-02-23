@@ -3,7 +3,7 @@ package com.pikachu.purple.application.review.service.application.starrating;
 import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
 
 import com.pikachu.purple.application.perfume.port.in.perfume.RecalculatePerfumeAverageScoresUseCase;
-import com.pikachu.purple.application.review.port.in.starrating.CreateStarRatingOnboardingUseCase;
+import com.pikachu.purple.application.review.port.in.starrating.CreateStarRatingsOnboardingUseCase;
 import com.pikachu.purple.application.review.service.domain.StarRatingDomainService;
 import com.pikachu.purple.application.statistic.port.in.starratingstatistic.IncreaseStarRatingStatisticsUseCase;
 import com.pikachu.purple.application.user.port.in.useraccord.CreateUserAccordOnboardingUseCase;
@@ -15,8 +15,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-class CreateStarRatingOnboardingApplicationService implements
-    CreateStarRatingOnboardingUseCase {
+class CreateStarRatingsOnboardingService implements
+    CreateStarRatingsOnboardingUseCase {
 
     private final CreateUserAccordOnboardingUseCase createUserAccordOnboardingUseCase;
     private final StarRatingDomainService starRatingDomainService;
@@ -25,7 +25,7 @@ class CreateStarRatingOnboardingApplicationService implements
 
     @Override
     @Transactional
-    public void invoke(List<StarRatingVO> starRatingVOs) {
+    public void createAll(List<StarRatingVO> starRatingVOs) {
         Long userId = getCurrentUserAuthentication().userId();
 
         starRatingDomainService.createOnboarding(
