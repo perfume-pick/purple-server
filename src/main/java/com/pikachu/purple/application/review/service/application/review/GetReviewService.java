@@ -1,11 +1,9 @@
 package com.pikachu.purple.application.review.service.application.review;
 
-import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
-
 import com.pikachu.purple.application.review.common.dto.ReviewByUserDTO;
 import com.pikachu.purple.application.review.common.dto.ReviewEvaluationFieldDTO;
 import com.pikachu.purple.application.review.common.dto.ReviewEvaluationOptionDTO;
-import com.pikachu.purple.application.review.port.in.review.GetCurrentUserReviewUseCase;
+import com.pikachu.purple.application.review.port.in.review.GetReviewUseCase;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
 import com.pikachu.purple.application.review.service.domain.StarRatingDomainService;
 import com.pikachu.purple.domain.review.Mood;
@@ -19,17 +17,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-class GetCurrentUserReviewService implements
-    GetCurrentUserReviewUseCase {
+class GetReviewService implements GetReviewUseCase {
 
     private final ReviewDomainService reviewDomainService;
     private final StarRatingDomainService starRatingDomainService;
 
     @Transactional
     @Override
-    public Result invoke(Long perfumeId) {
-        Long userId = getCurrentUserAuthentication().userId();
-
+    public Result invoke(Long userId, Long perfumeId) {
         Review review = reviewDomainService.findWithPerfumeAndReviewEvaluationAndMood(
             userId,
             perfumeId
