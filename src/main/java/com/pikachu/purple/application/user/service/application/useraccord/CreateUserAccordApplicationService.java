@@ -26,7 +26,7 @@ class CreateUserAccordApplicationService implements CreateUserAccordUseCase {
         Long userId = getCurrentUserAuthentication().userId();
 
         GetUserByIdUseCase.Result user = getUserByIdUseCase.invoke(userId);
-        GetStarRatingUseCase.Result starRating = getStarRatingUseCase.invoke(
+        GetStarRatingUseCase.Result starRating = getStarRatingUseCase.find(
             userId,
             perfumeId
         );

@@ -27,7 +27,7 @@ class CreateOrUpdateStarRatingOnboardingApplicationService implements
     ) {
         Long userId = getCurrentUserAuthentication().userId();
 
-        GetStarRatingUseCase.Result getStarRatingResult = getStarRatingUseCase.invoke(
+        GetStarRatingUseCase.Result getStarRatingResult = getStarRatingUseCase.find(
             userId,
             perfumeId
         );
