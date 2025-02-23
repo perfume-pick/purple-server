@@ -29,7 +29,7 @@ class RecountStarRatingStatisticsService implements
     public void invoke() {
         List<Long> perfumeIds = getPerfumeIdsUseCase.invoke().perfumeIds();
         // 별점 다 가져오기
-        List<StarRating> starRatings = getStarRatingsUseCase.invoke().starRatings();
+        List<StarRating> starRatings = getStarRatingsUseCase.findAll().starRatings();
         // perfumeId, score 기준으로 그룹화
         Map<String, Integer> starRatingStatisticMap = starRatings.stream()
             .collect(Collectors.groupingBy(
