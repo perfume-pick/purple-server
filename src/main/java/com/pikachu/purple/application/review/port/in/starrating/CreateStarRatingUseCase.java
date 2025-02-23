@@ -4,7 +4,8 @@ import com.pikachu.purple.domain.review.StarRating;
 
 public interface CreateStarRatingUseCase {
 
-    Result invoke(
+    Result create(
+        Long userId,
         Long perfumeId,
         int score
     );

@@ -28,7 +28,7 @@ class DeleteReviewService implements DeleteReviewUseCase {
     public void invoke(Long reviewId) {
         Review review = reviewDomainService.find(reviewId);
 
-        deleteStarRatingUseCase.invoke(review.getStarRating().getId());
+        deleteStarRatingUseCase.delete(review.getStarRating().getId());
 
         if(review.getType() == ReviewType.DETAIL) {
             ReviewEvaluation reviewEvaluation = reviewEvaluationDomainService.findAll(
