@@ -4,7 +4,7 @@ import com.pikachu.purple.application.review.common.dto.ReviewByUserDTO;
 
 public interface GetReviewUseCase {
 
-    Result invoke(Long userId, Long perfumeId);
+    Result find(Long userId, Long perfumeId);
 
     record Result(ReviewByUserDTO reviewByUserDTO) {}
 

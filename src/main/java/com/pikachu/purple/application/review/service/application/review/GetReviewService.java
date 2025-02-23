@@ -24,7 +24,7 @@ class GetReviewService implements GetReviewUseCase {
 
     @Transactional
     @Override
-    public Result invoke(Long userId, Long perfumeId) {
+    public Result find(Long userId, Long perfumeId) {
         Review review = reviewDomainService.findWithPerfumeAndReviewEvaluationAndMood(
             userId,
             perfumeId

@@ -137,7 +137,7 @@ public class UserController implements UserApi {
         Long perfumeId) {
         Long userId = getCurrentUserAuthentication().userId();
 
-        GetReviewUseCase.Result result = getReviewUseCase.invoke(userId, perfumeId);
+        GetReviewUseCase.Result result = getReviewUseCase.find(userId, perfumeId);
 
         return SuccessResponse.of(new GetReviewByPerfumeIdAndUserResponse(result.reviewByUserDTO()));
     }
