@@ -1,7 +1,5 @@
 package com.pikachu.purple.application.review.service.application.like;
 
-import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
-
 import com.pikachu.purple.application.review.port.in.like.DeleteLikeUseCase;
 import com.pikachu.purple.application.review.port.in.review.DecreaseReviewLikeCountUseCase;
 import com.pikachu.purple.application.review.port.out.LikeRepository;
@@ -18,9 +16,10 @@ class DeleteLikeService implements DeleteLikeUseCase {
 
     @Transactional
     @Override
-    public void invoke(Long reviewId) {
-        Long userId = getCurrentUserAuthentication().userId();
-
+    public void delete(
+        Long userId,
+        Long reviewId
+    ) {
         likeRepository.delete(
             userId,
             reviewId

@@ -125,12 +125,22 @@ public class ReviewController implements ReviewApi {
 
     @Override
     public void like(Long reviewId) {
-        createLikeUseCase.invoke(reviewId);
+        Long userId = getCurrentUserAuthentication().userId();
+
+        createLikeUseCase.create(
+            userId,
+            reviewId
+        );
     }
 
     @Override
     public void unLike(Long reviewId) {
-        deleteLikeUseCase.invoke(reviewId);
+        Long userId = getCurrentUserAuthentication().userId();
+
+        deleteLikeUseCase.delete(
+            userId,
+            reviewId
+        );
     }
 
 }

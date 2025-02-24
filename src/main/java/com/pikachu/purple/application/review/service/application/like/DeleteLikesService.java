@@ -14,7 +14,7 @@ class DeleteLikesService implements DeleteLikesUseCase {
 
     @Transactional
     @Override
-    public void invoke(Long reviewId) {
+    public void deleteAll(Long reviewId) {
         likeRepository.deleteAll(reviewId);
     }
 

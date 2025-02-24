@@ -44,7 +44,7 @@ class DeleteReviewService implements DeleteReviewUseCase {
             reviewDomainService.deleteReviewMoods(reviewId);
         }
 
-        deleteLikesUseCase.invoke(reviewId);
+        deleteLikesUseCase.deleteAll(reviewId);
         reviewDomainService.delete(reviewId);
     }
 
