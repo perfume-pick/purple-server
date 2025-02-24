@@ -1,9 +1,10 @@
 package com.pikachu.purple.application.review.service.application.review;
 
 import com.pikachu.purple.application.review.port.in.review.CreateDetailedReviewUseCase;
+import com.pikachu.purple.application.review.port.in.review.CreateReviewUseCase;
 import com.pikachu.purple.application.review.port.in.reviewevaluation.CreateReviewEvaluationUseCase;
 import com.pikachu.purple.application.review.port.in.starrating.CreateOrUpdateStarRatingUseCase;
-import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
+import com.pikachu.purple.application.review.port.out.ReviewRepository;
 import com.pikachu.purple.application.user.port.in.useraccord.CreateUserAccordUseCase;
 import com.pikachu.purple.bootstrap.review.vo.EvaluationFieldVO;
 import com.pikachu.purple.domain.perfume.Perfume;
@@ -20,10 +21,12 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 class CreateDetailedReviewService implements CreateDetailedReviewUseCase {
 
-    private final ReviewDomainService reviewDomainService;
+    private final CreateReviewUseCase createReviewUseCase;
     private final CreateOrUpdateStarRatingUseCase createOrUpdateStarRatingUseCase;
     private final CreateReviewEvaluationUseCase createReviewEvaluationUseCase;
     private final CreateUserAccordUseCase createUserAccordUseCase;
+
+    private final ReviewRepository reviewRepository;
 
     @Transactional
     @Override
@@ -45,14 +48,14 @@ class CreateDetailedReviewService implements CreateDetailedReviewUseCase {
         User user = starRating.getUser();
         Perfume perfume = starRating.getPerfume();
 
-        Review review = reviewDomainService.create(
+        Review review = createReviewUseCase.create(
             user.getId(),
             perfume.getId(),
             content,
             ReviewType.DETAIL
-        );
+        ).review();
 
-        reviewDomainService.createReviewMoods(
+        reviewRepository.createReviewMoods(
             review.getId(),
             moodNames
         );

@@ -4,7 +4,7 @@ import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUse
 
 import com.pikachu.purple.application.review.common.dto.ReviewedBrandDTO;
 import com.pikachu.purple.application.review.port.in.review.GetTopThreeReviewedBrandsUseCase;
-import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
+import com.pikachu.purple.application.review.port.out.ReviewRepository;
 import com.pikachu.purple.domain.review.Review;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,13 +20,13 @@ import org.springframework.transaction.annotation.Transactional;
 class GetTopThreeReviewedBrandsService implements
     GetTopThreeReviewedBrandsUseCase {
 
-    private final ReviewDomainService reviewDomainService;
+    private final ReviewRepository reviewRepository;
 
     @Override
     @Transactional
     public Result invoke() {
         Long userId = getCurrentUserAuthentication().userId();
-        List<Review> reviews = reviewDomainService.findAllWithPerfume(userId);
+        List<Review> reviews = reviewRepository.findAllWithPerfume(userId);
 
         List<Map.Entry<String, Long>> reviewedBrands = reviews.stream()
             .collect(Collectors.groupingBy(

@@ -4,7 +4,7 @@ import com.pikachu.purple.application.review.common.dto.ReviewByUserDTO;
 import com.pikachu.purple.application.review.common.dto.ReviewEvaluationFieldDTO;
 import com.pikachu.purple.application.review.common.dto.ReviewEvaluationOptionDTO;
 import com.pikachu.purple.application.review.port.in.review.GetReviewUseCase;
-import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
+import com.pikachu.purple.application.review.port.out.ReviewRepository;
 import com.pikachu.purple.application.review.service.domain.StarRatingDomainService;
 import com.pikachu.purple.domain.review.Mood;
 import com.pikachu.purple.domain.review.Review;
@@ -19,13 +19,13 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 class GetReviewService implements GetReviewUseCase {
 
-    private final ReviewDomainService reviewDomainService;
+    private final ReviewRepository reviewRepository;
     private final StarRatingDomainService starRatingDomainService;
 
     @Transactional
     @Override
     public Result find(Long userId, Long perfumeId) {
-        Review review = reviewDomainService.findWithPerfumeAndReviewEvaluationAndMood(
+        Review review = reviewRepository.findWithPerfumeAndReviewEvaluationAndMood(
             userId,
             perfumeId
         );

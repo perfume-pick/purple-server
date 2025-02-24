@@ -3,7 +3,7 @@ package com.pikachu.purple.application.review.service.application.review;
 import com.pikachu.purple.application.review.port.in.like.DeleteLikesUseCase;
 import com.pikachu.purple.application.review.port.in.review.DeleteReviewUseCase;
 import com.pikachu.purple.application.review.port.in.starrating.DeleteStarRatingUseCase;
-import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
+import com.pikachu.purple.application.review.port.out.ReviewRepository;
 import com.pikachu.purple.application.review.service.domain.ReviewEvaluationDomainService;
 import com.pikachu.purple.application.statistic.port.in.evaluationstatistic.DecreaseEvaluationStatisticUseCase;
 import com.pikachu.purple.domain.review.Review;
@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 class DeleteReviewService implements DeleteReviewUseCase {
 
-    private final ReviewDomainService reviewDomainService;
+    private final ReviewRepository reviewRepository;
     private final ReviewEvaluationDomainService reviewEvaluationDomainService;
     private final DeleteStarRatingUseCase deleteStarRatingUseCase;
     private final DecreaseEvaluationStatisticUseCase decreaseEvaluationStatisticUseCase;
@@ -26,7 +26,7 @@ class DeleteReviewService implements DeleteReviewUseCase {
     @Transactional
     @Override
     public void invoke(Long reviewId) {
-        Review review = reviewDomainService.find(reviewId);
+        Review review = reviewRepository.find(reviewId);
 
         deleteStarRatingUseCase.delete(review.getStarRating().getId());
 
@@ -41,11 +41,11 @@ class DeleteReviewService implements DeleteReviewUseCase {
                 reviewEvaluation
             );
 
-            reviewDomainService.deleteReviewMoods(reviewId);
+            reviewRepository.deleteReviewMoods(reviewId);
         }
 
         deleteLikesUseCase.deleteAll(reviewId);
-        reviewDomainService.delete(reviewId);
+        reviewRepository.delete(reviewId);
     }
 
 }
