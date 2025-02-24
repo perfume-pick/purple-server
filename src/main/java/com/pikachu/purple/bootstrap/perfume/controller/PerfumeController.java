@@ -44,10 +44,7 @@ public class PerfumeController implements PerfumeApi {
         GetPerfumeStatisticUseCase.Result result = getPerfumeStatisticUseCase.find(perfumeId);
 
         return SuccessResponse.of(
-            new GetPerfumeStatisticResponse(
-                result.starRatingStatistics(),
-                result.evaluationStatistics()
-            )
+            GetPerfumeStatisticResponse.of(result)
         );
     }
 
