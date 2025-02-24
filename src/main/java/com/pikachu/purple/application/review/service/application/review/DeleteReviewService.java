@@ -18,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 class DeleteReviewService implements DeleteReviewUseCase {
 
     private final ReviewRepository reviewRepository;
+    
     private final ReviewEvaluationDomainService reviewEvaluationDomainService;
     private final DeleteStarRatingUseCase deleteStarRatingUseCase;
     private final DecreaseEvaluationStatisticUseCase decreaseEvaluationStatisticUseCase;
@@ -25,7 +26,7 @@ class DeleteReviewService implements DeleteReviewUseCase {
 
     @Transactional
     @Override
-    public void invoke(Long reviewId) {
+    public void delete(Long reviewId) {
         Review review = reviewRepository.find(reviewId);
 
         deleteStarRatingUseCase.delete(review.getStarRating().getId());

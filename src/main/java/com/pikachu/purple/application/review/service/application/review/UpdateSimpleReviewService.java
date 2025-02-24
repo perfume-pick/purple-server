@@ -23,7 +23,7 @@ class UpdateSimpleReviewService implements UpdateSimpleReviewUseCase {
 
     @Transactional
     @Override
-    public void invoke(
+    public void update(
         Long reviewId,
         int score,
         String content
@@ -40,7 +40,7 @@ class UpdateSimpleReviewService implements UpdateSimpleReviewUseCase {
             reviewRepository.deleteReviewMoods(reviewId);
         }
 
-        updateReviewUseCase.invoke(
+        updateReviewUseCase.update(
             reviewId,
             review.getPerfume().getId(),
             ReviewType.SIMPLE,

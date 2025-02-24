@@ -30,7 +30,7 @@ class CreateDetailedReviewService implements CreateDetailedReviewUseCase {
 
     @Transactional
     @Override
-    public void invoke(
+    public void create(
         Long userId,
         Long perfumeId,
         int score,

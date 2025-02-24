@@ -18,7 +18,7 @@ class GetDetailedReviewsService implements
 
     @Transactional
     @Override
-    public Result invoke() {
+    public Result findAll() {
         List<Review> reviews = reviewRepository.findAllWithEvaluation(ReviewType.DETAIL);
 
         return new Result(reviews);

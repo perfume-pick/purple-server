@@ -20,7 +20,7 @@ class UpdateReviewService implements UpdateReviewUseCase {
     private final UpdateStarRatingUseCase updateStarRatingUseCase;
 
     @Override
-    public void invoke(
+    public void update(
         Long reviewId,
         Long perfumeId,
         ReviewType reviewType,

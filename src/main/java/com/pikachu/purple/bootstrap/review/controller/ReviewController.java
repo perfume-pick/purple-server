@@ -40,7 +40,10 @@ public class ReviewController implements ReviewApi {
 
     @Override
     public void createSimple(CreateReviewSimpleRequest request) {
-        createSimpleReviewUseCase.invoke(
+        Long userId = getCurrentUserAuthentication().userId();
+
+        createSimpleReviewUseCase.create(
+            userId,
             request.perfumeId(),
             request.score(),
             request.content()
@@ -51,7 +54,7 @@ public class ReviewController implements ReviewApi {
     public void createDetail(CreateReviewDetailRequest request) {
         Long userId = getCurrentUserAuthentication().userId();
 
-        createDetailedReviewUseCase.invoke(
+        createDetailedReviewUseCase.create(
             userId,
             request.perfumeId(),
             request.score(),
@@ -77,7 +80,7 @@ public class ReviewController implements ReviewApi {
         Long reviewId,
         UpdateReviewSimpleRequest request
     ) {
-        updateSimpleReviewUseCase.invoke(
+        updateSimpleReviewUseCase.update(
             reviewId,
             request.score(),
             request.content()
@@ -89,7 +92,7 @@ public class ReviewController implements ReviewApi {
         Long reviewId,
         UpdateReviewDetailRequest request
     ) {
-        updateDetailedReviewUseCase.invoke(
+        updateDetailedReviewUseCase.update(
             reviewId,
             request.score(),
             request.content(),
@@ -100,7 +103,7 @@ public class ReviewController implements ReviewApi {
 
     @Override
     public void delete(Long reviewId) {
-        deleteReviewUseCase.invoke(reviewId);
+        deleteReviewUseCase.delete(reviewId);
     }
 
     @Override

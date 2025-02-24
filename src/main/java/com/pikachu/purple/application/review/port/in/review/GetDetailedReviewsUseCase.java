@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface GetDetailedReviewsUseCase {
 
-    Result invoke();
+    Result findAll();
 
     record Result(List<Review> reviews) {}
 

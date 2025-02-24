@@ -39,7 +39,7 @@ class DeleteComplaintService implements DeleteComplaintUseCase {
             token
         );
         complaintRepository.delete(complaintId);
-        deleteReviewUseCase.invoke(complaint.getReview().getId());
+        deleteReviewUseCase.delete(complaint.getReview().getId());
     }
 
 }

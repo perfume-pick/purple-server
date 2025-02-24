@@ -30,7 +30,7 @@ class UpdateDetailedReviewService implements UpdateDetailedReviewUseCase {
 
     @Transactional
     @Override
-    public void invoke(
+    public void update(
         Long reviewId,
         int score,
         String content,
@@ -79,7 +79,7 @@ class UpdateDetailedReviewService implements UpdateDetailedReviewUseCase {
             );
         }
 
-        updateReviewUseCase.invoke(
+        updateReviewUseCase.update(
             reviewId,
             review.getPerfume().getId(),
             ReviewType.DETAIL,

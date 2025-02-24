@@ -25,7 +25,7 @@ class GetReviewsService implements
 
     @Transactional
     @Override
-    public Result invoke(
+    public Result findAll(
         Long perfumeId,
         String sortType
     ) {

@@ -1,7 +1,5 @@
 package com.pikachu.purple.application.review.service.application.review;
 
-import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
-
 import com.pikachu.purple.application.review.port.in.review.CreateReviewUseCase;
 import com.pikachu.purple.application.review.port.in.review.CreateSimpleReviewUseCase;
 import com.pikachu.purple.application.review.port.in.starrating.CreateOrUpdateStarRatingUseCase;
@@ -24,13 +22,12 @@ class CreateSimpleReviewService implements CreateSimpleReviewUseCase {
 
     @Transactional
     @Override
-    public void invoke(
+    public void create(
+        Long userId,
         Long perfumeId,
         int score,
         String content
     ) {
-        Long userId = getCurrentUserAuthentication().userId();
-
         CreateOrUpdateStarRatingUseCase.Result starRatingResult = createOrUpdateStarRatingUseCase.invoke(
             userId,
             perfumeId,
