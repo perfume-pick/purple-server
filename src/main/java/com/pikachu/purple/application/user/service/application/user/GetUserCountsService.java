@@ -7,12 +7,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-class GetUserCountsApplicationService implements GetUserCountsUseCase {
+class GetUserCountsService implements GetUserCountsUseCase {
 
     private final UserDomainService userDomainService;
 
     @Override
-    public Result invoke() {
+    public Result count() {
         int userCounts = userDomainService.count();
         return new Result(userCounts);
     }
