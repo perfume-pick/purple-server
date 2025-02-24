@@ -1,5 +1,7 @@
 package com.pikachu.purple.bootstrap.onboarding.controller;
 
+import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
+
 import com.pikachu.purple.application.review.port.in.starrating.CreateStarRatingsOnboardingUseCase;
 import com.pikachu.purple.bootstrap.onboarding.api.OnboardingApi;
 import com.pikachu.purple.bootstrap.onboarding.dto.request.CreateStarRatingOnboardingRequest;
@@ -14,7 +16,12 @@ public class OnboardingController implements OnboardingApi {
 
     @Override
     public void createOnboarding(CreateStarRatingOnboardingRequest request) {
-        createStarRatingsOnboardingUseCase.createAll(request.starRatingVOs());
+        Long userId = getCurrentUserAuthentication().userId();
+
+        createStarRatingsOnboardingUseCase.createAll(
+            userId,
+            request.starRatingVOs()
+        );
     }
 
 }

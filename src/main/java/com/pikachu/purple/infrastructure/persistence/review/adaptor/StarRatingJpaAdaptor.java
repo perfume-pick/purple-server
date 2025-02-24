@@ -35,7 +35,7 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
     }
 
     @Override
-    public void createOnboarding(
+    public void createAll(
         Long userId,
         List<StarRating> starRatings
     ) {
@@ -205,7 +205,7 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
     }
 
     @Override
-    public List<StarRating> findALlOrderByScoreAsc(Long userId) {
+    public List<StarRating> findAllOrderByScoreAsc(Long userId) {
         List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAllOrderByScoreAsc(userId);
 
         return starRatingJpaEntities.stream()

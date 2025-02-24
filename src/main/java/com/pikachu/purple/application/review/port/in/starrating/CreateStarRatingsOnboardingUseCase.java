@@ -5,6 +5,9 @@ import java.util.List;
 
 public interface CreateStarRatingsOnboardingUseCase {
 
-    void createAll(List<StarRatingVO> starRatingVOs);
+    void createAll(
+        Long userId,
+        List<StarRatingVO> starRatingVOs
+    );
 
 }
