@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface GetMoodsUseCase {
 
-    Result invoke();
+    Result findAll();
 
     record Result(List<Mood> moods) {}
 
