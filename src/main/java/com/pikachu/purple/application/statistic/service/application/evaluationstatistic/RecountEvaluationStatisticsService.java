@@ -3,7 +3,7 @@ package com.pikachu.purple.application.statistic.service.application.evaluations
 import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumeIdsUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetDetailedReviewsUseCase;
 import com.pikachu.purple.application.statistic.port.in.evaluationstatistic.RecountEvaluationStatisticsUseCase;
-import com.pikachu.purple.application.statistic.service.domain.EvaluationStatisticDomainService;
+import com.pikachu.purple.application.statistic.port.out.EvaluationStatisticRepository;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.statistic.EvaluationStatistic;
 import java.util.List;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 class RecountEvaluationStatisticsService implements
     RecountEvaluationStatisticsUseCase {
 
-    private final EvaluationStatisticDomainService evaluationStatisticDomainService;
+    private final EvaluationStatisticRepository evaluationStatisticRepository;
     private final GetDetailedReviewsUseCase getDetailedReviewsUseCase;
     private final GetPerfumeIdsUseCase getPerfumeIdsUseCase;
 
@@ -41,7 +41,7 @@ class RecountEvaluationStatisticsService implements
             )
         );
 
-        evaluationStatisticDomainService.updateAll(evaluationStatistic);
+        evaluationStatisticRepository.updateAll(evaluationStatistic);
     }
 
 }

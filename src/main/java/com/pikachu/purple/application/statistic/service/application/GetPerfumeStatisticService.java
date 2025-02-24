@@ -2,7 +2,7 @@ package com.pikachu.purple.application.statistic.service.application;
 
 import com.pikachu.purple.application.statistic.common.dto.StarRatingStatisticDTO;
 import com.pikachu.purple.application.statistic.port.in.GetPerfumeStatisticUseCase;
-import com.pikachu.purple.application.statistic.service.domain.EvaluationStatisticDomainService;
+import com.pikachu.purple.application.statistic.port.out.EvaluationStatisticRepository;
 import com.pikachu.purple.application.statistic.service.domain.StarRatingStatisticDomainService;
 import com.pikachu.purple.domain.evaluation.dto.EvaluationFieldDTO;
 import com.pikachu.purple.domain.evaluation.dto.EvaluationOptionStatisticDTO;
@@ -20,12 +20,12 @@ import org.springframework.stereotype.Service;
 class GetPerfumeStatisticService implements
     GetPerfumeStatisticUseCase {
 
-    private final EvaluationStatisticDomainService evaluationStatisticDomainService;
+    private final EvaluationStatisticRepository evaluationStatisticRepository;
     private final StarRatingStatisticDomainService starRatingStatisticDomainService;
 
     @Override
     public Result invoke(Long perfumeId) {
-        EvaluationStatistic evaluationStatistic = evaluationStatisticDomainService.findOrderByVotesDesc(
+        EvaluationStatistic evaluationStatistic = evaluationStatisticRepository.findOrderByVotesDesc(
             perfumeId);
 
         List<EvaluationFieldDTO<EvaluationOptionStatisticDTO>> evaluationFieldDTOs = new ArrayList<>();
