@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface GetReviewsUseCase {
 
-    Result invoke(
+    Result findAll(
         Long perfumeId,
         String sortType
     );

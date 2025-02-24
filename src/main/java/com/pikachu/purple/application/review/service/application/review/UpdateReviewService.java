@@ -5,7 +5,7 @@ import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUse
 import com.pikachu.purple.application.review.port.in.review.UpdateReviewUseCase;
 import com.pikachu.purple.application.review.port.in.starrating.GetStarRatingUseCase;
 import com.pikachu.purple.application.review.port.in.starrating.UpdateStarRatingUseCase;
-import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
+import com.pikachu.purple.application.review.port.out.ReviewRepository;
 import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.domain.review.enums.ReviewType;
 import lombok.RequiredArgsConstructor;
@@ -15,12 +15,12 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 class UpdateReviewService implements UpdateReviewUseCase {
 
-    private final ReviewDomainService reviewDomainService;
+    private final ReviewRepository reviewRepository;
     private final GetStarRatingUseCase getStarRatingUseCase;
     private final UpdateStarRatingUseCase updateStarRatingUseCase;
 
     @Override
-    public void invoke(
+    public void update(
         Long reviewId,
         Long perfumeId,
         ReviewType reviewType,
@@ -29,7 +29,7 @@ class UpdateReviewService implements UpdateReviewUseCase {
     ) {
         Long userId = getCurrentUserAuthentication().userId();
 
-        reviewDomainService.update(
+        reviewRepository.update(
             reviewId,
             content,
             reviewType

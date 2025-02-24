@@ -56,7 +56,7 @@ public class PerfumeController implements PerfumeApi {
         Long perfumeId,
         String sortType
     ) {
-        GetReviewsUseCase.Result result = getReviewsUseCase.invoke(
+        GetReviewsUseCase.Result result = getReviewsUseCase.findAll(
             perfumeId,
             sortType
         );

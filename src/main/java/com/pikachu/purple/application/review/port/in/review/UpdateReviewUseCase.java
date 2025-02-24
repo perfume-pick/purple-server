@@ -4,7 +4,7 @@ import com.pikachu.purple.domain.review.enums.ReviewType;
 
 public interface UpdateReviewUseCase {
 
-    void invoke(
+    void update(
         Long reviewId,
         Long perfumeId,
         ReviewType reviewType,

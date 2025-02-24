@@ -6,7 +6,7 @@ import com.pikachu.purple.application.review.common.dto.ReviewDTO;
 import com.pikachu.purple.application.review.common.dto.ReviewEvaluationFieldDTO;
 import com.pikachu.purple.application.review.common.dto.ReviewEvaluationOptionDTO;
 import com.pikachu.purple.application.review.port.in.review.GetReviewsUseCase;
-import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
+import com.pikachu.purple.application.review.port.out.ReviewRepository;
 import com.pikachu.purple.domain.review.Mood;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.enums.SortType;
@@ -21,11 +21,11 @@ import org.springframework.transaction.annotation.Transactional;
 class GetReviewsService implements
     GetReviewsUseCase {
 
-    private final ReviewDomainService reviewDomainService;
+    private final ReviewRepository reviewRepository;
 
     @Transactional
     @Override
-    public Result invoke(
+    public Result findAll(
         Long perfumeId,
         String sortType
     ) {
@@ -36,25 +36,25 @@ class GetReviewsService implements
 
         switch (getSortType) {
             case LIKED:
-                reviews = reviewDomainService.findAllOrderByLikeCountDesc(
+                reviews = reviewRepository.findAllOrderByLikeCountDesc(
                     userId,
                     perfumeId
                 );
                 break;
             case LATEST:
-                reviews = reviewDomainService.findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByCreatedAtDesc(
+                reviews = reviewRepository.findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByCreatedAtDesc(
                     userId,
                     perfumeId
                 );
                 break;
             case STAR_RATING_HIGH:
-                reviews = reviewDomainService.findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByScoreDesc(
+                reviews = reviewRepository.findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByScoreDesc(
                     userId,
                     perfumeId
                 );
                 break;
             case STAR_RATING_LOW:
-                reviews = reviewDomainService.findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByScoreAsc(
+                reviews = reviewRepository.findAllWithPerfumeAndReviewEvaluationAndMoodAndIsComplainedOrderByScoreAsc(
                     userId,
                     perfumeId
                 );

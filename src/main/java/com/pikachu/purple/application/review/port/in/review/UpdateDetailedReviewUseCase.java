@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface UpdateDetailedReviewUseCase {
 
-    void invoke(
+    void update(
         Long reviewId,
         int score,
         String content,

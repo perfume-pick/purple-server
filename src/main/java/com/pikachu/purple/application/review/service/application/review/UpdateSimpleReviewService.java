@@ -1,8 +1,8 @@
 package com.pikachu.purple.application.review.service.application.review;
 
-import com.pikachu.purple.application.review.port.in.review.UpdateSimpleReviewUseCase;
 import com.pikachu.purple.application.review.port.in.review.UpdateReviewUseCase;
-import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
+import com.pikachu.purple.application.review.port.in.review.UpdateSimpleReviewUseCase;
+import com.pikachu.purple.application.review.port.out.ReviewRepository;
 import com.pikachu.purple.application.review.service.domain.ReviewEvaluationDomainService;
 import com.pikachu.purple.application.statistic.port.in.evaluationstatistic.DecreaseEvaluationStatisticUseCase;
 import com.pikachu.purple.domain.review.Review;
@@ -16,19 +16,19 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 class UpdateSimpleReviewService implements UpdateSimpleReviewUseCase {
 
-    private final ReviewDomainService reviewDomainService;
+    private final ReviewRepository reviewRepository;
     private final ReviewEvaluationDomainService reviewEvaluationDomainService;
     private final DecreaseEvaluationStatisticUseCase decreaseEvaluationStatisticUseCase;
     private final UpdateReviewUseCase updateReviewUseCase;
 
     @Transactional
     @Override
-    public void invoke(
+    public void update(
         Long reviewId,
         int score,
         String content
     ) {
-        Review review = reviewDomainService.findWithPerfume(reviewId);
+        Review review = reviewRepository.findWithPerfume(reviewId);
 
         if(review.getType() == ReviewType.DETAIL) {
             ReviewEvaluation reviewEvaluation = reviewEvaluationDomainService.findAll(reviewId);
@@ -37,10 +37,10 @@ class UpdateSimpleReviewService implements UpdateSimpleReviewUseCase {
                 review.getPerfume().getId(),
                 reviewEvaluation
             );
-            reviewDomainService.deleteReviewMoods(reviewId);
+            reviewRepository.deleteReviewMoods(reviewId);
         }
 
-        updateReviewUseCase.invoke(
+        updateReviewUseCase.update(
             reviewId,
             review.getPerfume().getId(),
             ReviewType.SIMPLE,

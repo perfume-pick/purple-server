@@ -3,7 +3,7 @@ package com.pikachu.purple.application.review.service.application.review;
 import com.pikachu.purple.application.review.port.in.review.UpdateDetailedReviewUseCase;
 import com.pikachu.purple.application.review.port.in.review.UpdateReviewUseCase;
 import com.pikachu.purple.application.review.port.in.reviewevaluation.CreateReviewEvaluationUseCase;
-import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
+import com.pikachu.purple.application.review.port.out.ReviewRepository;
 import com.pikachu.purple.application.review.service.domain.ReviewEvaluationDomainService;
 import com.pikachu.purple.application.review.util.ReviewEvaluationConverter;
 import com.pikachu.purple.application.statistic.port.in.evaluationstatistic.DecreaseEvaluationStatisticUseCase;
@@ -21,7 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 class UpdateDetailedReviewService implements UpdateDetailedReviewUseCase {
 
-    private final ReviewDomainService reviewDomainService;
+    private final ReviewRepository reviewRepository;
     private final ReviewEvaluationDomainService reviewEvaluationDomainService;
     private final CreateReviewEvaluationUseCase createReviewEvaluationUseCase;
     private final DecreaseEvaluationStatisticUseCase decreaseEvaluationStatisticUseCase;
@@ -30,14 +30,14 @@ class UpdateDetailedReviewService implements UpdateDetailedReviewUseCase {
 
     @Transactional
     @Override
-    public void invoke(
+    public void update(
         Long reviewId,
         int score,
         String content,
         List<EvaluationFieldVO> evaluationFieldVOs,
         List<String> moodNames
     ) {
-        Review review = reviewDomainService.findWithPerfume(reviewId);
+        Review review = reviewRepository.findWithPerfume(reviewId);
 
         if(review.getType() == ReviewType.SIMPLE) {
             createReviewEvaluationUseCase.invoke(
@@ -45,7 +45,7 @@ class UpdateDetailedReviewService implements UpdateDetailedReviewUseCase {
                 evaluationFieldVOs
             );
 
-            reviewDomainService.createReviewMoods(
+            reviewRepository.createReviewMoods(
                 review.getId(),
                 moodNames
             );
@@ -73,13 +73,13 @@ class UpdateDetailedReviewService implements UpdateDetailedReviewUseCase {
                 afterReviewEvaluation
             );
 
-            reviewDomainService.updateReviewMood(
+            reviewRepository.updateReviewMood(
                 reviewId,
                 moodNames
             );
         }
 
-        updateReviewUseCase.invoke(
+        updateReviewUseCase.update(
             reviewId,
             review.getPerfume().getId(),
             ReviewType.DETAIL,

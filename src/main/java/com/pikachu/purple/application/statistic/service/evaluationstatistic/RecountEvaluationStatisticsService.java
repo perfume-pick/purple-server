@@ -26,7 +26,7 @@ class RecountEvaluationStatisticsService implements
         List<Long> perfumeIds = getPerfumeIdsUseCase.invoke().perfumeIds();
         perfumeIds.forEach(evaluationStatistic::setDefault);
 
-        List<Review> reviews = getDetailedReviewsUseCase.invoke()
+        List<Review> reviews = getDetailedReviewsUseCase.findAll()
             .reviews();
 
         reviews.forEach(
