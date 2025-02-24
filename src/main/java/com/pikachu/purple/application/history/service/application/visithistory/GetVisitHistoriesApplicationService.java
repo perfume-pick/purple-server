@@ -1,7 +1,5 @@
 package com.pikachu.purple.application.history.service.application.visithistory;
 
-import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
-
 import com.pikachu.purple.application.history.common.dto.VisitHistoryDTO;
 import com.pikachu.purple.application.history.port.in.visithistory.GetVisitHistoriesUseCase;
 import com.pikachu.purple.application.history.service.domain.VisitHistoryDomainService;
@@ -28,9 +26,7 @@ class GetVisitHistoriesApplicationService implements GetVisitHistoriesUseCase {
 
     @Transactional
     @Override
-    public Result invoke() {
-        Long userId = getCurrentUserAuthentication().userId();
-
+    public Result findAll(Long userId) {
         List<VisitHistory> visitHistories = visitHistoryDomainService.findAllByUserId(userId);
 
         List<Long> perfumeIds = visitHistories.stream()

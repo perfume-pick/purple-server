@@ -1,7 +1,5 @@
 package com.pikachu.purple.application.history.service.application.visithistory;
 
-import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
-
 import com.pikachu.purple.application.history.port.in.visithistory.CreateVisitHistoryUseCase;
 import com.pikachu.purple.application.history.service.domain.VisitHistoryDomainService;
 import java.time.Instant;
@@ -17,12 +15,11 @@ class CreateVisitHistoryApplicationService implements CreateVisitHistoryUseCase 
 
     @Transactional
     @Override
-    public void invoke(
+    public void create(
+        Long userId,
         Long perfumeId,
         Instant searchAt
     ) {
-        Long userId = getCurrentUserAuthentication().userId();
-
         visitHistoryDomainService.validateNotExist(
             userId,
             perfumeId

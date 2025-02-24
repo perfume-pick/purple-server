@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface GetVisitHistoriesUseCase {
 
-    Result invoke();
+    Result findAll(Long userId);
 
     record Result(List<VisitHistoryDTO> visitHistoryDTOs) {}
 

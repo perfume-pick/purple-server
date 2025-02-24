@@ -121,9 +121,11 @@ public class UserController implements UserApi {
 
     @Override
     public void createVisitHistory(Long perfumeId) {
+        Long userId = getCurrentUserAuthentication().userId();
         Instant searchAt = Instant.now();
 
-        createVisitHistoryUseCase.invoke(
+        createVisitHistoryUseCase.create(
+            userId,
             perfumeId,
             searchAt
         );
@@ -131,14 +133,17 @@ public class UserController implements UserApi {
 
     @Override
     public SuccessResponse<GetVisitHistoriesResponse> findAllVisitHistory() {
-        GetVisitHistoriesUseCase.Result result = getVisitHistoriesUseCase.invoke();
+        Long userId = getCurrentUserAuthentication().userId();
+        GetVisitHistoriesUseCase.Result result = getVisitHistoriesUseCase.findAll(userId);
 
         return SuccessResponse.of(new GetVisitHistoriesResponse(result.visitHistoryDTOs()));
     }
 
     @Override
     public void deleteAllVisitHistory() {
-        deleteVisitHistoriesUseCase.invoke();
+        Long userId = getCurrentUserAuthentication().userId();
+
+        deleteVisitHistoriesUseCase.deleteAll(userId);
     }
 
     @Override

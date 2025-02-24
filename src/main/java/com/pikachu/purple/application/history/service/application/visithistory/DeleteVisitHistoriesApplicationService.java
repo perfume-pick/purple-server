@@ -1,7 +1,5 @@
 package com.pikachu.purple.application.history.service.application.visithistory;
 
-import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
-
 import com.pikachu.purple.application.history.port.in.visithistory.DeleteVisitHistoriesUseCase;
 import com.pikachu.purple.application.history.service.domain.VisitHistoryDomainService;
 import lombok.RequiredArgsConstructor;
@@ -16,9 +14,7 @@ class DeleteVisitHistoriesApplicationService implements DeleteVisitHistoriesUseC
 
     @Transactional
     @Override
-    public void invoke() {
-        Long userId = getCurrentUserAuthentication().userId();
-
+    public void deleteAll(Long userId) {
         visitHistoryDomainService.deleteAllVisitHistoryByUserId(userId);
     }
 
