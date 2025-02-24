@@ -20,7 +20,7 @@ public interface ComplaintApi {
 
     @Operation(summary = "신고내역 확인")
     @GetMapping("/{complaint-id}")
-    String find(
+    String checkingPage(
         @PathVariable("complaint-id") @NotNull @Positive Long complaintId,
         @RequestParam @NotBlank String token,
         Model model
