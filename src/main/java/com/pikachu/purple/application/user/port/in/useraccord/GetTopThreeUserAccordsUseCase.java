@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface GetTopThreeUserAccordsUseCase {
 
-    Result invoke();
+    Result find(Long userId);
 
     record Result(List<UserAccord> userAccords){}
 

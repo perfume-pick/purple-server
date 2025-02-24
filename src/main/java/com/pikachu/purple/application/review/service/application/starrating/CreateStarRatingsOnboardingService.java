@@ -41,7 +41,7 @@ class CreateStarRatingsOnboardingService implements
 //        recalculatePerfumeAverageScoresUseCase.invoke(
 //            new RecalculatePerfumeAverageScoresUseCase.Command(perfumeIds));
 
-        createUserAccordOnboardingUseCase.invoke();
+        createUserAccordOnboardingUseCase.createAll(userId);
     }
 
 }

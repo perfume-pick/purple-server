@@ -28,8 +28,8 @@ class GetRecommendedPerfumesByUserAccordsService implements
 
     @Transactional
     @Override
-    public Result findAll() {
-        GetTopThreeUserAccordsUseCase.Result result = getTopThreeUserAccordsUseCase.invoke();
+    public Result findAll(Long userId) {
+        GetTopThreeUserAccordsUseCase.Result result = getTopThreeUserAccordsUseCase.find(userId);
 
         if (result.userAccords().isEmpty()) {
             return new Result(

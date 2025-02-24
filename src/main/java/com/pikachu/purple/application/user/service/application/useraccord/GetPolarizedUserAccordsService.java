@@ -1,11 +1,9 @@
 package com.pikachu.purple.application.user.service.application.useraccord;
 
-import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
-
 import com.pikachu.purple.application.review.port.in.starrating.GetStarRatingsUseCase;
 import com.pikachu.purple.application.user.common.dto.PolarizedUserAccordDTO;
 import com.pikachu.purple.application.user.common.dto.PolarizedUserAccordDTO.AccordInfo;
-import com.pikachu.purple.application.user.port.in.useraccord.GetPolarizedUserAccordsByUserUseCase;
+import com.pikachu.purple.application.user.port.in.useraccord.GetPolarizedUserAccordsUseCase;
 import com.pikachu.purple.application.user.service.domain.UserAccordDomainService;
 import com.pikachu.purple.application.util.MathUtil;
 import com.pikachu.purple.domain.perfume.Perfume;
@@ -20,8 +18,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-class GetPolarizedUserAccordsByUserApplicationService implements
-    GetPolarizedUserAccordsByUserUseCase {
+class GetPolarizedUserAccordsService implements
+    GetPolarizedUserAccordsUseCase {
 
     private final UserAccordDomainService userAccordDomainService;
     private final GetStarRatingsUseCase getStarRatingsUseCase;
@@ -29,9 +27,7 @@ class GetPolarizedUserAccordsByUserApplicationService implements
 
     @Transactional
     @Override
-    public Result invoke() {
-        Long userId = getCurrentUserAuthentication().userId();
-
+    public Result find(Long userId) {
         List<UserAccord> accordsByDesc = userAccordDomainService.findAllOrderByScoreDesc(
             userId,
             MAX_SIZE

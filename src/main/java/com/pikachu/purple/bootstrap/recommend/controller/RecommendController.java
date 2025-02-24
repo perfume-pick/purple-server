@@ -1,5 +1,7 @@
 package com.pikachu.purple.bootstrap.recommend.controller;
 
+import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
+
 import com.pikachu.purple.application.perfume.port.in.GetRecommendedPerfumesByUserAccordsUseCase;
 import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
@@ -18,7 +20,8 @@ public class RecommendController implements RecommendApi {
 
     @Override
     public SuccessResponse<GetPerfumesAndUserAccordsByUserResponse> findAllPerfumeWithUserAccordsByUser() {
-        GetRecommendedPerfumesByUserAccordsUseCase.Result result = getRecommendedPerfumesByUserAccordsUseCase.findAll();
+        Long userId = getCurrentUserAuthentication().userId();
+        GetRecommendedPerfumesByUserAccordsUseCase.Result result = getRecommendedPerfumesByUserAccordsUseCase.findAll(userId);
 
         return SuccessResponse.of(new GetPerfumesAndUserAccordsByUserResponse(
             result.userAccords(),

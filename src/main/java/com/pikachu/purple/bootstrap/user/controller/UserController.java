@@ -15,7 +15,7 @@ import com.pikachu.purple.application.review.port.in.starrating.GetReviewsByUser
 import com.pikachu.purple.application.user.port.in.user.GetUserUseCase;
 import com.pikachu.purple.application.user.port.in.user.UpdateProfileUseCase;
 import com.pikachu.purple.application.user.port.in.user.WithdrawUserUseCase;
-import com.pikachu.purple.application.user.port.in.useraccord.GetPolarizedUserAccordsByUserUseCase;
+import com.pikachu.purple.application.user.port.in.useraccord.GetPolarizedUserAccordsUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.user.api.UserApi;
 import com.pikachu.purple.bootstrap.user.dto.response.GetPolarizedUserAccordsByUserResponse;
@@ -45,7 +45,7 @@ public class UserController implements UserApi {
     private final DeleteVisitHistoriesUseCase deleteVisitHistoriesUseCase;
     private final GetTopThreeReviewedBrandsUseCase getTopThreeReviewedBrandsUseCase;
     private final GetReviewUseCase getReviewUseCase;
-    private final GetPolarizedUserAccordsByUserUseCase getPolarizedUserAccordsByUserUseCase;
+    private final GetPolarizedUserAccordsUseCase getPolarizedUserAccordsUseCase;
     private final GetReviewsByUserAndSortTypeUseCase getReviewsByUserAndSortTypeUseCase;
     private final WithdrawUserUseCase withdrawUserUseCase;
     private final GetUserUseCase getUserUseCase;
@@ -160,7 +160,8 @@ public class UserController implements UserApi {
 
     @Override
     public SuccessResponse<GetPolarizedUserAccordsByUserResponse> findPolarizedUserAccordsByUser() {
-        GetPolarizedUserAccordsByUserUseCase.Result result = getPolarizedUserAccordsByUserUseCase.invoke();
+        Long userId = getCurrentUserAuthentication().userId();
+        GetPolarizedUserAccordsUseCase.Result result = getPolarizedUserAccordsUseCase.find(userId);
 
         return SuccessResponse.of(new GetPolarizedUserAccordsByUserResponse(result.polarizedUserAccordDTO()));
     }

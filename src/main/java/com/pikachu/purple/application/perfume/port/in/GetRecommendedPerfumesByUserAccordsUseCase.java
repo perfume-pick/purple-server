@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface GetRecommendedPerfumesByUserAccordsUseCase {
 
-    Result findAll();
+    Result findAll(Long userId);
 
     record Result(
         List<UserAccordDTO> userAccords,
