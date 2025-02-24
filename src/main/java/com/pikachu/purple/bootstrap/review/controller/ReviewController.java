@@ -105,12 +105,22 @@ public class ReviewController implements ReviewApi {
 
     @Override
     public void complain(Long reviewId) {
-        createComplaintUseCase.invoke(reviewId);
+        Long userId = getCurrentUserAuthentication().userId();
+
+        createComplaintUseCase.create(
+            userId,
+            reviewId
+        );
     }
 
     @Override
     public void deleteComplain(Long reviewId) {
-        deleteComplaintUseCase.invoke(reviewId);
+        Long userId = getCurrentUserAuthentication().userId();
+
+        deleteComplaintUseCase.delete(
+            userId,
+            reviewId
+        );
     }
 
     @Override

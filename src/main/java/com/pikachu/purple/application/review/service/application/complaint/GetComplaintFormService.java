@@ -2,7 +2,7 @@ package com.pikachu.purple.application.review.service.application.complaint;
 
 import com.pikachu.purple.application.review.common.dto.ComplaintFormDTO;
 import com.pikachu.purple.application.review.port.in.complaint.GetComplaintFormUseCase;
-import com.pikachu.purple.application.review.service.domain.ComplaintDomainService;
+import com.pikachu.purple.application.review.port.out.ComplaintRepository;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
 import com.pikachu.purple.domain.review.Complaint;
 import com.pikachu.purple.domain.review.Review;
@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 class GetComplaintFormService implements GetComplaintFormUseCase {
 
-    private final ComplaintDomainService complaintDomainService;
+    private final ComplaintRepository complaintRepository;
     private final ReviewDomainService reviewDomainService;
 
     @Value(value = "${uri.server-complaint}")
@@ -27,7 +27,7 @@ class GetComplaintFormService implements GetComplaintFormUseCase {
         Long complaintId,
         String token
     ) {
-        Complaint complaint = complaintDomainService.find(
+        Complaint complaint = complaintRepository.find(
             complaintId,
             token
         );
