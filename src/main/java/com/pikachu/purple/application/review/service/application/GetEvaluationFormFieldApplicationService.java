@@ -27,7 +27,7 @@ class GetEvaluationFormFieldApplicationService implements
                     .toList()))
             .toList();
 
-        GetMoodsUseCase.Result moodResult = getMoodsUseCase.invoke();
+        GetMoodsUseCase.Result moodResult = getMoodsUseCase.findAll();
 
         return new Result(
             evaluationFieldDTOs,
