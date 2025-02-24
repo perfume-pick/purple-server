@@ -113,7 +113,9 @@ public class UserController implements UserApi {
 
     @Override
     public void deleteAllSearchHistory() {
-        deleteSearchHistoriesUseCase.invoke();
+        Long userId = getCurrentUserAuthentication().userId();
+
+        deleteSearchHistoriesUseCase.deleteAll(userId);
     }
 
     @Override
