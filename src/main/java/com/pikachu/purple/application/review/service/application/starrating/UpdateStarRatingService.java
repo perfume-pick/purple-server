@@ -1,9 +1,8 @@
 package com.pikachu.purple.application.review.service.application.starrating;
 
-import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
-
-import com.pikachu.purple.application.review.port.in.starrating.CreateStarRatingUseCase;
+import com.pikachu.purple.application.review.port.in.starrating.UpdateStarRatingUseCase;
 import com.pikachu.purple.application.review.service.domain.StarRatingDomainService;
+import com.pikachu.purple.application.statistic.port.in.starratingstatistic.DecreaseStarRatingStatisticUseCase;
 import com.pikachu.purple.application.statistic.port.in.starratingstatistic.IncreaseStarRatingStatisticUseCase;
 import com.pikachu.purple.domain.review.StarRating;
 import lombok.RequiredArgsConstructor;
@@ -12,20 +11,26 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-class CreateStarRatingApplicationService implements CreateStarRatingUseCase {
+class UpdateStarRatingService implements UpdateStarRatingUseCase {
 
     private final StarRatingDomainService starRatingDomainService;
+    private final DecreaseStarRatingStatisticUseCase decreaseStarRatingStatisticUseCase;
     private final IncreaseStarRatingStatisticUseCase increaseStarRatingStatisticUseCase;
 
     @Override
     @Transactional
-    public Result invoke(
+    public Result update(
+        Long userId,
         Long perfumeId,
+        int previousScore,
         int score
     ) {
-        Long userId = getCurrentUserAuthentication().userId();
+        decreaseStarRatingStatisticUseCase.invoke(
+            perfumeId,
+            previousScore
+        );
 
-        StarRating starRating = starRatingDomainService.create(
+        StarRating starRating = starRatingDomainService.updateScore(
             userId,
             perfumeId,
             score

@@ -42,7 +42,8 @@ class UpdateReviewService implements UpdateReviewUseCase {
 
         StarRating previousStarRating = starRatingResult.starRating();
 
-        updateStarRatingUseCase.invoke(
+        updateStarRatingUseCase.update(
+            userId,
             previousStarRating.getPerfume().getId(),
             previousStarRating.getScore(),
             score

@@ -34,14 +34,16 @@ class CreateOrUpdateStarRatingOnboardingApplicationService implements
 
         StarRating starRating;
         if (getStarRatingResult.starRating() == null) {
-            CreateStarRatingUseCase.Result createStarRatingResult = createStarRatingUseCase.invoke(
+            CreateStarRatingUseCase.Result createStarRatingResult = createStarRatingUseCase.create(
+                userId,
                 perfumeId,
                 score
             );
             starRating = createStarRatingResult.starRating();
         } else {
             StarRating previousStarRating = getStarRatingResult.starRating();
-            UpdateStarRatingUseCase.Result updateStarRatingResult = updateStarRatingUseCase.invoke(
+            UpdateStarRatingUseCase.Result updateStarRatingResult = updateStarRatingUseCase.update(
+                userId,
                 previousStarRating.getPerfume().getId(),
                 previousStarRating.getScore(),
                 score

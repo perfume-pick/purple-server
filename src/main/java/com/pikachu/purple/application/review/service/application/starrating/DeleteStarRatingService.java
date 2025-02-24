@@ -10,14 +10,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-class DeleteStarRatingApplicationService implements DeleteStarRatingUseCase {
+class DeleteStarRatingService implements DeleteStarRatingUseCase {
 
     private final StarRatingDomainService starRatingDomainService;
     private final DecreaseStarRatingStatisticUseCase decreaseStarRatingStatisticUseCase;
 
     @Transactional
     @Override
-    public void invoke(Long starRatingId) {
+    public void delete(Long starRatingId) {
         StarRating starRating = starRatingDomainService.deleteById(starRatingId);
 
         decreaseStarRatingStatisticUseCase.invoke(
