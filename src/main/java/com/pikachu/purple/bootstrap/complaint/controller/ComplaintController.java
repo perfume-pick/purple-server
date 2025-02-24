@@ -15,7 +15,7 @@ public class ComplaintController implements ComplaintApi {
     private final DeleteComplaintUseCase deleteComplaintUseCase;
 
     @Override
-    public String find(
+    public String checkingPage(
         Long complaintId,
         String token,
         Model model

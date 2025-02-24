@@ -1,6 +1,5 @@
 package com.pikachu.purple.application.review.service.complaint;
 
-import com.pikachu.purple.application.review.common.dto.ComplaintFormDTO;
 import com.pikachu.purple.application.review.port.in.complaint.GetComplaintFormUseCase;
 import com.pikachu.purple.application.review.port.out.ComplaintRepository;
 import com.pikachu.purple.application.review.port.out.ReviewRepository;
