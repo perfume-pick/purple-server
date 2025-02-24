@@ -2,9 +2,9 @@ package com.pikachu.purple.application.user.port.in.user;
 
 import com.pikachu.purple.domain.user.User;
 
-public interface GetUserByIdUseCase {
+public interface GetUserUseCase {
 
-    Result invoke(Long userId);
+    Result find(Long userId);
 
     record Result(User user) {}
 

@@ -5,7 +5,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 public interface UpdateProfileUseCase {
 
-    Result invoke(
+    Result update(
+        Long userId,
         String nickname,
         boolean isChanged,
         MultipartFile picture

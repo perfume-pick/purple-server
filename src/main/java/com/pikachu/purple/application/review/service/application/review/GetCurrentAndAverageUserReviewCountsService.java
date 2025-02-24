@@ -18,7 +18,7 @@ class GetCurrentAndAverageUserReviewCountsService implements
     public Result find(Long userId) {
         int currentUserReviewCounts = reviewDomainService.count(userId);
         int totalReviewCounts = reviewDomainService.count();
-        int userCounts = getUserCountsUseCase.invoke().userCounts();
+        int userCounts = getUserCountsUseCase.count().userCounts();
         double averageUserReviewCounts = Math.round((double) totalReviewCounts / userCounts);
 
         return new Result(

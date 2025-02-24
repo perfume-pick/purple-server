@@ -8,13 +8,13 @@ import com.pikachu.purple.application.history.port.in.searchhistory.GetSearchHis
 import com.pikachu.purple.application.history.port.in.visithistory.CreateVisitHistoryUseCase;
 import com.pikachu.purple.application.history.port.in.visithistory.DeleteVisitHistoriesUseCase;
 import com.pikachu.purple.application.history.port.in.visithistory.GetVisitHistoriesUseCase;
-import com.pikachu.purple.application.review.port.in.review.GetReviewUseCase;
-import com.pikachu.purple.application.review.port.in.starrating.GetReviewsByUserAndSortTypeUseCase;
-import com.pikachu.purple.application.user.port.in.user.DeleteUserUseCase;
-import com.pikachu.purple.application.user.port.in.user.GetUserProfileByUserUseCase;
-import com.pikachu.purple.application.review.port.in.review.GetTopThreeReviewedBrandsUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetCurrentAndAverageUserReviewCountsUseCase;
+import com.pikachu.purple.application.review.port.in.review.GetReviewUseCase;
+import com.pikachu.purple.application.review.port.in.review.GetTopThreeReviewedBrandsUseCase;
+import com.pikachu.purple.application.review.port.in.starrating.GetReviewsByUserAndSortTypeUseCase;
+import com.pikachu.purple.application.user.port.in.user.GetUserUseCase;
 import com.pikachu.purple.application.user.port.in.user.UpdateProfileUseCase;
+import com.pikachu.purple.application.user.port.in.user.WithdrawUserUseCase;
 import com.pikachu.purple.application.user.port.in.useraccord.GetPolarizedUserAccordsByUserUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
 import com.pikachu.purple.bootstrap.user.api.UserApi;
@@ -46,9 +46,9 @@ public class UserController implements UserApi {
     private final GetTopThreeReviewedBrandsUseCase getTopThreeReviewedBrandsUseCase;
     private final GetReviewUseCase getReviewUseCase;
     private final GetPolarizedUserAccordsByUserUseCase getPolarizedUserAccordsByUserUseCase;
-    private final GetUserProfileByUserUseCase getUserProfileByUserUseCase;
     private final GetReviewsByUserAndSortTypeUseCase getReviewsByUserAndSortTypeUseCase;
-    private final DeleteUserUseCase deleteUserUseCase;
+    private final WithdrawUserUseCase withdrawUserUseCase;
+    private final GetUserUseCase getUserUseCase;
 
     @Override
     public SuccessResponse<GetUserProfileResponse> updateProfile(
@@ -56,7 +56,9 @@ public class UserController implements UserApi {
         boolean isChanged,
         MultipartFile picture
     ) {
-        UpdateProfileUseCase.Result result = updateProfileUseCase.invoke(
+        Long userId = getCurrentUserAuthentication().userId();
+        UpdateProfileUseCase.Result result = updateProfileUseCase.update(
+            userId,
             nickname,
             isChanged,
             picture
@@ -165,13 +167,14 @@ public class UserController implements UserApi {
 
     @Override
     public SuccessResponse<GetUserProfileResponse> findUserProfileByUser() {
-        GetUserProfileByUserUseCase.Result result = getUserProfileByUserUseCase.invoke();
+        Long userId = getCurrentUserAuthentication().userId();
+        GetUserUseCase.Result result = getUserUseCase.find(userId);
 
         return SuccessResponse.of(
             new GetUserProfileResponse(
-                result.nickname(),
-                result.imageUrl(),
-                result.email()
+                result.user().getNickname(),
+                result.user().getImageUrl(),
+                result.user().getEmail()
         ));
     }
 
@@ -186,7 +189,9 @@ public class UserController implements UserApi {
 
     @Override
     public void withdraw() {
-        deleteUserUseCase.invoke();
+        Long userId = getCurrentUserAuthentication().userId();
+
+        withdrawUserUseCase.withdraw(userId);
     }
 
 }
