@@ -94,8 +94,11 @@ public class UserController implements UserApi {
 
     @Override
     public void createSearchHistory(String keyword) {
+        Long userId = getCurrentUserAuthentication().userId();
         Instant searchAt = Instant.now();
-        createSearchHistoryUseCase.invoke(
+
+        createSearchHistoryUseCase.create(
+            userId,
             keyword,
             searchAt
         );
