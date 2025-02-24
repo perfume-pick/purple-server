@@ -1,22 +1,22 @@
-package com.pikachu.purple.domain.evaluation.dto;
+package com.pikachu.purple.domain.evaluation;
 
 import com.pikachu.purple.application.util.MathUtil;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 
-public record EvaluationOptionStatisticDTO(
+public record EvaluationOptionStatistic(
     int order,
     String optionCode,
     String optionName,
     int votePercent
 ) {
 
-    public static EvaluationOptionStatisticDTO of(
+    public static EvaluationOptionStatistic of(
         int order,
         EvaluationOptionType option,
         int votes,
         int totalVotesByField
     ) {
-        return new EvaluationOptionStatisticDTO(
+        return new EvaluationOptionStatistic(
             order,
             option.getCode(),
             option.getName(),
