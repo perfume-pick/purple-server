@@ -26,7 +26,7 @@ class RecalculatePerfumeAverageScoresService implements
     @Override
     @Transactional
     public void invoke() {
-        List<StarRatingStatistic> starRatingStatistics = getStarRatingStatisticsUseCase.invoke()
+        List<StarRatingStatistic> starRatingStatistics = getStarRatingStatisticsUseCase.findAll()
             .starRatingStatistics();
 
         this.recalculatePerfumeAverageScores(starRatingStatistics);
@@ -37,7 +37,7 @@ class RecalculatePerfumeAverageScoresService implements
     @Transactional
     public void invoke(List<Long> perfumeIds) {
         List<StarRatingStatistic> starRatingStatistics = getStarRatingStatisticsUseCase
-            .invoke(perfumeIds)
+            .findAll(perfumeIds)
             .starRatingStatistics();
 
         this.recalculatePerfumeAverageScores(starRatingStatistics);
