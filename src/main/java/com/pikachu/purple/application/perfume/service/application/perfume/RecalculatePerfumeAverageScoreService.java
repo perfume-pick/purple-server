@@ -21,7 +21,7 @@ class RecalculatePerfumeAverageScoreService implements
     @Transactional
     public void invoke(Long perfumeId) {
         List<StarRatingStatistic> starRatingStatistics = getStarRatingStatisticsUseCase
-            .invoke(perfumeId)
+            .findAll(perfumeId)
             .starRatingStatistics();
 
         double totalScore = starRatingStatistics.stream()

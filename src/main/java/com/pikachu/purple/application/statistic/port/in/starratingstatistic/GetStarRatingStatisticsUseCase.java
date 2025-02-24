@@ -5,11 +5,11 @@ import java.util.List;
 
 public interface GetStarRatingStatisticsUseCase {
 
-    Result invoke();
+    Result findAll();
 
-    Result invoke(Long perfumeId);
+    Result findAll(Long perfumeId);
 
-    Result invoke(List<Long> perfumeIds);
+    Result findAll(List<Long> perfumeIds);
 
     record Result(List<StarRatingStatistic> starRatingStatistics) {};
 

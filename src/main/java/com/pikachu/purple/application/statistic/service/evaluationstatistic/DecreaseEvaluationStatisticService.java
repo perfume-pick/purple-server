@@ -1,4 +1,4 @@
-package com.pikachu.purple.application.statistic.service.application.evaluationstatistic;
+package com.pikachu.purple.application.statistic.service.evaluationstatistic;
 
 import com.pikachu.purple.application.statistic.port.in.evaluationstatistic.DecreaseEvaluationStatisticUseCase;
 import com.pikachu.purple.application.statistic.port.out.EvaluationStatisticRepository;

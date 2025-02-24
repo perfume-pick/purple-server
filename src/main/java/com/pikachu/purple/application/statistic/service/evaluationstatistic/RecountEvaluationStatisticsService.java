@@ -1,4 +1,4 @@
-package com.pikachu.purple.application.statistic.service.application.evaluationstatistic;
+package com.pikachu.purple.application.statistic.service.evaluationstatistic;
 
 import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumeIdsUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetDetailedReviewsUseCase;

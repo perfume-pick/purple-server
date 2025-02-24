@@ -1,9 +1,9 @@
-package com.pikachu.purple.application.statistic.service.application;
+package com.pikachu.purple.application.statistic.service;
 
 import com.pikachu.purple.application.statistic.common.dto.StarRatingStatisticDTO;
 import com.pikachu.purple.application.statistic.port.in.GetPerfumeStatisticUseCase;
 import com.pikachu.purple.application.statistic.port.out.EvaluationStatisticRepository;
-import com.pikachu.purple.application.statistic.service.domain.StarRatingStatisticDomainService;
+import com.pikachu.purple.application.statistic.port.out.StarRatingStatisticRepository;
 import com.pikachu.purple.domain.evaluation.dto.EvaluationFieldDTO;
 import com.pikachu.purple.domain.evaluation.dto.EvaluationOptionStatisticDTO;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
@@ -21,10 +21,10 @@ class GetPerfumeStatisticService implements
     GetPerfumeStatisticUseCase {
 
     private final EvaluationStatisticRepository evaluationStatisticRepository;
-    private final StarRatingStatisticDomainService starRatingStatisticDomainService;
+    private final StarRatingStatisticRepository starRatingStatisticRepository;
 
     @Override
-    public Result invoke(Long perfumeId) {
+    public Result find(Long perfumeId) {
         EvaluationStatistic evaluationStatistic = evaluationStatisticRepository.findOrderByVotesDesc(
             perfumeId);
 
@@ -76,7 +76,7 @@ class GetPerfumeStatisticService implements
             evaluationFieldDTOs.add(evaluationFieldDTO);
         }
 
-        List<StarRatingStatistic> starRatingStatistics = starRatingStatisticDomainService
+        List<StarRatingStatistic> starRatingStatistics = starRatingStatisticRepository
             .findAll(perfumeId);
         int totalVotes = starRatingStatistics.stream().mapToInt(StarRatingStatistic::getVotes)
             .sum();

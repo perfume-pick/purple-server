@@ -41,7 +41,7 @@ public class PerfumeController implements PerfumeApi {
     @Override
     public SuccessResponse<GetPerfumeStatisticResponse> findPerfumeStatisticResponse(
         Long perfumeId) {
-        GetPerfumeStatisticUseCase.Result result = getPerfumeStatisticUseCase.invoke(perfumeId);
+        GetPerfumeStatisticUseCase.Result result = getPerfumeStatisticUseCase.find(perfumeId);
 
         return SuccessResponse.of(
             new GetPerfumeStatisticResponse(
