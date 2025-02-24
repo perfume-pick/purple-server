@@ -2,7 +2,7 @@ package com.pikachu.purple.application.user.service.application.useraccord;
 
 import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
 
-import com.pikachu.purple.application.review.port.in.starrating.GetStarRatingsByUserIdUseCase;
+import com.pikachu.purple.application.review.port.in.starrating.GetStarRatingsUseCase;
 import com.pikachu.purple.application.user.common.dto.PolarizedUserAccordDTO;
 import com.pikachu.purple.application.user.common.dto.PolarizedUserAccordDTO.AccordInfo;
 import com.pikachu.purple.application.user.port.in.useraccord.GetPolarizedUserAccordsByUserUseCase;
@@ -24,7 +24,7 @@ class GetPolarizedUserAccordsByUserApplicationService implements
     GetPolarizedUserAccordsByUserUseCase {
 
     private final UserAccordDomainService userAccordDomainService;
-    private final GetStarRatingsByUserIdUseCase getStarRatingsByUserIdUseCase;
+    private final GetStarRatingsUseCase getStarRatingsUseCase;
     private static final int MAX_SIZE = 3;
 
     @Transactional
@@ -42,7 +42,7 @@ class GetPolarizedUserAccordsByUserApplicationService implements
             MAX_SIZE
         );
 
-        GetStarRatingsByUserIdUseCase.Result result = getStarRatingsByUserIdUseCase.invoke(userId);
+        GetStarRatingsUseCase.Result result = getStarRatingsUseCase.findAll(userId);
 
         List<AccordInfo> preferredAccord = mapToAccordInfo(
             accordsByDesc,

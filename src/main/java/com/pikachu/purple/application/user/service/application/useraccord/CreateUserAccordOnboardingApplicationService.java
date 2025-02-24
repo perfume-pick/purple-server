@@ -3,7 +3,7 @@ package com.pikachu.purple.application.user.service.application.useraccord;
 import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
 
 import com.pikachu.purple.application.perfume.util.UserAccordRecommender;
-import com.pikachu.purple.application.review.port.in.starrating.GetStarRatingsByUserIdUseCase;
+import com.pikachu.purple.application.review.port.in.starrating.GetStarRatingsUseCase;
 import com.pikachu.purple.application.user.port.in.user.GetUserByIdUseCase;
 import com.pikachu.purple.application.user.port.in.useraccord.CreateUserAccordOnboardingUseCase;
 import com.pikachu.purple.application.user.service.domain.UserAccordDomainService;
@@ -18,7 +18,7 @@ class CreateUserAccordOnboardingApplicationService implements
     CreateUserAccordOnboardingUseCase {
 
     private final GetUserByIdUseCase getUserByIdUseCase;
-    private final GetStarRatingsByUserIdUseCase getStarRatingsByUserIdUseCase;
+    private final GetStarRatingsUseCase getStarRatingsUseCase;
     private final UserAccordRecommender userAccordRecommender;
     private final UserAccordDomainService userAccordDomainService;
 
@@ -27,7 +27,7 @@ class CreateUserAccordOnboardingApplicationService implements
         Long userId = getCurrentUserAuthentication().userId();
 
         GetUserByIdUseCase.Result user = getUserByIdUseCase.invoke(userId);
-        GetStarRatingsByUserIdUseCase.Result starRatings = getStarRatingsByUserIdUseCase.invoke(userId);
+        GetStarRatingsUseCase.Result starRatings = getStarRatingsUseCase.findAll(userId);
 
         List<UserAccord> userAccords = userAccordRecommender.recommend(
             user.user(),
