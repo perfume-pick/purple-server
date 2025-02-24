@@ -4,7 +4,7 @@ import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUse
 
 import com.pikachu.purple.application.review.port.in.like.CreateLikeUseCase;
 import com.pikachu.purple.application.review.port.in.review.IncreaseReviewLikeCountUseCase;
-import com.pikachu.purple.application.review.service.domain.LikeDomainService;
+import com.pikachu.purple.application.review.port.out.LikeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 class CreateLikeService implements CreateLikeUseCase {
 
-    private final LikeDomainService likeDomainService;
+    private final LikeRepository likeRepository;
     private final IncreaseReviewLikeCountUseCase increaseReviewLikeCountUseCase;
 
     @Transactional
@@ -21,28 +21,18 @@ class CreateLikeService implements CreateLikeUseCase {
     public void invoke(Long reviewId) {
         Long userId = getCurrentUserAuthentication().userId();
 
-        validateNotExist(
+        likeRepository.validateNotExist(
             userId,
             reviewId
         );
 
 
-        likeDomainService.create(
+        likeRepository.create(
             userId,
             reviewId
         );
 
         increaseReviewLikeCountUseCase.invoke(reviewId);
-    }
-
-    private void validateNotExist(
-        Long userId,
-        Long reviewId
-    ) {
-        likeDomainService.validateNotExist(
-            userId,
-            reviewId
-        );
     }
 
 }
