@@ -1,8 +1,8 @@
 package com.pikachu.purple.application.review.port.in.starrating;
 
-public interface GetAverageScoreByPerfumeIdUseCase {
+public interface GetPerfumeAverageScoreUseCase {
 
-    Result invoke(Long perfumeId);
+    Result find(Long perfumeId);
 
     record Result(double averageScore) {}
 
