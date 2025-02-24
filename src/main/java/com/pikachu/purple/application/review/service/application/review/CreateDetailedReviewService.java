@@ -62,7 +62,10 @@ class CreateDetailedReviewService implements CreateDetailedReviewUseCase {
             evaluationFieldVOs
         );
 
-        createUserAccordUseCase.invoke(perfume.getId());
+        createUserAccordUseCase.createAll(
+            userId,
+            perfume.getId()
+        );
     }
 
 }

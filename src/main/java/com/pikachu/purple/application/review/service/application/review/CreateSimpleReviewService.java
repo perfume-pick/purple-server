@@ -48,7 +48,10 @@ class CreateSimpleReviewService implements CreateSimpleReviewUseCase {
             ReviewType.SIMPLE
         );
 
-        createUserAccordUseCase.invoke(perfume.getId());
+        createUserAccordUseCase.createAll(
+            userId,
+            perfume.getId()
+        );
     }
 
 }
