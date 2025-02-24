@@ -1,7 +1,7 @@
 package com.pikachu.purple.application.review.service.application.reviewevaluation;
 
 import com.pikachu.purple.application.review.port.in.reviewevaluation.CreateReviewEvaluationUseCase;
-import com.pikachu.purple.application.review.service.domain.ReviewEvaluationDomainService;
+import com.pikachu.purple.application.review.port.out.ReviewEvaluationRepository;
 import com.pikachu.purple.application.review.util.ReviewEvaluationConverter;
 import com.pikachu.purple.application.statistic.port.in.evaluationstatistic.IncreaseEvaluationStatisticUseCase;
 import com.pikachu.purple.bootstrap.review.vo.EvaluationFieldVO;
@@ -15,11 +15,11 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 class CreateReviewEvaluationService implements CreateReviewEvaluationUseCase {
 
-    private final ReviewEvaluationDomainService reviewEvaluationDomainService;
+    private final ReviewEvaluationRepository reviewEvaluationRepository;
     private final IncreaseEvaluationStatisticUseCase increaseEvaluationStatisticUseCase;
 
     @Override
-    public void invoke(
+    public void create(
         Review review,
         List<EvaluationFieldVO> evaluationFieldVOs
     ) {
@@ -28,7 +28,7 @@ class CreateReviewEvaluationService implements CreateReviewEvaluationUseCase {
             evaluationFieldVOs
         );
 
-        reviewEvaluationDomainService.createAll(reviewEvaluation);
+        reviewEvaluationRepository.create(reviewEvaluation);
 
         increaseEvaluationStatisticUseCase.invoke(
             review.getPerfume().getId(),

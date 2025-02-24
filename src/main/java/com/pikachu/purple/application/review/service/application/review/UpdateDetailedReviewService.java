@@ -3,8 +3,8 @@ package com.pikachu.purple.application.review.service.application.review;
 import com.pikachu.purple.application.review.port.in.review.UpdateDetailedReviewUseCase;
 import com.pikachu.purple.application.review.port.in.review.UpdateReviewUseCase;
 import com.pikachu.purple.application.review.port.in.reviewevaluation.CreateReviewEvaluationUseCase;
+import com.pikachu.purple.application.review.port.out.ReviewEvaluationRepository;
 import com.pikachu.purple.application.review.port.out.ReviewRepository;
-import com.pikachu.purple.application.review.service.domain.ReviewEvaluationDomainService;
 import com.pikachu.purple.application.review.util.ReviewEvaluationConverter;
 import com.pikachu.purple.application.statistic.port.in.evaluationstatistic.DecreaseEvaluationStatisticUseCase;
 import com.pikachu.purple.application.statistic.port.in.evaluationstatistic.IncreaseEvaluationStatisticUseCase;
@@ -22,7 +22,8 @@ import org.springframework.transaction.annotation.Transactional;
 class UpdateDetailedReviewService implements UpdateDetailedReviewUseCase {
 
     private final ReviewRepository reviewRepository;
-    private final ReviewEvaluationDomainService reviewEvaluationDomainService;
+    private final ReviewEvaluationRepository reviewEvaluationRepository;
+
     private final CreateReviewEvaluationUseCase createReviewEvaluationUseCase;
     private final DecreaseEvaluationStatisticUseCase decreaseEvaluationStatisticUseCase;
     private final IncreaseEvaluationStatisticUseCase increaseEvaluationStatisticUseCase;
@@ -40,7 +41,7 @@ class UpdateDetailedReviewService implements UpdateDetailedReviewUseCase {
         Review review = reviewRepository.findWithPerfume(reviewId);
 
         if(review.getType() == ReviewType.SIMPLE) {
-            createReviewEvaluationUseCase.invoke(
+            createReviewEvaluationUseCase.create(
                 review,
                 evaluationFieldVOs
             );
@@ -52,8 +53,7 @@ class UpdateDetailedReviewService implements UpdateDetailedReviewUseCase {
         }
 
         else{
-            ReviewEvaluation beforeReviewEvaluation = reviewEvaluationDomainService.findAll(
-                reviewId);
+            ReviewEvaluation beforeReviewEvaluation = reviewEvaluationRepository.find(reviewId);
 
             decreaseEvaluationStatisticUseCase.invoke(
                 review.getPerfume().getId(),
@@ -64,7 +64,7 @@ class UpdateDetailedReviewService implements UpdateDetailedReviewUseCase {
                 reviewId,
                 evaluationFieldVOs
             );
-            reviewEvaluationDomainService.updateAll(
+            reviewEvaluationRepository.update(
                 afterReviewEvaluation
             );
 

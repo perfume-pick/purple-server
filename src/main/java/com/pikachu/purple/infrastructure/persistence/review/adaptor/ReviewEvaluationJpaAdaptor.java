@@ -22,7 +22,7 @@ public class ReviewEvaluationJpaAdaptor implements ReviewEvaluationRepository {
     private final ReviewEvaluationJpaRepository reviewEvaluationJpaRepository;
 
     @Override
-    public void createAll(
+    public void create(
         ReviewEvaluation reviewEvaluation
     ) {
         List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities = new ArrayList<>();
@@ -40,7 +40,7 @@ public class ReviewEvaluationJpaAdaptor implements ReviewEvaluationRepository {
     }
 
     @Override
-    public ReviewEvaluation findAll() {
+    public ReviewEvaluation find() {
         List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities =
             reviewEvaluationJpaRepository.findAll(
                 Sort.by(
@@ -54,7 +54,7 @@ public class ReviewEvaluationJpaAdaptor implements ReviewEvaluationRepository {
     }
 
     @Override
-    public ReviewEvaluation findAll(Long reviewId) {
+    public ReviewEvaluation find(Long reviewId) {
         List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities =
             reviewEvaluationJpaRepository.findByReviewId(reviewId);
 
@@ -62,7 +62,7 @@ public class ReviewEvaluationJpaAdaptor implements ReviewEvaluationRepository {
     }
 
     @Override
-    public void deleteAll(Long reviewId) {
+    public void delete(Long reviewId) {
         List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities =
             reviewEvaluationJpaRepository.findByReviewId(reviewId);
 
@@ -70,11 +70,11 @@ public class ReviewEvaluationJpaAdaptor implements ReviewEvaluationRepository {
     }
 
     @Override
-    public void updateAll(
+    public void update(
         ReviewEvaluation reviewEvaluation
     ) {
-        reviewEvaluation.getReviewIdSet().forEach(this::deleteAll);
-        createAll(reviewEvaluation);
+        reviewEvaluation.getReviewIdSet().forEach(this::delete);
+        create(reviewEvaluation);
     }
 
 }

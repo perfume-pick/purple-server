@@ -60,7 +60,7 @@ class CreateDetailedReviewService implements CreateDetailedReviewUseCase {
             moodNames
         );
 
-        createReviewEvaluationUseCase.invoke(
+        createReviewEvaluationUseCase.create(
             review,
             evaluationFieldVOs
         );

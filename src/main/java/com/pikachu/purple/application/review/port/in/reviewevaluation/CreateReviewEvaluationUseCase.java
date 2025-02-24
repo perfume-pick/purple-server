@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface CreateReviewEvaluationUseCase {
 
-    void invoke(
+    void create(
         Review review,
         List<EvaluationFieldVO> evaluationFieldVOs
     );
