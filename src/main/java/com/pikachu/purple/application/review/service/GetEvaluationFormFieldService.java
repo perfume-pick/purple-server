@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-class GetEvaluationFormFieldApplicationService implements
+class GetEvaluationFormFieldService implements
     GetEvaluationFormFieldUseCase {
 
     private final GetMoodsUseCase getMoodsUseCase;

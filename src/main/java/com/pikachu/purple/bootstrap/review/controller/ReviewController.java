@@ -69,10 +69,8 @@ public class ReviewController implements ReviewApi {
         Result result = getEvaluationFormFieldUseCase.invoke();
 
         return SuccessResponse.of(
-            new GetEvaluationFormFieldResponse(
-                result.evaluationFields(),
-                result.moods()
-        ));
+            GetEvaluationFormFieldResponse.of(result)
+        );
     }
 
     @Override
