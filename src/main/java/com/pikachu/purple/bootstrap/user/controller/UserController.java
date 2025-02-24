@@ -106,7 +106,8 @@ public class UserController implements UserApi {
 
     @Override
     public SuccessResponse<GetSearchHistoriesResponse> findAllSearchHistory() {
-        GetSearchHistoriesUseCase.Result result = getSearchHistoriesUseCase.invoke();
+        Long userId = getCurrentUserAuthentication().userId();
+        GetSearchHistoriesUseCase.Result result = getSearchHistoriesUseCase.findAll(userId);
 
         return SuccessResponse.of(new GetSearchHistoriesResponse(result.searchHistories()));
     }

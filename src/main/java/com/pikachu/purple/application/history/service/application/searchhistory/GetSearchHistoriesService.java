@@ -1,7 +1,5 @@
 package com.pikachu.purple.application.history.service.application.searchhistory;
 
-import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
-
 import com.pikachu.purple.application.history.common.dto.SearchHistoryDTO;
 import com.pikachu.purple.application.history.port.in.searchhistory.GetSearchHistoriesUseCase;
 import com.pikachu.purple.application.history.service.domain.SearchHistoryDomainService;
@@ -13,14 +11,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-class GetSearchHistoriesApplicationService implements GetSearchHistoriesUseCase {
+class GetSearchHistoriesService implements GetSearchHistoriesUseCase {
 
     private final SearchHistoryDomainService searchHistoryDomainService;
 
     @Override
-    public Result invoke() {
-        Long userId = getCurrentUserAuthentication().userId();
-
+    public Result findAll(Long userId) {
         List<SearchHistory> searchHistories = searchHistoryDomainService.findAllByUserId(userId);
 
         List<SearchHistoryDTO> searchHistoryDTOs = IntStream.range(0, searchHistories.size())
