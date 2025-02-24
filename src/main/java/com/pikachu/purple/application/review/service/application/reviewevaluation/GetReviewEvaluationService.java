@@ -1,7 +1,7 @@
 package com.pikachu.purple.application.review.service.application.reviewevaluation;
 
 import com.pikachu.purple.application.review.port.in.reviewevaluation.GetReviewEvaluationUseCase;
-import com.pikachu.purple.application.review.service.domain.ReviewEvaluationDomainService;
+import com.pikachu.purple.application.review.port.out.ReviewEvaluationRepository;
 import com.pikachu.purple.domain.review.ReviewEvaluation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -10,18 +10,18 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 class GetReviewEvaluationService implements GetReviewEvaluationUseCase {
 
-    private final ReviewEvaluationDomainService reviewEvaluationDomainService;
+    private final ReviewEvaluationRepository reviewEvaluationRepository;
 
     @Override
-    public Result invoke() {
-        ReviewEvaluation reviewEvaluation = reviewEvaluationDomainService.findAll();
+    public Result find() {
+        ReviewEvaluation reviewEvaluation = reviewEvaluationRepository.find();
 
         return new Result(reviewEvaluation);
     }
 
     @Override
-    public Result invoke(Long reviewId) {
-        ReviewEvaluation reviewEvaluation = reviewEvaluationDomainService.findAll(reviewId);
+    public Result find(Long reviewId) {
+        ReviewEvaluation reviewEvaluation = reviewEvaluationRepository.find(reviewId);
 
         return new Result(reviewEvaluation);
     }
