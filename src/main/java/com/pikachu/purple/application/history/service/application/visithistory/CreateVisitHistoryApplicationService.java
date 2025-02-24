@@ -17,12 +17,11 @@ class CreateVisitHistoryApplicationService implements CreateVisitHistoryUseCase 
 
     @Transactional
     @Override
-    public void invoke(
+    public void create(
+        Long userId,
         Long perfumeId,
         Instant searchAt
     ) {
-        Long userId = getCurrentUserAuthentication().userId();
-
         visitHistoryDomainService.validateNotExist(
             userId,
             perfumeId

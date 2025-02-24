@@ -28,9 +28,7 @@ class GetVisitHistoriesApplicationService implements GetVisitHistoriesUseCase {
 
     @Transactional
     @Override
-    public Result invoke() {
-        Long userId = getCurrentUserAuthentication().userId();
-
+    public Result findAll(Long userId) {
         List<VisitHistory> visitHistories = visitHistoryDomainService.findAllByUserId(userId);
 
         List<Long> perfumeIds = visitHistories.stream()

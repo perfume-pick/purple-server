@@ -4,7 +4,8 @@ import java.time.Instant;
 
 public interface CreateVisitHistoryUseCase {
 
-    void invoke(
+    void create(
+        Long userId,
         Long perfumeId,
         Instant searchAt
     );

@@ -16,9 +16,7 @@ class DeleteVisitHistoriesApplicationService implements DeleteVisitHistoriesUseC
 
     @Transactional
     @Override
-    public void invoke() {
-        Long userId = getCurrentUserAuthentication().userId();
-
+    public void deleteAll(Long userId) {
         visitHistoryDomainService.deleteAllVisitHistoryByUserId(userId);
     }
 
