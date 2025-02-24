@@ -1,7 +1,5 @@
 package com.pikachu.purple.application.review.service.application.complaint;
 
-import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
-
 import com.pikachu.purple.application.review.port.in.complaint.DeleteComplaintUseCase;
 import com.pikachu.purple.application.review.port.out.ComplaintRepository;
 import com.pikachu.purple.domain.review.Complaint;
@@ -15,9 +13,10 @@ class DeleteComplaintService implements DeleteComplaintUseCase {
     private final ComplaintRepository complaintRepository;
 
     @Override
-    public void invoke(Long reviewId) {
-        Long userId = getCurrentUserAuthentication().userId();
-
+    public void delete(
+        Long userId,
+        Long reviewId
+    ) {
         Complaint complaint = complaintRepository.find(
             userId,
             reviewId

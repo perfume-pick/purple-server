@@ -1,7 +1,5 @@
 package com.pikachu.purple.application.review.service.application.complaint;
 
-import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
-
 import com.pikachu.purple.application.review.port.in.complaint.CreateComplaintUseCase;
 import com.pikachu.purple.application.review.port.in.complaint.SendComplaintUseCase;
 import com.pikachu.purple.application.review.port.out.ComplaintRepository;
@@ -21,8 +19,10 @@ class CreateComplaintService implements CreateComplaintUseCase {
 
     @Transactional
     @Override
-    public void invoke(Long reviewId) {
-        Long userId = getCurrentUserAuthentication().userId();
+    public void create(
+        Long userId,
+        Long reviewId
+    ) {
         Long complaintId = IdUtil.generateId();
         String token = TokenGenerator.generate();
 
