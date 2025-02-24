@@ -1,8 +1,8 @@
-package com.pikachu.purple.application.history.service.application.visithistory;
+package com.pikachu.purple.application.history.service.visithistory;
 
 import com.pikachu.purple.application.history.common.dto.VisitHistoryDTO;
 import com.pikachu.purple.application.history.port.in.visithistory.GetVisitHistoriesUseCase;
-import com.pikachu.purple.application.history.service.domain.VisitHistoryDomainService;
+import com.pikachu.purple.application.history.port.out.VisitHistoryRepository;
 import com.pikachu.purple.application.perfume.common.dto.PerfumeDTO;
 import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesUseCase;
 import com.pikachu.purple.application.review.port.in.starrating.GetPerfumeAverageScoreUseCase;
@@ -18,16 +18,16 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 class GetVisitHistoriesApplicationService implements GetVisitHistoriesUseCase {
 
     private final GetPerfumesUseCase getPerfumesUseCase;
-    private final VisitHistoryDomainService visitHistoryDomainService;
+    private final VisitHistoryRepository visitHistoryRepository;
     private final GetPerfumeAverageScoreUseCase getPerfumeAverageScoreUseCase;
 
-    @Transactional
     @Override
     public Result findAll(Long userId) {
-        List<VisitHistory> visitHistories = visitHistoryDomainService.findAllByUserId(userId);
+        List<VisitHistory> visitHistories = visitHistoryRepository.findAllByUserId(userId);
 
         List<Long> perfumeIds = visitHistories.stream()
             .map(VisitHistory::getPerfumeId)

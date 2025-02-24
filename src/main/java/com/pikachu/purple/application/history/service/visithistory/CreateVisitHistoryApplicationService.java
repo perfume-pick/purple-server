@@ -1,7 +1,8 @@
-package com.pikachu.purple.application.history.service.application.visithistory;
+package com.pikachu.purple.application.history.service.visithistory;
 
 import com.pikachu.purple.application.history.port.in.visithistory.CreateVisitHistoryUseCase;
-import com.pikachu.purple.application.history.service.domain.VisitHistoryDomainService;
+import com.pikachu.purple.application.history.port.out.VisitHistoryRepository;
+import com.pikachu.purple.domain.history.VisitHistory;
 import java.time.Instant;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -11,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 class CreateVisitHistoryApplicationService implements CreateVisitHistoryUseCase {
 
-    private final VisitHistoryDomainService visitHistoryDomainService;
+    private final VisitHistoryRepository visitHistoryRepository;
 
     @Transactional
     @Override
@@ -20,16 +21,18 @@ class CreateVisitHistoryApplicationService implements CreateVisitHistoryUseCase 
         Long perfumeId,
         Instant searchAt
     ) {
-        visitHistoryDomainService.validateNotExist(
+        visitHistoryRepository.validateNotExist(
             userId,
             perfumeId
         );
 
-        visitHistoryDomainService.create(
-            userId,
-            perfumeId,
-            searchAt
-        );
+        VisitHistory visitHistory = VisitHistory.builder()
+            .id(userId)
+            .perfumeId(perfumeId)
+            .searchAt(searchAt)
+            .build();
+
+        visitHistoryRepository.create(visitHistory);
     }
 
 }
