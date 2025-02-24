@@ -6,6 +6,7 @@ import java.util.List;
 public interface CreateDetailedReviewUseCase {
 
     void invoke(
+        Long userId,
         Long perfumeId,
         int score,
         String content,

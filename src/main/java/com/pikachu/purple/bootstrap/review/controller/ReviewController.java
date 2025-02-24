@@ -1,5 +1,7 @@
 package com.pikachu.purple.bootstrap.review.controller;
 
+import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
+
 import com.pikachu.purple.application.review.port.in.GetEvaluationFormFieldUseCase;
 import com.pikachu.purple.application.review.port.in.GetEvaluationFormFieldUseCase.Result;
 import com.pikachu.purple.application.review.port.in.complaint.CreateComplaintUseCase;
@@ -47,7 +49,10 @@ public class ReviewController implements ReviewApi {
 
     @Override
     public void createDetail(CreateReviewDetailRequest request) {
+        Long userId = getCurrentUserAuthentication().userId();
+
         createDetailedReviewUseCase.invoke(
+            userId,
             request.perfumeId(),
             request.score(),
             request.content(),
