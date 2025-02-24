@@ -5,7 +5,6 @@ import com.pikachu.purple.application.review.port.in.starrating.GetStarRatingUse
 import com.pikachu.purple.application.user.port.in.user.GetUserUseCase;
 import com.pikachu.purple.application.user.port.in.useraccord.CreateUserAccordUseCase;
 import com.pikachu.purple.application.user.port.out.UserAccordRepository;
-import com.pikachu.purple.application.user.service.domain.UserAccordDomainService;
 import com.pikachu.purple.domain.user.UserAccord;
 import java.util.List;
 import lombok.RequiredArgsConstructor;

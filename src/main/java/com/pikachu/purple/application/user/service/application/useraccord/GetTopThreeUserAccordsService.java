@@ -2,7 +2,6 @@ package com.pikachu.purple.application.user.service.application.useraccord;
 
 import com.pikachu.purple.application.user.port.in.useraccord.GetTopThreeUserAccordsUseCase;
 import com.pikachu.purple.application.user.port.out.UserAccordRepository;
-import com.pikachu.purple.application.user.service.domain.UserAccordDomainService;
 import com.pikachu.purple.domain.user.UserAccord;
 import java.util.List;
 import lombok.RequiredArgsConstructor;

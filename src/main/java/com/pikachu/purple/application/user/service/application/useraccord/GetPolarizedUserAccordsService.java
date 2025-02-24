@@ -5,7 +5,6 @@ import com.pikachu.purple.application.user.common.dto.PolarizedUserAccordDTO;
 import com.pikachu.purple.application.user.common.dto.PolarizedUserAccordDTO.AccordInfo;
 import com.pikachu.purple.application.user.port.in.useraccord.GetPolarizedUserAccordsUseCase;
 import com.pikachu.purple.application.user.port.out.UserAccordRepository;
-import com.pikachu.purple.application.user.service.domain.UserAccordDomainService;
 import com.pikachu.purple.application.util.MathUtil;
 import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.review.StarRating;
@@ -14,7 +13,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import lombok.RequiredArgsConstructor;
-import net.bytebuddy.asm.Advice.OffsetMapping.Target.ForArray.ReadOnly;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
