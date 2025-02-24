@@ -1,7 +1,7 @@
 package com.pikachu.purple.application.review.service.application.like;
 
 import com.pikachu.purple.application.review.port.in.like.DeleteLikesUseCase;
-import com.pikachu.purple.application.review.service.domain.LikeDomainService;
+import com.pikachu.purple.application.review.port.out.LikeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,12 +10,12 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 class DeleteLikesService implements DeleteLikesUseCase {
 
-    private final LikeDomainService likeDomainService;
+    private final LikeRepository likeRepository;
 
     @Transactional
     @Override
-    public void invoke(Long reviewId) {
-        likeDomainService.deleteAll(reviewId);
+    public void deleteAll(Long reviewId) {
+        likeRepository.deleteAll(reviewId);
     }
 
 }
