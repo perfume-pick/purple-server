@@ -1,9 +1,9 @@
-package com.pikachu.purple.application.perfume.service.application.perfume;
+package com.pikachu.purple.application.perfume.service.perfume;
 
 import com.pikachu.purple.application.perfume.common.dto.PerfumeDTO;
 import com.pikachu.purple.application.perfume.common.dto.RecommendedPerfumeDTO;
 import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesUseCase;
-import com.pikachu.purple.application.perfume.service.domain.PerfumeDomainService;
+import com.pikachu.purple.application.perfume.port.out.PerfumeRepository;
 import com.pikachu.purple.application.review.port.in.starrating.GetPerfumeAverageScoreUseCase;
 import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.perfume.PerfumeAccord;
@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 class GetPerfumesService implements GetPerfumesUseCase {
 
-    private final PerfumeDomainService perfumeDomainService;
+    private final PerfumeRepository perfumeRepository;
     private final GetPerfumeAverageScoreUseCase getPerfumeAverageScoreUseCase;
 
     private static final int MAX_SIZE = 30;
@@ -24,13 +24,13 @@ class GetPerfumesService implements GetPerfumesUseCase {
     @Override
     public Result findAllWithPerfumeAccord(List<Long> perfumeIds) {
 
-        return new Result(perfumeDomainService.findAllWithPerfumeAccordsByIds(perfumeIds));
+        return new Result(perfumeRepository.findAllWithPerfumeAccordsByIds(perfumeIds));
     }
 
     @Override
     @Transactional
     public ResultPerfumeDTO findAllWithPerfumeAccord(String keyword) {
-        List<Perfume> perfumes = perfumeDomainService.findAllWithPerfumeAccordsByKeyword(keyword);
+        List<Perfume> perfumes = perfumeRepository.findAllWithPerfumeAccordsByKeyword(keyword);
         for (Perfume perfume : perfumes) {
             double averageScore = getPerfumeAverageScoreUseCase.find(
                 perfume.getId()).averageScore();
@@ -46,7 +46,7 @@ class GetPerfumesService implements GetPerfumesUseCase {
 
     @Override
     public ResultRecommendedPerfumeDTO findAllOrderByReviewCount() {
-        List<Perfume> perfumes =  perfumeDomainService.findAllOrderByReviewCount(MAX_SIZE);
+        List<Perfume> perfumes =  perfumeRepository.findAllHavingReviewCountNotZeroOrderByReviewCount(MAX_SIZE);
         for (Perfume perfume : perfumes) {
             double averageScore = getPerfumeAverageScoreUseCase.find(
                 perfume.getId()).averageScore();

@@ -1,4 +1,4 @@
-package com.pikachu.purple.application.perfume.service.application.brand;
+package com.pikachu.purple.application.perfume.service.brand;
 
 import com.pikachu.purple.application.perfume.common.dto.BrandDTO;
 import com.pikachu.purple.application.perfume.common.dto.BrandPerfumesDTO;
