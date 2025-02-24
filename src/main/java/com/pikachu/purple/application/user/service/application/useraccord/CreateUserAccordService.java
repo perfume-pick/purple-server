@@ -4,6 +4,7 @@ import com.pikachu.purple.application.perfume.util.UserAccordRecommender;
 import com.pikachu.purple.application.review.port.in.starrating.GetStarRatingUseCase;
 import com.pikachu.purple.application.user.port.in.user.GetUserUseCase;
 import com.pikachu.purple.application.user.port.in.useraccord.CreateUserAccordUseCase;
+import com.pikachu.purple.application.user.port.out.UserAccordRepository;
 import com.pikachu.purple.application.user.service.domain.UserAccordDomainService;
 import com.pikachu.purple.domain.user.UserAccord;
 import java.util.List;
@@ -15,9 +16,9 @@ import org.springframework.stereotype.Service;
 class CreateUserAccordService implements CreateUserAccordUseCase {
 
     private final GetUserUseCase getUserUseCase;
-    private final UserAccordDomainService userAccordDomainService;
     private final UserAccordRecommender userAccordRecommender;
     private final GetStarRatingUseCase getStarRatingUseCase;
+    private final UserAccordRepository userAccordRepository;
 
     @Override
     public void createAll(
@@ -34,7 +35,7 @@ class CreateUserAccordService implements CreateUserAccordUseCase {
             starRating.starRating()
         );
 
-        userAccordDomainService.createAll(
+        userAccordRepository.createAll(
             user.user().getId(),
             userAccords
         );
