@@ -28,6 +28,7 @@ class CreateDetailedReviewService implements CreateDetailedReviewUseCase {
     @Transactional
     @Override
     public void invoke(
+        Long userId,
         Long perfumeId,
         int score,
         String content,
@@ -35,6 +36,7 @@ class CreateDetailedReviewService implements CreateDetailedReviewUseCase {
         List<String> moodNames
     ) {
         CreateOrUpdateStarRatingUseCase.Result starRatingResult = createOrUpdateStarRatingUseCase.invoke(
+            userId,
             perfumeId,
             score
         );

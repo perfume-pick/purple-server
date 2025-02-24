@@ -1,7 +1,5 @@
 package com.pikachu.purple.application.review.service.application.starrating;
 
-import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
-
 import com.pikachu.purple.application.review.port.in.starrating.CreateOrUpdateStarRatingUseCase;
 import com.pikachu.purple.application.review.port.in.starrating.CreateStarRatingUseCase;
 import com.pikachu.purple.application.review.port.in.starrating.GetStarRatingUseCase;
@@ -12,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-class CreateOrUpdateStarRatingOnboardingApplicationService implements
+class CreateOrUpdateStarRatingService implements
     CreateOrUpdateStarRatingUseCase {
 
     private final GetStarRatingUseCase getStarRatingUseCase;
@@ -22,11 +20,10 @@ class CreateOrUpdateStarRatingOnboardingApplicationService implements
 
     @Override
     public Result invoke(
+        Long userId,
         Long perfumeId,
         int score
     ) {
-        Long userId = getCurrentUserAuthentication().userId();
-
         GetStarRatingUseCase.Result getStarRatingResult = getStarRatingUseCase.find(
             userId,
             perfumeId
