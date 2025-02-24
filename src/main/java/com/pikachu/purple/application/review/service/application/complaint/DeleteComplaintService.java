@@ -3,7 +3,7 @@ package com.pikachu.purple.application.review.service.application.complaint;
 import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
 
 import com.pikachu.purple.application.review.port.in.complaint.DeleteComplaintUseCase;
-import com.pikachu.purple.application.review.service.domain.ComplaintDomainService;
+import com.pikachu.purple.application.review.port.out.ComplaintRepository;
 import com.pikachu.purple.domain.review.Complaint;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,18 +12,18 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 class DeleteComplaintService implements DeleteComplaintUseCase {
 
-    private final ComplaintDomainService complaintDomainService;
+    private final ComplaintRepository complaintRepository;
 
     @Override
     public void invoke(Long reviewId) {
         Long userId = getCurrentUserAuthentication().userId();
 
-        Complaint complaint = complaintDomainService.find(
+        Complaint complaint = complaintRepository.find(
             userId,
             reviewId
         );
 
-        complaintDomainService.delete(complaint.getId());
+        complaintRepository.delete(complaint.getId());
     }
 
 }

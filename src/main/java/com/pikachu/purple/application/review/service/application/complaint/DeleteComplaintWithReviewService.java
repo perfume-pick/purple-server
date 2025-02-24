@@ -2,7 +2,7 @@ package com.pikachu.purple.application.review.service.application.complaint;
 
 import com.pikachu.purple.application.review.port.in.complaint.DeleteComplaintWithReviewUseCase;
 import com.pikachu.purple.application.review.port.in.review.DeleteReviewUseCase;
-import com.pikachu.purple.application.review.service.domain.ComplaintDomainService;
+import com.pikachu.purple.application.review.port.out.ComplaintRepository;
 import com.pikachu.purple.domain.review.Complaint;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,8 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
 class DeleteComplaintWithReviewService implements
     DeleteComplaintWithReviewUseCase {
 
+    private final ComplaintRepository complaintRepository;
     private final DeleteReviewUseCase deleteReviewUseCase;
-    private final ComplaintDomainService complaintDomainService;
 
     @Transactional
     @Override
@@ -22,11 +22,11 @@ class DeleteComplaintWithReviewService implements
         Long complaintId,
         String token
     ) {
-        Complaint complaint = complaintDomainService.find(
+        Complaint complaint = complaintRepository.find(
             complaintId,
             token
         );
-        complaintDomainService.delete(complaintId);
+        complaintRepository.delete(complaintId);
         deleteReviewUseCase.invoke(complaint.getReview().getId());
     }
 
