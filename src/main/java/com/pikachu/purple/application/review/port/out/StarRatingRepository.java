@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface StarRatingRepository {
 
-    void createOnboarding(Long userId, List<StarRating> starRatings);
+    void createAll(Long userId, List<StarRating> starRatings);
 
     StarRating create(Long starRatingId, Long userId, Long perfumeId, int score);
 
@@ -36,6 +36,6 @@ public interface StarRatingRepository {
 
     List<StarRating> findAllOrderByScoreDesc(Long userId);
 
-    List<StarRating> findALlOrderByScoreAsc(Long userId);
+    List<StarRating> findAllOrderByScoreAsc(Long userId);
 
 }
