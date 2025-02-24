@@ -35,7 +35,7 @@ class UpdateReviewService implements UpdateReviewUseCase {
             reviewType
         );
 
-        GetStarRatingUseCase.Result starRatingResult = getStarRatingUseCase.invoke(
+        GetStarRatingUseCase.Result starRatingResult = getStarRatingUseCase.find(
             userId,
             perfumeId
         );

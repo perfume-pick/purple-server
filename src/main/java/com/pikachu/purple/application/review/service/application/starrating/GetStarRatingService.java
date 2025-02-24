@@ -8,12 +8,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-class GetStarRatingApplicationService implements GetStarRatingUseCase {
+class GetStarRatingService implements GetStarRatingUseCase {
 
     private final StarRatingDomainService starRatingDomainService;
 
     @Override
-    public Result invoke(
+    public Result find(
         Long userId,
         Long perfumeId
     ) {
