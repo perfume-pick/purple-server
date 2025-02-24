@@ -5,7 +5,7 @@ import static com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType.SEA
 import com.pikachu.purple.application.perfume.common.dto.FragranticaEvaluationFieldDTO;
 import com.pikachu.purple.application.perfume.common.dto.FragranticaEvaluationOptionDTO;
 import com.pikachu.purple.application.perfume.port.in.fragranticaevaluation.GetFragranticaEvaluationUseCase;
-import com.pikachu.purple.application.perfume.service.domain.FragranticaEvaluationDomainService;
+import com.pikachu.purple.application.perfume.port.out.FragranticaEvaluationRepository;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 import com.pikachu.purple.domain.perfume.FragranticaEvaluation;
@@ -13,18 +13,20 @@ import java.util.ArrayList;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 class GetFragranticaEvaluationService implements
     GetFragranticaEvaluationUseCase {
 
-    private final FragranticaEvaluationDomainService fragranticaEvaluationDomainService;
+    private final FragranticaEvaluationRepository fragranticaEvaluationRepository;
 
     @Override
     public Result find(Long perfumeId) {
 
-        FragranticaEvaluation fragranticaEvaluation = fragranticaEvaluationDomainService.findByPerfumeIdOrderByVotesDesc(
+        FragranticaEvaluation fragranticaEvaluation = fragranticaEvaluationRepository.findByPerfumeIdOrderByVotesDesc(
             perfumeId);
 
         List<FragranticaEvaluationFieldDTO> fragranticaEvaluationFieldDTOs = new ArrayList<>();
