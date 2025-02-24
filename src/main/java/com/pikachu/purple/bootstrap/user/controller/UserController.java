@@ -13,7 +13,7 @@ import com.pikachu.purple.application.review.port.in.starrating.GetReviewsByUser
 import com.pikachu.purple.application.user.port.in.user.DeleteUserUseCase;
 import com.pikachu.purple.application.user.port.in.user.GetUserProfileByUserUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetTopThreeReviewedBrandsUseCase;
-import com.pikachu.purple.application.review.port.in.review.GetUserReviewCountsUseCase;
+import com.pikachu.purple.application.review.port.in.review.GetCurrentAndAverageUserReviewCountsUseCase;
 import com.pikachu.purple.application.user.port.in.user.UpdateProfileUseCase;
 import com.pikachu.purple.application.user.port.in.useraccord.GetPolarizedUserAccordsByUserUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
@@ -41,7 +41,7 @@ public class UserController implements UserApi {
     private final CreateVisitHistoryUseCase createVisitHistoryUseCase;
     private final GetVisitHistoriesUseCase getVisitHistoriesUseCase;
     private final CreateSearchHistoryUseCase createSearchHistoryUseCase;
-    private final GetUserReviewCountsUseCase getUserReviewCountsUseCase;
+    private final GetCurrentAndAverageUserReviewCountsUseCase getCurrentAndAverageUserReviewCountsUseCase;
     private final DeleteVisitHistoriesUseCase deleteVisitHistoriesUseCase;
     private final GetTopThreeReviewedBrandsUseCase getTopThreeReviewedBrandsUseCase;
     private final GetReviewUseCase getReviewUseCase;
@@ -73,7 +73,10 @@ public class UserController implements UserApi {
 
     @Override
     public SuccessResponse<GetUserReviewCountsResponse> findCurrentUserReviewCounts() {
-        GetUserReviewCountsUseCase.Result result = getUserReviewCountsUseCase.invoke();
+        Long userId = getCurrentUserAuthentication().userId();
+
+        GetCurrentAndAverageUserReviewCountsUseCase.Result result =
+            getCurrentAndAverageUserReviewCountsUseCase.find(userId);
 
         return SuccessResponse.of(new GetUserReviewCountsResponse(
             result.currentUserReviewCounts(),

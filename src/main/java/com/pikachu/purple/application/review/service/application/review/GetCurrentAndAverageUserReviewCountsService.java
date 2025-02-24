@@ -1,8 +1,6 @@
 package com.pikachu.purple.application.review.service.application.review;
 
-import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
-
-import com.pikachu.purple.application.review.port.in.review.GetUserReviewCountsUseCase;
+import com.pikachu.purple.application.review.port.in.review.GetCurrentAndAverageUserReviewCountsUseCase;
 import com.pikachu.purple.application.review.service.domain.ReviewDomainService;
 import com.pikachu.purple.application.user.port.in.user.GetUserCountsUseCase;
 import lombok.RequiredArgsConstructor;
@@ -10,14 +8,14 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-class GetUserReviewCountsApplicationService implements GetUserReviewCountsUseCase {
+class GetCurrentAndAverageUserReviewCountsService implements
+    GetCurrentAndAverageUserReviewCountsUseCase {
 
     private final ReviewDomainService reviewDomainService;
     private final GetUserCountsUseCase getUserCountsUseCase;
 
     @Override
-    public Result invoke() {
-        Long userId = getCurrentUserAuthentication().userId();
+    public Result find(Long userId) {
         int currentUserReviewCounts = reviewDomainService.count(userId);
         int totalReviewCounts = reviewDomainService.count();
         int userCounts = getUserCountsUseCase.invoke().userCounts();
