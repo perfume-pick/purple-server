@@ -2,8 +2,8 @@ package com.pikachu.purple.application.review.service;
 
 import com.pikachu.purple.application.review.port.in.GetEvaluationFormFieldUseCase;
 import com.pikachu.purple.application.review.port.in.mood.GetMoodsUseCase;
-import com.pikachu.purple.domain.evaluation.dto.EvaluationFieldDTO;
-import com.pikachu.purple.domain.evaluation.dto.EvaluationOptionDTO;
+import com.pikachu.purple.domain.evaluation.EvaluationField;
+import com.pikachu.purple.domain.evaluation.EvaluationOption;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
 import java.util.List;
 import java.util.stream.Stream;
@@ -19,18 +19,18 @@ class GetEvaluationFormFieldApplicationService implements
 
     @Override
     public Result invoke() {
-        List<EvaluationFieldDTO<EvaluationOptionDTO>> evaluationFieldDTOs = Stream.of(EvaluationFieldType.values())
-            .map(field -> EvaluationFieldDTO.of(
+        List<EvaluationField<EvaluationOption>> evaluationFields = Stream.of(EvaluationFieldType.values())
+            .map(field -> EvaluationField.of(
                 field,
                 field.getEvaluationOptionTypes().stream()
-                    .map(EvaluationOptionDTO::from)
+                    .map(EvaluationOption::from)
                     .toList()))
             .toList();
 
         GetMoodsUseCase.Result moodResult = getMoodsUseCase.findAll();
 
         return new Result(
-            evaluationFieldDTOs,
+            evaluationFields,
             moodResult.moods()
         );
     }

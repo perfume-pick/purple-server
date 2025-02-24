@@ -70,7 +70,7 @@ public class ReviewController implements ReviewApi {
 
         return SuccessResponse.of(
             new GetEvaluationFormFieldResponse(
-                result.evaluationFieldDTOs(),
+                result.evaluationFields(),
                 result.moods()
         ));
     }

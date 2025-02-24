@@ -1,11 +1,10 @@
 package com.pikachu.purple.application.statistic.service;
 
-import com.pikachu.purple.application.statistic.common.dto.StarRatingStatisticDTO;
 import com.pikachu.purple.application.statistic.port.in.GetPerfumeStatisticUseCase;
 import com.pikachu.purple.application.statistic.port.out.EvaluationStatisticRepository;
 import com.pikachu.purple.application.statistic.port.out.StarRatingStatisticRepository;
-import com.pikachu.purple.domain.evaluation.dto.EvaluationFieldDTO;
-import com.pikachu.purple.domain.evaluation.dto.EvaluationOptionStatisticDTO;
+import com.pikachu.purple.domain.evaluation.EvaluationField;
+import com.pikachu.purple.domain.evaluation.EvaluationOptionStatistic;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 import com.pikachu.purple.domain.statistic.EvaluationStatistic;
@@ -28,7 +27,7 @@ class GetPerfumeStatisticService implements
         EvaluationStatistic evaluationStatistic = evaluationStatisticRepository.findOrderByVotesDesc(
             perfumeId);
 
-        List<EvaluationFieldDTO<EvaluationOptionStatisticDTO>> evaluationFieldDTOs = new ArrayList<>();
+        List<EvaluationField<EvaluationOptionStatistic>> evaluationFields = new ArrayList<>();
         for (EvaluationFieldType evaluationField : evaluationStatistic.getFields(
             perfumeId)) {
             int totalVotesByField = evaluationStatistic.getOptions(
@@ -43,7 +42,7 @@ class GetPerfumeStatisticService implements
                     )
                 ).sum();
 
-            List<EvaluationOptionStatisticDTO> evaluationOptionStatisticDTOs = new ArrayList<>();
+            List<EvaluationOptionStatistic> evaluationOptionStatistics = new ArrayList<>();
             List<EvaluationOptionType> evaluationOptions =
                 evaluationStatistic.getOptions(
                     perfumeId,
@@ -58,8 +57,8 @@ class GetPerfumeStatisticService implements
                     evaluationField,
                     evaluationOption
                 );
-                evaluationOptionStatisticDTOs.add(
-                    EvaluationOptionStatisticDTO.of(
+                evaluationOptionStatistics.add(
+                    EvaluationOptionStatistic.of(
                         order,
                         evaluationOption,
                         votes,
@@ -68,12 +67,12 @@ class GetPerfumeStatisticService implements
                 );
             }
 
-            EvaluationFieldDTO<EvaluationOptionStatisticDTO> evaluationFieldDTO = EvaluationFieldDTO.of(
+            EvaluationField<EvaluationOptionStatistic> evaluationFieldDTO = EvaluationField.of(
                 evaluationField,
-                evaluationOptionStatisticDTOs
+                evaluationOptionStatistics
             );
 
-            evaluationFieldDTOs.add(evaluationFieldDTO);
+            evaluationFields.add(evaluationFieldDTO);
         }
 
         List<StarRatingStatistic> starRatingStatistics = starRatingStatisticRepository
@@ -90,7 +89,7 @@ class GetPerfumeStatisticService implements
 
         return new Result(
             starRatingStatisticDTOs,
-            evaluationFieldDTOs
+            evaluationFields
         );
     }
 }

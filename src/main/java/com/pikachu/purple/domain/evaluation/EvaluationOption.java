@@ -1,16 +1,16 @@
-package com.pikachu.purple.domain.evaluation.dto;
+package com.pikachu.purple.domain.evaluation;
 
 import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 
-public record EvaluationOptionDTO(
+public record EvaluationOption(
     String optionCode,
     String optionName
 ) {
 
-    public static EvaluationOptionDTO from(
+    public static EvaluationOption from(
         EvaluationOptionType optionType
     ) {
-        return new EvaluationOptionDTO(
+        return new EvaluationOption(
             optionType.getCode(),
             optionType.getName()
         );
