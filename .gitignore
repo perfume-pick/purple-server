@@ -44,3 +44,5 @@ src/main/resources/data/.env
 src/main/resources/data/crawling_data/.ipynb_checkpoints/
 
 src/main/resources/data/crawling_target/.ipynb_checkpoints/
+
+.env
