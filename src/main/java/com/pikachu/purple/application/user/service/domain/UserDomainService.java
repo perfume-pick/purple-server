@@ -13,22 +13,9 @@ public interface UserDomainService {
         SocialLoginProvider socialLoginProvider
     );
 
-    User updateProfile(
-        Long userId,
-        String nickname,
-        boolean isChanged,
-        MultipartFile picture
-    );
-
     User findByEmailAndSocialLoginProvider(
         String email,
         SocialLoginProvider socialLoginProvider
     );
-
-    int count();
-
-    User findById(Long userId);
-
-    void delete(Long userId);
 
 }
