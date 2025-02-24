@@ -1,12 +1,14 @@
 package com.pikachu.purple.bootstrap.user.controller;
 
+import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
+
 import com.pikachu.purple.application.history.port.in.searchhistory.CreateSearchHistoryUseCase;
 import com.pikachu.purple.application.history.port.in.searchhistory.DeleteSearchHistoriesUseCase;
 import com.pikachu.purple.application.history.port.in.searchhistory.GetSearchHistoriesUseCase;
 import com.pikachu.purple.application.history.port.in.visithistory.CreateVisitHistoryUseCase;
 import com.pikachu.purple.application.history.port.in.visithistory.DeleteVisitHistoriesUseCase;
 import com.pikachu.purple.application.history.port.in.visithistory.GetVisitHistoriesUseCase;
-import com.pikachu.purple.application.review.port.in.review.GetCurrentUserReviewUseCase;
+import com.pikachu.purple.application.review.port.in.review.GetReviewUseCase;
 import com.pikachu.purple.application.review.port.in.starrating.GetReviewsByUserAndSortTypeUseCase;
 import com.pikachu.purple.application.user.port.in.user.DeleteUserUseCase;
 import com.pikachu.purple.application.user.port.in.user.GetUserProfileByUserUseCase;
@@ -42,7 +44,7 @@ public class UserController implements UserApi {
     private final GetUserReviewCountsUseCase getUserReviewCountsUseCase;
     private final DeleteVisitHistoriesUseCase deleteVisitHistoriesUseCase;
     private final GetTopThreeReviewedBrandsUseCase getTopThreeReviewedBrandsUseCase;
-    private final GetCurrentUserReviewUseCase getCurrentUserReviewUseCase;
+    private final GetReviewUseCase getReviewUseCase;
     private final GetPolarizedUserAccordsByUserUseCase getPolarizedUserAccordsByUserUseCase;
     private final GetUserProfileByUserUseCase getUserProfileByUserUseCase;
     private final GetReviewsByUserAndSortTypeUseCase getReviewsByUserAndSortTypeUseCase;
@@ -133,7 +135,9 @@ public class UserController implements UserApi {
     @Override
     public SuccessResponse<GetReviewByPerfumeIdAndUserResponse> findReviewByPerfumeIdAndUser(
         Long perfumeId) {
-        GetCurrentUserReviewUseCase.Result result = getCurrentUserReviewUseCase.invoke(perfumeId);
+        Long userId = getCurrentUserAuthentication().userId();
+
+        GetReviewUseCase.Result result = getReviewUseCase.find(userId, perfumeId);
 
         return SuccessResponse.of(new GetReviewByPerfumeIdAndUserResponse(result.reviewByUserDTO()));
     }
