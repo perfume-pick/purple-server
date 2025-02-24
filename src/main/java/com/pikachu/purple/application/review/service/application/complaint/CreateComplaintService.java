@@ -2,7 +2,7 @@ package com.pikachu.purple.application.review.service.application.complaint;
 
 import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
 
-import com.pikachu.purple.application.review.port.in.SendComplaintUseCase;
+import com.pikachu.purple.application.review.port.in.complaint.SendComplaintUseCase;
 import com.pikachu.purple.application.review.port.in.complaint.CreateComplaintUseCase;
 import com.pikachu.purple.application.review.service.domain.ComplaintDomainService;
 import com.pikachu.purple.domain.review.Complaint;
@@ -26,7 +26,7 @@ class CreateComplaintService implements CreateComplaintUseCase {
             reviewId
         );
 
-        sendComplaintUseCase.invoke(complaint);
+        sendComplaintUseCase.send(complaint);
     }
 
 }
