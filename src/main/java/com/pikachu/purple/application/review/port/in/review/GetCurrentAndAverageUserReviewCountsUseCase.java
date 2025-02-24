@@ -1,9 +1,9 @@
 package com.pikachu.purple.application.review.port.in.review;
 
 
-public interface GetUserReviewCountsUseCase {
+public interface GetCurrentAndAverageUserReviewCountsUseCase {
 
-    Result invoke();
+    Result find(Long userId);
 
     record Result(
         int currentUserReviewCounts,
