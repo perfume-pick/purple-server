@@ -8,6 +8,7 @@ public interface GetRecommendedPerfumesByUserAccordsUseCase {
 
     Result findAll(Long userId);
 
+
     record Result(
         List<UserAccordDTO> userAccords,
         List<RecommendedPerfumeDTO> recommendedPerfumeDTOs
