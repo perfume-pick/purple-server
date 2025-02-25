@@ -80,10 +80,9 @@ public class UserController implements UserApi {
         GetCurrentAndAverageUserReviewCountsUseCase.Result result =
             getCurrentAndAverageUserReviewCountsUseCase.find(userId);
 
-        return SuccessResponse.of(new GetUserReviewCountsResponse(
-            result.currentUserReviewCounts(),
-            result.averageUserReviewCounts()
-        ));
+        return SuccessResponse.of(
+            GetUserReviewCountsResponse.of(result)
+        );
     }
 
     @Override
