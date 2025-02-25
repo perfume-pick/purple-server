@@ -3,6 +3,7 @@ package com.pikachu.purple.application.statistic.service;
 import com.pikachu.purple.application.statistic.port.in.GetPerfumeStatisticUseCase;
 import com.pikachu.purple.application.statistic.port.out.EvaluationStatisticRepository;
 import com.pikachu.purple.application.statistic.port.out.StarRatingStatisticRepository;
+import com.pikachu.purple.application.util.MathUtil;
 import com.pikachu.purple.domain.evaluation.EvaluationField;
 import com.pikachu.purple.domain.evaluation.EvaluationOptionStatistic;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
@@ -81,7 +82,7 @@ class GetPerfumeStatisticService implements
             .sum();
 
         List<StarRatingStatisticDTO> starRatingStatisticDTOs = starRatingStatistics.stream()
-            .map(starRatingStatistic -> StarRatingStatisticDTO.of(
+            .map(starRatingStatistic -> this.mapToStarRatingStatisticDTO(
                 starRatingStatistic,
                 totalVotes
             ))
@@ -90,6 +91,19 @@ class GetPerfumeStatisticService implements
         return new Result(
             starRatingStatisticDTOs,
             evaluationFields
+        );
+    }
+
+    public StarRatingStatisticDTO mapToStarRatingStatisticDTO(
+        StarRatingStatistic starRatingStatistic,
+        int totalVotes
+    ) {
+        return new StarRatingStatisticDTO(
+            starRatingStatistic.getScore(),
+            MathUtil.getPercentage(
+                starRatingStatistic.getVotes(),
+                totalVotes
+            )
         );
     }
 }

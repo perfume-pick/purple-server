@@ -33,13 +33,29 @@ class GetComplaintFormService implements GetComplaintFormUseCase {
 
         Review review = reviewRepository.findWithPerfume(complaint.getReview().getId());
 
-        ComplaintFormDTO complaintFormDTO = ComplaintFormDTO.from(
+        ComplaintFormDTO complaintFormDTO = this.mapToComplaintFormDTO(
             review,
             complaint,
             complaintUri
         );
 
         return new Result(complaintFormDTO);
+    }
+
+    public ComplaintFormDTO mapToComplaintFormDTO(
+        Review reportedReview,
+        Complaint complaint,
+        String reviewUri
+    ) {
+        return new ComplaintFormDTO(
+            complaint.getReportedAt(),
+            complaint.getId(),
+            reportedReview.getUser().getId(),
+            reportedReview.getPerfume().getId(),
+            reportedReview.getPerfume().getName(),
+            reportedReview.getContent(),
+            reviewUri + "/" + complaint.getId() + "?token=" + complaint.getToken()
+        );
     }
 
 }
