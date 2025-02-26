@@ -53,7 +53,7 @@ class UpdateProfileService implements UpdateProfileUseCase {
 
     private void isValidToUpdateImage(
         User user,
-        Boolean isChanged,
+        boolean isChanged,
         MultipartFile picture
     ) {
         if (!isChanged) return;
