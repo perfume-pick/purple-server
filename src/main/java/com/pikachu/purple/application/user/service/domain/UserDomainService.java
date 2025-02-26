@@ -3,7 +3,6 @@ package com.pikachu.purple.application.user.service.domain;
 
 import com.pikachu.purple.domain.user.User;
 import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
-import org.springframework.web.multipart.MultipartFile;
 
 public interface UserDomainService {
 
@@ -11,13 +10,6 @@ public interface UserDomainService {
         String email,
         String nickname,
         SocialLoginProvider socialLoginProvider
-    );
-
-    User updateProfile(
-        Long userId,
-        String nickname,
-        boolean isChanged,
-        MultipartFile picture
     );
 
     User findByEmailAndSocialLoginProvider(
@@ -28,7 +20,5 @@ public interface UserDomainService {
     int count();
 
     User findById(Long userId);
-
-    void delete(Long userId);
 
 }
