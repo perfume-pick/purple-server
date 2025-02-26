@@ -41,4 +41,14 @@ class UserDomainServiceImpl implements UserDomainService {
         );
     }
 
+    @Override
+    public int count() {
+        return userRepository.count();
+    }
+
+    @Override
+    public User findById(Long userId) {
+        return userRepository.findById(userId);
+    }
+
 }
