@@ -7,7 +7,7 @@ import com.pikachu.purple.application.history.port.in.searchhistory.DeleteSearch
 import com.pikachu.purple.application.history.port.in.searchhistory.GetSearchHistoriesUseCase;
 import com.pikachu.purple.application.history.port.in.visithistory.CreateVisitHistoryUseCase;
 import com.pikachu.purple.application.history.port.in.visithistory.DeleteVisitHistoriesUseCase;
-import com.pikachu.purple.application.history.port.in.visithistory.GetVisitHistoriesUseCase;
+import com.pikachu.purple.application.perfume.port.in.GetVisitedPerfumesUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetCurrentAndAverageUserReviewCountsUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetReviewUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetTopThreeReviewedBrandsUseCase;
@@ -39,7 +39,7 @@ public class UserController implements UserApi {
     private final GetSearchHistoriesUseCase getSearchHistoriesUseCase;
     private final DeleteSearchHistoriesUseCase deleteSearchHistoriesUseCase;
     private final CreateVisitHistoryUseCase createVisitHistoryUseCase;
-    private final GetVisitHistoriesUseCase getVisitHistoriesUseCase;
+    private final GetVisitedPerfumesUseCase getVisitedPerfumesUseCase;
     private final CreateSearchHistoryUseCase createSearchHistoryUseCase;
     private final GetCurrentAndAverageUserReviewCountsUseCase getCurrentAndAverageUserReviewCountsUseCase;
     private final DeleteVisitHistoriesUseCase deleteVisitHistoriesUseCase;
@@ -110,7 +110,9 @@ public class UserController implements UserApi {
         Long userId = getCurrentUserAuthentication().userId();
         GetSearchHistoriesUseCase.Result result = getSearchHistoriesUseCase.findAll(userId);
 
-        return SuccessResponse.of(new GetSearchHistoriesResponse(result.searchHistories()));
+        return SuccessResponse.of(
+            GetSearchHistoriesResponse.of(result)
+        );
     }
 
     @Override
@@ -135,9 +137,11 @@ public class UserController implements UserApi {
     @Override
     public SuccessResponse<GetVisitHistoriesResponse> findAllVisitHistory() {
         Long userId = getCurrentUserAuthentication().userId();
-        GetVisitHistoriesUseCase.Result result = getVisitHistoriesUseCase.findAll(userId);
+        GetVisitedPerfumesUseCase.Result result = getVisitedPerfumesUseCase.findAllWithPerfumeAccord(userId);
 
-        return SuccessResponse.of(new GetVisitHistoriesResponse(result.visitHistoryDTOs()));
+        return SuccessResponse.of(
+            GetVisitHistoriesResponse.of(result)
+        );
     }
 
     @Override
