@@ -1,5 +1,7 @@
 package com.pikachu.purple.bootstrap.perfume.controller;
 
+import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
+
 import com.pikachu.purple.application.perfume.port.in.fragranticaevaluation.GetFragranticaEvaluationUseCase;
 import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumeDetailUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetReviewsUseCase;
@@ -53,12 +55,15 @@ public class PerfumeController implements PerfumeApi {
         Long perfumeId,
         String sortType
     ) {
+        Long userId = getCurrentUserAuthentication().userId();
+
         GetReviewsUseCase.Result result = getReviewsUseCase.findAll(
+            userId,
             perfumeId,
             sortType
         );
 
-        return SuccessResponse.of(new GetReviewsResponse(result.reviewDTOs()));
+        return SuccessResponse.of(GetReviewsResponse.of(userId, result));
     }
 
 }

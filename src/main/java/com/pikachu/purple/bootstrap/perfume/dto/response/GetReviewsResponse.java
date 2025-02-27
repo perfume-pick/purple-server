@@ -1,6 +1,107 @@
 package com.pikachu.purple.bootstrap.perfume.dto.response;
 
-import com.pikachu.purple.application.review.common.dto.ReviewDTO;
+import com.pikachu.purple.application.review.port.in.review.GetReviewsUseCase;
+import com.pikachu.purple.application.util.DateUtil;
+import com.pikachu.purple.application.util.IdUtil;
+import com.pikachu.purple.bootstrap.user.dto.response.GetReviewByPerfumeIdAndUserResponse;
+import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
+import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
+import com.pikachu.purple.domain.review.Mood;
+import com.pikachu.purple.domain.review.Review;
+import com.pikachu.purple.domain.review.enums.ReviewType;
 import java.util.List;
+import lombok.Getter;
 
-public record GetReviewsResponse(List<ReviewDTO> reviews) {}
+@Getter
+public class GetReviewsResponse {
+
+    private final List<ReviewDTO> reviews;
+
+    private GetReviewsResponse(List<ReviewDTO> reviews) {
+        this.reviews = reviews;
+    }
+
+    public static GetReviewsResponse of(Long currentUserId, GetReviewsUseCase.Result result) {
+        List<ReviewDTO> reviewDTOs = result.reviews().stream()
+            .map(review -> {
+                List<ReviewEvaluationDTO> reviewEvaluation = review.getEvaluation()
+                    .getFields(review.getId()).stream()
+                    .map(fieldType ->
+                        ReviewEvaluationDTO.of(
+                            fieldType,
+                            review.getEvaluation().getOptions(review.getId(), fieldType).stream()
+                                .map(EvaluationOptionType::getName)
+                                .toList()
+                        )
+                    ).toList();
+
+                List<String> moodNames = review.getMoods().stream()
+                    .map(Mood::getName)
+                    .toList();
+
+                return ReviewDTO.of(
+                    currentUserId,
+                    review,
+                    reviewEvaluation,
+                    moodNames
+                );
+            })
+            .toList();
+
+        return new GetReviewsResponse(reviewDTOs);
+    }
+
+    record ReviewDTO(
+        String reviewId,
+        String nickname,
+        String imageUrl,
+        String date,
+        ReviewType reviewType,
+        int score,
+        String content,
+        List<ReviewEvaluationDTO> perfumeEvaluation,
+        List<String> moodNames,
+        boolean isCurrentUserReview,
+        boolean isComplained,
+        boolean isLiked,
+        int likeCount
+    ) {
+        public static ReviewDTO of(
+            Long currentUserId,
+            Review review,
+            List<ReviewEvaluationDTO> perfumeEvaluation,
+            List<String> moodNames
+        ) {
+            return new ReviewDTO(
+                IdUtil.toString(review.getId()),
+                review.getUser().getNickname(),
+                review.getUser().getImageUrl(),
+                DateUtil.toString(review.getUpdatedAt()),
+                review.getType(),
+                review.getStarRating().getScore(),
+                review.getContent(),
+                perfumeEvaluation,
+                moodNames,
+                currentUserId.equals(review.getUser().getId()),
+                review.isComplained(),
+                review.isLiked(),
+                review.getLikeCount()
+            );
+        }
+    }
+
+    record ReviewEvaluationDTO(
+        String fieldName,
+        List<String> options
+    ) {
+        public static ReviewEvaluationDTO of(
+            EvaluationFieldType fieldType,
+            List<String> options) {
+            return new ReviewEvaluationDTO(
+                fieldType.getName(),
+                options
+            );
+        }
+    }
+
+}
