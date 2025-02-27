@@ -63,7 +63,12 @@ public class PerfumeController implements PerfumeApi {
             sortType
         );
 
-        return SuccessResponse.of(GetReviewsByPerfumeIdAndSortTypeResponse.of(userId, result));
+        return SuccessResponse.of(
+            GetReviewsByPerfumeIdAndSortTypeResponse.of(
+                userId,
+                result
+            )
+        );
     }
 
 }
