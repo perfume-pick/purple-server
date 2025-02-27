@@ -35,43 +35,14 @@ class GetReviewService implements GetReviewUseCase {
             perfumeId
         );
 
-        ReviewByUserDTO reviewByUserDTO = null;
-        if(review != null) {
-            if (review.getType() == ReviewType.SIMPLE) {
-                reviewByUserDTO = ReviewByUserDTO.from(review);
-            } else {
-                List<ReviewEvaluationFieldDTO> reviewEvaluation = review.getEvaluation()
-                    .getFields(review.getId()).stream()
-                    .map(fieldType ->
-                        ReviewEvaluationFieldDTO.of(
-                            fieldType,
-                            review.getEvaluation().getOptions(review.getId(), fieldType).stream()
-                                .map(ReviewEvaluationOptionDTO::of)
-                                .toList()
-                        )
-                    ).toList();
-
-                List<String> moodNames = review.getMoods().stream()
-                    .map(Mood::getName)
-                    .toList();
-
-                reviewByUserDTO = ReviewByUserDTO.of(
-                    review,
-                    reviewEvaluation,
-                    moodNames
-                );
-            }
-        }
-
         if(review == null && starRating != null) {
-            reviewByUserDTO = ReviewByUserDTO.from(starRating);
+            review = Review.builder()
+                .type(ReviewType.ONBOARDING)
+                .starRating(starRating)
+                .build();
         }
 
-        if(review == null && starRating == null) {
-            reviewByUserDTO = ReviewByUserDTO.empty();
-        }
-
-        return new Result(reviewByUserDTO);
+        return new Result(review);
     }
 
 }
