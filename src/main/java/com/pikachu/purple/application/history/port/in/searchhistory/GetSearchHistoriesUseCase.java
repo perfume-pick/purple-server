@@ -1,12 +1,12 @@
 package com.pikachu.purple.application.history.port.in.searchhistory;
 
-import com.pikachu.purple.application.history.common.dto.SearchHistoryDTO;
+import com.pikachu.purple.domain.history.SearchHistory;
 import java.util.List;
 
 public interface GetSearchHistoriesUseCase {
 
     Result findAll(Long userId);
 
-    record Result(List<SearchHistoryDTO> searchHistories){}
+    record Result(List<SearchHistory> searchHistories){}
 
 }
