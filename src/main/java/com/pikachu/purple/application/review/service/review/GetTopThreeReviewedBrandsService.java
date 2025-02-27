@@ -2,7 +2,6 @@ package com.pikachu.purple.application.review.service.review;
 
 import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
 
-import com.pikachu.purple.application.review.common.dto.ReviewedBrandDTO;
 import com.pikachu.purple.application.review.port.in.review.GetTopThreeReviewedBrandsUseCase;
 import com.pikachu.purple.application.review.port.out.ReviewRepository;
 import com.pikachu.purple.domain.review.Review;
@@ -42,11 +41,11 @@ class GetTopThreeReviewedBrandsService implements
         for (int i = 0; i < reviewedBrands.size(); i++) {
             int order = i + 1;
             Entry<String, Long> reviewedBrand = reviewedBrands.get(i);
-            ReviewedBrandDTO reviewedBrandDTO = ReviewedBrandDTO.builder()
-                .order(order)
-                .brandName(reviewedBrand.getKey())
-                .reviewCounts(reviewedBrand.getValue().intValue())
-                .build();
+            ReviewedBrandDTO reviewedBrandDTO = new ReviewedBrandDTO(
+                order,
+                reviewedBrand.getKey(),
+                reviewedBrand.getValue().intValue()
+            );
 
             reviewedBrandDTOs.add(reviewedBrandDTO);
         }
