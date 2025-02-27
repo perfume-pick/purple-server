@@ -90,7 +90,8 @@ public class UserController implements UserApi {
         GetTopThreeReviewedBrandsUseCase.Result result = getTopThreeReviewedBrandsUseCase.invoke();
 
         return SuccessResponse.of(
-            new GetTopThreeReviewedBrandsResponse(result.reviewedBrandDTOs()));
+            GetTopThreeReviewedBrandsResponse.of(result)
+        );
     }
 
     @Override
