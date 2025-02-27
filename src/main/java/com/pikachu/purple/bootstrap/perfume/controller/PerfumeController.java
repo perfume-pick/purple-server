@@ -11,7 +11,7 @@ import com.pikachu.purple.bootstrap.perfume.api.PerfumeApi;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeDetailResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetFragranticaEvaluationResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeStatisticResponse;
-import com.pikachu.purple.bootstrap.perfume.dto.response.GetReviewsResponse;
+import com.pikachu.purple.bootstrap.perfume.dto.response.GetReviewsByPerfumeIdAndSortTypeResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -51,7 +51,7 @@ public class PerfumeController implements PerfumeApi {
     }
 
     @Override
-    public SuccessResponse<GetReviewsResponse> findReviewsByPerfumeIdAndSortType(
+    public SuccessResponse<GetReviewsByPerfumeIdAndSortTypeResponse> findReviewsByPerfumeIdAndSortType(
         Long perfumeId,
         String sortType
     ) {
@@ -63,7 +63,7 @@ public class PerfumeController implements PerfumeApi {
             sortType
         );
 
-        return SuccessResponse.of(GetReviewsResponse.of(userId, result));
+        return SuccessResponse.of(GetReviewsByPerfumeIdAndSortTypeResponse.of(userId, result));
     }
 
 }

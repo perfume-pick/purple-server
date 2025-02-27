@@ -12,15 +12,15 @@ import java.util.List;
 import lombok.Getter;
 
 @Getter
-public class GetReviewsResponse {
+public class GetReviewsByPerfumeIdAndSortTypeResponse {
 
     private final List<ReviewDTO> reviews;
 
-    private GetReviewsResponse(List<ReviewDTO> reviews) {
+    private GetReviewsByPerfumeIdAndSortTypeResponse(List<ReviewDTO> reviews) {
         this.reviews = reviews;
     }
 
-    public static GetReviewsResponse of(Long currentUserId, GetReviewsUseCase.Result result) {
+    public static GetReviewsByPerfumeIdAndSortTypeResponse of(Long currentUserId, GetReviewsUseCase.Result result) {
         List<ReviewDTO> reviewDTOs = result.reviews().stream()
             .map(review -> {
                 List<ReviewEvaluationFieldDTO> reviewEvaluation = review.getEvaluation()
@@ -47,7 +47,7 @@ public class GetReviewsResponse {
             })
             .toList();
 
-        return new GetReviewsResponse(reviewDTOs);
+        return new GetReviewsByPerfumeIdAndSortTypeResponse(reviewDTOs);
     }
 
     record ReviewDTO(

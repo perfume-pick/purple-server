@@ -5,7 +5,7 @@ import com.pikachu.purple.bootstrap.common.security.Secured;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeDetailResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetFragranticaEvaluationResponse;
 import com.pikachu.purple.bootstrap.perfume.dto.response.GetPerfumeStatisticResponse;
-import com.pikachu.purple.bootstrap.perfume.dto.response.GetReviewsResponse;
+import com.pikachu.purple.bootstrap.perfume.dto.response.GetReviewsByPerfumeIdAndSortTypeResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.constraints.NotEmpty;
@@ -52,7 +52,7 @@ public interface PerfumeApi {
         description = "향수 상세 페이지, 향수에 대한 모든 리뷰 정보 반환"
     )
     @GetMapping("/{perfume-id}/reviews")
-    SuccessResponse<GetReviewsResponse> findReviewsByPerfumeIdAndSortType(
+    SuccessResponse<GetReviewsByPerfumeIdAndSortTypeResponse> findReviewsByPerfumeIdAndSortType(
         @PathVariable("perfume-id") @NotNull @Positive Long perfumeId,
         @RequestParam("sort-type") @NotEmpty String sortType
     );
