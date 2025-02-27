@@ -1,11 +1,11 @@
 package com.pikachu.purple.application.review.port.in.review;
 
-import com.pikachu.purple.application.review.common.dto.ReviewByUserDTO;
+import com.pikachu.purple.domain.review.Review;
 
 public interface GetReviewUseCase {
 
     Result find(Long userId, Long perfumeId);
 
-    record Result(ReviewByUserDTO reviewByUserDTO) {}
+    record Result(Review review) {}
 
 }

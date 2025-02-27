@@ -158,7 +158,9 @@ public class UserController implements UserApi {
 
         GetReviewUseCase.Result result = getReviewUseCase.find(userId, perfumeId);
 
-        return SuccessResponse.of(new GetReviewByPerfumeIdAndUserResponse(result.reviewByUserDTO()));
+        return SuccessResponse.of(
+            GetReviewByPerfumeIdAndUserResponse.of(result)
+        );
     }
 
     @Override

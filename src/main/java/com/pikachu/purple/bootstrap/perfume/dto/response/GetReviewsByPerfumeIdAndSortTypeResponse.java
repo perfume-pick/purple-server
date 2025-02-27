@@ -1,40 +1,35 @@
-package com.pikachu.purple.bootstrap.user.dto.response;
+package com.pikachu.purple.bootstrap.perfume.dto.response;
 
-import com.pikachu.purple.application.review.port.in.review.GetReviewUseCase.Result;
+import com.pikachu.purple.application.review.port.in.review.GetReviewsUseCase;
+import com.pikachu.purple.application.util.DateUtil;
 import com.pikachu.purple.application.util.IdUtil;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 import com.pikachu.purple.domain.review.Mood;
 import com.pikachu.purple.domain.review.Review;
-import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.domain.review.enums.ReviewType;
 import java.util.List;
 import lombok.Getter;
 
 @Getter
-public class GetReviewByPerfumeIdAndUserResponse {
+public class GetReviewsByPerfumeIdAndSortTypeResponse {
 
-    private final ReviewDTO review;
+    private final List<ReviewDTO> reviews;
 
-    private GetReviewByPerfumeIdAndUserResponse(ReviewDTO review) {
-        this.review = review;
+    private GetReviewsByPerfumeIdAndSortTypeResponse(List<ReviewDTO> reviews) {
+        this.reviews = reviews;
     }
 
-    public static GetReviewByPerfumeIdAndUserResponse of(Result result) {
-        Review review = result.review();
-        ReviewDTO reviewDTO = null;
-        if (review != null) {
-            if (review.getType() == ReviewType.SIMPLE) {
-                reviewDTO = ReviewDTO.from(review);
-            } else if (review.getType() == ReviewType.DETAIL) {
+    public static GetReviewsByPerfumeIdAndSortTypeResponse of(Long currentUserId, GetReviewsUseCase.Result result) {
+        List<ReviewDTO> reviewDTOs = result.reviews().stream()
+            .map(review -> {
                 List<ReviewEvaluationFieldDTO> reviewEvaluation = review.getEvaluation()
                     .getFields(review.getId()).stream()
                     .map(fieldType ->
                         ReviewEvaluationFieldDTO.of(
                             fieldType,
                             review.getEvaluation().getOptions(review.getId(), fieldType).stream()
-                                .map(ReviewEvaluationOptionDTO::of
-                                    )
+                                .map(ReviewEvaluationOptionDTO::of)
                                 .toList()
                         )
                     ).toList();
@@ -43,73 +38,53 @@ public class GetReviewByPerfumeIdAndUserResponse {
                     .map(Mood::getName)
                     .toList();
 
-                reviewDTO = ReviewDTO.of(
+                return ReviewDTO.of(
+                    currentUserId,
                     review,
                     reviewEvaluation,
                     moodNames
                 );
-            } else if (review.getType() == ReviewType.ONBOARDING) {
-                reviewDTO = ReviewDTO.from(review.getStarRating());
-            }
-        } else {
-            reviewDTO = ReviewDTO.empty();
-        }
-        return new GetReviewByPerfumeIdAndUserResponse(reviewDTO);
+            })
+            .toList();
+
+        return new GetReviewsByPerfumeIdAndSortTypeResponse(reviewDTOs);
     }
 
     record ReviewDTO(
         String reviewId,
+        String nickname,
+        String imageUrl,
+        String date,
         ReviewType reviewType,
         int score,
         String content,
         List<ReviewEvaluationFieldDTO> perfumeEvaluation,
-        List<String> moodNames
+        List<String> moodNames,
+        boolean isCurrentUserReview,
+        boolean isComplained,
+        boolean isLiked,
+        int likeCount
     ) {
-        public static ReviewDTO from(Review review) {
-            return new ReviewDTO(
-                IdUtil.toString(review.getId()),
-                review.getType(),
-                review.getStarRating().getScore(),
-                review.getContent(),
-                null,
-                null
-            );
-        }
-
-        public static ReviewDTO from(StarRating starRating) {
-            return new ReviewDTO(
-                null,
-                ReviewType.ONBOARDING,
-                starRating.getScore(),
-                null,
-                null,
-                null
-            );
-        }
-
         public static ReviewDTO of(
+            Long currentUserId,
             Review review,
             List<ReviewEvaluationFieldDTO> perfumeEvaluation,
             List<String> moodNames
         ) {
             return new ReviewDTO(
                 IdUtil.toString(review.getId()),
+                review.getUser().getNickname(),
+                review.getUser().getImageUrl(),
+                DateUtil.toString(review.getUpdatedAt()),
                 review.getType(),
                 review.getStarRating().getScore(),
                 review.getContent(),
                 perfumeEvaluation,
-                moodNames
-            );
-        }
-
-        public static ReviewDTO empty() {
-            return new ReviewDTO(
-                null,
-                null,
-                0,
-                null,
-                List.of(),
-                List.of()
+                moodNames,
+                currentUserId.equals(review.getUser().getId()),
+                review.isComplained(),
+                review.isLiked(),
+                review.getLikeCount()
             );
         }
     }
