@@ -1,6 +1,5 @@
 package com.pikachu.purple.bootstrap.user.dto.response;
 
-import com.pikachu.purple.application.review.common.dto.ReviewEvaluationFieldDTO;
 import com.pikachu.purple.application.review.port.in.review.GetReviewUseCase.Result;
 import com.pikachu.purple.application.util.IdUtil;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
@@ -28,13 +27,13 @@ public class GetReviewByPerfumeIdAndUserResponse {
             if (review.getType() == ReviewType.SIMPLE) {
                 reviewDTO = ReviewDTO.from(review);
             } else if (review.getType() == ReviewType.DETAIL) {
-                List<ReviewEvaluationDTO> reviewEvaluation = review.getEvaluation()
+                List<ReviewEvaluationFieldDTO> reviewEvaluation = review.getEvaluation()
                     .getFields(review.getId()).stream()
                     .map(fieldType ->
-                        ReviewEvaluationDTO.of(
+                        ReviewEvaluationFieldDTO.of(
                             fieldType,
                             review.getEvaluation().getOptions(review.getId(), fieldType).stream()
-                                .map(EvaluationOptionType::getName
+                                .map(ReviewEvaluationOptionDTO::of
                                     )
                                 .toList()
                         )
@@ -63,7 +62,7 @@ public class GetReviewByPerfumeIdAndUserResponse {
         ReviewType reviewType,
         int score,
         String content,
-        List<ReviewEvaluationDTO> perfumeEvaluation,
+        List<ReviewEvaluationFieldDTO> perfumeEvaluation,
         List<String> moodNames
     ) {
         public static ReviewDTO from(Review review) {
@@ -90,7 +89,7 @@ public class GetReviewByPerfumeIdAndUserResponse {
 
         public static ReviewDTO of(
             Review review,
-            List<ReviewEvaluationDTO> perfumeEvaluation,
+            List<ReviewEvaluationFieldDTO> perfumeEvaluation,
             List<String> moodNames
         ) {
             return new ReviewDTO(
@@ -115,18 +114,28 @@ public class GetReviewByPerfumeIdAndUserResponse {
         }
     }
 
-    record ReviewEvaluationDTO(
+    public record ReviewEvaluationFieldDTO(
         String fieldName,
-        List<String> options
+        List<ReviewEvaluationOptionDTO> options
     ) {
-        public static ReviewEvaluationDTO of(
+
+        public static ReviewEvaluationFieldDTO of(
             EvaluationFieldType fieldType,
-            List<String> options) {
-            return new ReviewEvaluationDTO(
+            List<ReviewEvaluationOptionDTO> options) {
+            return new ReviewEvaluationFieldDTO(
                 fieldType.getName(),
                 options
             );
         }
+
+    }
+
+    public record ReviewEvaluationOptionDTO(String optionName) {
+
+        public static ReviewEvaluationOptionDTO of(EvaluationOptionType type) {
+            return new ReviewEvaluationOptionDTO(type.getName());
+        }
+
     }
 
 }
