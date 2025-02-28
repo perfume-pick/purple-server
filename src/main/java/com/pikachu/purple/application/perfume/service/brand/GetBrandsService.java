@@ -1,7 +1,5 @@
 package com.pikachu.purple.application.perfume.service.brand;
 
-import com.pikachu.purple.application.perfume.common.dto.BrandDTO;
-import com.pikachu.purple.application.perfume.common.dto.BrandPerfumesDTO;
 import com.pikachu.purple.application.perfume.port.in.brand.GetBrandsUseCase;
 import com.pikachu.purple.application.perfume.port.out.BrandRepository;
 import com.pikachu.purple.domain.perfume.Brand;
@@ -21,23 +19,14 @@ class GetBrandsService implements GetBrandsUseCase {
     public Result findAll() {
         List<Brand> brands = brandRepository.findAll();
 
-        List<BrandDTO> brandDTOs = brands.stream()
-            .map(BrandDTO::from)
-            .toList();
-
-        return new Result(brandDTOs);
+        return new Result(brands);
     }
 
     @Override
-    public ResultBrandPerfumesDTO findAllWithPerfumes(List<String> brandNames) {
+    public Result findAllWithPerfumes(List<String> brandNames) {
         List<Brand> brands = brandRepository.findAllWithPerfumes(brandNames);
-
-        return new ResultBrandPerfumesDTO(brands.stream()
-            .map(brand -> BrandPerfumesDTO.of(
-                brand.getKoreanName(),
-                brand.getPerfumes())
-            ).toList()
-        );
+        
+        return new Result(brands);
     }
 
 }
