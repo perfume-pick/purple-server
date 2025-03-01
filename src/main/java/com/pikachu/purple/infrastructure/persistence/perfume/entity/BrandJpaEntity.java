@@ -31,9 +31,6 @@ public class BrandJpaEntity {
     @Column(name = "display_order")
     private int order;
 
-    @OneToMany(mappedBy = "brandJpaEntity")
-    private List<PerfumeJpaEntity> perfumes = new ArrayList<>();
-
     public static Brand toDomain(BrandJpaEntity jpaEntity) {
         return new Brand(
             jpaEntity.getName(),
@@ -41,15 +38,6 @@ public class BrandJpaEntity {
             jpaEntity.getImageUrl(),
             jpaEntity.getOrder()
         );
-    }
-
-    public static Brand toDomainWithPerfume(BrandJpaEntity jpaEntity) {
-        Brand domain = toDomain(jpaEntity);
-        domain.setPerfumes(jpaEntity.getPerfumes().stream()
-            .map(PerfumeJpaEntity::toDomain).toList()
-        );
-
-        return domain;
     }
 
 }

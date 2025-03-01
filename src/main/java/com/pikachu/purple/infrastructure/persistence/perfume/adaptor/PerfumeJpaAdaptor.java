@@ -22,16 +22,6 @@ class PerfumeJpaAdaptor implements PerfumeRepository {
     private final PerfumeJpaRepository perfumeJpaRepository;
 
     @Override
-    public List<Perfume> findAllByBrandNames(List<String> brandNames) {
-        List<PerfumeJpaEntity> perfumeJpaEntities = perfumeJpaRepository.findAllByBrandNameIn(
-            brandNames);
-
-        return perfumeJpaEntities.stream()
-            .map(PerfumeJpaEntity::toDomain)
-            .toList();
-    }
-
-    @Override
     public List<Perfume> findAll(Brand brand) {
         List<PerfumeJpaEntity> perfumeJpaEntities = perfumeJpaRepository.findAllByBrandName(
             brand.getName()
