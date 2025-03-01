@@ -64,13 +64,6 @@ public class StarRatingJpaEntity extends BaseEntity {
         return domain;
     }
 
-    public static StarRating toDomainWithPerfumeAccord(StarRatingJpaEntity jpaEntity) {
-        StarRating domain = toDomain(jpaEntity);
-        domain.setPerfume(PerfumeJpaEntity.toDomainWithPerfumeAccord(jpaEntity.getPerfumeJpaEntity()));
-
-        return domain;
-    }
-
     public static StarRating toDomainWithPerfume(StarRatingJpaEntity jpaEntity) {
         StarRating domain = toDomain(jpaEntity);
         domain.setPerfume(PerfumeJpaEntity.toDomain(jpaEntity.getPerfumeJpaEntity()));

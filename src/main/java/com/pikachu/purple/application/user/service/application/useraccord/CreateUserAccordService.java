@@ -25,7 +25,7 @@ class CreateUserAccordService implements CreateUserAccordUseCase {
         Long perfumeId
     ) {
         GetUserUseCase.Result user = getUserUseCase.find(userId);
-        GetStarRatingUseCase.Result starRating = getStarRatingUseCase.find(
+        GetStarRatingUseCase.Result starRating = getStarRatingUseCase.findWithPerfumeAndPerfumeAccords(
             userId,
             perfumeId
         );

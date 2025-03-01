@@ -9,7 +9,7 @@ public interface StarRatingRepository {
 
     StarRating create(Long starRatingId, Long userId, Long perfumeId, int score);
 
-    List<StarRating> findAllWithPerfumeAndPerfumeAccordByUserId(Long userId);
+    List<StarRating> findAllWithPerfume(Long userId);
 
     StarRating updateScore(
         Long userId,
@@ -19,7 +19,12 @@ public interface StarRatingRepository {
 
     StarRating deleteById(Long starRatingId);
 
-    StarRating findByUserIdAndPerfumeId(
+    StarRating find(
+        Long userId,
+        Long perfumeId
+    );
+
+    StarRating findWithPerfume(
         Long userId,
         Long perfumeId
     );
@@ -27,8 +32,6 @@ public interface StarRatingRepository {
     List<StarRating> findAll();
 
     List<StarRating> findAll(Long perfumeId);
-
-    List<StarRating> findAllByUpdatedDate(String updatedDate);
 
     List<StarRating> findAllOrderByLikeCountDesc(Long userId);
 

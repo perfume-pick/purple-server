@@ -20,7 +20,7 @@ public interface PerfumeJpaRepository extends JpaRepository<PerfumeJpaEntity, Lo
 
     @Query("select p "
         + "from PerfumeJpaEntity p "
-        + "left join PerfumeAccordJpaEntity pa on p = pa.perfumeJpaEntity "
+        + "left join PerfumeAccordJpaEntity pa on p.id = pa.perfumeId "
         + "where pa.accordJpaEntity in :accordJpaEntities "
         + "group by p "
         + "order by count(pa) desc")
@@ -29,8 +29,11 @@ public interface PerfumeJpaRepository extends JpaRepository<PerfumeJpaEntity, Lo
 
     @Query("select p "
         + "from PerfumeJpaEntity p "
-        + "where p.name like :keyword or p.brandJpaEntity.name like :keyword or p.koreanName like :keyword or p.brandJpaEntity.koreaName like :keyword")
-    List<PerfumeJpaEntity> findByKeyword(String keyword);
+        + "where p.name like :keyword"
+        + " or p.brandJpaEntity.name like :keyword"
+        + " or p.koreanName like :keyword"
+        + " or p.brandJpaEntity.koreaName like :keyword")
+    List<PerfumeJpaEntity> findAllByKeyword(String keyword);
 
     @Query("select p "
         + "from PerfumeJpaEntity p "

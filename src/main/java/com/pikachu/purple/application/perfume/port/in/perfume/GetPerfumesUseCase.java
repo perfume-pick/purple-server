@@ -12,7 +12,7 @@ public interface GetPerfumesUseCase {
 
     Result findAllWithPerfumeAccord(String keyword);
 
-    Result findAllOrderByReviewCount();
+    Result findAllWithPerfumeAccordOrderByReviewCount();
 
     record Result(List<Perfume> perfumes) {}
 

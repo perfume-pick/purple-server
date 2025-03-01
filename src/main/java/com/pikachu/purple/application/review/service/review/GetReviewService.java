@@ -25,7 +25,7 @@ class GetReviewService implements GetReviewUseCase {
             perfumeId
         );
 
-        StarRating starRating = starRatingRepository.findByUserIdAndPerfumeId(
+        StarRating starRating = starRatingRepository.find(
             userId,
             perfumeId
         );

@@ -1,5 +1,6 @@
 package com.pikachu.purple.application.review.service.starrating;
 
+import com.pikachu.purple.application.perfume.port.in.perfumeaccord.GetPerfumeAccordsUseCase;
 import com.pikachu.purple.application.review.port.in.starrating.GetStarRatingsUseCase;
 import com.pikachu.purple.application.review.port.out.StarRatingRepository;
 import com.pikachu.purple.domain.review.StarRating;
@@ -11,6 +12,8 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 class GetStarRatingsService implements GetStarRatingsUseCase {
 
+    private final GetPerfumeAccordsUseCase getPerfumeAccordsUseCase;
+
     private final StarRatingRepository starRatingRepository;
 
     @Override
@@ -21,7 +24,16 @@ class GetStarRatingsService implements GetStarRatingsUseCase {
 
     @Override
     public Result findAll(Long userId) {
-        List<StarRating> starRatings = starRatingRepository.findAllWithPerfumeAndPerfumeAccordByUserId(userId);
+        List<StarRating> starRatings = starRatingRepository.findAllWithPerfume(userId);
+        for (StarRating starRating : starRatings) {
+            starRating
+                .getPerfume()
+                .setAccords(
+                    getPerfumeAccordsUseCase
+                        .findAll(starRating.getPerfume())
+                        .perfumeAccords()
+                );
+        }
 
         return new Result(starRatings);
     }

@@ -46,10 +46,6 @@ public class PerfumeJpaEntity {
     @Column(name = "average_score")
     private double averageScore;
 
-    @OneToMany(mappedBy = "perfumeJpaEntity")
-    @OrderBy("value desc")
-    private List<PerfumeAccordJpaEntity> perfumeAccordJpaEntities = new ArrayList<>();
-
     public static Perfume toDomain(PerfumeJpaEntity jpaEntity) {
         return new Perfume(
             jpaEntity.getId(),
@@ -59,13 +55,6 @@ public class PerfumeJpaEntity {
             jpaEntity.getAverageScore(),
             BrandJpaEntity.toDomain(jpaEntity.getBrandJpaEntity())
         );
-    }
-
-    public static Perfume toDomainWithPerfumeAccord(PerfumeJpaEntity jpaEntity) {
-        Perfume domain = toDomain(jpaEntity);
-        domain.setAccords(jpaEntity.getPerfumeAccordJpaEntities().stream()
-            .map(PerfumeAccordJpaEntity::toDomain).toList());
-        return domain;
     }
 
     public static Perfume toDummy(PerfumeJpaEntity jpaEntity) {

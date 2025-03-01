@@ -9,5 +9,10 @@ public interface GetStarRatingUseCase {
         Long perfumeId
     );
 
+    Result findWithPerfumeAndPerfumeAccords(
+        Long userId,
+        Long perfumeId
+    );
+
     record Result(StarRating starRating) {}
 }

@@ -23,9 +23,8 @@ import lombok.NoArgsConstructor;
 public class PerfumeAccordJpaEntity {
 
     @Id
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "perfume_id")
-    private PerfumeJpaEntity perfumeJpaEntity;
+    @Column(name = "perfume_id")
+    private Long perfumeId;
 
     @Id
     @ManyToOne(fetch = FetchType.EAGER)

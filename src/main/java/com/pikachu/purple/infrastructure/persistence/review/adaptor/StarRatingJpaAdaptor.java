@@ -87,14 +87,14 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
     }
 
     @Override
-    public List<StarRating> findAllWithPerfumeAndPerfumeAccordByUserId(Long userId) {
+    public List<StarRating> findAllWithPerfume(Long userId) {
         UserJpaEntity userJpaEntity = userJpaRepository.findById(userId)
             .orElseThrow(() -> UserNotFoundException);
 
         List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAllByUserJpaEntity(userJpaEntity);
 
         return starRatingJpaEntities.stream()
-            .map(StarRatingJpaEntity::toDomainWithPerfumeAccord)
+            .map(StarRatingJpaEntity::toDomainWithPerfume)
             .toList();
     }
 
@@ -125,7 +125,7 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
     }
 
     @Override
-    public StarRating findByUserIdAndPerfumeId(
+    public StarRating find(
         Long userId,
         Long perfumeId
     ) {
@@ -134,7 +134,20 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
             perfumeId
         );
 
-        return findResult.map(StarRatingJpaEntity::toDomainWithPerfumeAccord).orElse(null);
+        return findResult.map(StarRatingJpaEntity::toDomain).orElse(null);
+    }
+
+    @Override
+    public StarRating findWithPerfume(
+        Long userId,
+        Long perfumeId
+    ) {
+        Optional<StarRatingJpaEntity> findResult = starRatingJpaRepository.findByUserIdAndPerfumeId(
+            userId,
+            perfumeId
+        );
+
+        return findResult.map(StarRatingJpaEntity::toDomainWithPerfume).orElse(null);
     }
 
     @Override
@@ -147,16 +160,6 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
     public List<StarRating> findAll(Long perfumeId) {
         List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAllByPerfumeId(perfumeId);
         return starRatingJpaEntities.stream().map(StarRatingJpaEntity::toDomain).toList();
-    }
-
-    @Override
-    public List<StarRating> findAllByUpdatedDate(String updatedDate) {
-        List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAllByUpdatedDate(
-            updatedDate);
-
-        return starRatingJpaEntities.stream()
-            .map(StarRatingJpaEntity::toDomain)
-            .toList();
     }
 
     @Override
