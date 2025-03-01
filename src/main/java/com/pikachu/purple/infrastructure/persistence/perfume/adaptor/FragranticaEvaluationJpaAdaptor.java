@@ -18,7 +18,8 @@ public class FragranticaEvaluationJpaAdaptor implements FragranticaEvaluationRep
     @Override
     public FragranticaEvaluation findByPerfumeIdOrderByVotesDesc(Long perfumeId) {
         List<FragranticaEvaluationJpaEntity> fragranticaEvaluationJpaEntities =
-            fragranticaEvaluationJpaRepository.findByPerfumeIdOrderByVotesDesc(perfumeId);
+            fragranticaEvaluationJpaRepository.findByPerfumeIdOrderByFieldCodeAscVotesDescOptionCodeAsc(
+                perfumeId);
 
         return FragranticaEvaluationJpaEntity.toDomain(fragranticaEvaluationJpaEntities);
     }

@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class FragranticaEvaluationId implements Serializable {
 
-    private Long perfumeJpaEntity;
+    private Long perfumeId;
     private String fieldCode;
     private String optionCode;
 

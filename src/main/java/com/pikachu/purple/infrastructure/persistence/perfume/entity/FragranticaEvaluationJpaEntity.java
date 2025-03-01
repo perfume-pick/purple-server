@@ -25,9 +25,8 @@ import lombok.NoArgsConstructor;
 public class FragranticaEvaluationJpaEntity {
 
     @Id
-    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "perfume_id")
-    private PerfumeJpaEntity perfumeJpaEntity;
+    private Long perfumeId;
 
     @Id
     @Column(name = "field_code", columnDefinition = "char(5)")
