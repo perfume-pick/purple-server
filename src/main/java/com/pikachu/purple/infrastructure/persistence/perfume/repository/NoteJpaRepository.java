@@ -9,9 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface NoteJpaRepository extends JpaRepository<NoteJpaEntity, Long> {
 
-    @Query("select n "
-        + "from NoteJpaEntity n "
-        + "where n.perfumeJpaEntity.id = :perfumeId")
     List<NoteJpaEntity> findAllByPerfumeId(Long perfumeId);
 
 }
