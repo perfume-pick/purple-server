@@ -10,12 +10,6 @@ import org.springframework.stereotype.Repository;
 public interface FragranticaEvaluationJpaRepository extends
     JpaRepository<FragranticaEvaluationJpaEntity, Long> {
 
-//    @Query("select fe "
-//        + "from FragranticaEvaluationJpaEntity fe "
-//        + "where fe.perfumeId = :perfumeId "
-//        + "order by fe.fieldCode, fe.votes DESC, fe.optionCode")
-//    List<FragranticaEvaluationJpaEntity> findByPerfumeIdOrderByVotesDesc(Long perfumeId);
-
     List<FragranticaEvaluationJpaEntity> findByPerfumeIdOrderByFieldCodeAscVotesDescOptionCodeAsc(Long perfumeId);
 
 }
