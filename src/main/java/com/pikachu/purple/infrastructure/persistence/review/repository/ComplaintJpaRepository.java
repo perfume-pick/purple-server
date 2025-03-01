@@ -10,9 +10,6 @@ public interface ComplaintJpaRepository extends JpaRepository<ComplaintJpaEntity
 
     Optional<ComplaintJpaEntity> findByIdAndToken(Long complaintId, String token);
 
-    @Query("select c "
-        + "from ComplaintJpaEntity c "
-        + "where c.reviewId = :reviewId and c.userId = :userId")
     Optional<ComplaintJpaEntity> findByReviewIdAndUserId(Long reviewId, Long userId);
 
     @Query("select c "
