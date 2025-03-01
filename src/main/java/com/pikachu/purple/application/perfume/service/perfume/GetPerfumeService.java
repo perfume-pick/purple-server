@@ -12,7 +12,7 @@ class GetPerfumeService implements GetPerfumeUseCase {
 
     private final PerfumeRepository perfumeRepository;
     @Override
-    public Result invoke(Long perfumeId) {
+    public Result find(Long perfumeId) {
         Perfume perfume = perfumeRepository.findById(perfumeId);
 
         return new Result(perfume);

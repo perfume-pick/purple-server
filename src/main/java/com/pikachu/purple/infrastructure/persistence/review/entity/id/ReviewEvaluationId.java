@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ReviewEvaluationId implements Serializable {
 
-    private Long reviewJpaEntity;
+    private Long reviewId;
     private String fieldCode;
     private String optionCode;
 

@@ -1,5 +1,7 @@
 package com.pikachu.purple.application.review.port.out;
 
+import com.pikachu.purple.domain.perfume.Perfume;
+import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.ReviewEvaluation;
 
 public interface ReviewEvaluationRepository {
@@ -9,6 +11,10 @@ public interface ReviewEvaluationRepository {
     ReviewEvaluation find();
 
     ReviewEvaluation find(Long reviewId);
+
+    ReviewEvaluation find(Review review);
+
+    ReviewEvaluation find(Perfume perfume);
 
     void delete(Long reviewId);
 

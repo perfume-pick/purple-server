@@ -7,11 +7,8 @@ import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
 import com.pikachu.purple.infrastructure.persistence.review.entity.id.ReviewEvaluationId;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,9 +28,8 @@ import lombok.NoArgsConstructor;
 public class ReviewEvaluationJpaEntity extends BaseEntity {
 
     @Id
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "review_id")
-    private ReviewJpaEntity reviewJpaEntity;
+    @Column(name = "review_id")
+    private Long reviewId;
 
     @Id
     @Column(
@@ -60,7 +56,7 @@ public class ReviewEvaluationJpaEntity extends BaseEntity {
             field -> reviewEvaluation.getOptions(reviewId, field).forEach(
                 option -> reviewEvaluationJpaEntities.add(
                     ReviewEvaluationJpaEntity.builder()
-                        .reviewJpaEntity(reviewJpaEntity)
+                        .reviewId(reviewJpaEntity.getId())
                         .fieldCode(field.getCode())
                         .optionCode(option.getCode())
                         .build()
@@ -74,7 +70,7 @@ public class ReviewEvaluationJpaEntity extends BaseEntity {
         ReviewEvaluation domain = new ReviewEvaluation();
         for (ReviewEvaluationJpaEntity jpaEntity : jpaEntities) {
             domain.add(
-                jpaEntity.getReviewJpaEntity().getId(),
+                jpaEntity.getReviewId(),
                 EvaluationFieldType.of(jpaEntity.getFieldCode()),
                 EvaluationOptionType.of(jpaEntity.getOptionCode())
             );

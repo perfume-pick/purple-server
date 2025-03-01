@@ -3,6 +3,8 @@ package com.pikachu.purple.infrastructure.persistence.review.adaptor;
 import com.pikachu.purple.application.review.port.out.ReviewEvaluationRepository;
 import com.pikachu.purple.bootstrap.common.exception.BusinessException;
 import com.pikachu.purple.bootstrap.common.exception.ErrorCode;
+import com.pikachu.purple.domain.perfume.Perfume;
+import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.ReviewEvaluation;
 import com.pikachu.purple.infrastructure.persistence.review.entity.ReviewEvaluationJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.review.entity.ReviewJpaEntity;
@@ -44,7 +46,7 @@ public class ReviewEvaluationJpaAdaptor implements ReviewEvaluationRepository {
         List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities =
             reviewEvaluationJpaRepository.findAll(
                 Sort.by(
-                    Sort.Order.asc("reviewJpaEntity.id"),
+                    Sort.Order.asc("reviewId"),
                     Sort.Order.asc("fieldCode"),
                     Sort.Order.asc("optionCode")
                 )
@@ -54,9 +56,25 @@ public class ReviewEvaluationJpaAdaptor implements ReviewEvaluationRepository {
     }
 
     @Override
+    public ReviewEvaluation find(Review review) {
+        List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities =
+            reviewEvaluationJpaRepository.findByReviewIdOrderByFieldCodeAscOptionCodeAsc(review.getId());
+
+        return ReviewEvaluationJpaEntity.toDomain(reviewEvaluationJpaEntities);
+    }
+
+    @Override
+    public ReviewEvaluation find(Perfume perfume) {
+        List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities =
+            reviewEvaluationJpaRepository.findByPerfumeIdOrderByFieldCodeAscOptionCodeAsc(perfume.getId());
+
+        return ReviewEvaluationJpaEntity.toDomain(reviewEvaluationJpaEntities);
+    }
+
+    @Override
     public ReviewEvaluation find(Long reviewId) {
         List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities =
-            reviewEvaluationJpaRepository.findByReviewId(reviewId);
+            reviewEvaluationJpaRepository.findByReviewIdOrderByFieldCodeAscOptionCodeAsc(reviewId);
 
         return ReviewEvaluationJpaEntity.toDomain(reviewEvaluationJpaEntities);
     }

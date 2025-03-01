@@ -16,7 +16,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
-import jakarta.persistence.OrderBy;
 import jakarta.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
@@ -77,10 +76,6 @@ public class ReviewJpaEntity extends BaseEntity {
     private int likeCount;
 
     @OneToMany(mappedBy = "reviewJpaEntity")
-    @OrderBy("fieldCode asc, optionCode asc")
-    private List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities = new ArrayList<>();
-
-    @OneToMany(mappedBy = "reviewJpaEntity")
     private List<ReviewMoodJpaEntity> reviewMoodJpaEntities = new ArrayList<>();
 
     public void update(
@@ -113,16 +108,8 @@ public class ReviewJpaEntity extends BaseEntity {
         return domain;
     }
 
-    public static Review toDomainWithEvaluation(ReviewJpaEntity jpaEntity) {
+    public static Review toDomainWithMoods(ReviewJpaEntity jpaEntity) {
         Review domain = toDomain(jpaEntity);
-        domain.setEvaluation(ReviewEvaluationJpaEntity.toDomain(jpaEntity.reviewEvaluationJpaEntities));
-
-        return domain;
-    }
-
-    public static Review toDomainWithEvaluationAndMoods(ReviewJpaEntity jpaEntity) {
-        Review domain = toDomain(jpaEntity);
-        domain.setEvaluation(ReviewEvaluationJpaEntity.toDomain(jpaEntity.reviewEvaluationJpaEntities));
         domain.setMoods(jpaEntity.getReviewMoodJpaEntities().stream()
             .map(reviewMoodJpaEntity ->
                 MoodJpaEntity.toDomain(reviewMoodJpaEntity.getMoodJpaEntity())
@@ -135,7 +122,6 @@ public class ReviewJpaEntity extends BaseEntity {
     public static Review toFullDomain(ReviewJpaEntity jpaEntity, Long currentUserId) {
         Review domain = toDomain(jpaEntity);
         domain.setPerfume(PerfumeJpaEntity.toDomain(jpaEntity.getPerfumeJpaEntity()));
-        domain.setEvaluation(ReviewEvaluationJpaEntity.toDomain(jpaEntity.getReviewEvaluationJpaEntities()));
         domain.setMoods(jpaEntity.getReviewMoodJpaEntities().stream()
             .map(reviewMoodJpaEntity ->
                 MoodJpaEntity.toDomain(reviewMoodJpaEntity.getMoodJpaEntity())

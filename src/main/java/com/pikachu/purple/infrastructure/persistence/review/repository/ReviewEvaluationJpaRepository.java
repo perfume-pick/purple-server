@@ -9,9 +9,15 @@ import org.springframework.data.jpa.repository.Query;
 public interface ReviewEvaluationJpaRepository extends
     JpaRepository<ReviewEvaluationJpaEntity, ReviewEvaluationId> {
 
-    @Query("select re "
-        + "from ReviewEvaluationJpaEntity re "
-        + "where re.reviewJpaEntity.id = :reviewId")
     List<ReviewEvaluationJpaEntity> findByReviewId(Long reviewId);
+
+    List<ReviewEvaluationJpaEntity> findByReviewIdOrderByFieldCodeAscOptionCodeAsc(Long reviewId);
+
+    @Query("select re "
+        + "from ReviewEvaluationJpaEntity re"
+        + " left join ReviewJpaEntity r on r.id = re.reviewId "
+        + "where r.perfumeJpaEntity.id = :perfumeId "
+        + "order by re.fieldCode asc, re.optionCode asc ")
+    List<ReviewEvaluationJpaEntity> findByPerfumeIdOrderByFieldCodeAscOptionCodeAsc(Long perfumeId);
 
 }

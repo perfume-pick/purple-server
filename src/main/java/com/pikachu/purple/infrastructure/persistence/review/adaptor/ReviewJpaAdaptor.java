@@ -86,7 +86,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodsOrderByLikeCountDesc(
+    public List<Review> findAllWithPerfumeAndMoodsOrderByLikeCountDesc(
         Long userId,
         Long perfumeId
     ) {
@@ -100,7 +100,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodsOrderByCreatedAtDesc(
+    public List<Review> findAllWithPerfumeAndMoodsOrderByCreatedAtDesc(
         Long userId,
         Long perfumeId
     ) {
@@ -117,7 +117,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodsOrderByScoreDesc(
+    public List<Review> findAllWithPerfumeAndMoodsOrderByScoreDesc(
         Long userId,
         Long perfumeId
     ) {
@@ -132,7 +132,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodsOrderByScoreAsc(
+    public List<Review> findAllWithPerfumeAndMoodsOrderByScoreAsc(
         Long userId,
         Long perfumeId
     ) {
@@ -153,11 +153,11 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public List<Review> findAllWithEvaluation(ReviewType reviewType) {
+    public List<Review> findAll(ReviewType reviewType) {
         List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository.findAllByReviewType(reviewType);
 
         return reviewJpaEntities.stream()
-            .map(ReviewJpaEntity::toDomainWithEvaluation)
+            .map(ReviewJpaEntity::toDomain)
             .toList();
     }
 
@@ -210,7 +210,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public Review findWithPerfumeAndReviewEvaluationAndMood(
+    public Review findWithPerfumeAndMood(
         Long userId,
         Long perfumeId
     ) {
@@ -218,7 +218,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
             userId,
             perfumeId
         )
-            .map(ReviewJpaEntity::toDomainWithEvaluationAndMoods)
+            .map(ReviewJpaEntity::toDomainWithMoods)
             .orElse(null);
     }
 
