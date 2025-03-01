@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-class CreateVisitHistoryApplicationService implements CreateVisitHistoryUseCase {
+class CreateVisitHistoryService implements CreateVisitHistoryUseCase {
 
     private final VisitHistoryRepository visitHistoryRepository;
 

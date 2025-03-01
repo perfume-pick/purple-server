@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-class DeleteVisitHistoriesApplicationService implements DeleteVisitHistoriesUseCase {
+class DeleteVisitHistoriesService implements DeleteVisitHistoriesUseCase {
 
     private final VisitHistoryRepository visitHistoryRepository;
 
