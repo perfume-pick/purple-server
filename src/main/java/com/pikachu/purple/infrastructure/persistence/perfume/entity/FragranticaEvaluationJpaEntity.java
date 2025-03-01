@@ -25,7 +25,7 @@ import lombok.NoArgsConstructor;
 public class FragranticaEvaluationJpaEntity {
 
     @Id
-    @JoinColumn(name = "perfume_id")
+    @Column(name = "perfume_id")
     private Long perfumeId;
 
     @Id
