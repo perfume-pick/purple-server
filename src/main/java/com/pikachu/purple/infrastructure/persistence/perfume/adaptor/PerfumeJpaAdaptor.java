@@ -2,8 +2,10 @@ package com.pikachu.purple.infrastructure.persistence.perfume.adaptor;
 
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.PerfumeNotFoundException;
 
+import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesUseCase.Result;
 import com.pikachu.purple.application.perfume.port.out.PerfumeRepository;
 import com.pikachu.purple.domain.accord.Accord;
+import com.pikachu.purple.domain.perfume.Brand;
 import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.infrastructure.persistence.accord.entity.AccordJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
@@ -23,6 +25,17 @@ class PerfumeJpaAdaptor implements PerfumeRepository {
     public List<Perfume> findAllByBrandNames(List<String> brandNames) {
         List<PerfumeJpaEntity> perfumeJpaEntities = perfumeJpaRepository.findAllByBrandNameIn(
             brandNames);
+
+        return perfumeJpaEntities.stream()
+            .map(PerfumeJpaEntity::toDomain)
+            .toList();
+    }
+
+    @Override
+    public List<Perfume> findAll(Brand brand) {
+        List<PerfumeJpaEntity> perfumeJpaEntities = perfumeJpaRepository.findAllByBrandName(
+            brand.getName()
+        );
 
         return perfumeJpaEntities.stream()
             .map(PerfumeJpaEntity::toDomain)

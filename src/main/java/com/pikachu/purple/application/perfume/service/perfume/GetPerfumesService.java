@@ -3,6 +3,7 @@ package com.pikachu.purple.application.perfume.service.perfume;
 import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesUseCase;
 import com.pikachu.purple.application.perfume.port.out.PerfumeRepository;
 import com.pikachu.purple.application.review.port.in.starrating.GetPerfumeAverageScoreUseCase;
+import com.pikachu.purple.domain.perfume.Brand;
 import com.pikachu.purple.domain.perfume.Perfume;
 import jakarta.transaction.Transactional;
 import java.util.List;
@@ -17,6 +18,13 @@ class GetPerfumesService implements GetPerfumesUseCase {
     private final GetPerfumeAverageScoreUseCase getPerfumeAverageScoreUseCase;
 
     private static final int MAX_SIZE = 30;
+
+    @Override
+    public Result findAll(Brand brand) {
+        List<Perfume> perfumes = perfumeRepository.findAll(brand);
+
+        return new Result(perfumes);
+    }
 
     @Override
     public Result findAllWithPerfumeAccord(List<Long> perfumeIds) {

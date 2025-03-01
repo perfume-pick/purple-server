@@ -14,8 +14,8 @@ public interface PerfumeJpaRepository extends JpaRepository<PerfumeJpaEntity, Lo
 
     @Query("select p "
         + "from PerfumeJpaEntity p "
-        + "where p.brandJpaEntity.name in :brandNames")
-    List<PerfumeJpaEntity> findAllByBrandNameIn(List<String> brandNames);
+        + "where p.brandJpaEntity.name = :brandName")
+    List<PerfumeJpaEntity> findAllByBrandName(String brandName);
 
 
     @Query("select p "
