@@ -28,13 +28,11 @@ public class ComplaintJpaEntity extends BaseEntity {
     @Column(name = "complaint_id")
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private UserJpaEntity userJpaEntity;
+    @Column(name = "user_id")
+    private Long userId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "review_id")
-    private ReviewJpaEntity reviewJpaEntity;
+    @Column(name = "review_id")
+    private Long reviewId;
 
     @Column(name = "token", nullable = false)
     private String token;
@@ -46,8 +44,8 @@ public class ComplaintJpaEntity extends BaseEntity {
             jpaEntity.getCreatedAt()
         );
 
-        domain.setReview(ReviewJpaEntity.toDummy(jpaEntity.getReviewJpaEntity()));
-        domain.setUser(UserJpaEntity.toDummy(jpaEntity.getUserJpaEntity()));
+        domain.setReview(ReviewJpaEntity.toDummy(jpaEntity.getReviewId()));
+        domain.setUser(UserJpaEntity.toDummy(jpaEntity.getUserId()));
 
         return domain;
     }

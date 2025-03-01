@@ -1,6 +1,7 @@
 package com.pikachu.purple.application.review.port.out;
 
 import com.pikachu.purple.domain.review.Complaint;
+import java.util.List;
 
 public interface ComplaintRepository {
 
@@ -9,6 +10,8 @@ public interface ComplaintRepository {
     Complaint find(Long complaintId, String token);
 
     Complaint find(Long userId, Long reviewId);
+
+    List<Complaint> findAll(Long userId, Long perfumeId);
 
     void delete(Long complaintId);
 

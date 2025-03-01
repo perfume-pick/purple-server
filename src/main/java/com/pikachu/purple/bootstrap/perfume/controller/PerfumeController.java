@@ -57,7 +57,7 @@ public class PerfumeController implements PerfumeApi {
     ) {
         Long userId = getCurrentUserAuthentication().userId();
 
-        GetReviewsUseCase.Result result = getReviewsUseCase.findAll(
+        GetReviewsUseCase.Result result = getReviewsUseCase.findAllWithPerfumeAndReviewEvaluationAndMoodsAndIsComplainedAndIsLiked(
             userId,
             perfumeId,
             sortType

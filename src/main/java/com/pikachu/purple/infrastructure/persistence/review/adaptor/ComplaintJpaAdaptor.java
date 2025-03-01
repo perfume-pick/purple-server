@@ -12,6 +12,7 @@ import com.pikachu.purple.infrastructure.persistence.review.repository.Complaint
 import com.pikachu.purple.infrastructure.persistence.review.repository.ReviewJpaRepository;
 import com.pikachu.purple.infrastructure.persistence.user.entity.UserJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.user.repository.UserJpaRepository;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -38,8 +39,8 @@ public class ComplaintJpaAdaptor implements ComplaintRepository {
 
         ComplaintJpaEntity complaintJpaEntity = ComplaintJpaEntity.builder()
             .id(complaintId)
-            .userJpaEntity(userJpaEntity)
-            .reviewJpaEntity(reviewJpaEntity)
+            .userId(userJpaEntity.getId())
+            .reviewId(reviewJpaEntity.getId())
             .token(token)
             .build();
 
@@ -72,6 +73,19 @@ public class ComplaintJpaAdaptor implements ComplaintRepository {
         ).orElseThrow(() -> ComplaintNotFoundException);
 
         return ComplaintJpaEntity.toDomain(complaintJpaEntity);
+    }
+
+    @Override
+    public List<Complaint> findAll(
+        Long userId,
+        Long perfumeId
+    ) {
+        List<ComplaintJpaEntity> complaintJpaEntities = complaintJpaRepository.findAllByUserIdAndPerfumeId(
+            userId,
+            perfumeId
+        );
+
+        return complaintJpaEntities.stream().map(ComplaintJpaEntity::toDomain).toList();
     }
 
     @Override

@@ -5,8 +5,8 @@ import java.util.List;
 
 public interface GetReviewsUseCase {
 
-    Result findAll(
-        Long userId,
+    Result findAllWithPerfumeAndReviewEvaluationAndMoodsAndIsComplainedAndIsLiked(
+        Long currentUserId,
         Long perfumeId,
         String sortType
     );

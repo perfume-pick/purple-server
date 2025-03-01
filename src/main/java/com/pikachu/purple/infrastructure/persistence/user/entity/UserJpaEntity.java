@@ -72,4 +72,10 @@ public class UserJpaEntity extends BaseEntity {
             .build();
     }
 
+    public static User toDummy(Long userId) {
+        return User.builder()
+            .id(userId)
+            .build();
+    }
+
 }
