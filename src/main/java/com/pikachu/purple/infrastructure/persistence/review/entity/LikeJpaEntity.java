@@ -4,6 +4,7 @@ import com.pikachu.purple.domain.review.Like;
 import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
 import com.pikachu.purple.infrastructure.persistence.review.entity.id.LikeId;
 import com.pikachu.purple.infrastructure.persistence.user.entity.UserJpaEntity;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
@@ -27,20 +28,19 @@ import lombok.NoArgsConstructor;
 public class LikeJpaEntity extends BaseEntity {
 
     @Id
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private UserJpaEntity userJpaEntity;
+    @Column(name = "user_id")
+    private Long userId;
 
     @Id
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "review_id")
-    private ReviewJpaEntity reviewJpaEntity;
+    @Column(name = "review_id")
+    private Long reviewId;
 
     public static Like toDomain(LikeJpaEntity jpaEntity) {
-        return new Like(
-            UserJpaEntity.toDummy(jpaEntity.getUserJpaEntity()),
-            ReviewJpaEntity.toDummy(jpaEntity.getReviewJpaEntity())
-        );
+        Like domain = new Like();
+        domain.setUser(UserJpaEntity.toDummy(jpaEntity.getUserId()));
+        domain.setReview(ReviewJpaEntity.toDummy(jpaEntity.getReviewId()));
+
+        return domain;
     }
 
 }

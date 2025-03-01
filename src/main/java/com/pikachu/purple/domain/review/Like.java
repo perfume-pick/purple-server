@@ -5,21 +5,15 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
-@Builder
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Setter
+@NoArgsConstructor()
 public class Like {
 
     private User user;
-    private Review review;
 
-    public Like(
-        User user,
-        Review review
-    ) {
-        this.user = user;
-        this.review = review;
-    }
+    private Review review;
 
 }

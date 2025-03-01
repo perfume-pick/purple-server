@@ -83,9 +83,6 @@ public class ReviewJpaEntity extends BaseEntity {
     @OneToMany(mappedBy = "reviewJpaEntity")
     private List<ReviewMoodJpaEntity> reviewMoodJpaEntities = new ArrayList<>();
 
-    @OneToMany(mappedBy = "reviewJpaEntity")
-    private List<LikeJpaEntity> likeJpaEntities = new ArrayList<>();
-
     public void update(
         String content,
         ReviewType reviewType
@@ -145,20 +142,7 @@ public class ReviewJpaEntity extends BaseEntity {
             )
             .toList());
 
-        boolean isLiked = jpaEntity.getLikeJpaEntities().stream()
-            .anyMatch(likeJpaEntity ->
-                likeJpaEntity.getReviewJpaEntity().getId().equals(jpaEntity.getId()) &&
-                    likeJpaEntity.getUserJpaEntity().getId().equals(currentUserId)
-            );
-        domain.setLiked(isLiked);
-
         return domain;
-    }
-
-    public static Review toDummy(ReviewJpaEntity jpaEntity) {
-        return Review.builder()
-            .id(jpaEntity.getId())
-            .build();
     }
 
     public static Review toDummy(Long reviewId) {

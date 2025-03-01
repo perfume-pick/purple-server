@@ -26,19 +26,6 @@ public class LikeJpaAdaptor implements LikeRepository {
     private final ReviewJpaRepository reviewJpaRepository;
 
     @Override
-    public Like find(
-        Long userId,
-        Long reviewId
-    ) {
-        LikeJpaEntity likeJpaEntity = likeJpaRepository.findByUserIdAndReviewId(
-            userId,
-            reviewId
-        ).orElseThrow(() -> LikeNotFoundException);
-
-        return LikeJpaEntity.toDomain(likeJpaEntity);
-    }
-
-    @Override
     public void create(
         Long userId,
         Long reviewId
@@ -50,11 +37,24 @@ public class LikeJpaAdaptor implements LikeRepository {
             .orElseThrow(() -> ReviewNotFoundException);
 
         LikeJpaEntity likeJpaEntity = LikeJpaEntity.builder()
-            .userJpaEntity(userJpaEntity)
-            .reviewJpaEntity(reviewJpaEntity)
+            .userId(userJpaEntity.getId())
+            .reviewId(reviewJpaEntity.getId())
             .build();
 
         likeJpaRepository.save(likeJpaEntity);
+    }
+
+    @Override
+    public List<Like> findAll(
+        Long userId,
+        Long perfumeId
+    ) {
+        List<LikeJpaEntity> likeJpaEntities = likeJpaRepository.findAllByUserIdAndPerfumeId(
+            userId,
+            perfumeId
+        );
+
+        return likeJpaEntities.stream().map(LikeJpaEntity::toDomain).toList();
     }
 
     @Override

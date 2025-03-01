@@ -86,7 +86,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodsAndIsLikedOrderByLikeCountDesc(
+    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodsOrderByLikeCountDesc(
         Long userId,
         Long perfumeId
     ) {
@@ -100,7 +100,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodsAndIsLikedOrderByCreatedAtDesc(
+    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodsOrderByCreatedAtDesc(
         Long userId,
         Long perfumeId
     ) {
@@ -117,7 +117,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodsAndIsLikedOrderByScoreDesc(
+    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodsOrderByScoreDesc(
         Long userId,
         Long perfumeId
     ) {
@@ -132,7 +132,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodsAndIsLikedOrderByScoreAsc(
+    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodsOrderByScoreAsc(
         Long userId,
         Long perfumeId
     ) {

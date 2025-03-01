@@ -11,13 +11,14 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface LikeJpaRepository extends JpaRepository<LikeJpaEntity, LikeId> {
 
-    @Query("select l "
-        + "from LikeJpaEntity l "
-        + "where l.userJpaEntity.id = :userId and l.reviewJpaEntity.id = :reviewId")
     Optional<LikeJpaEntity> findByUserIdAndReviewId(Long userId, Long reviewId);
 
-    @Query("select l "
-        + "from LikeJpaEntity l "
-        + "where l.reviewJpaEntity.id = :reviewId")
     List<LikeJpaEntity> findAllByReviewId(Long reviewId);
+
+    @Query("select l "
+        + "from LikeJpaEntity l"
+        + " left join ReviewJpaEntity r on r.id = l.reviewId "
+        + "where l.userId = :userId and r.perfumeJpaEntity.id = :perfumeId")
+    List<LikeJpaEntity> findAllByUserIdAndPerfumeId(Long userId, Long perfumeId);
+
 }
