@@ -28,9 +28,8 @@ import lombok.NoArgsConstructor;
 public class StarRatingStatisticJpaEntity extends BaseEntity {
 
     @Id
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "perfume_id")
-    private PerfumeJpaEntity perfumeJpaEntity;
+    @Column(name = "perfume_id")
+    private Long perfumeId;
 
     @Id
     @Column(name = "score")
@@ -49,7 +48,7 @@ public class StarRatingStatisticJpaEntity extends BaseEntity {
 
     public static StarRatingStatistic toDomain(StarRatingStatisticJpaEntity jpaEntity) {
         return StarRatingStatistic.builder()
-            .perfume(PerfumeJpaEntity.toDummy(jpaEntity.getPerfumeJpaEntity()))
+            .perfume(PerfumeJpaEntity.toDummy(jpaEntity.getPerfumeId()))
             .score(jpaEntity.getScore())
             .votes(jpaEntity.getVotes())
             .build();

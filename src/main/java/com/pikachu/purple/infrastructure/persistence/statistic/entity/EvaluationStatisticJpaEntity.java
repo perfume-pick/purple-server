@@ -32,9 +32,8 @@ import lombok.NoArgsConstructor;
 public class EvaluationStatisticJpaEntity extends BaseEntity {
 
     @Id
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "perfume_id")
-    private PerfumeJpaEntity perfumeJpaEntity;
+    @Column(name = "perfume_id")
+    private Long perfumeId;
 
     @Id
     @Column(name = "field_code")
@@ -61,7 +60,7 @@ public class EvaluationStatisticJpaEntity extends BaseEntity {
         EvaluationStatistic domain = new EvaluationStatistic();
         for (EvaluationStatisticJpaEntity jpaEntity : jpaEntities) {
             domain.set(
-                jpaEntity.getPerfumeJpaEntity().getId(),
+                jpaEntity.getPerfumeId(),
                 EvaluationFieldType.of(jpaEntity.getFieldCode()),
                 EvaluationOptionType.of(jpaEntity.getOptionCode()),
                 jpaEntity.getVotes()
@@ -90,7 +89,7 @@ public class EvaluationStatisticJpaEntity extends BaseEntity {
 
                     jpaEntities.add(
                         EvaluationStatisticJpaEntity.builder()
-                            .perfumeJpaEntity(perfumeJpaEntity)
+                            .perfumeId(perfumeJpaEntity.getId())
                             .fieldCode(field.getCode())
                             .optionCode(option.getCode())
                             .votes(votes)

@@ -11,18 +11,6 @@ import org.springframework.data.jpa.repository.Query;
 public interface EvaluationStatisticJpaRepository extends
     JpaRepository<EvaluationStatisticJpaEntity, EvaluationStatisticId> {
 
-  @Query("select es "
-      + "from EvaluationStatisticJpaEntity es "
-      + "where es.perfumeJpaEntity.id = :#{#compositeKey.perfumeId}"
-      + " and es.fieldCode = :#{#compositeKey.fieldCode}"
-      + " and es.optionCode = :#{#compositeKey.optionCode}")
-  Optional<EvaluationStatisticJpaEntity> findByCompositeKey(
-      EvaluationStatisticCompositeKey compositeKey);
-
-  @Query("select es "
-      + "from EvaluationStatisticJpaEntity es "
-      + "where es.perfumeJpaEntity.id = :perfumeId "
-      + "order by es.fieldCode asc, es.votes desc")
-  List<EvaluationStatisticJpaEntity> findAllByPerfumeIdOrderByVotesDesc(Long perfumeId);
+  List<EvaluationStatisticJpaEntity> findAllByPerfumeIdOrderByFieldCodeAscVotesDesc(Long perfumeId);
 
 }
