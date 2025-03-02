@@ -1,0 +1,1 @@
+ALTER TABLE review MODIFY COLUMN review_type CHAR(10);

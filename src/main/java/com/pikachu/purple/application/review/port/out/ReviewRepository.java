@@ -8,6 +8,8 @@ public interface ReviewRepository {
 
     Review create(Long userId, Long perfumeId, Review review);
 
+    void createAll(List<Review> reviews);
+
     void createReviewMoods(Long reviewId, List<String> moodNames);
 
     Review find(Long reviewId);

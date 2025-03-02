@@ -8,7 +8,7 @@ public interface StarRatingRepository {
 
     StarRating create(Long starRatingId, Long userId, Long perfumeId, int score);
 
-    void createAll(Long userId, List<StarRating> starRatings);
+    List<StarRating> createAll(Long userId, List<StarRating> starRatings);
 
     StarRating find(Long starRatingId);
 

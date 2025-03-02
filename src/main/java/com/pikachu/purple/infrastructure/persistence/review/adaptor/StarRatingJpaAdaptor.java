@@ -60,7 +60,7 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
     }
 
     @Override
-    public void createAll(
+    public List<StarRating> createAll(
         Long userId,
         List<StarRating> starRatings
     ) {
@@ -83,7 +83,9 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
             );
         }
 
-        starRatingJpaRepository.saveAll(starRatingJpaEntities);
+        starRatingJpaEntities = starRatingJpaRepository.saveAll(starRatingJpaEntities);
+
+        return starRatingJpaEntities.stream().map(StarRatingJpaEntity::toDomain).toList();
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.pikachu.purple.application.review.service.starrating;
 
 import com.pikachu.purple.application.perfume.port.in.perfume.RecalculatePerfumeAverageScoresUseCase;
+import com.pikachu.purple.application.review.port.in.review.CreateOnboardingReviewsUseCase;
 import com.pikachu.purple.application.review.port.in.starrating.CreateStarRatingsOnboardingUseCase;
 import com.pikachu.purple.application.review.port.out.StarRatingRepository;
 import com.pikachu.purple.application.statistic.port.in.starratingstatistic.IncreaseStarRatingStatisticsUseCase;
@@ -21,9 +22,11 @@ class CreateStarRatingsOnboardingService implements
     CreateStarRatingsOnboardingUseCase {
 
     private final CreateUserAccordOnboardingUseCase createUserAccordOnboardingUseCase;
-    private final StarRatingRepository starRatingRepository;
     private final IncreaseStarRatingStatisticsUseCase increaseStarRatingStatisticsUseCase;
     private final RecalculatePerfumeAverageScoresUseCase recalculatePerfumeAverageScoresUseCase;
+    private final CreateOnboardingReviewsUseCase createOnboardingReviewsUseCase;
+
+    private final StarRatingRepository starRatingRepository;
 
     @Override
     @Transactional
@@ -49,12 +52,14 @@ class CreateStarRatingsOnboardingService implements
             starRatings.add(starRating);
         }
 
-        starRatingRepository.createAll(
+        starRatings = starRatingRepository.createAll(
             userId,
             starRatings
         );
 
-        increaseStarRatingStatisticsUseCase.invoke(starRatingVOs);
+        createOnboardingReviewsUseCase.createAll(starRatings);
+
+        increaseStarRatingStatisticsUseCase.invoke(starRatings);
 
         // TODO: 별점 갱신 후 콜백으로 처리
 //        List<Long> perfumeIds = command.starRatingVOs().stream()

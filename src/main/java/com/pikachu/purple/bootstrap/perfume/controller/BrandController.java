@@ -26,8 +26,8 @@ public class BrandController implements BrandApi {
     }
 
     @Override
-    public SuccessResponse<GetPerfumesByBrandNamesResponse> findAllWithPerfumes(List<String> brandNames) {
-        Result result = getBrandsUseCase.findAllWithPerfumes(brandNames);
+    public SuccessResponse<GetPerfumesByBrandNamesResponse> findAllWithPerfumes(List<String> request) {
+        Result result = getBrandsUseCase.findAllWithPerfumes(request);
 
         return SuccessResponse.of(
             GetPerfumesByBrandNamesResponse.of(result)

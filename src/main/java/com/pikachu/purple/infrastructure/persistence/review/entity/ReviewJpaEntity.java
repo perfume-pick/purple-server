@@ -9,11 +9,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -76,6 +72,26 @@ public class ReviewJpaEntity extends BaseEntity {
         this.reviewType = reviewType;
     }
 
+    public void increase() {
+        this.likeCount++;
+    }
+
+    public void decrease() {
+        this.likeCount--;
+    }
+
+    public static ReviewJpaEntity toJpaEntity(Review domain) {
+        return new ReviewJpaEntity(
+            domain.getId(),
+            domain.getUser().getId(),
+            domain.getPerfume().getId(),
+            domain.getContent(),
+            domain.getType(),
+            domain.getStarRating().getId(),
+            domain.getLikeCount()
+        );
+    }
+
     public static Review toDomain(ReviewJpaEntity jpaEntity) {
         Review domain = new Review(
             jpaEntity.getId(),
@@ -95,14 +111,6 @@ public class ReviewJpaEntity extends BaseEntity {
         return Review.builder()
             .id(reviewId)
             .build();
-    }
-
-    public void increase() {
-        this.likeCount++;
-    }
-
-    public void decrease() {
-        this.likeCount--;
     }
 
 }

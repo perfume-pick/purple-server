@@ -68,6 +68,15 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
+    public void createAll(List<Review> reviews) {
+        List<ReviewJpaEntity> reviewJpaEntities = reviews.stream()
+            .map(ReviewJpaEntity::toJpaEntity)
+            .toList();
+
+        reviewJpaRepository.saveAll(reviewJpaEntities);
+    }
+
+    @Override
     public void createReviewMoods(
         Long reviewId,
         List<String> moodNames
