@@ -5,8 +5,10 @@ import com.pikachu.purple.application.util.IdUtil;
 import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.perfume.PerfumeAccord;
 import java.util.List;
+import lombok.Getter;
 
 
+@Getter
 public class GetPerfumesByReviewCountsResponse {
     private final List<RecommendedPerfumeDTO> perfumes;
 

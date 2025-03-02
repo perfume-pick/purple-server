@@ -1,30 +1,16 @@
 package com.pikachu.purple.application.review.port.out;
 
 import com.pikachu.purple.domain.review.StarRating;
+import com.pikachu.purple.domain.user.User;
 import java.util.List;
 
 public interface StarRatingRepository {
 
-    void createAll(Long userId, List<StarRating> starRatings);
-
     StarRating create(Long starRatingId, Long userId, Long perfumeId, int score);
 
-    List<StarRating> findAllWithPerfume(Long userId);
-
-    StarRating updateScore(
-        Long userId,
-        Long perfumeId,
-        int score
-    );
-
-    StarRating deleteById(Long starRatingId);
+    void createAll(Long userId, List<StarRating> starRatings);
 
     StarRating find(
-        Long userId,
-        Long perfumeId
-    );
-
-    StarRating findWithPerfume(
         Long userId,
         Long perfumeId
     );
@@ -40,5 +26,13 @@ public interface StarRatingRepository {
     List<StarRating> findAllOrderByScoreDesc(Long userId);
 
     List<StarRating> findAllOrderByScoreAsc(Long userId);
+
+    StarRating updateScore(
+        Long userId,
+        Long perfumeId,
+        int score
+    );
+
+    StarRating deleteById(Long starRatingId);
 
 }

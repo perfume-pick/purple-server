@@ -63,4 +63,10 @@ public class PerfumeJpaEntity {
             .build();
     }
 
+    public static Perfume toDummy(Long perfumeId) {
+        return Perfume.builder()
+            .id(perfumeId)
+            .build();
+    }
+
 }

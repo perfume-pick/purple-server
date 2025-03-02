@@ -38,7 +38,7 @@ class GetPolarizedUserAccordsService implements
             MAX_SIZE
         );
 
-        GetStarRatingsUseCase.Result result = getStarRatingsUseCase.findAll(userId);
+        GetStarRatingsUseCase.Result result = getStarRatingsUseCase.findAllWithPerfume(userId);
 
         List<AccordInfo> preferredAccord = mapToAccordInfo(
             accordsByDesc,

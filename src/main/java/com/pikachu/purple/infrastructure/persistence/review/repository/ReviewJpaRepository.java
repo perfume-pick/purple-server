@@ -25,21 +25,16 @@ public interface ReviewJpaRepository extends JpaRepository<ReviewJpaEntity, Long
 
     @Query("select re "
         + "from ReviewJpaEntity re "
-        + "where re.starRatingJpaEntity.perfumeJpaEntity.id = :perfumeId "
+        + "where re.starRatingJpaEntity.perfumeId = :perfumeId "
         + "order by re.starRatingJpaEntity.score desc")
     List<ReviewJpaEntity> findAllByPerfumeIdOrderByScoreDesc(Long perfumeId);
 
     @Query("select re "
         + "from ReviewJpaEntity re "
-        + "where re.starRatingJpaEntity.perfumeJpaEntity.id = :perfumeId "
+        + "where re.starRatingJpaEntity.perfumeId = :perfumeId "
         + "order by re.starRatingJpaEntity.score")
     List<ReviewJpaEntity> findAllByPerfumeIdOrderByScoreAsc(Long perfumeId);
 
-//    @Query("select r "
-//        + "from ReviewJpaEntity r "
-//        + "where r.reviewType = :reviewType "
-//        + " and FUNCTION('DATE_FORMAT', r.updatedAt, '%Y%m%d') = :updatedDate "
-//        + "order by r.id asc")
     List<ReviewJpaEntity> findAllByReviewType(ReviewType reviewType);
 
     @Query("select r "

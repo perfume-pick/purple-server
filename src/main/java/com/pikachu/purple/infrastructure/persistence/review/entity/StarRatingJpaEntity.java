@@ -30,23 +30,14 @@ public class StarRatingJpaEntity extends BaseEntity {
     @Column(name = "star_rating_id")
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private UserJpaEntity userJpaEntity;
+    @Column(name = "user_id")
+    private Long userId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "perfume_id")
-    private PerfumeJpaEntity perfumeJpaEntity;
+    @Column(name = "perfume_id")
+    private Long perfumeId;
 
     @Column(name = "score")
     private int score;
-
-    @OneToOne(
-        mappedBy = "starRatingJpaEntity",
-        fetch = FetchType.LAZY
-    )
-    private ReviewJpaEntity reviewJpaEntity;
-
 
     public void updateScore(int score) {
         this.score = score;
@@ -58,22 +49,9 @@ public class StarRatingJpaEntity extends BaseEntity {
             jpaEntity.getScore(),
             jpaEntity.getUpdatedAt()
         );
-        domain.setUser(UserJpaEntity.toDummy(jpaEntity.getUserJpaEntity()));
-        domain.setPerfume(PerfumeJpaEntity.toDummy(jpaEntity.getPerfumeJpaEntity()));
+        domain.setUser(UserJpaEntity.toDummy(jpaEntity.getUserId()));
+        domain.setPerfume(PerfumeJpaEntity.toDummy(jpaEntity.getPerfumeId()));
 
-        return domain;
-    }
-
-    public static StarRating toDomainWithPerfume(StarRatingJpaEntity jpaEntity) {
-        StarRating domain = toDomain(jpaEntity);
-        domain.setPerfume(PerfumeJpaEntity.toDomain(jpaEntity.getPerfumeJpaEntity()));
-
-        return domain;
-    }
-
-    public static StarRating toFullDomain(StarRatingJpaEntity jpaEntity) {
-        StarRating domain = toDomain(jpaEntity);
-        domain.setReview(ReviewJpaEntity.toFullDomain(jpaEntity.getReviewJpaEntity()));
         return domain;
     }
 

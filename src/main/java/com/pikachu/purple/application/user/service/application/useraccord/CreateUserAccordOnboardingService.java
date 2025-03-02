@@ -23,7 +23,7 @@ class CreateUserAccordOnboardingService implements
     @Override
     public void createAll(Long userId) {
         GetUserUseCase.Result user = getUserUseCase.find(userId);
-        GetStarRatingsUseCase.Result starRatings = getStarRatingsUseCase.findAll(userId);
+        GetStarRatingsUseCase.Result starRatings = getStarRatingsUseCase.findAllWithPerfume(userId);
 
         List<UserAccord> userAccords = userAccordRecommender.recommend(
             user.user(),
