@@ -14,13 +14,13 @@ public interface ReviewRepository {
 
     Review findWithPerfume(Long reviewId);
 
-    List<Review> findAllWithPerfumeAndMoodsOrderByLikeCountDesc(Long userId, Long perfumeId);
+    List<Review> findAllWithPerfumeOrderByLikeCountDesc(Long userId, Long perfumeId);
 
-    List<Review> findAllWithPerfumeAndMoodsOrderByCreatedAtDesc(Long userId, Long perfumeId);
+    List<Review> findAllWithPerfumeOrderByCreatedAtDesc(Long userId, Long perfumeId);
 
-    List<Review> findAllWithPerfumeAndMoodsOrderByScoreDesc(Long userId, Long perfumeId);
+    List<Review> findAllWithPerfumeOrderByScoreDesc(Long userId, Long perfumeId);
 
-    List<Review> findAllWithPerfumeAndMoodsOrderByScoreAsc(Long userId, Long perfumeId);
+    List<Review> findAllWithPerfumeOrderByScoreAsc(Long userId, Long perfumeId);
 
     List<Review> findAll(ReviewType reviewType);
 
@@ -32,7 +32,7 @@ public interface ReviewRepository {
 
     void delete(Long id);
 
-    Review findWithPerfumeAndMood(Long userId, Long perfumeId);
+    Review find(Long userId, Long perfumeId);
 
     void increaseLikeCount(Long reviewId);
 

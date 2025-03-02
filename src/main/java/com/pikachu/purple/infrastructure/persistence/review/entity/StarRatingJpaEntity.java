@@ -71,9 +71,9 @@ public class StarRatingJpaEntity extends BaseEntity {
         return domain;
     }
 
-    public static StarRating toFullDomain(StarRatingJpaEntity jpaEntity, Long userId) {
+    public static StarRating toFullDomain(StarRatingJpaEntity jpaEntity) {
         StarRating domain = toDomain(jpaEntity);
-        domain.setReview(ReviewJpaEntity.toFullDomain(jpaEntity.getReviewJpaEntity(), userId));
+        domain.setReview(ReviewJpaEntity.toFullDomain(jpaEntity.getReviewJpaEntity()));
         return domain;
     }
 

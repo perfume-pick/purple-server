@@ -7,10 +7,10 @@ import static com.pikachu.purple.bootstrap.common.exception.BusinessException.Us
 import com.pikachu.purple.application.review.port.out.ReviewRepository;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.enums.ReviewType;
-import com.pikachu.purple.infrastructure.persistence.mood.entity.MoodJpaEntity;
-import com.pikachu.purple.infrastructure.persistence.mood.repository.MoodJpaRepository;
+import com.pikachu.purple.infrastructure.persistence.review.repository.MoodJpaRepository;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeJpaRepository;
+import com.pikachu.purple.infrastructure.persistence.review.entity.MoodJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.review.entity.ReviewJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.review.entity.ReviewMoodJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.review.entity.StarRatingJpaEntity;
@@ -77,7 +77,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
         List<MoodJpaEntity> moodJpaEntities = moodJpaRepository.findAllByNameIn(moodNames);
         List<ReviewMoodJpaEntity> reviewMoodJpaEntities = moodJpaEntities.stream()
             .map(moodJpaEntity -> ReviewMoodJpaEntity.builder()
-                .reviewJpaEntity(reviewJpaEntity)
+                .reviewId(reviewJpaEntity.getId())
                 .moodJpaEntity(moodJpaEntity)
                 .build())
             .toList();
@@ -86,21 +86,19 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public List<Review> findAllWithPerfumeAndMoodsOrderByLikeCountDesc(
+    public List<Review> findAllWithPerfumeOrderByLikeCountDesc(
         Long userId,
         Long perfumeId
     ) {
         List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository.findAllByPerfumeIdOrderByLikeCountDesc(perfumeId);
 
         return reviewJpaEntities.stream()
-            .map(reviewJpaEntity -> ReviewJpaEntity.toFullDomain(
-                reviewJpaEntity, userId
-            ))
+            .map(ReviewJpaEntity::toFullDomain)
             .toList();
     }
 
     @Override
-    public List<Review> findAllWithPerfumeAndMoodsOrderByCreatedAtDesc(
+    public List<Review> findAllWithPerfumeOrderByCreatedAtDesc(
         Long userId,
         Long perfumeId
     ) {
@@ -110,14 +108,12 @@ public class ReviewJpaAdaptor implements ReviewRepository {
             );
 
         return reviewJpaEntities.stream()
-            .map(reviewJpaEntity -> ReviewJpaEntity.toFullDomain(
-                reviewJpaEntity, userId
-            ))
+            .map(ReviewJpaEntity::toFullDomain)
             .toList();
     }
 
     @Override
-    public List<Review> findAllWithPerfumeAndMoodsOrderByScoreDesc(
+    public List<Review> findAllWithPerfumeOrderByScoreDesc(
         Long userId,
         Long perfumeId
     ) {
@@ -125,14 +121,12 @@ public class ReviewJpaAdaptor implements ReviewRepository {
             .findAllByPerfumeIdOrderByScoreDesc(perfumeId);
 
         return reviewJpaEntities.stream()
-            .map(reviewJpaEntity -> ReviewJpaEntity.toFullDomain(
-                reviewJpaEntity, userId
-            ))
+            .map(ReviewJpaEntity::toFullDomain)
             .toList();
     }
 
     @Override
-    public List<Review> findAllWithPerfumeAndMoodsOrderByScoreAsc(
+    public List<Review> findAllWithPerfumeOrderByScoreAsc(
         Long userId,
         Long perfumeId
     ) {
@@ -140,9 +134,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
             .findAllByPerfumeIdOrderByScoreAsc(perfumeId);
 
         return reviewJpaEntities.stream()
-            .map(reviewJpaEntity -> ReviewJpaEntity.toFullDomain(
-                reviewJpaEntity, userId
-            ))
+            .map(ReviewJpaEntity::toFullDomain)
             .toList();
     }
 
@@ -210,7 +202,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public Review findWithPerfumeAndMood(
+    public Review find(
         Long userId,
         Long perfumeId
     ) {
@@ -218,7 +210,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
             userId,
             perfumeId
         )
-            .map(ReviewJpaEntity::toDomainWithMoods)
+            .map(ReviewJpaEntity::toDomain)
             .orElse(null);
     }
 

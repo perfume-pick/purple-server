@@ -1,8 +1,8 @@
 package com.pikachu.purple.infrastructure.persistence.review.entity;
 
 import com.pikachu.purple.infrastructure.persistence.common.BaseEntity;
-import com.pikachu.purple.infrastructure.persistence.mood.entity.MoodJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.review.entity.id.ReviewMoodId;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
@@ -26,9 +26,8 @@ import lombok.NoArgsConstructor;
 public class ReviewMoodJpaEntity extends BaseEntity {
 
     @Id
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "review_id")
-    private ReviewJpaEntity reviewJpaEntity;
+    @Column(name = "review_id")
+    private Long reviewId;
 
     @Id
     @ManyToOne(fetch = FetchType.EAGER)

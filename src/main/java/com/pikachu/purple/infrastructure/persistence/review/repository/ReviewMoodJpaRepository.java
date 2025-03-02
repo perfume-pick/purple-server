@@ -8,9 +8,8 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface ReviewMoodJpaRepository extends JpaRepository<ReviewMoodJpaEntity, ReviewMoodId> {
 
-    @Query("select rm "
-        + "from ReviewMoodJpaEntity rm "
-        + "where rm.reviewJpaEntity.id = :reviewId")
     List<ReviewMoodJpaEntity> findByReviewId(Long reviewId);
+
+    List<ReviewMoodJpaEntity> findAllByReviewId(Long reviewId);
 
 }

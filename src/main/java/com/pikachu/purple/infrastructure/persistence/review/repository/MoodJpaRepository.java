@@ -1,6 +1,6 @@
-package com.pikachu.purple.infrastructure.persistence.mood.repository;
+package com.pikachu.purple.infrastructure.persistence.review.repository;
 
-import com.pikachu.purple.infrastructure.persistence.mood.entity.MoodJpaEntity;
+import com.pikachu.purple.infrastructure.persistence.review.entity.MoodJpaEntity;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 

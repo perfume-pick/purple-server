@@ -169,7 +169,7 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
         return starRatingJpaEntities.stream()
             .map(starRatingJpaEntity -> {
                 if (starRatingJpaEntity.getReviewJpaEntity() != null) {
-                    return StarRatingJpaEntity.toFullDomain(starRatingJpaEntity, userId);
+                    return StarRatingJpaEntity.toFullDomain(starRatingJpaEntity);
                 } else {
                     return StarRatingJpaEntity.toDomainWithPerfume(starRatingJpaEntity);
                 }
@@ -184,7 +184,7 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
         return starRatingJpaEntities.stream()
             .map(starRatingJpaEntity -> {
                 if (starRatingJpaEntity.getReviewJpaEntity() != null) {
-                    return StarRatingJpaEntity.toFullDomain(starRatingJpaEntity, userId);
+                    return StarRatingJpaEntity.toFullDomain(starRatingJpaEntity);
                 } else {
                     return StarRatingJpaEntity.toDomainWithPerfume(starRatingJpaEntity);
                 }
@@ -199,7 +199,7 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
         return starRatingJpaEntities.stream()
             .map(starRatingJpaEntity -> {
                 if (starRatingJpaEntity.getReviewJpaEntity() != null) {
-                    return StarRatingJpaEntity.toFullDomain(starRatingJpaEntity, userId);
+                    return StarRatingJpaEntity.toFullDomain(starRatingJpaEntity);
                 } else {
                     return StarRatingJpaEntity.toDomainWithPerfume(starRatingJpaEntity);
                 }
@@ -214,7 +214,7 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
         return starRatingJpaEntities.stream()
             .map(starRatingJpaEntity -> {
                 if (starRatingJpaEntity.getReviewJpaEntity() != null) {
-                    return StarRatingJpaEntity.toFullDomain(starRatingJpaEntity, userId);
+                    return StarRatingJpaEntity.toFullDomain(starRatingJpaEntity);
                 } else {
                     return StarRatingJpaEntity.toDomainWithPerfume(starRatingJpaEntity);
                 }
