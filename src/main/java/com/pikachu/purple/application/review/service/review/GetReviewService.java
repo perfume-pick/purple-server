@@ -26,7 +26,6 @@ class GetReviewService implements GetReviewUseCase {
     private final GetMoodsUseCase getMoodsUseCase;
 
     private final ReviewRepository reviewRepository;
-    private final StarRatingRepository starRatingRepository;
 
     @Transactional
     @Override
@@ -46,19 +45,9 @@ class GetReviewService implements GetReviewUseCase {
         List<Mood> moods = getMoodsUseCase.findAll(review).moods();
         review.setMoods(moods);
 
-        StarRating starRating = starRatingRepository.find(
-            userId,
-            perfumeId
-        );
-
-        if (review == null && starRating != null) {
-            review = Review.builder()
-                .type(ReviewType.ONBOARDING)
-                .starRating(starRating)
-                .build();
-        } else if (review != null && starRating != null) {
-            review.setStarRating(starRating);
-        }
+        StarRating starRating = getStarRatingUseCase.find(review.getStarRating().getId())
+            .starRating();
+        review.setStarRating(starRating);
 
         return new Result(review);
     }
