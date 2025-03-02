@@ -157,7 +157,7 @@ public class UserController implements UserApi {
         Long perfumeId) {
         Long userId = getCurrentUserAuthentication().userId();
 
-        GetReviewUseCase.Result result = getReviewUseCase.findWithEvaluationAndMoods(userId, perfumeId);
+        GetReviewUseCase.Result result = getReviewUseCase.findWithStarRatingAndEvaluationAndMoods(userId, perfumeId);
 
         return SuccessResponse.of(
             GetReviewByPerfumeIdAndUserResponse.of(result)

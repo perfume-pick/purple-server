@@ -18,7 +18,7 @@ public interface LikeJpaRepository extends JpaRepository<LikeJpaEntity, LikeId> 
     @Query("select l "
         + "from LikeJpaEntity l"
         + " left join ReviewJpaEntity r on r.id = l.reviewId "
-        + "where l.userId = :userId and r.perfumeJpaEntity.id = :perfumeId")
+        + "where l.userId = :userId and r.perfumeId = :perfumeId")
     List<LikeJpaEntity> findAllByUserIdAndPerfumeId(Long userId, Long perfumeId);
 
 }

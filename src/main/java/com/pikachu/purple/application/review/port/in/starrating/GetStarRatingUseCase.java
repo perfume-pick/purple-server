@@ -5,6 +5,10 @@ import com.pikachu.purple.domain.review.StarRating;
 public interface GetStarRatingUseCase {
 
     Result find(
+        Long starRatingId
+    );
+
+    Result find(
         Long userId,
         Long perfumeId
     );

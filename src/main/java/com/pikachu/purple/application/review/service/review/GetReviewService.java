@@ -3,8 +3,10 @@ package com.pikachu.purple.application.review.service.review;
 import com.pikachu.purple.application.review.port.in.mood.GetMoodsUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetReviewUseCase;
 import com.pikachu.purple.application.review.port.in.reviewevaluation.GetReviewEvaluationUseCase;
+import com.pikachu.purple.application.review.port.in.starrating.GetStarRatingUseCase;
 import com.pikachu.purple.application.review.port.out.ReviewRepository;
 import com.pikachu.purple.application.review.port.out.StarRatingRepository;
+import com.pikachu.purple.application.statistic.port.in.starratingstatistic.GetStarRatingStatisticsUseCase;
 import com.pikachu.purple.domain.review.Mood;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.ReviewEvaluation;
@@ -19,6 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 class GetReviewService implements GetReviewUseCase {
 
+    private final GetStarRatingUseCase getStarRatingUseCase;
     private final GetReviewEvaluationUseCase getReviewEvaluationUseCase;
     private final GetMoodsUseCase getMoodsUseCase;
 
@@ -27,7 +30,7 @@ class GetReviewService implements GetReviewUseCase {
 
     @Transactional
     @Override
-    public Result findWithEvaluationAndMoods(
+    public Result findWithStarRatingAndEvaluationAndMoods(
         Long userId,
         Long perfumeId
     ) {
@@ -48,11 +51,13 @@ class GetReviewService implements GetReviewUseCase {
             perfumeId
         );
 
-        if(review == null && starRating != null) {
+        if (review == null && starRating != null) {
             review = Review.builder()
                 .type(ReviewType.ONBOARDING)
                 .starRating(starRating)
                 .build();
+        } else if (review != null && starRating != null) {
+            review.setStarRating(starRating);
         }
 
         return new Result(review);

@@ -19,6 +19,13 @@ class GetStarRatingService implements GetStarRatingUseCase {
     private final StarRatingRepository starRatingRepository;
 
     @Override
+    public Result find(Long starRatingId) {
+        StarRating starRating = starRatingRepository.find(starRatingId);
+
+        return new Result(starRating);
+    }
+
+    @Override
     public Result find(
         Long userId,
         Long perfumeId

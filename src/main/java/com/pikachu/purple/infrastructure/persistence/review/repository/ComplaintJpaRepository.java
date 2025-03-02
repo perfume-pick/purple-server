@@ -15,6 +15,6 @@ public interface ComplaintJpaRepository extends JpaRepository<ComplaintJpaEntity
     @Query("select c "
         + "from ComplaintJpaEntity c"
         + " left join ReviewJpaEntity r on r.id = c.reviewId "
-        + "where c.userId = :userId and r.perfumeJpaEntity.id = :perfumeId")
+        + "where c.userId = :userId and r.perfumeId = :perfumeId")
     List<ComplaintJpaEntity> findAllByUserIdAndPerfumeId(Long userId, Long perfumeId);
 }

@@ -17,7 +17,7 @@ public interface StarRatingJpaRepository extends JpaRepository<StarRatingJpaEnti
 
     @Query("select sr "
         + "from StarRatingJpaEntity sr "
-        + "left join ReviewJpaEntity re on sr = re.starRatingJpaEntity "
+        + "left join ReviewJpaEntity re on sr.id = re.starRatingId "
         + "where sr.userId = :userId "
         + "order by re.likeCount desc")
     List<StarRatingJpaEntity> findAllByUserIdOrderByLikeCountDesc(Long userId);

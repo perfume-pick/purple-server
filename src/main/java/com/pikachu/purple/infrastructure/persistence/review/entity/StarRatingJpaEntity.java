@@ -55,4 +55,10 @@ public class StarRatingJpaEntity extends BaseEntity {
         return domain;
     }
 
+    public static StarRating toDummy(Long starRatingId) {
+        return StarRating.builder()
+            .id(starRatingId)
+            .build();
+    }
+
 }

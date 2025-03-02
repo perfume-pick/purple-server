@@ -33,19 +33,17 @@ public class ReviewJpaEntity extends BaseEntity {
     @Column(name = "review_id")
     private Long id;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(
+    @Column(
         name = "user_id",
         nullable = false
     )
-    private UserJpaEntity userJpaEntity;
+    private Long userId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(
+    @Column(
         name = "perfume_id",
         nullable = false
     )
-    private PerfumeJpaEntity perfumeJpaEntity;
+    private Long perfumeId;
 
     @Column(
         name = "content",
@@ -62,11 +60,10 @@ public class ReviewJpaEntity extends BaseEntity {
     )
     private ReviewType reviewType;
 
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(
+    @Column(
         name = "star_rating_id"
     )
-    private StarRatingJpaEntity starRatingJpaEntity;
+    private Long starRatingId;
 
     @Column(name = "like_count")
     private int likeCount;
@@ -82,28 +79,14 @@ public class ReviewJpaEntity extends BaseEntity {
     public static Review toDomain(ReviewJpaEntity jpaEntity) {
         Review domain = new Review(
             jpaEntity.getId(),
-            UserJpaEntity.toDomain(jpaEntity.getUserJpaEntity()),
             jpaEntity.getContent(),
             jpaEntity.getReviewType(),
-            StarRatingJpaEntity.toDomain(jpaEntity.getStarRatingJpaEntity()),
             jpaEntity.getUpdatedAt(),
             jpaEntity.getLikeCount()
         );
-        domain.setPerfume(PerfumeJpaEntity.toDummy(jpaEntity.getPerfumeJpaEntity()));
-
-        return domain;
-    }
-
-    public static Review toDomainWithPerfume(ReviewJpaEntity jpaEntity){
-        Review domain = toDomain(jpaEntity);
-        domain.setPerfume(PerfumeJpaEntity.toDomain(jpaEntity.getPerfumeJpaEntity()));
-
-        return domain;
-    }
-
-    public static Review toFullDomain(ReviewJpaEntity jpaEntity) {
-        Review domain = toDomain(jpaEntity);
-        domain.setPerfume(PerfumeJpaEntity.toDomain(jpaEntity.getPerfumeJpaEntity()));
+        domain.setStarRating(StarRatingJpaEntity.toDummy(jpaEntity.getStarRatingId()));
+        domain.setUser(UserJpaEntity.toDummy(jpaEntity.getUserId()));
+        domain.setPerfume(PerfumeJpaEntity.toDummy(jpaEntity.getPerfumeId()));
 
         return domain;
     }

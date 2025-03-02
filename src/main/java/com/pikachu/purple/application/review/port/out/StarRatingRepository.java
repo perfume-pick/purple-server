@@ -10,10 +10,9 @@ public interface StarRatingRepository {
 
     void createAll(Long userId, List<StarRating> starRatings);
 
-    StarRating find(
-        Long userId,
-        Long perfumeId
-    );
+    StarRating find(Long starRatingId);
+
+    StarRating find(Long userId, Long perfumeId);
 
     List<StarRating> findAll();
 

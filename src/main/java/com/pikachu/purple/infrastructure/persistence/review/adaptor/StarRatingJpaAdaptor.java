@@ -35,6 +35,31 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
     }
 
     @Override
+    public StarRating create(
+        Long starRatingId,
+        Long userId,
+        Long perfumeId,
+        int score
+    ) {
+        UserJpaEntity userJpaEntity = userJpaRepository.findById(userId)
+            .orElseThrow(() -> UserNotFoundException);
+
+        PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository.findById(perfumeId)
+            .orElseThrow(() -> PerfumeNotFoundException);
+
+        StarRatingJpaEntity starRatingJpaEntity = StarRatingJpaEntity.builder()
+            .id(starRatingId)
+            .userId(userJpaEntity.getId())
+            .perfumeId(perfumeJpaEntity.getId())
+            .score(score)
+            .build();
+
+        StarRatingJpaEntity starRatingJpaEntitySaved = starRatingJpaRepository.save(starRatingJpaEntity);
+
+        return StarRatingJpaEntity.toDomain(starRatingJpaEntitySaved);
+    }
+
+    @Override
     public void createAll(
         Long userId,
         List<StarRating> starRatings
@@ -62,54 +87,10 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
     }
 
     @Override
-    public StarRating create(
-        Long starRatingId,
-        Long userId,
-        Long perfumeId,
-        int score
-    ) {
-        UserJpaEntity userJpaEntity = userJpaRepository.findById(userId)
-            .orElseThrow(() -> UserNotFoundException);
+    public StarRating find(Long starRatingId) {
+        Optional<StarRatingJpaEntity> findResult = starRatingJpaRepository.findById(starRatingId);
 
-        PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository.findById(perfumeId)
-            .orElseThrow(() -> PerfumeNotFoundException);
-
-        StarRatingJpaEntity starRatingJpaEntity = StarRatingJpaEntity.builder()
-            .id(starRatingId)
-            .userId(userJpaEntity.getId())
-            .perfumeId(perfumeJpaEntity.getId())
-            .score(score)
-            .build();
-
-        StarRatingJpaEntity starRatingJpaEntitySaved = starRatingJpaRepository.save(starRatingJpaEntity);
-
-        return StarRatingJpaEntity.toDomain(starRatingJpaEntitySaved);
-    }
-
-    @Override
-    public StarRating updateScore(
-        Long userId,
-        Long perfumeId,
-        int score
-    ) {
-        StarRatingJpaEntity starRatingJpaEntity = findEntityOrThrowException(
-            userId,
-            perfumeId
-        );
-
-        starRatingJpaEntity.updateScore(score);
-        StarRatingJpaEntity starRatingJpaEntitySaved = starRatingJpaRepository.save(starRatingJpaEntity);
-        return StarRatingJpaEntity.toDomain(starRatingJpaEntitySaved);
-    }
-
-    @Override
-    public StarRating deleteById(Long starRatingId) {
-        StarRatingJpaEntity starRatingJpaEntity = starRatingJpaRepository.findById(starRatingId)
-            .orElseThrow(() -> StarRatingNotFoundException);
-
-        starRatingJpaRepository.delete(starRatingJpaEntity);
-
-        return StarRatingJpaEntity.toDomain(starRatingJpaEntity);
+        return findResult.map(StarRatingJpaEntity::toDomain).orElse(null);
     }
 
     @Override
@@ -171,6 +152,32 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
         return starRatingJpaEntities.stream()
             .map(StarRatingJpaEntity::toDomain)
             .toList();
+    }
+
+    @Override
+    public StarRating updateScore(
+        Long userId,
+        Long perfumeId,
+        int score
+    ) {
+        StarRatingJpaEntity starRatingJpaEntity = findEntityOrThrowException(
+            userId,
+            perfumeId
+        );
+
+        starRatingJpaEntity.updateScore(score);
+        StarRatingJpaEntity starRatingJpaEntitySaved = starRatingJpaRepository.save(starRatingJpaEntity);
+        return StarRatingJpaEntity.toDomain(starRatingJpaEntitySaved);
+    }
+
+    @Override
+    public StarRating deleteById(Long starRatingId) {
+        StarRatingJpaEntity starRatingJpaEntity = starRatingJpaRepository.findById(starRatingId)
+            .orElseThrow(() -> StarRatingNotFoundException);
+
+        starRatingJpaRepository.delete(starRatingJpaEntity);
+
+        return StarRatingJpaEntity.toDomain(starRatingJpaEntity);
     }
 
 }

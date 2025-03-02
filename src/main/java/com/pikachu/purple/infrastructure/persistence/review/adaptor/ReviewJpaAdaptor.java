@@ -53,9 +53,9 @@ public class ReviewJpaAdaptor implements ReviewRepository {
 
         ReviewJpaEntity reviewJpaEntity = ReviewJpaEntity.builder()
             .id(review.getId())
-            .userJpaEntity(userJpaEntity)
-            .perfumeJpaEntity(perfumeJpaEntity)
-            .starRatingJpaEntity(starRatingJpaEntity)
+            .userId(userJpaEntity.getId())
+            .perfumeId(perfumeJpaEntity.getId())
+            .starRatingId(starRatingJpaEntity.getId())
             .content(review.getContent())
             .reviewType(review.getType())
             .build();
@@ -86,34 +86,34 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public List<Review> findAllWithPerfumeOrderByLikeCountDesc(
+    public List<Review> findAllOrderByLikeCountDesc(
         Long userId,
         Long perfumeId
     ) {
         List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository.findAllByPerfumeIdOrderByLikeCountDesc(perfumeId);
 
         return reviewJpaEntities.stream()
-            .map(ReviewJpaEntity::toFullDomain)
+            .map(ReviewJpaEntity::toDomain)
             .toList();
     }
 
     @Override
-    public List<Review> findAllWithPerfumeOrderByCreatedAtDesc(
+    public List<Review> findAllOrderByCreatedAtDesc(
         Long userId,
         Long perfumeId
     ) {
         List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository
-            .findAllByPerfumeIdOrderByCreateAtDesc(
+            .findAllByPerfumeIdOrderByCreatedAtDesc(
                 perfumeId
             );
 
         return reviewJpaEntities.stream()
-            .map(ReviewJpaEntity::toFullDomain)
+            .map(ReviewJpaEntity::toDomain)
             .toList();
     }
 
     @Override
-    public List<Review> findAllWithPerfumeOrderByScoreDesc(
+    public List<Review> findAllOrderByScoreDesc(
         Long userId,
         Long perfumeId
     ) {
@@ -121,12 +121,12 @@ public class ReviewJpaAdaptor implements ReviewRepository {
             .findAllByPerfumeIdOrderByScoreDesc(perfumeId);
 
         return reviewJpaEntities.stream()
-            .map(ReviewJpaEntity::toFullDomain)
+            .map(ReviewJpaEntity::toDomain)
             .toList();
     }
 
     @Override
-    public List<Review> findAllWithPerfumeOrderByScoreAsc(
+    public List<Review> findAllOrderByScoreAsc(
         Long userId,
         Long perfumeId
     ) {
@@ -134,7 +134,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
             .findAllByPerfumeIdOrderByScoreAsc(perfumeId);
 
         return reviewJpaEntities.stream()
-            .map(ReviewJpaEntity::toFullDomain)
+            .map(ReviewJpaEntity::toDomain)
             .toList();
     }
 
@@ -171,13 +171,6 @@ public class ReviewJpaAdaptor implements ReviewRepository {
             reviewId,
             moodNames
         );
-    }
-
-    @Override
-    public Review findWithPerfume(Long reviewId) {
-        ReviewJpaEntity reviewJpaEntity = findEntityById(reviewId);
-
-        return ReviewJpaEntity.toDomainWithPerfume(reviewJpaEntity);
     }
 
     @Override
@@ -239,11 +232,11 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public List<Review> findAllWithPerfume(Long userId) {
+    public List<Review> findAll(Long userId) {
         List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository.findAllByUserId(userId);
 
         return reviewJpaEntities.stream()
-            .map(ReviewJpaEntity::toDomainWithPerfume)
+            .map(ReviewJpaEntity::toDomain)
             .toList();
     }
 

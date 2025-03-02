@@ -11,7 +11,6 @@ import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.review.Complaint;
 import com.pikachu.purple.domain.review.Like;
-import com.pikachu.purple.domain.review.Mood;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.ReviewEvaluation;
 import com.pikachu.purple.domain.review.enums.ReviewType;
@@ -57,25 +56,25 @@ class GetReviewsService implements GetReviewsUseCase {
 
         switch (getSortType) {
             case LIKED:
-                reviews = reviewRepository.findAllWithPerfumeOrderByLikeCountDesc(
+                reviews = reviewRepository.findAllOrderByLikeCountDesc(
                     currentUserId,
                     perfume.getId()
                 );
                 break;
             case LATEST:
-                reviews = reviewRepository.findAllWithPerfumeOrderByCreatedAtDesc(
+                reviews = reviewRepository.findAllOrderByCreatedAtDesc(
                     currentUserId,
                     perfume.getId()
                 );
                 break;
             case STAR_RATING_HIGH:
-                reviews = reviewRepository.findAllWithPerfumeOrderByScoreDesc(
+                reviews = reviewRepository.findAllOrderByScoreDesc(
                     currentUserId,
                     perfume.getId()
                 );
                 break;
             case STAR_RATING_LOW:
-                reviews = reviewRepository.findAllWithPerfumeOrderByScoreAsc(
+                reviews = reviewRepository.findAllOrderByScoreAsc(
                     currentUserId,
                     perfume.getId()
                 );
@@ -97,6 +96,7 @@ class GetReviewsService implements GetReviewsUseCase {
         ).likes();
 
         for (Review review : reviews) {
+            review.setPerfume(perfume);
             review.setEvaluation(
                 this.getReviewEvaluation(review.getId(), reviewEvaluation)
             );

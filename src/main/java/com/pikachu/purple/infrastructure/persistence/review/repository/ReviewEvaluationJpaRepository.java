@@ -16,7 +16,7 @@ public interface ReviewEvaluationJpaRepository extends
     @Query("select re "
         + "from ReviewEvaluationJpaEntity re"
         + " left join ReviewJpaEntity r on r.id = re.reviewId "
-        + "where r.perfumeJpaEntity.id = :perfumeId "
+        + "where r.perfumeId = :perfumeId "
         + "order by re.fieldCode asc, re.optionCode asc ")
     List<ReviewEvaluationJpaEntity> findByPerfumeIdOrderByFieldCodeAscOptionCodeAsc(Long perfumeId);
 
