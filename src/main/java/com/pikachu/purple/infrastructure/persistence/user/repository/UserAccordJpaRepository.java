@@ -12,22 +12,18 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserAccordJpaRepository extends JpaRepository<UserAccordJpaEntity, Long> {
 
-    @Query("select ua "
-        + "from UserAccordJpaEntity ua "
-        + "where ua.userJpaEntity.id = :userId "
-        + "and ua.accordJpaEntity = :entity")
-    Optional<UserAccordJpaEntity> findByUserIdAndAccord(Long userId, AccordJpaEntity entity);
+    Optional<UserAccordJpaEntity> findByUserIdAndAccordJpaEntity(Long userId, AccordJpaEntity entity);
 
     @Query("select ua "
         + "from UserAccordJpaEntity ua "
-        + "where ua.userJpaEntity.id = :userId "
+        + "where ua.userId = :userId "
         + "and ua.score >= 0 "
         + "order by ua.score desc")
     List<UserAccordJpaEntity> findAllByUserIdOrderByScoreDesc(Long userId, Limit limit);
 
     @Query("select ua "
         + "from UserAccordJpaEntity ua "
-        + "where ua.userJpaEntity.id = :userId "
+        + "where ua.userId = :userId "
         + "and ua.score < 0 "
         + "order by ua.score asc")
     List<UserAccordJpaEntity> findAllByUserIdOrderByScoreAsc(Long userId, Limit limit);

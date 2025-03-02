@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserAccordId implements Serializable {
 
-    private Long userJpaEntity;
+    private Long userId;
     private String accordJpaEntity;
 
 }

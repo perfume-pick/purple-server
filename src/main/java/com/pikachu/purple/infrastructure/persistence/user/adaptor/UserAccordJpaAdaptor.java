@@ -33,7 +33,7 @@ public class UserAccordJpaAdaptor implements UserAccordRepository {
             AccordJpaEntity accordJpaEntity = accordJpaRepository.findByName(userAccord.getName())
                 .orElseThrow(() -> AccordNotFountException);
 
-            UserAccordJpaEntity existingEntity = userAccordJpaRepository.findByUserIdAndAccord(
+            UserAccordJpaEntity existingEntity = userAccordJpaRepository.findByUserIdAndAccordJpaEntity(
                 userId, accordJpaEntity
             ).orElse(null);
 
@@ -41,7 +41,7 @@ public class UserAccordJpaAdaptor implements UserAccordRepository {
                 existingEntity.addScore(userAccord.getScore());
             } else {
                 UserAccordJpaEntity newEntity = UserAccordJpaEntity.builder()
-                    .userJpaEntity(userJpaEntity)
+                    .userId(userJpaEntity.getId())
                     .accordJpaEntity(accordJpaEntity)
                     .score(userAccord.getScore())
                     .build();
