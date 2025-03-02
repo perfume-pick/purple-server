@@ -17,9 +17,20 @@ public interface ReviewJpaRepository extends JpaRepository<ReviewJpaEntity, Long
 
     List<ReviewJpaEntity> findAllByReviewType(ReviewType reviewType);
 
+    List<ReviewJpaEntity> findAllByUserIdOrderByLikeCountDesc(Long userId);
+
     List<ReviewJpaEntity> findAllByPerfumeIdOrderByLikeCountDesc(Long perfumeId);
 
+    List<ReviewJpaEntity> findAllByUserIdOrderByCreatedAtDesc(Long userId);
+
     List<ReviewJpaEntity> findAllByPerfumeIdOrderByCreatedAtDesc(Long perfumeId);
+
+    @Query("select r "
+        + "from ReviewJpaEntity r"
+        + " left join StarRatingJpaEntity sr on sr.id = r.starRatingId "
+        + "where r.userId = :userId "
+        + "order by sr.score desc")
+    List<ReviewJpaEntity> findAllByUserIdOrderByScoreDesc(Long userId);
 
     @Query("select r "
         + "from ReviewJpaEntity r"
@@ -27,6 +38,13 @@ public interface ReviewJpaRepository extends JpaRepository<ReviewJpaEntity, Long
         + "where r.perfumeId = :perfumeId "
         + "order by sr.score desc")
     List<ReviewJpaEntity> findAllByPerfumeIdOrderByScoreDesc(Long perfumeId);
+
+    @Query("select r "
+        + "from ReviewJpaEntity r"
+        + " left join StarRatingJpaEntity sr on sr.id = r.starRatingId "
+        + "where r.userId = :userId "
+        + "order by sr.score")
+    List<ReviewJpaEntity> findAllByUserIdOrderByScoreAsc(Long userId);
 
     @Query("select r "
         + "from ReviewJpaEntity r"

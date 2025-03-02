@@ -2,11 +2,14 @@ package com.pikachu.purple.application.review.service.review;
 
 import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumeUseCase;
 import com.pikachu.purple.application.review.port.in.complaint.GetComplaintsUseCase;
+import com.pikachu.purple.application.review.port.in.like.CheckLikeUseCase;
 import com.pikachu.purple.application.review.port.in.like.GetLikesUseCase;
 import com.pikachu.purple.application.review.port.in.mood.GetMoodsUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetReviewsUseCase;
 import com.pikachu.purple.application.review.port.in.reviewevaluation.GetReviewEvaluationUseCase;
+import com.pikachu.purple.application.review.port.in.starrating.GetStarRatingUseCase;
 import com.pikachu.purple.application.review.port.out.ReviewRepository;
+import com.pikachu.purple.application.review.service.like.CheckLikeService;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.review.Complaint;
@@ -26,17 +29,69 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 class GetReviewsService implements GetReviewsUseCase {
 
+    private final GetStarRatingUseCase getStarRatingUseCase;
     private final GetPerfumeUseCase getPerfumeUseCase;
     private final GetReviewEvaluationUseCase getReviewEvaluationUseCase;
     private final GetMoodsUseCase getMoodsUseCase;
     private final GetComplaintsUseCase getComplaintsUseCase;
     private final GetLikesUseCase getLikesUseCase;
+    private final CheckLikeUseCase checkLikeUseCase;
 
     private final ReviewRepository reviewRepository;
 
     @Override
     public Result findAll(ReviewType reviewType) {
         List<Review> reviews = reviewRepository.findAll(ReviewType.DETAIL);
+
+        return new Result(reviews);
+    }
+
+    @Override
+    public Result findAllWithPerfumeAndReviewEvaluationAndMoodsAndIsLiked(
+        Long userId,
+        String sortType
+    ) {
+        SortType getSortType = SortType.transByStr(sortType);
+
+        List<Review> reviews = new ArrayList<>();
+        switch (getSortType) {
+            case LIKED:
+                reviews = reviewRepository.findAllOrderByLikeCountDesc(userId);
+                break;
+            case LATEST:
+                reviews = reviewRepository.findAllOrderByCreatedAtDesc(userId);
+                break;
+            case STAR_RATING_HIGH:
+                reviews = reviewRepository.findAllOrderByScoreDesc(userId);
+                break;
+            case STAR_RATING_LOW:
+                reviews = reviewRepository.findAllOrderByScoreAsc(userId);
+                break;
+            default:
+                break;
+        }
+
+
+        for (Review review : reviews) {
+            review.setStarRating(
+                getStarRatingUseCase.find(review.getStarRating().getId()).starRating()
+            );
+            review.setPerfume(
+                getPerfumeUseCase.find(review.getPerfume().getId()).perfume()
+            );
+            review.setEvaluation(
+                getReviewEvaluationUseCase.find(review).reviewEvaluation()
+            );
+            review.setMoods(
+                getMoodsUseCase.findAll(review).moods()
+            );
+            review.setLiked(
+                checkLikeUseCase.check(
+                    userId,
+                    review.getId()
+                ).isLiked()
+            );
+        }
 
         return new Result(reviews);
     }
@@ -56,28 +111,16 @@ class GetReviewsService implements GetReviewsUseCase {
 
         switch (getSortType) {
             case LIKED:
-                reviews = reviewRepository.findAllOrderByLikeCountDesc(
-                    currentUserId,
-                    perfume.getId()
-                );
+                reviews = reviewRepository.findAllOrderByLikeCountDesc(perfume);
                 break;
             case LATEST:
-                reviews = reviewRepository.findAllOrderByCreatedAtDesc(
-                    currentUserId,
-                    perfume.getId()
-                );
+                reviews = reviewRepository.findAllOrderByCreatedAtDesc(perfume);
                 break;
             case STAR_RATING_HIGH:
-                reviews = reviewRepository.findAllOrderByScoreDesc(
-                    currentUserId,
-                    perfume.getId()
-                );
+                reviews = reviewRepository.findAllOrderByScoreDesc(perfume);
                 break;
             case STAR_RATING_LOW:
-                reviews = reviewRepository.findAllOrderByScoreAsc(
-                    currentUserId,
-                    perfume.getId()
-                );
+                reviews = reviewRepository.findAllOrderByScoreAsc(perfume);
                 break;
             default:
                 break;
@@ -102,6 +145,11 @@ class GetReviewsService implements GetReviewsUseCase {
             );
             review.setMoods(
                 getMoodsUseCase.findAll(review).moods()
+            );
+            review.setStarRating(
+                getStarRatingUseCase
+                    .find(review.getStarRating().getId())
+                    .starRating()
             );
 
             for (Complaint complaint : currentUserComplaints) {

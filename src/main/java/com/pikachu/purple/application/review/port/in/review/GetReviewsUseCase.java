@@ -8,6 +8,11 @@ public interface GetReviewsUseCase {
 
     Result findAll(ReviewType reviewType);
 
+    Result findAllWithPerfumeAndReviewEvaluationAndMoodsAndIsLiked(
+        Long userId,
+        String sortType
+    );
+
     Result findAllWithPerfumeAndReviewEvaluationAndMoodsAndIsComplainedAndIsLiked(
         Long currentUserId,
         Long perfumeId,

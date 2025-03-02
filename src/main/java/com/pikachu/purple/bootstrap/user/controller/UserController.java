@@ -10,8 +10,8 @@ import com.pikachu.purple.application.history.port.in.visithistory.DeleteVisitHi
 import com.pikachu.purple.application.perfume.port.in.GetVisitedPerfumesUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetCurrentAndAverageUserReviewCountsUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetReviewUseCase;
+import com.pikachu.purple.application.review.port.in.review.GetReviewsUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetTopThreeReviewedBrandsUseCase;
-import com.pikachu.purple.application.review.port.in.starrating.GetReviewsByUserAndSortTypeUseCase;
 import com.pikachu.purple.application.user.port.in.user.GetUserUseCase;
 import com.pikachu.purple.application.user.port.in.user.UpdateProfileUseCase;
 import com.pikachu.purple.application.user.port.in.user.WithdrawUserUseCase;
@@ -46,7 +46,7 @@ public class UserController implements UserApi {
     private final GetTopThreeReviewedBrandsUseCase getTopThreeReviewedBrandsUseCase;
     private final GetReviewUseCase getReviewUseCase;
     private final GetPolarizedUserAccordsUseCase getPolarizedUserAccordsUseCase;
-    private final GetReviewsByUserAndSortTypeUseCase getReviewsByUserAndSortTypeUseCase;
+    private final GetReviewsUseCase getReviewsUseCase;
     private final WithdrawUserUseCase withdrawUserUseCase;
     private final GetUserUseCase getUserUseCase;
 
@@ -187,10 +187,15 @@ public class UserController implements UserApi {
 
     @Override
     public SuccessResponse<GetReviewsByUserAndSortTypeResponse> findAllReviewByUserAndSortType(String sortType) {
-        GetReviewsByUserAndSortTypeUseCase.Result result = getReviewsByUserAndSortTypeUseCase.invoke(sortType);
+        Long userId = getCurrentUserAuthentication().userId();
+        GetReviewsUseCase.Result result = getReviewsUseCase
+            .findAllWithPerfumeAndReviewEvaluationAndMoodsAndIsLiked(
+                userId,
+                sortType
+            );
 
         return SuccessResponse.of(
-            new GetReviewsByUserAndSortTypeResponse(result.reviewWithPerfumeDTOs())
+            GetReviewsByUserAndSortTypeResponse.of(result)
         );
     }
 

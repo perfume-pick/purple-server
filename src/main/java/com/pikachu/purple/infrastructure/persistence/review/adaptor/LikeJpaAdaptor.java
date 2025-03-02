@@ -45,6 +45,13 @@ public class LikeJpaAdaptor implements LikeRepository {
     }
 
     @Override
+    public List<Like> findAll(Long userId) {
+        List<LikeJpaEntity> likeJpaEntities = likeJpaRepository.findAllByUserId((userId));
+
+        return likeJpaEntities.stream().map(LikeJpaEntity::toDomain).toList();
+    }
+
+    @Override
     public List<Like> findAll(
         Long userId,
         Long perfumeId
@@ -86,6 +93,11 @@ public class LikeJpaAdaptor implements LikeRepository {
         List<LikeJpaEntity> likeJpaEntities = likeJpaRepository.findAllByReviewId(reviewId);
 
         likeJpaRepository.deleteAll(likeJpaEntities);
+    }
+
+    @Override
+    public boolean isExist(Long userId, Long reviewId) {
+        return likeJpaRepository.findByUserIdAndReviewId(userId, reviewId).isPresent();
     }
 
 }
