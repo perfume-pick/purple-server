@@ -96,13 +96,13 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public Review find(Long reviewId) {
+    public Review findByReviewId(Long reviewId) {
         ReviewJpaEntity reviewJpaEntity = findEntityById(reviewId);
         return ReviewJpaEntity.toDomain(reviewJpaEntity);
     }
 
     @Override
-    public Review find(
+    public Review findUserIdAndPerfumeId(
         Long userId,
         Long perfumeId
     ) {
@@ -115,7 +115,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public List<Review> findAll(Long userId) {
+    public List<Review> findAllByUserId(Long userId) {
         List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository.findAllByUserId(userId);
 
         return reviewJpaEntities.stream()
@@ -133,7 +133,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public List<Review> findAllOrderByLikeCountDesc(Long userId) {
+    public List<Review> findAllByUserIdOrderByLikeCountDesc(Long userId) {
         List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository
             .findAllByUserIdOrderByLikeCountDesc(userId);
 
@@ -143,9 +143,9 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public List<Review> findAllOrderByLikeCountDesc(Perfume perfume) {
+    public List<Review> findAllByPerfumeIdOrderByLikeCountDesc(Long perfumeId) {
         List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository
-            .findAllByPerfumeIdOrderByLikeCountDesc(perfume.getId());
+            .findAllByPerfumeIdOrderByLikeCountDesc(perfumeId);
 
         return reviewJpaEntities.stream()
             .map(ReviewJpaEntity::toDomain)
@@ -153,7 +153,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public List<Review> findAllOrderByCreatedAtDesc(Long userId) {
+    public List<Review> findAllByUserIdOrderByCreatedAtDesc(Long userId) {
         List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository
             .findAllByUserIdOrderByCreatedAtDesc(userId);
 
@@ -163,9 +163,9 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public List<Review> findAllOrderByCreatedAtDesc(Perfume perfume) {
+    public List<Review> findAllByPerfumeIdOrderByCreatedAtDesc(Long perfumeId) {
         List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository
-            .findAllByPerfumeIdOrderByCreatedAtDesc(perfume.getId());
+            .findAllByPerfumeIdOrderByCreatedAtDesc(perfumeId);
 
         return reviewJpaEntities.stream()
             .map(ReviewJpaEntity::toDomain)
@@ -173,7 +173,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public List<Review> findAllOrderByScoreDesc(Long userId) {
+    public List<Review> findAllByUserIdOrderByScoreDesc(Long userId) {
         List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository
             .findAllByUserIdOrderByScoreDesc(userId);
 
@@ -183,9 +183,9 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public List<Review> findAllOrderByScoreDesc(Perfume perfume) {
+    public List<Review> findAllByPerfumeIdOrderByScoreDesc(Long perfumeId) {
         List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository
-            .findAllByPerfumeIdOrderByScoreDesc(perfume.getId());
+            .findAllByPerfumeIdOrderByScoreDesc(perfumeId);
 
         return reviewJpaEntities.stream()
             .map(ReviewJpaEntity::toDomain)
@@ -193,7 +193,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public List<Review> findAllOrderByScoreAsc(Long userId) {
+    public List<Review> findAllByUserIdOrderByScoreAsc(Long userId) {
         List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository
             .findAllByUserIdOrderByScoreAsc(userId);
 
@@ -203,9 +203,9 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public List<Review> findAllOrderByScoreAsc(Perfume perfume) {
+    public List<Review> findAllByPerfumeIdOrderByScoreAsc(Long perfumeId) {
         List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository
-            .findAllByPerfumeIdOrderByScoreAsc(perfume.getId());
+            .findAllByPerfumeIdOrderByScoreAsc(perfumeId);
 
         return reviewJpaEntities.stream()
             .map(ReviewJpaEntity::toDomain)

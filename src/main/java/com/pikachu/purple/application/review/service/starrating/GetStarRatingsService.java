@@ -9,6 +9,7 @@ import com.pikachu.purple.domain.review.StarRating;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -19,18 +20,20 @@ class GetStarRatingsService implements GetStarRatingsUseCase {
 
     private final StarRatingRepository starRatingRepository;
 
+    @Transactional
     @Override
     public Result findAll() {
         List<StarRating> starRatings = starRatingRepository.findAll();
         return new Result(starRatings);
     }
 
+    @Transactional
     @Override
-    public Result findAllWithPerfume(Long userId) {
+    public Result findAllByUserIdWithPerfume(Long userId) {
         List<StarRating> starRatings = starRatingRepository.findAllByUserId(userId);
         for (StarRating starRating : starRatings) {
             Perfume perfume = getPerfumeUseCase
-                .find(starRating.getPerfume().getId())
+                .findByPerfumeId(starRating.getPerfume().getId())
                 .perfume();
 
             perfume.setAccords(

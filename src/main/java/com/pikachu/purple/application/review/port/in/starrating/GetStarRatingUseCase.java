@@ -4,16 +4,16 @@ import com.pikachu.purple.domain.review.StarRating;
 
 public interface GetStarRatingUseCase {
 
-    Result find(
+    Result findByStarRatingId(
         Long starRatingId
     );
 
-    Result find(
+    Result findByUserIdAndPerfumeId(
         Long userId,
         Long perfumeId
     );
 
-    Result findWithPerfumeAndPerfumeAccords(
+    Result findByUserIdAndPerfumeIdWithPerfumeAndPerfumeAccords(
         Long userId,
         Long perfumeId
     );

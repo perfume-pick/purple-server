@@ -7,6 +7,7 @@ import com.pikachu.purple.application.review.port.in.starrating.UpdateStarRating
 import com.pikachu.purple.domain.review.StarRating;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -18,13 +19,14 @@ class CreateOrUpdateStarRatingService implements
     private final UpdateStarRatingUseCase updateStarRatingUseCase;
 
 
+    @Transactional
     @Override
     public Result invoke(
         Long userId,
         Long perfumeId,
         int score
     ) {
-        GetStarRatingUseCase.Result getStarRatingResult = getStarRatingUseCase.find(
+        GetStarRatingUseCase.Result getStarRatingResult = getStarRatingUseCase.findByUserIdAndPerfumeId(
             userId,
             perfumeId
         );

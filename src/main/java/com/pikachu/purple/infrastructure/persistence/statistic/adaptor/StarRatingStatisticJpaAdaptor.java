@@ -61,7 +61,7 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
     }
 
     @Override
-    public List<StarRatingStatistic> findAll(Long perfumeId) {
+    public List<StarRatingStatistic> findAllByPerfumeId(Long perfumeId) {
         List<StarRatingStatisticJpaEntity> starRatingStatisticJpaEntities =
             starRatingStatisticJpaRepository.findAllByPerfumeIdOrderByScoreAsc(perfumeId);
 
@@ -133,7 +133,7 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
     }
 
     @Override
-    public StarRatingStatistic findByPerfumeIdAndScore(Long perfumeId, int score) {
+    public StarRatingStatistic find(Long perfumeId, int score) {
         StarRatingStatisticJpaEntity starRatingStatistic = findEntity(
             perfumeId,
             score

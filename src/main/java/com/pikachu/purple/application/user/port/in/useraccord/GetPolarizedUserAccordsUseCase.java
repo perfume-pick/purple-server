@@ -4,7 +4,7 @@ import com.pikachu.purple.application.user.common.dto.PolarizedUserAccordDTO;
 
 public interface GetPolarizedUserAccordsUseCase {
 
-    Result find(Long userId);
+    Result findByUserId(Long userId);
 
     record Result(PolarizedUserAccordDTO polarizedUserAccordDTO) {}
 

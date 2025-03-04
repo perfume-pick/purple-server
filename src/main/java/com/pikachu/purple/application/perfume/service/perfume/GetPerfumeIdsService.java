@@ -5,6 +5,7 @@ import com.pikachu.purple.application.perfume.port.out.PerfumeRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -12,6 +13,7 @@ class GetPerfumeIdsService implements GetPerfumeIdsUseCase {
 
     private final PerfumeRepository perfumeRepository;
 
+    @Transactional
     @Override
     public Result invoke() {
         List<Long> perfumeIds = perfumeRepository.findAllId();

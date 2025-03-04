@@ -8,6 +8,7 @@ import com.pikachu.purple.domain.review.ReviewEvaluation;
 import com.pikachu.purple.infrastructure.redis.annotation.DistributedLock;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -16,6 +17,7 @@ class DecreaseEvaluationStatisticService implements
 
     private final EvaluationStatisticRepository evaluationStatisticRepository;
 
+    @Transactional
     @Override
     public void invoke(
         Long perfumeId,

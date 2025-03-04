@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.stream.Stream;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -17,6 +18,7 @@ class GetEvaluationFormFieldService implements
 
     private final GetMoodsUseCase getMoodsUseCase;
 
+    @Transactional
     @Override
     public Result invoke() {
         List<EvaluationField<EvaluationOption>> evaluationFields = Stream.of(EvaluationFieldType.values())

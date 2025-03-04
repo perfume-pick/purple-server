@@ -7,7 +7,7 @@ public interface GetStarRatingStatisticsUseCase {
 
     Result findAll();
 
-    Result findAll(Long perfumeId);
+    Result findAllByPerfumeId(Long perfumeId);
 
     Result findAll(List<Long> perfumeIds);
 

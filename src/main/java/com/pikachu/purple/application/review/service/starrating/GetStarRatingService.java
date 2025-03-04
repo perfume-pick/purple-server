@@ -8,6 +8,7 @@ import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.review.StarRating;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -18,19 +19,21 @@ class GetStarRatingService implements GetStarRatingUseCase {
 
     private final StarRatingRepository starRatingRepository;
 
+    @Transactional
     @Override
-    public Result find(Long starRatingId) {
-        StarRating starRating = starRatingRepository.find(starRatingId);
+    public Result findByStarRatingId(Long starRatingId) {
+        StarRating starRating = starRatingRepository.findByStarRatingId(starRatingId);
 
         return new Result(starRating);
     }
 
+    @Transactional
     @Override
-    public Result find(
+    public Result findByUserIdAndPerfumeId(
         Long userId,
         Long perfumeId
     ) {
-        StarRating starRating = starRatingRepository.find(
+        StarRating starRating = starRatingRepository.findByUserIdAndPerfumeId(
             userId,
             perfumeId
         );
@@ -38,17 +41,18 @@ class GetStarRatingService implements GetStarRatingUseCase {
         return new Result(starRating);
     }
 
+    @Transactional
     @Override
-    public Result findWithPerfumeAndPerfumeAccords(
+    public Result findByUserIdAndPerfumeIdWithPerfumeAndPerfumeAccords(
         Long userId,
         Long perfumeId
     ) {
-        StarRating starRating = starRatingRepository.find(
+        StarRating starRating = starRatingRepository.findByUserIdAndPerfumeId(
             userId,
             perfumeId
         );
 
-        Perfume perfume = getPerfumeUseCase.find(perfumeId).perfume();
+        Perfume perfume = getPerfumeUseCase.findByPerfumeId(perfumeId).perfume();
         perfume.setAccords(
             getPerfumeAccordsUseCase
                 .findAll(starRating.getPerfume())

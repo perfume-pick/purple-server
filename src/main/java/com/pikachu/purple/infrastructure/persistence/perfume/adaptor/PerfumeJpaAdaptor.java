@@ -21,7 +21,7 @@ class PerfumeJpaAdaptor implements PerfumeRepository {
     private final PerfumeJpaRepository perfumeJpaRepository;
 
     @Override
-    public Perfume findById(Long perfumeId) {
+    public Perfume findByPerfumeId(Long perfumeId) {
         PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository.findById(perfumeId)
             .orElseThrow(() -> PerfumeNotFoundException);
 

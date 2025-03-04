@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface PerfumeRepository {
 
-    Perfume findById(Long perfumeId);
+    Perfume findByPerfumeId(Long perfumeId);
 
     List<Perfume> findAll(Brand brand);
 
@@ -16,7 +16,6 @@ public interface PerfumeRepository {
     List<Perfume> findAll(List<Long> perfumeIds);
 
     List<Perfume> findAll(List<Accord> accords, int maxSize);
-
 
     List<Perfume> findAllHavingReviewCountNotZeroOrderByReviewCount(int maxSize);
 

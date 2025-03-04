@@ -13,29 +13,29 @@ public interface ReviewRepository {
 
     void createReviewMoods(Long reviewId, List<String> moodNames);
 
-    Review find(Long reviewId);
+    Review findByReviewId(Long reviewId);
 
-    Review find(Long userId, Long perfumeId);
+    Review findUserIdAndPerfumeId(Long userId, Long perfumeId);
 
-    List<Review> findAll(Long userId);
+    List<Review> findAllByUserId(Long userId);
 
     List<Review> findAll(ReviewType reviewType);
 
-    List<Review> findAllOrderByLikeCountDesc(Long userId);
+    List<Review> findAllByUserIdOrderByLikeCountDesc(Long userId);
 
-    List<Review> findAllOrderByLikeCountDesc(Perfume perfume);
+    List<Review> findAllByPerfumeIdOrderByLikeCountDesc(Long perfumeId);
 
-    List<Review> findAllOrderByCreatedAtDesc(Long userId);
+    List<Review> findAllByUserIdOrderByCreatedAtDesc(Long userId);
 
-    List<Review> findAllOrderByCreatedAtDesc(Perfume perfume);
+    List<Review> findAllByPerfumeIdOrderByCreatedAtDesc(Long perfumeId);
 
-    List<Review> findAllOrderByScoreDesc(Long userId);
+    List<Review> findAllByUserIdOrderByScoreDesc(Long userId);
 
-    List<Review> findAllOrderByScoreDesc(Perfume perfume);
+    List<Review> findAllByPerfumeIdOrderByScoreDesc(Long perfumeId);
 
-    List<Review> findAllOrderByScoreAsc(Long userId);
+    List<Review> findAllByUserIdOrderByScoreAsc(Long userId);
 
-    List<Review> findAllOrderByScoreAsc(Perfume perfume);
+    List<Review> findAllByPerfumeIdOrderByScoreAsc(Long perfumeId);
 
     void update(Long reviewId, String content, ReviewType reviewType);
 

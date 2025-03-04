@@ -12,6 +12,7 @@ import com.pikachu.purple.domain.user.enums.SocialLoginProvider;
 import com.pikachu.purple.domain.user.vo.SocialLoginToken;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -23,6 +24,7 @@ class SocialLoginApplicationService implements SocialLoginUseCase {
     private final UserSignUpUseCase userSignUpUseCase;
     private final OAuthTokenService oAuthTokenService;
 
+    @Transactional
     @Override
     public Result invoke(
         SocialLoginProvider socialLoginProvider,
@@ -78,7 +80,7 @@ class SocialLoginApplicationService implements SocialLoginUseCase {
             refreshToken
         );
 
-        return new SocialLoginUseCase.Result(
+        return new Result(
             jwtToken,
             isSignUp,
             user.getNickname(),

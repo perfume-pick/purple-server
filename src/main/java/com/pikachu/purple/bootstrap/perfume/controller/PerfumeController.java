@@ -26,7 +26,7 @@ public class PerfumeController implements PerfumeApi {
 
     @Override
     public SuccessResponse<GetPerfumeDetailResponse> findAccordsAndNotesByPerfumeId(Long perfumeId) {
-        GetPerfumeDetailUseCase.Result result = getPerfumeDetailUseCase.find(perfumeId);
+        GetPerfumeDetailUseCase.Result result = getPerfumeDetailUseCase.findByPerfumeId(perfumeId);
 
         return SuccessResponse.of(new GetPerfumeDetailResponse(result.data()));
     }
@@ -34,7 +34,7 @@ public class PerfumeController implements PerfumeApi {
     @Override
     public SuccessResponse<GetFragranticaEvaluationResponse> findFragranticaEvaluationByPerfumeId(
         Long perfumeId) {
-        GetFragranticaEvaluationUseCase.Result result = getFragranticaEvaluationUseCase.find(perfumeId);
+        GetFragranticaEvaluationUseCase.Result result = getFragranticaEvaluationUseCase.findByPerfumeId(perfumeId);
 
         return SuccessResponse.of(
             new GetFragranticaEvaluationResponse(result.data()));
@@ -43,7 +43,7 @@ public class PerfumeController implements PerfumeApi {
     @Override
     public SuccessResponse<GetPerfumeStatisticResponse> findPerfumeStatisticResponse(
         Long perfumeId) {
-        GetPerfumeStatisticUseCase.Result result = getPerfumeStatisticUseCase.find(perfumeId);
+        GetPerfumeStatisticUseCase.Result result = getPerfumeStatisticUseCase.findByPerfumeId(perfumeId);
 
         return SuccessResponse.of(
             GetPerfumeStatisticResponse.of(result)

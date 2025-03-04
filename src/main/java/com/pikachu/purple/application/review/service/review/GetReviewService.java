@@ -5,13 +5,10 @@ import com.pikachu.purple.application.review.port.in.review.GetReviewUseCase;
 import com.pikachu.purple.application.review.port.in.reviewevaluation.GetReviewEvaluationUseCase;
 import com.pikachu.purple.application.review.port.in.starrating.GetStarRatingUseCase;
 import com.pikachu.purple.application.review.port.out.ReviewRepository;
-import com.pikachu.purple.application.review.port.out.StarRatingRepository;
-import com.pikachu.purple.application.statistic.port.in.starratingstatistic.GetStarRatingStatisticsUseCase;
 import com.pikachu.purple.domain.review.Mood;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.ReviewEvaluation;
 import com.pikachu.purple.domain.review.StarRating;
-import com.pikachu.purple.domain.review.enums.ReviewType;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -27,12 +24,13 @@ class GetReviewService implements GetReviewUseCase {
 
     private final ReviewRepository reviewRepository;
 
+    @Transactional
     @Override
     public Result findByUserIdAndPerfumeId(
         Long userId,
         Long perfumeId
     ) {
-        Review review = reviewRepository.find(
+        Review review = reviewRepository.findUserIdAndPerfumeId(
             userId,
             perfumeId
         );
@@ -46,7 +44,7 @@ class GetReviewService implements GetReviewUseCase {
         Long userId,
         Long perfumeId
     ) {
-        Review review = reviewRepository.find(
+        Review review = reviewRepository.findUserIdAndPerfumeId(
             userId,
             perfumeId
         );
@@ -58,7 +56,7 @@ class GetReviewService implements GetReviewUseCase {
         List<Mood> moods = getMoodsUseCase.findAll(review).moods();
         review.setMoods(moods);
 
-        StarRating starRating = getStarRatingUseCase.find(review.getStarRating().getId())
+        StarRating starRating = getStarRatingUseCase.findByStarRatingId(review.getStarRating().getId())
             .starRating();
         review.setStarRating(starRating);
 

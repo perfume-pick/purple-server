@@ -8,6 +8,6 @@ public interface MoodRepository {
 
     List<Mood> findAll();
 
-    List<Mood> findAll(Review review);
+    List<Mood> findAllByReviewId(Long reviewId);
 
 }

@@ -7,6 +7,7 @@ import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.enums.ReviewType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -14,6 +15,7 @@ public class CreateReviewService implements CreateReviewUseCase {
 
     private final ReviewRepository reviewRepository;
 
+    @Transactional
     @Override
     public Result create(
         Long userId,

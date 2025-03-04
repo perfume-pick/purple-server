@@ -27,12 +27,12 @@ class DeleteReviewService implements DeleteReviewUseCase {
     @Transactional
     @Override
     public void delete(Long reviewId) {
-        Review review = reviewRepository.find(reviewId);
+        Review review = reviewRepository.findByReviewId(reviewId);
 
         deleteStarRatingUseCase.delete(review.getStarRating().getId());
 
         if(review.getType() == ReviewType.DETAIL) {
-            ReviewEvaluation reviewEvaluation = reviewEvaluationRepository.find(reviewId);
+            ReviewEvaluation reviewEvaluation = reviewEvaluationRepository.findByReviewId(reviewId);
 
             reviewEvaluationRepository.delete(reviewId);
 

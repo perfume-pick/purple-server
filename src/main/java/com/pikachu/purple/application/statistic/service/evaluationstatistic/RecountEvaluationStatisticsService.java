@@ -12,6 +12,7 @@ import com.pikachu.purple.domain.statistic.EvaluationStatistic;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -24,6 +25,7 @@ class RecountEvaluationStatisticsService implements
 
     private final EvaluationStatisticRepository evaluationStatisticRepository;
 
+    @Transactional
     @Override
     public void invoke() {
         EvaluationStatistic evaluationStatistic = new EvaluationStatistic();

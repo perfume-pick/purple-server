@@ -9,6 +9,7 @@ import com.pikachu.purple.domain.user.UserAccord;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -20,10 +21,11 @@ class CreateUserAccordOnboardingService implements
     private final UserAccordRecommender userAccordRecommender;
     private final UserAccordRepository userAccordRepository;
 
+    @Transactional
     @Override
     public void createAll(Long userId) {
-        GetUserUseCase.Result user = getUserUseCase.find(userId);
-        GetStarRatingsUseCase.Result starRatings = getStarRatingsUseCase.findAllWithPerfume(userId);
+        GetUserUseCase.Result user = getUserUseCase.findByUserId(userId);
+        GetStarRatingsUseCase.Result starRatings = getStarRatingsUseCase.findAllByUserIdWithPerfume(userId);
 
         List<UserAccord> userAccords = userAccordRecommender.recommend(
             user.user(),

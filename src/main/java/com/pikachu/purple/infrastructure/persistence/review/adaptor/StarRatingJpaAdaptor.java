@@ -89,14 +89,14 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
     }
 
     @Override
-    public StarRating find(Long starRatingId) {
+    public StarRating findByStarRatingId(Long starRatingId) {
         Optional<StarRatingJpaEntity> findResult = starRatingJpaRepository.findById(starRatingId);
 
         return findResult.map(StarRatingJpaEntity::toDomain).orElse(null);
     }
 
     @Override
-    public StarRating find(
+    public StarRating findByUserIdAndPerfumeId(
         Long userId,
         Long perfumeId
     ) {
@@ -115,41 +115,14 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
     }
 
     @Override
-    public List<StarRating> findAll(Long perfumeId) {
+    public List<StarRating> findAllByPerfumeId(Long perfumeId) {
         List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAllByPerfumeId(perfumeId);
         return starRatingJpaEntities.stream().map(StarRatingJpaEntity::toDomain).toList();
     }
 
     @Override
-    public List<StarRating> findAllOrderByLikeCountDesc(Long userId) {
-        List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAllByUserIdOrderByLikeCountDesc(userId);
-
-        return starRatingJpaEntities.stream()
-            .map(StarRatingJpaEntity::toDomain)
-            .toList();
-    }
-
-    @Override
     public List<StarRating> findAllByUserId(Long userId) {
         List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAllByUserId(userId);
-
-        return starRatingJpaEntities.stream()
-            .map(StarRatingJpaEntity::toDomain)
-            .toList();
-    }
-
-    @Override
-    public List<StarRating> findAllOrderByScoreDesc(Long userId) {
-        List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAllByUserIdOrderByScoreDesc(userId);
-
-        return starRatingJpaEntities.stream()
-            .map(StarRatingJpaEntity::toDomain)
-            .toList();
-    }
-
-    @Override
-    public List<StarRating> findAllOrderByScoreAsc(Long userId) {
-        List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAllByUserIdOrderByScoreAsc(userId);
 
         return starRatingJpaEntities.stream()
             .map(StarRatingJpaEntity::toDomain)

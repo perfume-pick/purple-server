@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface GetSearchHistoriesUseCase {
 
-    Result findAll(Long userId);
+    Result findAllByUserId(Long userId);
 
     record Result(List<SearchHistory> searchHistories){}
 

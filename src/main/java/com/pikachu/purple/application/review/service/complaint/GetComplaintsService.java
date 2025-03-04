@@ -6,6 +6,7 @@ import com.pikachu.purple.domain.review.Complaint;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -13,9 +14,13 @@ public class GetComplaintsService implements GetComplaintsUseCase {
 
     private final ComplaintRepository complaintRepository;
 
+    @Transactional
     @Override
-    public Result findAll(Long userId, Long perfumeId) {
-        List<Complaint> complaints = complaintRepository.findAll(
+    public Result findAllByUserIdAndPerfumeId(
+        Long userId,
+        Long perfumeId
+    ) {
+        List<Complaint> complaints = complaintRepository.findAllByUserIdAndPerfumeId(
             userId,
             perfumeId
         );

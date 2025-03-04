@@ -2,7 +2,6 @@ package com.pikachu.purple.application.review.service.complaint;
 
 import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumeUseCase;
 import com.pikachu.purple.application.review.port.in.complaint.GetComplaintFormUseCase;
-import com.pikachu.purple.application.review.port.in.complaint.GetComplaintFormUseCase.ComplaintFormDTO;
 import com.pikachu.purple.application.review.port.out.ComplaintRepository;
 import com.pikachu.purple.application.review.port.out.ReviewRepository;
 import com.pikachu.purple.domain.perfume.Perfume;
@@ -36,8 +35,8 @@ class GetComplaintFormService implements GetComplaintFormUseCase {
             token
         );
 
-        Review review = reviewRepository.find(complaint.getReview().getId());
-        Perfume perfume = getPerfumeUseCase.find(review.getPerfume().getId()).perfume();
+        Review review = reviewRepository.findByReviewId(complaint.getReview().getId());
+        Perfume perfume = getPerfumeUseCase.findByPerfumeId(review.getPerfume().getId()).perfume();
 
         ComplaintFormDTO complaintFormDTO = this.mapToComplaintFormDTO(
             complaint,

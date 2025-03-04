@@ -5,7 +5,10 @@ import java.util.List;
 
 public interface GetComplaintsUseCase {
 
-    Result findAll(Long userId, Long perfumeId);
+    Result findAllByUserIdAndPerfumeId(
+        Long userId,
+        Long perfumeId
+    );
 
     record Result(List<Complaint> complaints) {}
 

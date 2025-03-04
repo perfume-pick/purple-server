@@ -26,8 +26,9 @@ class GetPolarizedUserAccordsService implements
     private final GetStarRatingsUseCase getStarRatingsUseCase;
     private static final int MAX_SIZE = 3;
 
+    @Transactional
     @Override
-    public Result find(Long userId) {
+    public Result findByUserId(Long userId) {
         List<UserAccord> accordsByDesc = userAccordRepository.findAllOrderByScoreDesc(
             userId,
             MAX_SIZE
@@ -38,7 +39,7 @@ class GetPolarizedUserAccordsService implements
             MAX_SIZE
         );
 
-        GetStarRatingsUseCase.Result result = getStarRatingsUseCase.findAllWithPerfume(userId);
+        GetStarRatingsUseCase.Result result = getStarRatingsUseCase.findAllByUserIdWithPerfume(userId);
 
         List<AccordInfo> preferredAccord = mapToAccordInfo(
             accordsByDesc,

@@ -31,8 +31,8 @@ class GetRecommendedPerfumesByUserAccordsService implements
 
     @Transactional
     @Override
-    public Result findAll(Long userId) {
-        GetTopThreeUserAccordsUseCase.Result result = getTopThreeUserAccordsUseCase.find(userId);
+    public Result findAllByUserId(Long userId) {
+        GetTopThreeUserAccordsUseCase.Result result = getTopThreeUserAccordsUseCase.findByUserId(userId);
 
         if (result.userAccords().isEmpty()) {
             return new Result(
@@ -67,7 +67,9 @@ class GetRecommendedPerfumesByUserAccordsService implements
 
         for (Perfume perfume : perfumes) {
             perfume.setAccords(
-                getPerfumeAccordsUseCase.findAll(perfume).perfumeAccords()
+                getPerfumeAccordsUseCase
+                    .findAll(perfume)
+                    .perfumeAccords()
             );
         }
 

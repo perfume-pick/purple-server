@@ -10,6 +10,7 @@ import com.pikachu.purple.domain.review.ReviewEvaluation;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -18,6 +19,7 @@ class CreateReviewEvaluationService implements CreateReviewEvaluationUseCase {
     private final ReviewEvaluationRepository reviewEvaluationRepository;
     private final IncreaseEvaluationStatisticUseCase increaseEvaluationStatisticUseCase;
 
+    @Transactional
     @Override
     public void create(
         Review review,

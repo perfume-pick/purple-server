@@ -21,8 +21,8 @@ class RecalculatePerfumeAverageScoresService implements
     private final PerfumeRepository perfumeRepository;
     private final GetStarRatingStatisticsUseCase getStarRatingStatisticsUseCase;
 
-    @Override
     @Transactional
+    @Override
     public void invoke() {
         List<StarRatingStatistic> starRatingStatistics = getStarRatingStatisticsUseCase.findAll()
             .starRatingStatistics();
@@ -31,8 +31,8 @@ class RecalculatePerfumeAverageScoresService implements
     }
 
 
-    @Override
     @Transactional
+    @Override
     public void invoke(List<Long> perfumeIds) {
         List<StarRatingStatistic> starRatingStatistics = getStarRatingStatisticsUseCase
             .findAll(perfumeIds)

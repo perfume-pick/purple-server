@@ -15,6 +15,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -25,12 +26,11 @@ class RecountStarRatingStatisticsService implements
     private final GetStarRatingsUseCase getStarRatingsUseCase;
     private final GetPerfumeIdsUseCase getPerfumeIdsUseCase;
 
+    @Transactional
     @Override
     public void invoke() {
         List<Long> perfumeIds = getPerfumeIdsUseCase.invoke().perfumeIds();
-        // 별점 다 가져오기
         List<StarRating> starRatings = getStarRatingsUseCase.findAll().starRatings();
-        // perfumeId, score 기준으로 그룹화
         Map<String, Integer> starRatingStatisticMap = starRatings.stream()
             .collect(Collectors.groupingBy(
                 starRating -> buildMapKey(

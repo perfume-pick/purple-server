@@ -4,6 +4,7 @@ import com.pikachu.purple.application.review.port.in.like.CheckLikeUseCase;
 import com.pikachu.purple.application.review.port.out.LikeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -11,6 +12,7 @@ public class CheckLikeService implements CheckLikeUseCase {
 
     private final LikeRepository likeRepository;
 
+    @Transactional
     @Override
     public Result check(
         Long userId,

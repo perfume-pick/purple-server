@@ -7,6 +7,7 @@ import com.pikachu.purple.domain.review.Review;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -14,6 +15,7 @@ class GetMoodsService implements GetMoodsUseCase {
 
     private final MoodRepository moodRepository;
 
+    @Transactional
     @Override
     public Result findAll() {
         List<Mood> moods = moodRepository.findAll();
@@ -21,9 +23,10 @@ class GetMoodsService implements GetMoodsUseCase {
         return new Result(moods);
     }
 
+    @Transactional
     @Override
     public Result findAll(Review review) {
-        List<Mood> moods = moodRepository.findAll(review);
+        List<Mood> moods = moodRepository.findAllByReviewId(review.getId());
 
         return new Result(moods);
     }

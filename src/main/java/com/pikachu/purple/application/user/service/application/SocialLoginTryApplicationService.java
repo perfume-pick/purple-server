@@ -7,6 +7,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -14,8 +15,9 @@ class SocialLoginTryApplicationService implements SocialLoginTryUseCase {
 
     private final SocialLoginService socialLoginService;
 
+    @Transactional
     @Override
-    public SocialLoginTryUseCase.Result invoke(
+    public Result invoke(
         SocialLoginProvider socialLoginProvider,
         String frontUrl
     ) throws URISyntaxException {
@@ -24,7 +26,7 @@ class SocialLoginTryApplicationService implements SocialLoginTryUseCase {
             frontUrl
         );
 
-        return new SocialLoginTryUseCase.Result(socialLoginUri.toString());
+        return new Result(socialLoginUri.toString());
     }
 
 }

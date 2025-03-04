@@ -16,7 +16,7 @@ class DeleteSearchHistoriesService implements
     @Transactional
     @Override
     public void deleteAll(Long userId) {
-        searchHistoryRepository.deleteAllSearchHistoryByUserId(userId);
+        searchHistoryRepository.deleteAll(userId);
     }
 
 }

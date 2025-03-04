@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface GetVisitedPerfumesUseCase {
 
-    Result findAllWithPerfumeAccord(Long userId);
+    Result findAllByUserIdWithPerfumeAccord(Long userId);
 
     record Result(List<Perfume> perfumes) {}
 

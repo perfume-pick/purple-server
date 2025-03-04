@@ -56,23 +56,15 @@ public class ReviewEvaluationJpaAdaptor implements ReviewEvaluationRepository {
     }
 
     @Override
-    public ReviewEvaluation find(Review review) {
+    public ReviewEvaluation findByPerfumeId(Long perfumeId) {
         List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities =
-            reviewEvaluationJpaRepository.findByReviewIdOrderByFieldCodeAscOptionCodeAsc(review.getId());
+            reviewEvaluationJpaRepository.findByPerfumeIdOrderByFieldCodeAscOptionCodeAsc(perfumeId);
 
         return ReviewEvaluationJpaEntity.toDomain(reviewEvaluationJpaEntities);
     }
 
     @Override
-    public ReviewEvaluation find(Perfume perfume) {
-        List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities =
-            reviewEvaluationJpaRepository.findByPerfumeIdOrderByFieldCodeAscOptionCodeAsc(perfume.getId());
-
-        return ReviewEvaluationJpaEntity.toDomain(reviewEvaluationJpaEntities);
-    }
-
-    @Override
-    public ReviewEvaluation find(Long reviewId) {
+    public ReviewEvaluation findByReviewId(Long reviewId) {
         List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities =
             reviewEvaluationJpaRepository.findByReviewIdOrderByFieldCodeAscOptionCodeAsc(reviewId);
 

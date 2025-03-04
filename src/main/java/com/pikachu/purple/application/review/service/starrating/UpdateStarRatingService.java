@@ -18,8 +18,8 @@ class UpdateStarRatingService implements UpdateStarRatingUseCase {
     private final DecreaseStarRatingStatisticUseCase decreaseStarRatingStatisticUseCase;
     private final IncreaseStarRatingStatisticUseCase increaseStarRatingStatisticUseCase;
 
-    @Override
     @Transactional
+    @Override
     public Result update(
         Long userId,
         Long perfumeId,

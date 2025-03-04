@@ -63,7 +63,7 @@ public class ComplaintJpaAdaptor implements ComplaintRepository {
     }
 
     @Override
-    public Complaint find(
+    public Complaint findByUserIdAndReviewId(
         Long userId,
         Long reviewId
     ) {
@@ -76,7 +76,7 @@ public class ComplaintJpaAdaptor implements ComplaintRepository {
     }
 
     @Override
-    public List<Complaint> findAll(
+    public List<Complaint> findAllByUserIdAndPerfumeId(
         Long userId,
         Long perfumeId
     ) {

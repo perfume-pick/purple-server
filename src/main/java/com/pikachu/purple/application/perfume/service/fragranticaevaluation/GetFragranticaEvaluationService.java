@@ -23,8 +23,9 @@ class GetFragranticaEvaluationService implements
 
     private final FragranticaEvaluationRepository fragranticaEvaluationRepository;
 
+    @Transactional
     @Override
-    public Result find(Long perfumeId) {
+    public Result findByPerfumeId(Long perfumeId) {
 
         FragranticaEvaluation fragranticaEvaluation = fragranticaEvaluationRepository.findByPerfumeIdOrderByVotesDesc(
             perfumeId);

@@ -7,9 +7,9 @@ public interface LikeRepository {
 
     void create(Long userId, Long reviewId);
 
-    List<Like> findAll(Long userId);
+    List<Like> findAllByUserId(Long userId);
 
-    List<Like> findAll(Long userId, Long perfumeId);
+    List<Like> findAllByUserIdAndPerfumeId(Long userId, Long perfumeId);
 
     void validateNotExist(Long userId, Long reviewId);
 

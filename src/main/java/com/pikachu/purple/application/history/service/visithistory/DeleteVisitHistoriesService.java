@@ -15,7 +15,7 @@ class DeleteVisitHistoriesService implements DeleteVisitHistoriesUseCase {
     @Transactional
     @Override
     public void deleteAll(Long userId) {
-        visitHistoryRepository.deleteAllVisitHistoryByUserId(userId);
+        visitHistoryRepository.deleteAll(userId);
     }
 
 }

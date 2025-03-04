@@ -28,8 +28,8 @@ class CreateStarRatingsOnboardingService implements
 
     private final StarRatingRepository starRatingRepository;
 
-    @Override
     @Transactional
+    @Override
     public void createAll(
         Long userId,
         List<StarRatingVO> starRatingVOs

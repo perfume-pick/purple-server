@@ -6,10 +6,10 @@ import com.pikachu.purple.application.perfume.port.out.PerfumeRepository;
 import com.pikachu.purple.application.review.port.in.starrating.GetPerfumeAverageScoreUseCase;
 import com.pikachu.purple.domain.perfume.Brand;
 import com.pikachu.purple.domain.perfume.Perfume;
-import jakarta.transaction.Transactional;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -22,6 +22,7 @@ class GetPerfumesService implements GetPerfumesUseCase {
 
     private static final int MAX_SIZE = 30;
 
+    @Transactional
     @Override
     public Result findAll(Brand brand) {
         List<Perfume> perfumes = perfumeRepository.findAll(brand);
@@ -29,6 +30,7 @@ class GetPerfumesService implements GetPerfumesUseCase {
         return new Result(perfumes);
     }
 
+    @Transactional
     @Override
     public Result findAllWithPerfumeAccord(List<Long> perfumeIds) {
         List<Perfume> perfumes = perfumeRepository.findAll(perfumeIds);
@@ -37,8 +39,8 @@ class GetPerfumesService implements GetPerfumesUseCase {
         return new Result(perfumes);
     }
 
-    @Override
     @Transactional
+    @Override
     public Result findAllWithPerfumeAccord(String keyword) {
         List<Perfume> perfumes = perfumeRepository.findAll(keyword);
 
@@ -48,6 +50,7 @@ class GetPerfumesService implements GetPerfumesUseCase {
         return new Result(perfumes);
     }
 
+    @Transactional
     @Override
     public Result findAllWithPerfumeAccordOrderByReviewCount() {
         List<Perfume> perfumes =  perfumeRepository.findAllHavingReviewCountNotZeroOrderByReviewCount(MAX_SIZE);
@@ -61,14 +64,16 @@ class GetPerfumesService implements GetPerfumesUseCase {
     private void setPerfumeAccords(List<Perfume> perfumes) {
         for (Perfume perfume : perfumes) {
             perfume.setAccords(
-                getPerfumeAccordsUseCase.findAll(perfume).perfumeAccords()
+                getPerfumeAccordsUseCase
+                    .findAll(perfume)
+                    .perfumeAccords()
             );
         }
     }
 
     private void setAverageScore(List<Perfume> perfumes) {
         for (Perfume perfume : perfumes) {
-            double averageScore = getPerfumeAverageScoreUseCase.find(
+            double averageScore = getPerfumeAverageScoreUseCase.findByPerfumeId(
                 perfume.getId()).averageScore();
             perfume.setAverageScore(averageScore);
         }

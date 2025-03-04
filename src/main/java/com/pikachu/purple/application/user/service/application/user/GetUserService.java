@@ -5,6 +5,7 @@ import com.pikachu.purple.application.user.port.out.UserRepository;
 import com.pikachu.purple.domain.user.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -12,8 +13,9 @@ class GetUserService implements GetUserUseCase {
 
     private final UserRepository userRepository;
 
+    @Transactional
     @Override
-    public Result find(Long userId) {
+    public Result findByUserId(Long userId) {
         User user = userRepository.findById(userId);
 
         return new Result(user);

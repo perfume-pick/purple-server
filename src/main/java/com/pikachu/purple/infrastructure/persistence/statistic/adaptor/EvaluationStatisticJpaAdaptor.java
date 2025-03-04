@@ -54,7 +54,7 @@ public class EvaluationStatisticJpaAdaptor implements EvaluationStatisticReposit
     }
 
     @Override
-    public EvaluationStatistic findOrderByVotesDesc(Long perfumeId) {
+    public EvaluationStatistic findByPerfumeIdOrderByVotesDesc(Long perfumeId) {
         List<EvaluationStatisticJpaEntity> evaluationStatisticJpaEntities =
             evaluationStatisticJpaRepository.findAllByPerfumeIdOrderByFieldCodeAscVotesDesc(
                 perfumeId);

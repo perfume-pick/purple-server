@@ -6,6 +6,7 @@ import com.pikachu.purple.domain.review.Like;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -13,9 +14,13 @@ public class GetLikesService implements GetLikesUseCase {
 
     private final LikeRepository likeRepository;
 
+    @Transactional
     @Override
-    public Result findAll(Long userId, Long perfumeId) {
-        List<Like> likes = likeRepository.findAll(
+    public Result findAllByUserIdAndPerfumeId(
+        Long userId,
+        Long perfumeId
+    ) {
+        List<Like> likes = likeRepository.findAllByUserIdAndPerfumeId(
             userId,
             perfumeId
         );

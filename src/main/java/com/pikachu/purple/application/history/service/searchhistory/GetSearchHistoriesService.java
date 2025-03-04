@@ -15,8 +15,9 @@ class GetSearchHistoriesService implements GetSearchHistoriesUseCase {
 
     private final SearchHistoryRepository searchHistoryRepository;
 
+    @Transactional
     @Override
-    public Result findAll(Long userId) {
+    public Result findAllByUserId(Long userId) {
         List<SearchHistory> searchHistories = searchHistoryRepository.findAllByUserId(userId);
 
         return new Result(searchHistories);

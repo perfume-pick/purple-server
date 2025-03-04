@@ -21,7 +21,7 @@ public class RecommendController implements RecommendApi {
     @Override
     public SuccessResponse<GetPerfumesAndUserAccordsByUserResponse> findAllPerfumeWithUserAccordsByUser() {
         Long userId = getCurrentUserAuthentication().userId();
-        GetRecommendedPerfumesByUserAccordsUseCase.Result result = getRecommendedPerfumesByUserAccordsUseCase.findAll(userId);
+        GetRecommendedPerfumesByUserAccordsUseCase.Result result = getRecommendedPerfumesByUserAccordsUseCase.findAllByUserId(userId);
 
         return SuccessResponse.of(new GetPerfumesAndUserAccordsByUserResponse(
             result.userAccords(),

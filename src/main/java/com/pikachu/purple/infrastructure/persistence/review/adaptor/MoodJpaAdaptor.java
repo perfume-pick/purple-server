@@ -28,9 +28,9 @@ public class MoodJpaAdaptor implements MoodRepository {
     }
 
     @Override
-    public List<Mood> findAll(Review review) {
-        List<ReviewMoodJpaEntity> reviewMoodJpaEntities = reviewMoodJpaRepository.findAllByReviewId(
-            review.getId());
+    public List<Mood> findAllByReviewId(Long reviewId) {
+        List<ReviewMoodJpaEntity> reviewMoodJpaEntities = reviewMoodJpaRepository
+            .findAllByReviewId(reviewId);
 
         return reviewMoodJpaEntities.stream()
             .map(

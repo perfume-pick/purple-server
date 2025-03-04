@@ -17,9 +17,9 @@ public class PerfumeAccordJpaAdaptor implements PerfumeAccordRepository {
     private final PerfumeAccordJpaRepository perfumeAccordJpaRepository;
 
     @Override
-    public List<PerfumeAccord> findAll(Perfume perfume) {
+    public List<PerfumeAccord> findAllPerfumeId(Long perfumeId) {
         List<PerfumeAccordJpaEntity> perfumeAccordJpaEntities = perfumeAccordJpaRepository
-            .findAllByPerfumeId(perfume.getId());
+            .findAllByPerfumeId(perfumeId);
 
         return perfumeAccordJpaEntities.stream()
             .map(PerfumeAccordJpaEntity::toDomain)

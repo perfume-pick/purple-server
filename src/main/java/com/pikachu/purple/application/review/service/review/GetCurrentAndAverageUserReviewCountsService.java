@@ -5,6 +5,7 @@ import com.pikachu.purple.application.review.port.out.ReviewRepository;
 import com.pikachu.purple.application.user.port.in.user.GetUserCountsUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -14,8 +15,9 @@ class GetCurrentAndAverageUserReviewCountsService implements
     private final ReviewRepository reviewRepository;
     private final GetUserCountsUseCase getUserCountsUseCase;
 
+    @Transactional
     @Override
-    public Result find(Long userId) {
+    public Result findByUserId(Long userId) {
         int currentUserReviewCounts = reviewRepository.count(userId);
         int totalReviewCounts = reviewRepository.count();
         int userCounts = getUserCountsUseCase.count().userCounts();

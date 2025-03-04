@@ -45,14 +45,14 @@ public class LikeJpaAdaptor implements LikeRepository {
     }
 
     @Override
-    public List<Like> findAll(Long userId) {
+    public List<Like> findAllByUserId(Long userId) {
         List<LikeJpaEntity> likeJpaEntities = likeJpaRepository.findAllByUserId((userId));
 
         return likeJpaEntities.stream().map(LikeJpaEntity::toDomain).toList();
     }
 
     @Override
-    public List<Like> findAll(
+    public List<Like> findAllByUserIdAndPerfumeId(
         Long userId,
         Long perfumeId
     ) {

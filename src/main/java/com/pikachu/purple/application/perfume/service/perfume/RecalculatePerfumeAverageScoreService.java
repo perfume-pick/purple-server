@@ -17,11 +17,11 @@ class RecalculatePerfumeAverageScoreService implements
     private final PerfumeRepository perfumeRepository;
     private final GetStarRatingStatisticsUseCase getStarRatingStatisticsUseCase;
 
-    @Override
     @Transactional
+    @Override
     public void invoke(Long perfumeId) {
         List<StarRatingStatistic> starRatingStatistics = getStarRatingStatisticsUseCase
-            .findAll(perfumeId)
+            .findAllByPerfumeId(perfumeId)
             .starRatingStatistics();
 
         double totalScore = starRatingStatistics.stream()

@@ -10,11 +10,9 @@ public interface ReviewEvaluationRepository {
 
     ReviewEvaluation find();
 
-    ReviewEvaluation find(Long reviewId);
+    ReviewEvaluation findByReviewId(Long reviewId);
 
-    ReviewEvaluation find(Review review);
-
-    ReviewEvaluation find(Perfume perfume);
+    ReviewEvaluation findByPerfumeId(Long perfumeId);
 
     void delete(Long reviewId);
 
