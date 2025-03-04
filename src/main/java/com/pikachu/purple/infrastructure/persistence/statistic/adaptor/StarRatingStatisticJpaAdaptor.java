@@ -10,7 +10,6 @@ import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeJ
 import com.pikachu.purple.infrastructure.persistence.statistic.entity.StarRatingStatisticJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.statistic.entity.id.StarRatingStatisticId;
 import com.pikachu.purple.infrastructure.persistence.statistic.repository.StarRatingStatisticJpaRepository;
-import com.pikachu.purple.infrastructure.persistence.statistic.vo.StarRatingStatisticCompositeKey;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

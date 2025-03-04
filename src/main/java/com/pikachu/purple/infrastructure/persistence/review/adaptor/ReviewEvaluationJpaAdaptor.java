@@ -3,8 +3,6 @@ package com.pikachu.purple.infrastructure.persistence.review.adaptor;
 import com.pikachu.purple.application.review.port.out.ReviewEvaluationRepository;
 import com.pikachu.purple.bootstrap.common.exception.BusinessException;
 import com.pikachu.purple.bootstrap.common.exception.ErrorCode;
-import com.pikachu.purple.domain.perfume.Perfume;
-import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.ReviewEvaluation;
 import com.pikachu.purple.infrastructure.persistence.review.entity.ReviewEvaluationJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.review.entity.ReviewJpaEntity;

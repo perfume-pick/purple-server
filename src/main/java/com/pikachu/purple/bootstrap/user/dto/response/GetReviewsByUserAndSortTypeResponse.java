@@ -7,7 +7,6 @@ import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 import com.pikachu.purple.domain.review.Mood;
 import com.pikachu.purple.domain.review.Review;
-import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.domain.review.enums.ReviewType;
 import java.util.List;
 import lombok.Getter;

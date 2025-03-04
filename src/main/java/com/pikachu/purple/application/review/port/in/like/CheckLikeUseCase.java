@@ -7,6 +7,6 @@ public interface CheckLikeUseCase {
         Long reviewId
     );
 
-    record Result(boolean isLiked){};
+    record Result(boolean isLiked) {}
 
 }

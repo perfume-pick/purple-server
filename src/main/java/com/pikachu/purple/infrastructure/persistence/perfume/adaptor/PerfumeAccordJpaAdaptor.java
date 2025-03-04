@@ -1,7 +1,6 @@
 package com.pikachu.purple.infrastructure.persistence.perfume.adaptor;
 
 import com.pikachu.purple.application.perfume.port.out.PerfumeAccordRepository;
-import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.perfume.PerfumeAccord;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeAccordJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeAccordJpaRepository;

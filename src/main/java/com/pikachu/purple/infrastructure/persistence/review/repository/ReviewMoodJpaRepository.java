@@ -4,7 +4,6 @@ import com.pikachu.purple.infrastructure.persistence.review.entity.ReviewMoodJpa
 import com.pikachu.purple.infrastructure.persistence.review.entity.id.ReviewMoodId;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 
 public interface ReviewMoodJpaRepository extends JpaRepository<ReviewMoodJpaEntity, ReviewMoodId> {
 
