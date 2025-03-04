@@ -27,9 +27,22 @@ class GetReviewService implements GetReviewUseCase {
 
     private final ReviewRepository reviewRepository;
 
+    @Override
+    public Result findByUserIdAndPerfumeId(
+        Long userId,
+        Long perfumeId
+    ) {
+        Review review = reviewRepository.find(
+            userId,
+            perfumeId
+        );
+
+        return new Result(review);
+    }
+
     @Transactional
     @Override
-    public Result findWithStarRatingAndEvaluationAndMoods(
+    public Result findByUserIdAndPerfumeIdWithStarRatingAndEvaluationAndMoods(
         Long userId,
         Long perfumeId
     ) {

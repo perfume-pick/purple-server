@@ -4,7 +4,15 @@ import com.pikachu.purple.domain.review.Review;
 
 public interface GetReviewUseCase {
 
-    Result findWithStarRatingAndEvaluationAndMoods(Long userId, Long perfumeId);
+    Result findByUserIdAndPerfumeId(
+        Long userId,
+        Long perfumeId
+    );
+
+    Result findByUserIdAndPerfumeIdWithStarRatingAndEvaluationAndMoods(
+        Long userId,
+        Long perfumeId
+    );
 
     record Result(Review review) {}
 

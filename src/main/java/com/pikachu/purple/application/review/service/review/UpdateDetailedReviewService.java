@@ -40,7 +40,7 @@ class UpdateDetailedReviewService implements UpdateDetailedReviewUseCase {
     ) {
         Review review = reviewRepository.find(reviewId);
 
-        if(review.getType() == ReviewType.SIMPLE) {
+        if(review.getType() == ReviewType.SIMPLE || review.getType() == ReviewType.ONBOARDING) {
             createReviewEvaluationUseCase.create(
                 review,
                 evaluationFieldVOs

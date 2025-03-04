@@ -5,8 +5,8 @@ import lombok.Getter;
 @Getter
 public class BusinessException extends RuntimeException {
 
-    public static final BusinessException EmailExistedException = new BusinessException(
-        ErrorCode.EMAIL_ALREADY_EXISTED
+    public static final BusinessException EmailAlreadyExistsException = new BusinessException(
+        ErrorCode.EMAIL_ALREADY_EXISTS
     );
     public static final BusinessException InvalidEmailException = new BusinessException(
         ErrorCode.INVALID_EMAIL_FORMAT
@@ -14,8 +14,8 @@ public class BusinessException extends RuntimeException {
     public static final BusinessException UserNotFoundException = new BusinessException(
         ErrorCode.USER_NOT_FOUND
     );
-    public static final BusinessException NicknameAlreadyExistedException = new BusinessException(
-        ErrorCode.NICKNAME_ALREADY_EXISTED
+    public static final BusinessException NicknameAlreadyExistsException = new BusinessException(
+        ErrorCode.NICKNAME_ALREADY_EXISTS
     );
     public static final BusinessException InvalidVerifyCodeException = new BusinessException(
         ErrorCode.INVALID_VERIFY_CODE
@@ -53,6 +53,9 @@ public class BusinessException extends RuntimeException {
     public static final BusinessException ReviewNotFoundException = new BusinessException(
         ErrorCode.REVIEW_NOT_FOUND
     );
+    public static final BusinessException ReviewAlreadyExistsException = new BusinessException(
+        ErrorCode.REVIEW_ALREADY_EXISTS
+    );
     public static final BusinessException StarRatingNotFoundException = new BusinessException(
         ErrorCode.STAR_RATING_NOT_FOUND
     );
@@ -71,8 +74,8 @@ public class BusinessException extends RuntimeException {
     public static final BusinessException LikeNotFoundException = new BusinessException(
         ErrorCode.LIKE_NOT_FOUND
     );
-    public static final BusinessException LikeAlreadyExistedException = new BusinessException(
-        ErrorCode.LIKE_ALREADY_EXISTED
+    public static final BusinessException LikeAlreadyExistsException = new BusinessException(
+        ErrorCode.LIKE_ALREADY_EXISTS
     );
     public static final BusinessException AlreadyLogoutException = new BusinessException(
         ErrorCode.ALREADY_LOGOUT_EXCEPTION

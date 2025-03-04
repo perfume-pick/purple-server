@@ -11,15 +11,19 @@ import com.pikachu.purple.application.review.port.in.like.DeleteLikeUseCase;
 import com.pikachu.purple.application.review.port.in.review.CreateDetailedReviewUseCase;
 import com.pikachu.purple.application.review.port.in.review.CreateSimpleReviewUseCase;
 import com.pikachu.purple.application.review.port.in.review.DeleteReviewUseCase;
+import com.pikachu.purple.application.review.port.in.review.GetReviewUseCase;
 import com.pikachu.purple.application.review.port.in.review.UpdateDetailedReviewUseCase;
 import com.pikachu.purple.application.review.port.in.review.UpdateSimpleReviewUseCase;
 import com.pikachu.purple.bootstrap.common.dto.SuccessResponse;
+import com.pikachu.purple.bootstrap.common.exception.BusinessException;
 import com.pikachu.purple.bootstrap.review.api.ReviewApi;
 import com.pikachu.purple.bootstrap.review.dto.request.CreateReviewDetailRequest;
 import com.pikachu.purple.bootstrap.review.dto.request.CreateReviewSimpleRequest;
 import com.pikachu.purple.bootstrap.review.dto.request.UpdateReviewDetailRequest;
 import com.pikachu.purple.bootstrap.review.dto.request.UpdateReviewSimpleRequest;
 import com.pikachu.purple.bootstrap.review.dto.response.GetEvaluationFormFieldResponse;
+import com.pikachu.purple.domain.review.Review;
+import com.pikachu.purple.domain.review.enums.ReviewType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,31 +41,64 @@ public class ReviewController implements ReviewApi {
     private final DeleteComplaintUseCase deleteComplaintUseCase;
     private final CreateLikeUseCase createLikeUseCase;
     private final DeleteLikeUseCase deleteLikeUseCase;
+    private final GetReviewUseCase getReviewUseCase;
 
     @Override
     public void createSimple(CreateReviewSimpleRequest request) {
         Long userId = getCurrentUserAuthentication().userId();
 
-        createSimpleReviewUseCase.create(
+        Review review = getReviewUseCase.findByUserIdAndPerfumeId(
             userId,
-            request.perfumeId(),
-            request.score(),
-            request.content()
-        );
+            request.perfumeId()
+        ).review();
+
+        if (review != null && review.getType() == ReviewType.ONBOARDING) {
+            updateSimpleReviewUseCase.update(
+                review.getId(),
+                request.score(),
+                request.content()
+            );
+        } else if (review != null) {
+            throw BusinessException.ReviewAlreadyExistsException;
+        } else {
+            createSimpleReviewUseCase.create(
+                userId,
+                request.perfumeId(),
+                request.score(),
+                request.content()
+            );
+        }
     }
 
     @Override
     public void createDetail(CreateReviewDetailRequest request) {
         Long userId = getCurrentUserAuthentication().userId();
 
-        createDetailedReviewUseCase.create(
+        Review review = getReviewUseCase.findByUserIdAndPerfumeId(
             userId,
-            request.perfumeId(),
-            request.score(),
-            request.content(),
-            request.evaluationFieldVOs(),
-            request.moodNames()
-        );
+            request.perfumeId()
+        ).review();
+
+        if (review != null && review.getType() == ReviewType.ONBOARDING) {
+            updateDetailedReviewUseCase.update(
+                review.getId(),
+                request.score(),
+                request.content(),
+                request.evaluationFieldVOs(),
+                request.moodNames()
+            );
+        } else if (review != null) {
+            throw BusinessException.ReviewAlreadyExistsException;
+        } else {
+            createDetailedReviewUseCase.create(
+                userId,
+                request.perfumeId(),
+                request.score(),
+                request.content(),
+                request.evaluationFieldVOs(),
+                request.moodNames()
+            );   
+        }
     }
 
     @Override

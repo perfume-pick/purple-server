@@ -1,6 +1,6 @@
 package com.pikachu.purple.infrastructure.persistence.review.adaptor;
 
-import static com.pikachu.purple.bootstrap.common.exception.BusinessException.LikeAlreadyExistedException;
+import static com.pikachu.purple.bootstrap.common.exception.BusinessException.LikeAlreadyExistsException;
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.LikeNotFoundException;
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.ReviewNotFoundException;
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.UserNotFoundException;
@@ -72,7 +72,7 @@ public class LikeJpaAdaptor implements LikeRepository {
         likeJpaRepository.findByUserIdAndReviewId(
             userId,
             reviewId
-        ).ifPresent(likeJpaEntity -> {throw LikeAlreadyExistedException;});
+        ).ifPresent(likeJpaEntity -> {throw LikeAlreadyExistsException;});
     }
 
     @Override
