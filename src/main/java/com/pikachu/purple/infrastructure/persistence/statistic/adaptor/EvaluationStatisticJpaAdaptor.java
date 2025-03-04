@@ -11,7 +11,6 @@ import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeJ
 import com.pikachu.purple.infrastructure.persistence.statistic.entity.EvaluationStatisticJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.statistic.entity.id.EvaluationStatisticId;
 import com.pikachu.purple.infrastructure.persistence.statistic.repository.EvaluationStatisticJpaRepository;
-import com.pikachu.purple.infrastructure.persistence.statistic.vo.EvaluationStatisticCompositeKey;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

@@ -56,10 +56,6 @@ class GetRecommendedPerfumesByUserAccordsService implements
             .toList();
 
         List<Accord> accords = new ArrayList<>(result.userAccords());
-//        List<Perfume> perfumes = perfumeRepository.findAllWithPerfumeAccordsByAccords(
-//            accords,
-//            MAX_SIZE
-//        );
         List<Perfume> perfumes = perfumeRepository.findAll(
             accords,
             MAX_SIZE

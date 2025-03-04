@@ -2,7 +2,6 @@ package com.pikachu.purple.infrastructure.persistence.review.adaptor;
 
 import com.pikachu.purple.application.review.port.out.MoodRepository;
 import com.pikachu.purple.domain.review.Mood;
-import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.infrastructure.persistence.review.entity.MoodJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.review.entity.ReviewMoodJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.review.repository.MoodJpaRepository;
