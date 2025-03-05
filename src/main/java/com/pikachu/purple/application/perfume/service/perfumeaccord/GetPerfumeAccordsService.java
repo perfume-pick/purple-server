@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class GetPerfumeAccordsService implements GetPerfumeAccordsUseCase {
+class GetPerfumeAccordsService implements GetPerfumeAccordsUseCase {
 
     private final PerfumeAccordRepository perfumeAccordRepository;
 

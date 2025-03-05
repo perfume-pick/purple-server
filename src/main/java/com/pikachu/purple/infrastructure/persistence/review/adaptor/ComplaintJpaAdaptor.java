@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class ComplaintJpaAdaptor implements ComplaintRepository {
+class ComplaintJpaAdaptor implements ComplaintRepository {
 
     private final ComplaintJpaRepository complaintJpaRepository;
     private final UserJpaRepository userJpaRepository;

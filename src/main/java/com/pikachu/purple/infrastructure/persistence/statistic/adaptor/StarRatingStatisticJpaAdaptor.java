@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticRepository {
+class StarRatingStatisticJpaAdaptor implements StarRatingStatisticRepository {
 
     private final StarRatingStatisticJpaRepository starRatingStatisticJpaRepository;
     private final PerfumeJpaRepository perfumeJpaRepository;

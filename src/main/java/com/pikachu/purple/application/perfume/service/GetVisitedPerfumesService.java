@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
-public class GetVisitedPerfumesService implements GetVisitedPerfumesUseCase {
+class GetVisitedPerfumesService implements GetVisitedPerfumesUseCase {
 
     private final GetVisitHistoriesUseCase getVisitHistoriesUseCase;
     private final GetPerfumesUseCase getPerfumesUseCase;

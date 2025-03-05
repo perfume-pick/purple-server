@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class CreateReviewService implements CreateReviewUseCase {
+class CreateReviewService implements CreateReviewUseCase {
 
     private final ReviewRepository reviewRepository;
 

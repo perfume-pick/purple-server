@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class MoodJpaAdaptor implements MoodRepository {
+class MoodJpaAdaptor implements MoodRepository {
 
     private final MoodJpaRepository moodJpaRepository;
     private final ReviewMoodJpaRepository reviewMoodJpaRepository;

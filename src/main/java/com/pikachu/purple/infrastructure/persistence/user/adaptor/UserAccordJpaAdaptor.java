@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class UserAccordJpaAdaptor implements UserAccordRepository {
+class UserAccordJpaAdaptor implements UserAccordRepository {
 
     private final UserAccordJpaRepository userAccordJpaRepository;
     private final UserJpaRepository userJpaRepository;

@@ -26,7 +26,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class ReviewJpaAdaptor implements ReviewRepository {
+class ReviewJpaAdaptor implements ReviewRepository {
 
     private final ReviewJpaRepository reviewJpaRepository;
     private final PerfumeJpaRepository perfumeJpaRepository;

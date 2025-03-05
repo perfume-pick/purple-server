@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class UserJpaAdaptor implements UserRepository {
+class UserJpaAdaptor implements UserRepository {
 
     private final UserJpaRepository userJpaRepository;
 

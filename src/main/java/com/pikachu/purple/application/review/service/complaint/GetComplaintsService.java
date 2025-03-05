@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class GetComplaintsService implements GetComplaintsUseCase {
+class GetComplaintsService implements GetComplaintsUseCase {
 
     private final ComplaintRepository complaintRepository;
 

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class BrandJpaAdaptor implements BrandRepository {
+class BrandJpaAdaptor implements BrandRepository {
 
     private final BrandJpaRepository brandJpaRepository;
 

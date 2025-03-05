@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class CheckLikeService implements CheckLikeUseCase {
+class CheckLikeService implements CheckLikeUseCase {
 
     private final LikeRepository likeRepository;
 

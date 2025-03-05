@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class LikeJpaAdaptor implements LikeRepository {
+class LikeJpaAdaptor implements LikeRepository {
 
     private final LikeJpaRepository likeJpaRepository;
     private final UserJpaRepository userJpaRepository;

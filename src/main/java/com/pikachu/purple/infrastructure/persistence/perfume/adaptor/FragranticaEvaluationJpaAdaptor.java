@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class FragranticaEvaluationJpaAdaptor implements FragranticaEvaluationRepository {
+class FragranticaEvaluationJpaAdaptor implements FragranticaEvaluationRepository {
 
     private final FragranticaEvaluationJpaRepository fragranticaEvaluationJpaRepository;
 

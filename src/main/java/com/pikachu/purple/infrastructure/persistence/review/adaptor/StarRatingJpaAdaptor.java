@@ -20,7 +20,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class StarRatingJpaAdaptor implements StarRatingRepository {
+class StarRatingJpaAdaptor implements StarRatingRepository {
 
     private final StarRatingJpaRepository starRatingJpaRepository;
     private final PerfumeJpaRepository perfumeJpaRepository;
