@@ -24,7 +24,7 @@ class GetVisitedPerfumesService implements GetVisitedPerfumesUseCase {
 
     @Override
     public Result findAllByUserIdWithPerfumeAccord(Long userId) {
-        List<VisitHistory> visitHistories = getVisitHistoriesUseCase.findAllUserId(userId).visitHistories();
+        List<VisitHistory> visitHistories = getVisitHistoriesUseCase.findAllByUserId(userId).visitHistories();
         List<Long> perfumeIds = visitHistories.stream()
             .map(VisitHistory::getPerfumeId)
             .toList();

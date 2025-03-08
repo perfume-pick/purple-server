@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface PerfumeAccordRepository {
 
-    List<PerfumeAccord> findAllPerfumeId(Long perfumeId);
+    List<PerfumeAccord> findAllByPerfumeId(Long perfumeId);
 
     List<PerfumeAccord> findAllByPerfumeIdOrderByValueDesc(
         Long perfumeId,
