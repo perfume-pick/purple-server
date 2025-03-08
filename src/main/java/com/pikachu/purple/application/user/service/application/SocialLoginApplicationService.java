@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 class SocialLoginApplicationService implements SocialLoginUseCase {
 
@@ -24,7 +25,6 @@ class SocialLoginApplicationService implements SocialLoginUseCase {
     private final UserSignUpUseCase userSignUpUseCase;
     private final OAuthTokenService oAuthTokenService;
 
-    @Transactional
     @Override
     public Result invoke(
         SocialLoginProvider socialLoginProvider,

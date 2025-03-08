@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 class RecountStarRatingStatisticsService implements
     RecountStarRatingStatisticsUseCase {
@@ -26,7 +27,6 @@ class RecountStarRatingStatisticsService implements
     private final GetStarRatingsUseCase getStarRatingsUseCase;
     private final GetPerfumeIdsUseCase getPerfumeIdsUseCase;
 
-    @Transactional
     @Override
     public void invoke() {
         List<Long> perfumeIds = getPerfumeIdsUseCase.invoke().perfumeIds();

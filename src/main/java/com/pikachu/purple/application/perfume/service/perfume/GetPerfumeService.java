@@ -9,11 +9,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 class GetPerfumeService implements GetPerfumeUseCase {
 
     private final PerfumeRepository perfumeRepository;
 
-    @Transactional
     @Override
     public Result findByPerfumeId(Long perfumeId) {
         Perfume perfume = perfumeRepository.findByPerfumeId(perfumeId);

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 class RefreshJwtTokenApplicationService implements RefreshJwtTokenUseCase {
 
@@ -19,7 +20,6 @@ class RefreshJwtTokenApplicationService implements RefreshJwtTokenUseCase {
     private final UserTokenService userTokenService;
     private final UserTokenRepository userTokenRepository;
 
-    @Transactional
     @Override
     public Result invoke(String jwtToken) {
         String refreshToken = userTokenService.resolveJwtToken(jwtToken).getRefreshToken();

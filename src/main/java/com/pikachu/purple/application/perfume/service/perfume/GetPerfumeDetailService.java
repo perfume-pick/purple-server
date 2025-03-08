@@ -27,7 +27,6 @@ class GetPerfumeDetailService implements
 
     private static final int MAX_SIZE = 5;
 
-    @Transactional
     @Override
     public Result findByPerfumeId(Long perfumeId) {
         Perfume perfume = perfumeRepository.findByPerfumeId(perfumeId);

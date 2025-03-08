@@ -9,12 +9,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 class CreateVisitHistoryService implements CreateVisitHistoryUseCase {
 
     private final VisitHistoryRepository visitHistoryRepository;
 
-    @Transactional
     @Override
     public void create(
         Long userId,

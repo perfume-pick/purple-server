@@ -15,7 +15,6 @@ class GetVisitHistoriesService implements GetVisitHistoriesUseCase {
 
     private final VisitHistoryRepository visitHistoryRepository;
 
-    @Transactional
     @Override
     public Result findAllUserId(Long userId) {
         List<VisitHistory> visitHistories = visitHistoryRepository.findAllByUserId(userId);

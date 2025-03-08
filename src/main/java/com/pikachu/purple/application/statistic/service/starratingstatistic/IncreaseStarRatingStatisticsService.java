@@ -9,13 +9,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 class IncreaseStarRatingStatisticsService implements
     IncreaseStarRatingStatisticsUseCase {
 
     private final IncreaseStarRatingStatisticUseCase increaseStarRatingStatisticUseCase;
 
-    @Transactional
     @Override
     public void invoke(List<StarRating> starRatings) {
         for (StarRating starRating : starRatings) {

@@ -9,11 +9,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 class GetUserService implements GetUserUseCase {
 
     private final UserRepository userRepository;
 
-    @Transactional
     @Override
     public Result findByUserId(Long userId) {
         User user = userRepository.findById(userId);

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 class CreateUserAccordService implements CreateUserAccordUseCase {
 
@@ -20,7 +21,6 @@ class CreateUserAccordService implements CreateUserAccordUseCase {
     private final GetStarRatingUseCase getStarRatingUseCase;
     private final UserAccordRepository userAccordRepository;
 
-    @Transactional
     @Override
     public void createAll(
         Long userId,

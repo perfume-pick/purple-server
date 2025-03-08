@@ -8,11 +8,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 class GetUserCountsService implements GetUserCountsUseCase {
 
     private final UserRepository userRepository;
 
-    @Transactional
     @Override
     public Result count() {
         int userCounts = userRepository.count();

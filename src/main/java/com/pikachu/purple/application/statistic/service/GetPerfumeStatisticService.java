@@ -18,13 +18,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 class GetPerfumeStatisticService implements
     GetPerfumeStatisticUseCase {
 
     private final EvaluationStatisticRepository evaluationStatisticRepository;
     private final StarRatingStatisticRepository starRatingStatisticRepository;
 
-    @Transactional
     @Override
     public Result findByPerfumeId(Long perfumeId) {
         EvaluationStatistic evaluationStatistic = evaluationStatisticRepository.findByPerfumeIdOrderByVotesDesc(

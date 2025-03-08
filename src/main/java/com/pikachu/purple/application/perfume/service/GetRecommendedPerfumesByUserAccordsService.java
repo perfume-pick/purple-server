@@ -19,6 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 class GetRecommendedPerfumesByUserAccordsService implements
     GetRecommendedPerfumesByUserAccordsUseCase {
 
@@ -29,7 +30,6 @@ class GetRecommendedPerfumesByUserAccordsService implements
 
     private static final int MAX_SIZE = 30;
 
-    @Transactional
     @Override
     public Result findAllByUserId(Long userId) {
         GetTopThreeUserAccordsUseCase.Result result = getTopThreeUserAccordsUseCase.findByUserId(userId);

@@ -26,7 +26,6 @@ class GetPolarizedUserAccordsService implements
     private final GetStarRatingsUseCase getStarRatingsUseCase;
     private static final int MAX_SIZE = 3;
 
-    @Transactional
     @Override
     public Result findByUserId(Long userId) {
         List<UserAccord> accordsByDesc = userAccordRepository.findAllOrderByScoreDesc(

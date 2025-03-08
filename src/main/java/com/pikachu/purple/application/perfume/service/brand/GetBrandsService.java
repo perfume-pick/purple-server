@@ -18,7 +18,6 @@ class GetBrandsService implements GetBrandsUseCase {
 
     private final BrandRepository brandRepository;
 
-    @Transactional
     @Override
     public Result findAll() {
         List<Brand> brands = brandRepository.findAll();
@@ -26,7 +25,6 @@ class GetBrandsService implements GetBrandsUseCase {
         return new Result(brands);
     }
 
-    @Transactional
     @Override
     public Result findAllWithPerfumes(List<String> brandNames) {
         List<Brand> brands = brandRepository.findAll(brandNames);

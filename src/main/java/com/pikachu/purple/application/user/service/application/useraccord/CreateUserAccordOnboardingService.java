@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 class CreateUserAccordOnboardingService implements
     CreateUserAccordOnboardingUseCase {
@@ -21,7 +22,6 @@ class CreateUserAccordOnboardingService implements
     private final UserAccordRecommender userAccordRecommender;
     private final UserAccordRepository userAccordRepository;
 
-    @Transactional
     @Override
     public void createAll(Long userId) {
         GetUserUseCase.Result user = getUserUseCase.findByUserId(userId);

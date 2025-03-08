@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 class RecountEvaluationStatisticsService implements
     RecountEvaluationStatisticsUseCase {
@@ -25,7 +26,6 @@ class RecountEvaluationStatisticsService implements
 
     private final EvaluationStatisticRepository evaluationStatisticRepository;
 
-    @Transactional
     @Override
     public void invoke() {
         EvaluationStatistic evaluationStatistic = new EvaluationStatistic();

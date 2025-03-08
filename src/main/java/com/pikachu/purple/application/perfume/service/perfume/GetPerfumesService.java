@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 class GetPerfumesService implements GetPerfumesUseCase {
 
     private final GetPerfumeAverageScoreUseCase getPerfumeAverageScoreUseCase;
@@ -22,7 +23,6 @@ class GetPerfumesService implements GetPerfumesUseCase {
 
     private static final int MAX_SIZE = 30;
 
-    @Transactional
     @Override
     public Result findAll(Brand brand) {
         List<Perfume> perfumes = perfumeRepository.findAll(brand);
@@ -30,7 +30,6 @@ class GetPerfumesService implements GetPerfumesUseCase {
         return new Result(perfumes);
     }
 
-    @Transactional
     @Override
     public Result findAllWithPerfumeAccord(List<Long> perfumeIds) {
         List<Perfume> perfumes = perfumeRepository.findAll(perfumeIds);
@@ -39,7 +38,6 @@ class GetPerfumesService implements GetPerfumesUseCase {
         return new Result(perfumes);
     }
 
-    @Transactional
     @Override
     public Result findAllWithPerfumeAccord(String keyword) {
         List<Perfume> perfumes = perfumeRepository.findAll(keyword);
@@ -50,7 +48,6 @@ class GetPerfumesService implements GetPerfumesUseCase {
         return new Result(perfumes);
     }
 
-    @Transactional
     @Override
     public Result findAllWithPerfumeAccordOrderByReviewCount() {
         List<Perfume> perfumes =  perfumeRepository.findAllHavingReviewCountNotZeroOrderByReviewCount(MAX_SIZE);

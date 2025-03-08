@@ -22,7 +22,6 @@ class GetVisitedPerfumesService implements GetVisitedPerfumesUseCase {
     private final GetPerfumesUseCase getPerfumesUseCase;
     private final GetPerfumeAverageScoreUseCase getPerfumeAverageScoreUseCase;
 
-    @Transactional
     @Override
     public Result findAllByUserIdWithPerfumeAccord(Long userId) {
         List<VisitHistory> visitHistories = getVisitHistoriesUseCase.findAllUserId(userId).visitHistories();

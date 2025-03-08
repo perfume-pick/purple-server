@@ -10,12 +10,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 class SocialLoginTryApplicationService implements SocialLoginTryUseCase {
 
     private final SocialLoginService socialLoginService;
 
-    @Transactional
     @Override
     public Result invoke(
         SocialLoginProvider socialLoginProvider,
