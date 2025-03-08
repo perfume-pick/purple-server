@@ -4,6 +4,7 @@ import com.pikachu.purple.application.perfume.common.dto.RecommendedPerfumeDTO;
 import com.pikachu.purple.application.perfume.common.dto.UserAccordDTO;
 import com.pikachu.purple.application.perfume.common.vo.PerfumeAccordMatchVO;
 import com.pikachu.purple.application.perfume.port.in.GetRecommendedPerfumesByUserAccordsUseCase;
+import com.pikachu.purple.application.perfume.port.in.perfumeaccord.GetPerfumeAccordsUseCase;
 import com.pikachu.purple.application.perfume.port.out.PerfumeRepository;
 import com.pikachu.purple.application.user.port.in.useraccord.GetTopThreeUserAccordsUseCase;
 import com.pikachu.purple.domain.accord.Accord;
@@ -18,18 +19,20 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 class GetRecommendedPerfumesByUserAccordsService implements
     GetRecommendedPerfumesByUserAccordsUseCase {
 
-    private final PerfumeRepository perfumeRepository;
     private final GetTopThreeUserAccordsUseCase getTopThreeUserAccordsUseCase;
+    private final GetPerfumeAccordsUseCase getPerfumeAccordsUseCase;
+
+    private final PerfumeRepository perfumeRepository;
 
     private static final int MAX_SIZE = 30;
 
-    @Transactional
     @Override
-    public Result findAll(Long userId) {
-        GetTopThreeUserAccordsUseCase.Result result = getTopThreeUserAccordsUseCase.find(userId);
+    public Result findAllByUserId(Long userId) {
+        GetTopThreeUserAccordsUseCase.Result result = getTopThreeUserAccordsUseCase.findByUserId(userId);
 
         if (result.userAccords().isEmpty()) {
             return new Result(
@@ -53,10 +56,18 @@ class GetRecommendedPerfumesByUserAccordsService implements
             .toList();
 
         List<Accord> accords = new ArrayList<>(result.userAccords());
-        List<Perfume> perfumes = perfumeRepository.findAllWithPerfumeAccordsByAccords(
+        List<Perfume> perfumes = perfumeRepository.findAll(
             accords,
             MAX_SIZE
         );
+
+        for (Perfume perfume : perfumes) {
+            perfume.setAccords(
+                getPerfumeAccordsUseCase
+                    .findAll(perfume)
+                    .perfumeAccords()
+            );
+        }
 
         List<RecommendedPerfumeDTO> recommendedPerfumeDTOs = perfumes.stream()
             .map(perfume -> {

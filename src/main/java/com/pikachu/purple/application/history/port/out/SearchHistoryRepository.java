@@ -13,7 +13,7 @@ public interface SearchHistoryRepository {
         Instant searchAt
     );
 
-    void deleteAllSearchHistoryByUserId(Long userId);
+    void deleteAll(Long userId);
 
     void validateNotExist(Long userId, String keyword);
 

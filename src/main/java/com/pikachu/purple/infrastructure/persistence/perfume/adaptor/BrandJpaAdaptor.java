@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class BrandJpaAdaptor implements BrandRepository {
+class BrandJpaAdaptor implements BrandRepository {
 
     private final BrandJpaRepository brandJpaRepository;
 
@@ -23,11 +23,11 @@ public class BrandJpaAdaptor implements BrandRepository {
     }
 
     @Override
-    public List<Brand> findAllWithPerfumes(List<String> brandNames) {
+    public List<Brand> findAll(List<String> brandNames) {
         List<BrandJpaEntity> brandJpaEntities = brandJpaRepository.findByNameIn(brandNames);
 
         return brandJpaEntities.stream()
-            .map(BrandJpaEntity::toDomainWithPerfume)
+            .map(BrandJpaEntity::toDomain)
             .toList();
     }
 

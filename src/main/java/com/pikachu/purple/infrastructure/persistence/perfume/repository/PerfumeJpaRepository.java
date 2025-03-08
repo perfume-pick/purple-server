@@ -14,13 +14,13 @@ public interface PerfumeJpaRepository extends JpaRepository<PerfumeJpaEntity, Lo
 
     @Query("select p "
         + "from PerfumeJpaEntity p "
-        + "where p.brandJpaEntity.name in :brandNames")
-    List<PerfumeJpaEntity> findAllByBrandNameIn(List<String> brandNames);
+        + "where p.brandJpaEntity.name = :brandName")
+    List<PerfumeJpaEntity> findAllByBrandName(String brandName);
 
 
     @Query("select p "
         + "from PerfumeJpaEntity p "
-        + "left join PerfumeAccordJpaEntity pa on p = pa.perfumeJpaEntity "
+        + "left join PerfumeAccordJpaEntity pa on p.id = pa.perfumeId "
         + "where pa.accordJpaEntity in :accordJpaEntities "
         + "group by p "
         + "order by count(pa) desc")
@@ -29,12 +29,15 @@ public interface PerfumeJpaRepository extends JpaRepository<PerfumeJpaEntity, Lo
 
     @Query("select p "
         + "from PerfumeJpaEntity p "
-        + "where p.name like :keyword or p.brandJpaEntity.name like :keyword or p.koreanName like :keyword or p.brandJpaEntity.koreaName like :keyword")
-    List<PerfumeJpaEntity> findByKeyword(String keyword);
+        + "where p.name like :keyword"
+        + " or p.brandJpaEntity.name like :keyword"
+        + " or p.koreanName like :keyword"
+        + " or p.brandJpaEntity.koreaName like :keyword")
+    List<PerfumeJpaEntity> findAllByKeyword(String keyword);
 
     @Query("select p "
         + "from PerfumeJpaEntity p "
-        + "left join ReviewJpaEntity r on r.perfumeJpaEntity = p "
+        + "left join ReviewJpaEntity r on r.perfumeId = p.id "
         + "group by p having count(r) > 0 "
         + "order by count(r) desc")
     List<PerfumeJpaEntity> findAllHavingReviewCountNotZeroOrderByReviewCount(Limit limit);

@@ -8,7 +8,9 @@ public interface ReviewEvaluationRepository {
 
     ReviewEvaluation find();
 
-    ReviewEvaluation find(Long reviewId);
+    ReviewEvaluation findByReviewId(Long reviewId);
+
+    ReviewEvaluation findByPerfumeId(Long perfumeId);
 
     void delete(Long reviewId);
 

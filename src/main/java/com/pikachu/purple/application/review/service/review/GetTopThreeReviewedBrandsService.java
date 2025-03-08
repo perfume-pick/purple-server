@@ -1,7 +1,6 @@
 package com.pikachu.purple.application.review.service.review;
 
-import static com.pikachu.purple.support.security.SecurityProvider.getCurrentUserAuthentication;
-
+import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumeUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetTopThreeReviewedBrandsUseCase;
 import com.pikachu.purple.application.review.port.out.ReviewRepository;
 import com.pikachu.purple.domain.review.Review;
@@ -19,13 +18,21 @@ import org.springframework.transaction.annotation.Transactional;
 class GetTopThreeReviewedBrandsService implements
     GetTopThreeReviewedBrandsUseCase {
 
+    private final GetPerfumeUseCase getPerfumeUseCase;
     private final ReviewRepository reviewRepository;
 
-    @Override
     @Transactional
-    public Result invoke() {
-        Long userId = getCurrentUserAuthentication().userId();
-        List<Review> reviews = reviewRepository.findAllWithPerfume(userId);
+    @Override
+    public Result invoke(Long userId) {
+        List<Review> reviews = reviewRepository.findAllByUserId(userId);
+        for (Review review : reviews) {
+            review.setPerfume(
+                getPerfumeUseCase
+                    .findByPerfumeId(review.getPerfume().getId())
+                    .perfume()
+            );
+        }
+
 
         List<Map.Entry<String, Long>> reviewedBrands = reviews.stream()
             .collect(Collectors.groupingBy(

@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Slf4j
 @Service
+@Transactional
 @RequiredArgsConstructor
 class SocialLogoutApplicationService implements SocialLogoutUseCase {
 
@@ -21,7 +22,6 @@ class SocialLogoutApplicationService implements SocialLogoutUseCase {
     private final OAuthTokenService oAuthTokenService;
     private final SocialLoginService socialLoginService;
 
-    @Transactional
     @Override
     public void invoke() {
         Long userId = getCurrentUserAuthentication().userId();

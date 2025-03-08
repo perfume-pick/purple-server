@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class NoteJpaAdaptor implements NoteRepository {
+class NoteJpaAdaptor implements NoteRepository {
 
     private final NoteJpaRepository noteJpaRepository;
 

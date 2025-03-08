@@ -29,10 +29,10 @@ class UpdateSimpleReviewService implements UpdateSimpleReviewUseCase {
         int score,
         String content
     ) {
-        Review review = reviewRepository.findWithPerfume(reviewId);
+        Review review = reviewRepository.findByReviewId(reviewId);
 
         if(review.getType() == ReviewType.DETAIL) {
-            ReviewEvaluation reviewEvaluation = reviewEvaluationRepository.find(reviewId);
+            ReviewEvaluation reviewEvaluation = reviewEvaluationRepository.findByReviewId(reviewId);
             reviewEvaluationRepository.delete(reviewId);
             decreaseEvaluationStatisticUseCase.invoke(
                 review.getPerfume().getId(),

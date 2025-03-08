@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class ReviewEvaluationJpaAdaptor implements ReviewEvaluationRepository {
+class ReviewEvaluationJpaAdaptor implements ReviewEvaluationRepository {
 
     private final ReviewJpaRepository reviewJpaRepository;
     private final ReviewEvaluationJpaRepository reviewEvaluationJpaRepository;
@@ -44,7 +44,7 @@ public class ReviewEvaluationJpaAdaptor implements ReviewEvaluationRepository {
         List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities =
             reviewEvaluationJpaRepository.findAll(
                 Sort.by(
-                    Sort.Order.asc("reviewJpaEntity.id"),
+                    Sort.Order.asc("reviewId"),
                     Sort.Order.asc("fieldCode"),
                     Sort.Order.asc("optionCode")
                 )
@@ -54,9 +54,17 @@ public class ReviewEvaluationJpaAdaptor implements ReviewEvaluationRepository {
     }
 
     @Override
-    public ReviewEvaluation find(Long reviewId) {
+    public ReviewEvaluation findByPerfumeId(Long perfumeId) {
         List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities =
-            reviewEvaluationJpaRepository.findByReviewId(reviewId);
+            reviewEvaluationJpaRepository.findByPerfumeIdOrderByFieldCodeAscOptionCodeAsc(perfumeId);
+
+        return ReviewEvaluationJpaEntity.toDomain(reviewEvaluationJpaEntities);
+    }
+
+    @Override
+    public ReviewEvaluation findByReviewId(Long reviewId) {
+        List<ReviewEvaluationJpaEntity> reviewEvaluationJpaEntities =
+            reviewEvaluationJpaRepository.findByReviewIdOrderByFieldCodeAscOptionCodeAsc(reviewId);
 
         return ReviewEvaluationJpaEntity.toDomain(reviewEvaluationJpaEntities);
     }

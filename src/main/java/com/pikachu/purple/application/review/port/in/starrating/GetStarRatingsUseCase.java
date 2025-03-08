@@ -7,7 +7,7 @@ public interface GetStarRatingsUseCase {
 
     Result findAll();
 
-    Result findAll(Long userId);
+    Result findAllByUserIdWithPerfume(Long userId);
 
     record Result(List<StarRating> starRatings) {}
 

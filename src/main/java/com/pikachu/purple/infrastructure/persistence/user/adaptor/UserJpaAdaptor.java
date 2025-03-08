@@ -1,6 +1,6 @@
 package com.pikachu.purple.infrastructure.persistence.user.adaptor;
 
-import static com.pikachu.purple.bootstrap.common.exception.BusinessException.NicknameAlreadyExistedException;
+import static com.pikachu.purple.bootstrap.common.exception.BusinessException.NicknameAlreadyExistsException;
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.UserNotFoundException;
 
 import com.pikachu.purple.application.user.port.out.UserRepository;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class UserJpaAdaptor implements UserRepository {
+class UserJpaAdaptor implements UserRepository {
 
     private final UserJpaRepository userJpaRepository;
 
@@ -53,7 +53,7 @@ public class UserJpaAdaptor implements UserRepository {
     @Override
     public void validateNotExistedNickname(String nickname) {
         userJpaRepository.findByNickname(nickname)
-            .ifPresent(userJpaEntity -> {throw NicknameAlreadyExistedException;});
+            .ifPresent(userJpaEntity -> {throw NicknameAlreadyExistsException;});
     }
 
     @Override

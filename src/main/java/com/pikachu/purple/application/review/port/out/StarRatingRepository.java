@@ -5,11 +5,19 @@ import java.util.List;
 
 public interface StarRatingRepository {
 
-    void createAll(Long userId, List<StarRating> starRatings);
-
     StarRating create(Long starRatingId, Long userId, Long perfumeId, int score);
 
-    List<StarRating> findAllWithPerfumeAndPerfumeAccordByUserId(Long userId);
+    List<StarRating> createAll(Long userId, List<StarRating> starRatings);
+
+    StarRating findByStarRatingId(Long starRatingId);
+
+    StarRating findByUserIdAndPerfumeId(Long userId, Long perfumeId);
+
+    List<StarRating> findAll();
+
+    List<StarRating> findAllByPerfumeId(Long perfumeId);
+
+    List<StarRating> findAllByUserId(Long userId);
 
     StarRating updateScore(
         Long userId,
@@ -18,24 +26,5 @@ public interface StarRatingRepository {
     );
 
     StarRating deleteById(Long starRatingId);
-
-    StarRating findByUserIdAndPerfumeId(
-        Long userId,
-        Long perfumeId
-    );
-
-    List<StarRating> findAll();
-
-    List<StarRating> findAll(Long perfumeId);
-
-    List<StarRating> findAllByUpdatedDate(String updatedDate);
-
-    List<StarRating> findAllOrderByLikeCountDesc(Long userId);
-
-    List<StarRating> findAllByUserId(Long userId);
-
-    List<StarRating> findAllOrderByScoreDesc(Long userId);
-
-    List<StarRating> findAllOrderByScoreAsc(Long userId);
 
 }

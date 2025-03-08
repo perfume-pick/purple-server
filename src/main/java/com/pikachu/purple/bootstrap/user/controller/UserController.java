@@ -10,8 +10,8 @@ import com.pikachu.purple.application.history.port.in.visithistory.DeleteVisitHi
 import com.pikachu.purple.application.perfume.port.in.GetVisitedPerfumesUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetCurrentAndAverageUserReviewCountsUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetReviewUseCase;
+import com.pikachu.purple.application.review.port.in.review.GetReviewsUseCase;
 import com.pikachu.purple.application.review.port.in.review.GetTopThreeReviewedBrandsUseCase;
-import com.pikachu.purple.application.review.port.in.starrating.GetReviewsByUserAndSortTypeUseCase;
 import com.pikachu.purple.application.user.port.in.user.GetUserUseCase;
 import com.pikachu.purple.application.user.port.in.user.UpdateProfileUseCase;
 import com.pikachu.purple.application.user.port.in.user.WithdrawUserUseCase;
@@ -46,7 +46,7 @@ public class UserController implements UserApi {
     private final GetTopThreeReviewedBrandsUseCase getTopThreeReviewedBrandsUseCase;
     private final GetReviewUseCase getReviewUseCase;
     private final GetPolarizedUserAccordsUseCase getPolarizedUserAccordsUseCase;
-    private final GetReviewsByUserAndSortTypeUseCase getReviewsByUserAndSortTypeUseCase;
+    private final GetReviewsUseCase getReviewsUseCase;
     private final WithdrawUserUseCase withdrawUserUseCase;
     private final GetUserUseCase getUserUseCase;
 
@@ -78,7 +78,7 @@ public class UserController implements UserApi {
         Long userId = getCurrentUserAuthentication().userId();
 
         GetCurrentAndAverageUserReviewCountsUseCase.Result result =
-            getCurrentAndAverageUserReviewCountsUseCase.find(userId);
+            getCurrentAndAverageUserReviewCountsUseCase.findByUserId(userId);
 
         return SuccessResponse.of(
             GetUserReviewCountsResponse.of(result)
@@ -87,7 +87,8 @@ public class UserController implements UserApi {
 
     @Override
     public SuccessResponse<GetTopThreeReviewedBrandsResponse> findTopThreeReviewedBrands() {
-        GetTopThreeReviewedBrandsUseCase.Result result = getTopThreeReviewedBrandsUseCase.invoke();
+        Long userId = getCurrentUserAuthentication().userId();
+        GetTopThreeReviewedBrandsUseCase.Result result = getTopThreeReviewedBrandsUseCase.invoke(userId);
 
         return SuccessResponse.of(
             GetTopThreeReviewedBrandsResponse.of(result)
@@ -109,7 +110,7 @@ public class UserController implements UserApi {
     @Override
     public SuccessResponse<GetSearchHistoriesResponse> findAllSearchHistory() {
         Long userId = getCurrentUserAuthentication().userId();
-        GetSearchHistoriesUseCase.Result result = getSearchHistoriesUseCase.findAll(userId);
+        GetSearchHistoriesUseCase.Result result = getSearchHistoriesUseCase.findAllByUserId(userId);
 
         return SuccessResponse.of(
             GetSearchHistoriesResponse.of(result)
@@ -138,7 +139,7 @@ public class UserController implements UserApi {
     @Override
     public SuccessResponse<GetVisitHistoriesResponse> findAllVisitHistory() {
         Long userId = getCurrentUserAuthentication().userId();
-        GetVisitedPerfumesUseCase.Result result = getVisitedPerfumesUseCase.findAllWithPerfumeAccord(userId);
+        GetVisitedPerfumesUseCase.Result result = getVisitedPerfumesUseCase.findAllByUserIdWithPerfumeAccord(userId);
 
         return SuccessResponse.of(
             GetVisitHistoriesResponse.of(result)
@@ -157,7 +158,7 @@ public class UserController implements UserApi {
         Long perfumeId) {
         Long userId = getCurrentUserAuthentication().userId();
 
-        GetReviewUseCase.Result result = getReviewUseCase.find(userId, perfumeId);
+        GetReviewUseCase.Result result = getReviewUseCase.findByUserIdAndPerfumeIdWithStarRatingAndEvaluationAndMoods(userId, perfumeId);
 
         return SuccessResponse.of(
             GetReviewByPerfumeIdAndUserResponse.of(result)
@@ -167,7 +168,7 @@ public class UserController implements UserApi {
     @Override
     public SuccessResponse<GetPolarizedUserAccordsByUserResponse> findPolarizedUserAccordsByUser() {
         Long userId = getCurrentUserAuthentication().userId();
-        GetPolarizedUserAccordsUseCase.Result result = getPolarizedUserAccordsUseCase.find(userId);
+        GetPolarizedUserAccordsUseCase.Result result = getPolarizedUserAccordsUseCase.findByUserId(userId);
 
         return SuccessResponse.of(new GetPolarizedUserAccordsByUserResponse(result.polarizedUserAccordDTO()));
     }
@@ -175,7 +176,7 @@ public class UserController implements UserApi {
     @Override
     public SuccessResponse<GetUserProfileResponse> findUserProfileByUser() {
         Long userId = getCurrentUserAuthentication().userId();
-        GetUserUseCase.Result result = getUserUseCase.find(userId);
+        GetUserUseCase.Result result = getUserUseCase.findByUserId(userId);
 
         return SuccessResponse.of(
             new GetUserProfileResponse(
@@ -187,10 +188,15 @@ public class UserController implements UserApi {
 
     @Override
     public SuccessResponse<GetReviewsByUserAndSortTypeResponse> findAllReviewByUserAndSortType(String sortType) {
-        GetReviewsByUserAndSortTypeUseCase.Result result = getReviewsByUserAndSortTypeUseCase.invoke(sortType);
+        Long userId = getCurrentUserAuthentication().userId();
+        GetReviewsUseCase.Result result = getReviewsUseCase
+            .findAllWithPerfumeAndReviewEvaluationAndMoodsAndIsLiked(
+                userId,
+                sortType
+            );
 
         return SuccessResponse.of(
-            new GetReviewsByUserAndSortTypeResponse(result.reviewWithPerfumeDTOs())
+            GetReviewsByUserAndSortTypeResponse.of(result)
         );
     }
 

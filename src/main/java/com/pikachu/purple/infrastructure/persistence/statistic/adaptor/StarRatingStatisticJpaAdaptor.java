@@ -8,8 +8,8 @@ import com.pikachu.purple.domain.statistic.StarRatingStatistic;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeJpaRepository;
 import com.pikachu.purple.infrastructure.persistence.statistic.entity.StarRatingStatisticJpaEntity;
+import com.pikachu.purple.infrastructure.persistence.statistic.entity.id.StarRatingStatisticId;
 import com.pikachu.purple.infrastructure.persistence.statistic.repository.StarRatingStatisticJpaRepository;
-import com.pikachu.purple.infrastructure.persistence.statistic.vo.StarRatingStatisticCompositeKey;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticRepository {
+class StarRatingStatisticJpaAdaptor implements StarRatingStatisticRepository {
 
     private final StarRatingStatisticJpaRepository starRatingStatisticJpaRepository;
     private final PerfumeJpaRepository perfumeJpaRepository;
@@ -27,21 +27,20 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
         Long perfumeId,
         int score
     ) {
-        StarRatingStatisticCompositeKey compositeKey =
-            StarRatingStatisticCompositeKey.builder()
-                .perfumeId(perfumeId)
-                .score(score)
-                .build();
+        StarRatingStatisticId starRatingStatisticId = new StarRatingStatisticId(
+            perfumeId,
+            score
+        );
 
         Optional<StarRatingStatisticJpaEntity> findResult =
-            starRatingStatisticJpaRepository.findByCompositeKey(compositeKey);
+            starRatingStatisticJpaRepository.findById(starRatingStatisticId);
 
         if (findResult.isEmpty()) {
             PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository.findById(perfumeId)
                 .orElseThrow(() -> PerfumeNotFoundException);
 
             return StarRatingStatisticJpaEntity.builder()
-                .perfumeJpaEntity(perfumeJpaEntity)
+                .perfumeId(perfumeJpaEntity.getId())
                 .score(score)
                 .build();
 
@@ -61,9 +60,9 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
     }
 
     @Override
-    public List<StarRatingStatistic> findAll(Long perfumeId) {
+    public List<StarRatingStatistic> findAllByPerfumeId(Long perfumeId) {
         List<StarRatingStatisticJpaEntity> starRatingStatisticJpaEntities =
-            starRatingStatisticJpaRepository.findAllByPerfumeId(perfumeId);
+            starRatingStatisticJpaRepository.findAllByPerfumeIdOrderByScoreAsc(perfumeId);
 
         return starRatingStatisticJpaEntities.stream()
             .map(StarRatingStatisticJpaEntity::toDomain)
@@ -73,7 +72,7 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
     @Override
     public List<StarRatingStatistic> findAll(List<Long> perfumeIds) {
         List<StarRatingStatisticJpaEntity> starRatingStatisticJpaEntities =
-            starRatingStatisticJpaRepository.findAllByPerfumeIds(perfumeIds);
+            starRatingStatisticJpaRepository.findAllByPerfumeIdInOrderByScoreAsc(perfumeIds);
 
         return starRatingStatisticJpaEntities.stream()
             .map(StarRatingStatisticJpaEntity::toDomain)
@@ -93,7 +92,7 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
                 perfumeStarRatingStatisticDTO.starRatingStatistics()) {
                 StarRatingStatisticJpaEntity starRatingStatisticJpaEntity = StarRatingStatisticJpaEntity
                     .builder()
-                    .perfumeJpaEntity(perfumeJpaEntity)
+                    .perfumeId(perfumeJpaEntity.getId())
                     .score(starRatingStatistic.getScore())
                     .votes(starRatingStatistic.getVotes())
                     .build();
@@ -133,7 +132,7 @@ public class StarRatingStatisticJpaAdaptor implements StarRatingStatisticReposit
     }
 
     @Override
-    public StarRatingStatistic findByPerfumeIdAndScore(Long perfumeId, int score) {
+    public StarRatingStatistic find(Long perfumeId, int score) {
         StarRatingStatisticJpaEntity starRatingStatistic = findEntity(
             perfumeId,
             score

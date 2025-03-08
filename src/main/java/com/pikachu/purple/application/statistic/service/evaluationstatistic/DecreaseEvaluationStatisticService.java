@@ -8,8 +8,10 @@ import com.pikachu.purple.domain.review.ReviewEvaluation;
 import com.pikachu.purple.infrastructure.redis.annotation.DistributedLock;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 class DecreaseEvaluationStatisticService implements
     DecreaseEvaluationStatisticUseCase {

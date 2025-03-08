@@ -7,16 +7,16 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 class DeleteSearchHistoriesService implements
     DeleteSearchHistoriesUseCase {
 
     private final SearchHistoryRepository searchHistoryRepository;
 
-    @Transactional
     @Override
     public void deleteAll(Long userId) {
-        searchHistoryRepository.deleteAllSearchHistoryByUserId(userId);
+        searchHistoryRepository.deleteAll(userId);
     }
 
 }

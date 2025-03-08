@@ -8,31 +8,41 @@ public interface ReviewRepository {
 
     Review create(Long userId, Long perfumeId, Review review);
 
+    void createAll(List<Review> reviews);
+
     void createReviewMoods(Long reviewId, List<String> moodNames);
 
-    Review find(Long reviewId);
+    Review findByReviewId(Long reviewId);
 
-    Review findWithPerfume(Long reviewId);
+    Review findUserIdAndPerfumeId(Long userId, Long perfumeId);
 
-    List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodsAndIsComplainedAndIsLikedOrderByLikeCountDesc(Long userId, Long perfumeId);
+    List<Review> findAllByUserId(Long userId);
 
-    List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodsAndIsComplainedAndIsLikedOrderByCreatedAtDesc(Long userId, Long perfumeId);
+    List<Review> findAll(ReviewType reviewType);
 
-    List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodsAndIsComplainedAndIsLikedOrderByScoreDesc(Long userId, Long perfumeId);
+    List<Review> findAllByUserIdOrderByLikeCountDesc(Long userId);
 
-    List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodsAndIsComplainedAndIsLikedOrderByScoreAsc(Long userId, Long perfumeId);
+    List<Review> findAllByPerfumeIdOrderByLikeCountDesc(Long perfumeId);
 
-    List<Review> findAllWithEvaluation(ReviewType reviewType);
+    List<Review> findAllByUserIdOrderByCreatedAtDesc(Long userId);
+
+    List<Review> findAllByPerfumeIdOrderByCreatedAtDesc(Long perfumeId);
+
+    List<Review> findAllByUserIdOrderByScoreDesc(Long userId);
+
+    List<Review> findAllByPerfumeIdOrderByScoreDesc(Long perfumeId);
+
+    List<Review> findAllByUserIdOrderByScoreAsc(Long userId);
+
+    List<Review> findAllByPerfumeIdOrderByScoreAsc(Long perfumeId);
 
     void update(Long reviewId, String content, ReviewType reviewType);
 
     void updateReviewMood(Long reviewId, List<String> moodNames);
 
-    void deleteReviewMoods(Long reviewId);
-
     void delete(Long id);
 
-    Review findWithPerfumeAndReviewEvaluationAndMood(Long userId, Long perfumeId);
+    void deleteReviewMoods(Long reviewId);
 
     void increaseLikeCount(Long reviewId);
 
@@ -41,7 +51,5 @@ public interface ReviewRepository {
     int count();
 
     int count(Long userId);
-
-    List<Review> findAllWithPerfume(Long userId);
 
 }

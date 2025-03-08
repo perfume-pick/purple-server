@@ -16,22 +16,22 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
-public class GetVisitedPerfumesService implements GetVisitedPerfumesUseCase {
+class GetVisitedPerfumesService implements GetVisitedPerfumesUseCase {
 
     private final GetVisitHistoriesUseCase getVisitHistoriesUseCase;
     private final GetPerfumesUseCase getPerfumesUseCase;
     private final GetPerfumeAverageScoreUseCase getPerfumeAverageScoreUseCase;
 
     @Override
-    public Result findAllWithPerfumeAccord(Long userId) {
-        List<VisitHistory> visitHistories = getVisitHistoriesUseCase.findAll(userId).visitHistories();
+    public Result findAllByUserIdWithPerfumeAccord(Long userId) {
+        List<VisitHistory> visitHistories = getVisitHistoriesUseCase.findAllByUserId(userId).visitHistories();
         List<Long> perfumeIds = visitHistories.stream()
             .map(VisitHistory::getPerfumeId)
             .toList();
 
         List<Perfume> perfumes = getPerfumesUseCase.findAllWithPerfumeAccord(perfumeIds).perfumes();
         for (Perfume perfume : perfumes) {
-            double averageScore = getPerfumeAverageScoreUseCase.find(
+            double averageScore = getPerfumeAverageScoreUseCase.findByPerfumeId(
                 perfume.getId()).averageScore();
 
             perfume.setAverageScore(averageScore);

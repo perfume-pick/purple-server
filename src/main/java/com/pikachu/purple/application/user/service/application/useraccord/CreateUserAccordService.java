@@ -9,8 +9,10 @@ import com.pikachu.purple.domain.user.UserAccord;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 class CreateUserAccordService implements CreateUserAccordUseCase {
 
@@ -24,8 +26,8 @@ class CreateUserAccordService implements CreateUserAccordUseCase {
         Long userId,
         Long perfumeId
     ) {
-        GetUserUseCase.Result user = getUserUseCase.find(userId);
-        GetStarRatingUseCase.Result starRating = getStarRatingUseCase.find(
+        GetUserUseCase.Result user = getUserUseCase.findByUserId(userId);
+        GetStarRatingUseCase.Result starRating = getStarRatingUseCase.findByUserIdAndPerfumeIdWithPerfumeAndPerfumeAccords(
             userId,
             perfumeId
         );

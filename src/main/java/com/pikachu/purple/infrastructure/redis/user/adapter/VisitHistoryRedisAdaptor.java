@@ -32,7 +32,7 @@ public class VisitHistoryRedisAdaptor implements VisitHistoryRepository {
     }
 
     @Override
-    public void deleteAllVisitHistoryByUserId(Long userId) {
+    public void deleteAll(Long userId) {
         visitHistoryRedisRepository.deleteAllVisitHistory(userId);
     }
 

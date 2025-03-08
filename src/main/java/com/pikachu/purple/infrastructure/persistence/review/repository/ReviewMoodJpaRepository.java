@@ -4,13 +4,11 @@ import com.pikachu.purple.infrastructure.persistence.review.entity.ReviewMoodJpa
 import com.pikachu.purple.infrastructure.persistence.review.entity.id.ReviewMoodId;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 
 public interface ReviewMoodJpaRepository extends JpaRepository<ReviewMoodJpaEntity, ReviewMoodId> {
 
-    @Query("select rm "
-        + "from ReviewMoodJpaEntity rm "
-        + "where rm.reviewJpaEntity.id = :reviewId")
     List<ReviewMoodJpaEntity> findByReviewId(Long reviewId);
+
+    List<ReviewMoodJpaEntity> findAllByReviewId(Long reviewId);
 
 }

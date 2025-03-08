@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 class WithdrawUserService implements WithdrawUserUseCase {
 
@@ -20,7 +21,6 @@ class WithdrawUserService implements WithdrawUserUseCase {
     private final UserRepository userRepository;
     private final ImageUrlS3Uploader imageUrlS3Uploader;
 
-    @Transactional
     @Override
     public void withdraw(Long userId) {
         userTokenService.deleteAllToken(userId);

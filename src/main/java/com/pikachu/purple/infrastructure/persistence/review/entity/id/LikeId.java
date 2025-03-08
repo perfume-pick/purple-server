@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class LikeId implements Serializable {
 
-    private Long userJpaEntity;
-    private Long reviewJpaEntity;
+    private Long userId;
+    private Long reviewId;
 
 }

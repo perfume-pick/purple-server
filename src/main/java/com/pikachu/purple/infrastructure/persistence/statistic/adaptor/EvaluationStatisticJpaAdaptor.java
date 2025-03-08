@@ -9,8 +9,8 @@ import com.pikachu.purple.domain.statistic.EvaluationStatistic;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeJpaRepository;
 import com.pikachu.purple.infrastructure.persistence.statistic.entity.EvaluationStatisticJpaEntity;
+import com.pikachu.purple.infrastructure.persistence.statistic.entity.id.EvaluationStatisticId;
 import com.pikachu.purple.infrastructure.persistence.statistic.repository.EvaluationStatisticJpaRepository;
-import com.pikachu.purple.infrastructure.persistence.statistic.vo.EvaluationStatisticCompositeKey;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -20,7 +20,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class EvaluationStatisticJpaAdaptor implements EvaluationStatisticRepository {
+class EvaluationStatisticJpaAdaptor implements EvaluationStatisticRepository {
 
     private final EvaluationStatisticJpaRepository evaluationStatisticJpaRepository;
     private final PerfumeJpaRepository perfumeJpaRepository;
@@ -30,22 +30,20 @@ public class EvaluationStatisticJpaAdaptor implements EvaluationStatisticReposit
         String fieldCode,
         String optionCode
     ) {
-        EvaluationStatisticCompositeKey compositeKey =
-            EvaluationStatisticCompositeKey.builder()
-                .perfumeId(perfumeId)
-                .fieldCode(fieldCode)
-                .optionCode(optionCode)
-                .build();
-
-        Optional<EvaluationStatisticJpaEntity> findResult =
-            evaluationStatisticJpaRepository.findByCompositeKey(compositeKey);
+        EvaluationStatisticId evaluationStatisticId = new EvaluationStatisticId(
+            perfumeId,
+            fieldCode,
+            optionCode
+        );
+        Optional<EvaluationStatisticJpaEntity> findResult = evaluationStatisticJpaRepository.findById(
+            evaluationStatisticId);
 
         if (findResult.isEmpty()) {
             PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository.findById(perfumeId)
                 .orElseThrow(() -> PerfumeNotFoundException);
 
             return EvaluationStatisticJpaEntity.builder()
-                .perfumeJpaEntity(perfumeJpaEntity)
+                .perfumeId(perfumeJpaEntity.getId())
                 .fieldCode(fieldCode)
                 .optionCode(optionCode)
                 .build();
@@ -55,9 +53,9 @@ public class EvaluationStatisticJpaAdaptor implements EvaluationStatisticReposit
     }
 
     @Override
-    public EvaluationStatistic findOrderByVotesDesc(Long perfumeId) {
+    public EvaluationStatistic findByPerfumeIdOrderByVotesDesc(Long perfumeId) {
         List<EvaluationStatisticJpaEntity> evaluationStatisticJpaEntities =
-            evaluationStatisticJpaRepository.findAllByPerfumeIdOrderByVotesDesc(
+            evaluationStatisticJpaRepository.findAllByPerfumeIdOrderByFieldCodeAscVotesDesc(
                 perfumeId);
 
         return EvaluationStatisticJpaEntity.toDomain(

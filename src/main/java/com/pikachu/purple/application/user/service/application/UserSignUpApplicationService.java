@@ -10,12 +10,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 class UserSignUpApplicationService implements UserSignUpUseCase {
 
     private final UserDomainService userDomainService;
 
-    @Transactional
     @Override
     public void invoke(
         String email,

@@ -41,7 +41,7 @@ class DecreaseStarRatingStatisticService implements
         Long perfumeId,
         int score
     ) {
-        return starRatingStatisticRepository.findByPerfumeIdAndScore(
+        return starRatingStatisticRepository.find(
             perfumeId,
             score
         );

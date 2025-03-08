@@ -9,7 +9,7 @@ public interface VisitHistoryRepository {
 
     List<VisitHistory> findAllByUserId(Long userId);
 
-    void deleteAllVisitHistoryByUserId(Long userId);
+    void deleteAll(Long userId);
 
     void validateNotExist(Long userId, Long perfumeId);
 

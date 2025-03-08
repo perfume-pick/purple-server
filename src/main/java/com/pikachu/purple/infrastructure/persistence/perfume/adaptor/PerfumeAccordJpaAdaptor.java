@@ -11,9 +11,19 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class PerfumeAccordJpaAdaptor implements PerfumeAccordRepository {
+class PerfumeAccordJpaAdaptor implements PerfumeAccordRepository {
 
     private final PerfumeAccordJpaRepository perfumeAccordJpaRepository;
+
+    @Override
+    public List<PerfumeAccord> findAllByPerfumeId(Long perfumeId) {
+        List<PerfumeAccordJpaEntity> perfumeAccordJpaEntities = perfumeAccordJpaRepository
+            .findAllByPerfumeId(perfumeId);
+
+        return perfumeAccordJpaEntities.stream()
+            .map(PerfumeAccordJpaEntity::toDomain)
+            .toList();
+    }
 
     @Override
     public List<PerfumeAccord> findAllByPerfumeIdOrderByValueDesc(Long perfumeId, int maxSize) {

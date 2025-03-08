@@ -25,9 +25,8 @@ import lombok.NoArgsConstructor;
 public class NoteJpaEntity {
 
     @Id
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "perfume_id")
-    private PerfumeJpaEntity perfumeJpaEntity;
+    @Column(name = "perfume_id")
+    private Long perfumeId;
 
     @Id
     @Column(name = "note_name", nullable = false)

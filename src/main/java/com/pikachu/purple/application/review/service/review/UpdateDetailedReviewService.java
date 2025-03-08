@@ -38,9 +38,9 @@ class UpdateDetailedReviewService implements UpdateDetailedReviewUseCase {
         List<EvaluationFieldVO> evaluationFieldVOs,
         List<String> moodNames
     ) {
-        Review review = reviewRepository.findWithPerfume(reviewId);
+        Review review = reviewRepository.findByReviewId(reviewId);
 
-        if(review.getType() == ReviewType.SIMPLE) {
+        if(review.getType() == ReviewType.SIMPLE || review.getType() == ReviewType.ONBOARDING) {
             createReviewEvaluationUseCase.create(
                 review,
                 evaluationFieldVOs
@@ -53,7 +53,7 @@ class UpdateDetailedReviewService implements UpdateDetailedReviewUseCase {
         }
 
         else{
-            ReviewEvaluation beforeReviewEvaluation = reviewEvaluationRepository.find(reviewId);
+            ReviewEvaluation beforeReviewEvaluation = reviewEvaluationRepository.findByReviewId(reviewId);
 
             decreaseEvaluationStatisticUseCase.invoke(
                 review.getPerfume().getId(),

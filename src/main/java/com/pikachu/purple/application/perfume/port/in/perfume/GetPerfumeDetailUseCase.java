@@ -4,7 +4,7 @@ import com.pikachu.purple.application.perfume.common.dto.PerfumeDetailDTO;
 
 public interface GetPerfumeDetailUseCase {
 
-    Result find(Long perfumeId);
+    Result findByPerfumeId(Long perfumeId);
 
     record Result(PerfumeDetailDTO data) {}
 

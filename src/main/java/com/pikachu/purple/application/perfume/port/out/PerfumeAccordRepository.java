@@ -5,6 +5,8 @@ import java.util.List;
 
 public interface PerfumeAccordRepository {
 
+    List<PerfumeAccord> findAllByPerfumeId(Long perfumeId);
+
     List<PerfumeAccord> findAllByPerfumeIdOrderByValueDesc(
         Long perfumeId,
         int maxSize

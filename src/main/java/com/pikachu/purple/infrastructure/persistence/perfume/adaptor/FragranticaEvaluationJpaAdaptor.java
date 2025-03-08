@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class FragranticaEvaluationJpaAdaptor implements FragranticaEvaluationRepository {
+class FragranticaEvaluationJpaAdaptor implements FragranticaEvaluationRepository {
 
     private final FragranticaEvaluationJpaRepository fragranticaEvaluationJpaRepository;
 
@@ -18,7 +18,8 @@ public class FragranticaEvaluationJpaAdaptor implements FragranticaEvaluationRep
     @Override
     public FragranticaEvaluation findByPerfumeIdOrderByVotesDesc(Long perfumeId) {
         List<FragranticaEvaluationJpaEntity> fragranticaEvaluationJpaEntities =
-            fragranticaEvaluationJpaRepository.findByPerfumeIdOrderByVotesDesc(perfumeId);
+            fragranticaEvaluationJpaRepository.findByPerfumeIdOrderByFieldCodeAscVotesDescOptionCodeAsc(
+                perfumeId);
 
         return FragranticaEvaluationJpaEntity.toDomain(fragranticaEvaluationJpaEntities);
     }

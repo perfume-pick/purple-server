@@ -20,7 +20,7 @@ public enum ErrorCode {
     ),
 
     // User
-    EMAIL_ALREADY_EXISTED(
+    EMAIL_ALREADY_EXISTS(
         409,
         "U001",
         "이미 회원가입을 완료한 이메일입니다."
@@ -37,7 +37,7 @@ public enum ErrorCode {
         "사용자를 찾을 수 없습니다."
     ),
 
-    NICKNAME_ALREADY_EXISTED(
+    NICKNAME_ALREADY_EXISTS(
         409,
         "U004",
         "이미 사용중인 닉네임입니다."
@@ -140,6 +140,11 @@ public enum ErrorCode {
         "RV002",
         "해당하는 정렬 타입이 존재하지 않습니다."
     ),
+    REVIEW_ALREADY_EXISTS(
+        409,
+        "RV003",
+        "이미 리뷰가 존재합니다."
+    ),
 
     // Rating
     STAR_RATING_NOT_FOUND(
@@ -175,7 +180,7 @@ public enum ErrorCode {
         "L001",
         "해당하는 좋아요가 존재하지 않습니다."
     ),
-    LIKE_ALREADY_EXISTED(
+    LIKE_ALREADY_EXISTS(
         409,
         "L002",
         "이미 좋아요가 존재합니다."

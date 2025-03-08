@@ -1,6 +1,6 @@
 package com.pikachu.purple.infrastructure.persistence.review.adaptor;
 
-import static com.pikachu.purple.bootstrap.common.exception.BusinessException.LikeAlreadyExistedException;
+import static com.pikachu.purple.bootstrap.common.exception.BusinessException.LikeAlreadyExistsException;
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.LikeNotFoundException;
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.ReviewNotFoundException;
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.UserNotFoundException;
@@ -19,24 +19,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class LikeJpaAdaptor implements LikeRepository {
+class LikeJpaAdaptor implements LikeRepository {
 
     private final LikeJpaRepository likeJpaRepository;
     private final UserJpaRepository userJpaRepository;
     private final ReviewJpaRepository reviewJpaRepository;
-
-    @Override
-    public Like find(
-        Long userId,
-        Long reviewId
-    ) {
-        LikeJpaEntity likeJpaEntity = likeJpaRepository.findByUserIdAndReviewId(
-            userId,
-            reviewId
-        ).orElseThrow(() -> LikeNotFoundException);
-
-        return LikeJpaEntity.toDomain(likeJpaEntity);
-    }
 
     @Override
     public void create(
@@ -50,11 +37,31 @@ public class LikeJpaAdaptor implements LikeRepository {
             .orElseThrow(() -> ReviewNotFoundException);
 
         LikeJpaEntity likeJpaEntity = LikeJpaEntity.builder()
-            .userJpaEntity(userJpaEntity)
-            .reviewJpaEntity(reviewJpaEntity)
+            .userId(userJpaEntity.getId())
+            .reviewId(reviewJpaEntity.getId())
             .build();
 
         likeJpaRepository.save(likeJpaEntity);
+    }
+
+    @Override
+    public List<Like> findAllByUserId(Long userId) {
+        List<LikeJpaEntity> likeJpaEntities = likeJpaRepository.findAllByUserId((userId));
+
+        return likeJpaEntities.stream().map(LikeJpaEntity::toDomain).toList();
+    }
+
+    @Override
+    public List<Like> findAllByUserIdAndPerfumeId(
+        Long userId,
+        Long perfumeId
+    ) {
+        List<LikeJpaEntity> likeJpaEntities = likeJpaRepository.findAllByUserIdAndPerfumeId(
+            userId,
+            perfumeId
+        );
+
+        return likeJpaEntities.stream().map(LikeJpaEntity::toDomain).toList();
     }
 
     @Override
@@ -65,7 +72,7 @@ public class LikeJpaAdaptor implements LikeRepository {
         likeJpaRepository.findByUserIdAndReviewId(
             userId,
             reviewId
-        ).ifPresent(likeJpaEntity -> {throw LikeAlreadyExistedException;});
+        ).ifPresent(likeJpaEntity -> {throw LikeAlreadyExistsException;});
     }
 
     @Override
@@ -86,6 +93,11 @@ public class LikeJpaAdaptor implements LikeRepository {
         List<LikeJpaEntity> likeJpaEntities = likeJpaRepository.findAllByReviewId(reviewId);
 
         likeJpaRepository.deleteAll(likeJpaEntities);
+    }
+
+    @Override
+    public boolean isExist(Long userId, Long reviewId) {
+        return likeJpaRepository.findByUserIdAndReviewId(userId, reviewId).isPresent();
     }
 
 }

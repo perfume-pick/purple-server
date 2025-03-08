@@ -3,6 +3,7 @@ package com.pikachu.purple.infrastructure.persistence.user.entity;
 import com.pikachu.purple.domain.user.UserAccord;
 import com.pikachu.purple.infrastructure.persistence.accord.entity.AccordJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.user.entity.id.UserAccordId;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
@@ -26,9 +27,8 @@ import lombok.NoArgsConstructor;
 public class UserAccordJpaEntity {
 
     @Id
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private UserJpaEntity userJpaEntity;
+    @Column(name = "user_id")
+    private Long userId;
 
     @Id
     @ManyToOne(fetch = FetchType.EAGER)
@@ -43,7 +43,7 @@ public class UserAccordJpaEntity {
             jpaEntity.getAccordJpaEntity().getKoreanName(),
             jpaEntity.getScore()
         );
-        domain.setUser(UserJpaEntity.toDummy(jpaEntity.getUserJpaEntity()));
+        domain.setUser(UserJpaEntity.toDummy(jpaEntity.getUserId()));
 
         return domain;
     }

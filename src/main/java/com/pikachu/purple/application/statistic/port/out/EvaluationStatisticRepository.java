@@ -6,7 +6,7 @@ import com.pikachu.purple.domain.statistic.EvaluationStatistic;
 
 public interface EvaluationStatisticRepository {
 
-    EvaluationStatistic findOrderByVotesDesc(Long perfumeId);
+    EvaluationStatistic findByPerfumeIdOrderByVotesDesc(Long perfumeId);
 
     void increaseVotes(
         Long perfumeId,

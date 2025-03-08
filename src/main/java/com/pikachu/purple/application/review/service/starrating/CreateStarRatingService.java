@@ -16,8 +16,8 @@ class CreateStarRatingService implements CreateStarRatingUseCase {
     private final StarRatingRepository starRatingRepository;
     private final IncreaseStarRatingStatisticUseCase increaseStarRatingStatisticUseCase;
 
-    @Override
     @Transactional
+    @Override
     public Result create(
         Long userId,
         Long perfumeId,

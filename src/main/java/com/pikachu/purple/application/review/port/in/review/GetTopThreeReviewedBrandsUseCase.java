@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface GetTopThreeReviewedBrandsUseCase {
 
-    Result invoke();
+    Result invoke(Long userId);
 
     record Result(List<ReviewedBrandDTO> reviewedBrandDTOs) {}
 

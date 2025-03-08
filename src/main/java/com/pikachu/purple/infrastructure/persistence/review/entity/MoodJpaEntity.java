@@ -1,4 +1,4 @@
-package com.pikachu.purple.infrastructure.persistence.mood.entity;
+package com.pikachu.purple.infrastructure.persistence.review.entity;
 
 import com.pikachu.purple.domain.review.Mood;
 import jakarta.persistence.Column;

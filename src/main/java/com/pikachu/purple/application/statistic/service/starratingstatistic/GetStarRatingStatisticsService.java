@@ -6,9 +6,11 @@ import com.pikachu.purple.domain.statistic.StarRatingStatistic;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 class GetStarRatingStatisticsService implements GetStarRatingStatisticsUseCase {
 
     private final StarRatingStatisticRepository starRatingStatisticRepository;
@@ -21,9 +23,9 @@ class GetStarRatingStatisticsService implements GetStarRatingStatisticsUseCase {
     }
 
     @Override
-    public Result findAll(Long perfumeId) {
+    public Result findAllByPerfumeId(Long perfumeId) {
         List<StarRatingStatistic> starRatingStatistics = starRatingStatisticRepository
-            .findAll(perfumeId);
+            .findAllByPerfumeId(perfumeId);
 
         return new Result(starRatingStatistics);
     }

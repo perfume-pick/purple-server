@@ -2,12 +2,14 @@ package com.pikachu.purple.application.statistic.service.starratingstatistic;
 
 import com.pikachu.purple.application.statistic.port.in.starratingstatistic.IncreaseStarRatingStatisticUseCase;
 import com.pikachu.purple.application.statistic.port.in.starratingstatistic.IncreaseStarRatingStatisticsUseCase;
-import com.pikachu.purple.bootstrap.onboarding.vo.StarRatingVO;
+import com.pikachu.purple.domain.review.StarRating;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 class IncreaseStarRatingStatisticsService implements
     IncreaseStarRatingStatisticsUseCase {
@@ -15,11 +17,11 @@ class IncreaseStarRatingStatisticsService implements
     private final IncreaseStarRatingStatisticUseCase increaseStarRatingStatisticUseCase;
 
     @Override
-    public void invoke(List<StarRatingVO> starRatingVOs) {
-        for (StarRatingVO starRatingVO : starRatingVOs) {
+    public void invoke(List<StarRating> starRatings) {
+        for (StarRating starRating : starRatings) {
             increaseStarRatingStatisticUseCase.invoke(
-                starRatingVO.perfumeId(),
-                starRatingVO.score()
+                starRating.getPerfume().getId(),
+                starRating.getScore()
             );
         }
     }

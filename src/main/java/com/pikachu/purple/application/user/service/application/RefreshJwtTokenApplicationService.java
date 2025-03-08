@@ -9,8 +9,10 @@ import com.pikachu.purple.application.user.service.util.UserTokenService;
 import com.pikachu.purple.domain.user.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 class RefreshJwtTokenApplicationService implements RefreshJwtTokenUseCase {
 

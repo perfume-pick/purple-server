@@ -6,7 +6,6 @@ import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
 import com.pikachu.purple.domain.review.Mood;
 import com.pikachu.purple.domain.review.Review;
-import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.domain.review.enums.ReviewType;
 import java.util.List;
 import lombok.Getter;
@@ -24,9 +23,7 @@ public class GetReviewByPerfumeIdAndUserResponse {
         Review review = result.review();
         ReviewDTO reviewDTO = null;
         if (review != null) {
-            if (review.getType() == ReviewType.SIMPLE) {
-                reviewDTO = ReviewDTO.from(review);
-            } else if (review.getType() == ReviewType.DETAIL) {
+            if (review.getType() == ReviewType.DETAIL) {
                 List<ReviewEvaluationFieldDTO> reviewEvaluation = review.getEvaluation()
                     .getFields(review.getId()).stream()
                     .map(fieldType ->
@@ -48,8 +45,8 @@ public class GetReviewByPerfumeIdAndUserResponse {
                     reviewEvaluation,
                     moodNames
                 );
-            } else if (review.getType() == ReviewType.ONBOARDING) {
-                reviewDTO = ReviewDTO.from(review.getStarRating());
+            } else {
+                reviewDTO = ReviewDTO.from(review);
             }
         } else {
             reviewDTO = ReviewDTO.empty();
@@ -71,17 +68,6 @@ public class GetReviewByPerfumeIdAndUserResponse {
                 review.getType(),
                 review.getStarRating().getScore(),
                 review.getContent(),
-                null,
-                null
-            );
-        }
-
-        public static ReviewDTO from(StarRating starRating) {
-            return new ReviewDTO(
-                null,
-                ReviewType.ONBOARDING,
-                starRating.getScore(),
-                null,
                 null,
                 null
             );

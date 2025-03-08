@@ -1,6 +1,6 @@
 package com.pikachu.purple.bootstrap.perfume.dto.response;
 
-import com.pikachu.purple.application.review.port.in.review.GetReviewsUseCase;
+import com.pikachu.purple.application.review.port.in.review.GetReviewsUseCase.Result;
 import com.pikachu.purple.application.util.DateUtil;
 import com.pikachu.purple.application.util.IdUtil;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
@@ -20,7 +20,7 @@ public class GetReviewsByPerfumeIdAndSortTypeResponse {
         this.reviews = reviews;
     }
 
-    public static GetReviewsByPerfumeIdAndSortTypeResponse of(Long currentUserId, GetReviewsUseCase.Result result) {
+    public static GetReviewsByPerfumeIdAndSortTypeResponse of(Long currentUserId, Result result) {
         List<ReviewDTO> reviewDTOs = result.reviews().stream()
             .map(review -> {
                 List<ReviewEvaluationFieldDTO> reviewEvaluation = review.getEvaluation()

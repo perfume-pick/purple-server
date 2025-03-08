@@ -14,9 +14,11 @@ import java.util.ArrayList;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 class GetPerfumeStatisticService implements
     GetPerfumeStatisticUseCase {
 
@@ -24,8 +26,8 @@ class GetPerfumeStatisticService implements
     private final StarRatingStatisticRepository starRatingStatisticRepository;
 
     @Override
-    public Result find(Long perfumeId) {
-        EvaluationStatistic evaluationStatistic = evaluationStatisticRepository.findOrderByVotesDesc(
+    public Result findByPerfumeId(Long perfumeId) {
+        EvaluationStatistic evaluationStatistic = evaluationStatisticRepository.findByPerfumeIdOrderByVotesDesc(
             perfumeId);
 
         List<EvaluationField<EvaluationOptionStatistic>> evaluationFields = new ArrayList<>();
@@ -77,7 +79,7 @@ class GetPerfumeStatisticService implements
         }
 
         List<StarRatingStatistic> starRatingStatistics = starRatingStatisticRepository
-            .findAll(perfumeId);
+            .findAllByPerfumeId(perfumeId);
         int totalVotes = starRatingStatistics.stream().mapToInt(StarRatingStatistic::getVotes)
             .sum();
 

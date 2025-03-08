@@ -5,12 +5,13 @@ import static com.pikachu.purple.bootstrap.common.exception.BusinessException.Re
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.UserNotFoundException;
 
 import com.pikachu.purple.application.review.port.out.ReviewRepository;
+import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.enums.ReviewType;
-import com.pikachu.purple.infrastructure.persistence.mood.entity.MoodJpaEntity;
-import com.pikachu.purple.infrastructure.persistence.mood.repository.MoodJpaRepository;
+import com.pikachu.purple.infrastructure.persistence.review.repository.MoodJpaRepository;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeJpaRepository;
+import com.pikachu.purple.infrastructure.persistence.review.entity.MoodJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.review.entity.ReviewJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.review.entity.ReviewMoodJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.review.entity.StarRatingJpaEntity;
@@ -25,7 +26,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class ReviewJpaAdaptor implements ReviewRepository {
+class ReviewJpaAdaptor implements ReviewRepository {
 
     private final ReviewJpaRepository reviewJpaRepository;
     private final PerfumeJpaRepository perfumeJpaRepository;
@@ -53,9 +54,9 @@ public class ReviewJpaAdaptor implements ReviewRepository {
 
         ReviewJpaEntity reviewJpaEntity = ReviewJpaEntity.builder()
             .id(review.getId())
-            .userJpaEntity(userJpaEntity)
-            .perfumeJpaEntity(perfumeJpaEntity)
-            .starRatingJpaEntity(starRatingJpaEntity)
+            .userId(userJpaEntity.getId())
+            .perfumeId(perfumeJpaEntity.getId())
+            .starRatingId(starRatingJpaEntity.getId())
             .content(review.getContent())
             .reviewType(review.getType())
             .build();
@@ -68,6 +69,15 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
+    public void createAll(List<Review> reviews) {
+        List<ReviewJpaEntity> reviewJpaEntities = reviews.stream()
+            .map(ReviewJpaEntity::toJpaEntity)
+            .toList();
+
+        reviewJpaRepository.saveAll(reviewJpaEntities);
+    }
+
+    @Override
     public void createReviewMoods(
         Long reviewId,
         List<String> moodNames
@@ -77,7 +87,7 @@ public class ReviewJpaAdaptor implements ReviewRepository {
         List<MoodJpaEntity> moodJpaEntities = moodJpaRepository.findAllByNameIn(moodNames);
         List<ReviewMoodJpaEntity> reviewMoodJpaEntities = moodJpaEntities.stream()
             .map(moodJpaEntity -> ReviewMoodJpaEntity.builder()
-                .reviewJpaEntity(reviewJpaEntity)
+                .reviewId(reviewJpaEntity.getId())
                 .moodJpaEntity(moodJpaEntity)
                 .build())
             .toList();
@@ -86,106 +96,120 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodsAndIsComplainedAndIsLikedOrderByLikeCountDesc(
-        Long userId,
-        Long perfumeId
-    ) {
-        List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository.findAllByPerfumeIdOrderByLikeCountDesc(perfumeId);
-
-        return reviewJpaEntities.stream()
-            .map(reviewJpaEntity -> ReviewJpaEntity.toFullDomain(
-                reviewJpaEntity, userId
-            ))
-            .toList();
-    }
-
-    @Override
-    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodsAndIsComplainedAndIsLikedOrderByCreatedAtDesc(
-        Long userId,
-        Long perfumeId
-    ) {
-        List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository
-            .findAllByPerfumeIdOrderByCreateAtDesc(
-                perfumeId
-            );
-
-        return reviewJpaEntities.stream()
-            .map(reviewJpaEntity -> ReviewJpaEntity.toFullDomain(
-                reviewJpaEntity, userId
-            ))
-            .toList();
-    }
-
-    @Override
-    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodsAndIsComplainedAndIsLikedOrderByScoreDesc(
-        Long userId,
-        Long perfumeId
-    ) {
-        List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository
-            .findAllByPerfumeIdOrderByScoreDesc(perfumeId);
-
-        return reviewJpaEntities.stream()
-            .map(reviewJpaEntity -> ReviewJpaEntity.toFullDomain(
-                reviewJpaEntity, userId
-            ))
-            .toList();
-    }
-
-    @Override
-    public List<Review> findAllWithPerfumeAndReviewEvaluationAndMoodsAndIsComplainedAndIsLikedOrderByScoreAsc(
-        Long userId,
-        Long perfumeId
-    ) {
-        List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository
-            .findAllByPerfumeIdOrderByScoreAsc(perfumeId);
-
-        return reviewJpaEntities.stream()
-            .map(reviewJpaEntity -> ReviewJpaEntity.toFullDomain(
-                reviewJpaEntity, userId
-            ))
-            .toList();
-    }
-
-    @Override
-    public Review find(Long reviewId) {
+    public Review findByReviewId(Long reviewId) {
         ReviewJpaEntity reviewJpaEntity = findEntityById(reviewId);
         return ReviewJpaEntity.toDomain(reviewJpaEntity);
     }
 
     @Override
-    public List<Review> findAllWithEvaluation(ReviewType reviewType) {
-        List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository.findAllByReviewType(reviewType);
+    public Review findUserIdAndPerfumeId(
+        Long userId,
+        Long perfumeId
+    ) {
+        return reviewJpaRepository.findByUserIdAndPerfumeId(
+                userId,
+                perfumeId
+            )
+            .map(ReviewJpaEntity::toDomain)
+            .orElse(null);
+    }
+
+    @Override
+    public List<Review> findAllByUserId(Long userId) {
+        List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository.findAllByUserId(userId);
 
         return reviewJpaEntities.stream()
-            .map(ReviewJpaEntity::toDomainWithEvaluation)
+            .map(ReviewJpaEntity::toDomain)
             .toList();
     }
 
     @Override
-    public void deleteReviewMoods(Long reviewId) {
-        List<ReviewMoodJpaEntity> reviewMoodJpaEntities = reviewMoodJpaRepository.findByReviewId(reviewId);
-        reviewMoodJpaRepository.deleteAll(reviewMoodJpaEntities);
+    public List<Review> findAll(ReviewType reviewType) {
+        List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository.findAllByReviewType(reviewType);
+
+        return reviewJpaEntities.stream()
+            .map(ReviewJpaEntity::toDomain)
+            .toList();
     }
 
     @Override
-    public void updateReviewMood(
-        Long reviewId,
-        List<String> moodNames
-    ) {
-        List<ReviewMoodJpaEntity> reviewMoodJpaEntities = reviewMoodJpaRepository.findByReviewId(reviewId);
-        reviewMoodJpaRepository.deleteAll(reviewMoodJpaEntities);
+    public List<Review> findAllByUserIdOrderByLikeCountDesc(Long userId) {
+        List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository
+            .findAllByUserIdOrderByLikeCountDesc(userId);
 
-        createReviewMoods(
-            reviewId,
-            moodNames
-        );
+        return reviewJpaEntities.stream()
+            .map(ReviewJpaEntity::toDomain)
+            .toList();
     }
 
     @Override
-    public Review findWithPerfume(Long reviewId) {
-        ReviewJpaEntity reviewJpaEntity = findEntityById(reviewId);
+    public List<Review> findAllByPerfumeIdOrderByLikeCountDesc(Long perfumeId) {
+        List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository
+            .findAllByPerfumeIdOrderByLikeCountDesc(perfumeId);
 
-        return ReviewJpaEntity.toDomainWithPerfume(reviewJpaEntity);
+        return reviewJpaEntities.stream()
+            .map(ReviewJpaEntity::toDomain)
+            .toList();
+    }
+
+    @Override
+    public List<Review> findAllByUserIdOrderByCreatedAtDesc(Long userId) {
+        List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository
+            .findAllByUserIdOrderByCreatedAtDesc(userId);
+
+        return reviewJpaEntities.stream()
+            .map(ReviewJpaEntity::toDomain)
+            .toList();
+    }
+
+    @Override
+    public List<Review> findAllByPerfumeIdOrderByCreatedAtDesc(Long perfumeId) {
+        List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository
+            .findAllByPerfumeIdOrderByCreatedAtDesc(perfumeId);
+
+        return reviewJpaEntities.stream()
+            .map(ReviewJpaEntity::toDomain)
+            .toList();
+    }
+
+    @Override
+    public List<Review> findAllByUserIdOrderByScoreDesc(Long userId) {
+        List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository
+            .findAllByUserIdOrderByScoreDesc(userId);
+
+        return reviewJpaEntities.stream()
+            .map(ReviewJpaEntity::toDomain)
+            .toList();
+    }
+
+    @Override
+    public List<Review> findAllByPerfumeIdOrderByScoreDesc(Long perfumeId) {
+        List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository
+            .findAllByPerfumeIdOrderByScoreDesc(perfumeId);
+
+        return reviewJpaEntities.stream()
+            .map(ReviewJpaEntity::toDomain)
+            .toList();
+    }
+
+    @Override
+    public List<Review> findAllByUserIdOrderByScoreAsc(Long userId) {
+        List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository
+            .findAllByUserIdOrderByScoreAsc(userId);
+
+        return reviewJpaEntities.stream()
+            .map(ReviewJpaEntity::toDomain)
+            .toList();
+    }
+
+    @Override
+    public List<Review> findAllByPerfumeIdOrderByScoreAsc(Long perfumeId) {
+        List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository
+            .findAllByPerfumeIdOrderByScoreAsc(perfumeId);
+
+        return reviewJpaEntities.stream()
+            .map(ReviewJpaEntity::toDomain)
+            .toList();
     }
 
     @Override
@@ -203,6 +227,19 @@ public class ReviewJpaAdaptor implements ReviewRepository {
         reviewJpaRepository.save(reviewJpaEntity);
     }
 
+    @Override
+    public void updateReviewMood(
+        Long reviewId,
+        List<String> moodNames
+    ) {
+        List<ReviewMoodJpaEntity> reviewMoodJpaEntities = reviewMoodJpaRepository.findByReviewId(reviewId);
+        reviewMoodJpaRepository.deleteAll(reviewMoodJpaEntities);
+
+        createReviewMoods(
+            reviewId,
+            moodNames
+        );
+    }
 
     @Override
     public void delete(Long reviewId) {
@@ -210,16 +247,9 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     }
 
     @Override
-    public Review findWithPerfumeAndReviewEvaluationAndMood(
-        Long userId,
-        Long perfumeId
-    ) {
-        return reviewJpaRepository.findByUserIdAndPerfumeId(
-            userId,
-            perfumeId
-        )
-            .map(ReviewJpaEntity::toDomainWithEvaluationAndMoods)
-            .orElse(null);
+    public void deleteReviewMoods(Long reviewId) {
+        List<ReviewMoodJpaEntity> reviewMoodJpaEntities = reviewMoodJpaRepository.findByReviewId(reviewId);
+        reviewMoodJpaRepository.deleteAll(reviewMoodJpaEntities);
     }
 
     @Override
@@ -244,15 +274,6 @@ public class ReviewJpaAdaptor implements ReviewRepository {
     @Override
     public int count(Long userId) {
         return reviewJpaRepository.countByUserId(userId);
-    }
-
-    @Override
-    public List<Review> findAllWithPerfume(Long userId) {
-        List<ReviewJpaEntity> reviewJpaEntities = reviewJpaRepository.findAllByUserId(userId);
-
-        return reviewJpaEntities.stream()
-            .map(ReviewJpaEntity::toDomainWithPerfume)
-            .toList();
     }
 
 }

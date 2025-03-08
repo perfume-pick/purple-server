@@ -10,6 +10,7 @@ import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.domain.review.enums.ReviewType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -19,6 +20,7 @@ class UpdateReviewService implements UpdateReviewUseCase {
     private final GetStarRatingUseCase getStarRatingUseCase;
     private final UpdateStarRatingUseCase updateStarRatingUseCase;
 
+    @Transactional
     @Override
     public void update(
         Long reviewId,
@@ -35,7 +37,7 @@ class UpdateReviewService implements UpdateReviewUseCase {
             reviewType
         );
 
-        GetStarRatingUseCase.Result starRatingResult = getStarRatingUseCase.find(
+        GetStarRatingUseCase.Result starRatingResult = getStarRatingUseCase.findByUserIdAndPerfumeId(
             userId,
             perfumeId
         );

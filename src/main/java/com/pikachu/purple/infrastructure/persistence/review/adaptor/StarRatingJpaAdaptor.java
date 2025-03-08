@@ -20,7 +20,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class StarRatingJpaAdaptor implements StarRatingRepository {
+class StarRatingJpaAdaptor implements StarRatingRepository {
 
     private final StarRatingJpaRepository starRatingJpaRepository;
     private final PerfumeJpaRepository perfumeJpaRepository;
@@ -32,33 +32,6 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
     ) {
         return starRatingJpaRepository.findByUserIdAndPerfumeId(
             userId, perfumeId).orElseThrow(() -> StarRatingNotFoundException);
-    }
-
-    @Override
-    public void createAll(
-        Long userId,
-        List<StarRating> starRatings
-    ) {
-        UserJpaEntity userJpaEntity = userJpaRepository.findById(userId)
-            .orElseThrow(() -> UserNotFoundException);
-
-        List<StarRatingJpaEntity> starRatingJpaEntities = new ArrayList<>();
-        for (StarRating starRating: starRatings) {
-            PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository
-                .findById(starRating.getPerfume().getId())
-                .orElseThrow(() -> PerfumeNotFoundException);
-
-            starRatingJpaEntities.add(
-                StarRatingJpaEntity.builder()
-                    .id(starRating.getId())
-                    .userJpaEntity(userJpaEntity)
-                    .perfumeJpaEntity(perfumeJpaEntity)
-                    .score(starRating.getScore())
-                    .build()
-            );
-        }
-
-        starRatingJpaRepository.saveAll(starRatingJpaEntities);
     }
 
     @Override
@@ -76,8 +49,8 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
 
         StarRatingJpaEntity starRatingJpaEntity = StarRatingJpaEntity.builder()
             .id(starRatingId)
-            .userJpaEntity(userJpaEntity)
-            .perfumeJpaEntity(perfumeJpaEntity)
+            .userId(userJpaEntity.getId())
+            .perfumeId(perfumeJpaEntity.getId())
             .score(score)
             .build();
 
@@ -87,14 +60,72 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
     }
 
     @Override
-    public List<StarRating> findAllWithPerfumeAndPerfumeAccordByUserId(Long userId) {
+    public List<StarRating> createAll(
+        Long userId,
+        List<StarRating> starRatings
+    ) {
         UserJpaEntity userJpaEntity = userJpaRepository.findById(userId)
             .orElseThrow(() -> UserNotFoundException);
 
-        List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAllByUserJpaEntity(userJpaEntity);
+        List<StarRatingJpaEntity> starRatingJpaEntities = new ArrayList<>();
+        for (StarRating starRating: starRatings) {
+            PerfumeJpaEntity perfumeJpaEntity = perfumeJpaRepository
+                .findById(starRating.getPerfume().getId())
+                .orElseThrow(() -> PerfumeNotFoundException);
+
+            starRatingJpaEntities.add(
+                StarRatingJpaEntity.builder()
+                    .id(starRating.getId())
+                    .userId(userJpaEntity.getId())
+                    .perfumeId(perfumeJpaEntity.getId())
+                    .score(starRating.getScore())
+                    .build()
+            );
+        }
+
+        starRatingJpaEntities = starRatingJpaRepository.saveAll(starRatingJpaEntities);
+
+        return starRatingJpaEntities.stream().map(StarRatingJpaEntity::toDomain).toList();
+    }
+
+    @Override
+    public StarRating findByStarRatingId(Long starRatingId) {
+        Optional<StarRatingJpaEntity> findResult = starRatingJpaRepository.findById(starRatingId);
+
+        return findResult.map(StarRatingJpaEntity::toDomain).orElse(null);
+    }
+
+    @Override
+    public StarRating findByUserIdAndPerfumeId(
+        Long userId,
+        Long perfumeId
+    ) {
+        Optional<StarRatingJpaEntity> findResult = starRatingJpaRepository.findByUserIdAndPerfumeId(
+            userId,
+            perfumeId
+        );
+
+        return findResult.map(StarRatingJpaEntity::toDomain).orElse(null);
+    }
+
+    @Override
+    public List<StarRating> findAll() {
+        List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAll();
+        return starRatingJpaEntities.stream().map(StarRatingJpaEntity::toDomain).toList();
+    }
+
+    @Override
+    public List<StarRating> findAllByPerfumeId(Long perfumeId) {
+        List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAllByPerfumeId(perfumeId);
+        return starRatingJpaEntities.stream().map(StarRatingJpaEntity::toDomain).toList();
+    }
+
+    @Override
+    public List<StarRating> findAllByUserId(Long userId) {
+        List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAllByUserId(userId);
 
         return starRatingJpaEntities.stream()
-            .map(StarRatingJpaEntity::toDomainWithPerfumeAccord)
+            .map(StarRatingJpaEntity::toDomain)
             .toList();
     }
 
@@ -122,101 +153,6 @@ public class StarRatingJpaAdaptor implements StarRatingRepository {
         starRatingJpaRepository.delete(starRatingJpaEntity);
 
         return StarRatingJpaEntity.toDomain(starRatingJpaEntity);
-    }
-
-    @Override
-    public StarRating findByUserIdAndPerfumeId(
-        Long userId,
-        Long perfumeId
-    ) {
-        Optional<StarRatingJpaEntity> findResult = starRatingJpaRepository.findByUserIdAndPerfumeId(
-            userId,
-            perfumeId
-        );
-
-        return findResult.map(StarRatingJpaEntity::toDomainWithPerfumeAccord).orElse(null);
-    }
-
-    @Override
-    public List<StarRating> findAll() {
-        List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAll();
-        return starRatingJpaEntities.stream().map(StarRatingJpaEntity::toDomain).toList();
-    }
-
-    @Override
-    public List<StarRating> findAll(Long perfumeId) {
-        List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAllByPerfumeId(perfumeId);
-        return starRatingJpaEntities.stream().map(StarRatingJpaEntity::toDomain).toList();
-    }
-
-    @Override
-    public List<StarRating> findAllByUpdatedDate(String updatedDate) {
-        List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAllByUpdatedDate(
-            updatedDate);
-
-        return starRatingJpaEntities.stream()
-            .map(StarRatingJpaEntity::toDomain)
-            .toList();
-    }
-
-    @Override
-    public List<StarRating> findAllOrderByLikeCountDesc(Long userId) {
-        List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAllOrderByLikeCountDesc(userId);
-
-        return starRatingJpaEntities.stream()
-            .map(starRatingJpaEntity -> {
-                if (starRatingJpaEntity.getReviewJpaEntity() != null) {
-                    return StarRatingJpaEntity.toFullDomain(starRatingJpaEntity, userId);
-                } else {
-                    return StarRatingJpaEntity.toDomainWithPerfume(starRatingJpaEntity);
-                }
-            })
-            .toList();
-    }
-
-    @Override
-    public List<StarRating> findAllByUserId(Long userId) {
-        List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAllByUserId(userId);
-
-        return starRatingJpaEntities.stream()
-            .map(starRatingJpaEntity -> {
-                if (starRatingJpaEntity.getReviewJpaEntity() != null) {
-                    return StarRatingJpaEntity.toFullDomain(starRatingJpaEntity, userId);
-                } else {
-                    return StarRatingJpaEntity.toDomainWithPerfume(starRatingJpaEntity);
-                }
-            })
-            .toList();
-    }
-
-    @Override
-    public List<StarRating> findAllOrderByScoreDesc(Long userId) {
-        List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAllOrderByScoreDesc(userId);
-
-        return starRatingJpaEntities.stream()
-            .map(starRatingJpaEntity -> {
-                if (starRatingJpaEntity.getReviewJpaEntity() != null) {
-                    return StarRatingJpaEntity.toFullDomain(starRatingJpaEntity, userId);
-                } else {
-                    return StarRatingJpaEntity.toDomainWithPerfume(starRatingJpaEntity);
-                }
-            })
-            .toList();
-    }
-
-    @Override
-    public List<StarRating> findAllOrderByScoreAsc(Long userId) {
-        List<StarRatingJpaEntity> starRatingJpaEntities = starRatingJpaRepository.findAllOrderByScoreAsc(userId);
-
-        return starRatingJpaEntities.stream()
-            .map(starRatingJpaEntity -> {
-                if (starRatingJpaEntity.getReviewJpaEntity() != null) {
-                    return StarRatingJpaEntity.toFullDomain(starRatingJpaEntity, userId);
-                } else {
-                    return StarRatingJpaEntity.toDomainWithPerfume(starRatingJpaEntity);
-                }
-            })
-            .toList();
     }
 
 }

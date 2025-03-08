@@ -15,13 +15,13 @@ class DeleteComplaintService implements DeleteComplaintUseCase {
     private final ComplaintRepository complaintRepository;
     private final DeleteReviewUseCase deleteReviewUseCase;
 
-    @Override
     @Transactional
+    @Override
     public void delete(
         Long userId,
         Long reviewId
     ) {
-        Complaint complaint = complaintRepository.find(
+        Complaint complaint = complaintRepository.findByUserIdAndReviewId(
             userId,
             reviewId
         );
@@ -29,6 +29,7 @@ class DeleteComplaintService implements DeleteComplaintUseCase {
         complaintRepository.delete(complaint.getId());
     }
 
+    @Transactional
     @Override
     public void deleteWithReview(
         Long complaintId,
