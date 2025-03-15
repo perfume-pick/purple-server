@@ -55,7 +55,6 @@ class GetRecommendedPerfumesByUserAccordsService implements
             .map(UserAccordDTO::accordKoreanName)
             .toList();
 
-//        List<Accord> accords = new ArrayList<>(result.userAccords());
         List<Accord> accords = result.userAccords().stream()
             .map(UserAccord::getAccord)
             .toList();
