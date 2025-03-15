@@ -3,10 +3,9 @@ package com.pikachu.purple.infrastructure.persistence.perfume.adaptor;
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.PerfumeNotFoundException;
 
 import com.pikachu.purple.application.perfume.port.out.PerfumeRepository;
-import com.pikachu.purple.domain.accord.Accord;
+import com.pikachu.purple.domain.accord.enums.Accord;
 import com.pikachu.purple.domain.perfume.Brand;
 import com.pikachu.purple.domain.perfume.Perfume;
-import com.pikachu.purple.infrastructure.persistence.accord.entity.AccordJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeJpaRepository;
 import java.util.List;
@@ -59,11 +58,11 @@ class PerfumeJpaAdaptor implements PerfumeRepository {
 
     @Override
     public List<Perfume> findAll(List<Accord> accords, int maxSize) {
-        List<AccordJpaEntity> accordJpaEntities = accords.stream()
-            .map(AccordJpaEntity::toJpaEntity).toList();
+//        List<AccordJpaEntity> accordJpaEntities = accords.stream()
+//            .map(AccordJpaEntity::toJpaEntity).toList();
 
-        List<PerfumeJpaEntity> perfumeJpaEntities = perfumeJpaRepository.findAllByAccords(
-            accordJpaEntities,
+        List<PerfumeJpaEntity> perfumeJpaEntities = perfumeJpaRepository.findAllByAccordNames(
+            accords,
             Limit.of(maxSize)
         );
 

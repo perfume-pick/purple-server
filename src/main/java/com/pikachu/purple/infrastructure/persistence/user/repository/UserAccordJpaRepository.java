@@ -1,6 +1,6 @@
 package com.pikachu.purple.infrastructure.persistence.user.repository;
 
-import com.pikachu.purple.infrastructure.persistence.accord.entity.AccordJpaEntity;
+import com.pikachu.purple.domain.accord.enums.Accord;
 import com.pikachu.purple.infrastructure.persistence.user.entity.UserAccordJpaEntity;
 import java.util.List;
 import java.util.Optional;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserAccordJpaRepository extends JpaRepository<UserAccordJpaEntity, Long> {
 
-    Optional<UserAccordJpaEntity> findByUserIdAndAccordJpaEntity(Long userId, AccordJpaEntity entity);
+    Optional<UserAccordJpaEntity> findByUserIdAndAccord(Long userId, Accord accord);
 
     @Query("select ua "
         + "from UserAccordJpaEntity ua "
@@ -27,5 +27,7 @@ public interface UserAccordJpaRepository extends JpaRepository<UserAccordJpaEnti
         + "and ua.score < 0 "
         + "order by ua.score asc")
     List<UserAccordJpaEntity> findAllByUserIdOrderByScoreAsc(Long userId, Limit limit);
+
+    List<UserAccordJpaEntity> findAllByUserId(Long userId);
 
 }

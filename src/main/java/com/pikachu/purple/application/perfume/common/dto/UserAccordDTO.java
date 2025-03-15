@@ -13,8 +13,8 @@ public record UserAccordDTO(
         int order
     ){
         return new UserAccordDTO(
-            userAccord.getName(),
-            userAccord.getKoreanName(),
+            userAccord.getAccord().name(),
+            userAccord.getAccord().getKoreanName(),
             order
         );
     }

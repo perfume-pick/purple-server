@@ -1,5 +1,6 @@
 package com.pikachu.purple.application.perfume.util;
 
+import com.pikachu.purple.domain.accord.enums.Accord;
 import com.pikachu.purple.domain.review.StarRating;
 import com.pikachu.purple.domain.user.User;
 import com.pikachu.purple.domain.user.UserAccord;
@@ -32,27 +33,27 @@ public class UserAccordRecommender {
         User user,
         List<StarRating> starRatings
     ) {
-        Map<String, Double> accordScores = calculateAccordScores(starRatings);
+        Map<Accord, Double> accordScores = calculateAccordScores(starRatings);
 
         return accordScores.entrySet().stream()
-            .sorted(Map.Entry.<String, Double>comparingByValue().reversed())
-            .map(entry -> UserAccord.builder()
-                .user(user)
-                .name(entry.getKey())
-                .score(entry.getValue())
-                .build()
+            .sorted(Map.Entry.<Accord, Double>comparingByValue().reversed())
+            .map(entry -> {
+                    UserAccord userAccord = new UserAccord(entry.getKey(), entry.getValue());
+                    userAccord.setUser(user);
+                    return userAccord;
+                }
             )
-            .collect(Collectors.toList());
+            .toList();
     }
 
-    private Map<String, Double> calculateAccordScores(
+    private Map<Accord, Double> calculateAccordScores(
         List<StarRating> starRatings
     ) {
         return starRatings.stream()
             .flatMap(this::extractAccordScores)
             .collect(
                 Collectors.groupingBy(
-                    AccordScore::name,
+                    AccordScore::accord,
                     Collectors.summingDouble(AccordScore::score)
                 )
             );
@@ -62,13 +63,16 @@ public class UserAccordRecommender {
         double weightedScore = convert(starRating.getScore());
 
         return starRating.getPerfume().getAccords().stream()
-            .map(accord -> new AccordScore(accord.getName(), weightedScore));
+            .map(accord -> new AccordScore(accord.getAccord(), weightedScore));
     }
 
     private double convert(int score) {
         return WEIGHTS[score - 1];
     }
 
-    private record AccordScore(String name, double score) {}
+    private record AccordScore(
+        Accord accord,
+        double score
+    ) {}
 
 }

@@ -15,8 +15,8 @@ public record PerfumeAccordDTO(
     ) {
         return new PerfumeAccordDTO(
             order,
-            perfumeAccord.getName(),
-            perfumeAccord.getKoreanName(),
+            perfumeAccord.getAccord().name(),
+            perfumeAccord.getAccord().getKoreanName(),
             perfumeAccord.getValue()
         );
     }

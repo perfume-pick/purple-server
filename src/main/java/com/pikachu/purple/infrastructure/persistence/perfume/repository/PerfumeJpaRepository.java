@@ -1,6 +1,6 @@
 package com.pikachu.purple.infrastructure.persistence.perfume.repository;
 
-import com.pikachu.purple.infrastructure.persistence.accord.entity.AccordJpaEntity;
+import com.pikachu.purple.domain.accord.enums.Accord;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
 import java.util.List;
 import org.springframework.data.domain.Limit;
@@ -21,10 +21,10 @@ public interface PerfumeJpaRepository extends JpaRepository<PerfumeJpaEntity, Lo
     @Query("select p "
         + "from PerfumeJpaEntity p "
         + "left join PerfumeAccordJpaEntity pa on p.id = pa.perfumeId "
-        + "where pa.accordJpaEntity in :accordJpaEntities "
+        + "where pa.accord in :accords "
         + "group by p "
         + "order by count(pa) desc")
-    List<PerfumeJpaEntity> findAllByAccords(List<AccordJpaEntity> accordJpaEntities, Limit limit);
+    List<PerfumeJpaEntity> findAllByAccordNames(List<Accord> accords, Limit limit);
 
 
     @Query("select p "

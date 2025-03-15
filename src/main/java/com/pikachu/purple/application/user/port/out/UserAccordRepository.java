@@ -11,4 +11,6 @@ public interface UserAccordRepository {
 
     List<UserAccord> findAllOrderByScoreAsc(Long userId, int maxSize);
 
+    List<UserAccord> findAllByUserId(Long userId);
+
 }

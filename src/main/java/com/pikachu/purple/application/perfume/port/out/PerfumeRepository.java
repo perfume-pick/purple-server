@@ -1,6 +1,6 @@
 package com.pikachu.purple.application.perfume.port.out;
 
-import com.pikachu.purple.domain.accord.Accord;
+import com.pikachu.purple.domain.accord.enums.Accord;
 import com.pikachu.purple.domain.perfume.Brand;
 import com.pikachu.purple.domain.perfume.Perfume;
 import java.util.List;
