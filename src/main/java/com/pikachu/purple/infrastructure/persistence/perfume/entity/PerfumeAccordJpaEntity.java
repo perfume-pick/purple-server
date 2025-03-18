@@ -23,9 +23,12 @@ public class PerfumeAccordJpaEntity {
     private Long perfumeId;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "accord_name")
+    @Column(
+        name = "accord_name",
+        columnDefinition = "varchar(255)",
+        nullable = false
+    )
     private Accord accord;
-
 
     @Column(name = "value")
     private int value;

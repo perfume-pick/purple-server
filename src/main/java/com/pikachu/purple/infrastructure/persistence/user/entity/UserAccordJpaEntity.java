@@ -27,7 +27,11 @@ public class UserAccordJpaEntity {
     private Long userId;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "accord_name")
+    @Column(
+        name = "accord_name",
+        columnDefinition = "varchar(255)",
+        nullable = false
+    )
     private Accord accord;
 
     private double score;
