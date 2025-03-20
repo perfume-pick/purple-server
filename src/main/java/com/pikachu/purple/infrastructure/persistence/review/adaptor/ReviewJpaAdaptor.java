@@ -5,13 +5,11 @@ import static com.pikachu.purple.bootstrap.common.exception.BusinessException.Re
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.UserNotFoundException;
 
 import com.pikachu.purple.application.review.port.out.ReviewRepository;
-import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.review.Review;
+import com.pikachu.purple.domain.review.enums.Mood;
 import com.pikachu.purple.domain.review.enums.ReviewType;
-import com.pikachu.purple.infrastructure.persistence.review.repository.MoodJpaRepository;
 import com.pikachu.purple.infrastructure.persistence.perfume.entity.PerfumeJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.perfume.repository.PerfumeJpaRepository;
-import com.pikachu.purple.infrastructure.persistence.review.entity.MoodJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.review.entity.ReviewJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.review.entity.ReviewMoodJpaEntity;
 import com.pikachu.purple.infrastructure.persistence.review.entity.StarRatingJpaEntity;
@@ -31,7 +29,6 @@ class ReviewJpaAdaptor implements ReviewRepository {
     private final ReviewJpaRepository reviewJpaRepository;
     private final PerfumeJpaRepository perfumeJpaRepository;
     private final UserJpaRepository userJpaRepository;
-    private final MoodJpaRepository moodJpaRepository;
     private final ReviewMoodJpaRepository reviewMoodJpaRepository;
     private final StarRatingJpaRepository starRatingJpaRepository;
 
@@ -80,15 +77,14 @@ class ReviewJpaAdaptor implements ReviewRepository {
     @Override
     public void createReviewMoods(
         Long reviewId,
-        List<String> moodNames
+        List<Mood> moods
     ) {
         ReviewJpaEntity reviewJpaEntity = findEntityById(reviewId);
 
-        List<MoodJpaEntity> moodJpaEntities = moodJpaRepository.findAllByNameIn(moodNames);
-        List<ReviewMoodJpaEntity> reviewMoodJpaEntities = moodJpaEntities.stream()
-            .map(moodJpaEntity -> ReviewMoodJpaEntity.builder()
+        List<ReviewMoodJpaEntity> reviewMoodJpaEntities = moods.stream()
+            .map(mood -> ReviewMoodJpaEntity.builder()
                 .reviewId(reviewJpaEntity.getId())
-                .moodJpaEntity(moodJpaEntity)
+                .mood(mood)
                 .build())
             .toList();
 
@@ -230,14 +226,14 @@ class ReviewJpaAdaptor implements ReviewRepository {
     @Override
     public void updateReviewMood(
         Long reviewId,
-        List<String> moodNames
+        List<Mood> moods
     ) {
         List<ReviewMoodJpaEntity> reviewMoodJpaEntities = reviewMoodJpaRepository.findByReviewId(reviewId);
         reviewMoodJpaRepository.deleteAll(reviewMoodJpaEntities);
 
         createReviewMoods(
             reviewId,
-            moodNames
+            moods
         );
     }
 

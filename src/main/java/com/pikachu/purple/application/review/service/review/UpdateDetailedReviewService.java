@@ -11,6 +11,7 @@ import com.pikachu.purple.application.statistic.port.in.evaluationstatistic.Incr
 import com.pikachu.purple.bootstrap.review.vo.EvaluationFieldVO;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.ReviewEvaluation;
+import com.pikachu.purple.domain.review.enums.Mood;
 import com.pikachu.purple.domain.review.enums.ReviewType;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -38,6 +39,8 @@ class UpdateDetailedReviewService implements UpdateDetailedReviewUseCase {
         List<EvaluationFieldVO> evaluationFieldVOs,
         List<String> moodNames
     ) {
+        List<Mood> moods = Mood.transMoodsByKoreanNames(moodNames);
+
         Review review = reviewRepository.findByReviewId(reviewId);
 
         if(review.getType() == ReviewType.SIMPLE || review.getType() == ReviewType.ONBOARDING) {
@@ -48,7 +51,7 @@ class UpdateDetailedReviewService implements UpdateDetailedReviewUseCase {
 
             reviewRepository.createReviewMoods(
                 review.getId(),
-                moodNames
+                moods
             );
         }
 
@@ -75,7 +78,7 @@ class UpdateDetailedReviewService implements UpdateDetailedReviewUseCase {
 
             reviewRepository.updateReviewMood(
                 reviewId,
-                moodNames
+                moods
             );
         }
 

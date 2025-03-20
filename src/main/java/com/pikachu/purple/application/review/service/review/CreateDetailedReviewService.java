@@ -10,6 +10,7 @@ import com.pikachu.purple.bootstrap.review.vo.EvaluationFieldVO;
 import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.StarRating;
+import com.pikachu.purple.domain.review.enums.Mood;
 import com.pikachu.purple.domain.review.enums.ReviewType;
 import com.pikachu.purple.domain.user.User;
 import java.util.List;
@@ -25,7 +26,6 @@ class CreateDetailedReviewService implements CreateDetailedReviewUseCase {
     private final CreateOrUpdateStarRatingUseCase createOrUpdateStarRatingUseCase;
     private final CreateReviewEvaluationUseCase createReviewEvaluationUseCase;
     private final CreateUserAccordUseCase createUserAccordUseCase;
-
     private final ReviewRepository reviewRepository;
 
     @Transactional
@@ -55,9 +55,10 @@ class CreateDetailedReviewService implements CreateDetailedReviewUseCase {
             ReviewType.DETAIL
         ).review();
 
+
         reviewRepository.createReviewMoods(
             review.getId(),
-            moodNames
+            Mood.transMoodsByKoreanNames(moodNames)
         );
 
         createReviewEvaluationUseCase.create(
