@@ -36,9 +36,4 @@ public enum Mood {
             .toList();
     }
 
-    @Override
-    public String toString() {
-        return koreanName;
-    }
-
 }

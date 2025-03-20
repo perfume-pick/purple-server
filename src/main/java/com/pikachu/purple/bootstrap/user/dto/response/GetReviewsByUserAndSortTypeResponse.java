@@ -33,6 +33,7 @@ public class GetReviewsByUserAndSortTypeResponse {
                                 .toList()
                         )
                     ).toList();
+
                 List<String> moodNames = review.getMoods().stream()
                     .map(Mood::getKoreanName)
                     .toList();
