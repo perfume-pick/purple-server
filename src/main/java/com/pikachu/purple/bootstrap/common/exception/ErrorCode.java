@@ -184,6 +184,13 @@ public enum ErrorCode {
         409,
         "L002",
         "이미 좋아요가 존재합니다."
+    ),
+
+    // Mood
+    MOOD_NOT_FOUND(
+        404,
+        "M001",
+        "해당하는 분위기가 존재하지 않습니다."
     );
 
     private final int status;
