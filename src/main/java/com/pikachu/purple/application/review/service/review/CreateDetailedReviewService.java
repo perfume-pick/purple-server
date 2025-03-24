@@ -58,7 +58,7 @@ class CreateDetailedReviewService implements CreateDetailedReviewUseCase {
 
         reviewRepository.createReviewMoods(
             review.getId(),
-            Mood.transMoodsByKoreanNames(moodNames)
+            Mood.from(moodNames)
         );
 
         createReviewEvaluationUseCase.create(

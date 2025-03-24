@@ -39,7 +39,7 @@ class UpdateDetailedReviewService implements UpdateDetailedReviewUseCase {
         List<EvaluationFieldVO> evaluationFieldVOs,
         List<String> moodNames
     ) {
-        List<Mood> moods = Mood.transMoodsByKoreanNames(moodNames);
+        List<Mood> moods = Mood.from(moodNames);
 
         Review review = reviewRepository.findByReviewId(reviewId);
 

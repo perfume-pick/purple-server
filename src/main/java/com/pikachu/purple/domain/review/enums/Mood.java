@@ -27,7 +27,7 @@ public enum Mood {
         this.koreanName = koreanName;
     }
 
-    public static List<Mood> transMoodsByKoreanNames(List<String> koreanNames) {
+    public static List<Mood> from(List<String> koreanNames) {
         return koreanNames.stream()
             .map(koreanName -> EnumSet.allOf(Mood.class).stream()
                 .filter(mood -> mood.koreanName.equals(koreanName))
@@ -35,5 +35,4 @@ public enum Mood {
                 .orElseThrow(() -> MoodNotException))
             .toList();
     }
-
 }
