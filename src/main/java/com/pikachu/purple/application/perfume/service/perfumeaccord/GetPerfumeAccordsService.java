@@ -18,7 +18,6 @@ class GetPerfumeAccordsService implements GetPerfumeAccordsUseCase {
 
     @Override
     public Result findAll(Perfume perfume) {
-
         List<PerfumeAccord> perfumeAccords = perfumeAccordRepository.findAllByPerfumeId(
             perfume.getId());
 

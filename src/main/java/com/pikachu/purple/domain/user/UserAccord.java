@@ -1,25 +1,23 @@
 package com.pikachu.purple.domain.user;
 
-import com.pikachu.purple.domain.accord.Accord;
+import com.pikachu.purple.domain.accord.enums.Accord;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.experimental.SuperBuilder;
 
 @Getter
-@SuperBuilder
-public class UserAccord extends Accord {
+public class UserAccord {
 
+    private final Accord accord;
     private final double score;
 
     @Setter
     private User user;
 
     public UserAccord(
-        String name,
-        String koreanName,
+        Accord accord,
         double score
     ) {
-        super(name, koreanName);
+        this.accord = accord;
         this.score = score;
     }
 

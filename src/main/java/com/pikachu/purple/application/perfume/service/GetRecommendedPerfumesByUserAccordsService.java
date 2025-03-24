@@ -7,9 +7,9 @@ import com.pikachu.purple.application.perfume.port.in.GetRecommendedPerfumesByUs
 import com.pikachu.purple.application.perfume.port.in.perfumeaccord.GetPerfumeAccordsUseCase;
 import com.pikachu.purple.application.perfume.port.out.PerfumeRepository;
 import com.pikachu.purple.application.user.port.in.useraccord.GetTopThreeUserAccordsUseCase;
-import com.pikachu.purple.domain.accord.Accord;
+import com.pikachu.purple.domain.accord.enums.Accord;
 import com.pikachu.purple.domain.perfume.Perfume;
-import java.util.ArrayList;
+import com.pikachu.purple.domain.user.UserAccord;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.IntStream;
@@ -55,7 +55,10 @@ class GetRecommendedPerfumesByUserAccordsService implements
             .map(UserAccordDTO::accordKoreanName)
             .toList();
 
-        List<Accord> accords = new ArrayList<>(result.userAccords());
+        List<Accord> accords = result.userAccords().stream()
+            .map(UserAccord::getAccord)
+            .toList();
+
         List<Perfume> perfumes = perfumeRepository.findAll(
             accords,
             MAX_SIZE
@@ -72,7 +75,7 @@ class GetRecommendedPerfumesByUserAccordsService implements
         List<RecommendedPerfumeDTO> recommendedPerfumeDTOs = perfumes.stream()
             .map(perfume -> {
                 List<String> matchAccords = perfume.getAccords().stream()
-                    .map(Accord::getKoreanName)
+                    .map(perfumeAccord -> perfumeAccord.getAccord().getKoreanName())
                     .filter(topThreeUserAccordNames::contains)
                     .toList();
 

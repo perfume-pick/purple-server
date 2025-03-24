@@ -3,8 +3,9 @@ package com.pikachu.purple.application.perfume.common.dto;
 import static com.pikachu.purple.bootstrap.common.exception.BusinessException.PerfumeAccordNotFoundException;
 
 import com.pikachu.purple.application.util.IdUtil;
-import com.pikachu.purple.domain.accord.Accord;
+import com.pikachu.purple.domain.accord.enums.Accord;
 import com.pikachu.purple.domain.perfume.Perfume;
+import com.pikachu.purple.domain.perfume.PerfumeAccord;
 
 public record PerfumeDTO(
     String perfumeId,
@@ -23,6 +24,7 @@ public record PerfumeDTO(
             perfume.getImageUrl(),
             perfume.getAverageScore(),
             perfume.getAccords().stream()
+                .map(PerfumeAccord::getAccord)
                 .map(Accord::getKoreanName)
                 .findFirst()
                 .orElseThrow(() -> PerfumeAccordNotFoundException)

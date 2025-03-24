@@ -4,8 +4,9 @@ import static com.pikachu.purple.bootstrap.common.exception.BusinessException.Pe
 
 import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesUseCase;
 import com.pikachu.purple.application.util.IdUtil;
-import com.pikachu.purple.domain.accord.Accord;
+import com.pikachu.purple.domain.accord.enums.Accord;
 import com.pikachu.purple.domain.perfume.Perfume;
+import com.pikachu.purple.domain.perfume.PerfumeAccord;
 import java.util.List;
 import lombok.Getter;
 
@@ -43,6 +44,7 @@ public class GetPerfumesResponse {
                 perfume.getImageUrl(),
                 perfume.getAverageScore(),
                 perfume.getAccords().stream()
+                    .map(PerfumeAccord::getAccord)
                     .map(Accord::getKoreanName)
                     .findFirst()
                     .orElseThrow(() -> PerfumeAccordNotFoundException)

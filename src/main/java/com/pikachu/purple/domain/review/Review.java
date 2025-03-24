@@ -1,6 +1,7 @@
 package com.pikachu.purple.domain.review;
 
 import com.pikachu.purple.domain.perfume.Perfume;
+import com.pikachu.purple.domain.review.enums.Mood;
 import com.pikachu.purple.domain.review.enums.ReviewType;
 import com.pikachu.purple.domain.user.User;
 import java.time.Instant;

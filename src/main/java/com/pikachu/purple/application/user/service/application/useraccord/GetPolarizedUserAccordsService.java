@@ -65,8 +65,8 @@ class GetPolarizedUserAccordsService implements
             Perfume perfume = starRating.getPerfume();
             if(perfume != null) {
                 perfume.getAccords().stream()
-                    .filter(perfumeAccord -> containsAccord(accords, perfumeAccord.getName()))
-                    .forEach(perfumeAccord -> accordCountMap.merge(perfumeAccord.getName(), 1, Integer::sum));
+                    .filter(perfumeAccord -> containsAccord(accords, perfumeAccord.getAccord().name()))
+                    .forEach(perfumeAccord -> accordCountMap.merge(perfumeAccord.getAccord().name(), 1, Integer::sum));
             }
         }
 
@@ -75,12 +75,12 @@ class GetPolarizedUserAccordsService implements
 
         return accords.stream()
             .map(userAccord -> {
-                String accordName = userAccord.getName();
+                String accordName = userAccord.getAccord().name();
                 int count = accordCountMap.getOrDefault(accordName, 0);
                 int percentage = MathUtil.getPercentage(userAccord.getScore(), totalScore);
                 return AccordInfo.of(
                     accordName,
-                    userAccord.getKoreanName(),
+                    userAccord.getAccord().getKoreanName(),
                     count,
                     percentage
                 );
@@ -93,7 +93,7 @@ class GetPolarizedUserAccordsService implements
         String accordName
     ) {
         return accords.stream()
-            .anyMatch(userAccord -> userAccord.getName().equals(accordName));
+            .anyMatch(userAccord -> userAccord.getAccord().name().equals(accordName));
     }
 
 }

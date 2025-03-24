@@ -2,6 +2,7 @@ package com.pikachu.purple.bootstrap.recommend.dto.response;
 
 import com.pikachu.purple.application.perfume.port.in.perfume.GetPerfumesUseCase;
 import com.pikachu.purple.application.util.IdUtil;
+import com.pikachu.purple.domain.accord.enums.Accord;
 import com.pikachu.purple.domain.perfume.Perfume;
 import com.pikachu.purple.domain.perfume.PerfumeAccord;
 import java.util.List;
@@ -21,7 +22,8 @@ public class GetPerfumesByReviewCountsResponse {
             .map(perfume -> RecommendedPerfumeDTO.from(
                 perfume,
                 perfume.getAccords() == null ? List.of() : perfume.getAccords().stream()
-                    .map(PerfumeAccord::getKoreanName)
+                    .map(PerfumeAccord::getAccord)
+                    .map(Accord::getKoreanName)
                     .toList()
             ))
             .toList();

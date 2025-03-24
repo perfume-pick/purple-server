@@ -1,5 +1,6 @@
 package com.pikachu.purple.infrastructure.persistence.review.entity.id;
 
+import com.pikachu.purple.domain.review.enums.Mood;
 import java.io.Serializable;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -9,6 +10,6 @@ import lombok.NoArgsConstructor;
 public class ReviewMoodId implements Serializable {
 
     private Long reviewId;
-    private String moodJpaEntity;
+    private Mood mood;
 
 }

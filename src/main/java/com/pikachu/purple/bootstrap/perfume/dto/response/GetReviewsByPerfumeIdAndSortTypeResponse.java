@@ -5,7 +5,7 @@ import com.pikachu.purple.application.util.DateUtil;
 import com.pikachu.purple.application.util.IdUtil;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationFieldType;
 import com.pikachu.purple.domain.evaluation.enums.EvaluationOptionType;
-import com.pikachu.purple.domain.review.Mood;
+import com.pikachu.purple.domain.review.enums.Mood;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.enums.ReviewType;
 import java.util.List;
@@ -35,7 +35,7 @@ public class GetReviewsByPerfumeIdAndSortTypeResponse {
                     ).toList();
 
                 List<String> moodNames = review.getMoods().stream()
-                    .map(Mood::getName)
+                    .map(Mood::getKoreanName)
                     .toList();
 
                 return ReviewDTO.of(

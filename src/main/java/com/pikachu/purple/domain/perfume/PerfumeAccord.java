@@ -1,19 +1,19 @@
 package com.pikachu.purple.domain.perfume;
 
-import com.pikachu.purple.domain.accord.Accord;
+import com.pikachu.purple.domain.accord.enums.Accord;
 import lombok.Getter;
 
 @Getter
-public class PerfumeAccord extends Accord {
+public class PerfumeAccord {
 
+    private final Accord accord;
     private final int value;
 
     public PerfumeAccord(
-        String name,
-        String koreanName,
+        Accord accord,
         int value
     ) {
-        super(name, koreanName);
+        this.accord = accord;
         this.value = value;
     }
 

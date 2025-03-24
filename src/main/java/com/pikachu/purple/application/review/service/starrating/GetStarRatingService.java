@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 class GetStarRatingService implements GetStarRatingUseCase {
 
     private final GetPerfumeUseCase getPerfumeUseCase;
@@ -19,7 +20,6 @@ class GetStarRatingService implements GetStarRatingUseCase {
 
     private final StarRatingRepository starRatingRepository;
 
-    @Transactional
     @Override
     public Result findByStarRatingId(Long starRatingId) {
         StarRating starRating = starRatingRepository.findByStarRatingId(starRatingId);
@@ -27,7 +27,6 @@ class GetStarRatingService implements GetStarRatingUseCase {
         return new Result(starRating);
     }
 
-    @Transactional
     @Override
     public Result findByUserIdAndPerfumeId(
         Long userId,
@@ -41,7 +40,6 @@ class GetStarRatingService implements GetStarRatingUseCase {
         return new Result(starRating);
     }
 
-    @Transactional
     @Override
     public Result findByUserIdAndPerfumeIdWithPerfumeAndPerfumeAccords(
         Long userId,

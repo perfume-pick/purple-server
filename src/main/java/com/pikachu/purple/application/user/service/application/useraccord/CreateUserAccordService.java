@@ -5,6 +5,8 @@ import com.pikachu.purple.application.review.port.in.starrating.GetStarRatingUse
 import com.pikachu.purple.application.user.port.in.user.GetUserUseCase;
 import com.pikachu.purple.application.user.port.in.useraccord.CreateUserAccordUseCase;
 import com.pikachu.purple.application.user.port.out.UserAccordRepository;
+import com.pikachu.purple.domain.review.StarRating;
+import com.pikachu.purple.domain.user.User;
 import com.pikachu.purple.domain.user.UserAccord;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -26,18 +28,19 @@ class CreateUserAccordService implements CreateUserAccordUseCase {
         Long userId,
         Long perfumeId
     ) {
-        GetUserUseCase.Result user = getUserUseCase.findByUserId(userId);
-        GetStarRatingUseCase.Result starRating = getStarRatingUseCase.findByUserIdAndPerfumeIdWithPerfumeAndPerfumeAccords(
+        User user = getUserUseCase.findByUserId(userId).user();
+        StarRating starRating = getStarRatingUseCase.findByUserIdAndPerfumeIdWithPerfumeAndPerfumeAccords(
             userId,
             perfumeId
-        );
+        ).starRating();
+
         List<UserAccord> userAccords = userAccordRecommender.recommend(
-            user.user(),
-            starRating.starRating()
+            user,
+            starRating
         );
 
         userAccordRepository.createAll(
-            user.user().getId(),
+            user.getId(),
             userAccords
         );
     }

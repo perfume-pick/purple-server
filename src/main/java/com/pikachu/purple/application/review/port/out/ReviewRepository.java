@@ -1,6 +1,7 @@
 package com.pikachu.purple.application.review.port.out;
 
 import com.pikachu.purple.domain.review.Review;
+import com.pikachu.purple.domain.review.enums.Mood;
 import com.pikachu.purple.domain.review.enums.ReviewType;
 import java.util.List;
 
@@ -10,7 +11,7 @@ public interface ReviewRepository {
 
     void createAll(List<Review> reviews);
 
-    void createReviewMoods(Long reviewId, List<String> moodNames);
+    void createReviewMoods(Long reviewId, List<Mood> moods);
 
     Review findByReviewId(Long reviewId);
 
@@ -38,7 +39,7 @@ public interface ReviewRepository {
 
     void update(Long reviewId, String content, ReviewType reviewType);
 
-    void updateReviewMood(Long reviewId, List<String> moodNames);
+    void updateReviewMood(Long reviewId, List<Mood> moods);
 
     void delete(Long id);
 

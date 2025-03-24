@@ -5,7 +5,7 @@ import com.pikachu.purple.application.review.port.in.review.GetReviewUseCase;
 import com.pikachu.purple.application.review.port.in.reviewevaluation.GetReviewEvaluationUseCase;
 import com.pikachu.purple.application.review.port.in.starrating.GetStarRatingUseCase;
 import com.pikachu.purple.application.review.port.out.ReviewRepository;
-import com.pikachu.purple.domain.review.Mood;
+import com.pikachu.purple.domain.review.enums.Mood;
 import com.pikachu.purple.domain.review.Review;
 import com.pikachu.purple.domain.review.ReviewEvaluation;
 import com.pikachu.purple.domain.review.StarRating;
