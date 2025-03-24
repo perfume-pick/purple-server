@@ -1,5 +1,6 @@
 package com.pikachu.purple.infrastructure.persistence.perfume.entity.id;
 
+import com.pikachu.purple.domain.accord.enums.Accord;
 import java.io.Serializable;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -9,6 +10,6 @@ import lombok.NoArgsConstructor;
 public class PerfumeAccordId implements Serializable {
 
     private Long perfumeId;
-    private String accordJpaEntity;
+    private Accord accord;
 
 }

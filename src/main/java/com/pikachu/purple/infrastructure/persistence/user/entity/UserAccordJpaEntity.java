@@ -2,11 +2,11 @@ package com.pikachu.purple.infrastructure.persistence.user.entity;
 
 import com.pikachu.purple.domain.accord.enums.Accord;
 import com.pikachu.purple.domain.user.UserAccord;
+import com.pikachu.purple.infrastructure.persistence.user.entity.id.UserAccordId;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -18,6 +18,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Builder
 @Table(name = "user_accord")
+@IdClass(UserAccordId.class)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 public class UserAccordJpaEntity {
@@ -26,7 +27,6 @@ public class UserAccordJpaEntity {
     @Column(name = "user_id")
     private Long userId;
 
-    @Enumerated(EnumType.STRING)
     @Column(
         name = "accord_name",
         columnDefinition = "varchar(255)",
