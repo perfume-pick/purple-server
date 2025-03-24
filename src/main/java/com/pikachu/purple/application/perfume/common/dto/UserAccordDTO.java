@@ -13,7 +13,7 @@ public record UserAccordDTO(
         int order
     ){
         return new UserAccordDTO(
-            userAccord.getAccord().name(),
+            userAccord.getAccord().name().toLowerCase().replace("_", " "),
             userAccord.getAccord().getKoreanName(),
             order
         );

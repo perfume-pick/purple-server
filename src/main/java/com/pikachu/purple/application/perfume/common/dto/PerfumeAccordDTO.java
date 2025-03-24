@@ -15,7 +15,7 @@ public record PerfumeAccordDTO(
     ) {
         return new PerfumeAccordDTO(
             order,
-            perfumeAccord.getAccord().name(),
+            perfumeAccord.getAccord().name().toLowerCase().replace("_", " "),
             perfumeAccord.getAccord().getKoreanName(),
             perfumeAccord.getValue()
         );
