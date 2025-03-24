@@ -63,7 +63,7 @@ public class UserAccordRecommender {
         double weightedScore = convert(starRating.getScore());
 
         return starRating.getPerfume().getAccords().stream()
-            .map(accord -> new AccordScore(accord.getAccord(), weightedScore));
+            .map(perfumeAccord -> new AccordScore(perfumeAccord.getAccord(), weightedScore));
     }
 
     private double convert(int score) {
