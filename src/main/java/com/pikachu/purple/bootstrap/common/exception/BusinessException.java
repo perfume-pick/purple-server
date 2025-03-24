@@ -62,7 +62,7 @@ public class BusinessException extends RuntimeException {
     public static final BusinessException SortTypeNotFoundException = new BusinessException(
         ErrorCode.SORT_TYPE_NOT_FOUND
     );
-    public static final BusinessException AccordNotFountException = new BusinessException(
+    public static final BusinessException AccordNotFoundException = new BusinessException(
         ErrorCode.ACCORD_NOT_FOUND
     );
     public static final BusinessException UserAccordNotFoundException = new BusinessException(
