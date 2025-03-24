@@ -1,6 +1,6 @@
 package com.pikachu.purple.domain.review.enums;
 
-import static com.pikachu.purple.bootstrap.common.exception.BusinessException.MoodNotException;
+import static com.pikachu.purple.bootstrap.common.exception.BusinessException.MoodNotFoundException;
 
 import java.util.EnumSet;
 import java.util.List;
@@ -32,7 +32,7 @@ public enum Mood {
             .map(koreanName -> EnumSet.allOf(Mood.class).stream()
                 .filter(mood -> mood.koreanName.equals(koreanName))
                 .findAny()
-                .orElseThrow(() -> MoodNotException))
+                .orElseThrow(() -> MoodNotFoundException))
             .toList();
     }
 }
