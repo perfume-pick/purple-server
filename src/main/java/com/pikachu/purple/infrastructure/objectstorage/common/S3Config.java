@@ -1,4 +1,4 @@
-package com.pikachu.purple.infrastructure.s3.common;
+package com.pikachu.purple.infrastructure.objectstorage.common;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

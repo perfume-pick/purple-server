@@ -1,6 +1,6 @@
-package com.pikachu.purple.infrastructure.s3.adapter;
+package com.pikachu.purple.infrastructure.objectstorage.adapter;
 
-import com.pikachu.purple.application.user.port.out.ImageUrlS3Uploader;
+import com.pikachu.purple.application.user.port.out.ImageUploader;
 import com.pikachu.purple.bootstrap.common.exception.BusinessException;
 import java.util.Objects;
 import java.util.UUID;
@@ -16,7 +16,7 @@ import software.amazon.awssdk.services.s3.model.PutObjectRequest;
 
 @RequiredArgsConstructor
 @Component
-public class ImageUrlS3Adaptor implements ImageUrlS3Uploader {
+public class ImageUrlS3Adaptor implements ImageUploader {
 
     private final S3Client s3Client;
 
