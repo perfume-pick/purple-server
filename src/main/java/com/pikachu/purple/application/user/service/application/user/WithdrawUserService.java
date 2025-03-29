@@ -1,7 +1,7 @@
 package com.pikachu.purple.application.user.service.application.user;
 
 import com.pikachu.purple.application.user.port.in.user.WithdrawUserUseCase;
-import com.pikachu.purple.application.user.port.out.ImageUrlS3Uploader;
+import com.pikachu.purple.application.user.port.out.ImageUploader;
 import com.pikachu.purple.application.user.port.out.UserRepository;
 import com.pikachu.purple.application.user.service.util.UserTokenService;
 import com.pikachu.purple.domain.user.User;
@@ -19,7 +19,7 @@ class WithdrawUserService implements WithdrawUserUseCase {
 
     private final UserTokenService userTokenService;
     private final UserRepository userRepository;
-    private final ImageUrlS3Uploader imageUrlS3Uploader;
+    private final ImageUploader imageUploader;
 
     @Override
     public void withdraw(Long userId) {
@@ -38,7 +38,7 @@ class WithdrawUserService implements WithdrawUserUseCase {
     private void deleteExistingImage(User user) {
         String imageUrl = user.getImageUrl();
         if (imageUrl != null && !imageUrl.isEmpty()) {
-            imageUrlS3Uploader.delete(imageUrl);
+            imageUploader.delete(imageUrl);
         }
     }
 

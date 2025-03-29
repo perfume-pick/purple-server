@@ -1,7 +1,7 @@
 package com.pikachu.purple.application.user.service.application.user;
 
 import com.pikachu.purple.application.user.port.in.user.UpdateProfileUseCase;
-import com.pikachu.purple.application.user.port.out.ImageUrlS3Uploader;
+import com.pikachu.purple.application.user.port.out.ImageUploader;
 import com.pikachu.purple.application.user.port.out.UserRepository;
 import com.pikachu.purple.domain.user.User;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +16,7 @@ class UpdateProfileService implements UpdateProfileUseCase {
 
     private static final String STRING_DEFAULT = "";
     private final UserRepository userRepository;
-    private final ImageUrlS3Uploader imageUrlS3Uploader;
+    private final ImageUploader imageUploader;
 
     @Override
     public Result update(
@@ -70,13 +70,13 @@ class UpdateProfileService implements UpdateProfileUseCase {
     private void deleteExistingImage(User user) {
         String imageUrl = user.getImageUrl();
         if (imageUrl != null && !imageUrl.isEmpty()) {
-            imageUrlS3Uploader.delete(imageUrl);
+            imageUploader.delete(imageUrl);
         }
     }
 
     private String changeImage(Long userId, MultipartFile picture) {
         if (picture == null || picture.isEmpty()) return STRING_DEFAULT;
-        return imageUrlS3Uploader.upload(
+        return imageUploader.upload(
             userId,
             picture
         );
