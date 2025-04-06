@@ -16,7 +16,7 @@ import software.amazon.awssdk.services.s3.model.PutObjectRequest;
 
 @RequiredArgsConstructor
 @Component
-public class ImageUrlS3Adaptor implements ImageUploader {
+public class S3Adapter implements ImageUploader {
 
     private final S3Client s3Client;
 
