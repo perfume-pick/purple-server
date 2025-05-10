@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   spring:
-    image: public.ecr.aws/${ECR_REGISTRY_ALIAS}/perpick:${VERSION:-latest}
+    image: public.ecr.aws/${ECR_REGISTRY_ALIAS}/perfume-pick/purple-server:${VERSION:-latest}
     volumes:
       - type: bind
         source: ${MYSQL_MOUNT_PATH}
