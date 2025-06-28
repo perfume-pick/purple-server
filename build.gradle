@@ -5,12 +5,13 @@ buildscript {
 }
 
 plugins {
-    id("java")
-    id("org.springframework.boot") version '3.2.3'
-    id("io.spring.dependency-management") version '1.1.4'
-    id("jacoco")
-    id("org.sonarqube") version '4.4.1.3373'
-    id("org.flywaydb.flyway") version "10.19.0"
+    id "java"
+    id "org.springframework.boot" version '3.2.3'
+    id "io.spring.dependency-management" version '1.1.4'
+    id "jacoco"
+    id "org.sonarqube" version '4.4.1.3373'
+    id "org.flywaydb.flyway" version "10.19.0"
+    id "org.jooq.jooq-codegen-gradle" version "3.20.5"
 }
 
 group = 'com.pikachu'
@@ -88,8 +89,38 @@ dependencies {
 
     //thymeleaf
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+    //jooq
+    implementation "org.jooq:jooq:3.20.5"
+    jooqCodegen "org.jooq:jooq-meta:3.20.5"
+    jooqCodegen "org.jooq:jooq-codegen:3.20.5"
+    jooqCodegen 'com.mysql:mysql-connector-j'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+jooq {
+    configuration {
+        jdbc {
+            driver = "com.mysql.cj.jdbc.Driver"
+            url = project.findProperty("DB_URL").toString() ?: ""
+            user = project.findProperty("DB_USERNAME").toString() ?: ""
+            password = project.findProperty("DB_PASSWORD").toString() ?: ""
+        }
+        generator {
+            name = "org.jooq.codegen.JavaGenerator"
+            database {
+                name = "org.jooq.meta.mysql.MySQLDatabase"
+                inputSchema = project.findProperty("DB_SCHEMA").toString() ?: ""
+                includes = ".*"
+                excludes = "flyway_schema_history"
+            }
+            target {
+                packageName = "org.jooq.generated"
+                directory = "src/generated"
+            }
+        }
+    }
 }
