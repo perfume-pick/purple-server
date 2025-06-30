@@ -109,7 +109,7 @@ ext {
     dbUrl = findProperty('DB_URL') ?: ''
     dbUser = findProperty('DB_USERNAME') ?: ''
     dbPasswd = findProperty('DB_PASSWORD') ?: ''
-    dbSchema = findProperty('DB_SCHEMA') ?: ''
+    dbSchema = findProperty('DB_SCHEMA') ?: 'purple'
     dbDriver = 'com.mysql.cj.jdbc.Driver'
 }
 
