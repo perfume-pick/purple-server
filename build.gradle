@@ -1,8 +1,16 @@
+import org.flywaydb.core.Flyway
+
 buildscript {
+    repositories {
+        mavenCentral()
+    }
     dependencies {
+        classpath "org.flywaydb:flyway-core:10.18.0"
         classpath 'org.flywaydb:flyway-mysql:10.18.0'
+        classpath "com.mysql:mysql-connector-j:8.0.33"
     }
 }
+
 
 plugins {
     id "java"
@@ -30,15 +38,6 @@ sonar {
     }
 }
 
-if (project.hasProperty('DB_URL')) {
-    flyway {
-        url = project.DB_URL
-        user = project.DB_USERNAME
-        password = project.DB_PASSWORD
-        driver = 'com.mysql.cj.jdbc.Driver'
-    }
-}
-
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
@@ -60,6 +59,7 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
+//    implementation 'com.mysql:mysql-connector-j:8.2.0'
     runtimeOnly 'com.mysql:mysql-connector-j'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -101,19 +101,35 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
+ext {
+    dbUrl     = findProperty('DB_URL')      ?: ''
+    dbUser    = findProperty('DB_USERNAME') ?: ''
+    dbPasswd  = findProperty('DB_PASSWORD') ?: ''
+    dbSchema  = findProperty('DB_SCHEMA')   ?: ''
+    dbDriver  = 'com.mysql.cj.jdbc.Driver'
+}
+
+
+flyway {
+    url = dbUrl
+    user = dbUser
+    password = dbPasswd
+    driver = dbDriver
+}
+
 jooq {
     configuration {
         jdbc {
-            driver = "com.mysql.cj.jdbc.Driver"
-            url = project.findProperty("DB_URL").toString() ?: ""
-            user = project.findProperty("DB_USERNAME").toString() ?: ""
-            password = project.findProperty("DB_PASSWORD").toString() ?: ""
+            driver = dbDriver
+            url = dbUrl
+            user = dbUser
+            password = dbPasswd
         }
         generator {
             name = "org.jooq.codegen.JavaGenerator"
             database {
                 name = "org.jooq.meta.mysql.MySQLDatabase"
-                inputSchema = project.findProperty("DB_SCHEMA").toString() ?: ""
+                inputSchema = dbSchema
                 includes = ".*"
                 excludes = "flyway_schema_history"
             }
@@ -123,4 +139,34 @@ jooq {
             }
         }
     }
+}
+
+tasks.register("safeFlywayMigrate") {
+    doLast {
+        try {
+            Flyway.configure()
+                    .dataSource(dbUrl, dbUser, dbPasswd)
+                    .locations("filesystem:src/main/resources/db/migration")
+                    .load()
+                    .migrate()
+
+            project.ext.flywayOk = true
+        } catch (Exception e) {
+            logger.lifecycle("⚠️  Flyway migration failed: ${e.message}")
+            logger.lifecycle("url: ${dbUrl}")
+            logger.lifecycle("user: ${dbUser}")
+            logger.lifecycle("pw: ${dbPasswd}")
+            project.ext.flywayOk = false
+        }
+    }
+}
+
+tasks.named("jooqCodegen") {
+    dependsOn("safeFlywayMigrate")
+    onlyIf   { project.ext.flywayOk }
+}
+
+
+tasks.named("compileJava") {
+    dependsOn("jooqCodegen")
 }
