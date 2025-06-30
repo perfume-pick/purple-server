@@ -1,5 +1,3 @@
-import org.flywaydb.core.Flyway
-
 buildscript {
     repositories {
         mavenCentral()
@@ -94,6 +92,7 @@ dependencies {
     implementation "org.jooq:jooq:3.20.5"
     jooqCodegen "org.jooq:jooq-meta:3.20.5"
     jooqCodegen "org.jooq:jooq-codegen:3.20.5"
+    jooqCodegen "org.jooq:jooq-meta-extensions:3.20.5"
     jooqCodegen 'com.mysql:mysql-connector-j'
 }
 
@@ -102,11 +101,11 @@ tasks.named('test') {
 }
 
 ext {
-    dbUrl     = findProperty('DB_URL')      ?: ''
-    dbUser    = findProperty('DB_USERNAME') ?: ''
-    dbPasswd  = findProperty('DB_PASSWORD') ?: ''
-    dbSchema  = findProperty('DB_SCHEMA')   ?: ''
-    dbDriver  = 'com.mysql.cj.jdbc.Driver'
+    dbUrl = findProperty('DB_URL') ?: ''
+    dbUser = findProperty('DB_USERNAME') ?: ''
+    dbPasswd = findProperty('DB_PASSWORD') ?: ''
+    dbSchema = findProperty('DB_SCHEMA') ?: ''
+    dbDriver = 'com.mysql.cj.jdbc.Driver'
 }
 
 
@@ -128,44 +127,41 @@ jooq {
         generator {
             name = "org.jooq.codegen.JavaGenerator"
             database {
-                name = "org.jooq.meta.mysql.MySQLDatabase"
-                inputSchema = dbSchema
-                includes = ".*"
-                excludes = "flyway_schema_history"
+                name = "org.jooq.meta.extensions.ddl.DDLDatabase"
+                properties {
+                    property {
+                        key = "scripts"
+                        value = "src/main/resources/db/migration/*.sql"
+                    }
+                    property {
+                        key = "sort"
+                        value = "flyway"
+                    }
+                    property {
+                        key = "sql"
+                        value = """
+                            CREATE SCHEMA IF NOT EXISTS $dbSchema;
+                            SET SCHEMA $dbSchema;           
+                        """
+                    }
+                    property {
+                        key = "unqualifiedSchema"
+                        value = "none"
+                    }
+                    property {
+                        key = "defaultNameCase"
+                        value = "lower"
+                    }
+                }
             }
             target {
                 packageName = "org.jooq.generated"
                 directory = "src/generated"
             }
+
         }
     }
 }
-
-tasks.register("safeFlywayMigrate") {
-    doLast {
-        try {
-            Flyway.configure()
-                    .dataSource(dbUrl, dbUser, dbPasswd)
-                    .locations("filesystem:src/main/resources/db/migration")
-                    .load()
-                    .migrate()
-
-            project.ext.flywayOk = true
-        } catch (Exception e) {
-            logger.lifecycle("⚠️  Flyway migration failed: ${e.message}")
-            logger.lifecycle("url: ${dbUrl}")
-            logger.lifecycle("user: ${dbUser}")
-            logger.lifecycle("pw: ${dbPasswd}")
-            project.ext.flywayOk = false
-        }
-    }
-}
-
-tasks.named("jooqCodegen") {
-    dependsOn("safeFlywayMigrate")
-    onlyIf   { project.ext.flywayOk }
-}
-
 
 tasks.named("compileJava") {
     dependsOn("jooqCodegen")

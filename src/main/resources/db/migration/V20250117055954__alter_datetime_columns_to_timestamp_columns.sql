@@ -4,13 +4,13 @@
 -- WHERE TABLE_SCHEMA = 'purple' AND DATA_TYPE = 'datetime';
 
 -- 2-1. 컬럼 타입 변경 SQL 생성
-# SELECT
-#     CONCAT(
-#             'ALTER TABLE `', TABLE_NAME, '` MODIFY COLUMN `', COLUMN_NAME,
-#             '` TIMESTAMP NOT NULL;'
-#     ) AS alter_statement
-# FROM INFORMATION_SCHEMA.COLUMNS
-# WHERE TABLE_SCHEMA = 'purple' AND DATA_TYPE = 'datetime';
+--  SELECT
+--      CONCAT(
+--              'ALTER TABLE `', TABLE_NAME, '` MODIFY COLUMN `', COLUMN_NAME,
+--              '` TIMESTAMP NOT NULL;'
+--      ) AS alter_statement
+--  FROM INFORMATION_SCHEMA.COLUMNS
+--  WHERE TABLE_SCHEMA = 'purple' AND DATA_TYPE = 'datetime';
 
 -- 2-2. 컬럼 타입 변경 SQL 생성 (+ 시차 적용)
 -- SELECT CONCAT(
