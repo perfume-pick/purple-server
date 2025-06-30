@@ -1,3 +1,5 @@
+import nu.studer.gradle.jooq.JooqEdition
+
 buildscript {
     repositories {
         mavenCentral()
@@ -17,7 +19,7 @@ plugins {
     id "jacoco"
     id "org.sonarqube" version '4.4.1.3373'
     id "org.flywaydb.flyway" version "10.19.0"
-    id 'nu.studer.jooq' version '10.1'
+    id 'nu.studer.jooq' version '9.0'
 }
 
 group = 'com.pikachu'
@@ -89,11 +91,14 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 
     //jooq
-    jooqGenerator "org.jooq:jooq:3.20.3"
-    jooqGenerator "org.jooq:jooq-meta:3.20.3"
-    jooqGenerator "org.jooq:jooq-codegen:3.20.3"
-    jooqGenerator "org.jooq:jooq-meta-extensions:3.20.3"
-    jooqGenerator 'com.mysql:mysql-connector-j'
+//    implementation("org.springframework.boot:spring-boot-starter-jooq")
+    jooqGenerator "org.jooq:jooq:3.19.1"
+    jooqGenerator "org.jooq:jooq-meta:3.19.1"
+    jooqGenerator "org.jooq:jooq-codegen:3.19.1"
+    jooqGenerator "org.jooq:jooq-meta-extensions:3.19.1"
+//    implementation "org.jooq:jooq:3.19.1"
+//    runtimeOnly    "org.jooq:jooq:3.19.22"
+    jooqGenerator  "com.mysql:mysql-connector-j"
 }
 
 tasks.named('test') {
@@ -117,6 +122,8 @@ flyway {
 }
 
 jooq {
+    version = "3.19.1"                // ← 명시하거나, 줄을 없애 플러그인 기본값 사용
+    edition = JooqEdition.OSS
     configurations {
         main {
             generationTool {
@@ -128,7 +135,7 @@ jooq {
                     password = dbPasswd
                 }
                 generator {
-                    name = 'org.jooq.codegen.JavaGenerator'
+                    name = 'org.jooq.codegen.DefaultGenerator'
                     database {
                         name = "org.jooq.meta.extensions.ddl.DDLDatabase"
                         properties {
@@ -159,7 +166,7 @@ jooq {
                     }
                     target {
                         packageName = "org.jooq.generated"
-                        directory = "src/generated"
+                        directory = "src/jooq"
                     }
                 }
             }
