@@ -20,6 +20,9 @@ spring:
       hibernate.format_sql: true
       dialect: org.hibernate.dialect.MySQL8InnoDBDialect
 
+  jooq:
+    sql-dialect: MySQL
+
   data:
     redis:
       host: ${REDIS_HOST:localhost}
@@ -100,7 +103,7 @@ spring:
 
   docker:
     compose:
-      enabled: false
+      file: compose-local.yaml
 
 scheduler:
   daily-star-rating-statistic-cron: 0 0 3 * * *
