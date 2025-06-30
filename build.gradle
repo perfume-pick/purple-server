@@ -1,16 +1,25 @@
+import nu.studer.gradle.jooq.JooqEdition
+
 buildscript {
+    repositories {
+        mavenCentral()
+    }
     dependencies {
+        classpath "org.flywaydb:flyway-core:10.18.0"
         classpath 'org.flywaydb:flyway-mysql:10.18.0'
+        classpath "com.mysql:mysql-connector-j:8.0.33"
     }
 }
 
+
 plugins {
-    id("java")
-    id("org.springframework.boot") version '3.2.3'
-    id("io.spring.dependency-management") version '1.1.4'
-    id("jacoco")
-    id("org.sonarqube") version '4.4.1.3373'
-    id("org.flywaydb.flyway") version "10.19.0"
+    id "java"
+    id "org.springframework.boot" version '3.2.3'
+    id "io.spring.dependency-management" version '1.1.4'
+    id "jacoco"
+    id "org.sonarqube" version '4.4.1.3373'
+    id "org.flywaydb.flyway" version "10.19.0"
+    id 'nu.studer.jooq' version '9.0'
 }
 
 group = 'com.pikachu'
@@ -26,15 +35,6 @@ sonar {
         property("sonar.organization", "pikachu-perfume")
         property("sonar.host.url", "https://sonarcloud.io")
         property("sonar.java.coveragePlugin", "jacoco")
-    }
-}
-
-if (project.hasProperty('DB_URL')) {
-    flyway {
-        url = project.DB_URL
-        user = project.DB_USERNAME
-        password = project.DB_PASSWORD
-        driver = 'com.mysql.cj.jdbc.Driver'
     }
 }
 
@@ -59,6 +59,7 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
+//    implementation 'com.mysql:mysql-connector-j:8.2.0'
     runtimeOnly 'com.mysql:mysql-connector-j'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -88,8 +89,100 @@ dependencies {
 
     //thymeleaf
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+    //jooq
+//    implementation("org.springframework.boot:spring-boot-starter-jooq")
+    jooqGenerator "org.jooq:jooq:3.19.1"
+    jooqGenerator "org.jooq:jooq-meta:3.19.1"
+    jooqGenerator "org.jooq:jooq-codegen:3.19.1"
+    jooqGenerator "org.jooq:jooq-meta-extensions:3.19.1"
+//    implementation "org.jooq:jooq:3.19.1"
+//    runtimeOnly    "org.jooq:jooq:3.19.22"
+    jooqGenerator  "com.mysql:mysql-connector-j"
 }
 
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+ext {
+    dbUrl = findProperty('DB_URL') ?: ''
+    dbUser = findProperty('DB_USERNAME') ?: ''
+    dbPasswd = findProperty('DB_PASSWORD') ?: ''
+    dbSchema = findProperty('DB_SCHEMA') ?: 'purple'
+    dbDriver = 'com.mysql.cj.jdbc.Driver'
+}
+
+
+flyway {
+    url = dbUrl
+    user = dbUser
+    password = dbPasswd
+    driver = dbDriver
+}
+
+jooq {
+    version = "3.19.1"                // ← 명시하거나, 줄을 없애 플러그인 기본값 사용
+    edition = JooqEdition.OSS
+    configurations {
+        main {
+            generationTool {
+                logging = org.jooq.meta.jaxb.Logging.WARN
+                jdbc {
+                    driver = dbDriver
+                    url = dbUrl
+                    user = dbUser
+                    password = dbPasswd
+                }
+                generator {
+                    name = 'org.jooq.codegen.DefaultGenerator'
+                    database {
+                        name = "org.jooq.meta.extensions.ddl.DDLDatabase"
+                        properties {
+                            property {
+                                key = "scripts"
+                                value = "src/main/resources/db/migration/*.sql"
+                            }
+                            property {
+                                key = "sort"
+                                value = "flyway"
+                            }
+                            property {
+                                key = "sql"
+                                value = """
+                            CREATE SCHEMA IF NOT EXISTS $dbSchema;
+                            SET SCHEMA $dbSchema;           
+                        """
+                            }
+                            property {
+                                key = "unqualifiedSchema"
+                                value = "none"
+                            }
+                            property {
+                                key = "defaultNameCase"
+                                value = "lower"
+                            }
+                        }
+                    }
+                    target {
+                        packageName = "org.jooq.generated"
+                        directory = "src/jooq"
+                    }
+                }
+            }
+        }
+    }
+}
+
+//tasks.named('generateJooq').configure {
+//    // ensure database schema has been prepared by Flyway before generating the jOOQ sources
+////    dependsOn tasks.named('flywayMigrate')
+//
+//    // declare Flyway migration scripts as inputs on the jOOQ task
+//    inputs.files(fileTree('src/main/resources/db/migration'))
+//            .withPropertyName('migrations')
+//            .withPathSensitivity(PathSensitivity.RELATIVE)
+//
+//    // make jOOQ task participate in incremental builds (and build caching)
+//    allInputsDeclared = true
+//}

@@ -100,7 +100,7 @@ spring:
 
   docker:
     compose:
-      file: ./compose-local.yaml
+      enabled: false
 
 scheduler:
   daily-star-rating-statistic-cron: 0 0 3 * * *
