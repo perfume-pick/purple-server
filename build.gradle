@@ -17,7 +17,7 @@ plugins {
     id "jacoco"
     id "org.sonarqube" version '4.4.1.3373'
     id "org.flywaydb.flyway" version "10.19.0"
-    id "org.jooq.jooq-codegen-gradle" version "3.20.5"
+    id 'nu.studer.jooq' version '10.1'
 }
 
 group = 'com.pikachu'
@@ -89,11 +89,11 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 
     //jooq
-    implementation "org.jooq:jooq:3.20.5"
-    jooqCodegen "org.jooq:jooq-meta:3.20.5"
-    jooqCodegen "org.jooq:jooq-codegen:3.20.5"
-    jooqCodegen "org.jooq:jooq-meta-extensions:3.20.5"
-    jooqCodegen 'com.mysql:mysql-connector-j'
+    jooqGenerator "org.jooq:jooq:3.20.3"
+    jooqGenerator "org.jooq:jooq-meta:3.20.3"
+    jooqGenerator "org.jooq:jooq-codegen:3.20.3"
+    jooqGenerator "org.jooq:jooq-meta-extensions:3.20.3"
+    jooqGenerator 'com.mysql:mysql-connector-j'
 }
 
 tasks.named('test') {
@@ -117,52 +117,65 @@ flyway {
 }
 
 jooq {
-    configuration {
-        jdbc {
-            driver = dbDriver
-            url = dbUrl
-            user = dbUser
-            password = dbPasswd
-        }
-        generator {
-            name = "org.jooq.codegen.JavaGenerator"
-            database {
-                name = "org.jooq.meta.extensions.ddl.DDLDatabase"
-                properties {
-                    property {
-                        key = "scripts"
-                        value = "src/main/resources/db/migration/*.sql"
-                    }
-                    property {
-                        key = "sort"
-                        value = "flyway"
-                    }
-                    property {
-                        key = "sql"
-                        value = """
+    configurations {
+        main {
+            generationTool {
+                logging = org.jooq.meta.jaxb.Logging.WARN
+                jdbc {
+                    driver = dbDriver
+                    url = dbUrl
+                    user = dbUser
+                    password = dbPasswd
+                }
+                generator {
+                    name = 'org.jooq.codegen.JavaGenerator'
+                    database {
+                        name = "org.jooq.meta.extensions.ddl.DDLDatabase"
+                        properties {
+                            property {
+                                key = "scripts"
+                                value = "src/main/resources/db/migration/*.sql"
+                            }
+                            property {
+                                key = "sort"
+                                value = "flyway"
+                            }
+                            property {
+                                key = "sql"
+                                value = """
                             CREATE SCHEMA IF NOT EXISTS $dbSchema;
                             SET SCHEMA $dbSchema;           
                         """
+                            }
+                            property {
+                                key = "unqualifiedSchema"
+                                value = "none"
+                            }
+                            property {
+                                key = "defaultNameCase"
+                                value = "lower"
+                            }
+                        }
                     }
-                    property {
-                        key = "unqualifiedSchema"
-                        value = "none"
-                    }
-                    property {
-                        key = "defaultNameCase"
-                        value = "lower"
+                    target {
+                        packageName = "org.jooq.generated"
+                        directory = "src/generated"
                     }
                 }
             }
-            target {
-                packageName = "org.jooq.generated"
-                directory = "src/generated"
-            }
-
         }
     }
 }
 
-tasks.named("compileJava") {
-    dependsOn("jooqCodegen")
-}
+//tasks.named('generateJooq').configure {
+//    // ensure database schema has been prepared by Flyway before generating the jOOQ sources
+////    dependsOn tasks.named('flywayMigrate')
+//
+//    // declare Flyway migration scripts as inputs on the jOOQ task
+//    inputs.files(fileTree('src/main/resources/db/migration'))
+//            .withPropertyName('migrations')
+//            .withPathSensitivity(PathSensitivity.RELATIVE)
+//
+//    // make jOOQ task participate in incremental builds (and build caching)
+//    allInputsDeclared = true
+//}
